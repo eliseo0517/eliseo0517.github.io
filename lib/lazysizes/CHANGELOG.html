@@ -1,0 +1,151 @@
+<h1 id="Changelog"><a href="#Changelog" class="headerlink" title="Changelog"></a>Changelog</h1><h2 id="5-2-1"><a href="#5-2-1" class="headerlink" title="5.2.1"></a>5.2.1</h2><ul>
+<li>BlurUp-Plugin: Copy style attribute (<a href="https://github.com/aFarkas/lazysizes/pull/764">#764</a>)</li>
+<li>Fixes minor security issue with video-embed plugin (<a href="https://github.com/aFarkas/lazysizes/pull/764">#764</a>)</li>
+<li>Built: Update dependencies (<a href="https://github.com/aFarkas/lazysizes/pull/774">#774</a>, <a href="https://github.com/aFarkas/lazysizes/pull/756">#756</a>)</li>
+<li>Fixes diverse issues with old AMD module pattern (<a href="https://github.com/aFarkas/lazysizes/pull/780">#780</a>, <a href="https://github.com/aFarkas/lazysizes/pull/779">#779</a>)</li>
+</ul>
+<h2 id="5-2-0"><a href="#5-2-0" class="headerlink" title="5.2.0"></a>5.2.0</h2><ul>
+<li>Fix wrong window context under very rare SSR  (fixes <a href="https://github.com/aFarkas/lazysizes/pull/717">#717</a>)</li>
+<li>Fix Safari Back-Forward Cache issue with lazyloading image elements (fixes <a href="https://github.com/aFarkas/lazysizes/issues/711">#711</a>)</li>
+<li>Add lazyload of autoplay videos to unveilhooks  (fixes <a href="https://github.com/aFarkas/lazysizes/issues/697">#697</a>)</li>
+</ul>
+<h2 id="5-1-2"><a href="#5-1-2" class="headerlink" title="5.1.2"></a>5.1.2</h2><ul>
+<li>Fix visibility check (fixes <a href="https://github.com/aFarkas/lazysizes/issues/709">#709</a>)</li>
+</ul>
+<h2 id="5-1-1"><a href="#5-1-1" class="headerlink" title="5.1.1"></a>5.1.1</h2><ul>
+<li>Fix ratio calculation in rias plugin (fixed in <a href="https://github.com/aFarkas/lazysizes/pull/685">#685</a> by <a href="https://github.com/tikotzky">tikotzky</a>)</li>
+<li>Make  thumb size for youtube poster image in video-embed plugin configurable (see <a href="https://github.com/aFarkas/lazysizes/pull/681">#681</a> thx to <a href="https://github.com/nikitasol">@nikitasol</a>)</li>
+</ul>
+<h2 id="5-1-0"><a href="#5-1-0" class="headerlink" title="5.1.0"></a>5.1.0</h2><ul>
+<li>Allow import/execution in node environment</li>
+<li>Use “hqdefault” for youtube poster image in video-embed plugin fixes <a href="https://github.com/aFarkas/lazysizes/issues/666">#666</a></li>
+</ul>
+<h2 id="5-0-0"><a href="#5-0-0" class="headerlink" title="5.0.0"></a>5.0.0</h2><ul>
+<li>Use <code>width</code>/<code>height</code> content attributes to detect physical aspect ratio of image candidates, if <code>data-aspectratio</code> and <code>h</code>/<code>w</code> descriptors are missing. <a href="https://github.com/aFarkas/lazysizes/issues/642">#642</a></li>
+<li>Do not leak global <code>lazySizesConfig</code> anymore fixes <a href="https://github.com/aFarkas/lazysizes/issues/647">#647</a></li>
+<li>Improve handling of cloned object-fit images fixes <a href="https://github.com/aFarkas/lazysizes/issues/648">#648</a></li>
+<li>Improve blur-up/effect plugin.</li>
+<li>Add support fot native <code>loading=&quot;lazy&quot;</code> feature as a <a href="https://github.com/aFarkas/lazysizes/tree/gh-pages/plugins/native-loading">native loading plugin</a>.</li>
+</ul>
+<h2 id="4-1-8"><a href="#4-1-8" class="headerlink" title="4.1.8"></a>4.1.8</h2><ul>
+<li>Added the class <code>ls-is-cached</code> to already cached images.</li>
+<li>Added h descriptor parsing fix plugin for MS edge (was already included in respimg polyfill.)</li>
+<li>Effects-Plugin/Blur Up plugin: Remove [].find because IE…, fixes <a href="https://github.com/aFarkas/lazysizes/issues/631">#631</a></li>
+<li>Documentation stuff</li>
+<li>Bring back *.min.js files to npm package, but don’t use them in your <code>import</code>/<code>require</code>. These are mostly for CDNs. Not for Common JS bundlers.</li>
+</ul>
+<h2 id="4-1-7"><a href="#4-1-7" class="headerlink" title="4.1.7"></a>4.1.7</h2><ul>
+<li>Blur Up plugin: make blur up mode configurable by script</li>
+<li>Unload Plugin: Fix unload plugin not knowing current expand, fixes <a href="https://github.com/aFarkas/lazysizes/issues/608">#608</a></li>
+<li>simplify resetPreloading and switchLoadingClass, fixes <a href="https://github.com/aFarkas/lazysizes/issues/614">#614</a></li>
+</ul>
+<h2 id="4-1-6"><a href="#4-1-6" class="headerlink" title="4.1.6"></a>4.1.6</h2><ul>
+<li>Several Readme fixes</li>
+<li>Allow expand, hFax and expFactor to be changed after initialization, see <a href="https://github.com/aFarkas/lazysizes/issues/581">#581</a></li>
+</ul>
+<h2 id="4-1-5"><a href="#4-1-5" class="headerlink" title="4.1.5"></a>4.1.5</h2><ul>
+<li>Blur Up plugin: Add an empty alt attribute to the blur image to satisfy a11y <a href="https://github.com/aFarkas/lazysizes/commit/c3256d61c002a984ab3e644e922b0fdc052519d8">c3256d6</a></li>
+<li>Blur Up plugin: added aria-hidden attribute <a href="https://github.com/aFarkas/lazysizes/commit/1d62efb352f579d4505bd3d76d8166db2db9481f">1d62efb</a></li>
+<li>RiaS plugin: fix wrong ratio calculation, fixes <a href="https://github.com/aFarkas/lazysizes/issues/550">#550</a></li>
+<li>Rias Plugin: add aspect-ratio to rias for calculating height, fixes <a href="https://github.com/aFarkas/lazysizes/issues/557">#557</a></li>
+</ul>
+<h2 id="4-1-4"><a href="#4-1-4" class="headerlink" title="4.1.4"></a>4.1.4</h2><ul>
+<li>Resolve race condition with blurImg <a href="https://github.com/aFarkas/lazysizes/commit/dffa93b804302363aceb7dc814b01629014ed03b">dffa93b</a></li>
+<li>make intersectionobserver version compatible with plugins <a href="https://github.com/aFarkas/lazysizes/commit/2f1a02531eb96e828d42fb7877e776b810d7f346">2f1a025</a></li>
+</ul>
+<h2 id="4-1-3"><a href="#4-1-3" class="headerlink" title="4.1.3"></a>4.1.3</h2><ul>
+<li>change from custom to basic event interface (maybe fixes <a href="https://github.com/aFarkas/lazysizes/issues/527">#520</a>)</li>
+<li>Clarify data-aspectratio attribute <a href="https://github.com/aFarkas/lazysizes/commit/d8686050adeb68aae14e522bed12d68ab00b7595">d868605</a></li>
+</ul>
+<h2 id="4-1-2"><a href="#4-1-2" class="headerlink" title="4.1.2"></a>4.1.2</h2><ul>
+<li>fixes race condition with blurupimg <a href="https://github.com/aFarkas/lazysizes/issues/527">#527</a></li>
+<li>add proxy change event to extend bgset <a href="https://github.com/aFarkas/lazysizes/issues/532">#532</a></li>
+</ul>
+<h2 id="4-1-1"><a href="#4-1-1" class="headerlink" title="4.1.1"></a>4.1.1</h2><ul>
+<li>See <a href="https://github.com/aFarkas/lazysizes/commit/3ace9f359617409fe2824311032439fcf76a7c99">3ace9f3</a></li>
+</ul>
+<h2 id="4-1-0"><a href="#4-1-0" class="headerlink" title="4.1.0"></a>4.1.0</h2><ul>
+<li>improve effect plugin</li>
+</ul>
+<h2 id="4-0-4"><a href="#4-0-4" class="headerlink" title="4.0.4"></a>4.0.4</h2><ul>
+<li>fixes issue in bgset introduced with version 4.0.3</li>
+</ul>
+<h2 id="4-0-3"><a href="#4-0-3" class="headerlink" title="4.0.3"></a>4.0.3</h2><ul>
+<li>add <a href="https://jsfiddle.net/trixta/v0oq0412/embedded/result/">blur up plugin</a></li>
+</ul>
+<h2 id="4-0-0"><a href="#4-0-0" class="headerlink" title="4.0.0"></a>4.0.0</h2><ul>
+<li>make all plugins CommonJS compatible (thx to @claudiobmgrtnr and @jantimon)</li>
+<li>added <code>loadHidden</code> option(thx to @justinvoelker)</li>
+<li>added artdirection plugin (no documentation yet, but great)</li>
+<li>iOS 8.1 fixes has to be loaded explicitly in non CommonJS environments (not included in respimg plugin anymore)</li>
+<li>removed <code>picture</code> support for old FF 38-</li>
+</ul>
+<h2 id="2-0-0"><a href="#2-0-0" class="headerlink" title="2.0.0"></a>2.0.0</h2><ul>
+<li>lazysizes core:<ul>
+<li>heavily improved performance (<code>requestIdleCallback</code>, better debouncing and a lot more).</li>
+</ul>
+</li>
+<li>plugins:<ul>
+<li>new plugin: <a href="plugins/object-fit"><strong>object fit polyfill</strong></a>.</li>
+<li>improved new options for <a href="plugins/parent-fit">parent-fit plugin</a>.</li>
+</ul>
+</li>
+</ul>
+<h2 id="1-5-0"><a href="#1-5-0" class="headerlink" title="1.5.0"></a>1.5.0</h2><p>Breaking change:<br>    * the lazysizes.js and lazysizes.min.js files do not register as AMD modules anymore, if you need an AMD module use the new lazysizes-umd.js or lazysizes-umd.min.js file.</p>
+<ul>
+<li>lazysizes core:<ul>
+<li>improved lazyloading in background tabs.</li>
+<li>fixed set lazyloaded class to early in FF.</li>
+</ul>
+</li>
+<li>bgset/parentFit plugin:<ul>
+<li>improved avoiding layout thrashing.</li>
+</ul>
+</li>
+<li>respimg/bgset/parentFit plugin:<ul>
+<li>fixed bug in Edge 14 to parse height descriptors correctly.</li>
+</ul>
+</li>
+<li>unload plugin:<br>  unload plugin was broken since version 1.4.0 (thanks to @hokamoto)</li>
+</ul>
+<h2 id="1-4-0"><a href="#1-4-0" class="headerlink" title="1.4.0"></a>1.4.0</h2><ul>
+<li>lazysizes core:<ul>
+<li>improved lazyloading in background tabs.</li>
+<li>improved avoiding layout thrashing</li>
+<li>support of SVG elements (<code>svg</code>/<code>image</code>/<code>use</code>…)</li>
+</ul>
+</li>
+<li>bgset/parentFit plugin:<ul>
+<li>improved avoiding layout thrashing</li>
+</ul>
+</li>
+<li>rias (and bgset):<ul>
+<li>added support for height calculation (thx to @LRancez, <a href="https://github.com/aFarkas/lazysizes/pull/213">#213</a>)</li>
+</ul>
+</li>
+</ul>
+<h2 id="1-3-2"><a href="#1-3-2" class="headerlink" title="1.3.2"></a>1.3.2</h2><ul>
+<li>lazysizes core:<ul>
+<li>add <code>hFactor</code> option (see #181).</li>
+</ul>
+</li>
+<li>unload plugin:<ul>
+<li>simplified <code>unloadPixelThreshold</code> calculation.</li>
+</ul>
+</li>
+<li>bgset plugin:<ul>
+<li>add an empty alt to image (see #200).</li>
+</ul>
+</li>
+</ul>
+<h2 id="1-3-1-version"><a href="#1-3-1-version" class="headerlink" title="1.3.1 version"></a>1.3.1 version</h2><ul>
+<li>lazysizes core:<ul>
+<li>replace <code>setImmediate</code> with <code>setTimeout</code> (improved performance for IE/EDGE).</li>
+</ul>
+</li>
+<li>plugins:<ul>
+<li>fixed conflict with respimg plugin in combination with bgset plugin, in case of art direction and resize to smaller.</li>
+<li>fixed conflict with RIaS plugin in combination with respimg plugin/picturefill in Safari 8/9.</li>
+</ul>
+</li>
+</ul>
