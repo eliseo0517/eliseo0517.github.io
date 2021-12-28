@@ -11,6 +11,18 @@
     <content type="html"><![CDATA[<h1 id="上传图片的测试"><a href="#上传图片的测试" class="headerlink" title="上传图片的测试"></a>上传图片的测试</h1><p><img src="/2021/12/23/picture/1.jpg" alt="图片无法访问，请稍等"></p>]]></content>
     
     
+    <categories>
+      
+      <category>测试</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>测试</tag>
+      
+    </tags>
     
   </entry>
   
@@ -24,6 +36,18 @@
     <content type="html"><![CDATA[<p>1、先找到你的blog的文件夹</p><p>2、在文件夹中右键 git bash</p><p>3、利用 <code>hexo new post XXX</code> xxx是你的博客中文章的名字</p><p>4、在博客文件夹下的source的_posts中找到你的.md后缀的文章名字</p><p>5、在md文件中写入你的博客</p><p>6、利用命令 <code>hexo g</code>生成你文章的静态文件</p><p>7、利用命令<code>hexo d</code>上传到GitHub中</p>]]></content>
     
     
+    <categories>
+      
+      <category>记录</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>记录</tag>
+      
+    </tags>
     
   </entry>
   
