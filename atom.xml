@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2021-12-28T11:03:23.831Z</updated>
+  <updated>2021-12-28T11:30:37.078Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>测试图片显示</title>
+    <link href="http://example.com/2021/12/28/%E6%B5%8B%E8%AF%95%E5%9B%BE%E7%89%87%E6%98%BE%E7%A4%BA/"/>
+    <id>http://example.com/2021/12/28/%E6%B5%8B%E8%AF%95%E5%9B%BE%E7%89%87%E6%98%BE%E7%A4%BA/</id>
+    <published>2021-12-28T11:28:46.000Z</published>
+    <updated>2021-12-28T11:30:37.078Z</updated>
+    
+    <content type="html"><![CDATA[<p>应薛帅要求，测试我的图片功能</p><p><img src="/2021/12/28/%E6%B5%8B%E8%AF%95%E5%9B%BE%E7%89%87%E6%98%BE%E7%A4%BA/ceshi.png" alt="ceshi"></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;应薛帅要求，测试我的图片功能&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/2021/12/28/%E6%B5%8B%E8%AF%95%E5%9B%BE%E7%89%87%E6%98%BE%E7%A4%BA/ceshi.png&quot; alt=&quot;ceshi&quot;&gt;&lt;/p&gt;
+</summary>
+      
+    
+    
+    
+    <category term="测试" scheme="http://example.com/categories/%E6%B5%8B%E8%AF%95/"/>
+    
+    
+    <category term="测试" scheme="http://example.com/tags/%E6%B5%8B%E8%AF%95/"/>
+    
+  </entry>
   
   <entry>
     <title>picture</title>
