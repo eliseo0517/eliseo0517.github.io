@@ -47,9 +47,9 @@
     <link href="http://example.com/2021/12/23/picture/"/>
     <id>http://example.com/2021/12/23/picture/</id>
     <published>2021-12-23T02:44:42.000Z</published>
-    <updated>2021-12-28T11:03:23.831Z</updated>
+    <updated>2021-12-29T01:38:57.080Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="上传图片的测试"><a href="#上传图片的测试" class="headerlink" title="上传图片的测试"></a>上传图片的测试</h1><p><img src="/2021/12/23/picture/1.jpg" alt="图片无法访问，请稍等"></p>]]></content>
+    <content type="html"><![CDATA[<h1 id="上传图片的测试"><a href="#上传图片的测试" class="headerlink" title="上传图片的测试"></a>上传图片的测试</h1><p><img src="/2021/12/23/picture/1.jpg" alt="图片无法访问，请稍等"></p><p><img src="/2021/12/23/picture/ceshi.png" alt="ceshi"></p>]]></content>
     
     
       
