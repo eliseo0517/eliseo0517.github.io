@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>如何搭建自己的博客</title>
+    <link href="/2022/01/14/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/"/>
+    <url>/2022/01/14/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/</url>
+    
+    <content type="html"><![CDATA[<h1 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h1><p>1、下载nodejs</p><p>2、下载git</p><p>查看自己的node与git是否安装成功：</p><p>node -v</p><p>npm -v</p><p>git –version</p><p>3、下载hexo  ： npm install hexo-cli -g           查看自己的安装是否成功 hexo -v</p><h1 id="搭建仓库"><a href="#搭建仓库" class="headerlink" title="搭建仓库"></a>搭建仓库</h1><p>1、注册github <a href="https://www.bilibili.com/read/cv5107169">https://www.bilibili.com/read/cv5107169</a></p><p>2、项目的名字必须是自己的github名字+github.io</p><p>3、生成ssh：ssh-keygen -t rsa -C “邮箱地址”</p><p>测试 ssh是否绑定成功：ssh -T <a href="mailto:&#x67;&#x69;&#x74;&#x40;&#103;&#x69;&#x74;&#x68;&#x75;&#98;&#46;&#x63;&#x6f;&#x6d;">&#x67;&#x69;&#x74;&#x40;&#103;&#x69;&#x74;&#x68;&#x75;&#98;&#46;&#x63;&#x6f;&#x6d;</a></p><h1 id="本地生成博客内容"><a href="#本地生成博客内容" class="headerlink" title="本地生成博客内容"></a>本地生成博客内容</h1><p><strong>hexo init # 初始化hexo博客</strong></p><p><img src="/2022/01/14/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/image-20211201154906091.png" alt="image-20211201154906091"></p><p><strong>hexo s # 启动服务</strong></p><h1 id="发布博客到网上"><a href="#发布博客到网上" class="headerlink" title="发布博客到网上"></a>发布博客到网上</h1><p>在_config.yml最后面加上</p><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs yml"><span class="hljs-attr">deploy:</span><br>  <span class="hljs-attr">type:</span> <span class="hljs-string">git</span><br>  <span class="hljs-attr">repository:</span> <span class="hljs-string">自己博客的地址</span><br>  <span class="hljs-attr">branch:</span> <span class="hljs-string">main</span><br></code></pre></td></tr></table></figure><p><img src="/2022/01/14/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/image-20211201160004913.png" alt="image-20211201160004913"></p><p>安装hexo-deployer-git 自动部署发布工具：npm install hexo-deployer-git –save</p><p><strong>生成页面</strong> : hexo g</p><p><strong>将文件上传到github：</strong>hexo d</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>study</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>study</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>springboot连接canal出现timeout</title>
     <link href="/2022/01/14/springboot%E8%BF%9E%E6%8E%A5canal%E5%87%BA%E7%8E%B0timeout/"/>
     <url>/2022/01/14/springboot%E8%BF%9E%E6%8E%A5canal%E5%87%BA%E7%8E%B0timeout/</url>
