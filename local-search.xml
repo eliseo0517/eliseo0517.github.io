@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>springboot连接canal出现timeout</title>
+    <link href="/2022/01/14/springboot%E8%BF%9E%E6%8E%A5canal%E5%87%BA%E7%8E%B0timeout/"/>
+    <url>/2022/01/14/springboot%E8%BF%9E%E6%8E%A5canal%E5%87%BA%E7%8E%B0timeout/</url>
+    
+    <content type="html"><![CDATA[<h2 id="发现问题："><a href="#发现问题：" class="headerlink" title="发现问题："></a>发现问题：</h2><p>当你使用springboot连接linux实现canal数据同步的时候，控制台输出了</p><p><img src="/2022/01/14/springboot%E8%BF%9E%E6%8E%A5canal%E5%87%BA%E7%8E%B0timeout/%7B%25Y0IH%60EVY%25VJV%5B3B5$AA2-16421386665471.png" alt="img"></p><h2 id="解决方法："><a href="#解决方法：" class="headerlink" title="解决方法："></a>解决方法：</h2><p>1、首先在xshell上运行<code>systemctl start firewalld.service</code>开启防火墙</p><p>2、然后输入<code>firewall-cmd --list-port</code>查看11111端口号是否开启</p><p>3、如果出现了<br><img src="/2022/01/14/springboot%E8%BF%9E%E6%8E%A5canal%E5%87%BA%E7%8E%B0timeout/TW@%7BN%5B%5BIORPX8@Y9AAAZ3K.png" alt="img"><br>证明开启了11111端口号</p><p>4、如果没有开启输入 <code>firewall-cmd --zone=public --add-port=11111/tcp --permanent</code>  开启端口号</p><p>5、然后输入<code>firewall-cmd --reload</code>重启防火墙更新配置</p><p>6、然后在阿里云上新增安全组开放11111端口</p><h2 id="进行测试："><a href="#进行测试：" class="headerlink" title="进行测试："></a>进行测试：</h2><p>在xshell上进行数据的增删改操作</p><p><img src="/2022/01/14/springboot%E8%BF%9E%E6%8E%A5canal%E5%87%BA%E7%8E%B0timeout/image-20220114134009800.png" alt="image-20220114134009800"></p><p>本地控制台输出有关信息</p><p><img src="/2022/01/14/springboot%E8%BF%9E%E6%8E%A5canal%E5%87%BA%E7%8E%B0timeout/image-20220114134047446.png" alt="image-20220114134047446"></p><p>查看本地mysql数据库发现有数据的增加</p><p><img src="/2022/01/14/springboot%E8%BF%9E%E6%8E%A5canal%E5%87%BA%E7%8E%B0timeout/image-20220114134122429.png" alt="image-20220114134122429"></p><p>canal连接以及测试成功！！！</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>error</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>error</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>测试图片显示</title>
     <link href="/2021/12/28/%E6%B5%8B%E8%AF%95%E5%9B%BE%E7%89%87%E6%98%BE%E7%A4%BA/"/>
     <url>/2021/12/28/%E6%B5%8B%E8%AF%95%E5%9B%BE%E7%89%87%E6%98%BE%E7%A4%BA/</url>

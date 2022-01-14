@@ -16,21 +16,27 @@
   <meta name="author" content="Mr.Wang">
   <meta name="keywords" content="">
   
-    <meta name="description" content="1、先找到你的blog的文件夹 2、在文件夹中右键 git bash 3、利用 hexo new post XXX xxx是你的博客中文章的名字 4、在博客文件夹下的source的_posts中找到你的.md后缀的文章名字 5、在md文件中写入你的博客 6、利用命令 hexo g生成你文章的静态文件 7、利用命令hexo d上传到GitHub中">
+    <meta name="description" content="发现问题：当你使用springboot连接linux实现canal数据同步的时候，控制台输出了  解决方法：1、首先在xshell上运行systemctl start firewalld.service开启防火墙 2、然后输入firewall-cmd --list-port查看11111端口号是否开启 3、如果出现了证明开启了11111端口号 4、如果没有开启输入 firewall-cmd --z">
 <meta property="og:type" content="article">
-<meta property="og:title" content="如何上传博客">
-<meta property="og:url" content="http://example.com/2021/12/23/%E5%A6%82%E4%BD%95%E4%B8%8A%E4%BC%A0%E5%8D%9A%E5%AE%A2/index.html">
+<meta property="og:title" content="springboot连接canal出现timeout">
+<meta property="og:url" content="http://example.com/2022/01/14/springboot%E8%BF%9E%E6%8E%A5canal%E5%87%BA%E7%8E%B0timeout/index.html">
 <meta property="og:site_name" content="Eliseo的小屋">
-<meta property="og:description" content="1、先找到你的blog的文件夹 2、在文件夹中右键 git bash 3、利用 hexo new post XXX xxx是你的博客中文章的名字 4、在博客文件夹下的source的_posts中找到你的.md后缀的文章名字 5、在md文件中写入你的博客 6、利用命令 hexo g生成你文章的静态文件 7、利用命令hexo d上传到GitHub中">
+<meta property="og:description" content="发现问题：当你使用springboot连接linux实现canal数据同步的时候，控制台输出了  解决方法：1、首先在xshell上运行systemctl start firewalld.service开启防火墙 2、然后输入firewall-cmd --list-port查看11111端口号是否开启 3、如果出现了证明开启了11111端口号 4、如果没有开启输入 firewall-cmd --z">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-12-23T02:22:39.000Z">
-<meta property="article:modified_time" content="2021-12-28T11:03:37.060Z">
+<meta property="og:image" content="http://example.com/2022/01/14/springboot%E8%BF%9E%E6%8E%A5canal%E5%87%BA%E7%8E%B0timeout/%7B%25Y0IH%60EVY%25VJV%5B3B5$AA2-16421386665471.png">
+<meta property="og:image" content="http://example.com/2022/01/14/springboot%E8%BF%9E%E6%8E%A5canal%E5%87%BA%E7%8E%B0timeout/TW@%7BN%5B%5BIORPX8@Y9AAAZ3K.png">
+<meta property="og:image" content="http://example.com/2022/01/14/springboot%E8%BF%9E%E6%8E%A5canal%E5%87%BA%E7%8E%B0timeout/image-20220114134009800.png">
+<meta property="og:image" content="http://example.com/2022/01/14/springboot%E8%BF%9E%E6%8E%A5canal%E5%87%BA%E7%8E%B0timeout/image-20220114134047446.png">
+<meta property="og:image" content="http://example.com/2022/01/14/springboot%E8%BF%9E%E6%8E%A5canal%E5%87%BA%E7%8E%B0timeout/image-20220114134122429.png">
+<meta property="article:published_time" content="2022-01-14T05:34:47.000Z">
+<meta property="article:modified_time" content="2022-01-14T05:41:35.254Z">
 <meta property="article:author" content="Mr.Wang">
-<meta property="article:tag" content="记录">
+<meta property="article:tag" content="error">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://example.com/2022/01/14/springboot%E8%BF%9E%E6%8E%A5canal%E5%87%BA%E7%8E%B0timeout/%7B%25Y0IH%60EVY%25VJV%5B3B5$AA2-16421386665471.png">
   
   
-  <title>如何上传博客 - Eliseo的小屋</title>
+  <title>springboot连接canal出现timeout - Eliseo的小屋</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -177,7 +183,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="如何上传博客">
+            <span class="h2" id="subtitle" title="springboot连接canal出现timeout">
               
             </span>
 
@@ -192,8 +198,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-12-23 10:22" pubdate>
-        December 23, 2021 am
+      <time datetime="2022-01-14 13:34" pubdate>
+        January 14, 2022 pm
       </time>
     </span>
   
@@ -203,7 +209,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      157 字
+      364 字
     </span>
   
 
@@ -212,7 +218,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      2 分钟
+      4 分钟
     </span>
   
 
@@ -249,22 +255,30 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">如何上传博客</h1>
+            <h1 style="display: none">springboot连接canal出现timeout</h1>
             
               <p class="note note-info">
                 
-                  本文最后更新于：17 days ago
+                  本文最后更新于：a few seconds ago
                 
               </p>
             
             <div class="markdown-body">
-              <p>1、先找到你的blog的文件夹</p>
-<p>2、在文件夹中右键 git bash</p>
-<p>3、利用 <code>hexo new post XXX</code> xxx是你的博客中文章的名字</p>
-<p>4、在博客文件夹下的source的_posts中找到你的.md后缀的文章名字</p>
-<p>5、在md文件中写入你的博客</p>
-<p>6、利用命令 <code>hexo g</code>生成你文章的静态文件</p>
-<p>7、利用命令<code>hexo d</code>上传到GitHub中</p>
+              <h2 id="发现问题："><a href="#发现问题：" class="headerlink" title="发现问题："></a>发现问题：</h2><p>当你使用springboot连接linux实现canal数据同步的时候，控制台输出了</p>
+<p><img src="/2022/01/14/springboot%E8%BF%9E%E6%8E%A5canal%E5%87%BA%E7%8E%B0timeout/%7B%25Y0IH%60EVY%25VJV%5B3B5$AA2-16421386665471.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<h2 id="解决方法："><a href="#解决方法：" class="headerlink" title="解决方法："></a>解决方法：</h2><p>1、首先在xshell上运行<code>systemctl start firewalld.service</code>开启防火墙</p>
+<p>2、然后输入<code>firewall-cmd --list-port</code>查看11111端口号是否开启</p>
+<p>3、如果出现了<br><img src="/2022/01/14/springboot%E8%BF%9E%E6%8E%A5canal%E5%87%BA%E7%8E%B0timeout/TW@%7BN%5B%5BIORPX8@Y9AAAZ3K.png" srcset="/img/loading.gif" lazyload alt="img"><br>证明开启了11111端口号</p>
+<p>4、如果没有开启输入 <code>firewall-cmd --zone=public --add-port=11111/tcp --permanent</code>  开启端口号</p>
+<p>5、然后输入<code>firewall-cmd --reload</code>重启防火墙更新配置</p>
+<p>6、然后在阿里云上新增安全组开放11111端口</p>
+<h2 id="进行测试："><a href="#进行测试：" class="headerlink" title="进行测试："></a>进行测试：</h2><p>在xshell上进行数据的增删改操作</p>
+<p><img src="/2022/01/14/springboot%E8%BF%9E%E6%8E%A5canal%E5%87%BA%E7%8E%B0timeout/image-20220114134009800.png" srcset="/img/loading.gif" lazyload alt="image-20220114134009800"></p>
+<p>本地控制台输出有关信息</p>
+<p><img src="/2022/01/14/springboot%E8%BF%9E%E6%8E%A5canal%E5%87%BA%E7%8E%B0timeout/image-20220114134047446.png" srcset="/img/loading.gif" lazyload alt="image-20220114134047446"></p>
+<p>查看本地mysql数据库发现有数据的增加</p>
+<p><img src="/2022/01/14/springboot%E8%BF%9E%E6%8E%A5canal%E5%87%BA%E7%8E%B0timeout/image-20220114134122429.png" srcset="/img/loading.gif" lazyload alt="image-20220114134122429"></p>
+<p>canal连接以及测试成功！！！</p>
 
             </div>
             <hr>
@@ -274,7 +288,7 @@
                   <div class="post-meta mr-3">
                     <i class="iconfont icon-category"></i>
                     
-                      <a class="hover-with-bg" href="/categories/%E8%AE%B0%E5%BD%95/">记录</a>
+                      <a class="hover-with-bg" href="/categories/error/">error</a>
                     
                   </div>
                 
@@ -282,7 +296,7 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/%E8%AE%B0%E5%BD%95/">记录</a>
+                      <a class="hover-with-bg" href="/tags/error/">error</a>
                     
                   </div>
                 
@@ -299,18 +313,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/12/23/picture/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">picture</span>
-                        <span class="visible-mobile">Previous</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/12/01/hello-world/">
-                        <span class="hidden-mobile">Hello World</span>
+                      <a href="/2021/12/28/%E6%B5%8B%E8%AF%95%E5%9B%BE%E7%89%87%E6%98%BE%E7%A4%BA/">
+                        <span class="hidden-mobile">测试图片显示</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
