@@ -16,24 +16,24 @@
   <meta name="author" content="Mr.Wang">
   <meta name="keywords" content="">
   
-    <meta name="description" content="这个题目可能比较难以理解题意，下面先分析一下题目的意思：  题意  输入： [“CQueue”,”appendTail”,”deleteHead”,”deleteHead”] 这里是要执行的方法，从左到右执行 [[],[3],[],[]]对应上面的方法，是上面方法的参数。CQueue和deleteHead方法不需要指定数字，只有添加才需要指定数字 1、创建队列，返回值为null 2、将3压入栈，">
+    <meta name="description" content="解题思路  普通栈的 push() 和 pop() 函数的复杂度为 O(1)O(1) ；而获取栈最小值 min() 函数需要遍历整个栈，复杂度为 O(N)O(N) 。  所以需要使用辅助栈将获取最小值时间复杂度变成O(1) 使用辅助栈B，保证栈B的元素是栈A中的最小值（在栈A加入数据之前与栈B的顶部数据进行对比，如果栈A数据小则压入栈B，反之不压入） 1234567891011121314151">
 <meta property="og:type" content="article">
-<meta property="og:title" content="两个栈实现队列">
-<meta property="og:url" content="http://example.com/2022/02/17/%E4%B8%A4%E4%B8%AA%E6%A0%88%E5%AE%9E%E7%8E%B0%E9%98%9F%E5%88%97/index.html">
+<meta property="og:title" content="包含main函数的栈">
+<meta property="og:url" content="http://example.com/2022/02/18/%E5%8C%85%E5%90%ABmain%E5%87%BD%E6%95%B0%E7%9A%84%E6%A0%88/index.html">
 <meta property="og:site_name" content="Eliseo的小屋">
-<meta property="og:description" content="这个题目可能比较难以理解题意，下面先分析一下题目的意思：  题意  输入： [“CQueue”,”appendTail”,”deleteHead”,”deleteHead”] 这里是要执行的方法，从左到右执行 [[],[3],[],[]]对应上面的方法，是上面方法的参数。CQueue和deleteHead方法不需要指定数字，只有添加才需要指定数字 1、创建队列，返回值为null 2、将3压入栈，">
+<meta property="og:description" content="解题思路  普通栈的 push() 和 pop() 函数的复杂度为 O(1)O(1) ；而获取栈最小值 min() 函数需要遍历整个栈，复杂度为 O(N)O(N) 。  所以需要使用辅助栈将获取最小值时间复杂度变成O(1) 使用辅助栈B，保证栈B的元素是栈A中的最小值（在栈A加入数据之前与栈B的顶部数据进行对比，如果栈A数据小则压入栈B，反之不压入） 1234567891011121314151">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://example.com/2022/02/17/%E4%B8%A4%E4%B8%AA%E6%A0%88%E5%AE%9E%E7%8E%B0%E9%98%9F%E5%88%97/image-20220217232828591.png">
-<meta property="og:image" content="http://example.com/2022/02/17/%E4%B8%A4%E4%B8%AA%E6%A0%88%E5%AE%9E%E7%8E%B0%E9%98%9F%E5%88%97/image-20220217232841417.png">
-<meta property="article:published_time" content="2022-02-17T15:26:59.000Z">
-<meta property="article:modified_time" content="2022-02-17T15:42:34.675Z">
+<meta property="og:image" content="http://example.com/2022/02/18/%E5%8C%85%E5%90%ABmain%E5%87%BD%E6%95%B0%E7%9A%84%E6%A0%88/image-20220218162324175.png">
+<meta property="og:image" content="http://example.com/2022/02/18/%E5%8C%85%E5%90%ABmain%E5%87%BD%E6%95%B0%E7%9A%84%E6%A0%88/image-20220218165841704.png">
+<meta property="article:published_time" content="2022-02-18T08:22:20.000Z">
+<meta property="article:modified_time" content="2022-02-18T09:10:39.764Z">
 <meta property="article:author" content="Mr.Wang">
 <meta property="article:tag" content="算法">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://example.com/2022/02/17/%E4%B8%A4%E4%B8%AA%E6%A0%88%E5%AE%9E%E7%8E%B0%E9%98%9F%E5%88%97/image-20220217232828591.png">
+<meta name="twitter:image" content="http://example.com/2022/02/18/%E5%8C%85%E5%90%ABmain%E5%87%BD%E6%95%B0%E7%9A%84%E6%A0%88/image-20220218162324175.png">
   
   
-  <title>两个栈实现队列 - Eliseo的小屋</title>
+  <title>包含main函数的栈 - Eliseo的小屋</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -180,7 +180,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="两个栈实现队列">
+            <span class="h2" id="subtitle" title="包含main函数的栈">
               
             </span>
 
@@ -195,8 +195,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2022-02-17 23:26" pubdate>
-        February 17, 2022 pm
+      <time datetime="2022-02-18 16:22" pubdate>
+        February 18, 2022 pm
       </time>
     </span>
   
@@ -206,7 +206,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      986 字
+      729 字
     </span>
   
 
@@ -215,7 +215,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      9 分钟
+      7 分钟
     </span>
   
 
@@ -252,35 +252,27 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">两个栈实现队列</h1>
+            <h1 style="display: none">包含main函数的栈</h1>
             
               <p class="note note-info">
                 
-                  本文最后更新于：17 hours ago
+                  本文最后更新于：a few seconds ago
                 
               </p>
             
             <div class="markdown-body">
-              <p><img src="/2022/02/17/%E4%B8%A4%E4%B8%AA%E6%A0%88%E5%AE%9E%E7%8E%B0%E9%98%9F%E5%88%97/image-20220217232828591.png" srcset="/img/loading.gif" lazyload alt="题目"></p>
-<p>这个题目可能比较难以理解题意，下面先分析一下题目的意思：</p>
+              <p><img src="/2022/02/18/%E5%8C%85%E5%90%ABmain%E5%87%BD%E6%95%B0%E7%9A%84%E6%A0%88/image-20220218162324175.png" srcset="/img/loading.gif" lazyload alt="题目"></p>
+<p><strong>解题思路</strong></p>
 <blockquote>
-<p>题意</p>
+<p>普通栈的 <code>push()</code> 和 <code>pop()</code> 函数的复杂度为 O(1)<em>O</em>(1) ；而获取栈最小值 <code>min()</code> 函数需要遍历整个栈，复杂度为 O(N)<em>O</em>(<em>N</em>) 。</p>
 </blockquote>
-<p>输入： [“CQueue”,”appendTail”,”deleteHead”,”deleteHead”] 这里是要执行的方法，从左到右执行</p>
-<p>[[],[3],[],[]]对应上面的方法，是上面方法的参数。CQueue和deleteHead方法不需要指定数字，只有添加才需要指定数字</p>
-<p>1、创建队列，返回值为null</p>
-<p>2、将3压入栈，返回值为null</p>
-<p>3、将栈底的元素删除，也就是消息队列中先进来的元素，所以是deleteHead，返回该元素的数值，所以为3</p>
-<p>4、继续删除栈底的元素，但是没有元素了，所以返回-1</p>
-<p>​    输出：[null,null,3,-1]</p>
-<blockquote>
-<p>题解</p>
-</blockquote>
-<p>为什么不用Stack的方式而使用LinkedList？</p>
-<p><img src="/2022/02/17/%E4%B8%A4%E4%B8%AA%E6%A0%88%E5%AE%9E%E7%8E%B0%E9%98%9F%E5%88%97/image-20220217232841417.png" srcset="/img/loading.gif" lazyload alt="image-20220217232841417"></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CQueue</span> </span>&#123;<br><br>        <span class="hljs-comment">//两个栈，一个执行添加,一个执行删除</span><br>        LinkedList&lt;Integer&gt; stack1;<br>        LinkedList&lt;Integer&gt; stack2;<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">CQueue</span><span class="hljs-params">()</span> </span>&#123;<br>        stack1 = <span class="hljs-keyword">new</span> LinkedList&lt;&gt;();<br>        stack2 = <span class="hljs-keyword">new</span> LinkedList&lt;&gt;();<br>    &#125;<br>    <br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">appendTail</span><span class="hljs-params">(<span class="hljs-keyword">int</span> value)</span> </span>&#123;<br>        <span class="hljs-comment">// 栈1只负责添加数据</span><br>        stack1.add(value);<br>    &#125;<br>    <br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">deleteHead</span><span class="hljs-params">()</span> </span>&#123;<br>        <span class="hljs-comment">// 如果栈2是空</span><br>        <span class="hljs-keyword">if</span>(stack2.isEmpty()) &#123;<br>            <span class="hljs-comment">// 由于栈2和栈1是空,由于栈内没数据所以返回值为-1</span><br>            <span class="hljs-keyword">if</span>(stack1.isEmpty()) &#123;<br>                <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>;<br>            &#125;<br>            <span class="hljs-comment">// 如果栈1不是空，那么将栈1的值从顶部弹出放入栈2中,并且返回栈2的顶部的值（也就是将栈1底部的值删除）</span><br>            <span class="hljs-keyword">while</span>(!stack1.isEmpty()) &#123;<br>                stack2.add(stack1.pop());<br>            &#125;<br>            <span class="hljs-keyword">return</span> stack2.pop();<br>        &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">return</span> stack2.pop();<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p>所以需要使用辅助栈将获取最小值时间复杂度变成O(1)</p>
+<p>使用辅助栈B，保证栈B的元素是栈A中的最小值（在栈A加入数据之前与栈B的顶部数据进行对比，如果栈A数据小则压入栈B，反之不压入）</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MinStack</span> </span>&#123;<br>    <span class="hljs-comment">// 定义两个栈，一个A数据栈负责将数据存入，一个栈B负责存入最小值</span><br>    Stack&lt;Integer&gt; A, B;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">MinStack</span><span class="hljs-params">()</span> </span>&#123;<br>        A = <span class="hljs-keyword">new</span> Stack&lt;&gt;();<br>        B = <span class="hljs-keyword">new</span> Stack&lt;&gt;();<br>    &#125;<br>    <br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">push</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x)</span> </span>&#123;    <br>        A.add(x);<br>        <span class="hljs-comment">// 如果栈B为空或者栈B的顶部数据大于等于存入的数据，就意味着新加入的数据小于栈B，就将这个数据压入栈B</span><br>        <span class="hljs-keyword">if</span>(B.empty() || B.peek() &gt;= x)<br>            B.add(x);<br>    &#125;<br>    <br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">pop</span><span class="hljs-params">()</span> </span>&#123;<br>        <span class="hljs-comment">//当栈A弹出的时候，如果栈B的顶部数据等于栈A要弹出的数据，就将栈B顶也弹出，保证元素一致，也避免了重复数据造成的影响。</span><br>        <span class="hljs-keyword">if</span>(A.pop().equals(B.peek()))<br>            B.pop();<br>    &#125;<br>    <br>    <span class="hljs-comment">//栈A的栈顶就是顶部数据</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">top</span><span class="hljs-params">()</span> </span>&#123;<br>        <span class="hljs-keyword">return</span> A.peek();<br>    &#125;<br>    <br>    <span class="hljs-comment">//栈B的栈顶就是最小数据</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">min</span><span class="hljs-params">()</span> </span>&#123;<br>        <span class="hljs-keyword">return</span> B.peek();<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
-<p>实际上就是队列的先进先出，栈的先进后出，两个栈互相交互就可以实现像是队列的先进先出的功能。</p>
+
+
+<p><img src="/2022/02/18/%E5%8C%85%E5%90%ABmain%E5%87%BD%E6%95%B0%E7%9A%84%E6%A0%88/image-20220218165841704.png" srcset="/img/loading.gif" lazyload alt="执行结果"></p>
 
             </div>
             <hr>
@@ -315,18 +307,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/02/17/%E4%B8%8A%E4%BC%A0%E5%8D%9A%E5%AE%A2%E5%8F%91%E7%8E%B0%E7%9A%84%E9%97%AE%E9%A2%98/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">上传博客发现的问题</span>
-                        <span class="visible-mobile">Previous</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/01/14/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/">
-                        <span class="hidden-mobile">如何搭建自己的博客</span>
+                      <a href="/2022/02/17/%E4%B8%8A%E4%BC%A0%E5%8D%9A%E5%AE%A2%E5%8F%91%E7%8E%B0%E7%9A%84%E9%97%AE%E9%A2%98/">
+                        <span class="hidden-mobile">上传博客发现的问题</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
