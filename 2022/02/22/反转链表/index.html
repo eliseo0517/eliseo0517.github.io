@@ -16,28 +16,23 @@
   <meta name="author" content="Mr.Wang">
   <meta name="keywords" content="">
   
-    <meta name="description" content="上传博客之后在控制台发现成功，但是访问网址却发现什么也没有，于是前往博客所在的public文件夹下发现里面并没有上传博客的详细信息   创建一个新的笔记之后直接上传发现上传成功  于是创建了一个没有标签和分类的同样的笔记进行上传发现上传成功  自此 发现问题所在：  于是添加空格之后发现上传成功，自此问题完美解决。">
+    <meta name="description" content="解法： 迭代法 1234567891011121314151617181920&#x2F;** * Definition for singly-linked list. * public class ListNode &amp;#123; *     int val; *     ListNode next; *     ListNode(int x) &amp;#123; val &#x3D; x; &amp;#125; * &amp;#125">
 <meta property="og:type" content="article">
-<meta property="og:title" content="上传博客发现的问题">
-<meta property="og:url" content="http://example.com/2022/02/17/%E4%B8%8A%E4%BC%A0%E5%8D%9A%E5%AE%A2%E5%8F%91%E7%8E%B0%E7%9A%84%E9%97%AE%E9%A2%98/index.html">
+<meta property="og:title" content="反转链表">
+<meta property="og:url" content="http://example.com/2022/02/22/%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8/index.html">
 <meta property="og:site_name" content="Eliseo的小屋">
-<meta property="og:description" content="上传博客之后在控制台发现成功，但是访问网址却发现什么也没有，于是前往博客所在的public文件夹下发现里面并没有上传博客的详细信息   创建一个新的笔记之后直接上传发现上传成功  于是创建了一个没有标签和分类的同样的笔记进行上传发现上传成功  自此 发现问题所在：  于是添加空格之后发现上传成功，自此问题完美解决。">
+<meta property="og:description" content="解法： 迭代法 1234567891011121314151617181920&#x2F;** * Definition for singly-linked list. * public class ListNode &amp;#123; *     int val; *     ListNode next; *     ListNode(int x) &amp;#123; val &#x3D; x; &amp;#125; * &amp;#125">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://example.com/2022/02/17/%E4%B8%8A%E4%BC%A0%E5%8D%9A%E5%AE%A2%E5%8F%91%E7%8E%B0%E7%9A%84%E9%97%AE%E9%A2%98/image-20220217233726151.png">
-<meta property="og:image" content="http://example.com/2022/02/17/%E4%B8%8A%E4%BC%A0%E5%8D%9A%E5%AE%A2%E5%8F%91%E7%8E%B0%E7%9A%84%E9%97%AE%E9%A2%98/image-20220217233915883.png">
-<meta property="og:image" content="http://example.com/2022/02/17/%E4%B8%8A%E4%BC%A0%E5%8D%9A%E5%AE%A2%E5%8F%91%E7%8E%B0%E7%9A%84%E9%97%AE%E9%A2%98/XQH$RAL53Z%5BD%7DXAVK$C5SF5.png">
-<meta property="og:image" content="http://example.com/2022/02/17/%E4%B8%8A%E4%BC%A0%E5%8D%9A%E5%AE%A2%E5%8F%91%E7%8E%B0%E7%9A%84%E9%97%AE%E9%A2%98/image-20220217234138730.png">
-<meta property="og:image" content="http://example.com/2022/02/17/%E4%B8%8A%E4%BC%A0%E5%8D%9A%E5%AE%A2%E5%8F%91%E7%8E%B0%E7%9A%84%E9%97%AE%E9%A2%98/image-20220217234237986.png">
-<meta property="og:image" content="http://example.com/2022/02/17/%E4%B8%8A%E4%BC%A0%E5%8D%9A%E5%AE%A2%E5%8F%91%E7%8E%B0%E7%9A%84%E9%97%AE%E9%A2%98/image-20220217234326636.png">
-<meta property="article:published_time" content="2022-02-17T15:33:47.000Z">
-<meta property="article:modified_time" content="2022-02-17T15:43:32.163Z">
+<meta property="og:image" content="http://example.com/2022/02/22/%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8/image-20220222173325718.png">
+<meta property="article:published_time" content="2022-02-22T09:32:15.000Z">
+<meta property="article:modified_time" content="2022-02-22T09:35:03.262Z">
 <meta property="article:author" content="Mr.Wang">
-<meta property="article:tag" content="error">
+<meta property="article:tag" content="算法">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://example.com/2022/02/17/%E4%B8%8A%E4%BC%A0%E5%8D%9A%E5%AE%A2%E5%8F%91%E7%8E%B0%E7%9A%84%E9%97%AE%E9%A2%98/image-20220217233726151.png">
+<meta name="twitter:image" content="http://example.com/2022/02/22/%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8/image-20220222173325718.png">
   
   
-  <title>上传博客发现的问题 - Eliseo的小屋</title>
+  <title>反转链表 - Eliseo的小屋</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -184,7 +179,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="上传博客发现的问题">
+            <span class="h2" id="subtitle" title="反转链表">
               
             </span>
 
@@ -199,8 +194,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2022-02-17 23:33" pubdate>
-        February 17, 2022 pm
+      <time datetime="2022-02-22 17:32" pubdate>
+        February 22, 2022 pm
       </time>
     </span>
   
@@ -210,7 +205,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      148 字
+      470 字
     </span>
   
 
@@ -219,7 +214,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      2 分钟
+      4 分钟
     </span>
   
 
@@ -256,26 +251,22 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">上传博客发现的问题</h1>
+            <h1 style="display: none">反转链表</h1>
             
               <p class="note note-info">
                 
-                  本文最后更新于：5 days ago
+                  本文最后更新于：a few seconds ago
                 
               </p>
             
             <div class="markdown-body">
-              <p>上传博客之后在控制台发现成功，但是访问网址却发现什么也没有，于是前往博客所在的public文件夹下发现里面并没有上传博客的详细信息</p>
-<p><img src="/2022/02/17/%E4%B8%8A%E4%BC%A0%E5%8D%9A%E5%AE%A2%E5%8F%91%E7%8E%B0%E7%9A%84%E9%97%AE%E9%A2%98/image-20220217233726151.png" srcset="/img/loading.gif" lazyload alt="控制台输出成功"></p>
-<p><img src="/2022/02/17/%E4%B8%8A%E4%BC%A0%E5%8D%9A%E5%AE%A2%E5%8F%91%E7%8E%B0%E7%9A%84%E9%97%AE%E9%A2%98/image-20220217233915883.png" srcset="/img/loading.gif" lazyload alt="public下什么都没有"></p>
-<p>创建一个新的笔记之后直接上传发现上传成功</p>
-<p><img src="/2022/02/17/%E4%B8%8A%E4%BC%A0%E5%8D%9A%E5%AE%A2%E5%8F%91%E7%8E%B0%E7%9A%84%E9%97%AE%E9%A2%98/XQH$RAL53Z%5BD%7DXAVK$C5SF5.png" srcset="/img/loading.gif" lazyload alt="发现123上传成功"></p>
-<p>于是创建了一个没有标签和分类的同样的笔记进行上传发现上传成功</p>
-<p><img src="/2022/02/17/%E4%B8%8A%E4%BC%A0%E5%8D%9A%E5%AE%A2%E5%8F%91%E7%8E%B0%E7%9A%84%E9%97%AE%E9%A2%98/image-20220217234138730.png" srcset="/img/loading.gif" lazyload alt="没有标签和分类的笔记上传成功"></p>
-<p>自此 发现问题所在：</p>
-<p><img src="/2022/02/17/%E4%B8%8A%E4%BC%A0%E5%8D%9A%E5%AE%A2%E5%8F%91%E7%8E%B0%E7%9A%84%E9%97%AE%E9%A2%98/image-20220217234237986.png" srcset="/img/loading.gif" lazyload alt="标签和分类的：后没有加空格"></p>
-<p>于是添加空格之后发现上传成功，自此问题完美解决。</p>
-<p><img src="/2022/02/17/%E4%B8%8A%E4%BC%A0%E5%8D%9A%E5%AE%A2%E5%8F%91%E7%8E%B0%E7%9A%84%E9%97%AE%E9%A2%98/image-20220217234326636.png" srcset="/img/loading.gif" lazyload alt="上传成功"></p>
+              <p><img src="/2022/02/22/%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8/image-20220222173325718.png" srcset="/img/loading.gif" lazyload alt="题目"></p>
+<p>解法：</p>
+<p><strong>迭代法</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * Definition for singly-linked list.</span><br><span class="hljs-comment"> * public class ListNode &#123;</span><br><span class="hljs-comment"> *     int val;</span><br><span class="hljs-comment"> *     ListNode next;</span><br><span class="hljs-comment"> *     ListNode(int x) &#123; val = x; &#125;</span><br><span class="hljs-comment"> * &#125;</span><br><span class="hljs-comment"> */</span><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> ListNode <span class="hljs-title">reverseList</span><span class="hljs-params">(ListNode head)</span> </span>&#123;<br>        ListNode cur = head, pre = <span class="hljs-keyword">null</span>;<br>        <span class="hljs-keyword">while</span>(cur != <span class="hljs-keyword">null</span>) &#123;<br>            ListNode tmp = cur.next; <span class="hljs-comment">// 暂存后继节点 cur.next</span><br>            cur.next = pre;          <span class="hljs-comment">// 修改 next 引用指向</span><br>            pre = cur;               <span class="hljs-comment">// pre 暂存 cur</span><br>            cur = tmp;               <span class="hljs-comment">// cur 访问下一节点</span><br>        &#125;<br>        <span class="hljs-keyword">return</span> pre;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>视频解析：</p>
+<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1KZ4y157Up/?spm_id_from=333.788">https://www.bilibili.com/video/BV1KZ4y157Up/?spm_id_from=333.788</a></p>
 
             </div>
             <hr>
@@ -285,7 +276,7 @@
                   <div class="post-meta mr-3">
                     <i class="iconfont icon-category"></i>
                     
-                      <a class="hover-with-bg" href="/categories/error/">error</a>
+                      <a class="hover-with-bg" href="/categories/%E7%AE%97%E6%B3%95/">算法</a>
                     
                   </div>
                 
@@ -293,7 +284,7 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/error/">error</a>
+                      <a class="hover-with-bg" href="/tags/%E7%AE%97%E6%B3%95/">算法</a>
                     
                   </div>
                 
@@ -310,18 +301,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/02/18/%E5%8C%85%E5%90%ABmain%E5%87%BD%E6%95%B0%E7%9A%84%E6%A0%88/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">包含main函数的栈</span>
-                        <span class="visible-mobile">Previous</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/02/17/%E4%B8%A4%E4%B8%AA%E6%A0%88%E5%AE%9E%E7%8E%B0%E9%98%9F%E5%88%97/">
-                        <span class="hidden-mobile">两个栈实现队列</span>
+                      <a href="/2022/02/18/%E4%BB%8E%E5%B0%BE%E5%88%B0%E5%A4%B4%E6%89%93%E5%8D%B0%E9%93%BE%E8%A1%A8/">
+                        <span class="hidden-mobile">从尾到头打印链表</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
