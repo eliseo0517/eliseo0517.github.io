@@ -16,24 +16,25 @@
   <meta name="author" content="Mr.Wang">
   <meta name="keywords" content="">
   
-    <meta name="description" content="解题思路一： 看见从尾到头反过来返回每个节点的值可以反应到要使用&#x3D;&#x3D;栈&#x3D;&#x3D;进行解题 题解一： 12345678910111213141516171819202122class Solution &amp;#123;    public int[] reversePrint(ListNode head) &amp;#123;        &#x2F;&#x2F; 构建一个栈，用来存储链表中每个结点的值        Stack&amp;l">
+    <meta name="description" content="设计模式七大原则单一职责原则：一个类、接口或方法只负责一个职责，降低代码复杂度以及变更引起的风险。 接口隔离原则：将不同功能定义在不同接口中实现接口隔离。 依赖倒置原则：针对接口编程，依赖于抽象类或接口而不依赖于具体实现类。 里氏替换原则：任何基类可以出现的地方，子类一定可以出现。 开放封闭原则：对扩展开放，对修改关闭。在程序需要进行拓展的时候，不能去修改原有的代码，实现一个热插拔的效果。 迪米特">
 <meta property="og:type" content="article">
-<meta property="og:title" content="从尾到头打印链表">
-<meta property="og:url" content="http://example.com/2022/02/18/%E4%BB%8E%E5%B0%BE%E5%88%B0%E5%A4%B4%E6%89%93%E5%8D%B0%E9%93%BE%E8%A1%A8/index.html">
+<meta property="og:title" content="设计模式七大原则">
+<meta property="og:url" content="http://example.com/2022/03/10/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B8%83%E5%A4%A7%E5%8E%9F%E5%88%99/index.html">
 <meta property="og:site_name" content="Eliseo的小屋">
-<meta property="og:description" content="解题思路一： 看见从尾到头反过来返回每个节点的值可以反应到要使用&#x3D;&#x3D;栈&#x3D;&#x3D;进行解题 题解一： 12345678910111213141516171819202122class Solution &amp;#123;    public int[] reversePrint(ListNode head) &amp;#123;        &#x2F;&#x2F; 构建一个栈，用来存储链表中每个结点的值        Stack&amp;l">
+<meta property="og:description" content="设计模式七大原则单一职责原则：一个类、接口或方法只负责一个职责，降低代码复杂度以及变更引起的风险。 接口隔离原则：将不同功能定义在不同接口中实现接口隔离。 依赖倒置原则：针对接口编程，依赖于抽象类或接口而不依赖于具体实现类。 里氏替换原则：任何基类可以出现的地方，子类一定可以出现。 开放封闭原则：对扩展开放，对修改关闭。在程序需要进行拓展的时候，不能去修改原有的代码，实现一个热插拔的效果。 迪米特">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://example.com/2022/02/18/%E4%BB%8E%E5%B0%BE%E5%88%B0%E5%A4%B4%E6%89%93%E5%8D%B0%E9%93%BE%E8%A1%A8/image-20220218173604940.png">
-<meta property="og:image" content="http://example.com/2022/02/18/%E4%BB%8E%E5%B0%BE%E5%88%B0%E5%A4%B4%E6%89%93%E5%8D%B0%E9%93%BE%E8%A1%A8/image-20220218175224990.png">
-<meta property="article:published_time" content="2022-02-18T09:34:35.000Z">
-<meta property="article:modified_time" content="2022-02-18T10:25:46.057Z">
+<meta property="og:image" content="http://example.com/2022/03/10/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B8%83%E5%A4%A7%E5%8E%9F%E5%88%99/image-20220228171705912.png">
+<meta property="og:image" content="http://example.com/2022/03/10/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B8%83%E5%A4%A7%E5%8E%9F%E5%88%99/image-20220301170816017.png">
+<meta property="og:image" content="http://example.com/2022/03/10/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B8%83%E5%A4%A7%E5%8E%9F%E5%88%99/image-20220310200341954.png">
+<meta property="article:published_time" content="2022-03-10T12:01:47.000Z">
+<meta property="article:modified_time" content="2022-03-10T12:04:54.498Z">
 <meta property="article:author" content="Mr.Wang">
-<meta property="article:tag" content="算法">
+<meta property="article:tag" content="设计模式">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://example.com/2022/02/18/%E4%BB%8E%E5%B0%BE%E5%88%B0%E5%A4%B4%E6%89%93%E5%8D%B0%E9%93%BE%E8%A1%A8/image-20220218173604940.png">
+<meta name="twitter:image" content="http://example.com/2022/03/10/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B8%83%E5%A4%A7%E5%8E%9F%E5%88%99/image-20220228171705912.png">
   
   
-  <title>从尾到头打印链表 - Eliseo的小屋</title>
+  <title>设计模式七大原则 - Eliseo的小屋</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -180,7 +181,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="从尾到头打印链表">
+            <span class="h2" id="subtitle" title="设计模式七大原则">
               
             </span>
 
@@ -195,8 +196,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2022-02-18 17:34" pubdate>
-        February 18, 2022 pm
+      <time datetime="2022-03-10 20:01" pubdate>
+        March 10, 2022 pm
       </time>
     </span>
   
@@ -206,7 +207,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      970 字
+      2.1k 字
     </span>
   
 
@@ -215,7 +216,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      9 分钟
+      18 分钟
     </span>
   
 
@@ -252,30 +253,98 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">从尾到头打印链表</h1>
+            <h1 style="display: none">设计模式七大原则</h1>
             
               <p class="note note-info">
                 
-                  本文最后更新于：20 days ago
+                  本文最后更新于：a minute ago
                 
               </p>
             
             <div class="markdown-body">
-              <p><img src="/2022/02/18/%E4%BB%8E%E5%B0%BE%E5%88%B0%E5%A4%B4%E6%89%93%E5%8D%B0%E9%93%BE%E8%A1%A8/image-20220218173604940.png" srcset="/img/loading.gif" lazyload alt="题目"></p>
-<p><strong>解题思路一：</strong></p>
-<p>看见<code>从尾到头反过来返回每个节点的值</code>可以反应到要使用==栈==进行解题</p>
-<p><strong>题解一：</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span>[] reversePrint(ListNode head) &#123;<br>        <span class="hljs-comment">// 构建一个栈，用来存储链表中每个结点的值</span><br>        Stack&lt;ListNode&gt; stack = <span class="hljs-keyword">new</span> Stack&lt;ListNode&gt;();<br>        <span class="hljs-comment">// 让指针指向链表的头节点然后依次往后遍历</span><br>        ListNode temp = head;<br>        <span class="hljs-keyword">while</span> (temp != <span class="hljs-keyword">null</span>) &#123;<br>            <span class="hljs-comment">// 把节点的值放到栈内</span><br>            stack.push(temp);<br>            temp = temp.next;<br>        &#125;<br>        <span class="hljs-comment">// 获取栈的长度</span><br>        <span class="hljs-keyword">int</span> size = stack.size();<br>        <span class="hljs-comment">// 定义一个与栈同样长度的数组</span><br>        <span class="hljs-keyword">int</span>[] print = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[size];<br>        <span class="hljs-comment">// 遍历栈，将栈内的元素依次加入到数组中 最后返回数组即可</span><br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; size; i++) &#123;<br>            print[i] = stack.pop().val;<br>        &#125;<br>        <span class="hljs-keyword">return</span> print;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
-
-
-
-<p><img src="/2022/02/18/%E4%BB%8E%E5%B0%BE%E5%88%B0%E5%A4%B4%E6%89%93%E5%8D%B0%E9%93%BE%E8%A1%A8/image-20220218175224990.png" srcset="/img/loading.gif" lazyload alt="执行结果"></p>
-<p>———————————————————————————手动分割线————————————————————————————</p>
-<p><strong>解题思路二：</strong></p>
-<p>递归法：先走到链表末端，回溯时依次将节点值加入列表 ，这样就可以实现链表值的倒序输出。</p>
-<p><strong>题解二：</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    ArrayList&lt;Integer&gt; tmp = <span class="hljs-keyword">new</span> ArrayList&lt;Integer&gt;();<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span>[] reversePrint(ListNode head) &#123;<br>        recur(head);<br>        <span class="hljs-keyword">int</span>[] res = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[tmp.size()];<br>        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; res.length; i++)<br>            res[i] = tmp.get(i);<br>        <span class="hljs-keyword">return</span> res;<br>    &#125;<br>    <br>    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">recur</span><span class="hljs-params">(ListNode head)</span> </span>&#123;<br>        <span class="hljs-keyword">if</span>(head == <span class="hljs-keyword">null</span>) <span class="hljs-keyword">return</span>;<br>        recur(head.next);<br>        <span class="hljs-comment">// </span><br>        tmp.add(head.val);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
-
+              <h1 id="设计模式七大原则"><a href="#设计模式七大原则" class="headerlink" title="设计模式七大原则"></a>设计模式七大原则</h1><p><strong>单一职责原则：</strong>一个类、接口或方法只负责一个职责，降低代码复杂度以及变更引起的风险。</p>
+<p><strong>接口隔离原则：</strong>将不同功能定义在不同接口中实现接口隔离。</p>
+<p><strong>依赖倒置原则：</strong>针对接口编程，依赖于抽象类或接口而不依赖于具体实现类。</p>
+<p><strong>里氏替换原则：</strong>任何基类可以出现的地方，子类一定可以出现。</p>
+<p><strong>开放封闭原则：</strong>对扩展开放，对修改关闭。在程序需要进行拓展的时候，不能去修改原有的代码，实现一个热插拔的效果。</p>
+<p><strong>迪米特原则：</strong>每个模块对其他模块都要尽可能少地了解和依赖，降低代码耦合度。</p>
+<p><strong>合成复用原则：</strong>尽量使用组合(has-a)/聚合(contains-a)而不是继承(is-a)达到软件复用的目的。</p>
+<h2 id="1、单一职责原则-各行其责"><a href="#1、单一职责原则-各行其责" class="headerlink" title="1、单一职责原则(各行其责)"></a>1、单一职责原则(各行其责)</h2><h3 id="1-1、基本介绍"><a href="#1-1、基本介绍" class="headerlink" title="1.1、基本介绍"></a>1.1、基本介绍</h3><p>​        对类来说的，<strong>即一个类应该只负责一项职责</strong>。如类A负责两个不同职责：职责1，职责2。当职责1需求变更而改变A时，可能造成职责2执行错误，所以需要将类A的粒度分解为A1，A2。</p>
+<h3 id="1-2、单一职责原则注意事项和细节"><a href="#1-2、单一职责原则注意事项和细节" class="headerlink" title="1.2、单一职责原则注意事项和细节"></a>1.2、单一职责原则注意事项和细节</h3><p>1、降低类的复杂度，一个类只负责一项职责。</p>
+<p>2、提高类的可读性，可维护性</p>
+<p>3、降低变更引起的风险</p>
+<p>4、通常情况下，我们应当遵守单一职责原则，只有逻辑足够简单，才可以在代码级违反单一职责原则;只有类中方法数量足够少，可以在方法级别保持单一职责原则</p>
+<h2 id="2、接口隔离原则"><a href="#2、接口隔离原则" class="headerlink" title="2、接口隔离原则"></a>2、接口隔离原则</h2><h3 id="2-1、基本介绍"><a href="#2-1、基本介绍" class="headerlink" title="2.1、基本介绍"></a>2.1、基本介绍</h3><p>​        1.客户端不应该依赖它不需要的接口，即一个类对另一个类的依赖应该建立在最小的接口上</p>
+<p>​        2.<img src="/2022/03/10/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B8%83%E5%A4%A7%E5%8E%9F%E5%88%99/image-20220228171705912.png" srcset="/img/loading.gif" lazyload alt="image-20220228171705912"></p>
+<p>​        3.类A通过接口Interface1依赖类B，类C通过接口Interface1依赖类D，如果接口Interface1对于类A和类C来说不是最小接口，那么类B和类D必须去实现他们不需要的方法。</p>
+<p>​        4.按隔离原则应当这样处理：</p>
+<p>将<strong>接口Interface1</strong>拆分为<strong>独立的几个接口</strong>，类A和类C分别与他们需要的接口建立依赖关系。也就是采用接口隔离原则</p>
+<p><strong>所以改进之后的图形为</strong></p>
+<p><img src="/2022/03/10/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B8%83%E5%A4%A7%E5%8E%9F%E5%88%99/image-20220301170816017.png" srcset="/img/loading.gif" lazyload alt="image-20220301170816017"></p>
+<h2 id="3、依赖倒转-倒置-原则"><a href="#3、依赖倒转-倒置-原则" class="headerlink" title="3、依赖倒转(倒置)原则"></a>3、依赖倒转(倒置)原则</h2><h3 id="3-1、基本介绍"><a href="#3-1、基本介绍" class="headerlink" title="3.1、基本介绍"></a>3.1、基本介绍</h3><p>依赖倒转原则(<strong>Dependence Inversion Principle</strong>)是指：</p>
+<ol>
+<li>高层模块不应该依赖低层模块，二者都应该依赖其抽象</li>
+<li>抽象不应该依赖细节，细节应该依赖抽象</li>
+<li>依赖倒转(倒置)的中心思想是面向接口编程</li>
+<li>依赖倒转原则是基于这样的设计理念：相对于细节的多变性，抽象的东西要稳定的多。以抽象为基础搭建的架构比以细节为基础的架构要稳定的多。在java中，抽象指的是接口或抽象类，细节就是具体的实现类</li>
+<li>使用接口或抽象类的目的是制定好规范，而不涉及任何具体的操作，把展现细节的任务交给他们的实现类去完成</li>
+</ol>
+<p><strong>其实就是多多使用接口</strong></p>
+<h3 id="3-2、依赖关系传递的三种方式"><a href="#3-2、依赖关系传递的三种方式" class="headerlink" title="3.2、依赖关系传递的三种方式"></a>3.2、依赖关系传递的三种方式</h3><ol>
+<li><p>接口传递</p>
+</li>
+<li><p>构造方法传递</p>
+</li>
+<li><p>setter方式传递</p>
+</li>
+</ol>
+<h3 id="3-3、依赖倒转原则的注意事项和细节"><a href="#3-3、依赖倒转原则的注意事项和细节" class="headerlink" title="3.3、依赖倒转原则的注意事项和细节"></a>3.3、依赖倒转原则的注意事项和细节</h3><ol>
+<li><p>低层模块尽量都要有抽象类或接口，或者两者都有，程序稳定性更好. </p>
+</li>
+<li><p>变量的声明类型尽量是抽象类或接口, 这样我们的变量引用和实际对象间，就存在一个缓冲层，利于程序扩展和优化</p>
+</li>
+<li><p>继承时遵循里氏替换原则</p>
+</li>
+</ol>
+<h2 id="4、里氏替换原则"><a href="#4、里氏替换原则" class="headerlink" title="4、里氏替换原则"></a>4、里氏替换原则</h2><h3 id="4-1、基本介绍"><a href="#4-1、基本介绍" class="headerlink" title="4.1、基本介绍"></a>4.1、基本介绍</h3><ol>
+<li><p>里氏替换原则(<strong>Liskov Substitution Principle</strong>)在1988年，由麻省理工学院的以为姓里的女士提出的。</p>
+</li>
+<li><p>如果对每个类型为T1的对象o1，都有类型为T2的对象o2，使得以T1定义的所有程序P在所有的对象o1都代换成o2时，程序P的行为没有发生变化，那么类型T2是类型T1的子类型。换句话说，所有引用基类的地方必须能透明地使用其子类的对象。</p>
+</li>
+<li><p>在使用继承时，遵循里氏替换原则，在子类中<strong>尽量</strong>不要重写父类的方法。</p>
+</li>
+<li><p>里氏替换原则告诉我们，继承实际上让两个类耦合性增强了，<strong>在适当的情况下，可以通过聚合，组合，依赖 来解决问题。</strong></p>
+</li>
+</ol>
+<h2 id="5、开闭原则"><a href="#5、开闭原则" class="headerlink" title="5、开闭原则"></a>5、开闭原则</h2><h3 id="5-1、基本介绍"><a href="#5-1、基本介绍" class="headerlink" title="5.1、基本介绍"></a>5.1、基本介绍</h3><ol>
+<li><p>开闭原则（Open Closed Principle）是编程中最基础、最重要的设计原则</p>
+</li>
+<li><p>一个软件实体如类，模块和函数应该对扩展开放(对提供方)，对修改关闭(对使用方)。用抽象构建框架，用实现扩展细节。</p>
+</li>
+<li><p>当软件需要变化时，尽量<strong>通过扩展</strong>软件实体的行为来实现变化，而<strong>不是通过修改</strong>已有的代码来实现变化。</p>
+</li>
+<li><p>编程中遵循其它原则，以及使用设计模式的目的就是遵循<strong>开闭原则</strong>。</p>
+</li>
+</ol>
+<h2 id="6、迪米特法则"><a href="#6、迪米特法则" class="headerlink" title="6、迪米特法则"></a>6、迪米特法则</h2><h3 id="6-1、基本介绍"><a href="#6-1、基本介绍" class="headerlink" title="6.1、基本介绍"></a>6.1、基本介绍</h3><ol>
+<li><p>一个对象应该对其他对象保持最少的了解</p>
+</li>
+<li><p>类与类关系越密切，耦合度越大</p>
+</li>
+<li><p>迪米特法则(<strong>Demeter Principle</strong>)又叫<strong>最少知道原则</strong>，即一个类对自己依赖的类知道的越少越好。也就是说，对于被依赖的类不管多么复杂，都尽量将逻辑封装在类的内部。对外除了提供的public 方法，不对外泄露任何信息</p>
+</li>
+<li><p>迪米特法则还有个更简单的定义：只与直接的朋友通信</p>
+</li>
+<li><p><strong>直接的朋友</strong>：每个对象都会与其他对象有耦合关系，只要两个对象之间有耦合关系，我们就说这两个对象之间是朋友关系。耦合的方式很多，依赖，关联，组合，聚合等。其中，我们称出现成员变量，方法参数，方法返回值中的类为直接的朋友，而出现在局部变量中的类不是直接的朋友。也就是说，陌生的类最好不要以局部变量的形式出现在类的内部。</p>
+</li>
+</ol>
+<h3 id="6-2、迪米特法则注意事项和细节"><a href="#6-2、迪米特法则注意事项和细节" class="headerlink" title="6.2、迪米特法则注意事项和细节"></a>6.2、<strong>迪米特法则注意事项和细节</strong></h3><ol>
+<li><p>迪米特法则的核心是<strong>降低类之间的耦合</strong></p>
+</li>
+<li><p>但是注意：由于每个类都减少了不必要的依赖，因此迪米特法则只是要求降低类间(对象间)耦合关系， 并不是要求完全没有依赖关系</p>
+</li>
+</ol>
+<h2 id="7、合成复用原则"><a href="#7、合成复用原则" class="headerlink" title="7、合成复用原则"></a>7、合成复用原则</h2><h3 id="7-1、基本介绍"><a href="#7-1、基本介绍" class="headerlink" title="7.1、基本介绍"></a>7.1、基本介绍</h3><p><img src="/2022/03/10/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B8%83%E5%A4%A7%E5%8E%9F%E5%88%99/image-20220310200341954.png" srcset="/img/loading.gif" lazyload alt="image-20220310200341954"></p>
 
             </div>
             <hr>
@@ -285,7 +354,7 @@
                   <div class="post-meta mr-3">
                     <i class="iconfont icon-category"></i>
                     
-                      <a class="hover-with-bg" href="/categories/%E7%AE%97%E6%B3%95/">算法</a>
+                      <a class="hover-with-bg" href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">设计模式</a>
                     
                   </div>
                 
@@ -293,7 +362,7 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/%E7%AE%97%E6%B3%95/">算法</a>
+                      <a class="hover-with-bg" href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">设计模式</a>
                     
                   </div>
                 
@@ -310,18 +379,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/02/22/%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">反转链表</span>
-                        <span class="visible-mobile">Previous</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/02/18/%E5%8C%85%E5%90%ABmain%E5%87%BD%E6%95%B0%E7%9A%84%E6%A0%88/">
-                        <span class="hidden-mobile">包含main函数的栈</span>
+                      <a href="/2022/02/22/%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8/">
+                        <span class="hidden-mobile">反转链表</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
