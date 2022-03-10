@@ -16,24 +16,21 @@
   <meta name="author" content="Mr.Wang">
   <meta name="keywords" content="">
   
-    <meta name="description" content="前期准备1、下载nodejs 2、下载git 查看自己的node与git是否安装成功： node -v npm -v git --version 3、下载hexo  ： npm install hexo-cli -g           查看自己的安装是否成功 hexo -v 搭建仓库1、注册github https:&#x2F;&#x2F;www.bilibili.com&#x2F;read&#x2F;cv5107169 2、项目的名">
+    <meta name="description" content="一、依赖关系（Dependence）只要是在类中用到了对方，那么他们之间就存在依赖关系。如果没有对方，连编绎都通过不了。 小结: 1、类中用到了对方 2、如果是类的成员属性 3、如果是方法的返回类 4、是方法接收的参数类 5、方法中使用到 二、泛化关系(generalization）泛化关系实际上就是继承关系，他是依赖关系的特例 小结: 1、泛化关系实际上就是继承关系 2、如果A类继承了B类，我们">
 <meta property="og:type" content="article">
-<meta property="og:title" content="如何搭建自己的博客">
-<meta property="og:url" content="http://example.com/2022/01/14/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/index.html">
+<meta property="og:title" content="类的六种关系">
+<meta property="og:url" content="http://example.com/2022/03/10/%E7%B1%BB%E7%9A%84%E5%85%AD%E7%A7%8D%E5%85%B3%E7%B3%BB/index.html">
 <meta property="og:site_name" content="Eliseo的小屋">
-<meta property="og:description" content="前期准备1、下载nodejs 2、下载git 查看自己的node与git是否安装成功： node -v npm -v git --version 3、下载hexo  ： npm install hexo-cli -g           查看自己的安装是否成功 hexo -v 搭建仓库1、注册github https:&#x2F;&#x2F;www.bilibili.com&#x2F;read&#x2F;cv5107169 2、项目的名">
+<meta property="og:description" content="一、依赖关系（Dependence）只要是在类中用到了对方，那么他们之间就存在依赖关系。如果没有对方，连编绎都通过不了。 小结: 1、类中用到了对方 2、如果是类的成员属性 3、如果是方法的返回类 4、是方法接收的参数类 5、方法中使用到 二、泛化关系(generalization）泛化关系实际上就是继承关系，他是依赖关系的特例 小结: 1、泛化关系实际上就是继承关系 2、如果A类继承了B类，我们">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://example.com/2022/01/14/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/image-20211201154906091.png">
-<meta property="og:image" content="http://example.com/2022/01/14/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/image-20211201160004913.png">
-<meta property="article:published_time" content="2022-01-14T10:22:57.000Z">
-<meta property="article:modified_time" content="2022-01-14T10:31:26.756Z">
+<meta property="article:published_time" content="2022-03-10T14:18:06.000Z">
+<meta property="article:modified_time" content="2022-03-10T14:18:59.155Z">
 <meta property="article:author" content="Mr.Wang">
-<meta property="article:tag" content="study">
+<meta property="article:tag" content="设计模式">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://example.com/2022/01/14/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/image-20211201154906091.png">
   
   
-  <title>如何搭建自己的博客 - Eliseo的小屋</title>
+  <title>类的六种关系 - Eliseo的小屋</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -180,7 +177,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="如何搭建自己的博客">
+            <span class="h2" id="subtitle" title="类的六种关系">
               
             </span>
 
@@ -195,8 +192,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2022-01-14 18:22" pubdate>
-        January 14, 2022 pm
+      <time datetime="2022-03-10 22:18" pubdate>
+        March 10, 2022 pm
       </time>
     </span>
   
@@ -206,7 +203,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      521 字
+      785 字
     </span>
   
 
@@ -215,7 +212,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      5 分钟
+      7 分钟
     </span>
   
 
@@ -252,36 +249,36 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">如何搭建自己的博客</h1>
+            <h1 style="display: none">类的六种关系</h1>
             
               <p class="note note-info">
                 
-                  本文最后更新于：2 months ago
+                  本文最后更新于：a few seconds ago
                 
               </p>
             
             <div class="markdown-body">
-              <h1 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h1><p>1、下载nodejs</p>
-<p>2、下载git</p>
-<p>查看自己的node与git是否安装成功：</p>
-<p><code>node -v</code></p>
-<p><code>npm -v</code></p>
-<p><code>git --version</code></p>
-<p>3、下载hexo  ： <code>npm install hexo-cli -g </code>          查看自己的安装是否成功 <code>hexo -v</code></p>
-<h1 id="搭建仓库"><a href="#搭建仓库" class="headerlink" title="搭建仓库"></a>搭建仓库</h1><p>1、注册github <a target="_blank" rel="noopener" href="https://www.bilibili.com/read/cv5107169">https://www.bilibili.com/read/cv5107169</a></p>
-<p>2、项目的名字必须是自己的github名字+github.io</p>
-<p>3、生成ssh：<code>ssh-keygen -t rsa -C</code> “邮箱地址”</p>
-<p>测试 ssh是否绑定成功：ssh -T <a href="mailto:&#x67;&#x69;&#x74;&#64;&#x67;&#105;&#116;&#104;&#117;&#98;&#x2e;&#x63;&#111;&#x6d;">&#x67;&#x69;&#x74;&#64;&#x67;&#105;&#116;&#104;&#117;&#98;&#x2e;&#x63;&#111;&#x6d;</a></p>
-<h1 id="本地生成博客内容"><a href="#本地生成博客内容" class="headerlink" title="本地生成博客内容"></a>本地生成博客内容</h1><p><strong><code>hexo init</code> # 初始化hexo博客</strong></p>
-<p><img src="/2022/01/14/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/image-20211201154906091.png" srcset="/img/loading.gif" lazyload alt="image-20211201154906091"></p>
-<p><strong><code>hexo s</code> # 启动服务</strong></p>
-<h1 id="发布博客到网上"><a href="#发布博客到网上" class="headerlink" title="发布博客到网上"></a>发布博客到网上</h1><p>在_config.yml最后面加上</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs yml"><span class="hljs-attr">deploy:</span><br>  <span class="hljs-attr">type:</span> <span class="hljs-string">git</span><br>  <span class="hljs-attr">repository:</span> <span class="hljs-string">自己博客的地址</span><br>  <span class="hljs-attr">branch:</span> <span class="hljs-string">main</span><br></code></pre></td></tr></table></figure>
-
-<p><img src="/2022/01/14/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/image-20211201160004913.png" srcset="/img/loading.gif" lazyload alt="image-20211201160004913"></p>
-<p>安装hexo-deployer-git 自动部署发布工具：<code>npm install hexo-deployer-git --save</code></p>
-<p><strong>生成页面</strong> : <code>hexo g</code></p>
-<p><strong>将文件上传到github：</strong><code>hexo d</code></p>
+              <h1 id="一、依赖关系（Dependence）"><a href="#一、依赖关系（Dependence）" class="headerlink" title="一、依赖关系（Dependence）"></a>一、依赖关系（Dependence）</h1><p>只要是在<strong>类中用到了对方</strong>，那么他们之间就存在依赖关系。如果没有对方，连编绎都通过不了。</p>
+<p><strong>小结:</strong></p>
+<p>1、类中用到了对方</p>
+<p>2、如果是类的成员属性</p>
+<p>3、如果是方法的返回类</p>
+<p>4、是方法接收的参数类</p>
+<p>5、方法中使用到</p>
+<h1 id="二、泛化关系-generalization）"><a href="#二、泛化关系-generalization）" class="headerlink" title="二、泛化关系(generalization）"></a>二、泛化关系(generalization）</h1><p>泛化关系实际上就是继承关系，他是<strong>依赖关系的特例</strong></p>
+<p><strong>小结:</strong></p>
+<p>1、泛化关系实际上就是继承关系</p>
+<p>2、如果A类继承了B类，我们就说A和B存在泛化关系</p>
+<h1 id="三、实现关系（Implementation）"><a href="#三、实现关系（Implementation）" class="headerlink" title="三、实现关系（Implementation）"></a>三、实现关系（Implementation）</h1><p>实现关系实际上就是A类实现B接口，他是<strong>依赖关系的特例</strong></p>
+<h1 id="四、关联关系（Association）"><a href="#四、关联关系（Association）" class="headerlink" title="四、关联关系（Association）"></a>四、关联关系（Association）</h1><p>关联关系实际上就是<strong>类与类之间的联系，他是依赖关系的特例</strong></p>
+<p>关联具有<strong>导航性</strong>：即双向关系或单向关系</p>
+<p>关系具有多重性：如“1”（表示有且仅有一个），“0…”（表示0个或者多个），“0，1”（表示0个或者一个），“n…m”(表示n到 m个都可以),“m…*”（表示至少m个）。</p>
+<h1 id="五、聚合关系（Aggregation）"><a href="#五、聚合关系（Aggregation）" class="headerlink" title="五、聚合关系（Aggregation）"></a>五、聚合关系（Aggregation）</h1><p>聚合关系（Aggregation）表示的是<strong>整体和部分</strong>的关系，整体与部分可以分开。聚合关系是关联关系的特例，所以他具有关联的导航性与多重性。</p>
+<p>如：一台电脑由键盘(keyboard)、显示器(monitor)，鼠标等组成；组成电脑的各个配件是可以从电脑上分离出来的，</p>
+<h1 id="六、组合关系（Composition）"><a href="#六、组合关系（Composition）" class="headerlink" title="六、组合关系（Composition）"></a>六、组合关系（Composition）</h1><p>组合关系：也是整体与部分的关系，但是整体与部分不可以分开</p>
+<p><strong>案例</strong>：在程序中我们定义实体：Person与IDCard、Head, 那么 Head 和Person 就是 组合，IDCard 和 Person 就是聚合。</p>
+<p>但是如果在程序中Person实体中定义了对IDCard进行<strong>级联删除</strong>，即删除Person时连同IDCard一起删除，那么IDCard 和 Person 就是组合了</p>
+<h1 id="七、聚合组合的区别"><a href="#七、聚合组合的区别" class="headerlink" title="七、聚合组合的区别"></a>七、聚合组合的区别</h1><p><strong>聚合</strong>有参构造的时候将类的对象放进去<br><strong>组合</strong>就是无参构造的时候将对象new进去</p>
 
             </div>
             <hr>
@@ -291,7 +288,7 @@
                   <div class="post-meta mr-3">
                     <i class="iconfont icon-category"></i>
                     
-                      <a class="hover-with-bg" href="/categories/study/">study</a>
+                      <a class="hover-with-bg" href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">设计模式</a>
                     
                   </div>
                 
@@ -299,7 +296,7 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/study/">study</a>
+                      <a class="hover-with-bg" href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">设计模式</a>
                     
                   </div>
                 
@@ -316,18 +313,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/02/17/%E4%B8%A4%E4%B8%AA%E6%A0%88%E5%AE%9E%E7%8E%B0%E9%98%9F%E5%88%97/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">两个栈实现队列</span>
-                        <span class="visible-mobile">Previous</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/01/14/springboot%E8%BF%9E%E6%8E%A5canal%E5%87%BA%E7%8E%B0timeout/">
-                        <span class="hidden-mobile">springboot连接canal出现timeout</span>
+                      <a href="/2022/03/10/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B8%83%E5%A4%A7%E5%8E%9F%E5%88%99/">
+                        <span class="hidden-mobile">设计模式七大原则</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
