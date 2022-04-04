@@ -25,7 +25,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/2022/04/04/%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E6%9F%A5%E6%89%BE/image-20220404103329598.png">
 <meta property="article:published_time" content="2022-04-04T02:32:13.000Z">
-<meta property="article:modified_time" content="2022-04-04T03:04:32.858Z">
+<meta property="article:modified_time" content="2022-04-04T03:09:10.738Z">
 <meta property="article:author" content="Mr.Wang">
 <meta property="article:tag" content="算法">
 <meta name="twitter:card" content="summary_large_image">
@@ -205,7 +205,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      787 字
+      868 字
     </span>
   
 
@@ -214,7 +214,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      7 分钟
+      8 分钟
     </span>
   
 
@@ -268,7 +268,7 @@
 <p>3、如果左下角的数字matrix[ n] [ m ]&lt;所提供的target，那么target一定在matrix[ n] [ m ]右方，</p>
 <p>然后与matrix[ n] [ m+1 ]比较，如果matrix[ n] [ m+1 ]&gt;所提供的target，那么就往上方也就是matrix[ n-1] [ m+1 ]走</p>
 <p><strong>解题代码：</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">findNumberIn2DArray</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[][] matrix, <span class="hljs-keyword">int</span> target)</span> </span>&#123;<br>        <span class="hljs-keyword">if</span>(matrix == <span class="hljs-keyword">null</span>)&#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;<br>        &#125;<br>        <span class="hljs-keyword">int</span> n = matrix.length-<span class="hljs-number">1</span>; <span class="hljs-comment">// 数组的长度</span><br>        <span class="hljs-keyword">int</span> m = matrix[<span class="hljs-number">0</span>].length-<span class="hljs-number">1</span>; <span class="hljs-comment">// 数组的宽度</span><br>        <span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>; <span class="hljs-comment">// target在数组中的纵坐标</span><br>        <span class="hljs-keyword">while</span> (j&lt;m &amp;&amp; n&gt;=<span class="hljs-number">0</span>)&#123;<br>            <span class="hljs-keyword">if</span> (matrix[n][j]&gt;target)&#123;<br>                n--;<br>            &#125;<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (matrix[n][j]&lt;target)&#123;<br>                j++;<br>            &#125;<span class="hljs-keyword">else</span> &#123;<br>                <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">findNumberIn2DArray</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[][] matrix, <span class="hljs-keyword">int</span> target)</span> </span>&#123;<br>        <span class="hljs-keyword">if</span>(matrix == <span class="hljs-keyword">null</span>)&#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;<br>        &#125;<br>        <span class="hljs-keyword">int</span> n = matrix.length-<span class="hljs-number">1</span>; <span class="hljs-comment">// 数组的长度</span><br>        <span class="hljs-keyword">if</span>(n &lt; <span class="hljs-number">0</span>) <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;<span class="hljs-comment">// 判断数组有没有值</span><br>        <span class="hljs-keyword">int</span> m = matrix[<span class="hljs-number">0</span>].length-<span class="hljs-number">1</span>; <span class="hljs-comment">// 数组的宽度</span><br>        <span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>; <span class="hljs-comment">// target在数组中的纵坐标</span><br>        <span class="hljs-keyword">while</span> (j &lt;= m &amp;&amp; n&gt;=<span class="hljs-number">0</span>)&#123;<br>            <span class="hljs-keyword">if</span> (matrix[n][j]&gt;target)&#123; <span class="hljs-comment">// 如果左下角的数字大于target那么往上走</span><br>                n--;<br>            &#125;<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (matrix[n][j]&lt;target)&#123;<span class="hljs-comment">// 如果左下角的数字大于target那么往右走</span><br>                j++;<br>            &#125;<span class="hljs-keyword">else</span> &#123;<br>                <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
 <p><strong>时间复杂度：</strong>O(m+n)(m和n就是数组的长度和宽度)</p>
 
