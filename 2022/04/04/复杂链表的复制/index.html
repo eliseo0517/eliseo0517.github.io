@@ -16,23 +16,23 @@
   <meta name="author" content="Mr.Wang">
   <meta name="keywords" content="">
   
-    <meta name="description" content="题解： 1、暴力破解：直接每一行每一列进行遍历然后查找有没有与给定的值相等的数，浪费了数组的局部有限性 2、从左下角进行遍历，如果左下角的数字matrix[ n] [ m ]&gt;所提供的target，那么target一定在matrix[ n] [ m ]上方， 然后与matrix[ n-1] [ m ]比较，如果matrix[ n-1] [ m ]&lt;所提供的target，那么就往右方也">
+    <meta name="description" content="代码实现： 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758package com.wang.day01;&#x2F;** * @Package: com.wang.day01 * @ClassName: test02 * @Author:">
 <meta property="og:type" content="article">
-<meta property="og:title" content="二维数组中的查找">
-<meta property="og:url" content="http://example.com/2022/04/04/%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E6%9F%A5%E6%89%BE/index.html">
+<meta property="og:title" content="复杂链表的复制">
+<meta property="og:url" content="http://example.com/2022/04/04/%E5%A4%8D%E6%9D%82%E9%93%BE%E8%A1%A8%E7%9A%84%E5%A4%8D%E5%88%B6/index.html">
 <meta property="og:site_name" content="Eliseo的小屋">
-<meta property="og:description" content="题解： 1、暴力破解：直接每一行每一列进行遍历然后查找有没有与给定的值相等的数，浪费了数组的局部有限性 2、从左下角进行遍历，如果左下角的数字matrix[ n] [ m ]&gt;所提供的target，那么target一定在matrix[ n] [ m ]上方， 然后与matrix[ n-1] [ m ]比较，如果matrix[ n-1] [ m ]&lt;所提供的target，那么就往右方也">
+<meta property="og:description" content="代码实现： 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758package com.wang.day01;&#x2F;** * @Package: com.wang.day01 * @ClassName: test02 * @Author:">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://example.com/2022/04/04/%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E6%9F%A5%E6%89%BE/image-20220404103329598.png">
-<meta property="article:published_time" content="2022-04-04T02:32:13.000Z">
-<meta property="article:modified_time" content="2022-04-04T03:09:10.738Z">
+<meta property="og:image" content="http://example.com/2022/04/04/%E5%A4%8D%E6%9D%82%E9%93%BE%E8%A1%A8%E7%9A%84%E5%A4%8D%E5%88%B6/image-20220404210016882.png">
+<meta property="article:published_time" content="2022-04-04T12:58:09.000Z">
+<meta property="article:modified_time" content="2022-04-04T13:01:05.189Z">
 <meta property="article:author" content="Mr.Wang">
 <meta property="article:tag" content="算法">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://example.com/2022/04/04/%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E6%9F%A5%E6%89%BE/image-20220404103329598.png">
+<meta name="twitter:image" content="http://example.com/2022/04/04/%E5%A4%8D%E6%9D%82%E9%93%BE%E8%A1%A8%E7%9A%84%E5%A4%8D%E5%88%B6/image-20220404210016882.png">
   
   
-  <title>二维数组中的查找 - Eliseo的小屋</title>
+  <title>复杂链表的复制 - Eliseo的小屋</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -179,7 +179,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="二维数组中的查找">
+            <span class="h2" id="subtitle" title="复杂链表的复制">
               
             </span>
 
@@ -194,8 +194,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2022-04-04 10:32" pubdate>
-        April 4, 2022 am
+      <time datetime="2022-04-04 20:58" pubdate>
+        April 4, 2022 pm
       </time>
     </span>
   
@@ -205,7 +205,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      868 字
+      1.1k 字
     </span>
   
 
@@ -214,7 +214,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      8 分钟
+      9 分钟
     </span>
   
 
@@ -251,26 +251,19 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">二维数组中的查找</h1>
+            <h1 style="display: none">复杂链表的复制</h1>
             
               <p class="note note-info">
                 
-                  本文最后更新于：10 hours ago
+                  本文最后更新于：a few seconds ago
                 
               </p>
             
             <div class="markdown-body">
-              <p><img src="/2022/04/04/%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E6%9F%A5%E6%89%BE/image-20220404103329598.png" srcset="/img/loading.gif" lazyload alt="题目"></p>
-<p><strong>题解：</strong></p>
-<p>1、暴力破解：直接每一行每一列进行遍历然后查找有没有与给定的值相等的数，浪费了数组的<strong>局部有限性</strong></p>
-<p>2、从左下角进行遍历，如果左下角的数字matrix[ n] [ m ]&gt;所提供的target，那么target一定在matrix[ n] [ m ]上方，</p>
-<p>然后与matrix[ n-1] [ m ]比较，如果matrix[ n-1] [ m ]&lt;所提供的target，那么就往右方也就是matrix[ n-1] [ m+1 ]走</p>
-<p>3、如果左下角的数字matrix[ n] [ m ]&lt;所提供的target，那么target一定在matrix[ n] [ m ]右方，</p>
-<p>然后与matrix[ n] [ m+1 ]比较，如果matrix[ n] [ m+1 ]&gt;所提供的target，那么就往上方也就是matrix[ n-1] [ m+1 ]走</p>
-<p><strong>解题代码：</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">findNumberIn2DArray</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[][] matrix, <span class="hljs-keyword">int</span> target)</span> </span>&#123;<br>        <span class="hljs-keyword">if</span>(matrix == <span class="hljs-keyword">null</span>)&#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;<br>        &#125;<br>        <span class="hljs-keyword">int</span> n = matrix.length-<span class="hljs-number">1</span>; <span class="hljs-comment">// 数组的长度</span><br>        <span class="hljs-keyword">if</span>(n &lt; <span class="hljs-number">0</span>) <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;<span class="hljs-comment">// 判断数组有没有值</span><br>        <span class="hljs-keyword">int</span> m = matrix[<span class="hljs-number">0</span>].length-<span class="hljs-number">1</span>; <span class="hljs-comment">// 数组的宽度</span><br>        <span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>; <span class="hljs-comment">// target在数组中的纵坐标</span><br>        <span class="hljs-keyword">while</span> (j &lt;= m &amp;&amp; n&gt;=<span class="hljs-number">0</span>)&#123;<br>            <span class="hljs-keyword">if</span> (matrix[n][j]&gt;target)&#123; <span class="hljs-comment">// 如果左下角的数字大于target那么往上走</span><br>                n--;<br>            &#125;<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (matrix[n][j]&lt;target)&#123;<span class="hljs-comment">// 如果左下角的数字大于target那么往右走</span><br>                j++;<br>            &#125;<span class="hljs-keyword">else</span> &#123;<br>                <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+              <p><img src="/2022/04/04/%E5%A4%8D%E6%9D%82%E9%93%BE%E8%A1%A8%E7%9A%84%E5%A4%8D%E5%88%B6/image-20220404210016882.png" srcset="/img/loading.gif" lazyload alt="题目"></p>
+<p><strong>代码实现：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">package</span> com.wang.day01;<br><br><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@Package</span>: com.wang.day01</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@ClassName</span>: test02</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@Author</span>: Mr.Wang</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@CreateTime</span>: 2022/4/4 11:04</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@Description</span>:</span><br><span class="hljs-comment"> */</span><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">test02</span> </span>&#123;<br><br>    <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Node</span> </span>&#123;<br>        <span class="hljs-keyword">int</span> val;<br>        Node next;<br>        Node random;<br><br>        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Node</span><span class="hljs-params">(<span class="hljs-keyword">int</span> val)</span> </span>&#123;<br>            <span class="hljs-keyword">this</span>.val = val;<br>            <span class="hljs-keyword">this</span>.next = <span class="hljs-keyword">null</span>;<br>            <span class="hljs-keyword">this</span>.random = <span class="hljs-keyword">null</span>;<br>        &#125;<br>    &#125;<br>    <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>        <span class="hljs-function"><span class="hljs-keyword">public</span> Node <span class="hljs-title">copyRandomList</span><span class="hljs-params">(Node head)</span> </span>&#123;<br>            <span class="hljs-keyword">if</span>(head == <span class="hljs-keyword">null</span>) <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;<br>            <span class="hljs-comment">// 从头结点开始,复制并且拼接链表</span><br>            <span class="hljs-comment">// 原链表1-2-3</span><br>            Node cur = head;<br>            <span class="hljs-keyword">while</span>(cur != <span class="hljs-keyword">null</span>)&#123;<br>                Node tmp = <span class="hljs-keyword">new</span> Node(cur.val); <span class="hljs-comment">// 将链表的头节点的值变为一样</span><br>                tmp.next = cur.next; <span class="hljs-comment">// 将链表的头节点的下一个节点的值变成新链表的下一个节点 1-2 = 1-2</span><br>                cur.next = tmp; <span class="hljs-comment">// 原来是1-2现在变成1-1</span><br>                cur = tmp.next; <span class="hljs-comment">// 原来是1-2 现在变成1-1-2-2</span><br>                <span class="hljs-comment">// 运行完之后变成1-1-2-2-3-3</span><br>            &#125;<br>            <br>            <span class="hljs-comment">// 构建新的random的指向</span><br>            cur = head;<br>            <span class="hljs-keyword">while</span>(cur != <span class="hljs-keyword">null</span>)&#123;<br>                <span class="hljs-keyword">if</span>(cur.random != <span class="hljs-keyword">null</span>)&#123;<br>                    cur.next.random = cur.random.next;<br>                &#125;<br>                cur = cur.next.next;<br>            &#125;<br>            <span class="hljs-comment">// 3. 拆分两链表</span><br>            cur = head.next;<br>            Node pre = head, res = head.next;<br>            <span class="hljs-keyword">while</span>(cur.next != <span class="hljs-keyword">null</span>) &#123;<br>                pre.next = pre.next.next;<br>                cur.next = cur.next.next;<br>                pre = pre.next;<br>                cur = cur.next;<br>            &#125;<br>            pre.next = <span class="hljs-keyword">null</span>; <span class="hljs-comment">// 单独处理原链表尾节点</span><br>            <span class="hljs-keyword">return</span> res;      <span class="hljs-comment">// 返回新链表头节点</span><br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
-<p><strong>时间复杂度：</strong>O(m+n)(m和n就是数组的长度和宽度)</p>
 
             </div>
             <hr>
@@ -305,18 +298,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/04/04/%E5%BB%BA%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">建造者模式</span>
-                        <span class="visible-mobile">Previous</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/04/03/%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F/">
-                        <span class="hidden-mobile">原型模式</span>
+                      <a href="/2022/04/04/%E5%BB%BA%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F/">
+                        <span class="hidden-mobile">建造者模式</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
