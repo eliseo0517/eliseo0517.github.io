@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-04-04T13:01:05.189Z</updated>
+  <updated>2022-04-04T13:25:36.542Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>替换空格</title>
+    <link href="http://example.com/2022/04/04/%E6%9B%BF%E6%8D%A2%E7%A9%BA%E6%A0%BC/"/>
+    <id>http://example.com/2022/04/04/%E6%9B%BF%E6%8D%A2%E7%A9%BA%E6%A0%BC/</id>
+    <published>2022-04-04T13:10:30.000Z</published>
+    <updated>2022-04-04T13:25:36.542Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="/2022/04/04/%E6%9B%BF%E6%8D%A2%E7%A9%BA%E6%A0%BC/image-20220404211052791.png" alt="题目"></p><p><strong>代码实现1：（调用代码库）</strong></p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">replaceSpace</span><span class="hljs-params">(String s)</span> </span>&#123;<br>        <span class="hljs-keyword">return</span> s.replace(<span class="hljs-string">&quot; &quot;</span>,<span class="hljs-string">&quot;%20&quot;</span>);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure><p><strong>代码实现2：</strong></p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">replaceSpace</span><span class="hljs-params">(String s)</span> </span>&#123;<br>        <span class="hljs-comment">// 将字符串扩大三倍变为一个字符数组，保证每一个空格都可以被替换</span><br>        <span class="hljs-keyword">char</span>[] array = <span class="hljs-keyword">new</span> <span class="hljs-keyword">char</span>[s.length()*<span class="hljs-number">3</span>];<br>        <span class="hljs-keyword">int</span> size = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i&lt;s.length(); i++)&#123;<br>            <span class="hljs-keyword">if</span>(s.charAt(i) == <span class="hljs-string">&#x27; &#x27;</span>)&#123; <span class="hljs-comment">// 意思是说取出的第i个字符为空格</span><br>                <span class="hljs-comment">// 那么让这个字符的接下来三个字符分别为 % 2 0 </span><br>                array[size++] = <span class="hljs-string">&#x27;%&#x27;</span>;<br>                array[size++] = <span class="hljs-string">&#x27;2&#x27;</span>;<br>                array[size++] = <span class="hljs-string">&#x27;0&#x27;</span>;<br>            &#125;<span class="hljs-keyword">else</span> &#123;<span class="hljs-comment">// 如果不是那么就复制</span><br>                array[size++] = s.charAt(i);<br>            &#125;<br>        &#125;<br>        <span class="hljs-comment">// 取出数组array中第0到第size个字符串</span><br>        String a = <span class="hljs-keyword">new</span> String(array,<span class="hljs-number">0</span>,size);<br>        <span class="hljs-keyword">return</span> a;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;/2022/04/04/%E6%9B%BF%E6%8D%A2%E7%A9%BA%E6%A0%BC/image-20220404211052791.png&quot; alt=&quot;题目&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;代码实现1：（调用代码库）&lt;/strong&gt;&lt;/</summary>
+      
+    
+    
+    
+    <category term="算法" scheme="http://example.com/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+    <category term="算法" scheme="http://example.com/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
   
   <entry>
     <title>复杂链表的复制</title>
