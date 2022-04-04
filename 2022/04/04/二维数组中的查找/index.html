@@ -16,21 +16,23 @@
   <meta name="author" content="Mr.Wang">
   <meta name="keywords" content="">
   
-    <meta name="description" content="一、依赖关系（Dependence）只要是在类中用到了对方，那么他们之间就存在依赖关系。如果没有对方，连编绎都通过不了。 小结: 1、类中用到了对方 2、如果是类的成员属性 3、如果是方法的返回类 4、是方法接收的参数类 5、方法中使用到 二、泛化关系(generalization）泛化关系实际上就是继承关系，他是依赖关系的特例 小结: 1、泛化关系实际上就是继承关系 2、如果A类继承了B类，我们">
+    <meta name="description" content="题解： 1、暴力破解：直接每一行每一列进行遍历然后查找有没有与给定的值相等的数，浪费了数组的局部有限性 2、从左下角进行遍历，如果左下角的数字matrix[ n] [ m ]&gt;所提供的target，那么target一定在matrix[ n] [ m ]上方， 然后与matrix[ n-1] [ m ]比较，如果matrix[ n-1] [ m ]&lt;所提供的target，那么就往右方也">
 <meta property="og:type" content="article">
-<meta property="og:title" content="类的六种关系">
-<meta property="og:url" content="http://example.com/2022/03/10/%E7%B1%BB%E7%9A%84%E5%85%AD%E7%A7%8D%E5%85%B3%E7%B3%BB/index.html">
+<meta property="og:title" content="二维数组中的查找">
+<meta property="og:url" content="http://example.com/2022/04/04/%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E6%9F%A5%E6%89%BE/index.html">
 <meta property="og:site_name" content="Eliseo的小屋">
-<meta property="og:description" content="一、依赖关系（Dependence）只要是在类中用到了对方，那么他们之间就存在依赖关系。如果没有对方，连编绎都通过不了。 小结: 1、类中用到了对方 2、如果是类的成员属性 3、如果是方法的返回类 4、是方法接收的参数类 5、方法中使用到 二、泛化关系(generalization）泛化关系实际上就是继承关系，他是依赖关系的特例 小结: 1、泛化关系实际上就是继承关系 2、如果A类继承了B类，我们">
+<meta property="og:description" content="题解： 1、暴力破解：直接每一行每一列进行遍历然后查找有没有与给定的值相等的数，浪费了数组的局部有限性 2、从左下角进行遍历，如果左下角的数字matrix[ n] [ m ]&gt;所提供的target，那么target一定在matrix[ n] [ m ]上方， 然后与matrix[ n-1] [ m ]比较，如果matrix[ n-1] [ m ]&lt;所提供的target，那么就往右方也">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2022-03-10T14:18:06.000Z">
-<meta property="article:modified_time" content="2022-03-10T14:18:59.155Z">
+<meta property="og:image" content="http://example.com/2022/04/04/%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E6%9F%A5%E6%89%BE/image-20220404103329598.png">
+<meta property="article:published_time" content="2022-04-04T02:32:13.000Z">
+<meta property="article:modified_time" content="2022-04-04T03:04:32.858Z">
 <meta property="article:author" content="Mr.Wang">
-<meta property="article:tag" content="设计模式">
+<meta property="article:tag" content="算法">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://example.com/2022/04/04/%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E6%9F%A5%E6%89%BE/image-20220404103329598.png">
   
   
-  <title>类的六种关系 - Eliseo的小屋</title>
+  <title>二维数组中的查找 - Eliseo的小屋</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -177,7 +179,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="类的六种关系">
+            <span class="h2" id="subtitle" title="二维数组中的查找">
               
             </span>
 
@@ -192,8 +194,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2022-03-10 22:18" pubdate>
-        March 10, 2022 pm
+      <time datetime="2022-04-04 10:32" pubdate>
+        April 4, 2022 am
       </time>
     </span>
   
@@ -203,7 +205,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      785 字
+      787 字
     </span>
   
 
@@ -249,36 +251,26 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">类的六种关系</h1>
+            <h1 style="display: none">二维数组中的查找</h1>
             
               <p class="note note-info">
                 
-                  本文最后更新于：25 days ago
+                  本文最后更新于：a few seconds ago
                 
               </p>
             
             <div class="markdown-body">
-              <h1 id="一、依赖关系（Dependence）"><a href="#一、依赖关系（Dependence）" class="headerlink" title="一、依赖关系（Dependence）"></a>一、依赖关系（Dependence）</h1><p>只要是在<strong>类中用到了对方</strong>，那么他们之间就存在依赖关系。如果没有对方，连编绎都通过不了。</p>
-<p><strong>小结:</strong></p>
-<p>1、类中用到了对方</p>
-<p>2、如果是类的成员属性</p>
-<p>3、如果是方法的返回类</p>
-<p>4、是方法接收的参数类</p>
-<p>5、方法中使用到</p>
-<h1 id="二、泛化关系-generalization）"><a href="#二、泛化关系-generalization）" class="headerlink" title="二、泛化关系(generalization）"></a>二、泛化关系(generalization）</h1><p>泛化关系实际上就是继承关系，他是<strong>依赖关系的特例</strong></p>
-<p><strong>小结:</strong></p>
-<p>1、泛化关系实际上就是继承关系</p>
-<p>2、如果A类继承了B类，我们就说A和B存在泛化关系</p>
-<h1 id="三、实现关系（Implementation）"><a href="#三、实现关系（Implementation）" class="headerlink" title="三、实现关系（Implementation）"></a>三、实现关系（Implementation）</h1><p>实现关系实际上就是A类实现B接口，他是<strong>依赖关系的特例</strong></p>
-<h1 id="四、关联关系（Association）"><a href="#四、关联关系（Association）" class="headerlink" title="四、关联关系（Association）"></a>四、关联关系（Association）</h1><p>关联关系实际上就是<strong>类与类之间的联系，他是依赖关系的特例</strong></p>
-<p>关联具有<strong>导航性</strong>：即双向关系或单向关系</p>
-<p>关系具有多重性：如“1”（表示有且仅有一个），“0…”（表示0个或者多个），“0，1”（表示0个或者一个），“n…m”(表示n到 m个都可以),“m…*”（表示至少m个）。</p>
-<h1 id="五、聚合关系（Aggregation）"><a href="#五、聚合关系（Aggregation）" class="headerlink" title="五、聚合关系（Aggregation）"></a>五、聚合关系（Aggregation）</h1><p>聚合关系（Aggregation）表示的是<strong>整体和部分</strong>的关系，整体与部分可以分开。聚合关系是关联关系的特例，所以他具有关联的导航性与多重性。</p>
-<p>如：一台电脑由键盘(keyboard)、显示器(monitor)，鼠标等组成；组成电脑的各个配件是可以从电脑上分离出来的，</p>
-<h1 id="六、组合关系（Composition）"><a href="#六、组合关系（Composition）" class="headerlink" title="六、组合关系（Composition）"></a>六、组合关系（Composition）</h1><p>组合关系：也是整体与部分的关系，但是整体与部分不可以分开</p>
-<p><strong>案例</strong>：在程序中我们定义实体：Person与IDCard、Head, 那么 Head 和Person 就是 组合，IDCard 和 Person 就是聚合。</p>
-<p>但是如果在程序中Person实体中定义了对IDCard进行<strong>级联删除</strong>，即删除Person时连同IDCard一起删除，那么IDCard 和 Person 就是组合了</p>
-<h1 id="七、聚合组合的区别"><a href="#七、聚合组合的区别" class="headerlink" title="七、聚合组合的区别"></a>七、聚合组合的区别</h1><p><strong>聚合</strong>有参构造的时候将类的对象放进去<br><strong>组合</strong>就是无参构造的时候将对象new进去</p>
+              <p><img src="/2022/04/04/%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E6%9F%A5%E6%89%BE/image-20220404103329598.png" srcset="/img/loading.gif" lazyload alt="题目"></p>
+<p><strong>题解：</strong></p>
+<p>1、暴力破解：直接每一行每一列进行遍历然后查找有没有与给定的值相等的数，浪费了数组的<strong>局部有限性</strong></p>
+<p>2、从左下角进行遍历，如果左下角的数字matrix[ n] [ m ]&gt;所提供的target，那么target一定在matrix[ n] [ m ]上方，</p>
+<p>然后与matrix[ n-1] [ m ]比较，如果matrix[ n-1] [ m ]&lt;所提供的target，那么就往右方也就是matrix[ n-1] [ m+1 ]走</p>
+<p>3、如果左下角的数字matrix[ n] [ m ]&lt;所提供的target，那么target一定在matrix[ n] [ m ]右方，</p>
+<p>然后与matrix[ n] [ m+1 ]比较，如果matrix[ n] [ m+1 ]&gt;所提供的target，那么就往上方也就是matrix[ n-1] [ m+1 ]走</p>
+<p><strong>解题代码：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">findNumberIn2DArray</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[][] matrix, <span class="hljs-keyword">int</span> target)</span> </span>&#123;<br>        <span class="hljs-keyword">if</span>(matrix == <span class="hljs-keyword">null</span>)&#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;<br>        &#125;<br>        <span class="hljs-keyword">int</span> n = matrix.length-<span class="hljs-number">1</span>; <span class="hljs-comment">// 数组的长度</span><br>        <span class="hljs-keyword">int</span> m = matrix[<span class="hljs-number">0</span>].length-<span class="hljs-number">1</span>; <span class="hljs-comment">// 数组的宽度</span><br>        <span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>; <span class="hljs-comment">// target在数组中的纵坐标</span><br>        <span class="hljs-keyword">while</span> (j&lt;m &amp;&amp; n&gt;=<span class="hljs-number">0</span>)&#123;<br>            <span class="hljs-keyword">if</span> (matrix[n][j]&gt;target)&#123;<br>                n--;<br>            &#125;<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (matrix[n][j]&lt;target)&#123;<br>                j++;<br>            &#125;<span class="hljs-keyword">else</span> &#123;<br>                <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p><strong>时间复杂度：</strong>O(m+n)(m和n就是数组的长度和宽度)</p>
 
             </div>
             <hr>
@@ -288,7 +280,7 @@
                   <div class="post-meta mr-3">
                     <i class="iconfont icon-category"></i>
                     
-                      <a class="hover-with-bg" href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">设计模式</a>
+                      <a class="hover-with-bg" href="/categories/%E7%AE%97%E6%B3%95/">算法</a>
                     
                   </div>
                 
@@ -296,7 +288,7 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">设计模式</a>
+                      <a class="hover-with-bg" href="/tags/%E7%AE%97%E6%B3%95/">算法</a>
                     
                   </div>
                 
@@ -313,18 +305,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/03/11/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">单例模式</span>
-                        <span class="visible-mobile">Previous</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/03/10/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B8%83%E5%A4%A7%E5%8E%9F%E5%88%99/">
-                        <span class="hidden-mobile">设计模式七大原则</span>
+                      <a href="/2022/04/03/%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F/">
+                        <span class="hidden-mobile">原型模式</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
