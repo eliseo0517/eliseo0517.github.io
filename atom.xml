@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-04-05T08:43:42.344Z</updated>
+  <updated>2022-04-10T01:53:01.988Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>数组中重复的数字</title>
+    <link href="http://example.com/2022/04/05/%E6%95%B0%E7%BB%84%E4%B8%AD%E9%87%8D%E5%A4%8D%E7%9A%84%E6%95%B0%E5%AD%97/"/>
+    <id>http://example.com/2022/04/05/%E6%95%B0%E7%BB%84%E4%B8%AD%E9%87%8D%E5%A4%8D%E7%9A%84%E6%95%B0%E5%AD%97/</id>
+    <published>2022-04-05T09:02:06.000Z</published>
+    <updated>2022-04-10T01:53:01.988Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="/2022/04/05/%E6%95%B0%E7%BB%84%E4%B8%AD%E9%87%8D%E5%A4%8D%E7%9A%84%E6%95%B0%E5%AD%97/image-20220405170237877.png" alt="题目"></p><p><strong>思路1：</strong>一看题目 脑子中直接想到了先排序 然后将相邻的数进行比较是否重复</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">findRepeatNumber</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] nums)</span> </span>&#123;<br>        Arrays.sort(nums);<br>        <span class="hljs-keyword">int</span> i;<br>        <span class="hljs-keyword">for</span>( i = <span class="hljs-number">0</span>; i&lt;nums.length;i++)&#123;<br>            <span class="hljs-keyword">if</span>(nums[i] == nums[i+<span class="hljs-number">1</span>])&#123;<br>                <span class="hljs-keyword">break</span>;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> nums[i];<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure><p><strong>思路2：</strong></p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">findRepeatNumber</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] nums)</span> </span>&#123;<br>        <span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>;<br>        <span class="hljs-comment">//遍历数组</span><br>        <span class="hljs-keyword">while</span>(i &lt; nums.length) &#123;<br>            <span class="hljs-comment">//如果索引与值相等</span><br>            <span class="hljs-keyword">if</span>(nums[i] == i) &#123;<br>            <span class="hljs-comment">//进行下一个</span><br>            i++;<br>            <span class="hljs-keyword">continue</span>;<br>            &#125;<br>            <span class="hljs-comment">//索引与值不相等，看这个值原本应该在的位置对应的值与这个值是否相等</span><br>            <span class="hljs-keyword">if</span>(nums[nums[i]] == nums[i]) &#123;<br>                <span class="hljs-comment">//如果相等，就直接返回</span><br>                <span class="hljs-keyword">return</span> nums[i];<br>            &#125;<br>            <span class="hljs-comment">//如果这个值作为索引对应的值与这个值不相等，就交换这两个数，使得这个值跟索引一致</span><br>            <span class="hljs-keyword">int</span> tmp = nums[i];<br>            nums[i] = nums[tmp];<br>            nums[tmp] = tmp;<br>        &#125;<br>        <span class="hljs-comment">//没有找到</span><br>        <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;/2022/04/05/%E6%95%B0%E7%BB%84%E4%B8%AD%E9%87%8D%E5%A4%8D%E7%9A%84%E6%95%B0%E5%AD%97/image-20220405170237877.png&quot; alt=&quot;题目&quot;&gt;&lt;/p&gt;</summary>
+      
+    
+    
+    
+    <category term="算法" scheme="http://example.com/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+    <category term="算法" scheme="http://example.com/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
   
   <entry>
     <title>左旋转字符串</title>
