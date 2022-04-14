@@ -18,18 +18,21 @@
   
     <meta name="description" content="工厂模式概述工厂模式的主要解决的问题是，将原来分布在各个地方的对象创建过程单独抽离出来，交给工厂类负责创建。其他地方想要使用对象直接找工厂（即调用工厂的方法）获取对象。 工厂模式的三种类型工厂模式主要有三种类型1、简单工厂2、工厂方法3、抽象工厂 1、简单工厂拿泡茶为例，茶叶有好多种类，比如龙井、碧螺春、毛尖等。首先一个ITea接口： 12345public interface ITea &amp;#12">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Eliseo的小屋">
-<meta property="og:url" content="http://example.com/2022/03/27/%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/index.html">
+<meta property="og:title" content="工厂模式">
+<meta property="og:url" content="http://example.com/2022/04/14/%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/index.html">
 <meta property="og:site_name" content="Eliseo的小屋">
 <meta property="og:description" content="工厂模式概述工厂模式的主要解决的问题是，将原来分布在各个地方的对象创建过程单独抽离出来，交给工厂类负责创建。其他地方想要使用对象直接找工厂（即调用工厂的方法）获取对象。 工厂模式的三种类型工厂模式主要有三种类型1、简单工厂2、工厂方法3、抽象工厂 1、简单工厂拿泡茶为例，茶叶有好多种类，比如龙井、碧螺春、毛尖等。首先一个ITea接口： 12345public interface ITea &amp;#12">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2022-03-27T09:55:06.999Z">
-<meta property="article:modified_time" content="2022-03-29T11:12:05.990Z">
+<meta property="og:image" content="http://example.com/img/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F.jpg">
+<meta property="article:published_time" content="2022-04-14T03:43:59.000Z">
+<meta property="article:modified_time" content="2022-04-14T03:44:26.490Z">
 <meta property="article:author" content="Mr.Wang">
+<meta property="article:tag" content="设计模式">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://example.com/img/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F.jpg">
   
   
-  <title>Eliseo的小屋</title>
+  <title>工厂模式 - Eliseo的小屋</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -197,7 +200,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="">
+            <span class="h2" id="subtitle" title="工厂模式">
               
             </span>
 
@@ -212,8 +215,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2022-03-27 17:55" pubdate>
-        March 27, 2022 pm
+      <time datetime="2022-04-14 11:43" pubdate>
+        April 14, 2022 am
       </time>
     </span>
   
@@ -269,11 +272,11 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none"></h1>
+            <h1 style="display: none">工厂模式</h1>
             
               <p class="note note-info">
                 
-                  本文最后更新于：15 days ago
+                  本文最后更新于：7 minutes ago
                 
               </p>
             
@@ -341,6 +344,20 @@
             <div>
               <div class="post-metas mb-3">
                 
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">设计模式</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/">设计模式</a>
+                    
+                  </div>
                 
               </div>
               
@@ -355,18 +372,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/04/03/%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">原型模式</span>
-                        <span class="visible-mobile">Previous</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/03/11/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/">
-                        <span class="hidden-mobile">单例模式</span>
+                      <a href="/2022/04/14/%E6%97%8B%E8%BD%AC%E6%95%B0%E7%BB%84%E7%9A%84%E6%9C%80%E5%B0%8F%E6%95%B0%E5%AD%97/">
+                        <span class="hidden-mobile">旋转数组的最小数字</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
