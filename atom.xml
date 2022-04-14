@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-04-14T03:44:26.490Z</updated>
+  <updated>2022-04-14T09:36:58.230Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,54 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>从上到下打印二叉树</title>
+    <link href="http://example.com/2022/04/14/%E4%BB%8E%E4%B8%8A%E5%88%B0%E4%B8%8B%E6%89%93%E5%8D%B0%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
+    <id>http://example.com/2022/04/14/%E4%BB%8E%E4%B8%8A%E5%88%B0%E4%B8%8B%E6%89%93%E5%8D%B0%E4%BA%8C%E5%8F%89%E6%A0%91/</id>
+    <published>2022-04-14T09:34:37.000Z</published>
+    <updated>2022-04-14T09:36:58.230Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="/2022/04/14/%E4%BB%8E%E4%B8%8A%E5%88%B0%E4%B8%8B%E6%89%93%E5%8D%B0%E4%BA%8C%E5%8F%89%E6%A0%91/image-20220414173504494.png" alt="题目"></p><p><strong>解题思路：</strong></p><p>利用列表和队列，队列进行操作，列表进行节点的数据的存储</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * Definition for a binary tree node.</span><br><span class="hljs-comment"> * public class TreeNode &#123;</span><br><span class="hljs-comment"> * int val;</span><br><span class="hljs-comment"> * TreeNode left;</span><br><span class="hljs-comment"> * TreeNode right;</span><br><span class="hljs-comment"> * TreeNode(int x) &#123; val = x; &#125;</span><br><span class="hljs-comment"> * &#125;</span><br><span class="hljs-comment"> */</span><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span>[] levelOrder(TreeNode root) &#123;<br>        <span class="hljs-keyword">if</span> (root == <span class="hljs-keyword">null</span>) <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[<span class="hljs-number">0</span>];<br>        <span class="hljs-comment">//初始化队列和列表，队列进行操作，列表存储节点</span><br>        Queue&lt;TreeNode&gt; queue = <span class="hljs-keyword">new</span> LinkedList&lt;&gt;();<br>        queue.add(root);<br>        ArrayList&lt;Integer&gt; ans = <span class="hljs-keyword">new</span> ArrayList&lt;&gt;();<br>        <span class="hljs-comment">//当队列不为空时</span><br>        <span class="hljs-keyword">while</span> (!queue.isEmpty()) &#123;<br>            <span class="hljs-comment">// 弹出一个节点</span><br>            TreeNode node = queue.poll();<br>            <span class="hljs-comment">// 添加到list中</span><br>            ans.add(node.val);<br>            <span class="hljs-comment">// 如果弹出的结点的左节点不为空那么添加到队列中</span><br>            <span class="hljs-keyword">if</span> (node.left != <span class="hljs-keyword">null</span>) &#123;<br>                queue.add(node.left);<br>            &#125;<br>            <span class="hljs-comment">// 如果弹出的结点的右节点不为空那么添加到队列中</span><br>            <span class="hljs-keyword">if</span> (node.right != <span class="hljs-keyword">null</span>) &#123;<br>                queue.add(node.right);<br>            &#125;<br>        &#125;<br>        <span class="hljs-comment">// 将列表加到数组中</span><br>        <span class="hljs-keyword">int</span>[] res = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[ans.size()];<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; ans.size(); i++) &#123;<br>            res[i] = ans.get(i);<br>        &#125;<br>        <span class="hljs-keyword">return</span> res;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;/2022/04/14/%E4%BB%8E%E4%B8%8A%E5%88%B0%E4%B8%8B%E6%89%93%E5%8D%B0%E4%BA%8C%E5%8F%89%E6%A0%91/image-20220414173504494.png&quot; alt=</summary>
+      
+    
+    
+    
+    <category term="算法" scheme="http://example.com/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+    <category term="算法" scheme="http://example.com/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>第一个只出现一次的字符</title>
+    <link href="http://example.com/2022/04/14/%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%8F%AA%E5%87%BA%E7%8E%B0%E4%B8%80%E6%AC%A1%E7%9A%84%E5%AD%97%E7%AC%A6/"/>
+    <id>http://example.com/2022/04/14/%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%8F%AA%E5%87%BA%E7%8E%B0%E4%B8%80%E6%AC%A1%E7%9A%84%E5%AD%97%E7%AC%A6/</id>
+    <published>2022-04-14T07:28:11.000Z</published>
+    <updated>2022-04-14T07:29:38.588Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="/2022/04/14/%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%8F%AA%E5%87%BA%E7%8E%B0%E4%B8%80%E6%AC%A1%E7%9A%84%E5%AD%97%E7%AC%A6/image-20220414152856199.png" alt="题目"></p><p><strong>解题思路：</strong></p><p>遍历字符串，将其放入哈希表，key为这个字母，value为是否重复，如果有重复的进来，就将value置为false，然后遍历一遍字符串(不可以遍历哈希表，因为哈希表是无序的)，找到第一个等于true的即可</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">char</span> <span class="hljs-title">firstUniqChar</span><span class="hljs-params">(String s)</span> </span>&#123;<br>        HashMap&lt;Character, Boolean&gt; dic = <span class="hljs-keyword">new</span> HashMap&lt;&gt;();<br>        <span class="hljs-keyword">char</span>[] sc = s.toCharArray();<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">char</span> c : sc) &#123;<br>            <span class="hljs-comment">//如果遇到重复，就会将重复值的value变为false</span><br>            dic.put(c, !dic.containsKey(c));<br>        &#125;<br>        <span class="hljs-comment">//在字典中查找第一个等于true的</span><br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">char</span> c : sc) &#123;<br>            <span class="hljs-keyword">if</span> (dic.get(c)) &#123;<br>                <span class="hljs-keyword">return</span> c;<br>            &#125;<br>            <span class="hljs-comment">//否则就是没有不重复的数字</span><br>        &#125;<br>        <span class="hljs-keyword">return</span> <span class="hljs-string">&#x27; &#x27;</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;/2022/04/14/%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%8F%AA%E5%87%BA%E7%8E%B0%E4%B8%80%E6%AC%A1%E7%9A%84%E5%AD%97%E7%AC%A6/image-202204141</summary>
+      
+    
+    
+    
+    <category term="算法" scheme="http://example.com/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+    <category term="算法" scheme="http://example.com/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
   
   <entry>
     <title>工厂模式</title>
@@ -456,58 +504,6 @@
     
     
     <category term="error" scheme="http://example.com/tags/error/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>两个栈实现队列</title>
-    <link href="http://example.com/2022/02/17/%E4%B8%A4%E4%B8%AA%E6%A0%88%E5%AE%9E%E7%8E%B0%E9%98%9F%E5%88%97/"/>
-    <id>http://example.com/2022/02/17/%E4%B8%A4%E4%B8%AA%E6%A0%88%E5%AE%9E%E7%8E%B0%E9%98%9F%E5%88%97/</id>
-    <published>2022-02-17T15:26:59.000Z</published>
-    <updated>2022-04-14T03:28:24.726Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="/2022/02/17/%E4%B8%A4%E4%B8%AA%E6%A0%88%E5%AE%9E%E7%8E%B0%E9%98%9F%E5%88%97/image-20220217232828591.png" alt="题目"></p><p>这个题目可能比较难以理解题意，下面先分析一下题目的意思：</p><blockquote><p>题意</p></blockquote><p>输入： [“CQueue”,”appendTail”,”deleteHead”,”deleteHead”] 这里是要执行的方法，从左到右执行</p><p>[[],[3],[],[]]对应上面的方法，是上面方法的参数。CQueue和deleteHead方法不需要指定数字，只有添加才需要指定数字</p><p>1、创建队列，返回值为null</p><p>2、将3压入栈，返回值为null</p><p>3、将栈底的元素删除，也就是消息队列中先进来的元素，所以是deleteHead，返回该元素的数值，所以为3</p><p>4、继续删除栈底的元素，但是没有元素了，所以返回-1</p><p>​    输出：[null,null,3,-1]</p><blockquote><p>题解</p></blockquote><p>为什么不用Stack的方式而使用LinkedList？</p><p><img src="/2022/02/17/%E4%B8%A4%E4%B8%AA%E6%A0%88%E5%AE%9E%E7%8E%B0%E9%98%9F%E5%88%97/image-20220217232841417.png" alt="image-20220217232841417"></p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CQueue</span> </span>&#123;<br><br>        <span class="hljs-comment">//两个栈，一个执行添加,一个执行删除</span><br>        LinkedList&lt;Integer&gt; stack1;<br>        LinkedList&lt;Integer&gt; stack2;<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">CQueue</span><span class="hljs-params">()</span> </span>&#123;<br>        stack1 = <span class="hljs-keyword">new</span> LinkedList&lt;&gt;();<br>        stack2 = <span class="hljs-keyword">new</span> LinkedList&lt;&gt;();<br>    &#125;<br>    <br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">appendTail</span><span class="hljs-params">(<span class="hljs-keyword">int</span> value)</span> </span>&#123;<br>        <span class="hljs-comment">// 栈1只负责添加数据</span><br>        stack1.add(value);<br>    &#125;<br>    <br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">deleteHead</span><span class="hljs-params">()</span> </span>&#123;<br>        <span class="hljs-comment">// 如果栈2是空</span><br>        <span class="hljs-keyword">if</span>(stack2.isEmpty()) &#123;<br>            <span class="hljs-comment">// 由于栈2和栈1是空,由于栈内没数据所以返回值为-1</span><br>            <span class="hljs-keyword">if</span>(stack1.isEmpty()) &#123;<br>                <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>;<br>            &#125;<br>            <span class="hljs-comment">// 如果栈1不是空，那么将栈1的值从顶部弹出放入栈2中,并且返回栈2的顶部的值（也就是将栈1底部的值删除）</span><br>            <span class="hljs-keyword">while</span>(!stack1.isEmpty()) &#123;<br>                stack2.add(stack1.pop());<br>            &#125;<br>            <span class="hljs-keyword">return</span> stack2.pop();<br>        &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">return</span> stack2.pop();<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure><p>实际上就是队列的先进先出，栈的先进后出，两个栈互相交互就可以实现像是队列的先进先出的功能。</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;&lt;img src=&quot;/2022/02/17/%E4%B8%A4%E4%B8%AA%E6%A0%88%E5%AE%9E%E7%8E%B0%E9%98%9F%E5%88%97/image-20220217232828591.png&quot; alt=&quot;题目&quot;&gt;&lt;/p&gt;
-&lt;p&gt;这个题目可</summary>
-      
-    
-    
-    
-    <category term="算法" scheme="http://example.com/categories/%E7%AE%97%E6%B3%95/"/>
-    
-    
-    <category term="算法" scheme="http://example.com/tags/%E7%AE%97%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>如何搭建自己的博客</title>
-    <link href="http://example.com/2022/01/14/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/"/>
-    <id>http://example.com/2022/01/14/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/</id>
-    <published>2022-01-14T10:22:57.000Z</published>
-    <updated>2022-04-14T03:51:06.895Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="前期准备"><a href="#前期准备" class="headerlink" title="前期准备"></a>前期准备</h1><p>1、下载nodejs</p><p>2、下载git</p><p>查看自己的node与git是否安装成功：</p><p><code>node -v</code></p><p><code>npm -v</code></p><p><code>git --version</code></p><p>3、下载hexo  ： <code>npm install hexo-cli -g </code>          查看自己的安装是否成功 <code>hexo -v</code></p><h1 id="搭建仓库"><a href="#搭建仓库" class="headerlink" title="搭建仓库"></a>搭建仓库</h1><p>1、注册github <a href="https://www.bilibili.com/read/cv5107169">https://www.bilibili.com/read/cv5107169</a></p><p>2、项目的名字必须是自己的github名字+github.io</p><p>3、生成ssh：<code>ssh-keygen -t rsa -C</code> “邮箱地址”</p><p>测试 ssh是否绑定成功：ssh -T <a href="mailto:&#103;&#x69;&#116;&#64;&#x67;&#105;&#116;&#104;&#x75;&#98;&#46;&#99;&#111;&#109;">&#103;&#x69;&#116;&#64;&#x67;&#105;&#116;&#104;&#x75;&#98;&#46;&#99;&#111;&#109;</a></p><h1 id="本地生成博客内容"><a href="#本地生成博客内容" class="headerlink" title="本地生成博客内容"></a>本地生成博客内容</h1><p><strong><code>hexo init</code> # 初始化hexo博客</strong></p><p><img src="/2022/01/14/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/image-20211201154906091.png" alt="image-20211201154906091"></p><p><strong><code>hexo s</code> # 启动服务</strong></p><h1 id="发布博客到网上"><a href="#发布博客到网上" class="headerlink" title="发布博客到网上"></a>发布博客到网上</h1><p>在_config.yml最后面加上</p><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs yml"><span class="hljs-attr">deploy:</span><br>  <span class="hljs-attr">type:</span> <span class="hljs-string">git</span><br>  <span class="hljs-attr">repository:</span> <span class="hljs-string">自己博客的地址</span><br>  <span class="hljs-attr">branch:</span> <span class="hljs-string">main</span><br></code></pre></td></tr></table></figure><p><img src="/2022/01/14/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/image-20211201160004913.png" alt="image-20211201160004913"></p><p>安装hexo-deployer-git 自动部署发布工具：<code>npm install hexo-deployer-git --save</code></p><p><strong>生成页面</strong> : <code>hexo g</code></p><p><strong>将文件上传到github：</strong><code>hexo d</code></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;前期准备&quot;&gt;&lt;a href=&quot;#前期准备&quot; class=&quot;headerlink&quot; title=&quot;前期准备&quot;&gt;&lt;/a&gt;前期准备&lt;/h1&gt;&lt;p&gt;1、下载nodejs&lt;/p&gt;
-&lt;p&gt;2、下载git&lt;/p&gt;
-&lt;p&gt;查看自己的node与git是否安装成功：&lt;/p&gt;
-&lt;p&gt;&lt;</summary>
-      
-    
-    
-    
-    <category term="study" scheme="http://example.com/categories/study/"/>
-    
-    
-    <category term="study" scheme="http://example.com/tags/study/"/>
     
   </entry>
   
