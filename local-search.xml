@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>二叉树的镜像</title>
+    <link href="/2022/04/18/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E9%95%9C%E5%83%8F/"/>
+    <url>/2022/04/18/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E9%95%9C%E5%83%8F/</url>
+    
+    <content type="html"><![CDATA[<p><img src="/2022/04/18/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E9%95%9C%E5%83%8F/image-20220418175346511.png" alt="二叉树的镜像"></p><p>代码实现：</p><p>递归</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * Definition for a binary tree node.</span><br><span class="hljs-comment"> * public class TreeNode &#123;</span><br><span class="hljs-comment"> *     int val;</span><br><span class="hljs-comment"> *     TreeNode left;</span><br><span class="hljs-comment"> *     TreeNode right;</span><br><span class="hljs-comment"> *     TreeNode(int x) &#123; val = x; &#125;</span><br><span class="hljs-comment"> * &#125;</span><br><span class="hljs-comment"> */</span><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> TreeNode <span class="hljs-title">mirrorTree</span><span class="hljs-params">(TreeNode root)</span> </span>&#123;<br>        <span class="hljs-comment">// 循环跳出的条件</span><br>        <span class="hljs-keyword">if</span> (root == <span class="hljs-keyword">null</span>)<span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;<br>        <span class="hljs-comment">// 中间值暂存左节点或者右节点的值</span><br>        TreeNode tmp = root.left;<br>        <span class="hljs-comment">// 递归</span><br>        root.left = mirrorTree(root.right);<br>        root.right = mirrorTree(tmp);<br>        <span class="hljs-keyword">return</span>  root;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>算法</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>算法</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>树的子结构</title>
     <link href="/2022/04/18/%E6%A0%91%E7%9A%84%E5%AD%90%E7%BB%93%E6%9E%84/"/>
     <url>/2022/04/18/%E6%A0%91%E7%9A%84%E5%AD%90%E7%BB%93%E6%9E%84/</url>

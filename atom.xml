@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-04-18T09:18:56.690Z</updated>
+  <updated>2022-04-18T09:54:23.178Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>二叉树的镜像</title>
+    <link href="http://example.com/2022/04/18/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E9%95%9C%E5%83%8F/"/>
+    <id>http://example.com/2022/04/18/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E9%95%9C%E5%83%8F/</id>
+    <published>2022-04-18T09:42:15.000Z</published>
+    <updated>2022-04-18T09:54:23.178Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="/2022/04/18/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E9%95%9C%E5%83%8F/image-20220418175346511.png" alt="二叉树的镜像"></p><p>代码实现：</p><p>递归</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * Definition for a binary tree node.</span><br><span class="hljs-comment"> * public class TreeNode &#123;</span><br><span class="hljs-comment"> *     int val;</span><br><span class="hljs-comment"> *     TreeNode left;</span><br><span class="hljs-comment"> *     TreeNode right;</span><br><span class="hljs-comment"> *     TreeNode(int x) &#123; val = x; &#125;</span><br><span class="hljs-comment"> * &#125;</span><br><span class="hljs-comment"> */</span><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> TreeNode <span class="hljs-title">mirrorTree</span><span class="hljs-params">(TreeNode root)</span> </span>&#123;<br>        <span class="hljs-comment">// 循环跳出的条件</span><br>        <span class="hljs-keyword">if</span> (root == <span class="hljs-keyword">null</span>)<span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;<br>        <span class="hljs-comment">// 中间值暂存左节点或者右节点的值</span><br>        TreeNode tmp = root.left;<br>        <span class="hljs-comment">// 递归</span><br>        root.left = mirrorTree(root.right);<br>        root.right = mirrorTree(tmp);<br>        <span class="hljs-keyword">return</span>  root;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;/2022/04/18/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E9%95%9C%E5%83%8F/image-20220418175346511.png&quot; alt=&quot;二叉树的镜像&quot;&gt;&lt;/p&gt;
+&lt;p&gt;代码实现：&lt;/p&gt;
+</summary>
+      
+    
+    
+    
+    <category term="算法" scheme="http://example.com/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+    <category term="算法" scheme="http://example.com/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
   
   <entry>
     <title>树的子结构</title>
@@ -479,32 +505,6 @@
     
     
     <category term="设计模式" scheme="http://example.com/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>反转链表</title>
-    <link href="http://example.com/2022/02/22/%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8/"/>
-    <id>http://example.com/2022/02/22/%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8/</id>
-    <published>2022-02-22T09:32:15.000Z</published>
-    <updated>2022-04-17T03:12:30.915Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="/2022/02/22/%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8/image-20220222173325718.png" alt="题目"></p><p>解法：</p><p><strong>迭代法</strong></p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * Definition for singly-linked list.</span><br><span class="hljs-comment"> * public class ListNode &#123;</span><br><span class="hljs-comment"> *     int val;</span><br><span class="hljs-comment"> *     ListNode next;</span><br><span class="hljs-comment"> *     ListNode(int x) &#123; val = x; &#125;</span><br><span class="hljs-comment"> * &#125;</span><br><span class="hljs-comment"> */</span><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> ListNode <span class="hljs-title">reverseList</span><span class="hljs-params">(ListNode head)</span> </span>&#123;<br>        ListNode cur = head, pre = <span class="hljs-keyword">null</span>;<br>        <span class="hljs-keyword">while</span>(cur != <span class="hljs-keyword">null</span>) &#123;<br>            ListNode tmp = cur.next; <span class="hljs-comment">// 暂存后继节点 cur.next</span><br>            cur.next = pre;          <span class="hljs-comment">// 修改 next 引用指向</span><br>            pre = cur;               <span class="hljs-comment">// pre 暂存 cur</span><br>            cur = tmp;               <span class="hljs-comment">// cur 访问下一节点</span><br>        &#125;<br>        <span class="hljs-keyword">return</span> pre;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure><p>视频解析：</p><p><a href="https://www.bilibili.com/video/BV1KZ4y157Up/?spm_id_from=333.788">https://www.bilibili.com/video/BV1KZ4y157Up/?spm_id_from=333.788</a></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;&lt;img src=&quot;/2022/02/22/%E5%8F%8D%E8%BD%AC%E9%93%BE%E8%A1%A8/image-20220222173325718.png&quot; alt=&quot;题目&quot;&gt;&lt;/p&gt;
-&lt;p&gt;解法：&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;迭代法&lt;/strong&gt;&lt;</summary>
-      
-    
-    
-    
-    <category term="算法" scheme="http://example.com/categories/%E7%AE%97%E6%B3%95/"/>
-    
-    
-    <category term="算法" scheme="http://example.com/tags/%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
