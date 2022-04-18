@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>树的子结构</title>
+    <link href="/2022/04/18/%E6%A0%91%E7%9A%84%E5%AD%90%E7%BB%93%E6%9E%84/"/>
+    <url>/2022/04/18/%E6%A0%91%E7%9A%84%E5%AD%90%E7%BB%93%E6%9E%84/</url>
+    
+    <content type="html"><![CDATA[<p><img src="/2022/04/18/%E6%A0%91%E7%9A%84%E5%AD%90%E7%BB%93%E6%9E%84/image-20220418171021861.png" alt="树的子结构"></p><p>题解：</p><p>递归</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * Definition for a binary tree node.</span><br><span class="hljs-comment"> * public class TreeNode &#123;</span><br><span class="hljs-comment"> *     int val;</span><br><span class="hljs-comment"> *     TreeNode left;</span><br><span class="hljs-comment"> *     TreeNode right;</span><br><span class="hljs-comment"> *     TreeNode(int x) &#123; val = x; &#125;</span><br><span class="hljs-comment"> * &#125;</span><br><span class="hljs-comment"> */</span><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-comment">// 判断头节点是否一样</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">isSubStructure</span><span class="hljs-params">(TreeNode A, TreeNode B)</span> </span>&#123;<br><br>        <span class="hljs-comment">// 1、首先判断A与B两个二叉树不为空(题目说:约定空树不是任意一个树的子结构)</span><br>        <span class="hljs-keyword">if</span> (A == <span class="hljs-keyword">null</span> || B == <span class="hljs-keyword">null</span>) &#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;<br>        &#125;<br><br>        <span class="hljs-comment">// 2、然后判断A的根节点与B的根节点是否相同</span><br>        <span class="hljs-comment">//    2.1、A的根节点与B的根节点相同，那么依次比较他们的子节点</span><br>        <span class="hljs-comment">//    2.2、A的根节点与B的根节点不同，那么A的左子树与B的根节点进行比较</span><br>        <span class="hljs-comment">//    2.3、A的根节点与B的根节点不同，那么A的右子树与B的根节点进行比较</span><br>        <span class="hljs-keyword">return</span> isSub(A, B) || isSubStructure(A.left, B) || isSubStructure(A.right, B);<br>    &#125;<br><br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">isSub</span><span class="hljs-params">(TreeNode A, TreeNode B)</span> </span>&#123;<br>        <span class="hljs-comment">// A 和 B 不匹配的情况有很多，我们需要一开始去找他们完全匹配的情况</span><br>        <span class="hljs-comment">// 即遍历完B，直到为null，说明B的全部节点都和A的子结构匹配上</span><br>        <span class="hljs-keyword">if</span> (B == <span class="hljs-keyword">null</span>) <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;<br>        <span class="hljs-comment">// A的节点为空，但B的节点不为空，说明不匹配</span><br>        <span class="hljs-keyword">if</span> (A == <span class="hljs-keyword">null</span>) <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;<br>        <span class="hljs-comment">// A和B都不为空，但数值不同，说明不匹配</span><br>        <span class="hljs-keyword">if</span> (A.val != B.val) <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;<br>        <span class="hljs-comment">// 此时，当前这个点是匹配的，继续递归判断左子树和右子树是否 [分别匹配]</span><br>        <span class="hljs-keyword">return</span> isSub(A.left, B.left) &amp;&amp; isSub(A.right, B.right);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>算法</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>算法</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>从上到下打印二叉树Ⅲ</title>
     <link href="/2022/04/17/%E4%BB%8E%E4%B8%8A%E5%88%B0%E4%B8%8B%E6%89%93%E5%8D%B0%E4%BA%8C%E5%8F%89%E6%A0%91%E2%85%A2/"/>
     <url>/2022/04/17/%E4%BB%8E%E4%B8%8A%E5%88%B0%E4%B8%8B%E6%89%93%E5%8D%B0%E4%BA%8C%E5%8F%89%E6%A0%91%E2%85%A2/</url>

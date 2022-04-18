@@ -16,23 +16,23 @@
   <meta name="author" content="Mr.Wang">
   <meta name="keywords" content="">
   
-    <meta name="description" content="代码实现一：直接拼接 12345class Solution &amp;#123;    public String reverseLeftWords(String s, int n) &amp;#123;        return s.substring(n, s.length()) + s.substring(0, n);    &amp;#125;&amp;#125;  代码实现二： 思路：先将第n+1个到末尾的的字符">
+    <meta name="description" content="题解： 递归 1234567891011121314151617181920212223242526272829303132333435363738&#x2F;** * Definition for a binary tree node. * public class TreeNode &amp;#123; *     int val; *     TreeNode left; *     TreeNode ri">
 <meta property="og:type" content="article">
-<meta property="og:title" content="左旋转字符串">
-<meta property="og:url" content="http://example.com/2022/04/05/%E5%B7%A6%E6%97%8B%E8%BD%AC%E5%AD%97%E7%AC%A6%E4%B8%B2/index.html">
+<meta property="og:title" content="树的子结构">
+<meta property="og:url" content="http://example.com/2022/04/18/%E6%A0%91%E7%9A%84%E5%AD%90%E7%BB%93%E6%9E%84/index.html">
 <meta property="og:site_name" content="Eliseo的小屋">
-<meta property="og:description" content="代码实现一：直接拼接 12345class Solution &amp;#123;    public String reverseLeftWords(String s, int n) &amp;#123;        return s.substring(n, s.length()) + s.substring(0, n);    &amp;#125;&amp;#125;  代码实现二： 思路：先将第n+1个到末尾的的字符">
+<meta property="og:description" content="题解： 递归 1234567891011121314151617181920212223242526272829303132333435363738&#x2F;** * Definition for a binary tree node. * public class TreeNode &amp;#123; *     int val; *     TreeNode left; *     TreeNode ri">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://example.com/2022/04/05/%E5%B7%A6%E6%97%8B%E8%BD%AC%E5%AD%97%E7%AC%A6%E4%B8%B2/image-20220405160431771.png">
-<meta property="article:published_time" content="2022-04-05T08:00:15.000Z">
-<meta property="article:modified_time" content="2022-04-17T03:12:48.688Z">
+<meta property="og:image" content="http://example.com/2022/04/18/%E6%A0%91%E7%9A%84%E5%AD%90%E7%BB%93%E6%9E%84/image-20220418171021861.png">
+<meta property="article:published_time" content="2022-04-18T09:09:23.000Z">
+<meta property="article:modified_time" content="2022-04-18T09:10:59.400Z">
 <meta property="article:author" content="Mr.Wang">
 <meta property="article:tag" content="算法">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://example.com/2022/04/05/%E5%B7%A6%E6%97%8B%E8%BD%AC%E5%AD%97%E7%AC%A6%E4%B8%B2/image-20220405160431771.png">
+<meta name="twitter:image" content="http://example.com/2022/04/18/%E6%A0%91%E7%9A%84%E5%AD%90%E7%BB%93%E6%9E%84/image-20220418171021861.png">
   
   
-  <title>左旋转字符串 - Eliseo的小屋</title>
+  <title>树的子结构 - Eliseo的小屋</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -201,7 +201,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="左旋转字符串">
+            <span class="h2" id="subtitle" title="树的子结构">
               
             </span>
 
@@ -216,8 +216,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2022-04-05 16:00" pubdate>
-        April 5, 2022 pm
+      <time datetime="2022-04-18 17:09" pubdate>
+        April 18, 2022 pm
       </time>
     </span>
   
@@ -227,7 +227,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      439 字
+      919 字
     </span>
   
 
@@ -236,7 +236,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      4 分钟
+      8 分钟
     </span>
   
 
@@ -273,22 +273,19 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">左旋转字符串</h1>
+            <h1 style="display: none">树的子结构</h1>
             
               <p class="note note-info">
                 
-                  本文最后更新于：a day ago
+                  本文最后更新于：4 minutes ago
                 
               </p>
             
             <div class="markdown-body">
-              <p><img src="/2022/04/05/%E5%B7%A6%E6%97%8B%E8%BD%AC%E5%AD%97%E7%AC%A6%E4%B8%B2/image-20220405160431771.png" srcset="/img/loading.gif" lazyload alt="题目"></p>
-<p><strong>代码实现一：直接拼接</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">reverseLeftWords</span><span class="hljs-params">(String s, <span class="hljs-keyword">int</span> n)</span> </span>&#123;<br>        <span class="hljs-keyword">return</span> s.substring(n, s.length()) + s.substring(<span class="hljs-number">0</span>, n);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
-
-<p><strong>代码实现二：</strong></p>
-<p><strong>思路：</strong>先将第n+1个到末尾的的字符添加到一个空的字符串，然后将第1个到第n个字符串拼接到字符串后实现左旋转字符串</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">reverseLeftWords</span><span class="hljs-params">(String s, <span class="hljs-keyword">int</span> n)</span> </span>&#123;<br>        String res = <span class="hljs-string">&quot;&quot;</span>;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = n; i &lt; s.length(); i++)<br>            res += s.charAt(i); <span class="hljs-comment">// charAt(i)表示取出字符串中第i个字符</span><br>        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++)<br>            res += s.charAt(i);<br>        <span class="hljs-keyword">return</span> res;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+              <p><img src="/2022/04/18/%E6%A0%91%E7%9A%84%E5%AD%90%E7%BB%93%E6%9E%84/image-20220418171021861.png" srcset="/img/loading.gif" lazyload alt="树的子结构"></p>
+<p>题解：</p>
+<p>递归</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * Definition for a binary tree node.</span><br><span class="hljs-comment"> * public class TreeNode &#123;</span><br><span class="hljs-comment"> *     int val;</span><br><span class="hljs-comment"> *     TreeNode left;</span><br><span class="hljs-comment"> *     TreeNode right;</span><br><span class="hljs-comment"> *     TreeNode(int x) &#123; val = x; &#125;</span><br><span class="hljs-comment"> * &#125;</span><br><span class="hljs-comment"> */</span><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-comment">// 判断头节点是否一样</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">isSubStructure</span><span class="hljs-params">(TreeNode A, TreeNode B)</span> </span>&#123;<br><br>        <span class="hljs-comment">// 1、首先判断A与B两个二叉树不为空(题目说:约定空树不是任意一个树的子结构)</span><br>        <span class="hljs-keyword">if</span> (A == <span class="hljs-keyword">null</span> || B == <span class="hljs-keyword">null</span>) &#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;<br>        &#125;<br><br>        <span class="hljs-comment">// 2、然后判断A的根节点与B的根节点是否相同</span><br>        <span class="hljs-comment">//    2.1、A的根节点与B的根节点相同，那么依次比较他们的子节点</span><br>        <span class="hljs-comment">//    2.2、A的根节点与B的根节点不同，那么A的左子树与B的根节点进行比较</span><br>        <span class="hljs-comment">//    2.3、A的根节点与B的根节点不同，那么A的右子树与B的根节点进行比较</span><br>        <span class="hljs-keyword">return</span> isSub(A, B) || isSubStructure(A.left, B) || isSubStructure(A.right, B);<br>    &#125;<br><br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">isSub</span><span class="hljs-params">(TreeNode A, TreeNode B)</span> </span>&#123;<br>        <span class="hljs-comment">// A 和 B 不匹配的情况有很多，我们需要一开始去找他们完全匹配的情况</span><br>        <span class="hljs-comment">// 即遍历完B，直到为null，说明B的全部节点都和A的子结构匹配上</span><br>        <span class="hljs-keyword">if</span> (B == <span class="hljs-keyword">null</span>) <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;<br>        <span class="hljs-comment">// A的节点为空，但B的节点不为空，说明不匹配</span><br>        <span class="hljs-keyword">if</span> (A == <span class="hljs-keyword">null</span>) <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;<br>        <span class="hljs-comment">// A和B都不为空，但数值不同，说明不匹配</span><br>        <span class="hljs-keyword">if</span> (A.val != B.val) <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;<br>        <span class="hljs-comment">// 此时，当前这个点是匹配的，继续递归判断左子树和右子树是否 [分别匹配]</span><br>        <span class="hljs-keyword">return</span> isSub(A.left, B.left) &amp;&amp; isSub(A.right, B.right);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
 
             </div>
@@ -324,18 +321,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/04/05/%E6%95%B0%E7%BB%84%E4%B8%AD%E9%87%8D%E5%A4%8D%E7%9A%84%E6%95%B0%E5%AD%97/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">数组中重复的数字</span>
-                        <span class="visible-mobile">Previous</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/04/04/%E6%9B%BF%E6%8D%A2%E7%A9%BA%E6%A0%BC/">
-                        <span class="hidden-mobile">替换空格</span>
+                      <a href="/2022/04/17/%E4%BB%8E%E4%B8%8A%E5%88%B0%E4%B8%8B%E6%89%93%E5%8D%B0%E4%BA%8C%E5%8F%89%E6%A0%91%E2%85%A2/">
+                        <span class="hidden-mobile">从上到下打印二叉树Ⅲ</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
