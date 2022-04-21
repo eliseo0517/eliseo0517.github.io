@@ -16,23 +16,21 @@
   <meta name="author" content="Mr.Wang">
   <meta name="keywords" content="">
   
-    <meta name="description" content="代码实现1：（调用代码库） 12345class Solution &amp;#123;    public String replaceSpace(String s) &amp;#123;        return s.replace(&quot; &quot;,&quot;%20&quot;);    &amp;#125;&amp;#125;  代码实现2： 1234567891011121314151617181920">
+    <meta name="description" content="原因：数据库突然开不开了，怕麻烦就没有备份数据库，只留下了Data文件，结果新版本mysql不能使用旧版本的data，单纯的替换ibdata1文件也不行。 操作： 1、打开任务管理器，关闭MySQL80.exe 2、需要覆盖的文件：ibdata1，ib_logfile0，ib_logfile1，ib_buffer_pool，auto.cnf，mysql.ibd 3、重新打开MySQL80.exe">
 <meta property="og:type" content="article">
-<meta property="og:title" content="替换空格">
-<meta property="og:url" content="http://example.com/2022/04/04/%E6%9B%BF%E6%8D%A2%E7%A9%BA%E6%A0%BC/index.html">
+<meta property="og:title" content="mysql8通过Data文件恢复数据">
+<meta property="og:url" content="http://example.com/2022/04/21/mysql8%E9%80%9A%E8%BF%87Data%E6%96%87%E4%BB%B6%E6%81%A2%E5%A4%8D%E6%95%B0%E6%8D%AE/index.html">
 <meta property="og:site_name" content="Eliseo的小屋">
-<meta property="og:description" content="代码实现1：（调用代码库） 12345class Solution &amp;#123;    public String replaceSpace(String s) &amp;#123;        return s.replace(&quot; &quot;,&quot;%20&quot;);    &amp;#125;&amp;#125;  代码实现2： 1234567891011121314151617181920">
+<meta property="og:description" content="原因：数据库突然开不开了，怕麻烦就没有备份数据库，只留下了Data文件，结果新版本mysql不能使用旧版本的data，单纯的替换ibdata1文件也不行。 操作： 1、打开任务管理器，关闭MySQL80.exe 2、需要覆盖的文件：ibdata1，ib_logfile0，ib_logfile1，ib_buffer_pool，auto.cnf，mysql.ibd 3、重新打开MySQL80.exe">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://example.com/2022/04/04/%E6%9B%BF%E6%8D%A2%E7%A9%BA%E6%A0%BC/image-20220404211052791.png">
-<meta property="article:published_time" content="2022-04-04T13:10:30.000Z">
-<meta property="article:modified_time" content="2022-04-17T03:13:36.143Z">
+<meta property="article:published_time" content="2022-04-21T15:30:51.000Z">
+<meta property="article:modified_time" content="2022-04-21T15:34:13.276Z">
 <meta property="article:author" content="Mr.Wang">
-<meta property="article:tag" content="算法">
+<meta property="article:tag" content="数据库">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://example.com/2022/04/04/%E6%9B%BF%E6%8D%A2%E7%A9%BA%E6%A0%BC/image-20220404211052791.png">
   
   
-  <title>替换空格 - Eliseo的小屋</title>
+  <title>mysql8通过Data文件恢复数据 - Eliseo的小屋</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -201,7 +199,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="替换空格">
+            <span class="h2" id="subtitle" title="mysql8通过Data文件恢复数据">
               
             </span>
 
@@ -216,8 +214,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2022-04-04 21:10" pubdate>
-        April 4, 2022 pm
+      <time datetime="2022-04-21 23:30" pubdate>
+        April 21, 2022 pm
       </time>
     </span>
   
@@ -227,7 +225,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      642 字
+      195 字
     </span>
   
 
@@ -236,7 +234,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      6 分钟
+      2 分钟
     </span>
   
 
@@ -273,22 +271,20 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">替换空格</h1>
+            <h1 style="display: none">mysql8通过Data文件恢复数据</h1>
             
               <p class="note note-info">
                 
-                  本文最后更新于：5 days ago
+                  本文最后更新于：a few seconds ago
                 
               </p>
             
             <div class="markdown-body">
-              <p><img src="/2022/04/04/%E6%9B%BF%E6%8D%A2%E7%A9%BA%E6%A0%BC/image-20220404211052791.png" srcset="/img/loading.gif" lazyload alt="题目"></p>
-<p><strong>代码实现1：（调用代码库）</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">replaceSpace</span><span class="hljs-params">(String s)</span> </span>&#123;<br>        <span class="hljs-keyword">return</span> s.replace(<span class="hljs-string">&quot; &quot;</span>,<span class="hljs-string">&quot;%20&quot;</span>);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
-
-<p><strong>代码实现2：</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">replaceSpace</span><span class="hljs-params">(String s)</span> </span>&#123;<br>        <span class="hljs-comment">// 将字符串扩大三倍变为一个字符数组，保证每一个空格都可以被替换</span><br>        <span class="hljs-keyword">char</span>[] array = <span class="hljs-keyword">new</span> <span class="hljs-keyword">char</span>[s.length()*<span class="hljs-number">3</span>];<br>        <span class="hljs-keyword">int</span> size = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i&lt;s.length(); i++)&#123;<br>            <span class="hljs-keyword">if</span>(s.charAt(i) == <span class="hljs-string">&#x27; &#x27;</span>)&#123; <span class="hljs-comment">// 意思是说取出的第i个字符为空格</span><br>                <span class="hljs-comment">// 那么让这个字符的接下来三个字符分别为 % 2 0 </span><br>                array[size++] = <span class="hljs-string">&#x27;%&#x27;</span>;<br>                array[size++] = <span class="hljs-string">&#x27;2&#x27;</span>;<br>                array[size++] = <span class="hljs-string">&#x27;0&#x27;</span>;<br>            &#125;<span class="hljs-keyword">else</span> &#123;<span class="hljs-comment">// 如果不是那么就复制</span><br>                array[size++] = s.charAt(i);<br>            &#125;<br>        &#125;<br>        <span class="hljs-comment">// 取出数组array中第0到第size个字符串</span><br>        String a = <span class="hljs-keyword">new</span> String(array,<span class="hljs-number">0</span>,size);<br>        <span class="hljs-keyword">return</span> a;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
-
+              <p>原因：数据库突然开不开了，怕麻烦就没有备份数据库，只留下了Data文件，结果新版本mysql不能使用旧版本的data，单纯的替换ibdata1文件也不行。</p>
+<p><strong>操作：</strong></p>
+<p>1、打开任务管理器，关闭MySQL80.exe</p>
+<p>2、需要覆盖的文件：ibdata1，ib_logfile0，ib_logfile1，ib_buffer_pool，auto.cnf，mysql.ibd</p>
+<p>3、重新打开MySQL80.exe</p>
 
             </div>
             <hr>
@@ -298,7 +294,7 @@
                   <div class="post-meta mr-3">
                     <i class="iconfont icon-category"></i>
                     
-                      <a class="hover-with-bg" href="/categories/%E7%AE%97%E6%B3%95/">算法</a>
+                      <a class="hover-with-bg" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
                     
                   </div>
                 
@@ -306,7 +302,7 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/%E7%AE%97%E6%B3%95/">算法</a>
+                      <a class="hover-with-bg" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
                     
                   </div>
                 
@@ -323,18 +319,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/04/05/%E5%B7%A6%E6%97%8B%E8%BD%AC%E5%AD%97%E7%AC%A6%E4%B8%B2/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">左旋转字符串</span>
-                        <span class="visible-mobile">Previous</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/04/04/%E5%A4%8D%E6%9D%82%E9%93%BE%E8%A1%A8%E7%9A%84%E5%A4%8D%E5%88%B6/">
-                        <span class="hidden-mobile">复杂链表的复制</span>
+                      <a href="/2022/04/21/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">
+                        <span class="hidden-mobile">动态规划</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

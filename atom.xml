@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-04-21T13:57:56.591Z</updated>
+  <updated>2022-04-21T15:34:13.276Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>mysql8通过Data文件恢复数据</title>
+    <link href="http://example.com/2022/04/21/mysql8%E9%80%9A%E8%BF%87Data%E6%96%87%E4%BB%B6%E6%81%A2%E5%A4%8D%E6%95%B0%E6%8D%AE/"/>
+    <id>http://example.com/2022/04/21/mysql8%E9%80%9A%E8%BF%87Data%E6%96%87%E4%BB%B6%E6%81%A2%E5%A4%8D%E6%95%B0%E6%8D%AE/</id>
+    <published>2022-04-21T15:30:51.000Z</published>
+    <updated>2022-04-21T15:34:13.276Z</updated>
+    
+    <content type="html"><![CDATA[<p>原因：数据库突然开不开了，怕麻烦就没有备份数据库，只留下了Data文件，结果新版本mysql不能使用旧版本的data，单纯的替换ibdata1文件也不行。</p><p><strong>操作：</strong></p><p>1、打开任务管理器，关闭MySQL80.exe</p><p>2、需要覆盖的文件：ibdata1，ib_logfile0，ib_logfile1，ib_buffer_pool，auto.cnf，mysql.ibd</p><p>3、重新打开MySQL80.exe</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;原因：数据库突然开不开了，怕麻烦就没有备份数据库，只留下了Data文件，结果新版本mysql不能使用旧版本的data，单纯的替换ibdata1文件也不行。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;操作：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;1、打开任务管理器，关闭MySQL80.exe&lt;</summary>
+      
+    
+    
+    
+    <category term="数据库" scheme="http://example.com/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    
+    <category term="数据库" scheme="http://example.com/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+  </entry>
   
   <entry>
     <title>动态规划</title>
@@ -474,31 +500,6 @@
       
     <summary type="html">&lt;p&gt;&lt;img src=&quot;/2022/04/04/%E6%9B%BF%E6%8D%A2%E7%A9%BA%E6%A0%BC/image-20220404211052791.png&quot; alt=&quot;题目&quot;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;代码实现1：（调用代码库）&lt;/strong&gt;&lt;/</summary>
-      
-    
-    
-    
-    <category term="算法" scheme="http://example.com/categories/%E7%AE%97%E6%B3%95/"/>
-    
-    
-    <category term="算法" scheme="http://example.com/tags/%E7%AE%97%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>复杂链表的复制</title>
-    <link href="http://example.com/2022/04/04/%E5%A4%8D%E6%9D%82%E9%93%BE%E8%A1%A8%E7%9A%84%E5%A4%8D%E5%88%B6/"/>
-    <id>http://example.com/2022/04/04/%E5%A4%8D%E6%9D%82%E9%93%BE%E8%A1%A8%E7%9A%84%E5%A4%8D%E5%88%B6/</id>
-    <published>2022-04-04T12:58:09.000Z</published>
-    <updated>2022-04-17T03:12:37.993Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="/2022/04/04/%E5%A4%8D%E6%9D%82%E9%93%BE%E8%A1%A8%E7%9A%84%E5%A4%8D%E5%88%B6/image-20220404210016882.png" alt="题目"></p><p><strong>代码实现：</strong></p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">package</span> com.wang.day01;<br><br><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@Package</span>: com.wang.day01</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@ClassName</span>: test02</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@Author</span>: Mr.Wang</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@CreateTime</span>: 2022/4/4 11:04</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@Description</span>:</span><br><span class="hljs-comment"> */</span><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">test02</span> </span>&#123;<br><br>    <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Node</span> </span>&#123;<br>        <span class="hljs-keyword">int</span> val;<br>        Node next;<br>        Node random;<br><br>        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Node</span><span class="hljs-params">(<span class="hljs-keyword">int</span> val)</span> </span>&#123;<br>            <span class="hljs-keyword">this</span>.val = val;<br>            <span class="hljs-keyword">this</span>.next = <span class="hljs-keyword">null</span>;<br>            <span class="hljs-keyword">this</span>.random = <span class="hljs-keyword">null</span>;<br>        &#125;<br>    &#125;<br>    <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>        <span class="hljs-function"><span class="hljs-keyword">public</span> Node <span class="hljs-title">copyRandomList</span><span class="hljs-params">(Node head)</span> </span>&#123;<br>            <span class="hljs-keyword">if</span>(head == <span class="hljs-keyword">null</span>) <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;<br>            <span class="hljs-comment">// 从头结点开始,复制并且拼接链表</span><br>            <span class="hljs-comment">// 原链表1-2-3</span><br>            Node cur = head;<br>            <span class="hljs-keyword">while</span>(cur != <span class="hljs-keyword">null</span>)&#123;<br>                Node tmp = <span class="hljs-keyword">new</span> Node(cur.val); <span class="hljs-comment">// 将链表的头节点的值变为一样</span><br>                tmp.next = cur.next; <span class="hljs-comment">// 将链表的头节点的下一个节点的值变成新链表的下一个节点 1-2 = 1-2</span><br>                cur.next = tmp; <span class="hljs-comment">// 原来是1-2现在变成1-1</span><br>                cur = tmp.next; <span class="hljs-comment">// 原来是1-2 现在变成1-1-2-2</span><br>                <span class="hljs-comment">// 运行完之后变成1-1-2-2-3-3</span><br>            &#125;<br>            <br>            <span class="hljs-comment">// 构建新的random的指向</span><br>            cur = head;<br>            <span class="hljs-keyword">while</span>(cur != <span class="hljs-keyword">null</span>)&#123;<br>                <span class="hljs-keyword">if</span>(cur.random != <span class="hljs-keyword">null</span>)&#123;<br>                    cur.next.random = cur.random.next;<br>                &#125;<br>                cur = cur.next.next;<br>            &#125;<br>            <span class="hljs-comment">// 3. 拆分两链表</span><br>            cur = head.next;<br>            Node pre = head, res = head.next;<br>            <span class="hljs-keyword">while</span>(cur.next != <span class="hljs-keyword">null</span>) &#123;<br>                pre.next = pre.next.next;<br>                cur.next = cur.next.next;<br>                pre = pre.next;<br>                cur = cur.next;<br>            &#125;<br>            pre.next = <span class="hljs-keyword">null</span>; <span class="hljs-comment">// 单独处理原链表尾节点</span><br>            <span class="hljs-keyword">return</span> res;      <span class="hljs-comment">// 返回新链表头节点</span><br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;&lt;img src=&quot;/2022/04/04/%E5%A4%8D%E6%9D%82%E9%93%BE%E8%A1%A8%E7%9A%84%E5%A4%8D%E5%88%B6/image-20220404210016882.png&quot; alt=&quot;题目&quot;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;stro</summary>
       
     
     

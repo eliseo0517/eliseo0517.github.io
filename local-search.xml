@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>mysql8通过Data文件恢复数据</title>
+    <link href="/2022/04/21/mysql8%E9%80%9A%E8%BF%87Data%E6%96%87%E4%BB%B6%E6%81%A2%E5%A4%8D%E6%95%B0%E6%8D%AE/"/>
+    <url>/2022/04/21/mysql8%E9%80%9A%E8%BF%87Data%E6%96%87%E4%BB%B6%E6%81%A2%E5%A4%8D%E6%95%B0%E6%8D%AE/</url>
+    
+    <content type="html"><![CDATA[<p>原因：数据库突然开不开了，怕麻烦就没有备份数据库，只留下了Data文件，结果新版本mysql不能使用旧版本的data，单纯的替换ibdata1文件也不行。</p><p><strong>操作：</strong></p><p>1、打开任务管理器，关闭MySQL80.exe</p><p>2、需要覆盖的文件：ibdata1，ib_logfile0，ib_logfile1，ib_buffer_pool，auto.cnf，mysql.ibd</p><p>3、重新打开MySQL80.exe</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>数据库</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>数据库</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>动态规划</title>
     <link href="/2022/04/21/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
     <url>/2022/04/21/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/</url>
