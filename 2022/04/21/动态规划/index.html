@@ -16,19 +16,20 @@
   <meta name="author" content="Mr.Wang">
   <meta name="keywords" content="">
   
-    <meta name="description" content="什么是动态规划？动态规划：如果你发现你有重复调用的过程动态规划再算过一次之后把答案记下来，下一次再遇到重复过程直接调这个行为就叫动态规划（空间换时间） 最简单的例子：斐波那契数列 机器人走路问题             题目：假设有拍成一行的N个位置记为1到N，N一定大于等于2；开始时机器人在其中的M位置上（M一定是1到N中的一个）；如果机器人来到1位置那么下一步只能往右来到2位置；如果机器人来到">
+    <meta name="description" content="什么是动态规划？动态规划：如果你发现你有重复调用的过程动态规划再算过一次之后把答案记下来，下一次再遇到重复过程直接调这个行为就叫动态规划（空间换时间） 暴力递归 –&gt;傻缓存–&gt;动态规划 最简单的例子：斐波那契数列 机器人走路问题             题目：假设有拍成一行的N个位置记为1到N，N一定大于等于2；开始时机器人在其中的M位置上（M一定是1到N中的一个）；如果机器人来到1位">
 <meta property="og:type" content="article">
 <meta property="og:title" content="动态规划">
 <meta property="og:url" content="http://example.com/2022/04/21/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/index.html">
 <meta property="og:site_name" content="Eliseo的小屋">
-<meta property="og:description" content="什么是动态规划？动态规划：如果你发现你有重复调用的过程动态规划再算过一次之后把答案记下来，下一次再遇到重复过程直接调这个行为就叫动态规划（空间换时间） 最简单的例子：斐波那契数列 机器人走路问题             题目：假设有拍成一行的N个位置记为1到N，N一定大于等于2；开始时机器人在其中的M位置上（M一定是1到N中的一个）；如果机器人来到1位置那么下一步只能往右来到2位置；如果机器人来到">
+<meta property="og:description" content="什么是动态规划？动态规划：如果你发现你有重复调用的过程动态规划再算过一次之后把答案记下来，下一次再遇到重复过程直接调这个行为就叫动态规划（空间换时间） 暴力递归 –&gt;傻缓存–&gt;动态规划 最简单的例子：斐波那契数列 机器人走路问题             题目：假设有拍成一行的N个位置记为1到N，N一定大于等于2；开始时机器人在其中的M位置上（M一定是1到N中的一个）；如果机器人来到1位">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/2022/04/21/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/image-20220421215607265.png">
 <meta property="og:image" content="http://example.com/2022/04/21/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/image-20220423205953240.png">
 <meta property="og:image" content="http://example.com/2022/04/21/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/image-20220423210149765.png">
 <meta property="og:image" content="http://example.com/2022/04/21/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/image-20220423210949953.png">
+<meta property="og:image" content="http://example.com/2022/04/21/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/image-20220424172800335.png">
 <meta property="article:published_time" content="2022-04-21T13:30:29.000Z">
-<meta property="article:modified_time" content="2022-04-23T15:13:36.882Z">
+<meta property="article:modified_time" content="2022-04-24T11:58:20.544Z">
 <meta property="article:author" content="Mr.Wang">
 <meta property="article:tag" content="算法">
 <meta name="twitter:card" content="summary_large_image">
@@ -230,7 +231,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      6.8k 字
+      9k 字
     </span>
   
 
@@ -239,7 +240,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      57 分钟
+      75 分钟
     </span>
   
 
@@ -280,12 +281,13 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：an hour ago
+                  本文最后更新于：4 hours ago
                 
               </p>
             
             <div class="markdown-body">
               <h1 id="什么是动态规划？"><a href="#什么是动态规划？" class="headerlink" title="什么是动态规划？"></a>什么是动态规划？</h1><p>动态规划：如果你发现你有重复调用的过程动态规划再算过一次之后把答案记下来，下一次再遇到重复过程直接调这个行为就叫动态规划（空间换时间）</p>
+<p>暴力递归 –&gt;傻缓存–&gt;动态规划</p>
 <p>最简单的例子：斐波那契数列</p>
 <h1 id="机器人走路问题"><a href="#机器人走路问题" class="headerlink" title="机器人走路问题"></a>机器人走路问题</h1><div class="note note-primary">
             <p><strong>题目：</strong></p><p>假设有拍成一行的N个位置记为1到N，N一定大于等于2；</p><p>开始时机器人在其中的M位置上（M一定是1到N中的一个）；</p><p>如果机器人来到1位置那么下一步只能往右来到2位置；</p><p>如果机器人来到N位置那么下一步只能往左来到N-1位置；</p><p>规定机器人一定要走K步，最终能来到P位置（P也是1~N中的一个）的方法有多少种；</p><p>给定四个桉树N，M，K，P，返回方法数</p>
@@ -353,8 +355,31 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-number">32</span><br>Process finished with exit code <span class="hljs-number">0</span><br></code></pre></td></tr></table></figure>
 
 <h1 id="背包问题"><a href="#背包问题" class="headerlink" title="背包问题"></a>背包问题</h1><div class="note note-primary">
-            
+            <p><strong>有n个物品，它们有各自的体积和价值，现有给定容量的背包，如何让背包里装入的物品具有最大的价值总和？</strong></p>
           </div>
+
+<p><strong>解法一：</strong></p>
+<div class="note note-success">
+            <p>对于一个货物只有p1（选择这个货物），p2（不选择这个货物）两个决策，当你不选择了这个货物那么就将index++往下对下一个货物进行决策；如果选择这个货物那么就对选择了货物之后背包的重量进行判断是否&gt;0,&gt;0就选择当前货物，否则不选</p>
+          </div>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Code3_Knapsack</span> </span>&#123;<br><br>    <span class="hljs-comment">// 所有的货，重量和价值都在w和v数组中</span><br>    <span class="hljs-comment">// 为了方便，其中没有复数</span><br>    <span class="hljs-comment">// bag背包容量，不能超过这个数</span><br>    <span class="hljs-comment">// 返回：不超过背包容量的情况下，能够得到的最大价值</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> <span class="hljs-title">maxValue</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] w, <span class="hljs-keyword">int</span>[] v, <span class="hljs-keyword">int</span> bag)</span> </span>&#123;<br>        <span class="hljs-keyword">if</span> (w == <span class="hljs-keyword">null</span> || v == <span class="hljs-keyword">null</span> || w.length != v.length || w.length == <span class="hljs-number">0</span>) &#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>        &#125;<br><br>        <span class="hljs-comment">// 尝试函数！</span><br>        <span class="hljs-keyword">return</span> process(w, v, <span class="hljs-number">0</span>, bag);<br>    &#125;<br><br>    <span class="hljs-comment">// 当前考虑到了index号货物，index....所有的货物都可以自由选择</span><br>    <span class="hljs-comment">// 做的选择不能超过背包容量</span><br>    <span class="hljs-comment">// 返回最大价值</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> <span class="hljs-title">process</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] w, <span class="hljs-keyword">int</span>[] v, <span class="hljs-keyword">int</span> index, <span class="hljs-keyword">int</span> bag)</span> </span>&#123;<br>        <span class="hljs-keyword">if</span> (bag &lt; <span class="hljs-number">0</span>) &#123; <span class="hljs-comment">// 为什么不写bag = 0 ：因为 万一存在货物 重量为0但是存在价值</span><br>            <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>;<br>        &#125;<br>        <span class="hljs-keyword">if</span> (index == w.length) &#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>        &#125;<br>        <span class="hljs-comment">// 有货物，index位置的货</span><br>        <span class="hljs-comment">// bag有空间</span><br>        <span class="hljs-comment">// 不要当前的货物</span><br>        <span class="hljs-keyword">int</span> p1 = process(w, v, index + <span class="hljs-number">1</span>, bag);<br>        <span class="hljs-comment">// 要当前的货物</span><br>        <span class="hljs-keyword">int</span> p2 = <span class="hljs-number">0</span>;<br>        <span class="hljs-comment">// 用来判断</span><br>        <span class="hljs-keyword">int</span> next = process(w, v, index + <span class="hljs-number">1</span>, bag - w[index]);<br>        <span class="hljs-keyword">if</span> (next != -<span class="hljs-number">1</span>) &#123;<br>            p2 = v[index] + next;<br>        &#125;<br>        <span class="hljs-keyword">return</span> Math.max(p1, p2);<br>    &#125;<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>&#123;<br>        <span class="hljs-keyword">int</span>[] weights = &#123;<span class="hljs-number">3</span>, <span class="hljs-number">2</span>, <span class="hljs-number">4</span>, <span class="hljs-number">7</span>&#125;;<br>        <span class="hljs-keyword">int</span>[] values = &#123;<span class="hljs-number">5</span>, <span class="hljs-number">6</span>, <span class="hljs-number">3</span>, <span class="hljs-number">19</span>&#125;;<br>        <span class="hljs-keyword">int</span> bag = <span class="hljs-number">11</span>;<br>        System.out.println(maxValue(weights,values,bag));<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>输出：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-number">25</span><br><br>Process finished with exit code <span class="hljs-number">0</span><br></code></pre></td></tr></table></figure>
+
+
+
+<p><strong>解法二：（对解法一进行优化）</strong></p>
+<p><img src="/2022/04/21/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/image-20220424172800335.png" srcset="/img/loading.gif" lazyload alt="image-20220424172800335"></p>
+<p>通过代码<strong>if (index == w.length) {return 0;}</strong> 可以得出二位数组的最后一行都为0，通过 <strong>int p1 = process(w, v, index + 1, bag); int next = process(w, v, index + 1, bag - w[index]);</strong> 可以得出我们需要知道一个格子的值只要知道下一行的值我们就可以得到这个格子的值；因此我们可以从最后一行开始入手得到倒数第二行…..直到第一行，同一行不存在依赖关系，所以从左往右写 或者从左往右写都可以</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Code3_Knapsack</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> <span class="hljs-title">dp</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] w, <span class="hljs-keyword">int</span>[] v, <span class="hljs-keyword">int</span> bag)</span> </span>&#123;<br>        <span class="hljs-keyword">if</span> (w == <span class="hljs-keyword">null</span> || v == <span class="hljs-keyword">null</span> || w.length != v.length || w.length == <span class="hljs-number">0</span>) &#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>        &#125;<br>        <span class="hljs-keyword">int</span> N = w.length;<br>        <span class="hljs-comment">// index 0</span><br>        <span class="hljs-comment">// rest 0~bag</span><br>        <span class="hljs-keyword">int</span>[][] dp = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[N + <span class="hljs-number">1</span>][bag + <span class="hljs-number">1</span>];<br>        <span class="hljs-comment">// dp[N][...] = 0</span><br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> index = N - <span class="hljs-number">1</span>; index &gt;= <span class="hljs-number">0</span>; index--) &#123;<br>            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> rest = <span class="hljs-number">0</span>; rest &lt;= bag; rest++) &#123;<br>                <span class="hljs-keyword">int</span> p1 = dp[index + <span class="hljs-number">1</span>][rest];<br>                <span class="hljs-keyword">int</span> p2 = <span class="hljs-number">0</span>;<br>                <span class="hljs-keyword">int</span> next = rest - w[index] &lt; <span class="hljs-number">0</span> ? -<span class="hljs-number">1</span> : dp[index + <span class="hljs-number">1</span>][rest - w[index]];<br>                <span class="hljs-keyword">if</span> (next != -<span class="hljs-number">1</span>) &#123;<br>                    p2 = v[index] + next;<br>                &#125;<br>                dp[index][rest] = Math.max(p1, p2);<br>            &#125;<br>        &#125;<br><br>        <span class="hljs-keyword">return</span> dp[<span class="hljs-number">0</span>][bag];<br>    &#125;<br><br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>&#123;<br>        <span class="hljs-keyword">int</span>[] weights = &#123;<span class="hljs-number">3</span>, <span class="hljs-number">2</span>, <span class="hljs-number">4</span>, <span class="hljs-number">7</span>&#125;;<br>        <span class="hljs-keyword">int</span>[] values = &#123;<span class="hljs-number">5</span>, <span class="hljs-number">6</span>, <span class="hljs-number">3</span>, <span class="hljs-number">19</span>&#125;;<br>        <span class="hljs-keyword">int</span> bag = <span class="hljs-number">11</span>;<br>        System.out.println(maxValue(weights,values,bag));<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>输出：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-number">25</span><br><br>Process finished with exit code <span class="hljs-number">0</span><br></code></pre></td></tr></table></figure>
+
+
+
 
             </div>
             <hr>
