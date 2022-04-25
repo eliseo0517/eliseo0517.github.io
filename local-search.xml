@@ -4,6 +4,81 @@
   
   
   <entry>
+    <title>删除链表的节点</title>
+    <link href="/2022/04/25/%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E7%9A%84%E8%8A%82%E7%82%B9/"/>
+    <url>/2022/04/25/%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E7%9A%84%E8%8A%82%E7%82%B9/</url>
+    
+    <content type="html"><![CDATA[<p><img src="/2022/04/25/%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E7%9A%84%E8%8A%82%E7%82%B9/image-20220425213903008.png" alt="删除链表的节点"></p><p><strong>解法一：（双节点）</strong></p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * Definition for singly-linked list.</span><br><span class="hljs-comment"> * public class ListNode &#123;</span><br><span class="hljs-comment"> *     int val;</span><br><span class="hljs-comment"> *     ListNode next;</span><br><span class="hljs-comment"> *     ListNode(int x) &#123; val = x; &#125;</span><br><span class="hljs-comment"> * &#125;</span><br><span class="hljs-comment"> */</span><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> ListNode <span class="hljs-title">deleteNode</span><span class="hljs-params">(ListNode head, <span class="hljs-keyword">int</span> val)</span> </span>&#123;<br>        <span class="hljs-keyword">if</span> (head.val == val) &#123;<br>            <span class="hljs-keyword">return</span> head.next;<br>        &#125;<br>        ListNode pre = head;<br>        ListNode cur = head.next;<br>        <span class="hljs-keyword">while</span> (cur != <span class="hljs-keyword">null</span> &amp;&amp; cur.val != val) &#123;<br>            pre = cur;<br>            cur = cur.next;<br>        &#125;<br>        <span class="hljs-keyword">if</span> (cur != <span class="hljs-keyword">null</span>) &#123;<br>            <span class="hljs-comment">//证明找到了要删除的节点,跳过这个要删除的节点</span><br>            pre.next = cur.next;<br>        &#125;<br>        <span class="hljs-keyword">return</span> head;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure><p><strong>解法二：（递归）</strong></p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * Definition for singly-linked list.</span><br><span class="hljs-comment"> * public class ListNode &#123;</span><br><span class="hljs-comment"> *     int val;</span><br><span class="hljs-comment"> *     ListNode next;</span><br><span class="hljs-comment"> *     ListNode(int x) &#123; val = x; &#125;</span><br><span class="hljs-comment"> * &#125;</span><br><span class="hljs-comment"> */</span><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> ListNode <span class="hljs-title">deleteNode</span><span class="hljs-params">(ListNode head, <span class="hljs-keyword">int</span> val)</span> </span>&#123;<br>        <span class="hljs-keyword">if</span> (head == <span class="hljs-keyword">null</span>) &#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;<br>        &#125;<br>        <span class="hljs-keyword">if</span> (head.val == val) &#123;<br>            <span class="hljs-comment">// 如果发现你的这个节点的值就是所要求的值，那么直接跳过这个节点</span><br>            head = head.next;<br>        &#125; <span class="hljs-keyword">else</span> &#123;<br>            <span class="hljs-comment">// 否则自调</span><br>            head.next = deleteNode(head.next, val);<br>        &#125;<br>        <span class="hljs-keyword">return</span> head;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>剑指Offer</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>剑指Offer</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>最长不含重复字符的子字符串</title>
+    <link href="/2022/04/25/%E6%9C%80%E9%95%BF%E4%B8%8D%E5%90%AB%E9%87%8D%E5%A4%8D%E5%AD%97%E7%AC%A6%E7%9A%84%E5%AD%90%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
+    <url>/2022/04/25/%E6%9C%80%E9%95%BF%E4%B8%8D%E5%90%AB%E9%87%8D%E5%A4%8D%E5%AD%97%E7%AC%A6%E7%9A%84%E5%AD%90%E5%AD%97%E7%AC%A6%E4%B8%B2/</url>
+    
+    <content type="html"><![CDATA[<p><img src="/2022/04/25/%E6%9C%80%E9%95%BF%E4%B8%8D%E5%90%AB%E9%87%8D%E5%A4%8D%E5%AD%97%E7%AC%A6%E7%9A%84%E5%AD%90%E5%AD%97%E7%AC%A6%E4%B8%B2/image-20220425161854980.png" alt="最长不含重复字符的子字符串"></p><p><strong>解法一：</strong>（哈希表+动态规划）</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">lengthOfLongestSubstring</span><span class="hljs-params">(String s)</span> </span>&#123;<br>        Map&lt;Character, Integer&gt; dic = <span class="hljs-keyword">new</span> HashMap&lt;&gt;();<br>        <span class="hljs-comment">// res结果 tmp当前长度</span><br>        <span class="hljs-keyword">int</span> res = <span class="hljs-number">0</span>, tmp = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>; j &lt; s.length(); j++) &#123;<br>            <span class="hljs-comment">//找到j左边最近的与j位置字母相等的字母</span><br>            <span class="hljs-keyword">int</span> i = dic.getOrDefault(s.charAt(j), -<span class="hljs-number">1</span>);<br>            <span class="hljs-comment">//找到的话就将这个字母置于j位置，没找到的话j位置置为-1</span><br>            dic.put(s.charAt(j), j);<br>            <span class="hljs-keyword">if</span> (tmp &lt; j - i) &#123;<br>                <span class="hljs-comment">//如果tmp &lt; j - i，就证明，没有遇到相同的字母，长度+1</span><br>                tmp = tmp + <span class="hljs-number">1</span>;<br>            &#125; <span class="hljs-keyword">else</span> &#123;<br>                <span class="hljs-comment">//否则就是遇到了相等的字母，则左边界就应该由i来决定</span><br>                tmp = j - i;<br>            &#125;<br>            res = Math.max(res, tmp);<br>        &#125;<br>        <span class="hljs-keyword">return</span> res;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure><p>拓展：</p><div class="note note-success">            <p>哈希表的getOrDefault(key, default)方法，是在哈希表中搜索是否存在该方法参数列表中的key值，如果存在该key值，则返回哈希表中该key值对应的vakue值；如果不存在，则返回该方法参数列表中的default值</p>          </div>]]></content>
+    
+    
+    <categories>
+      
+      <category>剑指Offer</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>剑指Offer</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>把数字翻译成字符串</title>
+    <link href="/2022/04/25/%E6%8A%8A%E6%95%B0%E5%AD%97%E7%BF%BB%E8%AF%91%E6%88%90%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
+    <url>/2022/04/25/%E6%8A%8A%E6%95%B0%E5%AD%97%E7%BF%BB%E8%AF%91%E6%88%90%E5%AD%97%E7%AC%A6%E4%B8%B2/</url>
+    
+    <content type="html"><![CDATA[<p><img src="/2022/04/25/%E6%8A%8A%E6%95%B0%E5%AD%97%E7%BF%BB%E8%AF%91%E6%88%90%E5%AD%97%E7%AC%A6%E4%B8%B2/image-20220425153822764.png" alt="把数字翻译成字符串"></p><p><strong>解法：</strong></p><p>看见题就能想到要不两个数字作为一个字符输出，要不一个数字作为一个字符输出。</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>       <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">translateNum</span><span class="hljs-params">(<span class="hljs-keyword">int</span> num)</span> </span>&#123;<br>        <span class="hljs-comment">// 把数字变成string类型</span><br>        String s = String.valueOf(num);<br>        <span class="hljs-comment">// 如果不+1，如果我给的num长度为3，那么转换成string类型长度也为3</span><br>        <span class="hljs-comment">// 到了for循环的时候从2开始就拿不到2个就出现越界问题</span><br>        <span class="hljs-keyword">int</span>[] dp = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[s.length() + <span class="hljs-number">1</span>];<br>        <span class="hljs-comment">// 当num第1,2位的组成的数字∈[10,25]时，显然应有2种翻译方法，</span><br>        <span class="hljs-comment">// 即dp[2]=dp[1]+dp[0]=2，而显然dp[1] = 1因此推出dp[0] = 1</span><br>        dp[<span class="hljs-number">0</span>] = <span class="hljs-number">1</span>;<br>        dp[<span class="hljs-number">1</span>] = <span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">2</span>; i &lt;= s.length(); i++) &#123;<br>            <span class="hljs-comment">// 取出两位</span><br>            <span class="hljs-comment">// substring这个方法截取的字符串从i-2开始，到字符串索引的i - 1结束</span><br>            String tmp = s.substring(i - <span class="hljs-number">2</span>, i);<br>            <span class="hljs-comment">// 如果两位数的ASCII码差值在10~25之间 证明可以转换成为一个字符</span><br>            <span class="hljs-keyword">if</span> (tmp.compareTo(<span class="hljs-string">&quot;10&quot;</span>) &gt;= <span class="hljs-number">0</span> &amp;&amp; tmp.compareTo(<span class="hljs-string">&quot;25&quot;</span>) &lt;= <span class="hljs-number">0</span>) &#123;<br>                dp[i] = dp[i - <span class="hljs-number">1</span>] + dp[i - <span class="hljs-number">2</span>];<br>            &#125; <span class="hljs-keyword">else</span> &#123;<span class="hljs-comment">// 一位计算</span><br>                dp[i] = dp[i - <span class="hljs-number">1</span>];<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> dp[s.length()];<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>剑指Offer</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>剑指Offer</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>礼物的最大价值</title>
     <link href="/2022/04/25/%E7%A4%BC%E7%89%A9%E7%9A%84%E6%9C%80%E5%A4%A7%E4%BB%B7%E5%80%BC/"/>
     <url>/2022/04/25/%E7%A4%BC%E7%89%A9%E7%9A%84%E6%9C%80%E5%A4%A7%E4%BB%B7%E5%80%BC/</url>

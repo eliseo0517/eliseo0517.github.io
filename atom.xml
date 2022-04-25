@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-04-25T02:50:55.069Z</updated>
+  <updated>2022-04-25T13:45:44.287Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,79 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>删除链表的节点</title>
+    <link href="http://example.com/2022/04/25/%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E7%9A%84%E8%8A%82%E7%82%B9/"/>
+    <id>http://example.com/2022/04/25/%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E7%9A%84%E8%8A%82%E7%82%B9/</id>
+    <published>2022-04-25T13:37:58.000Z</published>
+    <updated>2022-04-25T13:45:44.287Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="/2022/04/25/%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E7%9A%84%E8%8A%82%E7%82%B9/image-20220425213903008.png" alt="删除链表的节点"></p><p><strong>解法一：（双节点）</strong></p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * Definition for singly-linked list.</span><br><span class="hljs-comment"> * public class ListNode &#123;</span><br><span class="hljs-comment"> *     int val;</span><br><span class="hljs-comment"> *     ListNode next;</span><br><span class="hljs-comment"> *     ListNode(int x) &#123; val = x; &#125;</span><br><span class="hljs-comment"> * &#125;</span><br><span class="hljs-comment"> */</span><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> ListNode <span class="hljs-title">deleteNode</span><span class="hljs-params">(ListNode head, <span class="hljs-keyword">int</span> val)</span> </span>&#123;<br>        <span class="hljs-keyword">if</span> (head.val == val) &#123;<br>            <span class="hljs-keyword">return</span> head.next;<br>        &#125;<br>        ListNode pre = head;<br>        ListNode cur = head.next;<br>        <span class="hljs-keyword">while</span> (cur != <span class="hljs-keyword">null</span> &amp;&amp; cur.val != val) &#123;<br>            pre = cur;<br>            cur = cur.next;<br>        &#125;<br>        <span class="hljs-keyword">if</span> (cur != <span class="hljs-keyword">null</span>) &#123;<br>            <span class="hljs-comment">//证明找到了要删除的节点,跳过这个要删除的节点</span><br>            pre.next = cur.next;<br>        &#125;<br>        <span class="hljs-keyword">return</span> head;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure><p><strong>解法二：（递归）</strong></p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * Definition for singly-linked list.</span><br><span class="hljs-comment"> * public class ListNode &#123;</span><br><span class="hljs-comment"> *     int val;</span><br><span class="hljs-comment"> *     ListNode next;</span><br><span class="hljs-comment"> *     ListNode(int x) &#123; val = x; &#125;</span><br><span class="hljs-comment"> * &#125;</span><br><span class="hljs-comment"> */</span><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> ListNode <span class="hljs-title">deleteNode</span><span class="hljs-params">(ListNode head, <span class="hljs-keyword">int</span> val)</span> </span>&#123;<br>        <span class="hljs-keyword">if</span> (head == <span class="hljs-keyword">null</span>) &#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;<br>        &#125;<br>        <span class="hljs-keyword">if</span> (head.val == val) &#123;<br>            <span class="hljs-comment">// 如果发现你的这个节点的值就是所要求的值，那么直接跳过这个节点</span><br>            head = head.next;<br>        &#125; <span class="hljs-keyword">else</span> &#123;<br>            <span class="hljs-comment">// 否则自调</span><br>            head.next = deleteNode(head.next, val);<br>        &#125;<br>        <span class="hljs-keyword">return</span> head;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;/2022/04/25/%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E7%9A%84%E8%8A%82%E7%82%B9/image-20220425213903008.png&quot; alt=&quot;删除链表的节点&quot;&gt;&lt;/p&gt;
+&lt;p&gt;</summary>
+      
+    
+    
+    
+    <category term="剑指Offer" scheme="http://example.com/categories/%E5%89%91%E6%8C%87Offer/"/>
+    
+    
+    <category term="剑指Offer" scheme="http://example.com/tags/%E5%89%91%E6%8C%87Offer/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>最长不含重复字符的子字符串</title>
+    <link href="http://example.com/2022/04/25/%E6%9C%80%E9%95%BF%E4%B8%8D%E5%90%AB%E9%87%8D%E5%A4%8D%E5%AD%97%E7%AC%A6%E7%9A%84%E5%AD%90%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
+    <id>http://example.com/2022/04/25/%E6%9C%80%E9%95%BF%E4%B8%8D%E5%90%AB%E9%87%8D%E5%A4%8D%E5%AD%97%E7%AC%A6%E7%9A%84%E5%AD%90%E5%AD%97%E7%AC%A6%E4%B8%B2/</id>
+    <published>2022-04-25T08:18:12.000Z</published>
+    <updated>2022-04-25T08:21:39.935Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="/2022/04/25/%E6%9C%80%E9%95%BF%E4%B8%8D%E5%90%AB%E9%87%8D%E5%A4%8D%E5%AD%97%E7%AC%A6%E7%9A%84%E5%AD%90%E5%AD%97%E7%AC%A6%E4%B8%B2/image-20220425161854980.png" alt="最长不含重复字符的子字符串"></p><p><strong>解法一：</strong>（哈希表+动态规划）</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">lengthOfLongestSubstring</span><span class="hljs-params">(String s)</span> </span>&#123;<br>        Map&lt;Character, Integer&gt; dic = <span class="hljs-keyword">new</span> HashMap&lt;&gt;();<br>        <span class="hljs-comment">// res结果 tmp当前长度</span><br>        <span class="hljs-keyword">int</span> res = <span class="hljs-number">0</span>, tmp = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>; j &lt; s.length(); j++) &#123;<br>            <span class="hljs-comment">//找到j左边最近的与j位置字母相等的字母</span><br>            <span class="hljs-keyword">int</span> i = dic.getOrDefault(s.charAt(j), -<span class="hljs-number">1</span>);<br>            <span class="hljs-comment">//找到的话就将这个字母置于j位置，没找到的话j位置置为-1</span><br>            dic.put(s.charAt(j), j);<br>            <span class="hljs-keyword">if</span> (tmp &lt; j - i) &#123;<br>                <span class="hljs-comment">//如果tmp &lt; j - i，就证明，没有遇到相同的字母，长度+1</span><br>                tmp = tmp + <span class="hljs-number">1</span>;<br>            &#125; <span class="hljs-keyword">else</span> &#123;<br>                <span class="hljs-comment">//否则就是遇到了相等的字母，则左边界就应该由i来决定</span><br>                tmp = j - i;<br>            &#125;<br>            res = Math.max(res, tmp);<br>        &#125;<br>        <span class="hljs-keyword">return</span> res;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure><p>拓展：</p><div class="note note-success">            <p>哈希表的getOrDefault(key, default)方法，是在哈希表中搜索是否存在该方法参数列表中的key值，如果存在该key值，则返回哈希表中该key值对应的vakue值；如果不存在，则返回该方法参数列表中的default值</p>          </div>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;/2022/04/25/%E6%9C%80%E9%95%BF%E4%B8%8D%E5%90%AB%E9%87%8D%E5%A4%8D%E5%AD%97%E7%AC%A6%E7%9A%84%E5%AD%90%E5%AD%97%E7%AC%A6%E4%B8%</summary>
+      
+    
+    
+    
+    <category term="剑指Offer" scheme="http://example.com/categories/%E5%89%91%E6%8C%87Offer/"/>
+    
+    
+    <category term="剑指Offer" scheme="http://example.com/tags/%E5%89%91%E6%8C%87Offer/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>把数字翻译成字符串</title>
+    <link href="http://example.com/2022/04/25/%E6%8A%8A%E6%95%B0%E5%AD%97%E7%BF%BB%E8%AF%91%E6%88%90%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
+    <id>http://example.com/2022/04/25/%E6%8A%8A%E6%95%B0%E5%AD%97%E7%BF%BB%E8%AF%91%E6%88%90%E5%AD%97%E7%AC%A6%E4%B8%B2/</id>
+    <published>2022-04-25T07:37:45.000Z</published>
+    <updated>2022-04-25T07:39:49.484Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="/2022/04/25/%E6%8A%8A%E6%95%B0%E5%AD%97%E7%BF%BB%E8%AF%91%E6%88%90%E5%AD%97%E7%AC%A6%E4%B8%B2/image-20220425153822764.png" alt="把数字翻译成字符串"></p><p><strong>解法：</strong></p><p>看见题就能想到要不两个数字作为一个字符输出，要不一个数字作为一个字符输出。</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>       <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">translateNum</span><span class="hljs-params">(<span class="hljs-keyword">int</span> num)</span> </span>&#123;<br>        <span class="hljs-comment">// 把数字变成string类型</span><br>        String s = String.valueOf(num);<br>        <span class="hljs-comment">// 如果不+1，如果我给的num长度为3，那么转换成string类型长度也为3</span><br>        <span class="hljs-comment">// 到了for循环的时候从2开始就拿不到2个就出现越界问题</span><br>        <span class="hljs-keyword">int</span>[] dp = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[s.length() + <span class="hljs-number">1</span>];<br>        <span class="hljs-comment">// 当num第1,2位的组成的数字∈[10,25]时，显然应有2种翻译方法，</span><br>        <span class="hljs-comment">// 即dp[2]=dp[1]+dp[0]=2，而显然dp[1] = 1因此推出dp[0] = 1</span><br>        dp[<span class="hljs-number">0</span>] = <span class="hljs-number">1</span>;<br>        dp[<span class="hljs-number">1</span>] = <span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">2</span>; i &lt;= s.length(); i++) &#123;<br>            <span class="hljs-comment">// 取出两位</span><br>            <span class="hljs-comment">// substring这个方法截取的字符串从i-2开始，到字符串索引的i - 1结束</span><br>            String tmp = s.substring(i - <span class="hljs-number">2</span>, i);<br>            <span class="hljs-comment">// 如果两位数的ASCII码差值在10~25之间 证明可以转换成为一个字符</span><br>            <span class="hljs-keyword">if</span> (tmp.compareTo(<span class="hljs-string">&quot;10&quot;</span>) &gt;= <span class="hljs-number">0</span> &amp;&amp; tmp.compareTo(<span class="hljs-string">&quot;25&quot;</span>) &lt;= <span class="hljs-number">0</span>) &#123;<br>                dp[i] = dp[i - <span class="hljs-number">1</span>] + dp[i - <span class="hljs-number">2</span>];<br>            &#125; <span class="hljs-keyword">else</span> &#123;<span class="hljs-comment">// 一位计算</span><br>                dp[i] = dp[i - <span class="hljs-number">1</span>];<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> dp[s.length()];<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;/2022/04/25/%E6%8A%8A%E6%95%B0%E5%AD%97%E7%BF%BB%E8%AF%91%E6%88%90%E5%AD%97%E7%AC%A6%E4%B8%B2/image-20220425153822764.png&quot; alt=</summary>
+      
+    
+    
+    
+    <category term="剑指Offer" scheme="http://example.com/categories/%E5%89%91%E6%8C%87Offer/"/>
+    
+    
+    <category term="剑指Offer" scheme="http://example.com/tags/%E5%89%91%E6%8C%87Offer/"/>
+    
+  </entry>
   
   <entry>
     <title>礼物的最大价值</title>
@@ -427,79 +500,6 @@
       
     <summary type="html">&lt;p&gt;&lt;img src=&quot;/2022/04/11/0-n-1%E4%B8%AD%E7%BC%BA%E5%A4%B1%E7%9A%84%E6%95%B0%E5%AD%97/image-20220411202654182.png&quot; alt=&quot;题目&quot;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;代</summary>
-      
-    
-    
-    
-    <category term="剑指Offer" scheme="http://example.com/categories/%E5%89%91%E6%8C%87Offer/"/>
-    
-    
-    <category term="剑指Offer" scheme="http://example.com/tags/%E5%89%91%E6%8C%87Offer/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>在排序数组中查找数字1</title>
-    <link href="http://example.com/2022/04/10/%E5%9C%A8%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E6%9F%A5%E6%89%BE%E6%95%B0%E5%AD%971/"/>
-    <id>http://example.com/2022/04/10/%E5%9C%A8%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E6%9F%A5%E6%89%BE%E6%95%B0%E5%AD%971/</id>
-    <published>2022-04-10T08:51:57.000Z</published>
-    <updated>2022-04-25T02:44:08.151Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="/2022/04/10/%E5%9C%A8%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E6%9F%A5%E6%89%BE%E6%95%B0%E5%AD%971/image-20220410165511221.png" alt="题目"></p><p><strong>代码实现：</strong></p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">search</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] nums, <span class="hljs-keyword">int</span> target)</span> </span>&#123;<br>        <span class="hljs-comment">// 方法一：查找nums数组中和target相等的元素，然后计数器+1</span><br>        <span class="hljs-keyword">int</span> sum = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>;i&lt;nums.length;i++)&#123;<br>            <span class="hljs-keyword">if</span> (target == nums[i])&#123;<br>                sum++;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> sum;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure><p><strong>代码实现二：</strong></p><p>由于题目说了是排序数组，所以可以使用<strong>二分法</strong></p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">search</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] nums, <span class="hljs-keyword">int</span> target)</span> </span>&#123;<br>        <span class="hljs-keyword">int</span> len = nums.length;<br>        <span class="hljs-keyword">if</span> (len == <span class="hljs-number">0</span>) &#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>        &#125;<br><br>        <span class="hljs-keyword">int</span> firstPosition = findFirtPosition(nums, target);<br>        <span class="hljs-keyword">if</span> (firstPosition == -<span class="hljs-number">1</span>) &#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>        &#125;<br><br>        <span class="hljs-keyword">int</span> lastPosition = findLastPosition(nums, target);<br>        <span class="hljs-keyword">return</span> lastPosition - firstPosition + <span class="hljs-number">1</span>;<br>    &#125;<br><br><br>    <span class="hljs-comment">// 查找target第一次出现的位置</span><br>    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> <span class="hljs-title">findFirtPosition</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] nums, <span class="hljs-keyword">int</span> target)</span> </span>&#123;<br>        <span class="hljs-keyword">int</span> left = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">int</span> right = nums.length - <span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">while</span> (left &lt; right) &#123;<br>            <span class="hljs-keyword">int</span> mid = left + (right - left) / <span class="hljs-number">2</span>;<br>            <span class="hljs-keyword">if</span> (nums[mid] &lt; target) &#123;<br>                <span class="hljs-comment">// [mid + 1 ... right]</span><br>                left = mid + <span class="hljs-number">1</span>;<br>            &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (nums[mid] &gt;= target) &#123;<br>                <span class="hljs-comment">// [left ... mid]</span><br>                right = mid;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">if</span> (nums[left] == target)&#123;<br>            <span class="hljs-keyword">return</span> left;<br>        &#125;<br>        <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>;<br>    &#125;<br><br>    <span class="hljs-comment">// 查找target最后一次出现的位置</span><br>    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> <span class="hljs-title">findLastPosition</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] nums, <span class="hljs-keyword">int</span> target)</span> </span>&#123;<br>        <span class="hljs-keyword">int</span> left = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">int</span> right = nums.length - <span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">while</span> (left &lt; right) &#123;<br>            <span class="hljs-comment">//将mid赋值给left的时候要向上取整，不然left可能永远小于right，也就永远跳不出循环</span><br>            <span class="hljs-keyword">int</span> mid = left + (right - left + <span class="hljs-number">1</span>) / <span class="hljs-number">2</span>;<br>            <span class="hljs-keyword">if</span> (nums[mid] &lt;= target) &#123;<br>                <span class="hljs-comment">// [mid ... right]</span><br>                left = mid;<br>            &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (nums[mid] &gt; target) &#123;<br>                <span class="hljs-comment">// [left ... mid - 1]</span><br>                right = mid - <span class="hljs-number">1</span>;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> left;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;&lt;img src=&quot;/2022/04/10/%E5%9C%A8%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%E4%B8%AD%E6%9F%A5%E6%89%BE%E6%95%B0%E5%AD%971/image-20220410165511221</summary>
-      
-    
-    
-    
-    <category term="剑指Offer" scheme="http://example.com/categories/%E5%89%91%E6%8C%87Offer/"/>
-    
-    
-    <category term="剑指Offer" scheme="http://example.com/tags/%E5%89%91%E6%8C%87Offer/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>数组中重复的数字</title>
-    <link href="http://example.com/2022/04/05/%E6%95%B0%E7%BB%84%E4%B8%AD%E9%87%8D%E5%A4%8D%E7%9A%84%E6%95%B0%E5%AD%97/"/>
-    <id>http://example.com/2022/04/05/%E6%95%B0%E7%BB%84%E4%B8%AD%E9%87%8D%E5%A4%8D%E7%9A%84%E6%95%B0%E5%AD%97/</id>
-    <published>2022-04-05T09:02:06.000Z</published>
-    <updated>2022-04-25T02:44:23.430Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="/2022/04/05/%E6%95%B0%E7%BB%84%E4%B8%AD%E9%87%8D%E5%A4%8D%E7%9A%84%E6%95%B0%E5%AD%97/image-20220405170237877.png" alt="题目"></p><p><strong>思路1：</strong>一看题目 脑子中直接想到了先排序 然后将相邻的数进行比较是否重复</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">findRepeatNumber</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] nums)</span> </span>&#123;<br>        Arrays.sort(nums);<br>        <span class="hljs-keyword">int</span> i;<br>        <span class="hljs-keyword">for</span>( i = <span class="hljs-number">0</span>; i&lt;nums.length;i++)&#123;<br>            <span class="hljs-keyword">if</span>(nums[i] == nums[i+<span class="hljs-number">1</span>])&#123;<br>                <span class="hljs-keyword">break</span>;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> nums[i];<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure><p><strong>思路2：</strong></p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">findRepeatNumber</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] nums)</span> </span>&#123;<br>        <span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>;<br>        <span class="hljs-comment">//遍历数组</span><br>        <span class="hljs-keyword">while</span>(i &lt; nums.length) &#123;<br>            <span class="hljs-comment">//如果索引与值相等</span><br>            <span class="hljs-keyword">if</span>(nums[i] == i) &#123;<br>            <span class="hljs-comment">//进行下一个</span><br>            i++;<br>            <span class="hljs-keyword">continue</span>;<br>            &#125;<br>            <span class="hljs-comment">//索引与值不相等，看这个值原本应该在的位置对应的值与这个值是否相等</span><br>            <span class="hljs-keyword">if</span>(nums[nums[i]] == nums[i]) &#123;<br>                <span class="hljs-comment">//如果相等，就直接返回</span><br>                <span class="hljs-keyword">return</span> nums[i];<br>            &#125;<br>            <span class="hljs-comment">//如果这个值作为索引对应的值与这个值不相等，就交换这两个数，使得这个值跟索引一致</span><br>            <span class="hljs-keyword">int</span> tmp = nums[i];<br>            nums[i] = nums[tmp];<br>            nums[tmp] = tmp;<br>        &#125;<br>        <span class="hljs-comment">//没有找到</span><br>        <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;&lt;img src=&quot;/2022/04/05/%E6%95%B0%E7%BB%84%E4%B8%AD%E9%87%8D%E5%A4%8D%E7%9A%84%E6%95%B0%E5%AD%97/image-20220405170237877.png&quot; alt=&quot;题目&quot;&gt;&lt;/p&gt;</summary>
-      
-    
-    
-    
-    <category term="剑指Offer" scheme="http://example.com/categories/%E5%89%91%E6%8C%87Offer/"/>
-    
-    
-    <category term="剑指Offer" scheme="http://example.com/tags/%E5%89%91%E6%8C%87Offer/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>左旋转字符串</title>
-    <link href="http://example.com/2022/04/05/%E5%B7%A6%E6%97%8B%E8%BD%AC%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
-    <id>http://example.com/2022/04/05/%E5%B7%A6%E6%97%8B%E8%BD%AC%E5%AD%97%E7%AC%A6%E4%B8%B2/</id>
-    <published>2022-04-05T08:00:15.000Z</published>
-    <updated>2022-04-25T02:44:18.891Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="/2022/04/05/%E5%B7%A6%E6%97%8B%E8%BD%AC%E5%AD%97%E7%AC%A6%E4%B8%B2/image-20220405160431771.png" alt="题目"></p><p><strong>代码实现一：直接拼接</strong></p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">reverseLeftWords</span><span class="hljs-params">(String s, <span class="hljs-keyword">int</span> n)</span> </span>&#123;<br>        <span class="hljs-keyword">return</span> s.substring(n, s.length()) + s.substring(<span class="hljs-number">0</span>, n);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure><p><strong>代码实现二：</strong></p><p><strong>思路：</strong>先将第n+1个到末尾的的字符添加到一个空的字符串，然后将第1个到第n个字符串拼接到字符串后实现左旋转字符串</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">reverseLeftWords</span><span class="hljs-params">(String s, <span class="hljs-keyword">int</span> n)</span> </span>&#123;<br>        String res = <span class="hljs-string">&quot;&quot;</span>;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = n; i &lt; s.length(); i++)<br>            res += s.charAt(i); <span class="hljs-comment">// charAt(i)表示取出字符串中第i个字符</span><br>        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++)<br>            res += s.charAt(i);<br>        <span class="hljs-keyword">return</span> res;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;&lt;img src=&quot;/2022/04/05/%E5%B7%A6%E6%97%8B%E8%BD%AC%E5%AD%97%E7%AC%A6%E4%B8%B2/image-20220405160431771.png&quot; alt=&quot;题目&quot;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;代码实现一：</summary>
       
     
     
