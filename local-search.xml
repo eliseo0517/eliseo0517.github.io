@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>礼物的最大价值</title>
+    <link href="/2022/04/25/%E7%A4%BC%E7%89%A9%E7%9A%84%E6%9C%80%E5%A4%A7%E4%BB%B7%E5%80%BC/"/>
+    <url>/2022/04/25/%E7%A4%BC%E7%89%A9%E7%9A%84%E6%9C%80%E5%A4%A7%E4%BB%B7%E5%80%BC/</url>
+    
+    <content type="html"><![CDATA[<p><img src="/2022/04/25/%E7%A4%BC%E7%89%A9%E7%9A%84%E6%9C%80%E5%A4%A7%E4%BB%B7%E5%80%BC/image-20220425104246376.png" alt="礼物的最大价值"></p><p><strong>解法一：</strong></p><p>暴力递归，对于一个格子只有两种情况：不是向下移动就是向右移动，所以定义两个变量，一个 == 向右移动的值 一个 == 向下移动的值 ，然后取max + 这个格子左上角的值</p><p>代码 <em>略</em></p><p><strong>解法二：</strong></p><p>动态规划</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">test14</span> </span>&#123;<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> <span class="hljs-title">maxValue</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[][] grid)</span> </span>&#123;<br>        <span class="hljs-comment">// 定义行和列</span><br>        <span class="hljs-keyword">int</span> row = grid.length;<br>        <span class="hljs-keyword">int</span> column = grid[<span class="hljs-number">0</span>].length;<br>        <span class="hljs-comment">// 多加一行一列 所以dp[1][0..column]相当于grid[0][0...column]</span><br>        <span class="hljs-keyword">int</span>[][] dp = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[row + <span class="hljs-number">1</span>][column + <span class="hljs-number">1</span>];<br>        <span class="hljs-comment">// dp[1][0..column]相当于grid[0][0...column] 所以i与j从1开始 直到 等于行与列</span><br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= row; i++) &#123;<br>            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">1</span>; j &lt;= column; j++) &#123;<br>                dp[i][j] = Math.max(dp[i][j - <span class="hljs-number">1</span>], dp[i - <span class="hljs-number">1</span>][j]) + grid[i - <span class="hljs-number">1</span>][j - <span class="hljs-number">1</span>];<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> dp[row][column];<br>    &#125;<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>&#123;<br>        <span class="hljs-keyword">int</span>[][] grid = &#123;&#123;<span class="hljs-number">1</span>, <span class="hljs-number">3</span>, <span class="hljs-number">1</span>&#125;, &#123;<span class="hljs-number">1</span>, <span class="hljs-number">5</span>, <span class="hljs-number">1</span>&#125;, &#123;<span class="hljs-number">4</span>, <span class="hljs-number">2</span>, <span class="hljs-number">1</span>&#125;&#125;;<br>        System.out.println(maxValue(grid));<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>剑指Offer</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>剑指Offer</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>mysql8通过Data文件恢复数据</title>
     <link href="/2022/04/21/mysql8%E9%80%9A%E8%BF%87Data%E6%96%87%E4%BB%B6%E6%81%A2%E5%A4%8D%E6%95%B0%E6%8D%AE/"/>
     <url>/2022/04/21/mysql8%E9%80%9A%E8%BF%87Data%E6%96%87%E4%BB%B6%E6%81%A2%E5%A4%8D%E6%95%B0%E6%8D%AE/</url>
@@ -63,14 +88,14 @@
     
     <categories>
       
-      <category>算法</category>
+      <category>剑指Offer</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>算法</tag>
+      <tag>剑指Offer</tag>
       
     </tags>
     
@@ -113,14 +138,14 @@
     
     <categories>
       
-      <category>算法</category>
+      <category>剑指Offer</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>算法</tag>
+      <tag>剑指Offer</tag>
       
     </tags>
     
@@ -138,14 +163,14 @@
     
     <categories>
       
-      <category>算法</category>
+      <category>剑指Offer</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>算法</tag>
+      <tag>剑指Offer</tag>
       
     </tags>
     
@@ -163,14 +188,14 @@
     
     <categories>
       
-      <category>算法</category>
+      <category>剑指Offer</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>算法</tag>
+      <tag>剑指Offer</tag>
       
     </tags>
     
@@ -188,14 +213,14 @@
     
     <categories>
       
-      <category>算法</category>
+      <category>剑指Offer</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>算法</tag>
+      <tag>剑指Offer</tag>
       
     </tags>
     
@@ -213,14 +238,14 @@
     
     <categories>
       
-      <category>算法</category>
+      <category>剑指Offer</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>算法</tag>
+      <tag>剑指Offer</tag>
       
     </tags>
     
@@ -238,14 +263,14 @@
     
     <categories>
       
-      <category>算法</category>
+      <category>剑指Offer</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>算法</tag>
+      <tag>剑指Offer</tag>
       
     </tags>
     
@@ -263,14 +288,14 @@
     
     <categories>
       
-      <category>算法</category>
+      <category>剑指Offer</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>算法</tag>
+      <tag>剑指Offer</tag>
       
     </tags>
     
@@ -288,14 +313,14 @@
     
     <categories>
       
-      <category>算法</category>
+      <category>剑指Offer</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>算法</tag>
+      <tag>剑指Offer</tag>
       
     </tags>
     
@@ -313,14 +338,14 @@
     
     <categories>
       
-      <category>算法</category>
+      <category>剑指Offer</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>算法</tag>
+      <tag>剑指Offer</tag>
       
     </tags>
     
@@ -363,14 +388,14 @@
     
     <categories>
       
-      <category>算法</category>
+      <category>剑指Offer</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>算法</tag>
+      <tag>剑指Offer</tag>
       
     </tags>
     
@@ -388,14 +413,14 @@
     
     <categories>
       
-      <category>算法</category>
+      <category>剑指Offer</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>算法</tag>
+      <tag>剑指Offer</tag>
       
     </tags>
     
@@ -413,14 +438,14 @@
     
     <categories>
       
-      <category>算法</category>
+      <category>剑指Offer</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>算法</tag>
+      <tag>剑指Offer</tag>
       
     </tags>
     
@@ -438,14 +463,14 @@
     
     <categories>
       
-      <category>算法</category>
+      <category>剑指Offer</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>算法</tag>
+      <tag>剑指Offer</tag>
       
     </tags>
     
@@ -463,14 +488,14 @@
     
     <categories>
       
-      <category>算法</category>
+      <category>剑指Offer</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>算法</tag>
+      <tag>剑指Offer</tag>
       
     </tags>
     
@@ -488,14 +513,14 @@
     
     <categories>
       
-      <category>算法</category>
+      <category>剑指Offer</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>算法</tag>
+      <tag>剑指Offer</tag>
       
     </tags>
     
@@ -513,14 +538,14 @@
     
     <categories>
       
-      <category>算法</category>
+      <category>剑指Offer</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>算法</tag>
+      <tag>剑指Offer</tag>
       
     </tags>
     
@@ -563,14 +588,14 @@
     
     <categories>
       
-      <category>算法</category>
+      <category>剑指Offer</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>算法</tag>
+      <tag>剑指Offer</tag>
       
     </tags>
     
@@ -688,14 +713,14 @@
     
     <categories>
       
-      <category>算法</category>
+      <category>剑指Offer</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>算法</tag>
+      <tag>剑指Offer</tag>
       
     </tags>
     
@@ -713,14 +738,14 @@
     
     <categories>
       
-      <category>算法</category>
+      <category>剑指Offer</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>算法</tag>
+      <tag>剑指Offer</tag>
       
     </tags>
     
@@ -738,14 +763,14 @@
     
     <categories>
       
-      <category>算法</category>
+      <category>剑指Offer</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>算法</tag>
+      <tag>剑指Offer</tag>
       
     </tags>
     
@@ -788,14 +813,14 @@
     
     <categories>
       
-      <category>算法</category>
+      <category>剑指Offer</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>算法</tag>
+      <tag>剑指Offer</tag>
       
     </tags>
     
