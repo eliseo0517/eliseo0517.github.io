@@ -16,21 +16,23 @@
   <meta name="author" content="Mr.Wang">
   <meta name="keywords" content="">
   
-    <meta name="description" content="快速排序最差情况下时间复杂度为O(N^2) 时间复杂度最低的快速排序，在数组中随机找一个数，然后将他与最后一个数字交换，然后以最后一个数字为num进行荷兰国旗问题，同时在小于和大于num的区域随机选取一个数字，然后将他与小于和大于num区域的最后一个数字交换重复执行荷兰国旗问题，最后得到一串从小到大排序的数组，时间复杂度为O(N*logN) 1234567891011121314151617181">
+    <meta name="description" content="大根堆即指在逻辑上的二叉树结构中，根结点&gt;子结点，总是最大的，并且在堆的每一个局部都是如此 小根堆的性质与大根堆类似，只不过在二叉树的结构中，根结点&lt;子结点 1234567891011121314151617181920212223242526272829303132333435363738394041class MedianFinder &amp;#123;    &#x2F;** initiali">
 <meta property="og:type" content="article">
-<meta property="og:title" content="快速排序">
-<meta property="og:url" content="http://example.com/2022/04/28/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/index.html">
+<meta property="og:title" content="数据流中的中位数">
+<meta property="og:url" content="http://example.com/2022/04/29/%E6%95%B0%E6%8D%AE%E6%B5%81%E4%B8%AD%E7%9A%84%E4%B8%AD%E4%BD%8D%E6%95%B0/index.html">
 <meta property="og:site_name" content="Eliseo的小屋">
-<meta property="og:description" content="快速排序最差情况下时间复杂度为O(N^2) 时间复杂度最低的快速排序，在数组中随机找一个数，然后将他与最后一个数字交换，然后以最后一个数字为num进行荷兰国旗问题，同时在小于和大于num的区域随机选取一个数字，然后将他与小于和大于num区域的最后一个数字交换重复执行荷兰国旗问题，最后得到一串从小到大排序的数组，时间复杂度为O(N*logN) 1234567891011121314151617181">
+<meta property="og:description" content="大根堆即指在逻辑上的二叉树结构中，根结点&gt;子结点，总是最大的，并且在堆的每一个局部都是如此 小根堆的性质与大根堆类似，只不过在二叉树的结构中，根结点&lt;子结点 1234567891011121314151617181920212223242526272829303132333435363738394041class MedianFinder &amp;#123;    &#x2F;** initiali">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2022-04-28T13:35:38.000Z">
-<meta property="article:modified_time" content="2022-04-28T14:03:17.017Z">
+<meta property="og:image" content="http://example.com/2022/04/29/%E6%95%B0%E6%8D%AE%E6%B5%81%E4%B8%AD%E7%9A%84%E4%B8%AD%E4%BD%8D%E6%95%B0/image-20220429124407888.png">
+<meta property="article:published_time" content="2022-04-29T04:39:23.000Z">
+<meta property="article:modified_time" content="2022-04-29T04:44:13.832Z">
 <meta property="article:author" content="Mr.Wang">
-<meta property="article:tag" content="算法">
+<meta property="article:tag" content="剑指Offer">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="http://example.com/2022/04/29/%E6%95%B0%E6%8D%AE%E6%B5%81%E4%B8%AD%E7%9A%84%E4%B8%AD%E4%BD%8D%E6%95%B0/image-20220429124407888.png">
   
   
-  <title>快速排序 - Eliseo的小屋</title>
+  <title>数据流中的中位数 - Eliseo的小屋</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -199,7 +201,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="快速排序">
+            <span class="h2" id="subtitle" title="数据流中的中位数">
               
             </span>
 
@@ -214,8 +216,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2022-04-28 21:35" pubdate>
-        April 28, 2022 pm
+      <time datetime="2022-04-29 12:39" pubdate>
+        April 29, 2022 pm
       </time>
     </span>
   
@@ -225,7 +227,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      1.1k 字
+      846 字
     </span>
   
 
@@ -234,7 +236,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      10 分钟
+      8 分钟
     </span>
   
 
@@ -271,18 +273,19 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">快速排序</h1>
+            <h1 style="display: none">数据流中的中位数</h1>
             
               <p class="note note-info">
                 
-                  本文最后更新于：10 minutes ago
+                  本文最后更新于：5 minutes ago
                 
               </p>
             
             <div class="markdown-body">
-              <h1 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h1><p><strong>最差情况下时间复杂度为O(N^2)</strong></p>
-<p><strong>时间复杂度最低的快速排序，</strong>在数组中随机找一个数，然后将他与最后一个数字交换，然后以最后一个数字为num进行荷兰国旗问题，同时在小于和大于num的区域随机选取一个数字，然后将他与小于和大于num区域的最后一个数字交换重复执行荷兰国旗问题，最后得到一串从小到大排序的数组，<strong>时间复杂度为O(N*logN)</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">quickSort</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] arr)</span></span>&#123;<br>    <span class="hljs-keyword">if</span>(arr == <span class="hljs-keyword">null</span> || arr.length &lt; <span class="hljs-number">2</span>)&#123;<br>        <span class="hljs-keyword">return</span>;<br>    &#125;<br>    quickSort(arr, <span class="hljs-number">0</span>, arr.length-<span class="hljs-number">1</span>);<br>&#125;<br><span class="hljs-comment">//arr[l...r]排好序</span><br><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">quickSort</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] arr,<span class="hljs-keyword">int</span> L,<span class="hljs-keyword">int</span> R)</span></span>&#123;<br>    <span class="hljs-keyword">if</span>(L&lt;R)&#123;<br>        swap(arr,L+(<span class="hljs-keyword">int</span>) (Math.random() * (R-L+<span class="hljs-number">1</span>)), R); <span class="hljs-comment">//swap为自带的交换函数；L+(int) (Math.random() * (R-L+1)) 表示在该数组中随机选取一位数字</span><br>        <span class="hljs-keyword">int</span>[] p = partition(arr,L,R);<br>        quitSort(arr,L,p[<span class="hljs-number">0</span>]-<span class="hljs-number">1</span>); <span class="hljs-comment">// &lt;区</span><br>        quitSort(arr,p[<span class="hljs-number">1</span>]+<span class="hljs-number">1</span>,R); <span class="hljs-comment">// &gt;区</span><br>    &#125;<br>&#125;<br><span class="hljs-comment">//这是一个处理arr[l...r]的函数</span><br><span class="hljs-comment">//默认以arr[r]做划分，arr[r] -&gt; p    &lt;p   ==p    &gt;p</span><br><span class="hljs-comment">//返回等于区域（左边界，右边界），所以返回一个长度为2的数组res，res[0] res[1]</span><br><span class="hljs-keyword">public</span> staic <span class="hljs-keyword">int</span>[] partition(<span class="hljs-keyword">int</span>[] arr, <span class="hljs-keyword">int</span> L, <span class="hljs-keyword">int</span> R)&#123;<br>    <span class="hljs-keyword">int</span> less = L - <span class="hljs-number">1</span>; <span class="hljs-comment">// &lt;区右边界</span><br>    <span class="hljs-keyword">int</span> more = R; <span class="hljs-comment">// &gt;区左边界</span><br>    <span class="hljs-keyword">while</span>(L &lt; more)&#123; <span class="hljs-comment">// L表示当前数的位置 arr[R] -&gt; 划分值</span><br>        <span class="hljs-keyword">if</span>(arr[L] &lt; arr[R])&#123; <span class="hljs-comment">//当前数  &lt;  划分值</span><br>            less++;<br>            swap(arr, less, L);<br>            L++;<br>        &#125;<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(arr[L] &gt; arr[R])&#123; <span class="hljs-comment">// 当前值 &gt; 划分值</span><br>            more--;<br>            swap(arr, more, L);<br>        &#125;<span class="hljs-keyword">else</span>&#123;<br>            L++;<br>        &#125;<br>    &#125;<br>    swap(arr,more,R);<br>    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[] &#123;less + <span class="hljs-number">1</span>,more&#125;;<br>&#125;<br></code></pre></td></tr></table></figure>
+              <p><img src="/2022/04/29/%E6%95%B0%E6%8D%AE%E6%B5%81%E4%B8%AD%E7%9A%84%E4%B8%AD%E4%BD%8D%E6%95%B0/image-20220429124407888.png" srcset="/img/loading.gif" lazyload alt="数据流中的中位数"></p>
+<p><strong>大根堆</strong>即指在逻辑上的二叉树结构中，根结点&gt;子结点，总是最大的，<strong>并且在堆的每一个局部都是如此</strong></p>
+<p><strong>小根堆</strong>的性质与大根堆类似，只不过在二叉树的结构中，根结点&lt;子结点</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MedianFinder</span> </span>&#123;<br><br>    <span class="hljs-comment">/** initialize your data structure here. */</span><br>   <span class="hljs-comment">//小根堆</span><br>    PriorityQueue&lt;Integer&gt; A;<br>    <span class="hljs-comment">//大根堆</span><br>    PriorityQueue&lt;Integer&gt; B;<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">MedianFinder</span><span class="hljs-params">()</span> </span>&#123;<br>        A = <span class="hljs-keyword">new</span> PriorityQueue&lt;&gt;();<br>        B = <span class="hljs-keyword">new</span> PriorityQueue&lt;&gt;((x, y) -&gt; (y - x));<br>    &#125;<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">addNum</span><span class="hljs-params">(<span class="hljs-keyword">int</span> num)</span> </span>&#123;<br>        <span class="hljs-keyword">if</span> (A.size() != B.size()) &#123;<br>            <span class="hljs-comment">// 两个堆</span><br>            A.add(num);<br>            B.add(A.poll());<br>        &#125; <span class="hljs-keyword">else</span> &#123;<br>            B.add(num);<br>            A.add(B.poll());<br>        &#125;<br>    &#125;<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">double</span> <span class="hljs-title">findMedian</span><span class="hljs-params">()</span> </span>&#123;<br>        <span class="hljs-keyword">if</span> (A.size() == B.size()) &#123;<br>            <span class="hljs-keyword">return</span> (<span class="hljs-keyword">double</span>) (A.peek() + B.peek())/<span class="hljs-number">2</span>;<br>        &#125;<span class="hljs-keyword">else</span> &#123;<br>            <span class="hljs-comment">//奇数，直接返回小的堆顶</span><br>            <span class="hljs-keyword">return</span> (<span class="hljs-keyword">double</span>)A.peek();<br>        &#125;<br><br>    &#125;<br>&#125;<br><br><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * Your MedianFinder object will be instantiated and called as such:</span><br><span class="hljs-comment"> * MedianFinder obj = new MedianFinder();</span><br><span class="hljs-comment"> * obj.addNum(num);</span><br><span class="hljs-comment"> * double param_2 = obj.findMedian();</span><br><span class="hljs-comment"> */</span><br></code></pre></td></tr></table></figure>
 
 
             </div>
@@ -293,7 +296,7 @@
                   <div class="post-meta mr-3">
                     <i class="iconfont icon-category"></i>
                     
-                      <a class="hover-with-bg" href="/categories/%E7%AE%97%E6%B3%95/">算法</a>
+                      <a class="hover-with-bg" href="/categories/%E5%89%91%E6%8C%87Offer/">剑指Offer</a>
                     
                   </div>
                 
@@ -301,7 +304,7 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/%E7%AE%97%E6%B3%95/">算法</a>
+                      <a class="hover-with-bg" href="/tags/%E5%89%91%E6%8C%87Offer/">剑指Offer</a>
                     
                   </div>
                 
@@ -317,6 +320,12 @@
                 <div class="post-prevnext">
                   <article class="post-prev col-6">
                     
+                    
+                      <a href="/2022/04/29/%E7%AE%97%E6%B3%95/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">算法</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
                     
                   </article>
                   <article class="post-next col-6">
