@@ -4,6 +4,81 @@
   
   
   <entry>
+    <title>重建二叉树</title>
+    <link href="/2022/05/03/%E9%87%8D%E5%BB%BA%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
+    <url>/2022/05/03/%E9%87%8D%E5%BB%BA%E4%BA%8C%E5%8F%89%E6%A0%91/</url>
+    
+    <content type="html"><![CDATA[<p><img src="/2022/05/03/%E9%87%8D%E5%BB%BA%E4%BA%8C%E5%8F%89%E6%A0%91/image-20220503141319095.png" alt="重建二叉树"></p><p><img src="/2022/05/03/%E9%87%8D%E5%BB%BA%E4%BA%8C%E5%8F%89%E6%A0%91/image-20220503141405171.png" alt="索引"></p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * Definition for a binary tree node.</span><br><span class="hljs-comment"> * public class TreeNode &#123;</span><br><span class="hljs-comment"> *     int val;</span><br><span class="hljs-comment"> *     TreeNode left;</span><br><span class="hljs-comment"> *     TreeNode right;</span><br><span class="hljs-comment"> *     TreeNode(int x) &#123; val = x; &#125;</span><br><span class="hljs-comment"> * &#125;</span><br><span class="hljs-comment"> */</span><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-keyword">int</span>[] preorder;<br>    HashMap&lt;Integer, Integer&gt; map = <span class="hljs-keyword">new</span> HashMap&lt;&gt;();<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> TreeNode <span class="hljs-title">buildTree</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] preorder, <span class="hljs-keyword">int</span>[] inorder)</span> </span>&#123;<br>        <span class="hljs-keyword">this</span>.preorder = preorder;<br>        <span class="hljs-comment">// 遍历中序遍历</span><br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; inorder.length; i++) &#123;<br>            map.put(inorder[i], i);<br>        &#125;<br>        <span class="hljs-keyword">return</span> recur(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, inorder.length - <span class="hljs-number">1</span>);<br>    &#125;<br>    <span class="hljs-function"><span class="hljs-keyword">private</span> TreeNode <span class="hljs-title">recur</span><span class="hljs-params">(<span class="hljs-keyword">int</span> root, <span class="hljs-keyword">int</span> left, <span class="hljs-keyword">int</span> right)</span> </span>&#123;<br>        <span class="hljs-keyword">if</span> (left &gt; right) &#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;<br>        &#125;<br>        TreeNode node = <span class="hljs-keyword">new</span> TreeNode(preorder[root]); <span class="hljs-comment">// 根节点</span><br>        <span class="hljs-keyword">int</span> i = map.get(preorder[root]); <span class="hljs-comment">// 得到根节点的索引</span><br>        node.left = recur(root+<span class="hljs-number">1</span>,left,i-<span class="hljs-number">1</span>);<br>        node.right = recur(root + (i - left) + <span class="hljs-number">1</span>, i + <span class="hljs-number">1</span>, right);<br>        <span class="hljs-keyword">return</span> node;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>剑指Offer</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>剑指Offer</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>求1+2...+n</title>
+    <link href="/2022/05/03/%E6%B1%821-2-n/"/>
+    <url>/2022/05/03/%E6%B1%821-2-n/</url>
+    
+    <content type="html"><![CDATA[<p><img src="/2022/05/03/%E6%B1%821-2-n/image-20220503093415361.png" alt="求1+2...+n"></p><p><strong>解法：(运算符+递归)</strong></p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">sumNums</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n)</span> </span>&#123;<br>        <span class="hljs-keyword">boolean</span> x = n &gt; <span class="hljs-number">1</span> &amp;&amp; (n += sumNums(n - <span class="hljs-number">1</span>)) &gt; <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">return</span> n;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>剑指Offer</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>剑指Offer</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>二叉搜索树的最近公共祖先</title>
+    <link href="/2022/05/03/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E7%9A%84%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88/"/>
+    <url>/2022/05/03/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E7%9A%84%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88/</url>
+    
+    <content type="html"><![CDATA[<p><img src="/2022/05/03/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E7%9A%84%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88/image-20220503100709134.png" alt="二叉搜索树的最近公共祖先"></p><p><strong>解法：</strong></p><p>利用二叉搜索树左子树的所有节点小于头节点，右子树所有节点大于头节点</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * Definition for a binary tree node.</span><br><span class="hljs-comment"> * public class TreeNode &#123;</span><br><span class="hljs-comment"> *     int val;</span><br><span class="hljs-comment"> *     TreeNode left;</span><br><span class="hljs-comment"> *     TreeNode right;</span><br><span class="hljs-comment"> *     TreeNode(int x) &#123; val = x; &#125;</span><br><span class="hljs-comment"> * &#125;</span><br><span class="hljs-comment"> */</span><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> TreeNode <span class="hljs-title">lowestCommonAncestor</span><span class="hljs-params">(TreeNode root, TreeNode p, TreeNode q)</span> </span>&#123;<br>        <span class="hljs-keyword">if</span> (root.val &gt; p.val &amp;&amp; root.val &gt; q.val) &#123; <span class="hljs-comment">// 说明p，q在root的左子树内</span><br>            <span class="hljs-keyword">return</span> lowestCommonAncestor(root.left,p,q);<br>        &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (root.val &lt; p.val &amp;&amp; root.val &lt; q.val) &#123; <span class="hljs-comment">// 说明p，q在root的右子树内</span><br>            <span class="hljs-keyword">return</span> lowestCommonAncestor(root.right,p,q);<br>        &#125; <span class="hljs-keyword">else</span> &#123; <span class="hljs-comment">// root &gt; p &lt; q或者 root &lt;p &gt; q 也就是说p，q在root的左子树与右子树</span><br>            <span class="hljs-keyword">return</span> root;<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>剑指Offer</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>剑指Offer</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>二叉树</title>
     <link href="/2022/05/02/%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
     <url>/2022/05/02/%E4%BA%8C%E5%8F%89%E6%A0%91/</url>

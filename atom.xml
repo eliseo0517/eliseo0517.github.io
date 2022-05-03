@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-05-02T13:30:18.604Z</updated>
+  <updated>2022-05-03T06:14:13.599Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,81 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>重建二叉树</title>
+    <link href="http://example.com/2022/05/03/%E9%87%8D%E5%BB%BA%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
+    <id>http://example.com/2022/05/03/%E9%87%8D%E5%BB%BA%E4%BA%8C%E5%8F%89%E6%A0%91/</id>
+    <published>2022-05-03T06:12:59.000Z</published>
+    <updated>2022-05-03T06:14:13.599Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="/2022/05/03/%E9%87%8D%E5%BB%BA%E4%BA%8C%E5%8F%89%E6%A0%91/image-20220503141319095.png" alt="重建二叉树"></p><p><img src="/2022/05/03/%E9%87%8D%E5%BB%BA%E4%BA%8C%E5%8F%89%E6%A0%91/image-20220503141405171.png" alt="索引"></p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * Definition for a binary tree node.</span><br><span class="hljs-comment"> * public class TreeNode &#123;</span><br><span class="hljs-comment"> *     int val;</span><br><span class="hljs-comment"> *     TreeNode left;</span><br><span class="hljs-comment"> *     TreeNode right;</span><br><span class="hljs-comment"> *     TreeNode(int x) &#123; val = x; &#125;</span><br><span class="hljs-comment"> * &#125;</span><br><span class="hljs-comment"> */</span><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-keyword">int</span>[] preorder;<br>    HashMap&lt;Integer, Integer&gt; map = <span class="hljs-keyword">new</span> HashMap&lt;&gt;();<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> TreeNode <span class="hljs-title">buildTree</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] preorder, <span class="hljs-keyword">int</span>[] inorder)</span> </span>&#123;<br>        <span class="hljs-keyword">this</span>.preorder = preorder;<br>        <span class="hljs-comment">// 遍历中序遍历</span><br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; inorder.length; i++) &#123;<br>            map.put(inorder[i], i);<br>        &#125;<br>        <span class="hljs-keyword">return</span> recur(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, inorder.length - <span class="hljs-number">1</span>);<br>    &#125;<br>    <span class="hljs-function"><span class="hljs-keyword">private</span> TreeNode <span class="hljs-title">recur</span><span class="hljs-params">(<span class="hljs-keyword">int</span> root, <span class="hljs-keyword">int</span> left, <span class="hljs-keyword">int</span> right)</span> </span>&#123;<br>        <span class="hljs-keyword">if</span> (left &gt; right) &#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;<br>        &#125;<br>        TreeNode node = <span class="hljs-keyword">new</span> TreeNode(preorder[root]); <span class="hljs-comment">// 根节点</span><br>        <span class="hljs-keyword">int</span> i = map.get(preorder[root]); <span class="hljs-comment">// 得到根节点的索引</span><br>        node.left = recur(root+<span class="hljs-number">1</span>,left,i-<span class="hljs-number">1</span>);<br>        node.right = recur(root + (i - left) + <span class="hljs-number">1</span>, i + <span class="hljs-number">1</span>, right);<br>        <span class="hljs-keyword">return</span> node;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;/2022/05/03/%E9%87%8D%E5%BB%BA%E4%BA%8C%E5%8F%89%E6%A0%91/image-20220503141319095.png&quot; alt=&quot;重建二叉树&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/2022/05/0</summary>
+      
+    
+    
+    
+    <category term="剑指Offer" scheme="http://example.com/categories/%E5%89%91%E6%8C%87Offer/"/>
+    
+    
+    <category term="剑指Offer" scheme="http://example.com/tags/%E5%89%91%E6%8C%87Offer/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>求1+2...+n</title>
+    <link href="http://example.com/2022/05/03/%E6%B1%821-2-n/"/>
+    <id>http://example.com/2022/05/03/%E6%B1%821-2-n/</id>
+    <published>2022-05-03T01:32:38.000Z</published>
+    <updated>2022-05-03T01:35:11.400Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="/2022/05/03/%E6%B1%821-2-n/image-20220503093415361.png" alt="求1+2...+n"></p><p><strong>解法：(运算符+递归)</strong></p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">sumNums</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n)</span> </span>&#123;<br>        <span class="hljs-keyword">boolean</span> x = n &gt; <span class="hljs-number">1</span> &amp;&amp; (n += sumNums(n - <span class="hljs-number">1</span>)) &gt; <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">return</span> n;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;/2022/05/03/%E6%B1%821-2-n/image-20220503093415361.png&quot; alt=&quot;求1+2...+n&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;解法：(运算符+递归)&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=</summary>
+      
+    
+    
+    
+    <category term="剑指Offer" scheme="http://example.com/categories/%E5%89%91%E6%8C%87Offer/"/>
+    
+    
+    <category term="剑指Offer" scheme="http://example.com/tags/%E5%89%91%E6%8C%87Offer/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>二叉搜索树的最近公共祖先</title>
+    <link href="http://example.com/2022/05/03/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E7%9A%84%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88/"/>
+    <id>http://example.com/2022/05/03/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E7%9A%84%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88/</id>
+    <published>2022-05-03T01:27:02.000Z</published>
+    <updated>2022-05-03T02:08:32.801Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="/2022/05/03/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E7%9A%84%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88/image-20220503100709134.png" alt="二叉搜索树的最近公共祖先"></p><p><strong>解法：</strong></p><p>利用二叉搜索树左子树的所有节点小于头节点，右子树所有节点大于头节点</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * Definition for a binary tree node.</span><br><span class="hljs-comment"> * public class TreeNode &#123;</span><br><span class="hljs-comment"> *     int val;</span><br><span class="hljs-comment"> *     TreeNode left;</span><br><span class="hljs-comment"> *     TreeNode right;</span><br><span class="hljs-comment"> *     TreeNode(int x) &#123; val = x; &#125;</span><br><span class="hljs-comment"> * &#125;</span><br><span class="hljs-comment"> */</span><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> TreeNode <span class="hljs-title">lowestCommonAncestor</span><span class="hljs-params">(TreeNode root, TreeNode p, TreeNode q)</span> </span>&#123;<br>        <span class="hljs-keyword">if</span> (root.val &gt; p.val &amp;&amp; root.val &gt; q.val) &#123; <span class="hljs-comment">// 说明p，q在root的左子树内</span><br>            <span class="hljs-keyword">return</span> lowestCommonAncestor(root.left,p,q);<br>        &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (root.val &lt; p.val &amp;&amp; root.val &lt; q.val) &#123; <span class="hljs-comment">// 说明p，q在root的右子树内</span><br>            <span class="hljs-keyword">return</span> lowestCommonAncestor(root.right,p,q);<br>        &#125; <span class="hljs-keyword">else</span> &#123; <span class="hljs-comment">// root &gt; p &lt; q或者 root &lt;p &gt; q 也就是说p，q在root的左子树与右子树</span><br>            <span class="hljs-keyword">return</span> root;<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;/2022/05/03/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E7%9A%84%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88/image-</summary>
+      
+    
+    
+    
+    <category term="剑指Offer" scheme="http://example.com/categories/%E5%89%91%E6%8C%87Offer/"/>
+    
+    
+    <category term="剑指Offer" scheme="http://example.com/tags/%E5%89%91%E6%8C%87Offer/"/>
+    
+  </entry>
   
   <entry>
     <title>二叉树</title>
@@ -423,81 +498,6 @@
       
       
     <summary type="html">&lt;p&gt;&lt;img src=&quot;/2022/04/28/%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%9A%84%E8%BF%90%E5%8A%A8%E8%8C%83%E5%9B%B4/image-20220428104546299.png&quot; alt=&quot;机器人的运动范围</summary>
-      
-    
-    
-    
-    <category term="剑指Offer" scheme="http://example.com/categories/%E5%89%91%E6%8C%87Offer/"/>
-    
-    
-    <category term="剑指Offer" scheme="http://example.com/tags/%E5%89%91%E6%8C%87Offer/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>矩阵中的路径</title>
-    <link href="http://example.com/2022/04/28/%E7%9F%A9%E9%98%B5%E4%B8%AD%E7%9A%84%E8%B7%AF%E5%BE%84/"/>
-    <id>http://example.com/2022/04/28/%E7%9F%A9%E9%98%B5%E4%B8%AD%E7%9A%84%E8%B7%AF%E5%BE%84/</id>
-    <published>2022-04-28T02:30:02.000Z</published>
-    <updated>2022-04-28T02:31:39.758Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="/2022/04/28/%E7%9F%A9%E9%98%B5%E4%B8%AD%E7%9A%84%E8%B7%AF%E5%BE%84/image-20220428103103367.png" alt="矩阵中的路径"></p><p><strong>解法：（DFS）</strong></p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">exist</span><span class="hljs-params">(<span class="hljs-keyword">char</span>[][] board, String word)</span> </span>&#123;<br>        <span class="hljs-comment">// toCharArray()将字符串转换为字符数组。</span><br>        <span class="hljs-keyword">char</span>[] chars = word.toCharArray();<br>        <span class="hljs-comment">// 遍历board中的所有元素，将所有元素进行dfs()</span><br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; board.length; i++) &#123;<br>            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>; j &lt; board[<span class="hljs-number">0</span>].length; j++) &#123;<br>                <span class="hljs-comment">//如果找到，再返回true</span><br>                <span class="hljs-keyword">if</span> (dfs(board,chars,i,j,<span class="hljs-number">0</span>)) &#123;<br>                    <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;<br>                &#125;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;<br>    &#125;<br><br>    <span class="hljs-comment">//数组，单词，长宽，宽度，k：第几个字母</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">dfs</span><span class="hljs-params">(<span class="hljs-keyword">char</span>[][] board, <span class="hljs-keyword">char</span>[] chars,<span class="hljs-keyword">int</span> m,<span class="hljs-keyword">int</span> n,<span class="hljs-keyword">int</span> k)</span> </span>&#123;<br>        <span class="hljs-comment">//如果越界或者没找到字母</span><br>        <span class="hljs-keyword">if</span> (m &lt; <span class="hljs-number">0</span> || m &gt; board.length - <span class="hljs-number">1</span> || n &lt;<span class="hljs-number">0</span> || n &gt; board[<span class="hljs-number">0</span>].length - <span class="hljs-number">1</span> || board[m][n] != chars[k]) &#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;<br>        &#125;<br>        <span class="hljs-comment">//找到了字母并且是最后一个</span><br>        <span class="hljs-keyword">if</span> (board[m][n] == chars[k] &amp;&amp; k == chars.length - <span class="hljs-number">1</span>) &#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;<br>        &#125;<br>        <span class="hljs-comment">//找到字母但不是最后一个,就让他看他的上下左右，已经走过的让它变成~以防止再次访问，dfs之后要回退，因为在下一次dfs时候还可能再次访问这个格子</span><br>        <span class="hljs-keyword">char</span> s =  board[m][n] ;<br>        board[m][n] = <span class="hljs-string">&#x27;~&#x27;</span>;<br>        <span class="hljs-keyword">boolean</span> res =  dfs(board,chars,m + <span class="hljs-number">1</span>,n,k + <span class="hljs-number">1</span>) || dfs(board,chars,m,n + <span class="hljs-number">1</span>,k + <span class="hljs-number">1</span>) || dfs(board,chars,m - <span class="hljs-number">1</span>,n,k + <span class="hljs-number">1</span>) || dfs(board,chars,m,n - <span class="hljs-number">1</span>,k + <span class="hljs-number">1</span>);<br>        <span class="hljs-comment">// 四个格子都尝试了之后 恢复到原来的样子</span><br>        board[m][n] = s;<br>        <span class="hljs-keyword">return</span> res;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;&lt;img src=&quot;/2022/04/28/%E7%9F%A9%E9%98%B5%E4%B8%AD%E7%9A%84%E8%B7%AF%E5%BE%84/image-20220428103103367.png&quot; alt=&quot;矩阵中的路径&quot;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;解法</summary>
-      
-    
-    
-    
-    <category term="剑指Offer" scheme="http://example.com/categories/%E5%89%91%E6%8C%87Offer/"/>
-    
-    
-    <category term="剑指Offer" scheme="http://example.com/tags/%E5%89%91%E6%8C%87Offer/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>翻转单词顺序</title>
-    <link href="http://example.com/2022/04/26/%E7%BF%BB%E8%BD%AC%E5%8D%95%E8%AF%8D%E9%A1%BA%E5%BA%8F/"/>
-    <id>http://example.com/2022/04/26/%E7%BF%BB%E8%BD%AC%E5%8D%95%E8%AF%8D%E9%A1%BA%E5%BA%8F/</id>
-    <published>2022-04-26T13:47:35.000Z</published>
-    <updated>2022-04-26T13:49:36.235Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="/2022/04/26/%E7%BF%BB%E8%BD%AC%E5%8D%95%E8%AF%8D%E9%A1%BA%E5%BA%8F/image-20220426214848087.png" alt="翻转单词顺序"></p><p><strong>解法：（快慢指针）</strong></p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">reverseWords</span><span class="hljs-params">(String s)</span> </span>&#123;<br>        <span class="hljs-comment">// 去掉首位的空格</span><br>        s = s.trim();<br>        <span class="hljs-comment">// 加入两个快慢指针</span><br>        <span class="hljs-keyword">int</span> i = s.length() - <span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">int</span> j = s.length() - <span class="hljs-number">1</span>;<br>        StringBuilder res = <span class="hljs-keyword">new</span> StringBuilder();<br>        <span class="hljs-keyword">while</span> (i &gt;= <span class="hljs-number">0</span>) &#123;<br>            <span class="hljs-comment">// 当i不是空格的时候 往左遍历</span><br>            <span class="hljs-keyword">while</span> (i &gt;= <span class="hljs-number">0</span> &amp;&amp; s.charAt(i) != <span class="hljs-string">&#x27; &#x27;</span>) i--;<br>            res.append(s.substring(i + <span class="hljs-number">1</span>, j + <span class="hljs-number">1</span>) + <span class="hljs-string">&quot; &quot;</span>);<br><br>            <span class="hljs-keyword">while</span> (i &gt;= <span class="hljs-number">0</span> &amp;&amp; s.charAt(i) == <span class="hljs-string">&#x27; &#x27;</span>) i--;<br>            <span class="hljs-comment">// j指向下一个单词</span><br>            j = i;<br>        &#125;<br>        <span class="hljs-keyword">return</span> res.toString().trim();<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;&lt;img src=&quot;/2022/04/26/%E7%BF%BB%E8%BD%AC%E5%8D%95%E8%AF%8D%E9%A1%BA%E5%BA%8F/image-20220426214848087.png&quot; alt=&quot;翻转单词顺序&quot;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;解法</summary>
-      
-    
-    
-    
-    <category term="剑指Offer" scheme="http://example.com/categories/%E5%89%91%E6%8C%87Offer/"/>
-    
-    
-    <category term="剑指Offer" scheme="http://example.com/tags/%E5%89%91%E6%8C%87Offer/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>和为s的两个数字</title>
-    <link href="http://example.com/2022/04/26/%E5%92%8C%E4%B8%BAs%E7%9A%84%E4%B8%A4%E4%B8%AA%E6%95%B0%E5%AD%97/"/>
-    <id>http://example.com/2022/04/26/%E5%92%8C%E4%B8%BAs%E7%9A%84%E4%B8%A4%E4%B8%AA%E6%95%B0%E5%AD%97/</id>
-    <published>2022-04-26T08:24:20.000Z</published>
-    <updated>2022-04-26T08:29:56.762Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="/2022/04/26/%E5%92%8C%E4%B8%BAs%E7%9A%84%E4%B8%A4%E4%B8%AA%E6%95%B0%E5%AD%97/image-20220426162523495.png" alt="和为s的两个数字"></p><p><strong>解法：（左右指针）</strong></p><p>定义左右指针，左右指针的值的和sum，如果sum&gt;target，那么右指针往左；如果sum&lt;target，那么左指针往右；如果sum== target，那么输出数组[nums[i],nums[j]]</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span>[] twoSum(<span class="hljs-keyword">int</span>[] nums, <span class="hljs-keyword">int</span> target) &#123;<br>        <span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">int</span> j = nums.length - <span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">while</span> (i &lt; j) &#123;<br>            <span class="hljs-keyword">int</span> sum = nums[i] + nums[j];<br>            <span class="hljs-keyword">if</span> (sum &lt; target)&#123;<br>                i++;<br>            &#125;<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (sum &gt; target)&#123;<br>                j--;<br>            &#125;<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (sum == target)&#123;<br>                <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[] &#123;nums[i],nums[j]&#125;;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[<span class="hljs-number">0</span>];<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;&lt;img src=&quot;/2022/04/26/%E5%92%8C%E4%B8%BAs%E7%9A%84%E4%B8%A4%E4%B8%AA%E6%95%B0%E5%AD%97/image-20220426162523495.png&quot; alt=&quot;和为s的两个数字&quot;&gt;&lt;/p&gt;
-&lt;</summary>
       
     
     
