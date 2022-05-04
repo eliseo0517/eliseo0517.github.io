@@ -4,6 +4,56 @@
   
   
   <entry>
+    <title>二叉搜索树的后序遍历序列</title>
+    <link href="/2022/05/04/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E7%9A%84%E5%90%8E%E5%BA%8F%E9%81%8D%E5%8E%86%E5%BA%8F%E5%88%97/"/>
+    <url>/2022/05/04/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E7%9A%84%E5%90%8E%E5%BA%8F%E9%81%8D%E5%8E%86%E5%BA%8F%E5%88%97/</url>
+    
+    <content type="html"><![CDATA[<p><img src="/2022/05/04/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E7%9A%84%E5%90%8E%E5%BA%8F%E9%81%8D%E5%8E%86%E5%BA%8F%E5%88%97/image-20220504182947011.png" alt="image-20220504182947011"></p><p><strong>题解：</strong></p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">verifyPostorder</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] postorder)</span> </span>&#123;<br>        <span class="hljs-keyword">return</span> dfs(postorder, <span class="hljs-number">0</span>, postorder.length -<span class="hljs-number">1</span>);<br>    &#125;<br><br>    <span class="hljs-comment">// 后序遍历：左右头</span><br>    <span class="hljs-comment">// 二叉搜索树：左小于中 右大于中</span><br>    <span class="hljs-function"><span class="hljs-keyword">boolean</span> <span class="hljs-title">dfs</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] postorder, <span class="hljs-keyword">int</span> left, <span class="hljs-keyword">int</span> right)</span> </span>&#123;<br>        <span class="hljs-keyword">if</span> (left &gt;= right) &#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;<br>        &#125;<br>        <span class="hljs-comment">// 从左区间开始</span><br>        <span class="hljs-keyword">int</span> p = left;<br>        <span class="hljs-comment">// 找到第一个大于头节点的值</span><br>        <span class="hljs-keyword">while</span> (postorder[p] &lt; postorder[right]) &#123;<br>            p++;<br>        &#125;<br>        <span class="hljs-comment">// 当前节点在postorder中的所在位置为头节点所在位置</span><br>        <span class="hljs-keyword">int</span> m = p;<br>        <span class="hljs-comment">// 找到右子树的最后一个值</span><br>        <span class="hljs-keyword">while</span> (postorder[p] &gt; postorder[right]) &#123;<br>            p++;<br>        &#125;<br>        <span class="hljs-comment">//     本树                   左树                                   右树</span><br>        <span class="hljs-keyword">return</span> p == right &amp;&amp; dfs(postorder,left,m-<span class="hljs-number">1</span>) &amp;&amp; dfs(postorder,m,right-<span class="hljs-number">1</span>);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>剑指Offer</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>剑指Offer</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>数值的整数次方</title>
+    <link href="/2022/05/04/%E6%95%B0%E5%80%BC%E7%9A%84%E6%95%B4%E6%95%B0%E6%AC%A1%E6%96%B9/"/>
+    <url>/2022/05/04/%E6%95%B0%E5%80%BC%E7%9A%84%E6%95%B4%E6%95%B0%E6%AC%A1%E6%96%B9/</url>
+    
+    <content type="html"><![CDATA[<p><img src="/2022/05/04/%E6%95%B0%E5%80%BC%E7%9A%84%E6%95%B4%E6%95%B0%E6%AC%A1%E6%96%B9/image-20220504165807196.png" alt="数值的整数次方"></p><p><strong>解法一：（暴力遍历）</strong></p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">double</span> <span class="hljs-title">myPow</span><span class="hljs-params">(<span class="hljs-keyword">double</span> x, <span class="hljs-keyword">int</span> n)</span> </span>&#123;<br>        <span class="hljs-keyword">if</span> (x == <span class="hljs-number">0</span>) <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">long</span> b = n;<br>        <span class="hljs-keyword">double</span> res = <span class="hljs-number">1.0</span>;<br>        <span class="hljs-keyword">if</span> (b &lt; <span class="hljs-number">0</span>) &#123;<br>            x = <span class="hljs-number">1</span>/x;<br>            b = -b;<br>        &#125;<br>        <span class="hljs-keyword">if</span> (b &gt; <span class="hljs-number">0</span>)&#123;<br>            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= b; i++) &#123;<br>                res *= x; <br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> res;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure><p><strong>结果发现当n太大的时候会出现超时现象</strong></p><p><strong>解法二：（快速幂）</strong></p><p><strong>解题思路：</strong></p><p>![解题思路](file:///C:\Users\TiAmo\Documents\Tencent Files\2519736098\Image\C2C\Image1\30B0C70FDFBE773FBAFAEE6CE9466E5C.png)</p><p><strong>为什么要使用快速幂法？</strong></p><p><strong>快速幂法</strong> 可将时间复杂度降低至O(log2n)以二为低n的对数</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">double</span> <span class="hljs-title">myPow</span><span class="hljs-params">(<span class="hljs-keyword">double</span> x, <span class="hljs-keyword">int</span> n)</span> </span>&#123;<br>        <span class="hljs-keyword">if</span> (x == <span class="hljs-number">0</span>) <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">long</span> b = n;<br>        <span class="hljs-keyword">double</span> res = <span class="hljs-number">1.0</span>;<br>        <span class="hljs-keyword">if</span> (b &lt; <span class="hljs-number">0</span>) &#123;<br>            x = <span class="hljs-number">1</span>/x;<br>            b = -b;<br>        &#125;<br>        <span class="hljs-keyword">while</span>(b &gt; <span class="hljs-number">0</span>) &#123;<br>            <span class="hljs-keyword">if</span>((b &amp; <span class="hljs-number">1</span>) == <span class="hljs-number">1</span>) &#123; <span class="hljs-comment">// 说明n的二进制的最低位为1</span><br>                res *= x;<br>            &#125;<br>            x *= x;<br>            b &gt;&gt;= <span class="hljs-number">1</span>; <span class="hljs-comment">// 消去二进制的最低位</span><br>        &#125;<br>        <span class="hljs-keyword">return</span> res;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>剑指Offer</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>剑指Offer</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>重建二叉树</title>
     <link href="/2022/05/03/%E9%87%8D%E5%BB%BA%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
     <url>/2022/05/03/%E9%87%8D%E5%BB%BA%E4%BA%8C%E5%8F%89%E6%A0%91/</url>
