@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-05-04T10:30:42.526Z</updated>
+  <updated>2022-05-05T07:48:35.956Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,55 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>不用加减乘除做加法</title>
+    <link href="http://example.com/2022/05/05/%E4%B8%8D%E7%94%A8%E5%8A%A0%E5%87%8F%E4%B9%98%E9%99%A4%E5%81%9A%E5%8A%A0%E6%B3%95/"/>
+    <id>http://example.com/2022/05/05/%E4%B8%8D%E7%94%A8%E5%8A%A0%E5%87%8F%E4%B9%98%E9%99%A4%E5%81%9A%E5%8A%A0%E6%B3%95/</id>
+    <published>2022-05-05T07:47:03.000Z</published>
+    <updated>2022-05-05T07:48:35.956Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="/2022/05/05/%E4%B8%8D%E7%94%A8%E5%8A%A0%E5%87%8F%E4%B9%98%E9%99%A4%E5%81%9A%E5%8A%A0%E6%B3%95/image-20220505154715941.png" alt="不用加减乘除做加法"></p><p><strong>题解：</strong></p><p><img src="/2022/05/05/%E4%B8%8D%E7%94%A8%E5%8A%A0%E5%87%8F%E4%B9%98%E9%99%A4%E5%81%9A%E5%8A%A0%E6%B3%95/image-20220505154830988.png" alt="题解1"></p><p><strong>解法：</strong></p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">add</span><span class="hljs-params">(<span class="hljs-keyword">int</span> a, <span class="hljs-keyword">int</span> b)</span> </span>&#123;<br>        <span class="hljs-keyword">while</span>(b != <span class="hljs-number">0</span>) &#123; <span class="hljs-comment">// 当进位为 0 时跳出</span><br>            <span class="hljs-keyword">int</span> c = (a &amp; b) &lt;&lt; <span class="hljs-number">1</span>;  <span class="hljs-comment">// c = 进位</span><br>            a ^= b; <span class="hljs-comment">// a = 非进位和</span><br>            b = c; <span class="hljs-comment">// b = 进位</span><br>        &#125;<br>        <span class="hljs-keyword">return</span> a;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;/2022/05/05/%E4%B8%8D%E7%94%A8%E5%8A%A0%E5%87%8F%E4%B9%98%E9%99%A4%E5%81%9A%E5%8A%A0%E6%B3%95/image-20220505154715941.png&quot; alt=</summary>
+      
+    
+    
+    
+    <category term="剑指Offer" scheme="http://example.com/categories/%E5%89%91%E6%8C%87Offer/"/>
+    
+    
+    <category term="剑指Offer" scheme="http://example.com/tags/%E5%89%91%E6%8C%87Offer/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>二进制中1的个数</title>
+    <link href="http://example.com/2022/05/05/%E4%BA%8C%E8%BF%9B%E5%88%B6%E4%B8%AD1%E7%9A%84%E4%B8%AA%E6%95%B0/"/>
+    <id>http://example.com/2022/05/05/%E4%BA%8C%E8%BF%9B%E5%88%B6%E4%B8%AD1%E7%9A%84%E4%B8%AA%E6%95%B0/</id>
+    <published>2022-05-05T07:36:31.000Z</published>
+    <updated>2022-05-05T07:38:41.557Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="/2022/05/05/%E4%BA%8C%E8%BF%9B%E5%88%B6%E4%B8%AD1%E7%9A%84%E4%B8%AA%E6%95%B0/image-20220505153708668.png" alt="二进制中1的个数"></p><p>解法：（位运算）</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-comment">// you need to treat n as an unsigned value</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">hammingWeight</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n)</span> </span>&#123;<br>        <span class="hljs-keyword">int</span> res = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">while</span> (n != <span class="hljs-number">0</span>) &#123;<br>            <span class="hljs-comment">// 判断最后一位是不是1</span><br>            res += n &amp; <span class="hljs-number">1</span>;<br>            <span class="hljs-comment">// 无符号为右移</span><br>            n &gt;&gt;&gt;= <span class="hljs-number">1</span>;<br>        &#125;<br>        <span class="hljs-keyword">return</span> res;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;/2022/05/05/%E4%BA%8C%E8%BF%9B%E5%88%B6%E4%B8%AD1%E7%9A%84%E4%B8%AA%E6%95%B0/image-20220505153708668.png&quot; alt=&quot;二进制中1的个数&quot;&gt;&lt;/p&gt;
+&lt;</summary>
+      
+    
+    
+    
+    <category term="剑指Offer" scheme="http://example.com/categories/%E5%89%91%E6%8C%87Offer/"/>
+    
+    
+    <category term="剑指Offer" scheme="http://example.com/tags/%E5%89%91%E6%8C%87Offer/"/>
+    
+  </entry>
   
   <entry>
     <title>二叉搜索树的后序遍历序列</title>
@@ -451,54 +500,6 @@
       
       
     <summary type="html">&lt;p&gt;&lt;img src=&quot;/2022/04/28/%E6%8A%8A%E6%95%B0%E7%BB%84%E6%8E%92%E6%88%90%E6%9C%80%E5%B0%8F%E7%9A%84%E6%95%B0/image-20220428163449786.png&quot; alt=</summary>
-      
-    
-    
-    
-    <category term="剑指Offer" scheme="http://example.com/categories/%E5%89%91%E6%8C%87Offer/"/>
-    
-    
-    <category term="剑指Offer" scheme="http://example.com/tags/%E5%89%91%E6%8C%87Offer/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>二叉搜索树的第k大节点</title>
-    <link href="http://example.com/2022/04/28/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E7%9A%84%E7%AC%ACk%E5%A4%A7%E8%8A%82%E7%82%B9/"/>
-    <id>http://example.com/2022/04/28/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E7%9A%84%E7%AC%ACk%E5%A4%A7%E8%8A%82%E7%82%B9/</id>
-    <published>2022-04-28T08:26:32.000Z</published>
-    <updated>2022-04-28T08:31:29.371Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="/2022/04/28/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E7%9A%84%E7%AC%ACk%E5%A4%A7%E8%8A%82%E7%82%B9/image-20220428162801246.png" alt="二叉搜索树的第k大节点"></p><p><strong>解法：</strong></p><p>二叉搜索树：右节点大，所以判断第几大的时候就先遍历右节点，然后右节点遍历一次 k–，直到k变成1</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * Definition for a binary tree node.</span><br><span class="hljs-comment"> * public class TreeNode &#123;</span><br><span class="hljs-comment"> *     int val;</span><br><span class="hljs-comment"> *     TreeNode left;</span><br><span class="hljs-comment"> *     TreeNode right;</span><br><span class="hljs-comment"> *     TreeNode(int x) &#123; val = x; &#125;</span><br><span class="hljs-comment"> * &#125;</span><br><span class="hljs-comment"> */</span><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> k;<br>    <span class="hljs-keyword">int</span> res;<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">kthLargest</span><span class="hljs-params">(TreeNode root, <span class="hljs-keyword">int</span> k)</span> </span>&#123;<br>        <span class="hljs-keyword">this</span>.k = k;<br>        dfs(root);<br>        <span class="hljs-keyword">return</span> res;<br>    &#125;<br><br>    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">dfs</span><span class="hljs-params">(TreeNode root)</span> </span>&#123;<br>        <span class="hljs-keyword">if</span> (root == <span class="hljs-keyword">null</span>) &#123;<br>            <span class="hljs-keyword">return</span>;<br>        &#125;<br>        dfs(root.right);<br>        <span class="hljs-keyword">if</span> (k == <span class="hljs-number">1</span>) &#123;<br>            res = root.val;<br>        &#125;<br>        k--;<br>        dfs(root.left);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;&lt;img src=&quot;/2022/04/28/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E7%9A%84%E7%AC%ACk%E5%A4%A7%E8%8A%82%E7%82%B9/image-20220428162801246</summary>
-      
-    
-    
-    
-    <category term="剑指Offer" scheme="http://example.com/categories/%E5%89%91%E6%8C%87Offer/"/>
-    
-    
-    <category term="剑指Offer" scheme="http://example.com/tags/%E5%89%91%E6%8C%87Offer/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>二叉搜索树与双向链表</title>
-    <link href="http://example.com/2022/04/28/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E4%B8%8E%E5%8F%8C%E5%90%91%E9%93%BE%E8%A1%A8/"/>
-    <id>http://example.com/2022/04/28/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E4%B8%8E%E5%8F%8C%E5%90%91%E9%93%BE%E8%A1%A8/</id>
-    <published>2022-04-28T07:16:40.000Z</published>
-    <updated>2022-04-28T08:20:13.318Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="/2022/04/28/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E4%B8%8E%E5%8F%8C%E5%90%91%E9%93%BE%E8%A1%A8/image-20220428151835975.png" alt="二叉搜索树与双向链表"></p><p><strong>解法：（中序遍历）</strong></p><p><strong>二叉搜索树：</strong>若它的左子树不空，则左子树上所有结点的值均小于它的 根结点 的值； 若它的右子树不空，则右子树上所有结点的值均大于它的根结点的值； 它的左、右子树也分别为 二叉排序树 。</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">/*</span><br><span class="hljs-comment">// Definition for a Node.</span><br><span class="hljs-comment">class Node &#123;</span><br><span class="hljs-comment">    public int val;</span><br><span class="hljs-comment">    public Node left;</span><br><span class="hljs-comment">    public Node right;</span><br><span class="hljs-comment"></span><br><span class="hljs-comment">    public Node() &#123;&#125;</span><br><span class="hljs-comment"></span><br><span class="hljs-comment">    public Node(int _val) &#123;</span><br><span class="hljs-comment">        val = _val;</span><br><span class="hljs-comment">    &#125;</span><br><span class="hljs-comment"></span><br><span class="hljs-comment">    public Node(int _val,Node _left,Node _right) &#123;</span><br><span class="hljs-comment">        val = _val;</span><br><span class="hljs-comment">        left = _left;</span><br><span class="hljs-comment">        right = _right;</span><br><span class="hljs-comment">    &#125;</span><br><span class="hljs-comment">&#125;;</span><br><span class="hljs-comment">*/</span><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    Node pre, head;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> Node <span class="hljs-title">treeToDoublyList</span><span class="hljs-params">(Node root)</span> </span>&#123;<br>        <span class="hljs-keyword">if</span>(root == <span class="hljs-keyword">null</span>) <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;<br>        dfs(root);<br>        head.left = pre;<br>        pre.right = head;<br>        <span class="hljs-keyword">return</span> head;<br>    &#125;<br>    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">dfs</span><span class="hljs-params">(Node cur)</span> </span>&#123;<br>        <span class="hljs-keyword">if</span>(cur == <span class="hljs-keyword">null</span>) <span class="hljs-keyword">return</span>;<br>        dfs(cur.left);<br>        <span class="hljs-keyword">if</span>(pre != <span class="hljs-keyword">null</span>) pre.right = cur;<br>        <span class="hljs-keyword">else</span> head = cur;<br>        cur.left = pre;<br>        pre = cur;<br>        dfs(cur.right);<br>    &#125;<br><br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;&lt;img src=&quot;/2022/04/28/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E4%B8%8E%E5%8F%8C%E5%90%91%E9%93%BE%E8%A1%A8/image-20220428151835975.</summary>
       
     
     
