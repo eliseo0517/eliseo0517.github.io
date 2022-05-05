@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-05-05T14:32:56.043Z</updated>
+  <updated>2022-05-05T15:52:58.571Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>数组中数字出现的次数Ⅱ</title>
+    <link href="http://example.com/2022/05/05/%E6%95%B0%E7%BB%84%E4%B8%AD%E6%95%B0%E5%AD%97%E5%87%BA%E7%8E%B0%E7%9A%84%E6%AC%A1%E6%95%B0%E2%85%A1/"/>
+    <id>http://example.com/2022/05/05/%E6%95%B0%E7%BB%84%E4%B8%AD%E6%95%B0%E5%AD%97%E5%87%BA%E7%8E%B0%E7%9A%84%E6%AC%A1%E6%95%B0%E2%85%A1/</id>
+    <published>2022-05-05T15:51:36.000Z</published>
+    <updated>2022-05-05T15:52:58.571Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="/2022/05/05/%E6%95%B0%E7%BB%84%E4%B8%AD%E6%95%B0%E5%AD%97%E5%87%BA%E7%8E%B0%E7%9A%84%E6%AC%A1%E6%95%B0%E2%85%A1/image-20220505235148555.png" alt="数组中数字出现的次数Ⅱ"></p><p><strong>解法一：哈希表</strong></p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">singleNumber</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] nums)</span> </span>&#123;<br>        <span class="hljs-comment">// 哈希表</span><br>        HashMap&lt;Integer, Boolean&gt; map = <span class="hljs-keyword">new</span> HashMap&lt;&gt;();<br>        <span class="hljs-comment">// 第一次存进去的数字只出现了一次，所以为false，第二次出现以及以后再出现就是true，所以只出现一次的为false</span><br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> num : nums) &#123;<br>            map.put(num, map.containsKey(num));<br>        &#125;<br>        <span class="hljs-keyword">int</span> res = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> num : nums) &#123;<br>            <span class="hljs-keyword">if</span> (!map.get(num)) &#123;<br>                res = num;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> res;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure><p><strong>解法二：位运算</strong></p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">singleNumber</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] nums)</span> </span>&#123;<br>        <span class="hljs-comment">// 位运算</span><br>        <br>        <span class="hljs-comment">// counts 是nums数组中每一个数字转换为二进制之后所在地方有几个1</span><br>        <span class="hljs-keyword">int</span>[] counts = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[<span class="hljs-number">32</span>];<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> num : nums) &#123;<br>            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>; j &lt; <span class="hljs-number">32</span>; j++) &#123;<br>                counts[j] += num &amp; <span class="hljs-number">1</span>;<br>                num &gt;&gt;&gt;= <span class="hljs-number">1</span>;<br>                <span class="hljs-comment">// 从nums的第一个数字开始 每遍历一次 num往右移一位</span><br>                <span class="hljs-comment">// 也就是说num从最后一位开始往左判断每一位的1的个数</span><br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">int</span> res = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">32</span>; i++) &#123;<br>            res &lt;&lt;= <span class="hljs-number">1</span>;<br>            <span class="hljs-comment">// 从高位开始对3取余 与 res进行或运算 有1就 res的当前位的二进制变为1</span><br>            <span class="hljs-comment">// 然后res左移开始判断次高位</span><br>            res |= counts[<span class="hljs-number">31</span>-i] % <span class="hljs-number">3</span>;<br>        &#125;<br>        <span class="hljs-keyword">return</span> res;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;/2022/05/05/%E6%95%B0%E7%BB%84%E4%B8%AD%E6%95%B0%E5%AD%97%E5%87%BA%E7%8E%B0%E7%9A%84%E6%AC%A1%E6%95%B0%E2%85%A1/image-202205052</summary>
+      
+    
+    
+    
+    <category term="剑指Offer" scheme="http://example.com/categories/%E5%89%91%E6%8C%87Offer/"/>
+    
+    
+    <category term="剑指Offer" scheme="http://example.com/tags/%E5%89%91%E6%8C%87Offer/"/>
+    
+  </entry>
   
   <entry>
     <title>数组中数字出现的次数</title>
@@ -475,30 +499,6 @@
       
       
     <summary type="html">&lt;p&gt;&lt;img src=&quot;/2022/04/29/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%B7%B1%E5%BA%A6/image-20220429144838269.png&quot; alt=&quot;image-20220429144838269&quot;&gt;&lt;</summary>
-      
-    
-    
-    
-    <category term="剑指Offer" scheme="http://example.com/categories/%E5%89%91%E6%8C%87Offer/"/>
-    
-    
-    <category term="剑指Offer" scheme="http://example.com/tags/%E5%89%91%E6%8C%87Offer/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>数据流中的中位数</title>
-    <link href="http://example.com/2022/04/29/%E6%95%B0%E6%8D%AE%E6%B5%81%E4%B8%AD%E7%9A%84%E4%B8%AD%E4%BD%8D%E6%95%B0/"/>
-    <id>http://example.com/2022/04/29/%E6%95%B0%E6%8D%AE%E6%B5%81%E4%B8%AD%E7%9A%84%E4%B8%AD%E4%BD%8D%E6%95%B0/</id>
-    <published>2022-04-29T04:39:23.000Z</published>
-    <updated>2022-04-29T04:44:13.832Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="/2022/04/29/%E6%95%B0%E6%8D%AE%E6%B5%81%E4%B8%AD%E7%9A%84%E4%B8%AD%E4%BD%8D%E6%95%B0/image-20220429124407888.png" alt="数据流中的中位数"></p><p><strong>大根堆</strong>即指在逻辑上的二叉树结构中，根结点&gt;子结点，总是最大的，<strong>并且在堆的每一个局部都是如此</strong></p><p><strong>小根堆</strong>的性质与大根堆类似，只不过在二叉树的结构中，根结点&lt;子结点</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MedianFinder</span> </span>&#123;<br><br>    <span class="hljs-comment">/** initialize your data structure here. */</span><br>   <span class="hljs-comment">//小根堆</span><br>    PriorityQueue&lt;Integer&gt; A;<br>    <span class="hljs-comment">//大根堆</span><br>    PriorityQueue&lt;Integer&gt; B;<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">MedianFinder</span><span class="hljs-params">()</span> </span>&#123;<br>        A = <span class="hljs-keyword">new</span> PriorityQueue&lt;&gt;();<br>        B = <span class="hljs-keyword">new</span> PriorityQueue&lt;&gt;((x, y) -&gt; (y - x));<br>    &#125;<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">addNum</span><span class="hljs-params">(<span class="hljs-keyword">int</span> num)</span> </span>&#123;<br>        <span class="hljs-keyword">if</span> (A.size() != B.size()) &#123;<br>            <span class="hljs-comment">// 两个堆</span><br>            A.add(num);<br>            B.add(A.poll());<br>        &#125; <span class="hljs-keyword">else</span> &#123;<br>            B.add(num);<br>            A.add(B.poll());<br>        &#125;<br>    &#125;<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">double</span> <span class="hljs-title">findMedian</span><span class="hljs-params">()</span> </span>&#123;<br>        <span class="hljs-keyword">if</span> (A.size() == B.size()) &#123;<br>            <span class="hljs-keyword">return</span> (<span class="hljs-keyword">double</span>) (A.peek() + B.peek())/<span class="hljs-number">2</span>;<br>        &#125;<span class="hljs-keyword">else</span> &#123;<br>            <span class="hljs-comment">//奇数，直接返回小的堆顶</span><br>            <span class="hljs-keyword">return</span> (<span class="hljs-keyword">double</span>)A.peek();<br>        &#125;<br><br>    &#125;<br>&#125;<br><br><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * Your MedianFinder object will be instantiated and called as such:</span><br><span class="hljs-comment"> * MedianFinder obj = new MedianFinder();</span><br><span class="hljs-comment"> * obj.addNum(num);</span><br><span class="hljs-comment"> * double param_2 = obj.findMedian();</span><br><span class="hljs-comment"> */</span><br></code></pre></td></tr></table></figure>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;&lt;img src=&quot;/2022/04/29/%E6%95%B0%E6%8D%AE%E6%B5%81%E4%B8%AD%E7%9A%84%E4%B8%AD%E4%BD%8D%E6%95%B0/image-20220429124407888.png&quot; alt=&quot;数据流中的中位数</summary>
       
     
     
