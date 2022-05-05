@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-05-05T07:48:35.956Z</updated>
+  <updated>2022-05-05T12:32:12.277Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Linux</title>
+    <link href="http://example.com/2022/05/05/Linux/"/>
+    <id>http://example.com/2022/05/05/Linux/</id>
+    <published>2022-05-05T09:21:34.000Z</published>
+    <updated>2022-05-05T12:32:12.277Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="网络连接的三种方式"><a href="#网络连接的三种方式" class="headerlink" title="网络连接的三种方式"></a>网络连接的三种方式</h1><h2 id="桥接模式"><a href="#桥接模式" class="headerlink" title="桥接模式"></a>桥接模式</h2><p>虚拟系统可以和外部系统<strong>相互</strong>通讯，但是容易造成ip冲突(超过255个机器)</p><h2 id="NAT模式（网络地址转换模式）"><a href="#NAT模式（网络地址转换模式）" class="headerlink" title="NAT模式（网络地址转换模式）"></a>NAT模式（网络地址转换模式）</h2><p>NAT模式，网络地址转换模式，虚拟系统可以和外部系统<strong>单方面通讯(外部不可以直接访问内部)，</strong>不造成IP冲突，相当于给你虚拟机虚拟一个ip，然后在需要访问外部的时候，自动转换成你母机ip去访问外部</p><h2 id="主机模式"><a href="#主机模式" class="headerlink" title="主机模式"></a>主机模式</h2><p>可以看作一个独立的系统，不与外界进行联系</p><p><img src="/2022/05/05/Linux/image-20220505162247042.png" alt="网络连接的三种方式"></p><h1 id="Linux目录结构"><a href="#Linux目录结构" class="headerlink" title="Linux目录结构"></a>Linux目录结构</h1><p>1、linux的文件系统是采用级层式的树状目录结构，最上层是根目录”/“，然后在此目录下创建其他的目录。</p><p>2、<strong>在Linux的世界里，一切皆文件</strong></p><ul><li><p>/bin (/usr/bin、/usr/local/bin),是Binary的缩写，存放着最常使用的命令<strong>【常用】</strong></p></li><li><p>/sbin 存放的是系统管理员使用的系统管理程序</p></li><li><p>/home 存放普通用户的主目录，在linux中每个用户都有自己的目录<strong>【常用】</strong></p></li><li><p>/root 系统管理员，也成为超级权限者的用户主目录<strong>【常用】</strong></p></li><li><p>/lib 系统开机所需要的最基本的动态连接共享库</p></li><li><p>/lost+found 一般情况是空的，当系统非法关机后，这里就存放了一些文件</p></li><li><p>/etc 所有的系统管理所需要的配置文件和子目录，例如mysql的my.conf<strong>【常用】</strong></p></li><li><p>/usr 用户的很多应用程序和文件都放在这个目录下，类似于windows的program files目录<strong>【常用】！！</strong></p></li><li><p>/boot 存放的是启动linux时使用的一些核心文件，包括一些连接文件以及镜像文件<strong>【常用】</strong></p></li><li><p>/proc 是一个虚拟目录，是系统内存的映射，访问这个目录来获取系统信息<strong>【不能动】</strong></p></li><li><p>/srv service的缩写，存放一些服务启动之后需要提取的数据<strong>【不能动】</strong></p></li><li><p>/sys linux2.6之后出现，安装了一个文件系统sysfs<strong>【不能动】</strong></p></li><li><p>/tmp 用来存放一些临时文件</p></li><li><p>/dev 类似于Windows的设备管理器，把所有的硬件用文件形式存储</p></li><li><p>/media 会自动识别一些例如u盘光驱等设备，识别后就将识别的设备挂载到这目录下<strong>【常用】</strong></p></li><li><p>/mnt 该目录是为了让用户挂载别的文件系统，可以将外部存储挂载在/mnt上，进入该目录查看<strong>【常用】</strong></p></li><li><p>挂载，指的就是将设备文件中的顶级目录连接到 Linux 根目录下的某一目录（最好是空目录），访问此目录就等同于访问设备文件。</p></li><li><p>/opt 给主机额外<strong>安装软件</strong>的目录</p></li><li><p>/usr/local 另一个给主机额外安装软件所安装的目录，一般是通过编译源码方式安装的程序<strong>【常用】</strong></p></li><li><p>/var 存放一些不断扩张的东西，习惯将经常被修改的目录放在这个目录下，包括各种日志文件<strong>【常用】</strong></p></li><li><p>/selinux [security-enhanced linux] 是一种安全的子系统，它能控制程序只访问特定文件，有三种工作模式，可以自行设置</p></li></ul><h1 id="vi和vim编辑器"><a href="#vi和vim编辑器" class="headerlink" title="vi和vim编辑器"></a>vi和vim编辑器</h1><h2 id="三种使用模式"><a href="#三种使用模式" class="headerlink" title="三种使用模式"></a>三种使用模式</h2><p><strong>正常模式(命令模式)</strong></p><p>​    以vim打开一个档案就直接进入一般模式了(这是默认的模式)。在这个模式中，你可以使用「上下左右』按键来移动光标，你可以使用『删除字符』或『删除整行』来处理档案内容，也可以使用『复制、粘贴』来处理你的文件数据。</p><p><strong>插入模式</strong></p><p>​    按下i，I，o，O，a，A，r，R等任何一个字母之后才会进入编辑模式，一般按<strong>i</strong>即可</p><p><strong>命令行模式</strong></p><p>​    输入esc退出当前模式，再输入<code>:</code>进入命令行模式</p><p>​    可以提供相关指令，完成读取，存盘，替换，离开vim显示行号等动作。</p><h2 id="各种模式的切换"><a href="#各种模式的切换" class="headerlink" title="各种模式的切换"></a>各种模式的切换</h2><p><img src="/2022/05/05/Linux/image-20220505201406877.png" alt="各种模式的切换方式"></p><h2 id="vim操作"><a href="#vim操作" class="headerlink" title="vim操作"></a>vim操作</h2><p>在一般模式(命令行模式)下：</p><ul><li>yy 拷贝当前行；5yy 拷贝光标向下的5行，p 粘贴 u撤销 x删除</li><li>dd 删除当前行；5dd，删除光标向下的5行</li><li>在文件中查找某一个单词（<strong>命令行下</strong>/关键字，输入回车查找，n查找下一个，N查找上一个）</li><li>G 文档最末行，gg 最首行（在一般模式下）</li><li>先输入行号 在输入shift+g 表示移动到多少行</li></ul><p>在命令行模式下:</p><ul><li>wq(保存退出) q(退出) q!(强制退出不保存)</li><li>/关键字 回车 查找某个单词，输入n是查找下一个</li><li>set nu 设置文件的行号，set nonu 取消文件的行号</li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;网络连接的三种方式&quot;&gt;&lt;a href=&quot;#网络连接的三种方式&quot; class=&quot;headerlink&quot; title=&quot;网络连接的三种方式&quot;&gt;&lt;/a&gt;网络连接的三种方式&lt;/h1&gt;&lt;h2 id=&quot;桥接模式&quot;&gt;&lt;a href=&quot;#桥接模式&quot; class=&quot;headerli</summary>
+      
+    
+    
+    
+    <category term="Linux" scheme="http://example.com/categories/Linux/"/>
+    
+    
+    <category term="Linux" scheme="http://example.com/tags/Linux/"/>
+    
+  </entry>
   
   <entry>
     <title>不用加减乘除做加法</title>
@@ -476,30 +500,6 @@
       
     <summary type="html">&lt;p&gt;&lt;img src=&quot;/2022/04/28/%E6%89%91%E5%85%8B%E7%89%8C%E4%B8%AD%E7%9A%84%E9%A1%BA%E5%AD%90/image-20220428170008577.png&quot; alt=&quot;扑克牌中的顺子&quot;&gt;&lt;/p&gt;
 &lt;p&gt;</summary>
-      
-    
-    
-    
-    <category term="剑指Offer" scheme="http://example.com/categories/%E5%89%91%E6%8C%87Offer/"/>
-    
-    
-    <category term="剑指Offer" scheme="http://example.com/tags/%E5%89%91%E6%8C%87Offer/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>把数组排成最小的数</title>
-    <link href="http://example.com/2022/04/28/%E6%8A%8A%E6%95%B0%E7%BB%84%E6%8E%92%E6%88%90%E6%9C%80%E5%B0%8F%E7%9A%84%E6%95%B0/"/>
-    <id>http://example.com/2022/04/28/%E6%8A%8A%E6%95%B0%E7%BB%84%E6%8E%92%E6%88%90%E6%9C%80%E5%B0%8F%E7%9A%84%E6%95%B0/</id>
-    <published>2022-04-28T08:34:20.000Z</published>
-    <updated>2022-04-28T08:35:00.170Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="/2022/04/28/%E6%8A%8A%E6%95%B0%E7%BB%84%E6%8E%92%E6%88%90%E6%9C%80%E5%B0%8F%E7%9A%84%E6%95%B0/image-20220428163449786.png" alt="把数组排成最小的数"></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;&lt;img src=&quot;/2022/04/28/%E6%8A%8A%E6%95%B0%E7%BB%84%E6%8E%92%E6%88%90%E6%9C%80%E5%B0%8F%E7%9A%84%E6%95%B0/image-20220428163449786.png&quot; alt=</summary>
       
     
     
