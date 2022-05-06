@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-05-05T15:52:58.571Z</updated>
+  <updated>2022-05-06T12:09:09.896Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,81 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>减绳子</title>
+    <link href="http://example.com/2022/05/06/%E5%87%8F%E7%BB%B3%E5%AD%90/"/>
+    <id>http://example.com/2022/05/06/%E5%87%8F%E7%BB%B3%E5%AD%90/</id>
+    <published>2022-05-06T12:07:23.000Z</published>
+    <updated>2022-05-06T12:09:09.896Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="/2022/05/06/%E5%87%8F%E7%BB%B3%E5%AD%90/image-20220506200733812.png" alt="减绳子"></p><p><strong>解法一：(贪心算法)</strong></p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">cuttingRope</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n)</span> </span>&#123;<br>        <span class="hljs-comment">// 最优 一根绳子完美的切成多个3 n % 3 == 0</span><br>        <span class="hljs-comment">// 次优 一根绳子切成 多个3与一个2 n % 3 == 2</span><br>        <span class="hljs-comment">// 最差 一根绳子除以3 余数为1 那么一个切法变成 1*3 =&gt; 2*2 n % 3 == 1</span><br>        <span class="hljs-comment">// 3 * 1 &lt; 2 * 2</span><br>        <span class="hljs-comment">// 3是最优的 优先考虑3</span><br><br>        <span class="hljs-keyword">if</span> (n &lt;= <span class="hljs-number">3</span>) &#123;<br>            <span class="hljs-keyword">return</span> n - <span class="hljs-number">1</span>;<br>        &#125;<br>        <span class="hljs-comment">// 判断 n 能被几个3整除</span><br>        <span class="hljs-keyword">int</span> a = n / <span class="hljs-number">3</span>;<br>        <span class="hljs-comment">// n 除以三的余数</span><br>        <span class="hljs-keyword">int</span> b = n % <span class="hljs-number">3</span>;<br><br>        <span class="hljs-keyword">if</span> (b == <span class="hljs-number">0</span>) <span class="hljs-keyword">return</span> (<span class="hljs-keyword">int</span>) Math.pow(<span class="hljs-number">3</span>, a);<br>        <span class="hljs-keyword">if</span> (b == <span class="hljs-number">1</span>) <span class="hljs-keyword">return</span> (<span class="hljs-keyword">int</span>) Math.pow(<span class="hljs-number">3</span>, a - <span class="hljs-number">1</span>) * <span class="hljs-number">4</span>;<br>        <span class="hljs-keyword">return</span> (<span class="hljs-keyword">int</span>) (Math.pow(<span class="hljs-number">3</span>, a) * <span class="hljs-number">2</span>);<br><br>        <span class="hljs-comment">/*</span><br><span class="hljs-comment">        对于 8 而言</span><br><span class="hljs-comment">        1、8 / 3 = 2</span><br><span class="hljs-comment">        2、8 % 3 = 2</span><br><span class="hljs-comment">        b == 2 所以为 3的二次方*2 也就是 2*3*3</span><br><span class="hljs-comment"></span><br><span class="hljs-comment">        对于 6 而言</span><br><span class="hljs-comment">        1、6 / 3 = 2</span><br><span class="hljs-comment">        2、6 % 3 = 0</span><br><span class="hljs-comment">        b == 0 所以 3的二次方 也就是 3*3</span><br><span class="hljs-comment"></span><br><span class="hljs-comment">        对于7而言</span><br><span class="hljs-comment">        1、7 / 3 = 2</span><br><span class="hljs-comment">        2、7 % 3 = 1</span><br><span class="hljs-comment">        b == 1 所以 3的一次方 也就是 3 * 4</span><br><span class="hljs-comment">         */</span><br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;/2022/05/06/%E5%87%8F%E7%BB%B3%E5%AD%90/image-20220506200733812.png&quot; alt=&quot;减绳子&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;解法一：(贪心算法)&lt;/strong&gt;&lt;/p&gt;
+&lt;figure </summary>
+      
+    
+    
+    
+    <category term="剑指Offer" scheme="http://example.com/categories/%E5%89%91%E6%8C%87Offer/"/>
+    
+    
+    <category term="剑指Offer" scheme="http://example.com/tags/%E5%89%91%E6%8C%87Offer/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>构建乘积数组</title>
+    <link href="http://example.com/2022/05/06/%E6%9E%84%E5%BB%BA%E4%B9%98%E7%A7%AF%E6%95%B0%E7%BB%84/"/>
+    <id>http://example.com/2022/05/06/%E6%9E%84%E5%BB%BA%E4%B9%98%E7%A7%AF%E6%95%B0%E7%BB%84/</id>
+    <published>2022-05-06T02:30:26.000Z</published>
+    <updated>2022-05-06T02:31:02.246Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="/2022/05/06/%E6%9E%84%E5%BB%BA%E4%B9%98%E7%A7%AF%E6%95%B0%E7%BB%84/image-20220506103032263.png" alt="构建乘积数组"></p><p><strong>解法：</strong></p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span>[] constructArr(<span class="hljs-keyword">int</span>[] a) &#123;<br>        <span class="hljs-keyword">int</span> len = a.length;<br>        <span class="hljs-keyword">if</span> (len == <span class="hljs-number">0</span>) <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[<span class="hljs-number">0</span>];<br>        <span class="hljs-keyword">int</span>[] b = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[len];<br>        b[<span class="hljs-number">0</span>] = <span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">int</span> tmp = <span class="hljs-number">1</span>; <span class="hljs-comment">// 上三角的乘</span><br>        <span class="hljs-comment">// 计算上三角</span><br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt; len; i++) &#123;<br>            b[i] = b[i - <span class="hljs-number">1</span>] * a[i - <span class="hljs-number">1</span>];<br>        &#125;<br>        <span class="hljs-comment">// 计算下三角</span><br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = len - <span class="hljs-number">2</span>; i &gt;= <span class="hljs-number">0</span>; i--) &#123;<br>            tmp *= a[i + <span class="hljs-number">1</span>];<br>            b[i] *= tmp;<br>        &#125;<br>        <span class="hljs-keyword">return</span> b;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;/2022/05/06/%E6%9E%84%E5%BB%BA%E4%B9%98%E7%A7%AF%E6%95%B0%E7%BB%84/image-20220506103032263.png&quot; alt=&quot;构建乘积数组&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;解法</summary>
+      
+    
+    
+    
+    <category term="剑指Offer" scheme="http://example.com/categories/%E5%89%91%E6%8C%87Offer/"/>
+    
+    
+    <category term="剑指Offer" scheme="http://example.com/tags/%E5%89%91%E6%8C%87Offer/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>数组中出现次数超过一半的数字</title>
+    <link href="http://example.com/2022/05/06/%E6%95%B0%E7%BB%84%E4%B8%AD%E5%87%BA%E7%8E%B0%E6%AC%A1%E6%95%B0%E8%B6%85%E8%BF%87%E4%B8%80%E5%8D%8A%E7%9A%84%E6%95%B0%E5%AD%97/"/>
+    <id>http://example.com/2022/05/06/%E6%95%B0%E7%BB%84%E4%B8%AD%E5%87%BA%E7%8E%B0%E6%AC%A1%E6%95%B0%E8%B6%85%E8%BF%87%E4%B8%80%E5%8D%8A%E7%9A%84%E6%95%B0%E5%AD%97/</id>
+    <published>2022-05-06T01:59:23.000Z</published>
+    <updated>2022-05-06T02:07:02.472Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="/2022/05/06/%E6%95%B0%E7%BB%84%E4%B8%AD%E5%87%BA%E7%8E%B0%E6%AC%A1%E6%95%B0%E8%B6%85%E8%BF%87%E4%B8%80%E5%8D%8A%E7%9A%84%E6%95%B0%E5%AD%97/image-20220506100232721.png" alt="数组中出现次数超过一半的数字"></p><p><strong>解法一：排序求中点</strong></p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">majorityElement</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] nums)</span> </span>&#123;<br>        Arrays.sort(nums);<br>        <span class="hljs-keyword">return</span> nums[nums.length/<span class="hljs-number">2</span>];<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure><p><strong>解法二：摩尔投票法</strong></p><p><strong>摩尔投票法：</strong> 核心理念为 <strong>票数正负抵消</strong> 。此方法时间和空间复杂度分别为 O(N)<em>O</em>(<em>N</em>) 和 O(1)<em>O</em>(1) </p><p>玩一个诸侯争霸的游戏，假设你方人口超过总人口一半以上，并且能保证每个人口出去干仗都能一对一同归于尽。最后还有人活下来的国家就是胜利。 核心就是 <strong>对拼消耗</strong></p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">majorityElement</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] nums)</span> </span>&#123;<br>        <span class="hljs-keyword">int</span> res = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">int</span> sum = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> num : nums) &#123;<br>            <br>            <span class="hljs-keyword">if</span> (sum == <span class="hljs-number">0</span>) &#123;<br>                <span class="hljs-comment">//上场</span><br>                res = num;<br>            &#125;<br>            <span class="hljs-comment">//如果这个人上场，已经有人了，判断这个人是不是一个国家的</span><br>            <span class="hljs-comment">//是的话就站在一起</span><br>            <span class="hljs-keyword">if</span> (num == res) &#123;<br>                sum++;<br>            &#125; <span class="hljs-keyword">else</span> &#123;<br>                <span class="hljs-comment">//不是则和一个同归于尽</span><br>                sum--;<br>            &#125;<br>        &#125;<br>        <span class="hljs-comment">//最后上场已无敌军</span><br>        <span class="hljs-keyword">return</span> res;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;/2022/05/06/%E6%95%B0%E7%BB%84%E4%B8%AD%E5%87%BA%E7%8E%B0%E6%AC%A1%E6%95%B0%E8%B6%85%E8%BF%87%E4%B8%80%E5%8D%8A%E7%9A%84%E6%95%</summary>
+      
+    
+    
+    
+    <category term="剑指Offer" scheme="http://example.com/categories/%E5%89%91%E6%8C%87Offer/"/>
+    
+    
+    <category term="剑指Offer" scheme="http://example.com/tags/%E5%89%91%E6%8C%87Offer/"/>
+    
+  </entry>
   
   <entry>
     <title>数组中数字出现的次数Ⅱ</title>
@@ -433,80 +508,6 @@
     
     
     <category term="算法" scheme="http://example.com/tags/%E7%AE%97%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>快速排序</title>
-    <link href="http://example.com/2022/05/02/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/"/>
-    <id>http://example.com/2022/05/02/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/</id>
-    <published>2022-05-02T13:15:06.000Z</published>
-    <updated>2022-05-02T13:16:42.980Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h1><h3 id="荷兰国旗问题"><a href="#荷兰国旗问题" class="headerlink" title="荷兰国旗问题"></a>荷兰国旗问题</h3><p>(1)给定一个数组arr，和一个数num，请把小于等于num的数放在数组的左边，大于num的数放在数组的右边。要求额外空间复杂度O(1)，时间复杂度O(N)</p><p>​        思路：如果[i]&lt;=num  [i]和小于等于区的下一个交换，小于等于区扩大一个，i++；</p><p>​                    如果[i]&gt;num，i++</p><p>​                    </p><p>(2)给定一个数组arr，和一个数num，请把小于num的数放在数组的左边，等于num的数放在中间，大于num的数放在数组的右边。要求额外空间复杂度O(1)，时间复杂度O(N)</p><p>​        思路：[i]&lt;num,i]和小于区的下一个交换,小于区域右扩，i++；</p><p>​                    [i]=num,i++；</p><p>​                    [i]&gt;num，[i]和大于区域的前一个做交换，大于区域左扩，i不变(因为i是新的了)</p><h3 id="快排1-0"><a href="#快排1-0" class="headerlink" title="快排1.0"></a>快排1.0</h3><p>​        就是最后一个值就是num，让前面的所有的小于0的放在左边。大于num的放在右边，让num和大于区域的最左边做交换，就相当于小于num区域被扩充了并且最后一个数就是num，然后让左侧和右侧继续这个过程</p><h3 id="快排2-0"><a href="#快排2-0" class="headerlink" title="快排2.0"></a>快排2.0</h3><p>​        原理和荷兰国旗（2）类似，让最后一个值为num，然后把数组分成小于等于大于num的之后，将num与大于的第一个做交换，让等于num的放在一起，等于num的区域就不需要动了，再让另外两个区域重复这个过程</p><p><strong>快排1.0和2.0都是O(n^2)</strong></p><h3 id="快排3-0"><a href="#快排3-0" class="headerlink" title="快排3.0"></a>快排3.0</h3><p>在数组中随机选择一个数，将这个数和最后一个数交换作为最后一个数，这个算法的复杂度就变成了随机事件，但是将这些概率变成期望，则这个算法的时间复杂度为O(n*logN)</p><p><strong>时间复杂度最低的快速排序，</strong>在数组中随机找一个数，然后将他与最后一个数字交换，然后以最后一个数字为num进行荷兰国旗问题，同时在小于和大于num的区域随机选取一个数字，然后将他与小于和大于num区域的最后一个数字交换重复执行荷兰国旗问题，最后得到一串从小到大排序的数组，<strong>时间复杂度为O(N*logN)</strong></p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">quickSort</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] arr)</span></span>&#123;<br>    <span class="hljs-keyword">if</span>(arr == <span class="hljs-keyword">null</span> || arr.length &lt; <span class="hljs-number">2</span>)&#123;<br>        <span class="hljs-keyword">return</span>;<br>    &#125;<br>    quickSort(arr, <span class="hljs-number">0</span>, arr.length-<span class="hljs-number">1</span>);<br>&#125;<br><span class="hljs-comment">//arr[l...r]排好序</span><br><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">quickSort</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] arr,<span class="hljs-keyword">int</span> L,<span class="hljs-keyword">int</span> R)</span></span>&#123;<br>    <span class="hljs-keyword">if</span>(L&lt;R)&#123;<br>        swap(arr,L+(<span class="hljs-keyword">int</span>) (Math.random() * (R-L+<span class="hljs-number">1</span>)), R); <span class="hljs-comment">//swap为自带的交换函数；L+(int) (Math.random() * (R-L+1)) 表示在该数组中随机选取一位数字</span><br>        <span class="hljs-keyword">int</span>[] p = partition(arr,L,R);<br>        quitSort(arr,L,p[<span class="hljs-number">0</span>]-<span class="hljs-number">1</span>); <span class="hljs-comment">// &lt;区</span><br>        quitSort(arr,p[<span class="hljs-number">1</span>]+<span class="hljs-number">1</span>,R); <span class="hljs-comment">// &gt;区</span><br>    &#125;<br>&#125;<br><span class="hljs-comment">//这是一个处理arr[l...r]的函数</span><br><span class="hljs-comment">//默认以arr[r]做划分，arr[r] -&gt; p    &lt;p   ==p    &gt;p</span><br><span class="hljs-comment">//返回等于区域（左边界，右边界），所以返回一个长度为2的数组res，res[0] res[1]</span><br><span class="hljs-keyword">public</span> staic <span class="hljs-keyword">int</span>[] partition(<span class="hljs-keyword">int</span>[] arr, <span class="hljs-keyword">int</span> L, <span class="hljs-keyword">int</span> R)&#123;<br>    <span class="hljs-keyword">int</span> less = L - <span class="hljs-number">1</span>; <span class="hljs-comment">// &lt;区右边界</span><br>    <span class="hljs-keyword">int</span> more = R; <span class="hljs-comment">// &gt;区左边界</span><br>    <span class="hljs-keyword">while</span>(L &lt; more)&#123; <span class="hljs-comment">// L表示当前数的位置 arr[R] -&gt; 划分值</span><br>        <span class="hljs-keyword">if</span>(arr[L] &lt; arr[R])&#123; <span class="hljs-comment">//当前数  &lt;  划分值</span><br>            less++;<br>            swap(arr, less, L);<br>            L++;<br>        &#125;<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(arr[L] &gt; arr[R])&#123; <span class="hljs-comment">// 当前值 &gt; 划分值</span><br>            more--;<br>            swap(arr, more, L);<br>        &#125;<span class="hljs-keyword">else</span>&#123;<br>            L++;<br>        &#125;<br>    &#125;<br>    swap(arr,more,R);<br>    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[] &#123;less + <span class="hljs-number">1</span>,more&#125;;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;快速排序&quot;&gt;&lt;a href=&quot;#快速排序&quot; class=&quot;headerlink&quot; title=&quot;快速排序&quot;&gt;&lt;/a&gt;快速排序&lt;/h1&gt;&lt;h3 id=&quot;荷兰国旗问题&quot;&gt;&lt;a href=&quot;#荷兰国旗问题&quot; class=&quot;headerlink&quot; title=&quot;荷兰国旗问</summary>
-      
-    
-    
-    
-    <category term="算法" scheme="http://example.com/categories/%E7%AE%97%E6%B3%95/"/>
-    
-    
-    <category term="算法" scheme="http://example.com/tags/%E7%AE%97%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>堆</title>
-    <link href="http://example.com/2022/05/02/%E5%A0%86/"/>
-    <id>http://example.com/2022/05/02/%E5%A0%86/</id>
-    <published>2022-05-02T13:13:06.000Z</published>
-    <updated>2022-05-02T13:15:48.927Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="堆"><a href="#堆" class="headerlink" title="堆"></a>堆</h1><p>堆是一种比较特殊的完全二叉树，分为大根堆，小根堆</p><p>1、堆结构就是用数组实现完全的二叉树结构</p><p>2、完全二叉树中如果每棵子树的最大值都在顶部就是大根堆</p><p>3、完全二叉树中如果每棵子树的最小值都在顶部就是小根堆</p><p>4、对结构的heapInsert与heapify操作</p><p>5、堆结构的增大和减少</p><p>6、优先级队列结构，就是堆结构</p><p><strong>大根堆</strong>即指在逻辑上的二叉树结构中，根结点&gt;子结点，总是最大的，<strong>并且在堆的每一个局部都是如此</strong></p><p><strong>小根堆</strong>的性质与大根堆类似，只不过在二叉树的结构中，根结点&lt;子结点</p><h2 id="大根堆"><a href="#大根堆" class="headerlink" title="大根堆"></a>大根堆</h2><p><img src="/2022/05/02/%E5%A0%86/1634370387111.png" alt="1634370387111"></p><p>以n为首的整棵树最大值为n</p><h2 id="小根堆相反"><a href="#小根堆相反" class="headerlink" title="小根堆相反"></a>小根堆相反</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>&#123;<br><br><br>        <span class="hljs-comment">//堆结构，如果不给构造方法传参的话，默认小根堆(如果想让他是一个大根堆的话，就传一个比较器)</span><br>        PriorityQueue&lt;Integer&gt; heap = <span class="hljs-keyword">new</span> PriorityQueue&lt;&gt;();<br>        heap.add(<span class="hljs-number">8</span>);<br>        heap.add(<span class="hljs-number">4</span>);<br>        heap.add(<span class="hljs-number">4</span>);<br>        heap.add(<span class="hljs-number">9</span>);<br>        heap.add(<span class="hljs-number">10</span>);<br>        heap.add(<span class="hljs-number">3</span>);<br><br>        <span class="hljs-keyword">while</span> (!heap.isEmpty())&#123;<br>            System.out.println(heap.poll());<br>        &#125;<br>    &#125;<br><br>输出结果：<span class="hljs-number">3</span>，<span class="hljs-number">4</span>，<span class="hljs-number">4</span>，<span class="hljs-number">8</span>，<span class="hljs-number">9</span>，<span class="hljs-number">10</span><br></code></pre></td></tr></table></figure><p>题目：用户往数组中输入了几个数字，现在用户需要找到最大值，然后去掉，让剩下的数再组成一个大根堆</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//某个数在index位置，能否往下移动</span><br><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">quickSort</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] arr,<span class="hljs-keyword">int</span> index,<span class="hljs-keyword">int</span> heapSize)</span></span>&#123;<br>    <span class="hljs-keyword">int</span> left = index * <span class="hljs-number">2</span> + <span class="hljs-number">1</span>;<span class="hljs-comment">//左孩子的下标</span><br><br>    <span class="hljs-keyword">while</span> (left &lt; heapSize)&#123;   <span class="hljs-comment">//下方还有孩子的时候(左孩子比右孩子小，当没有左孩子的时候，就没有右孩子)</span><br><br>        <span class="hljs-comment">//两个孩子，谁的值大，把下标给largest</span><br>        <span class="hljs-keyword">int</span> largest = left + <span class="hljs-number">1</span> &lt; heapSize &amp;&amp; arr[left + <span class="hljs-number">1</span>] &gt; arr[left] ? left+<span class="hljs-number">1</span> : left;<br><br>        <span class="hljs-comment">//父和孩子，谁的值大，把下标给largest</span><br>        largest = arr[largest] &gt; arr[index] ? largest : index;<br><br>        <span class="hljs-keyword">if</span> (largest == index)&#123;<br>            <span class="hljs-keyword">break</span>;<br>        &#125;<br>        swap(arr,largest,index);<br><br>        index = largest;<br>        left = index * <span class="hljs-number">2</span> + <span class="hljs-number">1</span>;<br>    &#125;<br><br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">swap</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] arr, <span class="hljs-keyword">int</span> i, <span class="hljs-keyword">int</span> j)</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> tmp = arr[i];<br>    arr[i] = arr[j];<br>    arr[j] = tmp;<br>&#125;<br></code></pre></td></tr></table></figure><p>O(n)*logN </p><p>题：已知一个几乎有序的数组，几乎有序的意思是，如果把数组排好顺序的话，每个元素移动的距离可以不超过k，并且k相对于数组来说比较小，请选择一个合适的排序算法针对这个数据进行排序</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">sortedArrDistanceLessK</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] arr,<span class="hljs-keyword">int</span> k)</span></span>&#123;<br><br>    <span class="hljs-comment">//默认小根堆</span><br>    PriorityQueue&lt;Integer&gt; heap = <span class="hljs-keyword">new</span> PriorityQueue&lt;&gt;();<br>    <span class="hljs-keyword">int</span> index = <span class="hljs-number">0</span>;<br>    <span class="hljs-comment">//                  防止k捣乱</span><br>    <span class="hljs-keyword">for</span> (; index &lt; Math.min(arr.length , k); index++)&#123;<br>        heap.add(arr[index]);<br>    &#125;<br>    <span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span> (;index &lt; arr.length; i++ , index++)&#123;<br>        heap.add(arr[index]);<br>        arr[i] = heap.poll();<br>    &#125;<br>    <span class="hljs-keyword">while</span> (!heap.isEmpty())&#123;<br>        arr[i++] = heap.poll();<br>    &#125;<br><br>&#125;<br></code></pre></td></tr></table></figure><p><img src="/2022/05/02/%E5%A0%86/1634610114793.png" alt="1634610114793"></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;堆&quot;&gt;&lt;a href=&quot;#堆&quot; class=&quot;headerlink&quot; title=&quot;堆&quot;&gt;&lt;/a&gt;堆&lt;/h1&gt;&lt;p&gt;堆是一种比较特殊的完全二叉树，分为大根堆，小根堆&lt;/p&gt;
-&lt;p&gt;1、堆结构就是用数组实现完全的二叉树结构&lt;/p&gt;
-&lt;p&gt;2、完全二叉树中如果每棵子树</summary>
-      
-    
-    
-    
-    <category term="算法" scheme="http://example.com/categories/%E7%AE%97%E6%B3%95/"/>
-    
-    
-    <category term="算法" scheme="http://example.com/tags/%E7%AE%97%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>二叉树的深度</title>
-    <link href="http://example.com/2022/04/29/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%B7%B1%E5%BA%A6/"/>
-    <id>http://example.com/2022/04/29/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%B7%B1%E5%BA%A6/</id>
-    <published>2022-04-29T06:48:08.000Z</published>
-    <updated>2022-04-29T06:49:08.972Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="/2022/04/29/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%B7%B1%E5%BA%A6/image-20220429144838269.png" alt="image-20220429144838269"></p><p><strong>解法：(递归)</strong></p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * Definition for a binary tree node.</span><br><span class="hljs-comment"> * public class TreeNode &#123;</span><br><span class="hljs-comment"> *     int val;</span><br><span class="hljs-comment"> *     TreeNode left;</span><br><span class="hljs-comment"> *     TreeNode right;</span><br><span class="hljs-comment"> *     TreeNode(int x) &#123; val = x; &#125;</span><br><span class="hljs-comment"> * &#125;</span><br><span class="hljs-comment"> */</span><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">maxDepth</span><span class="hljs-params">(TreeNode root)</span> </span>&#123;<br>        <span class="hljs-keyword">if</span> (root == <span class="hljs-keyword">null</span>) &#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>        &#125;<br>        <span class="hljs-keyword">return</span> Math.max(maxDepth(root.left),maxDepth(root.right)) + <span class="hljs-number">1</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;&lt;img src=&quot;/2022/04/29/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%B7%B1%E5%BA%A6/image-20220429144838269.png&quot; alt=&quot;image-20220429144838269&quot;&gt;&lt;</summary>
-      
-    
-    
-    
-    <category term="剑指Offer" scheme="http://example.com/categories/%E5%89%91%E6%8C%87Offer/"/>
-    
-    
-    <category term="剑指Offer" scheme="http://example.com/tags/%E5%89%91%E6%8C%87Offer/"/>
     
   </entry>
   

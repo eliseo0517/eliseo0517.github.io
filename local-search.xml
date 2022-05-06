@@ -4,6 +4,81 @@
   
   
   <entry>
+    <title>减绳子</title>
+    <link href="/2022/05/06/%E5%87%8F%E7%BB%B3%E5%AD%90/"/>
+    <url>/2022/05/06/%E5%87%8F%E7%BB%B3%E5%AD%90/</url>
+    
+    <content type="html"><![CDATA[<p><img src="/2022/05/06/%E5%87%8F%E7%BB%B3%E5%AD%90/image-20220506200733812.png" alt="减绳子"></p><p><strong>解法一：(贪心算法)</strong></p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">cuttingRope</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n)</span> </span>&#123;<br>        <span class="hljs-comment">// 最优 一根绳子完美的切成多个3 n % 3 == 0</span><br>        <span class="hljs-comment">// 次优 一根绳子切成 多个3与一个2 n % 3 == 2</span><br>        <span class="hljs-comment">// 最差 一根绳子除以3 余数为1 那么一个切法变成 1*3 =&gt; 2*2 n % 3 == 1</span><br>        <span class="hljs-comment">// 3 * 1 &lt; 2 * 2</span><br>        <span class="hljs-comment">// 3是最优的 优先考虑3</span><br><br>        <span class="hljs-keyword">if</span> (n &lt;= <span class="hljs-number">3</span>) &#123;<br>            <span class="hljs-keyword">return</span> n - <span class="hljs-number">1</span>;<br>        &#125;<br>        <span class="hljs-comment">// 判断 n 能被几个3整除</span><br>        <span class="hljs-keyword">int</span> a = n / <span class="hljs-number">3</span>;<br>        <span class="hljs-comment">// n 除以三的余数</span><br>        <span class="hljs-keyword">int</span> b = n % <span class="hljs-number">3</span>;<br><br>        <span class="hljs-keyword">if</span> (b == <span class="hljs-number">0</span>) <span class="hljs-keyword">return</span> (<span class="hljs-keyword">int</span>) Math.pow(<span class="hljs-number">3</span>, a);<br>        <span class="hljs-keyword">if</span> (b == <span class="hljs-number">1</span>) <span class="hljs-keyword">return</span> (<span class="hljs-keyword">int</span>) Math.pow(<span class="hljs-number">3</span>, a - <span class="hljs-number">1</span>) * <span class="hljs-number">4</span>;<br>        <span class="hljs-keyword">return</span> (<span class="hljs-keyword">int</span>) (Math.pow(<span class="hljs-number">3</span>, a) * <span class="hljs-number">2</span>);<br><br>        <span class="hljs-comment">/*</span><br><span class="hljs-comment">        对于 8 而言</span><br><span class="hljs-comment">        1、8 / 3 = 2</span><br><span class="hljs-comment">        2、8 % 3 = 2</span><br><span class="hljs-comment">        b == 2 所以为 3的二次方*2 也就是 2*3*3</span><br><span class="hljs-comment"></span><br><span class="hljs-comment">        对于 6 而言</span><br><span class="hljs-comment">        1、6 / 3 = 2</span><br><span class="hljs-comment">        2、6 % 3 = 0</span><br><span class="hljs-comment">        b == 0 所以 3的二次方 也就是 3*3</span><br><span class="hljs-comment"></span><br><span class="hljs-comment">        对于7而言</span><br><span class="hljs-comment">        1、7 / 3 = 2</span><br><span class="hljs-comment">        2、7 % 3 = 1</span><br><span class="hljs-comment">        b == 1 所以 3的一次方 也就是 3 * 4</span><br><span class="hljs-comment">         */</span><br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>剑指Offer</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>剑指Offer</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>构建乘积数组</title>
+    <link href="/2022/05/06/%E6%9E%84%E5%BB%BA%E4%B9%98%E7%A7%AF%E6%95%B0%E7%BB%84/"/>
+    <url>/2022/05/06/%E6%9E%84%E5%BB%BA%E4%B9%98%E7%A7%AF%E6%95%B0%E7%BB%84/</url>
+    
+    <content type="html"><![CDATA[<p><img src="/2022/05/06/%E6%9E%84%E5%BB%BA%E4%B9%98%E7%A7%AF%E6%95%B0%E7%BB%84/image-20220506103032263.png" alt="构建乘积数组"></p><p><strong>解法：</strong></p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span>[] constructArr(<span class="hljs-keyword">int</span>[] a) &#123;<br>        <span class="hljs-keyword">int</span> len = a.length;<br>        <span class="hljs-keyword">if</span> (len == <span class="hljs-number">0</span>) <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[<span class="hljs-number">0</span>];<br>        <span class="hljs-keyword">int</span>[] b = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[len];<br>        b[<span class="hljs-number">0</span>] = <span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">int</span> tmp = <span class="hljs-number">1</span>; <span class="hljs-comment">// 上三角的乘</span><br>        <span class="hljs-comment">// 计算上三角</span><br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt; len; i++) &#123;<br>            b[i] = b[i - <span class="hljs-number">1</span>] * a[i - <span class="hljs-number">1</span>];<br>        &#125;<br>        <span class="hljs-comment">// 计算下三角</span><br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = len - <span class="hljs-number">2</span>; i &gt;= <span class="hljs-number">0</span>; i--) &#123;<br>            tmp *= a[i + <span class="hljs-number">1</span>];<br>            b[i] *= tmp;<br>        &#125;<br>        <span class="hljs-keyword">return</span> b;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>剑指Offer</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>剑指Offer</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>数组中出现次数超过一半的数字</title>
+    <link href="/2022/05/06/%E6%95%B0%E7%BB%84%E4%B8%AD%E5%87%BA%E7%8E%B0%E6%AC%A1%E6%95%B0%E8%B6%85%E8%BF%87%E4%B8%80%E5%8D%8A%E7%9A%84%E6%95%B0%E5%AD%97/"/>
+    <url>/2022/05/06/%E6%95%B0%E7%BB%84%E4%B8%AD%E5%87%BA%E7%8E%B0%E6%AC%A1%E6%95%B0%E8%B6%85%E8%BF%87%E4%B8%80%E5%8D%8A%E7%9A%84%E6%95%B0%E5%AD%97/</url>
+    
+    <content type="html"><![CDATA[<p><img src="/2022/05/06/%E6%95%B0%E7%BB%84%E4%B8%AD%E5%87%BA%E7%8E%B0%E6%AC%A1%E6%95%B0%E8%B6%85%E8%BF%87%E4%B8%80%E5%8D%8A%E7%9A%84%E6%95%B0%E5%AD%97/image-20220506100232721.png" alt="数组中出现次数超过一半的数字"></p><p><strong>解法一：排序求中点</strong></p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">majorityElement</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] nums)</span> </span>&#123;<br>        Arrays.sort(nums);<br>        <span class="hljs-keyword">return</span> nums[nums.length/<span class="hljs-number">2</span>];<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure><p><strong>解法二：摩尔投票法</strong></p><p><strong>摩尔投票法：</strong> 核心理念为 <strong>票数正负抵消</strong> 。此方法时间和空间复杂度分别为 O(N)<em>O</em>(<em>N</em>) 和 O(1)<em>O</em>(1) </p><p>玩一个诸侯争霸的游戏，假设你方人口超过总人口一半以上，并且能保证每个人口出去干仗都能一对一同归于尽。最后还有人活下来的国家就是胜利。 核心就是 <strong>对拼消耗</strong></p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">majorityElement</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] nums)</span> </span>&#123;<br>        <span class="hljs-keyword">int</span> res = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">int</span> sum = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> num : nums) &#123;<br>            <br>            <span class="hljs-keyword">if</span> (sum == <span class="hljs-number">0</span>) &#123;<br>                <span class="hljs-comment">//上场</span><br>                res = num;<br>            &#125;<br>            <span class="hljs-comment">//如果这个人上场，已经有人了，判断这个人是不是一个国家的</span><br>            <span class="hljs-comment">//是的话就站在一起</span><br>            <span class="hljs-keyword">if</span> (num == res) &#123;<br>                sum++;<br>            &#125; <span class="hljs-keyword">else</span> &#123;<br>                <span class="hljs-comment">//不是则和一个同归于尽</span><br>                sum--;<br>            &#125;<br>        &#125;<br>        <span class="hljs-comment">//最后上场已无敌军</span><br>        <span class="hljs-keyword">return</span> res;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>剑指Offer</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>剑指Offer</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>数组中数字出现的次数Ⅱ</title>
     <link href="/2022/05/05/%E6%95%B0%E7%BB%84%E4%B8%AD%E6%95%B0%E5%AD%97%E5%87%BA%E7%8E%B0%E7%9A%84%E6%AC%A1%E6%95%B0%E2%85%A1/"/>
     <url>/2022/05/05/%E6%95%B0%E7%BB%84%E4%B8%AD%E6%95%B0%E5%AD%97%E5%87%BA%E7%8E%B0%E7%9A%84%E6%AC%A1%E6%95%B0%E2%85%A1/</url>
