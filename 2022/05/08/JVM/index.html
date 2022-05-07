@@ -16,23 +16,27 @@
   <meta name="author" content="Mr.Wang">
   <meta name="keywords" content="">
   
-    <meta name="description" content="解题思路： 实际上是约瑟夫环 约瑟夫环——公式法（递推公式） 解法： 12345678910class Solution &amp;#123;    public int lastRemaining(int n, int m) &amp;#123;        int ans &#x3D; 0;        &#x2F;&#x2F; 最后一轮剩下2个人，所以从2开始反推        for (int i &#x3D; 2; i &lt;&#x3D; n;">
+    <meta name="description" content="一、JVM概述1.1、Java虚拟机Java虚拟机  Java虚拟机是一台执行Java字节码的虚拟计算机，它拥有独立的运行机制，其运行的Java字节码也未必由Java语言编译而成 JVM平台的各种语言可以共享Java虚拟机带来的快平台性、优秀的垃圾回收器，以及可靠的即时编译器 Java技术的核心就是Java虚拟机(JVM， Java Virtual Machine)，因为所有的Java程序都运行在">
 <meta property="og:type" content="article">
-<meta property="og:title" content="圆圈中最后剩下的数字">
-<meta property="og:url" content="http://example.com/2022/05/07/%E5%9C%86%E5%9C%88%E4%B8%AD%E6%9C%80%E5%90%8E%E5%89%A9%E4%B8%8B%E7%9A%84%E6%95%B0%E5%AD%97/index.html">
+<meta property="og:title" content="JVM">
+<meta property="og:url" content="http://example.com/2022/05/08/JVM/index.html">
 <meta property="og:site_name" content="Eliseo的小屋">
-<meta property="og:description" content="解题思路： 实际上是约瑟夫环 约瑟夫环——公式法（递推公式） 解法： 12345678910class Solution &amp;#123;    public int lastRemaining(int n, int m) &amp;#123;        int ans &#x3D; 0;        &#x2F;&#x2F; 最后一轮剩下2个人，所以从2开始反推        for (int i &#x3D; 2; i &lt;&#x3D; n;">
+<meta property="og:description" content="一、JVM概述1.1、Java虚拟机Java虚拟机  Java虚拟机是一台执行Java字节码的虚拟计算机，它拥有独立的运行机制，其运行的Java字节码也未必由Java语言编译而成 JVM平台的各种语言可以共享Java虚拟机带来的快平台性、优秀的垃圾回收器，以及可靠的即时编译器 Java技术的核心就是Java虚拟机(JVM， Java Virtual Machine)，因为所有的Java程序都运行在">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://example.com/2022/05/07/%E5%9C%86%E5%9C%88%E4%B8%AD%E6%9C%80%E5%90%8E%E5%89%A9%E4%B8%8B%E7%9A%84%E6%95%B0%E5%AD%97/image-20220507154914849.png">
-<meta property="article:published_time" content="2022-05-07T03:00:39.000Z">
-<meta property="article:modified_time" content="2022-05-07T07:50:27.035Z">
+<meta property="og:image" content="http://example.com/2022/05/08/JVM/image-20220508004058537.png">
+<meta property="og:image" content="http://example.com/2022/05/08/JVM/image-20220508005148157.png">
+<meta property="og:image" content="http://example.com/2022/05/08/JVM/image-20220508005504671.png">
+<meta property="og:image" content="http://example.com/2022/05/08/JVM/image-20220508010848773.png">
+<meta property="og:image" content="http://example.com/2022/05/08/JVM/image-20220508020512989.png">
+<meta property="article:published_time" content="2022-05-07T16:37:53.000Z">
+<meta property="article:modified_time" content="2022-05-07T18:10:18.874Z">
 <meta property="article:author" content="Mr.Wang">
-<meta property="article:tag" content="剑指Offer">
+<meta property="article:tag" content="JVM">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://example.com/2022/05/07/%E5%9C%86%E5%9C%88%E4%B8%AD%E6%9C%80%E5%90%8E%E5%89%A9%E4%B8%8B%E7%9A%84%E6%95%B0%E5%AD%97/image-20220507154914849.png">
+<meta name="twitter:image" content="http://example.com/2022/05/08/JVM/image-20220508004058537.png">
   
   
-  <title>圆圈中最后剩下的数字 - Eliseo的小屋</title>
+  <title>JVM - Eliseo的小屋</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -200,7 +204,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="圆圈中最后剩下的数字">
+            <span class="h2" id="subtitle" title="JVM">
               
             </span>
 
@@ -215,8 +219,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2022-05-07 11:00" pubdate>
-        May 7, 2022 am
+      <time datetime="2022-05-08 00:37" pubdate>
+        May 8, 2022 am
       </time>
     </span>
   
@@ -226,7 +230,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      200 字
+      2.1k 字
     </span>
   
 
@@ -235,7 +239,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      2 分钟
+      18 分钟
     </span>
   
 
@@ -272,21 +276,109 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">圆圈中最后剩下的数字</h1>
+            <h1 style="display: none">JVM</h1>
             
               <p class="note note-info">
                 
-                  本文最后更新于：10 hours ago
+                  本文最后更新于：a few seconds ago
                 
               </p>
             
             <div class="markdown-body">
-              <p><img src="/2022/05/07/%E5%9C%86%E5%9C%88%E4%B8%AD%E6%9C%80%E5%90%8E%E5%89%A9%E4%B8%8B%E7%9A%84%E6%95%B0%E5%AD%97/image-20220507154914849.png" srcset="/img/loading.gif" lazyload alt="圆圈中最后剩下的数字"></p>
-<p><strong>解题思路：</strong></p>
-<p>实际上是<strong>约瑟夫环</strong><a target="_blank" rel="noopener" href="https://blog.csdn.net/u011500062/article/details/72855826"> 约瑟夫环——公式法（递推公式）</a></p>
-<p><strong>解法：</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">lastRemaining</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n, <span class="hljs-keyword">int</span> m)</span> </span>&#123;<br>        <span class="hljs-keyword">int</span> ans = <span class="hljs-number">0</span>;<br>        <span class="hljs-comment">// 最后一轮剩下2个人，所以从2开始反推</span><br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">2</span>; i &lt;= n; i++) &#123;<br>            ans = (ans + m) % i;<br>        &#125;<br>        <span class="hljs-keyword">return</span> ans;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+              <h1 id="一、JVM概述"><a href="#一、JVM概述" class="headerlink" title="一、JVM概述"></a>一、JVM概述</h1><h2 id="1-1、Java虚拟机"><a href="#1-1、Java虚拟机" class="headerlink" title="1.1、Java虚拟机"></a>1.1、Java虚拟机</h2><p><strong>Java虚拟机</strong></p>
+<ul>
+<li>Java虚拟机是一台执行Java字节码的虚拟计算机，它拥有独立的运行机制，其运行的Java字节码也未必由Java语言编译而成</li>
+<li>JVM平台的各种语言可以共享Java虚拟机带来的快平台性、优秀的垃圾回收器，以及可靠的即时编译器</li>
+<li><strong>Java技术的核心就是Java虚拟机</strong>(JVM， Java Virtual Machine)，因为所有的Java程序都运行在Java虚拟机内部</li>
+</ul>
+<p><strong>作用</strong></p>
+<ul>
+<li>Java虚拟机就是二进制字节码的运行环境，负责装载字节码到其内部，解释/编译为对应平台上的机器指令执行。每一条Java指令，Java虚拟机规范中都有详细定义，如怎么操作数，怎么处理作数，处理结果放在哪里。</li>
+</ul>
+<p><strong>特点</strong></p>
+<ul>
+<li>一次编译，到处运行</li>
+<li>自动内存管理</li>
+<li>自动垃圾回收机制（担忧，因为不需要去考虑回收的原理，长期的自动化会导致如果出现内存溢出是Java程序员无法解决）</li>
+</ul>
+<p><strong>JVM的位置</strong></p>
+<p><img src="/2022/05/08/JVM/image-20220508004058537.png" srcset="/img/loading.gif" lazyload alt="JVM的位置"></p>
+<p><img src="/2022/05/08/JVM/image-20220508005148157.png" srcset="/img/loading.gif" lazyload alt="JDK的构成"></p>
+<h2 id="1-2、JVM的整体结构"><a href="#1-2、JVM的整体结构" class="headerlink" title="1.2、JVM的整体结构"></a>1.2、JVM的整体结构</h2><p><img src="/2022/05/08/JVM/image-20220508005504671.png" srcset="/img/loading.gif" lazyload alt="JVM的整体结构"></p>
+<ul>
+<li><p>HotSpot VM是目前市面上高性能虚拟机的代表作之一。</p>
+</li>
+<li><p>它采用解释器与即时编译器并存的架构。</p>
+</li>
+<li><p>在今天，Java程序的运行性能早已脱胎换骨，已经带到了可以和C/C++程序一较高下的底部。</p>
+</li>
+<li><p><strong>类装载器子系统</strong>将字节码文件加载到内存中生成一个大的Class对象， 涉及到加载、 连接、 初始化。</p>
+</li>
+<li><p>对于<strong>方法区</strong>和<strong>堆</strong> 多个线程共享，对于<strong>Java栈、本地方法栈、程序技术器</strong> 每一个线程独有一份</p>
+</li>
+<li><p><strong>执行引擎</strong>充当了高级语言翻译成机器语言的翻译器</p>
+</li>
+</ul>
+<h2 id="1-3、Java代码的执行流程"><a href="#1-3、Java代码的执行流程" class="headerlink" title="1.3、Java代码的执行流程"></a>1.3、Java代码的执行流程</h2><p><img src="/2022/05/08/JVM/image-20220508010848773.png" srcset="/img/loading.gif" lazyload alt="Java代码的执行流程"></p>
+<ol>
+<li>Java的代码进过Java编译器变成了Java虚拟机可以识别字节码文件。</li>
+<li>字节码文件再进过Java虚拟机变成了操作系统可以识别的机器指令。</li>
+<li>操作系统再根据相关的机器指令做出对应的操作。</li>
+</ol>
+<h2 id="1-4、JVM的架构模型"><a href="#1-4、JVM的架构模型" class="headerlink" title="1.4、JVM的架构模型"></a>1.4、JVM的架构模型</h2><p>Java编译器输入的指令流基本上是一种基于<strong>栈的指令集架构</strong>，另外一种指令集架构则是基于 <strong>寄存器的指令集架构</strong></p>
+<p>具体来说，这两种架构之间的区别：</p>
+<ul>
+<li><strong>基于栈式架构的特点</strong><ul>
+<li>设计和实现更简单，适用于资源受限的系统；</li>
+<li>避开了寄存器的分配难题：使用零地址指令方式分配</li>
+<li><strong>指令流中的指令大部分是零地址指令，其执行过程依赖于操作栈。指令集更小，编译器容易实现</strong></li>
+<li>不需要硬件支持，可移植性更好，更好实现跨平台</li>
+</ul>
+</li>
+<li><strong>基于寄存器架构的特点</strong><ul>
+<li>典型的应用是x86的二进制指令集：比如传统的PC以及Android的Davlik虚拟机。</li>
+<li><strong>指令集架构则完全依赖硬件，可移植性差</strong></li>
+<li><strong>性能优秀和执行更高效；</strong></li>
+<li>花费更少的指令去完成一项操作。</li>
+<li>在大部分情况下，基于寄存器架构的指令集往往都是一地址指令、二地址指令和三地址指令为主，二基于展示架构的指令集确实以零地址指令为主。</li>
+</ul>
+</li>
+</ul>
+<p><strong>举例1：</strong></p>
+<p>同样执行2+3这种逻辑操作，其指令分别如下：</p>
+<p>基于栈的计算流程（以Java虚拟机为例）：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs java">iconst_2 	<span class="hljs-comment">// 常量2入栈</span><br>iconst_1<br>iconst_3	 <span class="hljs-comment">// 常量3入栈</span><br>iconst_2<br>iload_1<br>iload_2<br>iadd		<span class="hljs-comment">// 常量2、3出栈，执行相加</span><br>istore_0    <span class="hljs-comment">// 结果5入栈</span><br></code></pre></td></tr></table></figure>
 
+<p>基于寄存器的计算流程</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs java">mov eax,<span class="hljs-number">2</span>	<span class="hljs-comment">// 使eax寄存器的值设为1    </span><br>mov eax,<span class="hljs-number">3</span>	<span class="hljs-comment">// 使eax寄存器的值加3    </span><br></code></pre></td></tr></table></figure>
+
+
+
+<p><strong>举例2：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">package</span> com.wang;<br><br><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@Package</span>: com.wang</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@ClassName</span>: StackStruTest</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@Author</span>: Mr.Wang</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@CreateTime</span>: 2022/5/8 1:58</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@Description</span>:</span><br><span class="hljs-comment"> */</span><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">StackStruTest</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>&#123;<br>        <span class="hljs-keyword">int</span> i = <span class="hljs-number">2</span> + <span class="hljs-number">3</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>对于上述代码而言，使用栈操作的话，步骤如下（找到字节码文件，用javap -c 文件名）：</p>
+<p><img src="/2022/05/08/JVM/image-20220508020512989.png" srcset="/img/loading.gif" lazyload alt="栈操作"></p>
+<p><strong>总结：</strong></p>
+<p>由于跨平台性的设计，Java的指令都是根据栈来设计的。不同平台CPU架构不同，所以不能设计为基于寄存器的。优点是跨平台，指令集小，编译器容易实现，缺点是性能下降，实现同样的功能需要更多的指令。</p>
+<p>栈：跨平台性、指令集小、指令多；执行性能比寄存器差</p>
+<h2 id="1-5、JVM的生命周期"><a href="#1-5、JVM的生命周期" class="headerlink" title="1.5、JVM的生命周期"></a>1.5、JVM的生命周期</h2><p><strong>虚拟机的启动</strong></p>
+<p>Java虚拟机的启动是通过<strong>引导类加载器</strong>（bootstrap class loader）创建一个初始类（initial class）来完成的，这个类是由虚拟机的具体现指定的。</p>
+<p><strong>虚拟机的执行</strong></p>
+<ul>
+<li>一个运行中的Java虚拟机有着一个清晰的任务：执行Java程序。</li>
+<li>程序开始执行时他才运行，程序结束时他就停止。</li>
+<li>执行一个所谓的Java程序的时候，真真正正在执行的是一个叫做Java虚拟机的进程</li>
+</ul>
+<p><strong>虚拟机的退出</strong></p>
+<p>有如下的几种情况：</p>
+<ul>
+<li>程序正常执行结束</li>
+<li>程序在执行过程中遇到了异常或错误而异常终止</li>
+<li>由于操作系统用现错误而导致Java虚拟机进程终止</li>
+<li>某线程调用Runtime类或system类的exit方法，或Runtime类的halt方法，并且Java安全管理器也允许这次exit或halt操作。</li>
+<li>除此之外，JNI（Java Native Interface）规范描述了用JNI Invocation API来加载或卸载 Java虚拟机时，Java虚拟机的退出情况。</li>
+</ul>
 
             </div>
             <hr>
@@ -296,7 +388,7 @@
                   <div class="post-meta mr-3">
                     <i class="iconfont icon-category"></i>
                     
-                      <a class="hover-with-bg" href="/categories/%E5%89%91%E6%8C%87Offer/">剑指Offer</a>
+                      <a class="hover-with-bg" href="/categories/JVM/">JVM</a>
                     
                   </div>
                 
@@ -304,7 +396,7 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/%E5%89%91%E6%8C%87Offer/">剑指Offer</a>
+                      <a class="hover-with-bg" href="/tags/JVM/">JVM</a>
                     
                   </div>
                 
@@ -321,18 +413,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/05/08/JVM/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">JVM</span>
-                        <span class="visible-mobile">Previous</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/05/07/%E5%92%8C%E4%B8%BAs%E7%9A%84%E8%BF%9E%E7%BB%AD%E6%AD%A3%E6%95%B0%E5%BA%8F%E5%88%97/">
-                        <span class="hidden-mobile">和为s的连续正数序列</span>
+                      <a href="/2022/05/07/%E5%9C%86%E5%9C%88%E4%B8%AD%E6%9C%80%E5%90%8E%E5%89%A9%E4%B8%8B%E7%9A%84%E6%95%B0%E5%AD%97/">
+                        <span class="hidden-mobile">圆圈中最后剩下的数字</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
