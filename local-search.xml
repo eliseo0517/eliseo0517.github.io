@@ -4,6 +4,56 @@
   
   
   <entry>
+    <title>圆圈中最后剩下的数字</title>
+    <link href="/2022/05/07/%E5%9C%86%E5%9C%88%E4%B8%AD%E6%9C%80%E5%90%8E%E5%89%A9%E4%B8%8B%E7%9A%84%E6%95%B0%E5%AD%97/"/>
+    <url>/2022/05/07/%E5%9C%86%E5%9C%88%E4%B8%AD%E6%9C%80%E5%90%8E%E5%89%A9%E4%B8%8B%E7%9A%84%E6%95%B0%E5%AD%97/</url>
+    
+    <content type="html"><![CDATA[<p><img src="/2022/05/07/%E5%9C%86%E5%9C%88%E4%B8%AD%E6%9C%80%E5%90%8E%E5%89%A9%E4%B8%8B%E7%9A%84%E6%95%B0%E5%AD%97/image-20220507154914849.png" alt="圆圈中最后剩下的数字"></p><p><strong>解题思路：</strong></p><p>实际上是<strong>约瑟夫环</strong><a href="https://blog.csdn.net/u011500062/article/details/72855826"> 约瑟夫环——公式法（递推公式）</a></p><p><strong>解法：</strong></p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">lastRemaining</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n, <span class="hljs-keyword">int</span> m)</span> </span>&#123;<br>        <span class="hljs-keyword">int</span> ans = <span class="hljs-number">0</span>;<br>        <span class="hljs-comment">// 最后一轮剩下2个人，所以从2开始反推</span><br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">2</span>; i &lt;= n; i++) &#123;<br>            ans = (ans + m) % i;<br>        &#125;<br>        <span class="hljs-keyword">return</span> ans;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>剑指Offer</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>剑指Offer</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>和为s的连续正数序列</title>
+    <link href="/2022/05/07/%E5%92%8C%E4%B8%BAs%E7%9A%84%E8%BF%9E%E7%BB%AD%E6%AD%A3%E6%95%B0%E5%BA%8F%E5%88%97/"/>
+    <url>/2022/05/07/%E5%92%8C%E4%B8%BAs%E7%9A%84%E8%BF%9E%E7%BB%AD%E6%AD%A3%E6%95%B0%E5%BA%8F%E5%88%97/</url>
+    
+    <content type="html"><![CDATA[<p><img src="/2022/05/07/%E5%92%8C%E4%B8%BAs%E7%9A%84%E8%BF%9E%E7%BB%AD%E6%AD%A3%E6%95%B0%E5%BA%8F%E5%88%97/image-20220507102513722.png" alt="和为s的连续正数序列"></p><p><strong>解法一：(双指针)</strong></p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span>[][] findContinuousSequence(<span class="hljs-keyword">int</span> target) &#123;<br>        <span class="hljs-comment">// 定义左指针，右指针与左右指针之间的数字的和</span><br>        <span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">int</span> j = <span class="hljs-number">2</span>;<br>        <span class="hljs-keyword">int</span> sum = <span class="hljs-number">3</span>;<br>        <span class="hljs-comment">// 定义结果数组集合</span><br>        ArrayList&lt;<span class="hljs-keyword">int</span>[]&gt; res = <span class="hljs-keyword">new</span> ArrayList&lt;&gt;();<br>        <span class="hljs-keyword">while</span> (i &lt; j) &#123;<br>            <span class="hljs-keyword">if</span> (sum == target) &#123;<br>                <span class="hljs-comment">// 遍历 sum == target的时候的i与j之间的元素</span><br>                <span class="hljs-comment">// 并把这些元素添加到res集合中</span><br>                <span class="hljs-keyword">int</span>[] ans = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[j - i + <span class="hljs-number">1</span>];<br>                <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> k = i; k &lt;= j; k++) &#123;<br>                    ans[k - i] = k;<br>                &#125;<br>                res.add(ans);<br>            &#125;<br>            <span class="hljs-keyword">if</span> (sum &gt;= target) &#123;<br>                sum -= i;<br>                i++;<br>            &#125; <span class="hljs-keyword">else</span> &#123;<br>                j++;<br>                sum += j;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> res.toArray(<span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[<span class="hljs-number">0</span>][]);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>剑指Offer</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>剑指Offer</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>减绳子</title>
     <link href="/2022/05/06/%E5%87%8F%E7%BB%B3%E5%AD%90/"/>
     <url>/2022/05/06/%E5%87%8F%E7%BB%B3%E5%AD%90/</url>

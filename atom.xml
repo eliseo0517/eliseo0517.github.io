@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-05-06T12:09:09.896Z</updated>
+  <updated>2022-05-07T07:50:27.035Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,54 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>圆圈中最后剩下的数字</title>
+    <link href="http://example.com/2022/05/07/%E5%9C%86%E5%9C%88%E4%B8%AD%E6%9C%80%E5%90%8E%E5%89%A9%E4%B8%8B%E7%9A%84%E6%95%B0%E5%AD%97/"/>
+    <id>http://example.com/2022/05/07/%E5%9C%86%E5%9C%88%E4%B8%AD%E6%9C%80%E5%90%8E%E5%89%A9%E4%B8%8B%E7%9A%84%E6%95%B0%E5%AD%97/</id>
+    <published>2022-05-07T03:00:39.000Z</published>
+    <updated>2022-05-07T07:50:27.035Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="/2022/05/07/%E5%9C%86%E5%9C%88%E4%B8%AD%E6%9C%80%E5%90%8E%E5%89%A9%E4%B8%8B%E7%9A%84%E6%95%B0%E5%AD%97/image-20220507154914849.png" alt="圆圈中最后剩下的数字"></p><p><strong>解题思路：</strong></p><p>实际上是<strong>约瑟夫环</strong><a href="https://blog.csdn.net/u011500062/article/details/72855826"> 约瑟夫环——公式法（递推公式）</a></p><p><strong>解法：</strong></p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">lastRemaining</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n, <span class="hljs-keyword">int</span> m)</span> </span>&#123;<br>        <span class="hljs-keyword">int</span> ans = <span class="hljs-number">0</span>;<br>        <span class="hljs-comment">// 最后一轮剩下2个人，所以从2开始反推</span><br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">2</span>; i &lt;= n; i++) &#123;<br>            ans = (ans + m) % i;<br>        &#125;<br>        <span class="hljs-keyword">return</span> ans;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;/2022/05/07/%E5%9C%86%E5%9C%88%E4%B8%AD%E6%9C%80%E5%90%8E%E5%89%A9%E4%B8%8B%E7%9A%84%E6%95%B0%E5%AD%97/image-20220507154914849.</summary>
+      
+    
+    
+    
+    <category term="剑指Offer" scheme="http://example.com/categories/%E5%89%91%E6%8C%87Offer/"/>
+    
+    
+    <category term="剑指Offer" scheme="http://example.com/tags/%E5%89%91%E6%8C%87Offer/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>和为s的连续正数序列</title>
+    <link href="http://example.com/2022/05/07/%E5%92%8C%E4%B8%BAs%E7%9A%84%E8%BF%9E%E7%BB%AD%E6%AD%A3%E6%95%B0%E5%BA%8F%E5%88%97/"/>
+    <id>http://example.com/2022/05/07/%E5%92%8C%E4%B8%BAs%E7%9A%84%E8%BF%9E%E7%BB%AD%E6%AD%A3%E6%95%B0%E5%BA%8F%E5%88%97/</id>
+    <published>2022-05-07T02:25:00.000Z</published>
+    <updated>2022-05-07T02:25:50.992Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="/2022/05/07/%E5%92%8C%E4%B8%BAs%E7%9A%84%E8%BF%9E%E7%BB%AD%E6%AD%A3%E6%95%B0%E5%BA%8F%E5%88%97/image-20220507102513722.png" alt="和为s的连续正数序列"></p><p><strong>解法一：(双指针)</strong></p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span>[][] findContinuousSequence(<span class="hljs-keyword">int</span> target) &#123;<br>        <span class="hljs-comment">// 定义左指针，右指针与左右指针之间的数字的和</span><br>        <span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">int</span> j = <span class="hljs-number">2</span>;<br>        <span class="hljs-keyword">int</span> sum = <span class="hljs-number">3</span>;<br>        <span class="hljs-comment">// 定义结果数组集合</span><br>        ArrayList&lt;<span class="hljs-keyword">int</span>[]&gt; res = <span class="hljs-keyword">new</span> ArrayList&lt;&gt;();<br>        <span class="hljs-keyword">while</span> (i &lt; j) &#123;<br>            <span class="hljs-keyword">if</span> (sum == target) &#123;<br>                <span class="hljs-comment">// 遍历 sum == target的时候的i与j之间的元素</span><br>                <span class="hljs-comment">// 并把这些元素添加到res集合中</span><br>                <span class="hljs-keyword">int</span>[] ans = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[j - i + <span class="hljs-number">1</span>];<br>                <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> k = i; k &lt;= j; k++) &#123;<br>                    ans[k - i] = k;<br>                &#125;<br>                res.add(ans);<br>            &#125;<br>            <span class="hljs-keyword">if</span> (sum &gt;= target) &#123;<br>                sum -= i;<br>                i++;<br>            &#125; <span class="hljs-keyword">else</span> &#123;<br>                j++;<br>                sum += j;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> res.toArray(<span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[<span class="hljs-number">0</span>][]);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;/2022/05/07/%E5%92%8C%E4%B8%BAs%E7%9A%84%E8%BF%9E%E7%BB%AD%E6%AD%A3%E6%95%B0%E5%BA%8F%E5%88%97/image-20220507102513722.png&quot; alt</summary>
+      
+    
+    
+    
+    <category term="剑指Offer" scheme="http://example.com/categories/%E5%89%91%E6%8C%87Offer/"/>
+    
+    
+    <category term="剑指Offer" scheme="http://example.com/tags/%E5%89%91%E6%8C%87Offer/"/>
+    
+  </entry>
   
   <entry>
     <title>减绳子</title>
@@ -451,55 +499,6 @@
       
     <summary type="html">&lt;h1 id=&quot;递归&quot;&gt;&lt;a href=&quot;#递归&quot; class=&quot;headerlink&quot; title=&quot;递归&quot;&gt;&lt;/a&gt;递归&lt;/h1&gt;&lt;p&gt;自己调自己&lt;/p&gt;
 &lt;h2 id=&quot;题外：求两数的中点&quot;&gt;&lt;a href=&quot;#题外：求两数的中点&quot; class=&quot;headerlink&quot; t</summary>
-      
-    
-    
-    
-    <category term="算法" scheme="http://example.com/categories/%E7%AE%97%E6%B3%95/"/>
-    
-    
-    <category term="算法" scheme="http://example.com/tags/%E7%AE%97%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>插入排序</title>
-    <link href="http://example.com/2022/05/02/%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F/"/>
-    <id>http://example.com/2022/05/02/%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F/</id>
-    <published>2022-05-02T13:21:35.000Z</published>
-    <updated>2022-05-02T13:21:55.512Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h1><p><strong>时间复杂度为O(N²)，额外空间复杂度为O(1)</strong></p><p>1、首先，原始的数组元素是这样的。<br><img src="https://img-blog.csdnimg.cn/20200628114521779.png" alt="img">      <br>     其中，浅绿色代表有序部分，黄色代表无序部分。<br>2、在无序部分中挑出要插入到有序部分中的元素</p><p><img src="https://img-blog.csdnimg.cn/2020062811465959.png" alt="img"></p><p>3、将要插入的元素与左边最近的有序部分的元素进行比较。由于4 &lt; 9，所以9向后移，4向前移。</p><p><img src="https://img-blog.csdnimg.cn/20200628114819195.png" alt="img"></p><p>4、继续将要插入的元素与左边最近的有序部分的元素进行比较。由于4 &lt; 5，所以5向后移，4继续向前移。<br><img src="https://img-blog.csdnimg.cn/20200628114914202.png" alt="img"><br>5、继续将4与3比较。由于4 &gt; 3，所以不再向前比较，插入到当前位置。<br><img src="https://img-blog.csdnimg.cn/2020062811502541.png" alt="img"><br>6、此时有序部分，由[2,3,5,9]变成[2,3,4,5,9]。</p><p><img src="https://img-blog.csdnimg.cn/20200628115113443.png" alt="img"></p><p>7、最后数组变为[2,3,4,5,7,9]</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs java">  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">a</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] arr)</span></span>&#123;<br>        <span class="hljs-comment">//排除捣乱的数据</span><br>      <span class="hljs-keyword">if</span> (arr == <span class="hljs-keyword">null</span>||arr.length&lt;<span class="hljs-number">2</span>)&#123;<br>          <span class="hljs-keyword">return</span>;<br>      &#125;<br>      <br>      <span class="hljs-comment">//0-0 有序的</span><br>      <span class="hljs-comment">//0-i 想要有序</span><br>      <br>      <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt; arr.length; i++)&#123;<br><br>          <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = i-<span class="hljs-number">1</span>; j &gt;= <span class="hljs-number">0</span> &amp;&amp; arr[j] &gt; arr[j+<span class="hljs-number">1</span>]; j--)&#123;<br>            swap(arr,j,j+<span class="hljs-number">1</span>);<br>          &#125;<br>          <br>      &#125;<br>      <br>    &#125;<br><span class="hljs-comment">//交换i和j的数字（这是一种抖机灵的写法，如果i和j地址不一样的话可以用，如果地址一致，数字就会变为0）</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">swap</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] arr,<span class="hljs-keyword">int</span> i, <span class="hljs-keyword">int</span> j)</span></span>&#123;<br>        arr[i] = arr[i]^arr[j];<br>        arr[j] = arr[i]^arr[j];<br>        arr[i] = arr[i]^arr[j];<br>    &#125;<br></code></pre></td></tr></table></figure>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;插入排序&quot;&gt;&lt;a href=&quot;#插入排序&quot; class=&quot;headerlink&quot; title=&quot;插入排序&quot;&gt;&lt;/a&gt;插入排序&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;时间复杂度为O(N²)，额外空间复杂度为O(1)&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;1、首先，原始的数组元素是</summary>
-      
-    
-    
-    
-    <category term="算法" scheme="http://example.com/categories/%E7%AE%97%E6%B3%95/"/>
-    
-    
-    <category term="算法" scheme="http://example.com/tags/%E7%AE%97%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>二分法</title>
-    <link href="http://example.com/2022/05/02/%E4%BA%8C%E5%88%86%E6%B3%95/"/>
-    <id>http://example.com/2022/05/02/%E4%BA%8C%E5%88%86%E6%B3%95/</id>
-    <published>2022-05-02T13:19:16.000Z</published>
-    <updated>2022-05-02T13:19:33.245Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="二分法"><a href="#二分法" class="headerlink" title="二分法"></a>二分法</h1><h2 id="1、在一个有序数组中，找某个数是否存在"><a href="#1、在一个有序数组中，找某个数是否存在" class="headerlink" title="1、在一个有序数组中，找某个数是否存在"></a><strong>1、在一个有序数组中，找某个数是否存在</strong></h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//有序，小到大查找某值.</span><br><span class="hljs-keyword">int</span> fir=<span class="hljs-number">0</span>,last=arr_length-<span class="hljs-number">1</span>;<br><span class="hljs-keyword">while</span> (fir&lt;=last)&#123;<br>mid=(fir+last)/<span class="hljs-number">2</span>;<br><span class="hljs-keyword">if</span> (arr[mid]==num)<br><span class="hljs-keyword">return</span> mid;<br><span class="hljs-keyword">else</span>&#123;<br><span class="hljs-keyword">if</span> (arr[mid]&lt;num)<br>fir=mid+<span class="hljs-number">1</span>;<br><span class="hljs-keyword">else</span><br>last=mid-<span class="hljs-number">1</span>;<br>    &#125;<br></code></pre></td></tr></table></figure><h2 id="2、在一个有序数组中，找-gt-某个数最左侧的位置（找-lt-某个数最右侧的位置）"><a href="#2、在一个有序数组中，找-gt-某个数最左侧的位置（找-lt-某个数最右侧的位置）" class="headerlink" title="2、在一个有序数组中，找&gt;=某个数最左侧的位置（找&lt;=某个数最右侧的位置）"></a><strong>2、在一个有序数组中，找&gt;=某个数最左侧的位置（找&lt;=某个数最右侧的位置）</strong></h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">int</span> fir=<span class="hljs-number">0</span>,last=arr_length-<span class="hljs-number">1</span>;<br><span class="hljs-keyword">while</span> (fir&lt;=last)&#123;<br>mid=(fir+last)/<span class="hljs-number">2</span>;<br><span class="hljs-keyword">if</span>  (arr[mid]&gt;=num)<br>last=mid-<span class="hljs-number">1</span>;<br><span class="hljs-keyword">else</span> (arr[mid]&lt;num)<br>ir=mid+<span class="hljs-number">1</span>;<br>&#125;<br></code></pre></td></tr></table></figure><h2 id="3、局部最小值问题"><a href="#3、局部最小值问题" class="headerlink" title="3、局部最小值问题"></a><strong>3、局部最小值问题</strong></h2><p>问题：在一个无序数组中，任何两个相邻的数不相等，求一个局部最小的位置，要求时间复杂度好于O(n)。</p><p>​    局部最小：i比相邻的数都小</p><p>思路：先找第一个数，如果他比第二个小，直接返回，如果大，找最后一个数，如果比前一个小，直接返回，如果    大，则说明第二个比第一个大，倒数第二个一定比倒数第一个小，所以整个数组是先有上升趋势，再有向下趋    势，所以他中间必有一个最小的点，所以直接二分，找中间的那个数，然后如果他是局部最小，则直接返回，       否则将他看成第一个或者最后一个进行上述步骤，直到找到那个局部最小；</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><code class="hljs java">  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span>  <span class="hljs-title">a</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] arr)</span></span>&#123;<br>        <span class="hljs-keyword">int</span> n = arr.length;<br>        <span class="hljs-comment">//排除一些情况</span><br>        <span class="hljs-keyword">if</span> (n == <span class="hljs-number">1</span>)&#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>        &#125;<br>        <span class="hljs-keyword">if</span> (arr[<span class="hljs-number">0</span>] &gt; arr[<span class="hljs-number">1</span>])&#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>        &#125;<br>        <span class="hljs-keyword">if</span> (arr[n-<span class="hljs-number">1</span>]&gt;arr[n-<span class="hljs-number">2</span>])&#123;<br>            <span class="hljs-keyword">return</span> n-<span class="hljs-number">1</span>;<br>        &#125;<br>        <span class="hljs-comment">//定义第一个和最后一个</span><br>        <span class="hljs-keyword">int</span> low = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">int</span> high = n-<span class="hljs-number">1</span>;<br><br>        <span class="hljs-keyword">while</span> (low&lt;high)&#123;<br>            <span class="hljs-keyword">int</span> mid = (low+high)/<span class="hljs-number">2</span>;<br>            <span class="hljs-comment">//如果这个中间值就是局部最小值就返回</span><br>            <span class="hljs-keyword">if</span> (arr[mid-<span class="hljs-number">1</span>]&lt;arr[mid] &amp;&amp; arr[mid]&gt;arr[mid+<span class="hljs-number">1</span>])&#123;<br>                    <span class="hljs-keyword">return</span> mid;<br>                    <span class="hljs-comment">//如果他这里是顺序递增，就把他设为最小值</span><br>            &#125;<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (arr[mid-<span class="hljs-number">1</span>] &lt; arr[mid] &amp;&amp; arr[mid] &lt; arr[mid+<span class="hljs-number">1</span>])&#123;<br>                low = mid;<br>                <span class="hljs-comment">//如果他这里是前一个大于他，后一个小于他，把它设置为对于前半部分的最大值或者对于后半部分的最小值</span><br>            &#125;<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (arr[mid-<span class="hljs-number">1</span>] &gt; arr[mid] &amp;&amp; arr[mid] &lt; arr[mid+<span class="hljs-number">1</span>])&#123;<br>                low = mid;<br>                <span class="hljs-comment">//否则就是最大值</span><br>            &#125;<span class="hljs-keyword">else</span>&#123;<br>                high = mid;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>;<br>    &#125;<br><br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>&#123;<br>        <span class="hljs-keyword">int</span>[] nums = &#123; -<span class="hljs-number">4</span>, -<span class="hljs-number">3</span>, -<span class="hljs-number">2</span>, -<span class="hljs-number">1</span>, <span class="hljs-number">4</span>, <span class="hljs-number">3</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span> &#125;;<br>        System.out.println(a(nums));<br>    &#125;<br><br><br>输出结果：<span class="hljs-number">7</span><br></code></pre></td></tr></table></figure>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;二分法&quot;&gt;&lt;a href=&quot;#二分法&quot; class=&quot;headerlink&quot; title=&quot;二分法&quot;&gt;&lt;/a&gt;二分法&lt;/h1&gt;&lt;h2 id=&quot;1、在一个有序数组中，找某个数是否存在&quot;&gt;&lt;a href=&quot;#1、在一个有序数组中，找某个数是否存在&quot; class=&quot;he</summary>
       
     
     
