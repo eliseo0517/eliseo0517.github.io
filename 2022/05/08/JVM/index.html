@@ -29,7 +29,7 @@
 <meta property="og:image" content="http://example.com/2022/05/08/JVM/image-20220508010848773.png">
 <meta property="og:image" content="http://example.com/2022/05/08/JVM/image-20220508020512989.png">
 <meta property="article:published_time" content="2022-05-07T16:37:53.000Z">
-<meta property="article:modified_time" content="2022-05-07T18:10:18.874Z">
+<meta property="article:modified_time" content="2022-05-08T17:13:20.578Z">
 <meta property="article:author" content="Mr.Wang">
 <meta property="article:tag" content="JVM">
 <meta name="twitter:card" content="summary_large_image">
@@ -230,7 +230,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      2.1k 字
+      2.5k 字
     </span>
   
 
@@ -239,7 +239,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      18 分钟
+      21 分钟
     </span>
   
 
@@ -379,7 +379,36 @@
 <li>某线程调用Runtime类或system类的exit方法，或Runtime类的halt方法，并且Java安全管理器也允许这次exit或halt操作。</li>
 <li>除此之外，JNI（Java Native Interface）规范描述了用JNI Invocation API来加载或卸载 Java虚拟机时，Java虚拟机的退出情况。</li>
 </ul>
-
+<h2 id="1-6、JVM分类"><a href="#1-6、JVM分类" class="headerlink" title="1.6、JVM分类"></a>1.6、JVM分类</h2><ul>
+<li>SUN Classic VM<ul>
+<li>只提供解释器，如果使用JIT编译器，解释器就不能工作，也就是只能二选一</li>
+</ul>
+</li>
+<li>Exact VM   (Exact Memory Management：准确式内存管理)<ul>
+<li>虚拟机可以知道内存中某个位置的数据具体是什么类型 具有热点探测与解释器编译器混合工作功能</li>
+</ul>
+</li>
+<li>HotSpot VM<ul>
+<li>通过计数器找到最具编译价值代码，触发即时编译或栈上替换。(热点代码探测)</li>
+<li>通过编译器与解释器协同工作，在最优化的程序相应时间与最佳性能执行中取得平衡</li>
+<li>Sun / Oracle JDK 和 OpenJDK 的默认虚拟机</li>
+</ul>
+</li>
+<li>BEA的JRockit VM<ul>
+<li>专注于服务端应用<ul>
+<li>不太关注程序启动速度，所以内部不包含解析器实现，都靠着即时编译器</li>
+</ul>
+</li>
+<li>是世界上最快的JVM</li>
+</ul>
+</li>
+<li>IBM 的 J9</li>
+</ul>
+<p>……</p>
+<p>所有虚拟机遵循的原则:一次编译，到处允许</p>
+<p><strong>总结</strong></p>
+<p>具体JVM的内存结构，其实取决于其实现，不同厂商的JVM，或者同一厂商发布的不同版本，都有可能存在一定差异。主要以Oracle HotSpot VM为默认虚拟机。</p>
+<h1 id="二、类加载子系统"><a href="#二、类加载子系统" class="headerlink" title="二、类加载子系统"></a>二、类加载子系统</h1>
             </div>
             <hr>
             <div>
@@ -412,6 +441,12 @@
                 <div class="post-prevnext">
                   <article class="post-prev col-6">
                     
+                    
+                      <a href="/2022/05/08/%E9%A1%BA%E6%97%B6%E9%92%88%E6%89%93%E5%8D%B0%E7%9F%A9%E9%98%B5/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">顺时针打印矩阵</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
                     
                   </article>
                   <article class="post-next col-6">

@@ -16,17 +16,17 @@
   <meta name="author" content="Mr.Wang">
   <meta name="keywords" content="">
   
-    <meta name="description" content="网络连接的三种方式桥接模式虚拟系统可以和外部系统相互通讯，但是容易造成ip冲突(超过255个机器) NAT模式（网络地址转换模式）NAT模式，网络地址转换模式，虚拟系统可以和外部系统单方面通讯(外部不可以直接访问内部)，不造成IP冲突，相当于给你虚拟机虚拟一个ip，然后在需要访问外部的时候，自动转换成你母机ip去访问外部 主机模式可以看作一个独立的系统，不与外界进行联系  Linux目录结构1、l">
+    <meta name="description" content="一、网络连接的三种方式1.1、桥接模式虚拟系统可以和外部系统相互通讯，但是容易造成ip冲突(超过255个机器) 1.2、NAT模式（网络地址转换模式）NAT模式，网络地址转换模式，虚拟系统可以和外部系统单方面通讯(外部不可以直接访问内部)，不造成IP冲突，相当于给你虚拟机虚拟一个ip，然后在需要访问外部的时候，自动转换成你母机ip去访问外部 1.3、主机模式可以看作一个独立的系统，不与外界进行联系">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux">
 <meta property="og:url" content="http://example.com/2022/05/05/Linux/index.html">
 <meta property="og:site_name" content="Eliseo的小屋">
-<meta property="og:description" content="网络连接的三种方式桥接模式虚拟系统可以和外部系统相互通讯，但是容易造成ip冲突(超过255个机器) NAT模式（网络地址转换模式）NAT模式，网络地址转换模式，虚拟系统可以和外部系统单方面通讯(外部不可以直接访问内部)，不造成IP冲突，相当于给你虚拟机虚拟一个ip，然后在需要访问外部的时候，自动转换成你母机ip去访问外部 主机模式可以看作一个独立的系统，不与外界进行联系  Linux目录结构1、l">
+<meta property="og:description" content="一、网络连接的三种方式1.1、桥接模式虚拟系统可以和外部系统相互通讯，但是容易造成ip冲突(超过255个机器) 1.2、NAT模式（网络地址转换模式）NAT模式，网络地址转换模式，虚拟系统可以和外部系统单方面通讯(外部不可以直接访问内部)，不造成IP冲突，相当于给你虚拟机虚拟一个ip，然后在需要访问外部的时候，自动转换成你母机ip去访问外部 1.3、主机模式可以看作一个独立的系统，不与外界进行联系">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/2022/05/05/Linux/image-20220505162247042.png">
 <meta property="og:image" content="http://example.com/2022/05/05/Linux/image-20220505201406877.png">
 <meta property="article:published_time" content="2022-05-05T09:21:34.000Z">
-<meta property="article:modified_time" content="2022-05-05T12:32:12.277Z">
+<meta property="article:modified_time" content="2022-05-08T13:26:32.575Z">
 <meta property="article:author" content="Mr.Wang">
 <meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary_large_image">
@@ -227,7 +227,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      1.6k 字
+      3k 字
     </span>
   
 
@@ -236,7 +236,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      14 分钟
+      25 分钟
     </span>
   
 
@@ -277,16 +277,16 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：2 days ago
+                  本文最后更新于：4 hours ago
                 
               </p>
             
             <div class="markdown-body">
-              <h1 id="网络连接的三种方式"><a href="#网络连接的三种方式" class="headerlink" title="网络连接的三种方式"></a>网络连接的三种方式</h1><h2 id="桥接模式"><a href="#桥接模式" class="headerlink" title="桥接模式"></a>桥接模式</h2><p>虚拟系统可以和外部系统<strong>相互</strong>通讯，但是容易造成ip冲突(超过255个机器)</p>
-<h2 id="NAT模式（网络地址转换模式）"><a href="#NAT模式（网络地址转换模式）" class="headerlink" title="NAT模式（网络地址转换模式）"></a>NAT模式（网络地址转换模式）</h2><p>NAT模式，网络地址转换模式，虚拟系统可以和外部系统<strong>单方面通讯(外部不可以直接访问内部)，</strong>不造成IP冲突，相当于给你虚拟机虚拟一个ip，然后在需要访问外部的时候，自动转换成你母机ip去访问外部</p>
-<h2 id="主机模式"><a href="#主机模式" class="headerlink" title="主机模式"></a>主机模式</h2><p>可以看作一个独立的系统，不与外界进行联系</p>
+              <h1 id="一、网络连接的三种方式"><a href="#一、网络连接的三种方式" class="headerlink" title="一、网络连接的三种方式"></a>一、网络连接的三种方式</h1><h2 id="1-1、桥接模式"><a href="#1-1、桥接模式" class="headerlink" title="1.1、桥接模式"></a>1.1、桥接模式</h2><p>虚拟系统可以和外部系统<strong>相互</strong>通讯，但是容易造成ip冲突(超过255个机器)</p>
+<h2 id="1-2、NAT模式（网络地址转换模式）"><a href="#1-2、NAT模式（网络地址转换模式）" class="headerlink" title="1.2、NAT模式（网络地址转换模式）"></a>1.2、NAT模式（网络地址转换模式）</h2><p>NAT模式，网络地址转换模式，虚拟系统可以和外部系统<strong>单方面通讯(外部不可以直接访问内部)，</strong>不造成IP冲突，相当于给你虚拟机虚拟一个ip，然后在需要访问外部的时候，自动转换成你母机ip去访问外部</p>
+<h2 id="1-3、主机模式"><a href="#1-3、主机模式" class="headerlink" title="1.3、主机模式"></a>1.3、主机模式</h2><p>可以看作一个独立的系统，不与外界进行联系</p>
 <p><img src="/2022/05/05/Linux/image-20220505162247042.png" srcset="/img/loading.gif" lazyload alt="网络连接的三种方式"></p>
-<h1 id="Linux目录结构"><a href="#Linux目录结构" class="headerlink" title="Linux目录结构"></a>Linux目录结构</h1><p>1、linux的文件系统是采用级层式的树状目录结构，最上层是根目录”/“，然后在此目录下创建其他的目录。</p>
+<h1 id="二、Linux目录结构"><a href="#二、Linux目录结构" class="headerlink" title="二、Linux目录结构"></a>二、Linux目录结构</h1><p>1、linux的文件系统是采用级层式的树状目录结构，最上层是根目录”/“，然后在此目录下创建其他的目录。</p>
 <p>2、<strong>在Linux的世界里，一切皆文件</strong></p>
 <ul>
 <li><p>/bin (/usr/bin、/usr/local/bin),是Binary的缩写，存放着最常使用的命令<strong>【常用】</strong></p>
@@ -332,28 +332,283 @@
 <li><p>/selinux [security-enhanced linux] 是一种安全的子系统，它能控制程序只访问特定文件，有三种工作模式，可以自行设置</p>
 </li>
 </ul>
-<h1 id="vi和vim编辑器"><a href="#vi和vim编辑器" class="headerlink" title="vi和vim编辑器"></a>vi和vim编辑器</h1><h2 id="三种使用模式"><a href="#三种使用模式" class="headerlink" title="三种使用模式"></a>三种使用模式</h2><p><strong>正常模式(命令模式)</strong></p>
+<h1 id="三、vi和vim编辑器"><a href="#三、vi和vim编辑器" class="headerlink" title="三、vi和vim编辑器"></a>三、vi和vim编辑器</h1><h2 id="3-1、三种使用模式"><a href="#3-1、三种使用模式" class="headerlink" title="3.1、三种使用模式"></a>3.1、三种使用模式</h2><p><strong>正常模式(命令模式)</strong></p>
 <p>​    以vim打开一个档案就直接进入一般模式了(这是默认的模式)。在这个模式中，你可以使用「上下左右』按键来移动光标，你可以使用『删除字符』或『删除整行』来处理档案内容，也可以使用『复制、粘贴』来处理你的文件数据。</p>
 <p><strong>插入模式</strong></p>
 <p>​    按下i，I，o，O，a，A，r，R等任何一个字母之后才会进入编辑模式，一般按<strong>i</strong>即可</p>
 <p><strong>命令行模式</strong></p>
 <p>​    输入esc退出当前模式，再输入<code>:</code>进入命令行模式</p>
 <p>​    可以提供相关指令，完成读取，存盘，替换，离开vim显示行号等动作。</p>
-<h2 id="各种模式的切换"><a href="#各种模式的切换" class="headerlink" title="各种模式的切换"></a>各种模式的切换</h2><p><img src="/2022/05/05/Linux/image-20220505201406877.png" srcset="/img/loading.gif" lazyload alt="各种模式的切换方式"></p>
-<h2 id="vim操作"><a href="#vim操作" class="headerlink" title="vim操作"></a>vim操作</h2><p>在一般模式(命令行模式)下：</p>
+<h2 id="3-2、各种模式的切换"><a href="#3-2、各种模式的切换" class="headerlink" title="3.2、各种模式的切换"></a>3.2、各种模式的切换</h2><p><img src="/2022/05/05/Linux/image-20220505201406877.png" srcset="/img/loading.gif" lazyload alt="各种模式的切换方式"></p>
+<h2 id="3-3、vim操作"><a href="#3-3、vim操作" class="headerlink" title="3.3、vim操作"></a>3.3、vim操作</h2><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>用法</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>在一般模式(命令行模式)下：</td>
+<td></td>
+</tr>
+<tr>
+<td>yy</td>
+<td>拷贝当前行</td>
+</tr>
+<tr>
+<td>5yy</td>
+<td>拷贝光标向下的5行</td>
+</tr>
+<tr>
+<td>p</td>
+<td>粘贴</td>
+</tr>
+<tr>
+<td>u</td>
+<td>撤销</td>
+</tr>
+<tr>
+<td>x</td>
+<td>删除</td>
+</tr>
+<tr>
+<td>dd</td>
+<td>删除当前行</td>
+</tr>
+<tr>
+<td>5dd</td>
+<td>删除光标向下的5行</td>
+</tr>
+<tr>
+<td>/关键字，输入回车查找，n查找下一个，N查找上一个</td>
+<td>在文件中查找某一个单词</td>
+</tr>
+<tr>
+<td>G</td>
+<td>文档最末行</td>
+</tr>
+<tr>
+<td>gg</td>
+<td>最首行</td>
+</tr>
+<tr>
+<td>先输入行号 在输入shift+g</td>
+<td>表示移动到多少行</td>
+</tr>
+<tr>
+<td>在命令行模式下:</td>
+<td></td>
+</tr>
+<tr>
+<td>wq</td>
+<td>保存退出</td>
+</tr>
+<tr>
+<td>q</td>
+<td>退出</td>
+</tr>
+<tr>
+<td>q!</td>
+<td>强制退出不保存</td>
+</tr>
+<tr>
+<td>/关键字 回车 ；输入n是查找下一个</td>
+<td>查找某个单词</td>
+</tr>
+<tr>
+<td>set nu</td>
+<td>设置文件的行号</td>
+</tr>
+<tr>
+<td>set nonu</td>
+<td>取消文件的行号</td>
+</tr>
+</tbody></table>
+<h1 id="四、开机重启与用户登录注销"><a href="#四、开机重启与用户登录注销" class="headerlink" title="四、开机重启与用户登录注销"></a>四、开机重启与用户登录注销</h1><h2 id="4-1、开关机与重启"><a href="#4-1、开关机与重启" class="headerlink" title="4.1、开关机与重启"></a>4.1、开关机与重启</h2><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>用法</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>shutdown -h now</td>
+<td>立刻进行关机</td>
+</tr>
+<tr>
+<td>shutdown -h 1</td>
+<td>“hello，1分钟后会关机了”</td>
+</tr>
+<tr>
+<td>shutdown -r now</td>
+<td>现在重新启动计算机</td>
+</tr>
+<tr>
+<td>halt</td>
+<td>关机，作用和上面一样</td>
+</tr>
+<tr>
+<td>reboot</td>
+<td>现在重新启动计算机</td>
+</tr>
+<tr>
+<td>sync</td>
+<td>把内存的数据同步到磁盘</td>
+</tr>
+</tbody></table>
+<p><strong>注意细节</strong></p>
 <ul>
-<li>yy 拷贝当前行；5yy 拷贝光标向下的5行，p 粘贴 u撤销 x删除</li>
-<li>dd 删除当前行；5dd，删除光标向下的5行</li>
-<li>在文件中查找某一个单词（<strong>命令行下</strong>/关键字，输入回车查找，n查找下一个，N查找上一个）</li>
-<li>G 文档最末行，gg 最首行（在一般模式下）</li>
-<li>先输入行号 在输入shift+g 表示移动到多少行</li>
+<li>不管是重启系统还是关闭系统，首先要运行sync命令，把内存中的数据写到磁盘中</li>
+<li>目前的shutdown/reboot/halt等命令均已经在关机前进行了sync，但是还是自己执行一次比较好</li>
 </ul>
-<p>在命令行模式下:</p>
+<h2 id="4-2、用户登录和注销"><a href="#4-2、用户登录和注销" class="headerlink" title="4.2、用户登录和注销"></a>4.2、用户登录和注销</h2><p><strong>基本介绍</strong></p>
+<ol>
+<li>登录的时候尽量少使用root账号登录，因为他是系统管理员，最大的权限，避免操作失误。可以利用普通用户登录，登录后再用“su - 用户名” 命令来切换成系统管理员身份</li>
+<li>在提示符下输入logout即可注销用户</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>用法</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>su - 用户名</td>
+<td>切换用户</td>
+</tr>
+<tr>
+<td>logout</td>
+<td>注销用户</td>
+</tr>
+</tbody></table>
+<h1 id="五、Linux用户管理"><a href="#五、Linux用户管理" class="headerlink" title="五、Linux用户管理"></a>五、Linux用户管理</h1><p>linux系统是一个多用户多任务的操作系统，任何一个要使用系统资源的用户，都必须首先向系统管理员申请一个账号，然后以这个账号的身份进入系统</p>
+<h2 id="5-1、用户基本操作"><a href="#5-1、用户基本操作" class="headerlink" title="5.1、用户基本操作"></a>5.1、用户基本操作</h2><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>用法</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>useradd 用户名</td>
+<td>添加用户，默认该用户的家目录在/home/用户名 下</td>
+</tr>
+<tr>
+<td>useradd -d 指定目录 用户名</td>
+<td>给新创建的用户指定家目录</td>
+</tr>
+<tr>
+<td>useradd -g 用户组 用户名</td>
+<td>增加用户时直接加上组</td>
+</tr>
+<tr>
+<td>passwd 用户</td>
+<td>给某个用户设置密码</td>
+</tr>
+<tr>
+<td>pwd</td>
+<td>显示当前用户所在目录</td>
+</tr>
+<tr>
+<td>userdel 用户名</td>
+<td>删除用户但保留对用home目录</td>
+</tr>
+<tr>
+<td>userdel -r 用户名</td>
+<td>删除用户并且删除对应home目录</td>
+</tr>
+<tr>
+<td>id 用户名</td>
+<td>查询用户信息</td>
+</tr>
+<tr>
+<td>su - 切换的用户名</td>
+<td>切换用户，高权限切换地全选不需要密码，反之需要</td>
+</tr>
+<tr>
+<td>exot/logout</td>
+<td>返回到原来用户</td>
+</tr>
+<tr>
+<td>who am i/ whoami</td>
+<td>查看当前用户，不加空格是当前操作的用户，加空格是第一次登录的用户的信息</td>
+</tr>
+</tbody></table>
+<h2 id="5-2、用户组"><a href="#5-2、用户组" class="headerlink" title="5.2、用户组"></a>5.2、用户组</h2><p><strong>介绍：</strong></p>
+<p>类似于角色，系统可以对有共性/权限的多个用户进行统一的管理，所有在一个组的用户都会有这个组的权限</p>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>用法</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>groupadd 组名</td>
+<td>新增组</td>
+</tr>
+<tr>
+<td>groupdel 组名</td>
+<td>删除组</td>
+</tr>
+<tr>
+<td>useradd -g 用户组 用户名</td>
+<td>增加用户时直接加上组</td>
+</tr>
+</tbody></table>
+<p>如果直接添加用户而不指定组，则虚拟机会默认创建一个以用户名为名的组并将其放入组中</p>
+<h2 id="5-3、用户和组相关文件"><a href="#5-3、用户和组相关文件" class="headerlink" title="5.3、用户和组相关文件"></a>5.3、用户和组相关文件</h2><ul>
+<li>/etc/passwd 文件</li>
+</ul>
+<p>用户(user)的配置文件，记录用户的各种信息</p>
+<p>每一行都是一个用户：含义: <strong>用户名:口令:用户标识号:组标识号:注释性描述:主目录:登录shell</strong></p>
 <ul>
-<li>wq(保存退出) q(退出) q!(强制退出不保存)</li>
-<li>/关键字 回车 查找某个单词，输入n是查找下一个</li>
-<li>set nu 设置文件的行号，set nonu 取消文件的行号</li>
+<li>/etc/shadow文件</li>
 </ul>
+<p>口令配置文件,每行的含义:<strong>登录名:加密口令:最后一次修改时间:最小时间间隔:最大时间间隔:警告时间:不活动时间:失效时间:标志</strong></p>
+<ul>
+<li>/etc/group文件</li>
+</ul>
+<p>组的配置文件，记录linux中组的信息，每行含义:<strong>组名:口令:组标识号:组内用户列表</strong></p>
+<h1 id="六、实用指令"><a href="#六、实用指令" class="headerlink" title="六、实用指令"></a>六、实用指令</h1><h2 id="6-1、运行级别"><a href="#6-1、运行级别" class="headerlink" title="6.1、运行级别"></a>6.1、运行级别</h2><p>运行级别说明</p>
+<ol start="0">
+<li><p>关机</p>
+</li>
+<li><p>单用户[找回丢失的密码]</p>
+</li>
+<li><p>多用户状态没有网络服务</p>
+</li>
+<li><p>多用户状态有网络服务</p>
+</li>
+<li><p>系统未使用保留给用户</p>
+</li>
+<li><p>图形界面</p>
+</li>
+<li><p>系统重启</p>
+</li>
+</ol>
+<p>常用的运行级别是3和5，也可以指定默认运行级别</p>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>用法</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>init[0123456]</td>
+<td>切换不同的运行级别</td>
+</tr>
+<tr>
+<td>systemctl get-default</td>
+<td>查看目前的运行级别</td>
+</tr>
+<tr>
+<td>systemctl set-default mult-user.target/systemctl set-default graphical.target</td>
+<td>设置运行级别，前者相当于3，后者相当于5</td>
+</tr>
+</tbody></table>
 
             </div>
             <hr>
