@@ -16,23 +16,23 @@
   <meta name="author" content="Mr.Wang">
   <meta name="keywords" content="">
   
-    <meta name="description" content="解法： 看见题就能想到要不两个数字作为一个字符输出，要不一个数字作为一个字符输出。 12345678910111213141516171819202122232425class Solution &amp;#123;       public int translateNum(int num) &amp;#123;        &#x2F;&#x2F; 把数字变成string类型        String s &#x3D; String">
+    <meta name="description" content="解法： 1234567891011121314151617181920212223242526class Solution &amp;#123;    public int[] maxSlidingWindow(int[] nums, int k) &amp;#123;        int len &#x3D; nums.length;        Deque&lt;Integer&gt; deque &#x3D; new L">
 <meta property="og:type" content="article">
-<meta property="og:title" content="把数字翻译成字符串">
-<meta property="og:url" content="http://example.com/2022/04/25/%E6%8A%8A%E6%95%B0%E5%AD%97%E7%BF%BB%E8%AF%91%E6%88%90%E5%AD%97%E7%AC%A6%E4%B8%B2/index.html">
+<meta property="og:title" content="滑动窗口的最大值">
+<meta property="og:url" content="http://example.com/2022/05/09/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3%E7%9A%84%E6%9C%80%E5%A4%A7%E5%80%BC/index.html">
 <meta property="og:site_name" content="Eliseo的小屋">
-<meta property="og:description" content="解法： 看见题就能想到要不两个数字作为一个字符输出，要不一个数字作为一个字符输出。 12345678910111213141516171819202122232425class Solution &amp;#123;       public int translateNum(int num) &amp;#123;        &#x2F;&#x2F; 把数字变成string类型        String s &#x3D; String">
+<meta property="og:description" content="解法： 1234567891011121314151617181920212223242526class Solution &amp;#123;    public int[] maxSlidingWindow(int[] nums, int k) &amp;#123;        int len &#x3D; nums.length;        Deque&lt;Integer&gt; deque &#x3D; new L">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://example.com/2022/04/25/%E6%8A%8A%E6%95%B0%E5%AD%97%E7%BF%BB%E8%AF%91%E6%88%90%E5%AD%97%E7%AC%A6%E4%B8%B2/image-20220425153822764.png">
-<meta property="article:published_time" content="2022-04-25T07:37:45.000Z">
-<meta property="article:modified_time" content="2022-04-25T07:39:49.484Z">
+<meta property="og:image" content="http://example.com/2022/05/09/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3%E7%9A%84%E6%9C%80%E5%A4%A7%E5%80%BC/image-20220509104013577.png">
+<meta property="article:published_time" content="2022-05-09T02:37:48.000Z">
+<meta property="article:modified_time" content="2022-05-09T02:40:41.382Z">
 <meta property="article:author" content="Mr.Wang">
 <meta property="article:tag" content="剑指Offer">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://example.com/2022/04/25/%E6%8A%8A%E6%95%B0%E5%AD%97%E7%BF%BB%E8%AF%91%E6%88%90%E5%AD%97%E7%AC%A6%E4%B8%B2/image-20220425153822764.png">
+<meta name="twitter:image" content="http://example.com/2022/05/09/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3%E7%9A%84%E6%9C%80%E5%A4%A7%E5%80%BC/image-20220509104013577.png">
   
   
-  <title>把数字翻译成字符串 - Eliseo的小屋</title>
+  <title>滑动窗口的最大值 - Eliseo的小屋</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -200,7 +200,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="把数字翻译成字符串">
+            <span class="h2" id="subtitle" title="滑动窗口的最大值">
               
             </span>
 
@@ -215,8 +215,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2022-04-25 15:37" pubdate>
-        April 25, 2022 pm
+      <time datetime="2022-05-09 10:37" pubdate>
+        May 9, 2022 am
       </time>
     </span>
   
@@ -272,19 +272,18 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">把数字翻译成字符串</h1>
+            <h1 style="display: none">滑动窗口的最大值</h1>
             
               <p class="note note-info">
                 
-                  本文最后更新于：14 days ago
+                  本文最后更新于：2 hours ago
                 
               </p>
             
             <div class="markdown-body">
-              <p><img src="/2022/04/25/%E6%8A%8A%E6%95%B0%E5%AD%97%E7%BF%BB%E8%AF%91%E6%88%90%E5%AD%97%E7%AC%A6%E4%B8%B2/image-20220425153822764.png" srcset="/img/loading.gif" lazyload alt="把数字翻译成字符串"></p>
+              <p><img src="/2022/05/09/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3%E7%9A%84%E6%9C%80%E5%A4%A7%E5%80%BC/image-20220509104013577.png" srcset="/img/loading.gif" lazyload alt="滑动窗口的最大值"></p>
 <p><strong>解法：</strong></p>
-<p>看见题就能想到要不两个数字作为一个字符输出，要不一个数字作为一个字符输出。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>       <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">translateNum</span><span class="hljs-params">(<span class="hljs-keyword">int</span> num)</span> </span>&#123;<br>        <span class="hljs-comment">// 把数字变成string类型</span><br>        String s = String.valueOf(num);<br>        <span class="hljs-comment">// 如果不+1，如果我给的num长度为3，那么转换成string类型长度也为3</span><br>        <span class="hljs-comment">// 到了for循环的时候从2开始就拿不到2个就出现越界问题</span><br>        <span class="hljs-keyword">int</span>[] dp = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[s.length() + <span class="hljs-number">1</span>];<br>        <span class="hljs-comment">// 当num第1,2位的组成的数字∈[10,25]时，显然应有2种翻译方法，</span><br>        <span class="hljs-comment">// 即dp[2]=dp[1]+dp[0]=2，而显然dp[1] = 1因此推出dp[0] = 1</span><br>        dp[<span class="hljs-number">0</span>] = <span class="hljs-number">1</span>;<br>        dp[<span class="hljs-number">1</span>] = <span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">2</span>; i &lt;= s.length(); i++) &#123;<br>            <span class="hljs-comment">// 取出两位</span><br>            <span class="hljs-comment">// substring这个方法截取的字符串从i-2开始，到字符串索引的i - 1结束</span><br>            String tmp = s.substring(i - <span class="hljs-number">2</span>, i);<br>            <span class="hljs-comment">// 如果两位数的ASCII码差值在10~25之间 证明可以转换成为一个字符</span><br>            <span class="hljs-keyword">if</span> (tmp.compareTo(<span class="hljs-string">&quot;10&quot;</span>) &gt;= <span class="hljs-number">0</span> &amp;&amp; tmp.compareTo(<span class="hljs-string">&quot;25&quot;</span>) &lt;= <span class="hljs-number">0</span>) &#123;<br>                dp[i] = dp[i - <span class="hljs-number">1</span>] + dp[i - <span class="hljs-number">2</span>];<br>            &#125; <span class="hljs-keyword">else</span> &#123;<span class="hljs-comment">// 一位计算</span><br>                dp[i] = dp[i - <span class="hljs-number">1</span>];<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> dp[s.length()];<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span>[] maxSlidingWindow(<span class="hljs-keyword">int</span>[] nums, <span class="hljs-keyword">int</span> k) &#123;<br>        <span class="hljs-keyword">int</span> len = nums.length;<br>        Deque&lt;Integer&gt; deque = <span class="hljs-keyword">new</span> LinkedList&lt;&gt;();<br>        <span class="hljs-keyword">int</span>[] res = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[len - k + <span class="hljs-number">1</span>];<br>        <span class="hljs-keyword">if</span> (len == <span class="hljs-number">0</span> || k == <span class="hljs-number">0</span>) &#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[<span class="hljs-number">0</span>];<br>        &#125;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span> - k, j = <span class="hljs-number">0</span>; j &lt; len; j++, i++) &#123;<br>            <span class="hljs-comment">// deque.peekFirst() =&gt; 用于检索链表的第一个元素，初始元素或开始元素，但不会从列表中删除第一个元素。</span><br>            <span class="hljs-keyword">if</span> (i &gt; <span class="hljs-number">0</span> &amp;&amp; deque.peekFirst() == nums[i - <span class="hljs-number">1</span>]) &#123;<br>                deque.removeFirst();<br>            &#125;<br>            <span class="hljs-comment">// 删除最大值左边的值，保证队列递减,那么就判断队列左边的值与新加入的元素的值的大小</span><br>            <span class="hljs-keyword">while</span> (!deque.isEmpty() &amp;&amp; deque.peekLast() &lt; nums[j]) &#123;<br>                <span class="hljs-comment">// deque.removeLast() =&gt; 用于返回最后一个元素，但要从此双端队列移除该元素</span><br>                deque.removeLast();<br>            &#125;<br>            deque.addLast(nums[j]);<br>            <span class="hljs-keyword">if</span> (i &gt;= <span class="hljs-number">0</span>) &#123;<br>                res[i] = deque.peekFirst();<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> res;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
 
             </div>
@@ -320,18 +319,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/04/25/%E6%9C%80%E9%95%BF%E4%B8%8D%E5%90%AB%E9%87%8D%E5%A4%8D%E5%AD%97%E7%AC%A6%E7%9A%84%E5%AD%90%E5%AD%97%E7%AC%A6%E4%B8%B2/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">最长不含重复字符的子字符串</span>
-                        <span class="visible-mobile">Previous</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/04/25/%E7%A4%BC%E7%89%A9%E7%9A%84%E6%9C%80%E5%A4%A7%E4%BB%B7%E5%80%BC/">
-                        <span class="hidden-mobile">礼物的最大价值</span>
+                      <a href="/2022/05/08/%E6%A0%88%E7%9A%84%E5%8E%8B%E5%85%A5%E3%80%81%E5%BC%B9%E5%87%BA%E5%BA%8F%E5%88%97/">
+                        <span class="hidden-mobile">栈的压入、弹出序列</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

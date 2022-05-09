@@ -29,7 +29,7 @@
 <meta property="og:image" content="http://example.com/2022/05/08/JVM/image-20220508010848773.png">
 <meta property="og:image" content="http://example.com/2022/05/08/JVM/image-20220508020512989.png">
 <meta property="article:published_time" content="2022-05-07T16:37:53.000Z">
-<meta property="article:modified_time" content="2022-05-08T17:21:19.955Z">
+<meta property="article:modified_time" content="2022-05-08T18:03:23.916Z">
 <meta property="article:author" content="Mr.Wang">
 <meta property="article:tag" content="JVM">
 <meta name="twitter:card" content="summary_large_image">
@@ -230,7 +230,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      2.6k 字
+      3.1k 字
     </span>
   
 
@@ -239,7 +239,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      22 分钟
+      26 分钟
     </span>
   
 
@@ -280,7 +280,7 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：a few seconds ago
+                  本文最后更新于：10 hours ago
                 
               </p>
             
@@ -388,22 +388,35 @@
 <li>虚拟机可以知道内存中某个位置的数据具体是什么类型 具有热点探测与解释器编译器混合工作功能</li>
 </ul>
 </li>
-<li>HotSpot VM （<strong>绝对的市场地位，称霸武林</strong>）<ul>
+<li><strong>HotSpot VM</strong> （<strong>绝对的市场地位，称霸武林</strong>）<ul>
 <li>通过计数器找到最具编译价值代码，触发即时编译或栈上替换。(热点代码探测)</li>
 <li>通过编译器与解释器协同工作，在最优化的程序相应时间与最佳性能执行中取得平衡</li>
 <li>Sun / Oracle JDK 和 OpenJDK 的默认虚拟机</li>
 <li><strong>默认都是HotSpot虚拟机，相关机制也主要是值HotSpot的GC机制。</strong></li>
 </ul>
 </li>
-<li>BEA的JRockit VM<ul>
-<li>专注于服务端应用<ul>
+<li><strong>BEA的JRockit VM</strong><ul>
+<li><strong>专注于服务端应用</strong><ul>
 <li>不太关注程序启动速度，所以内部不包含解析器实现，都靠着即时编译器</li>
 </ul>
 </li>
-<li>是世界上最快的JVM</li>
+<li><strong>是世界上最快的JVM</strong></li>
+<li>优势：全面的Java运行时解决方案组合</li>
 </ul>
 </li>
-<li>IBM 的 J9</li>
+<li><strong>IBM 的 J9</strong><ul>
+<li>广泛用于IBM的各种Java产品。</li>
+</ul>
+</li>
+<li>HotSpot，JRockit 与J9 是<strong>有影响力的三大商用虚拟机</strong></li>
+<li><strong>Graal VM</strong><ul>
+<li>2018年4月，oracle Labs公开了Graal VM，号称 <strong>“Run Programs Faster Anywhere”</strong>，野心勃勃。与1995年java的”write once，run anywhere”遥相呼应。</li>
+<li>Graal VM在HotSpot VM基础上增强而成的<strong>跨语言全栈虚拟机，可以作为“任何语言” 的运行平台使用</strong>。语言包括：Java、Scala、Groovy、Kotlin；C、C++、Javascript、Ruby、Python、R等</li>
+<li>支持不同语言中混用对方的接口和对象，支持这些语言使用已经编写好的本地库文件</li>
+<li>工作原理是将这些语言的源代码或源代码编译后的中间格式，通过解释器转换为能被Graal VM接受的中间表示。Graal VM提供Truffle工具集快速构建面向一种新语言的解释器。在运行时还能进行即时编译优化，获得比原生编译器更优秀的执行效率。</li>
+<li><strong>如果说HotSpot有一天真的被取代，Graal VM希望最大。</strong>但是Java的软件生态没有丝毫变化。</li>
+</ul>
+</li>
 </ul>
 <p>……</p>
 <p>所有虚拟机遵循的原则:一次编译，到处允许</p>
