@@ -26,7 +26,7 @@
 <meta property="og:image" content="http://example.com/2022/05/05/Linux/image-20220505162247042.png">
 <meta property="og:image" content="http://example.com/2022/05/05/Linux/image-20220505201406877.png">
 <meta property="article:published_time" content="2022-05-05T09:21:34.000Z">
-<meta property="article:modified_time" content="2022-05-09T17:42:12.179Z">
+<meta property="article:modified_time" content="2022-05-11T14:46:32.767Z">
 <meta property="article:author" content="Mr.Wang">
 <meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary_large_image">
@@ -68,7 +68,6 @@
 <!-- 自定义样式保持在最底部 -->
 
   
-<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/bynotes/texiao/source/css/gundongtiao.css">
 <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/bynotes/texiao/source/css/toubudaziji.css">
 
 
@@ -227,7 +226,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      3k 字
+      4.6k 字
     </span>
   
 
@@ -236,7 +235,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      25 分钟
+      39 分钟
     </span>
   
 
@@ -277,7 +276,7 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：19 hours ago
+                  本文最后更新于：2 hours ago
                 
               </p>
             
@@ -609,7 +608,87 @@
 <td>设置运行级别，前者相当于3，后者相当于5</td>
 </tr>
 </tbody></table>
-
+<h2 id="6-2、找回root密码-Centos7-6-以后"><a href="#6-2、找回root密码-Centos7-6-以后" class="headerlink" title="6.2、找回root密码(Centos7.6 以后)"></a>6.2、找回root密码(Centos7.6 以后)</h2><ol>
+<li>启动系统，进入开机页面，在页面中按‘e’进入编辑界面 (5s之内)</li>
+<li>进入之后使用键盘的上下键移动光标，找到以“Linux 16”开头所在的行数，在行的最后输入<code>:init=/bin/sh</code></li>
+<li>输入之后按快捷键<code>Ctrl + x</code> 进入单用户模式</li>
+<li>在光标闪烁的位置输入<code>mount -o remount,rw /</code> (单词间有空格)，然后按回车</li>
+<li>在新的一行最后面输入<code>passwd</code>。完成后按回车输入密码，然后再次确认密码即可</li>
+<li>接着在鼠标闪烁的位置输入<code>: touch /.autorelabel</code>(touch 后面有空格),之后继续按回车</li>
+<li>接着在光标闪烁的位置输入 <code>exec /sbin/init</code> 之后按回车键，等待系统修改密码(过程时间有点长)，完成后系统会自动重启</li>
+</ol>
+<h2 id="6-3、帮助指令"><a href="#6-3、帮助指令" class="headerlink" title="6.3、帮助指令"></a>6.3、帮助指令</h2><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>用法</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>man [命令或配置文件]</td>
+<td>获得帮助信息</td>
+</tr>
+<tr>
+<td>help 命令</td>
+<td>获得shell内置命令的帮助信息</td>
+</tr>
+</tbody></table>
+<h2 id="6-4、文件目录类"><a href="#6-4、文件目录类" class="headerlink" title="6.4、文件目录类"></a>6.4、文件目录类</h2><ul>
+<li><strong>pwd</strong> 显示当前工作目录的绝对路径</li>
+<li><strong>ls</strong> 显示目录:常用选项: <strong>-a</strong>,显示所有，包括隐藏的，**-l** 以列表 <strong>-lh</strong> (h是human的意思)指的是按照人类比较容易看的方式显示</li>
+<li><strong>cd</strong> 定位相对路径或绝对路径 **cd~<strong>回到自己的home目录，</strong>cd..**回到上级目录</li>
+<li><strong>mkdir</strong> 创建目录 mkdir [选项] 要创建的目录 <strong>-p</strong>为创建多级目录</li>
+<li><strong>rmdir</strong> 删除目录 mkdir[选项] 要删除的空目录 ，如果需要删除非空目录，需要使用<strong>rm -rf</strong> 要删除的目录 <strong>-r</strong>表示递归，<strong>f</strong>表示强制删除</li>
+<li><strong>touch</strong> 创建空文件</li>
+<li><strong>cp</strong> 拷贝文件到指令目录 <strong>cp [选项] 文件 指定目录</strong> 选项:<strong>-r</strong> 递归复制整个文件夹 **\cp [选项] 文件 指定目录 ** 强制覆盖不提示</li>
+<li><strong>rm</strong> 移除文件或目录 rm[选项] 要删除的文件或目录，**-r**递归 <strong>-f</strong>强制删除不提示</li>
+<li><strong>mv</strong> 移动文件或重命名 重命名:<strong>mv old文件名 new文件名</strong> 移动: <strong>mv /old位置 /new位置</strong></li>
+<li><strong>cat</strong> 查看文件内容 <strong>-n</strong>显示行号 为了浏览方便一般会加上 <strong>|more</strong></li>
+<li><strong>more</strong> 要查看的文件 ，指令中内置了快捷键，可以独立使用 也可以与<strong>cat</strong>命令一起使用<ul>
+<li>空格键(space) 向下翻一页</li>
+<li>回车键(Enter) 向下翻一行</li>
+<li>q 立刻离开</li>
+<li>Ctrl+f 向下滚动一屏</li>
+<li>Ctrl+B 返回上一屏</li>
+<li>= 输出当前行的行号</li>
+<li>:f 输出文件名和当前行的行号</li>
+</ul>
+</li>
+<li><strong>less</strong> 分屏查看文件内容，与more类似却更加强大，他是懒加载模式<ul>
+<li>空格键(space) 向下翻一页</li>
+<li>下键(pagedown) 向下翻一页</li>
+<li>上建(pageup) 向上翻一页</li>
+<li>/ 向下搜索字串功能 n向下查找；N向上查找</li>
+<li>？ 向上搜索字串功能 n向上查找；N向下查找</li>
+<li>q 立刻离开</li>
+</ul>
+</li>
+<li><strong>echo</strong> 输出内容到控制台，例如要输出环境变量 echo $PATH</li>
+<li><strong>head</strong> 显示文件开头的部分内容，默认十行 <strong>head -n 任意数字</strong>，查看前任意行</li>
+<li><strong>tail</strong> 显示文件中尾部内容，默认十行 <strong>tail -n 任意数字</strong> 查看尾n行 <strong>tail -f</strong> 实时追踪文件更新</li>
+<li><strong>&gt;与&gt;&gt;</strong> 输出重定向(覆盖)和追加 <ul>
+<li>ls -l &gt; 文件 列表的内容写入到文件中(覆盖)</li>
+<li>ls -al &gt;&gt;文件 列表内容追加到文件的末尾</li>
+<li>cat 文件1&gt;文件2 文件1内容覆盖到文件2(覆盖) </li>
+<li>echo “内容” &gt;&gt; 文件 将内容追加到文件末尾</li>
+</ul>
+</li>
+<li><strong>ln</strong> 软连接，也被称为符号链接，类似于Windows的快捷方式 l<strong>n -s [源文件或目录] [软连接名]</strong> 删除软连接<strong>rm</strong>的时候最后不要带上/</li>
+<li><strong>history</strong> 查看已经执行过的历史命令 后面加数字是查看最近的n个命令，查看的命令前会带有参数，可以直接**!+参数**来执行命令</li>
+</ul>
+<h2 id="6-5、时间日期类"><a href="#6-5、时间日期类" class="headerlink" title="6.5、时间日期类"></a>6.5、时间日期类</h2><ul>
+<li>date指令-显示当前日期<ul>
+<li>date          （功能描述：显示当前时间）</li>
+<li>date + %Y   (功能描述：显示当前年份)</li>
+<li>date + %m  (功能描述：显示当前月份)</li>
+<li>date + %d   (功能描述：显示当前是哪一天)</li>
+<li>date  “+%Y-%m-%d %H:%M:%S” (功能描述：显示年月日时分秒)</li>
+<li>date -s 字符串时间 设置日期</li>
+</ul>
+</li>
+<li>cal +选项 查看日历，不加选项默认本月,加了就是参数当年的日历</li>
+</ul>
+<h2 id="6-6、搜索查找类"><a href="#6-6、搜索查找类" class="headerlink" title="6.6、搜索查找类"></a>6.6、搜索查找类</h2>
             </div>
             <hr>
             <div>
