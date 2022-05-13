@@ -25,8 +25,10 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/2022/05/05/Linux/image-20220505162247042.png">
 <meta property="og:image" content="http://example.com/2022/05/05/Linux/image-20220505201406877.png">
+<meta property="og:image" content="http://example.com/2022/05/05/Linux/image-20220513203955356.png">
+<meta property="og:image" content="http://example.com/2022/05/05/Linux/image-20220514010601987.png">
 <meta property="article:published_time" content="2022-05-05T09:21:34.000Z">
-<meta property="article:modified_time" content="2022-05-11T14:46:32.767Z">
+<meta property="article:modified_time" content="2022-05-13T17:10:55.923Z">
 <meta property="article:author" content="Mr.Wang">
 <meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary_large_image">
@@ -226,7 +228,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      4.6k 字
+      5.5k 字
     </span>
   
 
@@ -235,7 +237,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      39 分钟
+      46 分钟
     </span>
   
 
@@ -276,7 +278,7 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：3 hours ago
+                  本文最后更新于：5 minutes ago
                 
               </p>
             
@@ -339,90 +341,19 @@
 <p>​    输入esc退出当前模式，再输入<code>:</code>进入命令行模式</p>
 <p>​    可以提供相关指令，完成读取，存盘，替换，离开vim显示行号等动作。</p>
 <h2 id="3-2、各种模式的切换"><a href="#3-2、各种模式的切换" class="headerlink" title="3.2、各种模式的切换"></a>3.2、各种模式的切换</h2><p><img src="/2022/05/05/Linux/image-20220505201406877.png" srcset="/img/loading.gif" lazyload alt="各种模式的切换方式"></p>
-<h2 id="3-3、vim操作"><a href="#3-3、vim操作" class="headerlink" title="3.3、vim操作"></a>3.3、vim操作</h2><table>
-<thead>
-<tr>
-<th>命令</th>
-<th>用法</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>在一般模式(命令行模式)下：</td>
-<td></td>
-</tr>
-<tr>
-<td>yy</td>
-<td>拷贝当前行</td>
-</tr>
-<tr>
-<td>5yy</td>
-<td>拷贝光标向下的5行</td>
-</tr>
-<tr>
-<td>p</td>
-<td>粘贴</td>
-</tr>
-<tr>
-<td>u</td>
-<td>撤销</td>
-</tr>
-<tr>
-<td>x</td>
-<td>删除</td>
-</tr>
-<tr>
-<td>dd</td>
-<td>删除当前行</td>
-</tr>
-<tr>
-<td>5dd</td>
-<td>删除光标向下的5行</td>
-</tr>
-<tr>
-<td>/关键字，输入回车查找，n查找下一个，N查找上一个</td>
-<td>在文件中查找某一个单词</td>
-</tr>
-<tr>
-<td>G</td>
-<td>文档最末行</td>
-</tr>
-<tr>
-<td>gg</td>
-<td>最首行</td>
-</tr>
-<tr>
-<td>先输入行号 在输入shift+g</td>
-<td>表示移动到多少行</td>
-</tr>
-<tr>
-<td>在命令行模式下:</td>
-<td></td>
-</tr>
-<tr>
-<td>wq</td>
-<td>保存退出</td>
-</tr>
-<tr>
-<td>q</td>
-<td>退出</td>
-</tr>
-<tr>
-<td>q!</td>
-<td>强制退出不保存</td>
-</tr>
-<tr>
-<td>/关键字 回车 ；输入n是查找下一个</td>
-<td>查找某个单词</td>
-</tr>
-<tr>
-<td>set nu</td>
-<td>设置文件的行号</td>
-</tr>
-<tr>
-<td>set nonu</td>
-<td>取消文件的行号</td>
-</tr>
-</tbody></table>
+<h2 id="3-3、vim操作"><a href="#3-3、vim操作" class="headerlink" title="3.3、vim操作"></a>3.3、vim操作</h2><p>在一般模式下:</p>
+<ul>
+<li>yy 拷贝当前行；5yy 拷贝当前向下的5行，p 粘贴 u撤销 x删除</li>
+<li>dd 删除当前行；5dd：删除当前向下的5行</li>
+<li>G 文档最末行，gg 最首行</li>
+<li>先输入行号 在输入shift+g 表示移动到多少行</li>
+</ul>
+<p>在命令行模式下:</p>
+<ul>
+<li>wq(保存退出) q(退出) q!(强制退出不保存)</li>
+<li>/关键字 回车 查找某个单词，输入n是查找下一个</li>
+<li>set nu 设置文件的行号，set nonu 取消文件的行号</li>
+</ul>
 <h1 id="四、开机重启与用户登录注销"><a href="#四、开机重启与用户登录注销" class="headerlink" title="四、开机重启与用户登录注销"></a>四、开机重启与用户登录注销</h1><h2 id="4-1、开关机与重启"><a href="#4-1、开关机与重启" class="headerlink" title="4.1、开关机与重启"></a>4.1、开关机与重启</h2><table>
 <thead>
 <tr>
@@ -688,7 +619,43 @@
 </li>
 <li>cal +选项 查看日历，不加选项默认本月,加了就是参数当年的日历</li>
 </ul>
-<h2 id="6-6、搜索查找类"><a href="#6-6、搜索查找类" class="headerlink" title="6.6、搜索查找类"></a>6.6、搜索查找类</h2>
+<h2 id="6-6、搜索查找类"><a href="#6-6、搜索查找类" class="headerlink" title="6.6、搜索查找类"></a>6.6、搜索查找类</h2><ul>
+<li><p><strong>find</strong>从指定目录<strong>向下递归遍历</strong>其各个子目录，将满足条件的文件或目录显示在终端，<strong>语法:find [搜索范围] [选项]</strong> 选项: -name&lt;查询方式&gt; 按照指定的文件名查找模式查找文件， -user&lt;用户名&gt; 查找属于指定用户名的所有文件 -size&lt;文件大小&gt; 按照指定的文件大小查找文件</p>
+<p><img src="/2022/05/05/Linux/image-20220513203955356.png" srcset="/img/loading.gif" lazyload alt="应用实例"></p>
+</li>
+<li><p><strong>locate</strong>快速定位文件路径，locate指令利用事先建立的系统中所有文件名称以及路径的locate数据库实现快速定位给定的文件需遍历整个系统，速度较快，但为了保证查询结果的准确度，管理员必须定期更新locate时刻。  <strong>语法：</strong>locate 搜索文件,<strong>执行之前 必须先执行updatedb</strong></p>
+<div class="note note-success">
+            <p>由于locate指令基于数据库查询，所以第一次查找前必须使用updatedb指令来创建一个新的locate库</p>
+          </div></li>
+<li><p>which 可以查看某个指令在哪个目录下，比如 ls 指令在哪个目录，which ls</p>
+</li>
+<li><p>grep和管道符”|” 过滤查找，管道符”|”表示<strong>将前一个命令的处理结果输出传递给后面的命令</strong>处理，基本语法: grep [选项] 查找内容，源文件 -n显示匹配行及行号，-i忽略字母大小写</p>
+</li>
+</ul>
+<h2 id="6-7、压缩和解压类"><a href="#6-7、压缩和解压类" class="headerlink" title="6.7、压缩和解压类"></a>6.7、压缩和解压类</h2><ul>
+<li>gzip/gunzip 压缩(压缩成*.gz文件)/解压文件 <ul>
+<li><strong>基本语法：</strong>gzip 文件 （功能描述：压缩文件，只能将文件压缩为*.gz文件）</li>
+<li><strong>基本语法：</strong>gunzip 文件.gz  （功能描述：解压缩文件命令）</li>
+</ul>
+</li>
+<li>zip/unzip 压缩/解压缩  -r递归压缩， -d&lt;目录&gt; 指定解压后文件存放目录<ul>
+<li><strong>基本语法：</strong>zip [选项] XXX.zip 将要压缩的内容（功能描述：压缩文件和目录的命令）</li>
+<li><strong>基本语法：</strong>unzip [选项] XXX.zip（功能描述：解压缩文件）</li>
+</ul>
+</li>
+<li>tar 压缩和解压缩 ，最后打包的是.tar.gz文件 <ul>
+<li><strong>基本语法：</strong>tar [选项] XXX.tar.gz 打包的内容(功能描述：打包目录，压缩后的文件格式.tar.gz)</li>
+<li>-c 产生.tar打包文件</li>
+<li>-v 显示详细信息</li>
+<li>-f 指定压缩后的文件名</li>
+<li>-z 打包同时压缩/解压 <strong>有x时解压，有c是压缩</strong></li>
+<li>-x 解包.tar文件</li>
+</ul>
+</li>
+</ul>
+<p><img src="/2022/05/05/Linux/image-20220514010601987.png" srcset="/img/loading.gif" lazyload></p>
+<h1 id="七、组管理和权限管理"><a href="#七、组管理和权限管理" class="headerlink" title="七、组管理和权限管理"></a>七、组管理和权限管理</h1><p>在linux中每一个用户都必须属于一个组，不能独立与组外，在linux中每个<strong>文件有所有者、所在组、其他组</strong>的概念。</p>
+
             </div>
             <hr>
             <div>
