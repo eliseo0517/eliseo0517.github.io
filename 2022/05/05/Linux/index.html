@@ -29,8 +29,10 @@
 <meta property="og:image" content="http://example.com/2022/05/05/Linux/image-20220514010601987.png">
 <meta property="og:image" content="http://example.com/2022/05/05/Linux/image-20220514012502959.png">
 <meta property="og:image" content="http://example.com/2022/05/05/Linux/image-20220514014231668.png">
+<meta property="og:image" content="http://example.com/2022/05/05/Linux/image-20220515233916791.png">
+<meta property="og:image" content="http://example.com/2022/05/05/Linux/image-20220516002043141.png">
 <meta property="article:published_time" content="2022-05-05T09:21:34.000Z">
-<meta property="article:modified_time" content="2022-05-14T17:13:34.133Z">
+<meta property="article:modified_time" content="2022-05-15T16:56:15.306Z">
 <meta property="article:author" content="Mr.Wang">
 <meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary_large_image">
@@ -230,7 +232,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      6.5k 字
+      7.5k 字
     </span>
   
 
@@ -239,7 +241,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      55 分钟
+      63 分钟
     </span>
   
 
@@ -280,7 +282,7 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：4 minutes ago
+                  本文最后更新于：an hour ago
                 
               </p>
             
@@ -660,20 +662,20 @@
 <h2 id="7-1、文件-目录-所有者"><a href="#7-1、文件-目录-所有者" class="headerlink" title="7.1、文件/目录 所有者"></a>7.1、文件/目录 所有者</h2><p>一般为文件的创建者，谁创建了该文件，就成为该文件的所有者</p>
 <ul>
 <li><strong>ls -ahl</strong> 查看文件的所有者</li>
-<li><strong>chown 用户名 文件名</strong> 修改文件所有者</li>
-<li><strong>chown 用户名: 组名</strong> 修改文件/目录的所有者和所在组 <strong>-R递归</strong></li>
+<li><strong>chown 用户名 文件名/目录名</strong> 修改文件/目录所有者</li>
+<li><strong>chown 用户名: 组名 文件/目录</strong> 修改文件/目录的所有者和所在组 <strong>-R递归</strong></li>
 </ul>
 <h2 id="7-2、创建组"><a href="#7-2、创建组" class="headerlink" title="7.2、创建组"></a>7.2、创建组</h2><ul>
 <li>groupadd 组名</li>
 </ul>
 <p><img src="/2022/05/05/Linux/image-20220514012502959.png" srcset="/img/loading.gif" lazyload alt="应用实例"></p>
-<h2 id="7-3、修改文件所在组"><a href="#7-3、修改文件所在组" class="headerlink" title="7.3、修改文件所在组"></a>7.3、修改文件所在组</h2><p>当一个用户创建了一个文件之后，这个文件的所在组就是该用户所在的组。 </p>
+<h2 id="7-3、修改文件-目录所在组"><a href="#7-3、修改文件-目录所在组" class="headerlink" title="7.3、修改文件/目录所在组"></a>7.3、修改文件/目录所在组</h2><p>当一个用户创建了一个文件之后，这个文件的所在组就是该用户所在的组。 </p>
 <ul>
-<li>chgrp 组名 文件名</li>
+<li>chgrp 组名 文件名/目录名      【改变所在组】</li>
 </ul>
 <p><img src="/2022/05/05/Linux/image-20220514014231668.png" srcset="/img/loading.gif" lazyload alt="应用实例"></p>
 <h2 id="7-4、改变用户所在组"><a href="#7-4、改变用户所在组" class="headerlink" title="7.4、改变用户所在组"></a>7.4、改变用户所在组</h2><ul>
-<li>usermod -g 组名 用户名</li>
+<li>usermod -g 组名 用户名 </li>
 <li>usermod -d 目录名 用户名 改变该用户登陆的初始目录。<strong>特别说明：</strong>用户需要有进入到新目录的权限。</li>
 </ul>
 <h2 id="7-5、权限的基本介绍"><a href="#7-5、权限的基本介绍" class="headerlink" title="7.5、权限的基本介绍"></a>7.5、权限的基本介绍</h2><h3 id="7-5-1、rwx权限"><a href="#7-5-1、rwx权限" class="headerlink" title="7.5.1、rwx权限"></a>7.5.1、rwx权限</h3><p>ls -l 中显示的内容如下：</p>
@@ -704,8 +706,8 @@
 <li>[x]代表可以执行(execute)：可以被执行</li>
 </ol>
 <h3 id="7-5-3、rwx作用到目录"><a href="#7-5-3、rwx作用到目录" class="headerlink" title="7.5.3、rwx作用到目录"></a>7.5.3、rwx作用到目录</h3><ol>
-<li>[r] 代表可读(read)：可以读取，ls查看目录内容</li>
-<li>[w]代表可读(write)：可以修改，对目录内创建+删除+重命名目录</li>
+<li>[r] 代表可读(read)：可以读取，可以ls显示目录内容</li>
+<li>[w]代表可读(write)：可以修改，可以在该目录中创建+删除+重命名目录中的文件</li>
 <li>[x]代表可以执行(execute)：可以进入该目录 (意思是可以cd到目录，但不可以ls目录，如果对目录下的文件有修改功能，也是可以 修改的)</li>
 </ol>
 <h3 id="7-5-4、修改权限-chmod"><a href="#7-5-4、修改权限-chmod" class="headerlink" title="7.5.4、修改权限-chmod"></a>7.5.4、修改权限-chmod</h3><p>通过chomd指令，可以修改文件或者目录的权限，权限可用数字表示，r为4，w为2，x为1。</p>
@@ -724,6 +726,99 @@
 <li>chmod u=rwx,g=rx,o=x 文件/目录相当于chmod 751 文件/目录</li>
 </ul>
 </li>
+</ul>
+<h1 id="八、定时任务调度"><a href="#八、定时任务调度" class="headerlink" title="八、定时任务调度"></a>八、定时任务调度</h1><h2 id="8-1、crond任务调度"><a href="#8-1、crond任务调度" class="headerlink" title="8.1、crond任务调度"></a>8.1、crond任务调度</h2><p>任务调度：是指系统在某个时间执行的特定的命令或程序</p>
+<p>任务调度分类：系统工作：有些重要的工作必须<strong>周而复始</strong>地执行。如病毒扫描。</p>
+<p>个别用户工作：个别用户可能希望执行某些程序，比如mysql程序的备份</p>
+<ul>
+<li><p>基本语法： <strong>crontab [选项]</strong>  <strong>service crond restart [重启任务调度]</strong></p>
+</li>
+<li><p>常用选项</p>
+<ul>
+<li>-e    编辑crontab定时任务</li>
+<li>-l     查询crontab任务</li>
+<li>-r    删除当前用户所有的crontab任务</li>
+</ul>
+</li>
+</ul>
+<p><strong>快速入门：</strong></p>
+<p>​    设置任务调度文件：/etc/crontab</p>
+<p>​    设置个人任务调度。执行crontab -e命令。</p>
+<p>​    接着输入任务到调度文件</p>
+<p>如：*/1 * * * * ls -l /etc/ &gt; /tmp/to.txt（将etc目录下的内容显示出来 然后重定向到/tmp/to.txt中）</p>
+<p>意思是：每小时的每分钟执行ls -l /etc/ &gt; /tmp/to.txt命令</p>
+<p>占位符：</p>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th>含义</th>
+<th>范围</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>第一个 ”*“</td>
+<td>一小时当中的第几分钟</td>
+<td>0~59</td>
+</tr>
+<tr>
+<td>第二个 ”*“</td>
+<td>一天当中的第几小时</td>
+<td>0~23</td>
+</tr>
+<tr>
+<td>第三个 ”*“</td>
+<td>一个月当中的第几天</td>
+<td>1~31</td>
+</tr>
+<tr>
+<td>第四个 ”*“</td>
+<td>一年当中的第几个月</td>
+<td>1~12</td>
+</tr>
+<tr>
+<td>第五个 ”*“</td>
+<td>一周当中的星期几</td>
+<td>0~7(0和7都代表星期日)</td>
+</tr>
+</tbody></table>
+<p>特殊符号说明</p>
+<table>
+<thead>
+<tr>
+<th align="left">特殊符号</th>
+<th align="left">含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">*</td>
+<td align="left">代表任何时间，比如第一个*代表一小时中的每一分钟都执行一次的意思</td>
+</tr>
+<tr>
+<td align="left">，</td>
+<td align="left">代表不连续的时间，比如“0 8,12,16 * * *”代表每天的8:00,12:00,16:00都会执行</td>
+</tr>
+<tr>
+<td align="left">-</td>
+<td align="left">代表连续的时间范围，如“0 5 * * 1-6”代表周一到周六的凌晨5:00执行命令</td>
+</tr>
+<tr>
+<td align="left">*/n</td>
+<td align="left">代表每隔多久执行一次,如“*/10 * * * *”代表每隔十分钟执行一次命令</td>
+</tr>
+</tbody></table>
+<p><img src="/2022/05/05/Linux/image-20220515233916791.png" srcset="/img/loading.gif" lazyload alt="特殊时间执行任务案例"></p>
+<p><img src="/2022/05/05/Linux/image-20220516002043141.png" srcset="/img/loading.gif" lazyload alt="crond任务调度应用实例"></p>
+<h2 id="8-2、at定时任务"><a href="#8-2、at定时任务" class="headerlink" title="8.2、at定时任务"></a>8.2、at定时任务</h2><ul>
+<li>at命令是一次性定时计划任务，at的守护进程atd会以后台模式运行，检查作业队列来运行</li>
+<li>默认情况atd守护进程每60秒检查作业队列，有作业时，会检查作业运行时间，如果时间与当前时间匹配，则运行此作业</li>
+<li>at命令是一次性定时计划任务，执行完一个任务后就不再执行此任务了</li>
+<li>在使用at命令的时候，一定要保证atd进行的启动</li>
+</ul>
+<ul>
+<li><strong>at [选项] [时间]</strong> ctrl+D代表命令输入结束(需要输入两次) 如果输入错误 摁 Ctrl+backspace删除</li>
+<li>atq 列出所有的任务</li>
+<li>atrm 编号 删除指定任务</li>
 </ul>
 
             </div>
