@@ -31,8 +31,11 @@
 <meta property="og:image" content="http://example.com/2022/05/05/Linux/image-20220514014231668.png">
 <meta property="og:image" content="http://example.com/2022/05/05/Linux/image-20220515233916791.png">
 <meta property="og:image" content="http://example.com/2022/05/05/Linux/image-20220516002043141.png">
+<meta property="og:image" content="http://example.com/2022/05/05/Linux/image-20220516151338972.png">
+<meta property="og:image" content="http://example.com/2022/05/05/Linux/image-20220516151228718.png">
+<meta property="og:image" content="http://example.com/2022/05/05/Linux/image-20220516164213813.png">
 <meta property="article:published_time" content="2022-05-05T09:21:34.000Z">
-<meta property="article:modified_time" content="2022-05-15T16:56:15.306Z">
+<meta property="article:modified_time" content="2022-05-16T12:00:01.126Z">
 <meta property="article:author" content="Mr.Wang">
 <meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary_large_image">
@@ -232,7 +235,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      7.5k 字
+      8k 字
     </span>
   
 
@@ -241,7 +244,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      63 分钟
+      67 分钟
     </span>
   
 
@@ -282,7 +285,7 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：an hour ago
+                  本文最后更新于：5 minutes ago
                 
               </p>
             
@@ -816,10 +819,44 @@
 <li>在使用at命令的时候，一定要保证atd进行的启动</li>
 </ul>
 <ul>
-<li><strong>at [选项] [时间]</strong> ctrl+D代表命令输入结束(需要输入两次) 如果输入错误 摁 Ctrl+backspace删除</li>
-<li>atq 列出所有的任务</li>
-<li>atrm 编号 删除指定任务</li>
+<li><strong>at [选项] [时间]</strong> ctrl+D代表命令输入结束(需要输入<strong>两次</strong>) 如果输入错误 摁 Ctrl+backspace删除</li>
+<li><strong>atq</strong> 列出所有的任务</li>
+<li><strong>atrm 编号</strong> 删除指定任务</li>
 </ul>
+<p><strong>at命令选项：</strong></p>
+<p><img src="/2022/05/05/Linux/image-20220516151338972.png" srcset="/img/loading.gif" lazyload alt="at命令选项"></p>
+<p><strong>at时间定义：</strong></p>
+<p><img src="/2022/05/05/Linux/image-20220516151228718.png" srcset="/img/loading.gif" lazyload alt="at时间定义"></p>
+<h1 id="九、磁盘分区与挂载"><a href="#九、磁盘分区与挂载" class="headerlink" title="九、磁盘分区与挂载"></a>九、磁盘分区与挂载</h1><p>linux只有一个根目录，一个独立且唯一的文件结构，Linux中每个分区都是用来组成整个文件系统的一部分</p>
+<p>linux采用了一种叫”载入”的处理方法，他的整个文件系统中包含了一整套的文件和目录，且将一个分区和一个目录联系起来，这时要载入的一个分区将使得它的存储空间在一个目录下获得</p>
+<p><img src="/2022/05/05/Linux/image-20220516164213813.png" srcset="/img/loading.gif" lazyload alt="示意图"></p>
+<p>硬盘说明：</p>
+<p>​    1、linux分为IDE硬盘和SCSI硬盘，目前基本上是SCSI硬盘</p>
+<p>​    2、对于IDE硬盘，驱动器标识符为“hdx~”</p>
+<p>​    3、对于SCSI硬盘，驱动器标识符为“sdx~”</p>
+<p><strong>指令：</strong></p>
+<ul>
+<li><strong>lsblk 或者 lsblk -f</strong> 查看所有设备挂载情况</li>
+<li><strong>fdisk</strong> 分区<ul>
+<li><strong>m</strong>显示命令列表；</li>
+<li><strong>p</strong>显示磁盘分区，同<strong>fdisk -l</strong>；</li>
+<li><strong>n</strong>新增分区，</li>
+<li><strong>d</strong>删除分区，</li>
+<li><strong>w</strong>写入并退出；</li>
+<li><strong>分区操作：</strong>开始分区后<strong>输入n</strong>，新增分区，然后<strong>选择p</strong>，分区类型为主分区。<strong>两次回车</strong>默认剩余全部空间，最后<strong>输入w写入分区并退出，若不保存退出输入q</strong></li>
+</ul>
+</li>
+<li><strong>mkfs [选项] [-t 分区格式(ext4)] 分区路径</strong> 格式化分区</li>
+<li><strong>mount 设备名称 挂载目录</strong> 挂载分区</li>
+<li><strong>umount 设备名称 或者 挂载目录</strong> 卸载分区</li>
+<li><strong>永久挂载：</strong>修改/etc/fstab实现挂载，添加完成之后，执行mount -a 即刻生效</li>
+</ul>
+<div class="note note-success">
+            <p>使用命令行挂载之后，重启之后会失效</p>
+          </div>
+
+
+
 
             </div>
             <hr>
