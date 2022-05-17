@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-05-16T05:02:14.787Z</updated>
+  <updated>2022-05-17T07:54:34.529Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>数组中的逆序对</title>
+    <link href="http://example.com/2022/05/17/%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E9%80%86%E5%BA%8F%E5%AF%B9/"/>
+    <id>http://example.com/2022/05/17/%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E9%80%86%E5%BA%8F%E5%AF%B9/</id>
+    <published>2022-05-17T07:49:53.000Z</published>
+    <updated>2022-05-17T07:54:34.529Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="/2022/05/17/%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E9%80%86%E5%BA%8F%E5%AF%B9/image-20220517155231958.png" alt="数组中的逆序对"></p><p><strong>解法一：</strong></p><p>暴力递归（双指针一个一个进行比较，发现符合的情况则res++），题目所给的数组长度在0~500之间，暴力递归会出现超时</p><p><strong>解法二：归并排序的时候进行对逆序对的统计</strong></p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-keyword">int</span>[] nums, tmp;<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">reversePairs</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] nums)</span> </span>&#123;<br>        <span class="hljs-keyword">this</span>.nums = nums;<br>        tmp = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[nums.length];<br>        <span class="hljs-keyword">return</span> mergeSort(<span class="hljs-number">0</span>, nums.length - <span class="hljs-number">1</span>);<br>    &#125;<br><br>    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> <span class="hljs-title">mergeSort</span><span class="hljs-params">(<span class="hljs-keyword">int</span> l, <span class="hljs-keyword">int</span> r)</span> </span>&#123;<br>        <span class="hljs-comment">// 终止条件</span><br>        <span class="hljs-keyword">if</span> (l &gt;= r) <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-comment">// 递归划分</span><br>        <span class="hljs-keyword">int</span> m = (l + r) / <span class="hljs-number">2</span>;<br>        <span class="hljs-keyword">int</span> res = mergeSort(l, m) + mergeSort(m + <span class="hljs-number">1</span>, r);<br>        <span class="hljs-comment">// 合并阶段</span><br>        <span class="hljs-keyword">int</span> i = l, j = m + <span class="hljs-number">1</span>;<br>        <span class="hljs-comment">// 在每次比较大小的时候顺便进行对逆序对的统计</span><br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> k = l; k &lt;= r; k++)<br>            tmp[k] = nums[k];<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> k = l; k &lt;= r; k++) &#123;<br>            <span class="hljs-keyword">if</span> (i == m + <span class="hljs-number">1</span>)<br>                nums[k] = tmp[j++];<br>            <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (j == r + <span class="hljs-number">1</span> || tmp[i] &lt;= tmp[j])<br>                nums[k] = tmp[i++];<br>            <span class="hljs-keyword">else</span> &#123;<br>                nums[k] = tmp[j++];<br>                res += m - i + <span class="hljs-number">1</span>; <span class="hljs-comment">// 统计逆序对</span><br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> res;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;/2022/05/17/%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E9%80%86%E5%BA%8F%E5%AF%B9/image-20220517155231958.png&quot; alt=&quot;数组中的逆序对&quot;&gt;&lt;/p&gt;
+&lt;p&gt;</summary>
+      
+    
+    
+    
+    <category term="剑指Offer" scheme="http://example.com/categories/%E5%89%91%E6%8C%87Offer/"/>
+    
+    
+    <category term="剑指Offer" scheme="http://example.com/tags/%E5%89%91%E6%8C%87Offer/"/>
+    
+  </entry>
   
   <entry>
     <title>打印从1到最大的n位数</title>
@@ -471,31 +496,6 @@
       
       
     <summary type="html">&lt;p&gt;&lt;img src=&quot;/2022/05/05/%E4%B8%8D%E7%94%A8%E5%8A%A0%E5%87%8F%E4%B9%98%E9%99%A4%E5%81%9A%E5%8A%A0%E6%B3%95/image-20220505154715941.png&quot; alt=</summary>
-      
-    
-    
-    
-    <category term="剑指Offer" scheme="http://example.com/categories/%E5%89%91%E6%8C%87Offer/"/>
-    
-    
-    <category term="剑指Offer" scheme="http://example.com/tags/%E5%89%91%E6%8C%87Offer/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>二进制中1的个数</title>
-    <link href="http://example.com/2022/05/05/%E4%BA%8C%E8%BF%9B%E5%88%B6%E4%B8%AD1%E7%9A%84%E4%B8%AA%E6%95%B0/"/>
-    <id>http://example.com/2022/05/05/%E4%BA%8C%E8%BF%9B%E5%88%B6%E4%B8%AD1%E7%9A%84%E4%B8%AA%E6%95%B0/</id>
-    <published>2022-05-05T07:36:31.000Z</published>
-    <updated>2022-05-05T13:39:20.129Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="/2022/05/05/%E4%BA%8C%E8%BF%9B%E5%88%B6%E4%B8%AD1%E7%9A%84%E4%B8%AA%E6%95%B0/image-20220505153708668.png" alt="二进制中1的个数"></p><p><strong>解法：（位运算）</strong></p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-comment">// you need to treat n as an unsigned value</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">hammingWeight</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n)</span> </span>&#123;<br>        <span class="hljs-keyword">int</span> res = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">while</span> (n != <span class="hljs-number">0</span>) &#123;<br>            <span class="hljs-comment">// 判断最后一位是不是1</span><br>            res += n &amp; <span class="hljs-number">1</span>;<br>            <span class="hljs-comment">// 无符号为右移</span><br>            n &gt;&gt;&gt;= <span class="hljs-number">1</span>;<br>        &#125;<br>        <span class="hljs-keyword">return</span> res;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure><p><strong>解法二：(巧用 n &amp; (n-1))</strong></p><p>n&amp;(n-1)运算结果为消去二进制最右边的1</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-comment">// you need to treat n as an unsigned value</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">hammingWeight</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n)</span> </span>&#123;<br>        <span class="hljs-keyword">int</span> res = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">while</span> (n != <span class="hljs-number">0</span>) &#123;<br>            res++;<br>n = n &amp; (n - <span class="hljs-number">1</span>);<br>        &#125;<br>        <span class="hljs-keyword">return</span> res;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;&lt;img src=&quot;/2022/05/05/%E4%BA%8C%E8%BF%9B%E5%88%B6%E4%B8%AD1%E7%9A%84%E4%B8%AA%E6%95%B0/image-20220505153708668.png&quot; alt=&quot;二进制中1的个数&quot;&gt;&lt;/p&gt;
-&lt;</summary>
       
     
     
