@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>剪绳子Ⅱ</title>
+    <link href="/2022/05/18/%E5%89%AA%E7%BB%B3%E5%AD%90%E2%85%A1/"/>
+    <url>/2022/05/18/%E5%89%AA%E7%BB%B3%E5%AD%90%E2%85%A1/</url>
+    
+    <content type="html"><![CDATA[<p><img src="/2022/05/18/%E5%89%AA%E7%BB%B3%E5%AD%90%E2%85%A1/image-20220518092413253.png" alt="剪绳子Ⅱ"></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>算法题</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>算法题</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>数组中的逆序对</title>
     <link href="/2022/05/17/%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E9%80%86%E5%BA%8F%E5%AF%B9/"/>
     <url>/2022/05/17/%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E9%80%86%E5%BA%8F%E5%AF%B9/</url>
@@ -13,14 +38,14 @@
     
     <categories>
       
-      <category>剑指Offer</category>
+      <category>算法题</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>剑指Offer</tag>
+      <tag>算法题</tag>
       
     </tags>
     
@@ -38,14 +63,14 @@
     
     <categories>
       
-      <category>剑指Offer</category>
+      <category>算法题</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>剑指Offer</tag>
+      <tag>算法题</tag>
       
     </tags>
     
@@ -63,14 +88,14 @@
     
     <categories>
       
-      <category>剑指Offer</category>
+      <category>算法题</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>剑指Offer</tag>
+      <tag>算法题</tag>
       
     </tags>
     
@@ -88,14 +113,14 @@
     
     <categories>
       
-      <category>剑指Offer</category>
+      <category>算法题</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>剑指Offer</tag>
+      <tag>算法题</tag>
       
     </tags>
     
@@ -113,14 +138,14 @@
     
     <categories>
       
-      <category>剑指Offer</category>
+      <category>算法题</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>剑指Offer</tag>
+      <tag>算法题</tag>
       
     </tags>
     
@@ -138,14 +163,14 @@
     
     <categories>
       
-      <category>剑指Offer</category>
+      <category>算法题</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>剑指Offer</tag>
+      <tag>算法题</tag>
       
     </tags>
     
@@ -163,14 +188,14 @@
     
     <categories>
       
-      <category>剑指Offer</category>
+      <category>算法题</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>剑指Offer</tag>
+      <tag>算法题</tag>
       
     </tags>
     
@@ -188,14 +213,14 @@
     
     <categories>
       
-      <category>剑指Offer</category>
+      <category>算法题</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>剑指Offer</tag>
+      <tag>算法题</tag>
       
     </tags>
     
@@ -213,14 +238,14 @@
     
     <categories>
       
-      <category>剑指Offer</category>
+      <category>算法题</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>剑指Offer</tag>
+      <tag>算法题</tag>
       
     </tags>
     
@@ -238,14 +263,14 @@
     
     <categories>
       
-      <category>剑指Offer</category>
+      <category>算法题</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>剑指Offer</tag>
+      <tag>算法题</tag>
       
     </tags>
     
@@ -288,14 +313,14 @@
     
     <categories>
       
-      <category>剑指Offer</category>
+      <category>算法题</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>剑指Offer</tag>
+      <tag>算法题</tag>
       
     </tags>
     
@@ -313,14 +338,14 @@
     
     <categories>
       
-      <category>剑指Offer</category>
+      <category>算法题</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>剑指Offer</tag>
+      <tag>算法题</tag>
       
     </tags>
     
@@ -329,23 +354,23 @@
   
   
   <entry>
-    <title>减绳子</title>
-    <link href="/2022/05/06/%E5%87%8F%E7%BB%B3%E5%AD%90/"/>
-    <url>/2022/05/06/%E5%87%8F%E7%BB%B3%E5%AD%90/</url>
+    <title>剪绳子</title>
+    <link href="/2022/05/06/%E5%89%AA%E7%BB%B3%E5%AD%90/"/>
+    <url>/2022/05/06/%E5%89%AA%E7%BB%B3%E5%AD%90/</url>
     
-    <content type="html"><![CDATA[<p><img src="/2022/05/06/%E5%87%8F%E7%BB%B3%E5%AD%90/image-20220506200733812.png" alt="减绳子"></p><p><strong>解法一：(贪心算法)</strong></p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">cuttingRope</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n)</span> </span>&#123;<br>        <span class="hljs-comment">// 最优 一根绳子完美的切成多个3 n % 3 == 0</span><br>        <span class="hljs-comment">// 次优 一根绳子切成 多个3与一个2 n % 3 == 2</span><br>        <span class="hljs-comment">// 最差 一根绳子除以3 余数为1 那么一个切法变成 1*3 =&gt; 2*2 n % 3 == 1</span><br>        <span class="hljs-comment">// 3 * 1 &lt; 2 * 2</span><br>        <span class="hljs-comment">// 3是最优的 优先考虑3</span><br><br>        <span class="hljs-keyword">if</span> (n &lt;= <span class="hljs-number">3</span>) &#123;<br>            <span class="hljs-keyword">return</span> n - <span class="hljs-number">1</span>;<br>        &#125;<br>        <span class="hljs-comment">// 判断 n 能被几个3整除</span><br>        <span class="hljs-keyword">int</span> a = n / <span class="hljs-number">3</span>;<br>        <span class="hljs-comment">// n 除以三的余数</span><br>        <span class="hljs-keyword">int</span> b = n % <span class="hljs-number">3</span>;<br><br>        <span class="hljs-keyword">if</span> (b == <span class="hljs-number">0</span>) <span class="hljs-keyword">return</span> (<span class="hljs-keyword">int</span>) Math.pow(<span class="hljs-number">3</span>, a);<br>        <span class="hljs-keyword">if</span> (b == <span class="hljs-number">1</span>) <span class="hljs-keyword">return</span> (<span class="hljs-keyword">int</span>) Math.pow(<span class="hljs-number">3</span>, a - <span class="hljs-number">1</span>) * <span class="hljs-number">4</span>;<br>        <span class="hljs-keyword">return</span> (<span class="hljs-keyword">int</span>) (Math.pow(<span class="hljs-number">3</span>, a) * <span class="hljs-number">2</span>);<br><br>        <span class="hljs-comment">/*</span><br><span class="hljs-comment">        对于 8 而言</span><br><span class="hljs-comment">        1、8 / 3 = 2</span><br><span class="hljs-comment">        2、8 % 3 = 2</span><br><span class="hljs-comment">        b == 2 所以为 3的二次方*2 也就是 2*3*3</span><br><span class="hljs-comment"></span><br><span class="hljs-comment">        对于 6 而言</span><br><span class="hljs-comment">        1、6 / 3 = 2</span><br><span class="hljs-comment">        2、6 % 3 = 0</span><br><span class="hljs-comment">        b == 0 所以 3的二次方 也就是 3*3</span><br><span class="hljs-comment"></span><br><span class="hljs-comment">        对于7而言</span><br><span class="hljs-comment">        1、7 / 3 = 2</span><br><span class="hljs-comment">        2、7 % 3 = 1</span><br><span class="hljs-comment">        b == 1 所以 3的一次方 也就是 3 * 4</span><br><span class="hljs-comment">         */</span><br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<p><img src="/2022/05/06/%E5%89%AA%E7%BB%B3%E5%AD%90/image-20220506200733812.png" alt="剪绳子"></p><p><strong>解法一：(贪心算法)</strong></p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">cuttingRope</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n)</span> </span>&#123;<br>        <span class="hljs-comment">// 最优 一根绳子完美的切成多个3 n % 3 == 0</span><br>        <span class="hljs-comment">// 次优 一根绳子切成 多个3与一个2 n % 3 == 2</span><br>        <span class="hljs-comment">// 最差 一根绳子除以3 余数为1 那么一个切法变成 1*3 =&gt; 2*2 n % 3 == 1</span><br>        <span class="hljs-comment">// 3 * 1 &lt; 2 * 2</span><br>        <span class="hljs-comment">// 3是最优的 优先考虑3</span><br><br>        <span class="hljs-keyword">if</span> (n &lt;= <span class="hljs-number">3</span>) &#123;<br>            <span class="hljs-keyword">return</span> n - <span class="hljs-number">1</span>;<br>        &#125;<br>        <span class="hljs-comment">// 判断 n 能被几个3整除</span><br>        <span class="hljs-keyword">int</span> a = n / <span class="hljs-number">3</span>;<br>        <span class="hljs-comment">// n 除以三的余数</span><br>        <span class="hljs-keyword">int</span> b = n % <span class="hljs-number">3</span>;<br><br>        <span class="hljs-keyword">if</span> (b == <span class="hljs-number">0</span>) <span class="hljs-keyword">return</span> (<span class="hljs-keyword">int</span>) Math.pow(<span class="hljs-number">3</span>, a);<br>        <span class="hljs-keyword">if</span> (b == <span class="hljs-number">1</span>) <span class="hljs-keyword">return</span> (<span class="hljs-keyword">int</span>) Math.pow(<span class="hljs-number">3</span>, a - <span class="hljs-number">1</span>) * <span class="hljs-number">4</span>;<br>        <span class="hljs-keyword">return</span> (<span class="hljs-keyword">int</span>) (Math.pow(<span class="hljs-number">3</span>, a) * <span class="hljs-number">2</span>);<br><br>        <span class="hljs-comment">/*</span><br><span class="hljs-comment">        对于 8 而言</span><br><span class="hljs-comment">        1、8 / 3 = 2</span><br><span class="hljs-comment">        2、8 % 3 = 2</span><br><span class="hljs-comment">        b == 2 所以为 3的二次方*2 也就是 2*3*3</span><br><span class="hljs-comment"></span><br><span class="hljs-comment">        对于 6 而言</span><br><span class="hljs-comment">        1、6 / 3 = 2</span><br><span class="hljs-comment">        2、6 % 3 = 0</span><br><span class="hljs-comment">        b == 0 所以 3的二次方 也就是 3*3</span><br><span class="hljs-comment"></span><br><span class="hljs-comment">        对于7而言</span><br><span class="hljs-comment">        1、7 / 3 = 2</span><br><span class="hljs-comment">        2、7 % 3 = 1</span><br><span class="hljs-comment">        b == 1 所以 3的一次方 也就是 3 * 4</span><br><span class="hljs-comment">         */</span><br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
     
     
     <categories>
       
-      <category>剑指Offer</category>
+      <category>算法题</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>剑指Offer</tag>
+      <tag>算法题</tag>
       
     </tags>
     
@@ -363,14 +388,14 @@
     
     <categories>
       
-      <category>剑指Offer</category>
+      <category>算法题</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>剑指Offer</tag>
+      <tag>算法题</tag>
       
     </tags>
     
@@ -388,14 +413,14 @@
     
     <categories>
       
-      <category>剑指Offer</category>
+      <category>算法题</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>剑指Offer</tag>
+      <tag>算法题</tag>
       
     </tags>
     
@@ -413,14 +438,14 @@
     
     <categories>
       
-      <category>剑指Offer</category>
+      <category>算法题</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>剑指Offer</tag>
+      <tag>算法题</tag>
       
     </tags>
     
@@ -438,14 +463,14 @@
     
     <categories>
       
-      <category>剑指Offer</category>
+      <category>算法题</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>剑指Offer</tag>
+      <tag>算法题</tag>
       
     </tags>
     
@@ -488,14 +513,14 @@
     
     <categories>
       
-      <category>剑指Offer</category>
+      <category>算法题</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>剑指Offer</tag>
+      <tag>算法题</tag>
       
     </tags>
     
@@ -513,14 +538,14 @@
     
     <categories>
       
-      <category>剑指Offer</category>
+      <category>算法题</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>剑指Offer</tag>
+      <tag>算法题</tag>
       
     </tags>
     
@@ -538,14 +563,14 @@
     
     <categories>
       
-      <category>剑指Offer</category>
+      <category>算法题</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>剑指Offer</tag>
+      <tag>算法题</tag>
       
     </tags>
     
@@ -563,14 +588,14 @@
     
     <categories>
       
-      <category>剑指Offer</category>
+      <category>算法题</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>剑指Offer</tag>
+      <tag>算法题</tag>
       
     </tags>
     
@@ -588,14 +613,14 @@
     
     <categories>
       
-      <category>剑指Offer</category>
+      <category>算法题</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>剑指Offer</tag>
+      <tag>算法题</tag>
       
     </tags>
     
@@ -613,14 +638,14 @@
     
     <categories>
       
-      <category>剑指Offer</category>
+      <category>算法题</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>剑指Offer</tag>
+      <tag>算法题</tag>
       
     </tags>
     
@@ -638,14 +663,14 @@
     
     <categories>
       
-      <category>剑指Offer</category>
+      <category>算法题</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>剑指Offer</tag>
+      <tag>算法题</tag>
       
     </tags>
     
@@ -888,14 +913,14 @@
     
     <categories>
       
-      <category>剑指Offer</category>
+      <category>算法题</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>剑指Offer</tag>
+      <tag>算法题</tag>
       
     </tags>
     
@@ -913,14 +938,14 @@
     
     <categories>
       
-      <category>剑指Offer</category>
+      <category>算法题</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>剑指Offer</tag>
+      <tag>算法题</tag>
       
     </tags>
     
@@ -938,14 +963,14 @@
     
     <categories>
       
-      <category>剑指Offer</category>
+      <category>算法题</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>剑指Offer</tag>
+      <tag>算法题</tag>
       
     </tags>
     
@@ -963,14 +988,14 @@
     
     <categories>
       
-      <category>剑指Offer</category>
+      <category>算法题</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>剑指Offer</tag>
+      <tag>算法题</tag>
       
     </tags>
     
@@ -988,14 +1013,14 @@
     
     <categories>
       
-      <category>剑指Offer</category>
+      <category>算法题</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>剑指Offer</tag>
+      <tag>算法题</tag>
       
     </tags>
     
@@ -1013,14 +1038,14 @@
     
     <categories>
       
-      <category>剑指Offer</category>
+      <category>算法题</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>剑指Offer</tag>
+      <tag>算法题</tag>
       
     </tags>
     
@@ -1038,14 +1063,14 @@
     
     <categories>
       
-      <category>剑指Offer</category>
+      <category>算法题</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>剑指Offer</tag>
+      <tag>算法题</tag>
       
     </tags>
     
@@ -1063,14 +1088,14 @@
     
     <categories>
       
-      <category>剑指Offer</category>
+      <category>算法题</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>剑指Offer</tag>
+      <tag>算法题</tag>
       
     </tags>
     
@@ -1088,14 +1113,14 @@
     
     <categories>
       
-      <category>剑指Offer</category>
+      <category>算法题</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>剑指Offer</tag>
+      <tag>算法题</tag>
       
     </tags>
     
@@ -1113,14 +1138,14 @@
     
     <categories>
       
-      <category>剑指Offer</category>
+      <category>算法题</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>剑指Offer</tag>
+      <tag>算法题</tag>
       
     </tags>
     
@@ -1138,14 +1163,14 @@
     
     <categories>
       
-      <category>剑指Offer</category>
+      <category>算法题</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>剑指Offer</tag>
+      <tag>算法题</tag>
       
     </tags>
     
@@ -1163,14 +1188,14 @@
     
     <categories>
       
-      <category>剑指Offer</category>
+      <category>算法题</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>剑指Offer</tag>
+      <tag>算法题</tag>
       
     </tags>
     
@@ -1188,14 +1213,14 @@
     
     <categories>
       
-      <category>剑指Offer</category>
+      <category>算法题</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>剑指Offer</tag>
+      <tag>算法题</tag>
       
     </tags>
     
@@ -1213,14 +1238,14 @@
     
     <categories>
       
-      <category>剑指Offer</category>
+      <category>算法题</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>剑指Offer</tag>
+      <tag>算法题</tag>
       
     </tags>
     
@@ -1238,14 +1263,14 @@
     
     <categories>
       
-      <category>剑指Offer</category>
+      <category>算法题</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>剑指Offer</tag>
+      <tag>算法题</tag>
       
     </tags>
     
@@ -1263,14 +1288,14 @@
     
     <categories>
       
-      <category>剑指Offer</category>
+      <category>算法题</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>剑指Offer</tag>
+      <tag>算法题</tag>
       
     </tags>
     
@@ -1288,14 +1313,14 @@
     
     <categories>
       
-      <category>剑指Offer</category>
+      <category>算法题</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>剑指Offer</tag>
+      <tag>算法题</tag>
       
     </tags>
     
@@ -1313,14 +1338,14 @@
     
     <categories>
       
-      <category>剑指Offer</category>
+      <category>算法题</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>剑指Offer</tag>
+      <tag>算法题</tag>
       
     </tags>
     
@@ -1338,14 +1363,14 @@
     
     <categories>
       
-      <category>剑指Offer</category>
+      <category>算法题</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>剑指Offer</tag>
+      <tag>算法题</tag>
       
     </tags>
     
@@ -1413,14 +1438,14 @@
     
     <categories>
       
-      <category>剑指Offer</category>
+      <category>算法题</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>剑指Offer</tag>
+      <tag>算法题</tag>
       
     </tags>
     
@@ -1438,14 +1463,14 @@
     
     <categories>
       
-      <category>剑指Offer</category>
+      <category>算法题</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>剑指Offer</tag>
+      <tag>算法题</tag>
       
     </tags>
     
@@ -1463,14 +1488,14 @@
     
     <categories>
       
-      <category>剑指Offer</category>
+      <category>算法题</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>剑指Offer</tag>
+      <tag>算法题</tag>
       
     </tags>
     
@@ -1488,14 +1513,14 @@
     
     <categories>
       
-      <category>剑指Offer</category>
+      <category>算法题</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>剑指Offer</tag>
+      <tag>算法题</tag>
       
     </tags>
     
@@ -1513,14 +1538,14 @@
     
     <categories>
       
-      <category>剑指Offer</category>
+      <category>算法题</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>剑指Offer</tag>
+      <tag>算法题</tag>
       
     </tags>
     
@@ -1538,14 +1563,14 @@
     
     <categories>
       
-      <category>剑指Offer</category>
+      <category>算法题</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>剑指Offer</tag>
+      <tag>算法题</tag>
       
     </tags>
     
@@ -1563,14 +1588,14 @@
     
     <categories>
       
-      <category>剑指Offer</category>
+      <category>算法题</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>剑指Offer</tag>
+      <tag>算法题</tag>
       
     </tags>
     
@@ -1588,14 +1613,14 @@
     
     <categories>
       
-      <category>剑指Offer</category>
+      <category>算法题</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>剑指Offer</tag>
+      <tag>算法题</tag>
       
     </tags>
     
@@ -1613,14 +1638,14 @@
     
     <categories>
       
-      <category>剑指Offer</category>
+      <category>算法题</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>剑指Offer</tag>
+      <tag>算法题</tag>
       
     </tags>
     
@@ -1638,14 +1663,14 @@
     
     <categories>
       
-      <category>剑指Offer</category>
+      <category>算法题</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>剑指Offer</tag>
+      <tag>算法题</tag>
       
     </tags>
     
@@ -1663,14 +1688,14 @@
     
     <categories>
       
-      <category>剑指Offer</category>
+      <category>算法题</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>剑指Offer</tag>
+      <tag>算法题</tag>
       
     </tags>
     
@@ -1713,14 +1738,14 @@
     
     <categories>
       
-      <category>剑指Offer</category>
+      <category>算法题</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>剑指Offer</tag>
+      <tag>算法题</tag>
       
     </tags>
     
@@ -1738,14 +1763,14 @@
     
     <categories>
       
-      <category>剑指Offer</category>
+      <category>算法题</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>剑指Offer</tag>
+      <tag>算法题</tag>
       
     </tags>
     
@@ -1763,14 +1788,14 @@
     
     <categories>
       
-      <category>剑指Offer</category>
+      <category>算法题</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>剑指Offer</tag>
+      <tag>算法题</tag>
       
     </tags>
     
@@ -1788,14 +1813,14 @@
     
     <categories>
       
-      <category>剑指Offer</category>
+      <category>算法题</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>剑指Offer</tag>
+      <tag>算法题</tag>
       
     </tags>
     
@@ -1813,14 +1838,14 @@
     
     <categories>
       
-      <category>剑指Offer</category>
+      <category>算法题</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>剑指Offer</tag>
+      <tag>算法题</tag>
       
     </tags>
     
@@ -1838,14 +1863,14 @@
     
     <categories>
       
-      <category>剑指Offer</category>
+      <category>算法题</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>剑指Offer</tag>
+      <tag>算法题</tag>
       
     </tags>
     
@@ -1863,14 +1888,14 @@
     
     <categories>
       
-      <category>剑指Offer</category>
+      <category>算法题</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>剑指Offer</tag>
+      <tag>算法题</tag>
       
     </tags>
     
@@ -1913,14 +1938,14 @@
     
     <categories>
       
-      <category>剑指Offer</category>
+      <category>算法题</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>剑指Offer</tag>
+      <tag>算法题</tag>
       
     </tags>
     
@@ -2038,14 +2063,14 @@
     
     <categories>
       
-      <category>剑指Offer</category>
+      <category>算法题</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>剑指Offer</tag>
+      <tag>算法题</tag>
       
     </tags>
     
@@ -2063,14 +2088,14 @@
     
     <categories>
       
-      <category>剑指Offer</category>
+      <category>算法题</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>剑指Offer</tag>
+      <tag>算法题</tag>
       
     </tags>
     
@@ -2088,14 +2113,14 @@
     
     <categories>
       
-      <category>剑指Offer</category>
+      <category>算法题</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>剑指Offer</tag>
+      <tag>算法题</tag>
       
     </tags>
     
@@ -2133,19 +2158,19 @@
     <link href="/2022/02/17/%E4%B8%A4%E4%B8%AA%E6%A0%88%E5%AE%9E%E7%8E%B0%E9%98%9F%E5%88%97/"/>
     <url>/2022/02/17/%E4%B8%A4%E4%B8%AA%E6%A0%88%E5%AE%9E%E7%8E%B0%E9%98%9F%E5%88%97/</url>
     
-    <content type="html"><![CDATA[<p><img src="/2022/02/17/%E4%B8%A4%E4%B8%AA%E6%A0%88%E5%AE%9E%E7%8E%B0%E9%98%9F%E5%88%97/image-20220217232828591.png" alt="两个栈实现队列"></p><p>这个题目可能比较难以理解题意，下面先分析一下题目的意思：</p><blockquote><p>题意</p></blockquote><p>输入： [“CQueue”,”appendTail”,”deleteHead”,”deleteHead”] 这里是要执行的方法，从左到右执行</p><p>[[],[3],[],[]]对应上面的方法，是上面方法的参数。CQueue和deleteHead方法不需要指定数字，只有添加才需要指定数字</p><p>1、创建队列，返回值为null</p><p>2、将3压入栈，返回值为null</p><p>3、将栈底的元素删除，也就是消息队列中先进来的元素，所以是deleteHead，返回该元素的数值，所以为3</p><p>4、继续删除栈底的元素，但是没有元素了，所以返回-1</p><p>​    输出：[null,null,3,-1]</p><blockquote><p>题解</p></blockquote><p>为什么不用Stack的方式而使用LinkedList？</p><p><img src="/2022/02/17/%E4%B8%A4%E4%B8%AA%E6%A0%88%E5%AE%9E%E7%8E%B0%E9%98%9F%E5%88%97/image-20220217232841417.png" alt="image-20220217232841417"></p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CQueue</span> </span>&#123;<br><br>        <span class="hljs-comment">//两个栈，一个执行添加,一个执行删除</span><br>        LinkedList&lt;Integer&gt; stack1;<br>        LinkedList&lt;Integer&gt; stack2;<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">CQueue</span><span class="hljs-params">()</span> </span>&#123;<br>        stack1 = <span class="hljs-keyword">new</span> LinkedList&lt;&gt;();<br>        stack2 = <span class="hljs-keyword">new</span> LinkedList&lt;&gt;();<br>    &#125;<br>    <br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">appendTail</span><span class="hljs-params">(<span class="hljs-keyword">int</span> value)</span> </span>&#123;<br>        <span class="hljs-comment">// 栈1只负责添加数据</span><br>        stack1.add(value);<br>    &#125;<br>    <br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">deleteHead</span><span class="hljs-params">()</span> </span>&#123;<br>        <span class="hljs-comment">// 如果栈2是空</span><br>        <span class="hljs-keyword">if</span>(stack2.isEmpty()) &#123;<br>            <span class="hljs-comment">// 由于栈2和栈1是空,由于栈内没数据所以返回值为-1</span><br>            <span class="hljs-keyword">if</span>(stack1.isEmpty()) &#123;<br>                <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>;<br>            &#125;<br>            <span class="hljs-comment">// 如果栈1不是空，那么将栈1的值从顶部弹出放入栈2中,并且返回栈2的顶部的值（也就是将栈1底部的值删除）</span><br>            <span class="hljs-keyword">while</span>(!stack1.isEmpty()) &#123;<br>                stack2.add(stack1.pop());<br>            &#125;<br>            <span class="hljs-keyword">return</span> stack2.pop();<br>        &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">return</span> stack2.pop();<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure><p>实际上就是队列的先进先出，栈的先进后出，两个栈互相交互就可以实现像是队列的先进先出的功能。</p>]]></content>
+    <content type="html"><![CDATA[<p><img src="/2022/02/17/%E4%B8%A4%E4%B8%AA%E6%A0%88%E5%AE%9E%E7%8E%B0%E9%98%9F%E5%88%97/image-20220217232828591.png" alt="两个栈实现队列"></p><p>这个题目可能比较难以理解题意，下面先分析一下题目的意思：</p><blockquote><p>题意</p></blockquote><p>输入： [“CQueue”,”appendTail”,”deleteHead”,”deleteHead”] 这里是要执行的方法，从左到右执行</p><p>[[],[3],[],[]]对应上面的方法，是上面方法的参数。CQueue和deleteHead方法不需要指定数字，只有添加才需要指定数字</p><p>1、创建队列，返回值为null</p><p>2、将3压入栈，返回值为null</p><p>3、将栈底的元素删除，也就是消息队列中先进来的元素，所以是deleteHead，返回该元素的数值，所以为3</p><p>4、继续删除栈底的元素，但是没有元素了，所以返回-1</p><p>​    输出：[null,null,3,-1]</p><blockquote><p>题解</p></blockquote><p>为什么不用Stack的方式而使用LinkedList？</p><p><img src="/2022/02/17/%E4%B8%A4%E4%B8%AA%E6%A0%88%E5%AE%9E%E7%8E%B0%E9%98%9F%E5%88%97/image-20220217232841417.png" alt="image-20220217232841417"></p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CQueue</span> </span>&#123;<br><br>    <span class="hljs-comment">//两个栈，一个执行添加,一个执行删除</span><br>    LinkedList&lt;Integer&gt; stack1;<br>    LinkedList&lt;Integer&gt; stack2;<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">CQueue</span><span class="hljs-params">()</span> </span>&#123;<br>        stack1 = <span class="hljs-keyword">new</span> LinkedList&lt;&gt;();<br>        stack2 = <span class="hljs-keyword">new</span> LinkedList&lt;&gt;();<br>    &#125;<br>    <br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">appendTail</span><span class="hljs-params">(<span class="hljs-keyword">int</span> value)</span> </span>&#123;<br>        <span class="hljs-comment">// 栈1只负责添加数据</span><br>        stack1.add(value);<br>    &#125;<br>    <br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">deleteHead</span><span class="hljs-params">()</span> </span>&#123;<br>        <span class="hljs-comment">// 如果栈2是空</span><br>        <span class="hljs-keyword">if</span>(stack2.isEmpty()) &#123;<br>            <span class="hljs-comment">// 由于栈2和栈1是空,由于栈内没数据所以返回值为-1</span><br>            <span class="hljs-keyword">if</span>(stack1.isEmpty()) &#123;<br>                <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>;<br>            &#125;<br>            <span class="hljs-comment">// 如果栈1不是空，那么将栈1的值从顶部弹出放入栈2中,并且返回栈2的顶部的值（也就是将栈1底部的值删除）</span><br>            <span class="hljs-keyword">while</span>(!stack1.isEmpty()) &#123;<br>                stack2.add(stack1.pop());<br>            &#125;<br>            <span class="hljs-keyword">return</span> stack2.pop();<br>        &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">return</span> stack2.pop();<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure><p>实际上就是队列的先进先出，栈的先进后出，两个栈互相交互就可以实现像是队列的先进先出的功能。</p>]]></content>
     
     
     <categories>
       
-      <category>剑指Offer</category>
+      <category>算法题</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>剑指Offer</tag>
+      <tag>算法题</tag>
       
     </tags>
     
