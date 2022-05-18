@@ -7,8 +7,8 @@
 
 <head>
   <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="/eliseo.github.io/img/favicon.png">
-  <link rel="icon" href="/eliseo.github.io/img/favicon.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
@@ -23,17 +23,17 @@
 <meta property="og:site_name" content="Eliseo的小屋">
 <meta property="og:description" content="二叉树 二叉树的遍历使用递归实现：先序遍历(头左右)：每一次第一次到达节点就打印 中序遍历(左头右)：每一次第二次到达节点就打印 后序遍历(左右头)：每一次最后一次到达节点就打印 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152public class Bi">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://example.com/eliseo.github.io/2022/05/02/%E4%BA%8C%E5%8F%89%E6%A0%91/image-20220430115218088.png">
-<meta property="og:image" content="http://example.com/eliseo.github.io/2022/05/02/%E4%BA%8C%E5%8F%89%E6%A0%91/image-20220430171115049.png">
-<meta property="og:image" content="http://example.com/eliseo.github.io/2022/05/02/%E4%BA%8C%E5%8F%89%E6%A0%91/image-20220501105151572.png">
-<meta property="og:image" content="http://example.com/eliseo.github.io/2022/05/02/%E4%BA%8C%E5%8F%89%E6%A0%91/image-20220502165445024.png">
-<meta property="og:image" content="http://example.com/eliseo.github.io/2022/05/02/%E4%BA%8C%E5%8F%89%E6%A0%91/1636515192108.png">
+<meta property="og:image" content="http://example.com/2022/05/02/%E4%BA%8C%E5%8F%89%E6%A0%91/image-20220430115218088.png">
+<meta property="og:image" content="http://example.com/2022/05/02/%E4%BA%8C%E5%8F%89%E6%A0%91/image-20220430171115049.png">
+<meta property="og:image" content="http://example.com/2022/05/02/%E4%BA%8C%E5%8F%89%E6%A0%91/image-20220501105151572.png">
+<meta property="og:image" content="http://example.com/2022/05/02/%E4%BA%8C%E5%8F%89%E6%A0%91/image-20220502165445024.png">
+<meta property="og:image" content="http://example.com/2022/05/02/%E4%BA%8C%E5%8F%89%E6%A0%91/1636515192108.png">
 <meta property="article:published_time" content="2022-05-02T13:28:59.000Z">
 <meta property="article:modified_time" content="2022-05-02T13:30:18.604Z">
 <meta property="article:author" content="Mr.Wang">
 <meta property="article:tag" content="算法">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://example.com/eliseo.github.io/2022/05/02/%E4%BA%8C%E5%8F%89%E6%A0%91/image-20220430115218088.png">
+<meta name="twitter:image" content="http://example.com/2022/05/02/%E4%BA%8C%E5%8F%89%E6%A0%91/image-20220430115218088.png">
   
   
   <title>二叉树 - Eliseo的小屋</title>
@@ -66,22 +66,18 @@
 <link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
 
 
-<link  rel="stylesheet" href="/eliseo.github.io/css/main.css" />
+<link  rel="stylesheet" href="/css/main.css" />
 
 <!-- 自定义样式保持在最底部 -->
-
-  
-<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/bynotes/texiao/source/css/toubudaziji.css">
-
 
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"example.com","root":"/eliseo.github.io/","version":"1.8.13","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/eliseo.github.io/local-search.xml"};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.13","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
   </script>
-  <script  src="/eliseo.github.io/js/utils.js" ></script>
-  <script  src="/eliseo.github.io/js/color-schema.js" ></script>
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/eliseo.github.io/atom.xml" title="Eliseo的小屋" type="application/atom+xml">
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Eliseo的小屋" type="application/atom+xml">
 </head>
 
 
@@ -89,7 +85,7 @@
   <header style="height: 70vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
-    <a class="navbar-brand" href="/eliseo.github.io/">
+    <a class="navbar-brand" href="/">
       <strong>Eliseo</strong>
     </a>
 
@@ -108,7 +104,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/eliseo.github.io/">
+              <a class="nav-link" href="/">
                 <i class="iconfont icon-home-fill"></i>
                 主页
               </a>
@@ -120,7 +116,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/eliseo.github.io/archives/">
+              <a class="nav-link" href="/archives/">
                 <i class="iconfont icon-archive-fill"></i>
                 归档
               </a>
@@ -132,7 +128,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/eliseo.github.io/categories/">
+              <a class="nav-link" href="/categories/">
                 <i class="iconfont icon-category-fill"></i>
                 分类
               </a>
@@ -144,7 +140,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/eliseo.github.io/tags/">
+              <a class="nav-link" href="/tags/">
                 <i class="iconfont icon-tags-fill"></i>
                 标签
               </a>
@@ -156,7 +152,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/eliseo.github.io/about/">
+              <a class="nav-link" href="/about/">
                 <i class="iconfont icon-user-fill"></i>
                 关于
               </a>
@@ -168,7 +164,7 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/eliseo.github.io/links/">
+              <a class="nav-link" href="/links/">
                 <i class="iconfont icon-link-fill"></i>
                 友情链接
               </a>
@@ -194,7 +190,7 @@
 </nav>
 
     <div class="banner" id="banner" parallax=true
-         style="background: url('/eliseo.github.io/img/default.png') no-repeat center center;
+         style="background: url('/img/default.png') no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
@@ -280,7 +276,7 @@
               </p>
             
             <div class="markdown-body">
-              <h1 id="二叉树"><a href="#二叉树" class="headerlink" title="二叉树"></a>二叉树</h1><p><img src="/eliseo.github.io/2022/05/02/%E4%BA%8C%E5%8F%89%E6%A0%91/image-20220430115218088.png" srcset="/eliseo.github.io/img/loading.gif" lazyload alt="image-20220430115218088"></p>
+              <h1 id="二叉树"><a href="#二叉树" class="headerlink" title="二叉树"></a>二叉树</h1><p><img src="/2022/05/02/%E4%BA%8C%E5%8F%89%E6%A0%91/image-20220430115218088.png" srcset="/img/loading.gif" lazyload alt="image-20220430115218088"></p>
 <h1 id="二叉树的遍历"><a href="#二叉树的遍历" class="headerlink" title="二叉树的遍历"></a>二叉树的遍历</h1><h2 id="使用递归实现："><a href="#使用递归实现：" class="headerlink" title="使用递归实现："></a><strong>使用递归实现：</strong></h2><p><strong>先序遍历(头左右)：</strong>每一次第一次到达节点就打印</p>
 <p><strong>中序遍历(左头右)：</strong>每一次第二次到达节点就打印</p>
 <p><strong>后序遍历(左右头)：</strong>每一次最后一次到达节点就打印</p>
@@ -293,7 +289,7 @@
 <p>3、先把cur右孩子压到栈里，再把cur左孩子压到栈里去，如果有的左右孩子的话</p>
 <p>4、周而复始</p>
 <p><strong>中序遍历(左头右)：</strong></p>
-<p><img src="/eliseo.github.io/2022/05/02/%E4%BA%8C%E5%8F%89%E6%A0%91/image-20220430171115049.png" srcset="/eliseo.github.io/img/loading.gif" lazyload alt="image-20220430171115049"></p>
+<p><img src="/2022/05/02/%E4%BA%8C%E5%8F%89%E6%A0%91/image-20220430171115049.png" srcset="/img/loading.gif" lazyload alt="image-20220430171115049"></p>
 <p><strong>每次都是左头右，然后把右当作头，综上所述最后都是左头左头</strong></p>
 <p>1、每一棵子树整棵树左边界进栈</p>
 <p>2、依次弹出每一个节点的过程中，打印</p>
@@ -319,7 +315,7 @@
 <p>nextend指的是下一层的最后一个节点，队列让谁进去这个值就变成谁</p>
 <p>curlevel指的是当前层已经发现的节点数</p>
 <p><strong>思路</strong>：curend是头节点，然后左孩子是2所以nextend = 2；右孩子是3所以nextend = 3；curlevel = 1；max =1；1被输出打印，1 != 3 所以当前层遍历结束curend = nextend，nextend = null，curlevel = 0；2在队列中被弹出，2的右孩子为4，所以nextend = 4；2!= curend =3，所以2不是当前层的最后一个节点，所以curlevel++；3在队列中被弹出，左孩子为5，右孩子为6，所以nextend = 6；3 = curend = 3，curlevel++，max在1与curlevel中取最大值2，nextend = curend，nextend = null；循环</p>
-<p><img src="/eliseo.github.io/2022/05/02/%E4%BA%8C%E5%8F%89%E6%A0%91/image-20220501105151572.png" srcset="/eliseo.github.io/img/loading.gif" lazyload alt="求二叉树的最大宽度(G:/A-%25E5%25AD%25A6%25E4%25B9%25A0%25E7%25AC%2594%25E8%25AE%25B0/%25E7%25AE%2597%25E6%25B3%2595%25E4%25B8%258E%25E6%2595%25B0%25E6%258D%25AE%25E7%25BB%2593%25E6%259E%2584/%25E4%25BA%258C%25E5%258F%2589%25E6%25A0%2591/image-20220501105151572.png)"></p>
+<p><img src="/2022/05/02/%E4%BA%8C%E5%8F%89%E6%A0%91/image-20220501105151572.png" srcset="/img/loading.gif" lazyload alt="求二叉树的最大宽度(G:/A-%25E5%25AD%25A6%25E4%25B9%25A0%25E7%25AC%2594%25E8%25AE%25B0/%25E7%25AE%2597%25E6%25B3%2595%25E4%25B8%258E%25E6%2595%25B0%25E6%258D%25AE%25E7%25BB%2593%25E6%259E%2584/%25E4%25BA%258C%25E5%258F%2589%25E6%25A0%2591/image-20220501105151572.png)"></p>
 <h1 id="搜索二叉树（BST）："><a href="#搜索二叉树（BST）：" class="headerlink" title="搜索二叉树（BST）："></a>搜索二叉树（BST）：</h1><p>参考题：<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/validate-binary-search-tree/">验证二叉搜索树</a></p>
 <p>对于每一个子树来说，他的左树的节点都比他小，右树的节点都比他大，可以看作没有重复值</p>
 <p><strong>如何判断一个树是搜索二叉树？</strong></p>
@@ -367,7 +363,7 @@
 
 
 
-<p><img src="/eliseo.github.io/2022/05/02/%E4%BA%8C%E5%8F%89%E6%A0%91/image-20220502165445024.png" srcset="/eliseo.github.io/img/loading.gif" lazyload alt="image-20220502165445024"></p>
+<p><img src="/2022/05/02/%E4%BA%8C%E5%8F%89%E6%A0%91/image-20220502165445024.png" srcset="/img/loading.gif" lazyload alt="image-20220502165445024"></p>
 <h2 id="前驱节点，后继结点"><a href="#前驱节点，后继结点" class="headerlink" title="前驱节点，后继结点"></a>前驱节点，后继结点</h2><p>前驱节点：中序遍历中，一个节点的前一个节点</p>
 <p>后继结点：中序遍历中，一个节点的下一个节点</p>
 <p>寻找后继结点的情况：</p>
@@ -381,7 +377,7 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SerializeAndReconstructTree</span> </span>&#123;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Node</span> </span>&#123;<br>        <span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> value;<br>        <span class="hljs-keyword">public</span> Node left;<br>        <span class="hljs-keyword">public</span> Node right;<br><br>        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Node</span><span class="hljs-params">(<span class="hljs-keyword">int</span> data)</span> </span>&#123;<br>            <span class="hljs-keyword">this</span>.value = data;<br>        &#125;<br>    &#125;<br><br>    <span class="hljs-comment">// 以head为头的树，请序列化成字符串返回</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> String <span class="hljs-title">serialByPre</span><span class="hljs-params">(Node head)</span> </span>&#123;<br>        <span class="hljs-keyword">if</span> (head == <span class="hljs-keyword">null</span>) &#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;#_&quot;</span>;<br>        &#125;<br>        String res = head.value + <span class="hljs-string">&quot;_&quot;</span>;<br>        res += serialByPre(head.left);<br>        res += serialByPre(head.right);<br>        <span class="hljs-keyword">return</span>  res;<br>    &#125;<br><br>    <span class="hljs-comment">// 反序列化</span><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> Node <span class="hljs-title">reconByPreString</span><span class="hljs-params">(String perStr)</span> </span>&#123;<br>        String[] values = perStr.split(<span class="hljs-string">&quot;_&quot;</span>);<br>        Queue&lt;String&gt; queue = <span class="hljs-keyword">new</span> LinkedList&lt;String&gt;();<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i != values.length; i++) &#123;<br>            queue.add(values[i]);<br>        &#125;<br>        <span class="hljs-keyword">return</span> reconPreOrder(queue);<br>    &#125;<br><br>    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> Node <span class="hljs-title">reconPreOrder</span><span class="hljs-params">(Queue&lt;String&gt; queue)</span> </span>&#123;<br>        String value = queue.poll();<br>        <span class="hljs-keyword">if</span> (value.equals(<span class="hljs-string">&quot;#&quot;</span>)) &#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;<br>        &#125;<br>        Node head = <span class="hljs-keyword">new</span> Node(Integer.valueOf(value));<br>        head.left = reconPreOrder(queue);<br>        head.right = reconPreOrder(queue);<br>        <span class="hljs-keyword">return</span> head;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
 <h2 id="折纸问题"><a href="#折纸问题" class="headerlink" title="折纸问题"></a>折纸问题</h2><p>将一张纸对折，会出现折痕，第一次是凹下去的，成为凹折痕，再折一次，会在上一次的折痕上下方出现两个折痕，上方为凹下方为凸，依次类推，现在给出折的次数，请按照折痕的方向依次打印。</p>
-<p><img src="/eliseo.github.io/2022/05/02/%E4%BA%8C%E5%8F%89%E6%A0%91/1636515192108.png" srcset="/eliseo.github.io/img/loading.gif" lazyload alt="1636515192108"></p>
+<p><img src="/2022/05/02/%E4%BA%8C%E5%8F%89%E6%A0%91/1636515192108.png" srcset="/img/loading.gif" lazyload alt="1636515192108"></p>
 <p>其实就是中序遍历 </p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">PaperFolding</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">printAllFolds</span><span class="hljs-params">(<span class="hljs-keyword">int</span> N)</span> </span>&#123;<br>        printProcess(<span class="hljs-number">1</span>, N, <span class="hljs-keyword">true</span>);<br>    &#125;<br><br>    <span class="hljs-comment">// 递归过程，来到了某一个节点</span><br>    <span class="hljs-comment">// i是节点的层数，N一共的层数，down == true 凹 down == false 凸</span><br>    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">printProcess</span><span class="hljs-params">(<span class="hljs-keyword">int</span> i, <span class="hljs-keyword">int</span> N, <span class="hljs-keyword">boolean</span> down)</span> </span>&#123;<br>        <span class="hljs-keyword">if</span> (i &gt; N) &#123;<br>            <span class="hljs-keyword">return</span>;<br>        &#125;<br>        printProcess(i + <span class="hljs-number">1</span>, N, <span class="hljs-keyword">true</span>);<br>        System.out.println(down ? <span class="hljs-string">&quot;凹&quot;</span> : <span class="hljs-string">&quot;凸&quot;</span>);<br>        printProcess(i + <span class="hljs-number">1</span>, N, <span class="hljs-keyword">false</span>);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
@@ -394,7 +390,7 @@
                   <div class="post-meta mr-3">
                     <i class="iconfont icon-category"></i>
                     
-                      <a class="hover-with-bg" href="/eliseo.github.io/categories/%E7%AE%97%E6%B3%95/">算法</a>
+                      <a class="hover-with-bg" href="/categories/%E7%AE%97%E6%B3%95/">算法</a>
                     
                   </div>
                 
@@ -402,7 +398,7 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/eliseo.github.io/tags/%E7%AE%97%E6%B3%95/">算法</a>
+                      <a class="hover-with-bg" href="/tags/%E7%AE%97%E6%B3%95/">算法</a>
                     
                   </div>
                 
@@ -419,7 +415,7 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/eliseo.github.io/2022/05/03/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E7%9A%84%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88/">
+                      <a href="/2022/05/03/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E7%9A%84%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88/">
                         <i class="iconfont icon-arrowleft"></i>
                         <span class="hidden-mobile">二叉搜索树的最近公共祖先</span>
                         <span class="visible-mobile">Previous</span>
@@ -429,7 +425,7 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/eliseo.github.io/2022/05/02/%E9%93%BE%E8%A1%A8/">
+                      <a href="/2022/05/02/%E9%93%BE%E8%A1%A8/">
                         <span class="hidden-mobile">链表</span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
@@ -490,7 +486,7 @@
 
   <div class="col-lg-7 mx-auto nopadding-x-md">
     <div class="container custom post-custom mx-auto">
-      <img src="/img/zanshang.jpg" srcset="/eliseo.github.io/img/loading.gif" lazyload class="rounded mx-auto d-block mt-5" style="width:150px; height:150px;">
+      <img src="/img/zanshang.jpg" srcset="/img/loading.gif" lazyload class="rounded mx-auto d-block mt-5" style="width:150px; height:150px;">
     </div>
   </div>
 
@@ -592,18 +588,18 @@
 
 <script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
 <script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
-<script  src="/eliseo.github.io/js/events.js" ></script>
-<script  src="/eliseo.github.io/js/plugins.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
 
 <!-- Plugins -->
 
 
-  <script  src="/eliseo.github.io/js/local-search.js" ></script>
+  <script  src="/js/local-search.js" ></script>
 
 
 
   
-    <script  src="/eliseo.github.io/js/img-lazyload.js" ></script>
+    <script  src="/js/img-lazyload.js" ></script>
   
 
 
@@ -669,15 +665,9 @@
 
 
 
-  
-<script src="//cdn.jsdelivr.net/gh/bynotes/texiao/source/js/caidai.js"></script>
-<script src="//cdn.jsdelivr.net/gh/bynotes/texiao/source/js/yinghua.js"></script>
-<script src="//cdn.jsdelivr.net/gh/bynotes/texiao/source/js/dianjichuzi.js"></script>
-
-
 
 <!-- 主题的启动项 保持在最底部 -->
-<script  src="/eliseo.github.io/js/boot.js" ></script>
+<script  src="/js/boot.js" ></script>
 
 
 </body>
