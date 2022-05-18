@@ -19,18 +19,18 @@
     <meta name="description" content="解题思路  普通栈的 push() 和 pop() 函数的复杂度为 O(1)O(1) ；而获取栈最小值 min() 函数需要遍历整个栈，复杂度为 O(N)O(N) 。  所以需要使用辅助栈将获取最小值时间复杂度变成O(1) 使用辅助栈B，保证栈B的元素是栈A中的最小值（在栈A加入数据之前与栈B的顶部数据进行对比，如果栈A数据小则压入栈B，反之不压入） 1234567891011121314151">
 <meta property="og:type" content="article">
 <meta property="og:title" content="包含main函数的栈">
-<meta property="og:url" content="https://eliseo0517.github.io/2022/02/18/%E5%8C%85%E5%90%ABmain%E5%87%BD%E6%95%B0%E7%9A%84%E6%A0%88/index.html">
+<meta property="og:url" content="http://www.eliseo.top/2022/02/18/%E5%8C%85%E5%90%ABmain%E5%87%BD%E6%95%B0%E7%9A%84%E6%A0%88/index.html">
 <meta property="og:site_name" content="Eliseo的小屋">
 <meta property="og:description" content="解题思路  普通栈的 push() 和 pop() 函数的复杂度为 O(1)O(1) ；而获取栈最小值 min() 函数需要遍历整个栈，复杂度为 O(N)O(N) 。  所以需要使用辅助栈将获取最小值时间复杂度变成O(1) 使用辅助栈B，保证栈B的元素是栈A中的最小值（在栈A加入数据之前与栈B的顶部数据进行对比，如果栈A数据小则压入栈B，反之不压入） 1234567891011121314151">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://eliseo0517.github.io/2022/02/18/%E5%8C%85%E5%90%ABmain%E5%87%BD%E6%95%B0%E7%9A%84%E6%A0%88/image-20220218162324175.png">
-<meta property="og:image" content="https://eliseo0517.github.io/2022/02/18/%E5%8C%85%E5%90%ABmain%E5%87%BD%E6%95%B0%E7%9A%84%E6%A0%88/image-20220218165841704.png">
+<meta property="og:image" content="http://www.eliseo.top/2022/02/18/%E5%8C%85%E5%90%ABmain%E5%87%BD%E6%95%B0%E7%9A%84%E6%A0%88/image-20220218162324175.png">
+<meta property="og:image" content="http://www.eliseo.top/2022/02/18/%E5%8C%85%E5%90%ABmain%E5%87%BD%E6%95%B0%E7%9A%84%E6%A0%88/image-20220218165841704.png">
 <meta property="article:published_time" content="2022-02-18T08:22:20.000Z">
 <meta property="article:modified_time" content="2022-05-18T01:27:32.634Z">
 <meta property="article:author" content="Mr.Wang">
 <meta property="article:tag" content="算法题">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://eliseo0517.github.io/2022/02/18/%E5%8C%85%E5%90%ABmain%E5%87%BD%E6%95%B0%E7%9A%84%E6%A0%88/image-20220218162324175.png">
+<meta name="twitter:image" content="http://www.eliseo.top/2022/02/18/%E5%8C%85%E5%90%ABmain%E5%87%BD%E6%95%B0%E7%9A%84%E6%A0%88/image-20220218162324175.png">
   
   
   <title>包含main函数的栈 - Eliseo的小屋</title>
@@ -70,7 +70,7 @@
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"eliseo0517.github.io","root":"/","version":"1.8.13","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"www.eliseo.top","root":"/","version":"1.8.13","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
