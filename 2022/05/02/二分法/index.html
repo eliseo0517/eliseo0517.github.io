@@ -19,7 +19,7 @@
     <meta name="description" content="二分法1、在一个有序数组中，找某个数是否存在123456789101112&#x2F;&#x2F;有序，小到大查找某值.int fir&#x3D;0,last&#x3D;arr_length-1;while (fir&lt;&#x3D;last)&amp;#123;	mid&#x3D;(fir+last)&#x2F;2;	if (arr[mid]&#x3D;&#x3D;num)		return mid;	else&amp;#123;		if (arr[mid]&lt;num)			fir&#x3D;mid+1;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="二分法">
-<meta property="og:url" content="http://example.com/2022/05/02/%E4%BA%8C%E5%88%86%E6%B3%95/index.html">
+<meta property="og:url" content="https://eliseo.top/2022/05/02/%E4%BA%8C%E5%88%86%E6%B3%95/index.html">
 <meta property="og:site_name" content="Eliseo的小屋">
 <meta property="og:description" content="二分法1、在一个有序数组中，找某个数是否存在123456789101112&#x2F;&#x2F;有序，小到大查找某值.int fir&#x3D;0,last&#x3D;arr_length-1;while (fir&lt;&#x3D;last)&amp;#123;	mid&#x3D;(fir+last)&#x2F;2;	if (arr[mid]&#x3D;&#x3D;num)		return mid;	else&amp;#123;		if (arr[mid]&lt;num)			fir&#x3D;mid+1;">
 <meta property="og:locale" content="en_US">
@@ -71,7 +71,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.0","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"eliseo.top","root":"/","version":"1.9.0","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"letf","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -237,7 +237,8 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.5k words
+          <!-- compatible with older versions-->
+          1.5k 字
         
       </span>
     
@@ -248,7 +249,8 @@
         
         
         
-          13 mins
+          <!-- compatible with older versions-->
+          13 分钟
         
       </span>
     
@@ -299,7 +301,8 @@
               <p class="note note-info">
                 
                   
-                    Last updated on 17 days ago
+                    <!-- compatible with older versions-->
+                    本文最后更新于：17 days ago
                   
                 
               </p>
@@ -362,7 +365,7 @@
   <div class="license-box my-3">
     <div class="license-title">
       <div>二分法</div>
-      <div>http://example.com/2022/05/02/二分法/</div>
+      <div>https://eliseo.top/2022/05/02/二分法/</div>
     </div>
     <div class="license-meta">
       
@@ -428,6 +431,28 @@
             
   <article id="comments" lazyload>
     
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://lib.baomitu.com/valine/1.4.16/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"7q4Cd6gre5rUsbnBX0hxBL6F-gzGzoHsz","appKey":"uKLmorh1LSnN9WUadw4Dm9vE","path":"window.location.pathname","placeholder":null,"avatar":"retro","meta":["nick","mail","link"],"requiredFields":[],"pageSize":10,"lang":"zh-CN","highlight":false,"recordIP":false,"serverURLs":"","emojiCDN":null,"emojiMaps":null,"enableQQ":false},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+        Fluid.utils.waitElementVisible('#valine .vcontent', () => {
+          var imgSelector = '#valine .vcontent img:not(.vemoji)';
+          Fluid.plugins.imageCaption(imgSelector);
+          Fluid.plugins.fancyBox(imgSelector);
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
 
   </article>
 

@@ -19,7 +19,7 @@
     <meta name="description" content="插入排序时间复杂度为O(N²)，额外空间复杂度为O(1) 1、首先，原始的数组元素是这样的。           其中，浅绿色代表有序部分，黄色代表无序部分。2、在无序部分中挑出要插入到有序部分中的元素  3、将要插入的元素与左边最近的有序部分的元素进行比较。由于4 &lt; 9，所以9向后移，4向前移。  4、继续将要插入的元素与左边最近的有序部分的元素进行比较。由于4 &lt; 5，所以5向后">
 <meta property="og:type" content="article">
 <meta property="og:title" content="插入排序">
-<meta property="og:url" content="http://example.com/2022/05/02/%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F/index.html">
+<meta property="og:url" content="https://eliseo.top/2022/05/02/%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F/index.html">
 <meta property="og:site_name" content="Eliseo的小屋">
 <meta property="og:description" content="插入排序时间复杂度为O(N²)，额外空间复杂度为O(1) 1、首先，原始的数组元素是这样的。           其中，浅绿色代表有序部分，黄色代表无序部分。2、在无序部分中挑出要插入到有序部分中的元素  3、将要插入的元素与左边最近的有序部分的元素进行比较。由于4 &lt; 9，所以9向后移，4向前移。  4、继续将要插入的元素与左边最近的有序部分的元素进行比较。由于4 &lt; 5，所以5向后">
 <meta property="og:locale" content="en_US">
@@ -78,7 +78,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.0","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"eliseo.top","root":"/","version":"1.9.0","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"letf","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -244,7 +244,8 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          725 words
+          <!-- compatible with older versions-->
+          725 字
         
       </span>
     
@@ -255,7 +256,8 @@
         
         
         
-          7 mins
+          <!-- compatible with older versions-->
+          7 分钟
         
       </span>
     
@@ -306,7 +308,8 @@
               <p class="note note-info">
                 
                   
-                    Last updated on 17 days ago
+                    <!-- compatible with older versions-->
+                    本文最后更新于：17 days ago
                   
                 
               </p>
@@ -368,7 +371,7 @@
   <div class="license-box my-3">
     <div class="license-title">
       <div>插入排序</div>
-      <div>http://example.com/2022/05/02/插入排序/</div>
+      <div>https://eliseo.top/2022/05/02/插入排序/</div>
     </div>
     <div class="license-meta">
       
@@ -434,6 +437,28 @@
             
   <article id="comments" lazyload>
     
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://lib.baomitu.com/valine/1.4.16/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"7q4Cd6gre5rUsbnBX0hxBL6F-gzGzoHsz","appKey":"uKLmorh1LSnN9WUadw4Dm9vE","path":"window.location.pathname","placeholder":null,"avatar":"retro","meta":["nick","mail","link"],"requiredFields":[],"pageSize":10,"lang":"zh-CN","highlight":false,"recordIP":false,"serverURLs":"","emojiCDN":null,"emojiMaps":null,"enableQQ":false},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+        Fluid.utils.waitElementVisible('#valine .vcontent', () => {
+          var imgSelector = '#valine .vcontent img:not(.vemoji)';
+          Fluid.plugins.imageCaption(imgSelector);
+          Fluid.plugins.fancyBox(imgSelector);
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
 
   </article>
 

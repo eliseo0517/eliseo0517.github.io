@@ -19,7 +19,7 @@
     <meta name="description" content="原因：数据库突然开不开了，怕麻烦就没有备份数据库，只留下了Data文件，结果新版本mysql不能使用旧版本的data，单纯的替换ibdata1文件也不行。 操作： 1、打开任务管理器，关闭MySQL80.exe 2、需要覆盖的文件：ibdata1，ib_logfile0，ib_logfile1，ib_buffer_pool，auto.cnf，mysql.ibd 3、重新打开MySQL80.exe">
 <meta property="og:type" content="article">
 <meta property="og:title" content="mysql8通过Data文件恢复数据">
-<meta property="og:url" content="http://example.com/2022/04/21/mysql8%E9%80%9A%E8%BF%87Data%E6%96%87%E4%BB%B6%E6%81%A2%E5%A4%8D%E6%95%B0%E6%8D%AE/index.html">
+<meta property="og:url" content="https://eliseo.top/2022/04/21/mysql8%E9%80%9A%E8%BF%87Data%E6%96%87%E4%BB%B6%E6%81%A2%E5%A4%8D%E6%95%B0%E6%8D%AE/index.html">
 <meta property="og:site_name" content="Eliseo的小屋">
 <meta property="og:description" content="原因：数据库突然开不开了，怕麻烦就没有备份数据库，只留下了Data文件，结果新版本mysql不能使用旧版本的data，单纯的替换ibdata1文件也不行。 操作： 1、打开任务管理器，关闭MySQL80.exe 2、需要覆盖的文件：ibdata1，ib_logfile0，ib_logfile1，ib_buffer_pool，auto.cnf，mysql.ibd 3、重新打开MySQL80.exe">
 <meta property="og:locale" content="en_US">
@@ -71,7 +71,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.0","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"eliseo.top","root":"/","version":"1.9.0","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"letf","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -237,7 +237,8 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          195 words
+          <!-- compatible with older versions-->
+          195 字
         
       </span>
     
@@ -248,7 +249,8 @@
         
         
         
-          2 mins
+          <!-- compatible with older versions-->
+          2 分钟
         
       </span>
     
@@ -299,7 +301,8 @@
               <p class="note note-info">
                 
                   
-                    Last updated on a month ago
+                    <!-- compatible with older versions-->
+                    本文最后更新于：a month ago
                   
                 
               </p>
@@ -356,7 +359,7 @@
   <div class="license-box my-3">
     <div class="license-title">
       <div>mysql8通过Data文件恢复数据</div>
-      <div>http://example.com/2022/04/21/mysql8通过Data文件恢复数据/</div>
+      <div>https://eliseo.top/2022/04/21/mysql8通过Data文件恢复数据/</div>
     </div>
     <div class="license-meta">
       
@@ -422,6 +425,28 @@
             
   <article id="comments" lazyload>
     
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://lib.baomitu.com/valine/1.4.16/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"7q4Cd6gre5rUsbnBX0hxBL6F-gzGzoHsz","appKey":"uKLmorh1LSnN9WUadw4Dm9vE","path":"window.location.pathname","placeholder":null,"avatar":"retro","meta":["nick","mail","link"],"requiredFields":[],"pageSize":10,"lang":"zh-CN","highlight":false,"recordIP":false,"serverURLs":"","emojiCDN":null,"emojiMaps":null,"enableQQ":false},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+        Fluid.utils.waitElementVisible('#valine .vcontent', () => {
+          var imgSelector = '#valine .vcontent img:not(.vemoji)';
+          Fluid.plugins.imageCaption(imgSelector);
+          Fluid.plugins.fancyBox(imgSelector);
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
 
   </article>
 
