@@ -1,7 +1,7 @@
 
 
 <!DOCTYPE html>
-<html lang="en" data-default-color-scheme=auto>
+<html lang="zh-CN" data-default-color-scheme=auto>
 
 
 
@@ -22,7 +22,7 @@
 <meta property="og:url" content="https://eliseo.top/2022/04/04/%E5%A4%8D%E6%9D%82%E9%93%BE%E8%A1%A8%E7%9A%84%E5%A4%8D%E5%88%B6/index.html">
 <meta property="og:site_name" content="Eliseo的小屋">
 <meta property="og:description" content="代码实现： 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758package com.wang.day01;&#x2F;** * @Package: com.wang.day01 * @ClassName: test02 * @Author:">
-<meta property="og:locale" content="en_US">
+<meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://eliseo.top/2022/04/04/%E5%A4%8D%E6%9D%82%E9%93%BE%E8%A1%A8%E7%9A%84%E5%A4%8D%E5%88%B6/image-20220404210016882.png">
 <meta property="article:published_time" content="2022-04-04T12:58:09.000Z">
 <meta property="article:modified_time" content="2022-05-18T01:28:02.529Z">
@@ -73,7 +73,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"eliseo.top","root":"/","version":"1.9.0","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"letf","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"eliseo.top","root":"/","version":"1.9.0","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":"left","element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -84,7 +84,7 @@
   <script  src="/js/color-schema.js" ></script>
 
   
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Eliseo的小屋" type="application/atom+xml">
+<meta name="generator" content="Hexo 6.2.0"><link rel="alternate" href="/atom.xml" title="Eliseo的小屋" type="application/atom+xml">
 </head>
 
 
@@ -228,7 +228,7 @@
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
         <time datetime="2022-04-04 20:58" pubdate>
-          April 4, 2022 pm
+          2022年4月4日 晚上
         </time>
       </span>
     
@@ -240,7 +240,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          1.1k 字
+          undefined 字
         
       </span>
     
@@ -252,7 +252,7 @@
         
         
           <!-- compatible with older versions-->
-          9 分钟
+          NaN 分钟
         
       </span>
     
@@ -262,7 +262,7 @@
       
         <span id="busuanzi_container_page_pv" style="display: none">
           <i class="iconfont icon-eye" aria-hidden="true"></i>
-          <span id="busuanzi_value_page_pv"></span> views
+          <span id="busuanzi_value_page_pv"></span> 次
         </span>
         
       
@@ -304,7 +304,7 @@
                 
                   
                     <!-- compatible with older versions-->
-                    本文最后更新于：a day ago
+                    本文最后更新于：1 天前
                   
                 
               </p>
@@ -313,7 +313,7 @@
               
               <p><img src="/2022/04/04/%E5%A4%8D%E6%9D%82%E9%93%BE%E8%A1%A8%E7%9A%84%E5%A4%8D%E5%88%B6/image-20220404210016882.png" srcset="/img/loading.gif" lazyload alt="复杂链表的复制"></p>
 <p><strong>代码实现：</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">package</span> com.wang.day01;<br><br><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@Package</span>: com.wang.day01</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@ClassName</span>: test02</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@Author</span>: Mr.Wang</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@CreateTime</span>: 2022/4/4 11:04</span><br><span class="hljs-comment"> * <span class="hljs-doctag">@Description</span>:</span><br><span class="hljs-comment"> */</span><br><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">test02</span> </span>&#123;<br><br>    <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Node</span> </span>&#123;<br>        <span class="hljs-keyword">int</span> val;<br>        Node next;<br>        Node random;<br><br>        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Node</span><span class="hljs-params">(<span class="hljs-keyword">int</span> val)</span> </span>&#123;<br>            <span class="hljs-keyword">this</span>.val = val;<br>            <span class="hljs-keyword">this</span>.next = <span class="hljs-keyword">null</span>;<br>            <span class="hljs-keyword">this</span>.random = <span class="hljs-keyword">null</span>;<br>        &#125;<br>    &#125;<br>    <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>        <span class="hljs-function"><span class="hljs-keyword">public</span> Node <span class="hljs-title">copyRandomList</span><span class="hljs-params">(Node head)</span> </span>&#123;<br>            <span class="hljs-keyword">if</span>(head == <span class="hljs-keyword">null</span>) <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;<br>            <span class="hljs-comment">// 从头结点开始,复制并且拼接链表</span><br>            <span class="hljs-comment">// 原链表1-2-3</span><br>            Node cur = head;<br>            <span class="hljs-keyword">while</span>(cur != <span class="hljs-keyword">null</span>)&#123;<br>                Node tmp = <span class="hljs-keyword">new</span> Node(cur.val); <span class="hljs-comment">// 将链表的头节点的值变为一样</span><br>                tmp.next = cur.next; <span class="hljs-comment">// 将链表的头节点的下一个节点的值变成新链表的下一个节点 1-2 = 1-2</span><br>                cur.next = tmp; <span class="hljs-comment">// 原来是1-2现在变成1-1</span><br>                cur = tmp.next; <span class="hljs-comment">// 原来是1-2 现在变成1-1-2-2</span><br>                <span class="hljs-comment">// 运行完之后变成1-1-2-2-3-3</span><br>            &#125;<br>            <br>            <span class="hljs-comment">// 构建新的random的指向</span><br>            cur = head;<br>            <span class="hljs-keyword">while</span>(cur != <span class="hljs-keyword">null</span>)&#123;<br>                <span class="hljs-keyword">if</span>(cur.random != <span class="hljs-keyword">null</span>)&#123;<br>                    cur.next.random = cur.random.next;<br>                &#125;<br>                cur = cur.next.next;<br>            &#125;<br>            <span class="hljs-comment">// 3. 拆分两链表</span><br>            cur = head.next;<br>            Node pre = head, res = head.next;<br>            <span class="hljs-keyword">while</span>(cur.next != <span class="hljs-keyword">null</span>) &#123;<br>                pre.next = pre.next.next;<br>                cur.next = cur.next.next;<br>                pre = pre.next;<br>                cur = cur.next;<br>            &#125;<br>            pre.next = <span class="hljs-keyword">null</span>; <span class="hljs-comment">// 单独处理原链表尾节点</span><br>            <span class="hljs-keyword">return</span> res;      <span class="hljs-comment">// 返回新链表头节点</span><br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.wang.day01;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Package</span>: com.wang.day01</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@ClassName</span>: test02</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Author</span>: Mr.Wang</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@CreateTime</span>: 2022/4/4 11:04</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@Description</span>:</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">test02</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">class</span> <span class="title class_">Node</span> &#123;</span><br><span class="line">        <span class="type">int</span> val;</span><br><span class="line">        Node next;</span><br><span class="line">        Node random;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">public</span> <span class="title function_">Node</span><span class="params">(<span class="type">int</span> val)</span> &#123;</span><br><span class="line">            <span class="built_in">this</span>.val = val;</span><br><span class="line">            <span class="built_in">this</span>.next = <span class="literal">null</span>;</span><br><span class="line">            <span class="built_in">this</span>.random = <span class="literal">null</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">        <span class="keyword">public</span> Node <span class="title function_">copyRandomList</span><span class="params">(Node head)</span> &#123;</span><br><span class="line">            <span class="keyword">if</span>(head == <span class="literal">null</span>) <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">            <span class="comment">// 从头结点开始,复制并且拼接链表</span></span><br><span class="line">            <span class="comment">// 原链表1-2-3</span></span><br><span class="line">            <span class="type">Node</span> <span class="variable">cur</span> <span class="operator">=</span> head;</span><br><span class="line">            <span class="keyword">while</span>(cur != <span class="literal">null</span>)&#123;</span><br><span class="line">                <span class="type">Node</span> <span class="variable">tmp</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Node</span>(cur.val); <span class="comment">// 将链表的头节点的值变为一样</span></span><br><span class="line">                tmp.next = cur.next; <span class="comment">// 将链表的头节点的下一个节点的值变成新链表的下一个节点 1-2 = 1-2</span></span><br><span class="line">                cur.next = tmp; <span class="comment">// 原来是1-2现在变成1-1</span></span><br><span class="line">                cur = tmp.next; <span class="comment">// 原来是1-2 现在变成1-1-2-2</span></span><br><span class="line">                <span class="comment">// 运行完之后变成1-1-2-2-3-3</span></span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            <span class="comment">// 构建新的random的指向</span></span><br><span class="line">            cur = head;</span><br><span class="line">            <span class="keyword">while</span>(cur != <span class="literal">null</span>)&#123;</span><br><span class="line">                <span class="keyword">if</span>(cur.random != <span class="literal">null</span>)&#123;</span><br><span class="line">                    cur.next.random = cur.random.next;</span><br><span class="line">                &#125;</span><br><span class="line">                cur = cur.next.next;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">// 3. 拆分两链表</span></span><br><span class="line">            cur = head.next;</span><br><span class="line">            <span class="type">Node</span> <span class="variable">pre</span> <span class="operator">=</span> head, res = head.next;</span><br><span class="line">            <span class="keyword">while</span>(cur.next != <span class="literal">null</span>) &#123;</span><br><span class="line">                pre.next = pre.next.next;</span><br><span class="line">                cur.next = cur.next.next;</span><br><span class="line">                pre = pre.next;</span><br><span class="line">                cur = cur.next;</span><br><span class="line">            &#125;</span><br><span class="line">            pre.next = <span class="literal">null</span>; <span class="comment">// 单独处理原链表尾节点</span></span><br><span class="line">            <span class="keyword">return</span> res;      <span class="comment">// 返回新链表头节点</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
               
@@ -365,25 +365,25 @@
     <div class="license-meta">
       
         <div class="license-meta-item">
-          <div>Author</div>
+          <div>作者</div>
           <div>Mr.Wang</div>
         </div>
       
       
         <div class="license-meta-item license-meta-date">
-          <div>Posted on</div>
-          <div>April 4, 2022</div>
+          <div>发布于</div>
+          <div>2022年4月4日</div>
         </div>
       
       
       <div class="license-meta-item">
-        <div>Licensed under</div>
+        <div>许可协议</div>
         <div>
           
             
             
               <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
-              <span class="hint--top hint--rounded" aria-label="BY - Attribution">
+              <span class="hint--top hint--rounded" aria-label="BY - 署名">
                 <i class="iconfont icon-by"></i>
               </span>
               </a>
@@ -405,7 +405,7 @@
                       <a href="/2022/04/04/%E6%9B%BF%E6%8D%A2%E7%A9%BA%E6%A0%BC/" title="替换空格">
                         <i class="iconfont icon-arrowleft"></i>
                         <span class="hidden-mobile">替换空格</span>
-                        <span class="visible-mobile">Previous</span>
+                        <span class="visible-mobile">上一篇</span>
                       </a>
                     
                   </article>
@@ -414,7 +414,7 @@
                     
                       <a href="/2022/04/04/%E5%BB%BA%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F/" title="建造者模式">
                         <span class="hidden-mobile">建造者模式</span>
-                        <span class="visible-mobile">Next</span>
+                        <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
                     
@@ -461,7 +461,7 @@
       
   <aside class="sidebar" style="margin-left: -1rem">
     <div id="toc">
-  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;Table of Contents</p>
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
   <div class="toc-body" id="toc-body"></div>
 </div>
 
@@ -515,7 +515,7 @@
   <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header text-center">
-        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
         <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -523,7 +523,7 @@
       <div class="modal-body mx-3">
         <div class="md-form mb-5">
           <input type="text" id="local-search-input" class="form-control validate">
-          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
         </div>
         <div class="list-group" id="local-search-result"></div>
       </div>
@@ -551,16 +551,16 @@
   
     
       <span id="busuanzi_container_site_pv" style="display: none">
-        Views: 
+        总访问量 
         <span id="busuanzi_value_site_pv"></span>
-        
+         次
       </span>
     
     
       <span id="busuanzi_container_site_uv" style="display: none">
-        Visitors: 
+        总访客数 
         <span id="busuanzi_value_site_uv"></span>
-        
+         人
       </span>
     
     
@@ -779,7 +779,7 @@
   
 
   <noscript>
-    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
   </noscript>
 </body>
 </html>

@@ -1,7 +1,7 @@
 
 
 <!DOCTYPE html>
-<html lang="en" data-default-color-scheme=auto>
+<html lang="zh-CN" data-default-color-scheme=auto>
 
 
 
@@ -22,7 +22,7 @@
 <meta property="og:url" content="https://eliseo.top/2022/05/02/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/index.html">
 <meta property="og:site_name" content="Eliseo的小屋">
 <meta property="og:description" content="快速排序荷兰国旗问题(1)给定一个数组arr，和一个数num，请把小于等于num的数放在数组的左边，大于num的数放在数组的右边。要求额外空间复杂度O(1)，时间复杂度O(N) ​        思路：如果[i]&lt;&#x3D;num  [i]和小于等于区的下一个交换，小于等于区扩大一个，i++； ​                    如果[i]&gt;num，i++ ​">
-<meta property="og:locale" content="en_US">
+<meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-05-02T13:15:06.000Z">
 <meta property="article:modified_time" content="2022-05-02T13:16:42.980Z">
 <meta property="article:author" content="Mr.Wang">
@@ -71,7 +71,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"eliseo.top","root":"/","version":"1.9.0","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"letf","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"eliseo.top","root":"/","version":"1.9.0","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":"left","element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -82,7 +82,7 @@
   <script  src="/js/color-schema.js" ></script>
 
   
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Eliseo的小屋" type="application/atom+xml">
+<meta name="generator" content="Hexo 6.2.0"><link rel="alternate" href="/atom.xml" title="Eliseo的小屋" type="application/atom+xml">
 </head>
 
 
@@ -226,7 +226,7 @@
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
         <time datetime="2022-05-02 21:15" pubdate>
-          May 2, 2022 pm
+          2022年5月2日 晚上
         </time>
       </span>
     
@@ -238,7 +238,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          1.8k 字
+          undefined 字
         
       </span>
     
@@ -250,7 +250,7 @@
         
         
           <!-- compatible with older versions-->
-          15 分钟
+          NaN 分钟
         
       </span>
     
@@ -260,7 +260,7 @@
       
         <span id="busuanzi_container_page_pv" style="display: none">
           <i class="iconfont icon-eye" aria-hidden="true"></i>
-          <span id="busuanzi_value_page_pv"></span> views
+          <span id="busuanzi_value_page_pv"></span> 次
         </span>
         
       
@@ -302,7 +302,7 @@
                 
                   
                     <!-- compatible with older versions-->
-                    本文最后更新于：17 days ago
+                    本文最后更新于：17 天前
                   
                 
               </p>
@@ -322,7 +322,7 @@
 <p><strong>快排1.0和2.0都是O(n^2)</strong></p>
 <h3 id="快排3-0"><a href="#快排3-0" class="headerlink" title="快排3.0"></a>快排3.0</h3><p>在数组中随机选择一个数，将这个数和最后一个数交换作为最后一个数，这个算法的复杂度就变成了随机事件，但是将这些概率变成期望，则这个算法的时间复杂度为O(n*logN)</p>
 <p><strong>时间复杂度最低的快速排序，</strong>在数组中随机找一个数，然后将他与最后一个数字交换，然后以最后一个数字为num进行荷兰国旗问题，同时在小于和大于num的区域随机选取一个数字，然后将他与小于和大于num区域的最后一个数字交换重复执行荷兰国旗问题，最后得到一串从小到大排序的数组，<strong>时间复杂度为O(N*logN)</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">quickSort</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] arr)</span></span>&#123;<br>    <span class="hljs-keyword">if</span>(arr == <span class="hljs-keyword">null</span> || arr.length &lt; <span class="hljs-number">2</span>)&#123;<br>        <span class="hljs-keyword">return</span>;<br>    &#125;<br>    quickSort(arr, <span class="hljs-number">0</span>, arr.length-<span class="hljs-number">1</span>);<br>&#125;<br><span class="hljs-comment">//arr[l...r]排好序</span><br><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">quickSort</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] arr,<span class="hljs-keyword">int</span> L,<span class="hljs-keyword">int</span> R)</span></span>&#123;<br>    <span class="hljs-keyword">if</span>(L&lt;R)&#123;<br>        swap(arr,L+(<span class="hljs-keyword">int</span>) (Math.random() * (R-L+<span class="hljs-number">1</span>)), R); <span class="hljs-comment">//swap为自带的交换函数；L+(int) (Math.random() * (R-L+1)) 表示在该数组中随机选取一位数字</span><br>        <span class="hljs-keyword">int</span>[] p = partition(arr,L,R);<br>        quitSort(arr,L,p[<span class="hljs-number">0</span>]-<span class="hljs-number">1</span>); <span class="hljs-comment">// &lt;区</span><br>        quitSort(arr,p[<span class="hljs-number">1</span>]+<span class="hljs-number">1</span>,R); <span class="hljs-comment">// &gt;区</span><br>    &#125;<br>&#125;<br><span class="hljs-comment">//这是一个处理arr[l...r]的函数</span><br><span class="hljs-comment">//默认以arr[r]做划分，arr[r] -&gt; p    &lt;p   ==p    &gt;p</span><br><span class="hljs-comment">//返回等于区域（左边界，右边界），所以返回一个长度为2的数组res，res[0] res[1]</span><br><span class="hljs-keyword">public</span> staic <span class="hljs-keyword">int</span>[] partition(<span class="hljs-keyword">int</span>[] arr, <span class="hljs-keyword">int</span> L, <span class="hljs-keyword">int</span> R)&#123;<br>    <span class="hljs-keyword">int</span> less = L - <span class="hljs-number">1</span>; <span class="hljs-comment">// &lt;区右边界</span><br>    <span class="hljs-keyword">int</span> more = R; <span class="hljs-comment">// &gt;区左边界</span><br>    <span class="hljs-keyword">while</span>(L &lt; more)&#123; <span class="hljs-comment">// L表示当前数的位置 arr[R] -&gt; 划分值</span><br>        <span class="hljs-keyword">if</span>(arr[L] &lt; arr[R])&#123; <span class="hljs-comment">//当前数  &lt;  划分值</span><br>            less++;<br>            swap(arr, less, L);<br>            L++;<br>        &#125;<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(arr[L] &gt; arr[R])&#123; <span class="hljs-comment">// 当前值 &gt; 划分值</span><br>            more--;<br>            swap(arr, more, L);<br>        &#125;<span class="hljs-keyword">else</span>&#123;<br>            L++;<br>        &#125;<br>    &#125;<br>    swap(arr,more,R);<br>    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[] &#123;less + <span class="hljs-number">1</span>,more&#125;;<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">quickSort</span><span class="params">(<span class="type">int</span>[] arr)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(arr == <span class="literal">null</span> || arr.length &lt; <span class="number">2</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    quickSort(arr, <span class="number">0</span>, arr.length-<span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//arr[l...r]排好序</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">quickSort</span><span class="params">(<span class="type">int</span>[] arr,<span class="type">int</span> L,<span class="type">int</span> R)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(L&lt;R)&#123;</span><br><span class="line">        swap(arr,L+(<span class="type">int</span>) (Math.random() * (R-L+<span class="number">1</span>)), R); <span class="comment">//swap为自带的交换函数；L+(int) (Math.random() * (R-L+1)) 表示在该数组中随机选取一位数字</span></span><br><span class="line">        <span class="type">int</span>[] p = partition(arr,L,R);</span><br><span class="line">        quitSort(arr,L,p[<span class="number">0</span>]-<span class="number">1</span>); <span class="comment">// &lt;区</span></span><br><span class="line">        quitSort(arr,p[<span class="number">1</span>]+<span class="number">1</span>,R); <span class="comment">// &gt;区</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//这是一个处理arr[l...r]的函数</span></span><br><span class="line"><span class="comment">//默认以arr[r]做划分，arr[r] -&gt; p    &lt;p   ==p    &gt;p</span></span><br><span class="line"><span class="comment">//返回等于区域（左边界，右边界），所以返回一个长度为2的数组res，res[0] res[1]</span></span><br><span class="line"><span class="keyword">public</span> staic <span class="type">int</span>[] partition(<span class="type">int</span>[] arr, <span class="type">int</span> L, <span class="type">int</span> R)&#123;</span><br><span class="line">    <span class="type">int</span> <span class="variable">less</span> <span class="operator">=</span> L - <span class="number">1</span>; <span class="comment">// &lt;区右边界</span></span><br><span class="line">    <span class="type">int</span> <span class="variable">more</span> <span class="operator">=</span> R; <span class="comment">// &gt;区左边界</span></span><br><span class="line">    <span class="keyword">while</span>(L &lt; more)&#123; <span class="comment">// L表示当前数的位置 arr[R] -&gt; 划分值</span></span><br><span class="line">        <span class="keyword">if</span>(arr[L] &lt; arr[R])&#123; <span class="comment">//当前数  &lt;  划分值</span></span><br><span class="line">            less++;</span><br><span class="line">            swap(arr, less, L);</span><br><span class="line">            L++;</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(arr[L] &gt; arr[R])&#123; <span class="comment">// 当前值 &gt; 划分值</span></span><br><span class="line">            more--;</span><br><span class="line">            swap(arr, more, L);</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            L++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    swap(arr,more,R);</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">int</span>[] &#123;less + <span class="number">1</span>,more&#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
               
@@ -374,25 +374,25 @@
     <div class="license-meta">
       
         <div class="license-meta-item">
-          <div>Author</div>
+          <div>作者</div>
           <div>Mr.Wang</div>
         </div>
       
       
         <div class="license-meta-item license-meta-date">
-          <div>Posted on</div>
-          <div>May 2, 2022</div>
+          <div>发布于</div>
+          <div>2022年5月2日</div>
         </div>
       
       
       <div class="license-meta-item">
-        <div>Licensed under</div>
+        <div>许可协议</div>
         <div>
           
             
             
               <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
-              <span class="hint--top hint--rounded" aria-label="BY - Attribution">
+              <span class="hint--top hint--rounded" aria-label="BY - 署名">
                 <i class="iconfont icon-by"></i>
               </span>
               </a>
@@ -414,7 +414,7 @@
                       <a href="/2022/05/02/%E4%BA%8C%E5%88%86%E6%B3%95/" title="二分法">
                         <i class="iconfont icon-arrowleft"></i>
                         <span class="hidden-mobile">二分法</span>
-                        <span class="visible-mobile">Previous</span>
+                        <span class="visible-mobile">上一篇</span>
                       </a>
                     
                   </article>
@@ -423,7 +423,7 @@
                     
                       <a href="/2022/05/02/%E5%A0%86/" title="堆">
                         <span class="hidden-mobile">堆</span>
-                        <span class="visible-mobile">Next</span>
+                        <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
                     
@@ -470,7 +470,7 @@
       
   <aside class="sidebar" style="margin-left: -1rem">
     <div id="toc">
-  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;Table of Contents</p>
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
   <div class="toc-body" id="toc-body"></div>
 </div>
 
@@ -524,7 +524,7 @@
   <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header text-center">
-        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
         <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -532,7 +532,7 @@
       <div class="modal-body mx-3">
         <div class="md-form mb-5">
           <input type="text" id="local-search-input" class="form-control validate">
-          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
         </div>
         <div class="list-group" id="local-search-result"></div>
       </div>
@@ -560,16 +560,16 @@
   
     
       <span id="busuanzi_container_site_pv" style="display: none">
-        Views: 
+        总访问量 
         <span id="busuanzi_value_site_pv"></span>
-        
+         次
       </span>
     
     
       <span id="busuanzi_container_site_uv" style="display: none">
-        Visitors: 
+        总访客数 
         <span id="busuanzi_value_site_uv"></span>
-        
+         人
       </span>
     
     
@@ -788,7 +788,7 @@
   
 
   <noscript>
-    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
   </noscript>
 </body>
 </html>

@@ -1,7 +1,7 @@
 
 
 <!DOCTYPE html>
-<html lang="en" data-default-color-scheme=auto>
+<html lang="zh-CN" data-default-color-scheme=auto>
 
 
 
@@ -22,7 +22,7 @@
 <meta property="og:url" content="https://eliseo.top/2022/05/02/%E5%A0%86/index.html">
 <meta property="og:site_name" content="Eliseo的小屋">
 <meta property="og:description" content="堆堆是一种比较特殊的完全二叉树，分为大根堆，小根堆 1、堆结构就是用数组实现完全的二叉树结构 2、完全二叉树中如果每棵子树的最大值都在顶部就是大根堆 3、完全二叉树中如果每棵子树的最小值都在顶部就是小根堆 4、对结构的heapInsert与heapify操作 5、堆结构的增大和减少 6、优先级队列结构，就是堆结构 大根堆即指在逻辑上的二叉树结构中，根结点&gt;子结点，总是最大的，并且在堆的每一个">
-<meta property="og:locale" content="en_US">
+<meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://eliseo.top/2022/05/02/%E5%A0%86/1634370387111.png">
 <meta property="og:image" content="https://eliseo.top/2022/05/02/%E5%A0%86/1634610114793.png">
 <meta property="article:published_time" content="2022-05-02T13:13:06.000Z">
@@ -74,7 +74,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"eliseo.top","root":"/","version":"1.9.0","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"letf","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"eliseo.top","root":"/","version":"1.9.0","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":"left","element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -85,7 +85,7 @@
   <script  src="/js/color-schema.js" ></script>
 
   
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Eliseo的小屋" type="application/atom+xml">
+<meta name="generator" content="Hexo 6.2.0"><link rel="alternate" href="/atom.xml" title="Eliseo的小屋" type="application/atom+xml">
 </head>
 
 
@@ -229,7 +229,7 @@
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
         <time datetime="2022-05-02 21:13" pubdate>
-          May 2, 2022 pm
+          2022年5月2日 晚上
         </time>
       </span>
     
@@ -241,7 +241,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          1.7k 字
+          undefined 字
         
       </span>
     
@@ -253,7 +253,7 @@
         
         
           <!-- compatible with older versions-->
-          15 分钟
+          NaN 分钟
         
       </span>
     
@@ -263,7 +263,7 @@
       
         <span id="busuanzi_container_page_pv" style="display: none">
           <i class="iconfont icon-eye" aria-hidden="true"></i>
-          <span id="busuanzi_value_page_pv"></span> views
+          <span id="busuanzi_value_page_pv"></span> 次
         </span>
         
       
@@ -305,7 +305,7 @@
                 
                   
                     <!-- compatible with older versions-->
-                    本文最后更新于：17 days ago
+                    本文最后更新于：17 天前
                   
                 
               </p>
@@ -323,7 +323,7 @@
 <p><strong>小根堆</strong>的性质与大根堆类似，只不过在二叉树的结构中，根结点&lt;子结点</p>
 <h2 id="大根堆"><a href="#大根堆" class="headerlink" title="大根堆"></a>大根堆</h2><p><img src="/2022/05/02/%E5%A0%86/1634370387111.png" srcset="/img/loading.gif" lazyload alt="1634370387111"></p>
 <p>以n为首的整棵树最大值为n</p>
-<h2 id="小根堆相反"><a href="#小根堆相反" class="headerlink" title="小根堆相反"></a>小根堆相反</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>&#123;<br><br><br>        <span class="hljs-comment">//堆结构，如果不给构造方法传参的话，默认小根堆(如果想让他是一个大根堆的话，就传一个比较器)</span><br>        PriorityQueue&lt;Integer&gt; heap = <span class="hljs-keyword">new</span> PriorityQueue&lt;&gt;();<br>        heap.add(<span class="hljs-number">8</span>);<br>        heap.add(<span class="hljs-number">4</span>);<br>        heap.add(<span class="hljs-number">4</span>);<br>        heap.add(<span class="hljs-number">9</span>);<br>        heap.add(<span class="hljs-number">10</span>);<br>        heap.add(<span class="hljs-number">3</span>);<br><br>        <span class="hljs-keyword">while</span> (!heap.isEmpty())&#123;<br>            System.out.println(heap.poll());<br>        &#125;<br>    &#125;<br><br>输出结果：<span class="hljs-number">3</span>，<span class="hljs-number">4</span>，<span class="hljs-number">4</span>，<span class="hljs-number">8</span>，<span class="hljs-number">9</span>，<span class="hljs-number">10</span><br></code></pre></td></tr></table></figure>
+<h2 id="小根堆相反"><a href="#小根堆相反" class="headerlink" title="小根堆相反"></a>小根堆相反</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="comment">//堆结构，如果不给构造方法传参的话，默认小根堆(如果想让他是一个大根堆的话，就传一个比较器)</span></span><br><span class="line">        PriorityQueue&lt;Integer&gt; heap = <span class="keyword">new</span> <span class="title class_">PriorityQueue</span>&lt;&gt;();</span><br><span class="line">        heap.add(<span class="number">8</span>);</span><br><span class="line">        heap.add(<span class="number">4</span>);</span><br><span class="line">        heap.add(<span class="number">4</span>);</span><br><span class="line">        heap.add(<span class="number">9</span>);</span><br><span class="line">        heap.add(<span class="number">10</span>);</span><br><span class="line">        heap.add(<span class="number">3</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> (!heap.isEmpty())&#123;</span><br><span class="line">            System.out.println(heap.poll());</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">输出结果：<span class="number">3</span>，<span class="number">4</span>，<span class="number">4</span>，<span class="number">8</span>，<span class="number">9</span>，<span class="number">10</span></span><br></pre></td></tr></table></figure>
 
 
 
@@ -332,11 +332,11 @@
 
 
 <p>题目：用户往数组中输入了几个数字，现在用户需要找到最大值，然后去掉，让剩下的数再组成一个大根堆</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//某个数在index位置，能否往下移动</span><br><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">quickSort</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] arr,<span class="hljs-keyword">int</span> index,<span class="hljs-keyword">int</span> heapSize)</span></span>&#123;<br>    <span class="hljs-keyword">int</span> left = index * <span class="hljs-number">2</span> + <span class="hljs-number">1</span>;<span class="hljs-comment">//左孩子的下标</span><br><br>    <span class="hljs-keyword">while</span> (left &lt; heapSize)&#123;   <span class="hljs-comment">//下方还有孩子的时候(左孩子比右孩子小，当没有左孩子的时候，就没有右孩子)</span><br><br>        <span class="hljs-comment">//两个孩子，谁的值大，把下标给largest</span><br>        <span class="hljs-keyword">int</span> largest = left + <span class="hljs-number">1</span> &lt; heapSize &amp;&amp; arr[left + <span class="hljs-number">1</span>] &gt; arr[left] ? left+<span class="hljs-number">1</span> : left;<br><br>        <span class="hljs-comment">//父和孩子，谁的值大，把下标给largest</span><br>        largest = arr[largest] &gt; arr[index] ? largest : index;<br><br>        <span class="hljs-keyword">if</span> (largest == index)&#123;<br>            <span class="hljs-keyword">break</span>;<br>        &#125;<br>        swap(arr,largest,index);<br><br>        index = largest;<br>        left = index * <span class="hljs-number">2</span> + <span class="hljs-number">1</span>;<br>    &#125;<br><br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">swap</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] arr, <span class="hljs-keyword">int</span> i, <span class="hljs-keyword">int</span> j)</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> tmp = arr[i];<br>    arr[i] = arr[j];<br>    arr[j] = tmp;<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//某个数在index位置，能否往下移动</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">quickSort</span><span class="params">(<span class="type">int</span>[] arr,<span class="type">int</span> index,<span class="type">int</span> heapSize)</span>&#123;</span><br><span class="line">    <span class="type">int</span> <span class="variable">left</span> <span class="operator">=</span> index * <span class="number">2</span> + <span class="number">1</span>;<span class="comment">//左孩子的下标</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> (left &lt; heapSize)&#123;   <span class="comment">//下方还有孩子的时候(左孩子比右孩子小，当没有左孩子的时候，就没有右孩子)</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//两个孩子，谁的值大，把下标给largest</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">largest</span> <span class="operator">=</span> left + <span class="number">1</span> &lt; heapSize &amp;&amp; arr[left + <span class="number">1</span>] &gt; arr[left] ? left+<span class="number">1</span> : left;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//父和孩子，谁的值大，把下标给largest</span></span><br><span class="line">        largest = arr[largest] &gt; arr[index] ? largest : index;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (largest == index)&#123;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        swap(arr,largest,index);</span><br><span class="line"></span><br><span class="line">        index = largest;</span><br><span class="line">        left = index * <span class="number">2</span> + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">swap</span><span class="params">(<span class="type">int</span>[] arr, <span class="type">int</span> i, <span class="type">int</span> j)</span> &#123;</span><br><span class="line">    <span class="type">int</span> <span class="variable">tmp</span> <span class="operator">=</span> arr[i];</span><br><span class="line">    arr[i] = arr[j];</span><br><span class="line">    arr[j] = tmp;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>O(n)*logN </p>
 <p>题：已知一个几乎有序的数组，几乎有序的意思是，如果把数组排好顺序的话，每个元素移动的距离可以不超过k，并且k相对于数组来说比较小，请选择一个合适的排序算法针对这个数据进行排序</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">sortedArrDistanceLessK</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] arr,<span class="hljs-keyword">int</span> k)</span></span>&#123;<br><br>    <span class="hljs-comment">//默认小根堆</span><br>    PriorityQueue&lt;Integer&gt; heap = <span class="hljs-keyword">new</span> PriorityQueue&lt;&gt;();<br>    <span class="hljs-keyword">int</span> index = <span class="hljs-number">0</span>;<br>    <span class="hljs-comment">//                  防止k捣乱</span><br>    <span class="hljs-keyword">for</span> (; index &lt; Math.min(arr.length , k); index++)&#123;<br>        heap.add(arr[index]);<br>    &#125;<br>    <span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span> (;index &lt; arr.length; i++ , index++)&#123;<br>        heap.add(arr[index]);<br>        arr[i] = heap.poll();<br>    &#125;<br>    <span class="hljs-keyword">while</span> (!heap.isEmpty())&#123;<br>        arr[i++] = heap.poll();<br>    &#125;<br><br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">sortedArrDistanceLessK</span><span class="params">(<span class="type">int</span>[] arr,<span class="type">int</span> k)</span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//默认小根堆</span></span><br><span class="line">    PriorityQueue&lt;Integer&gt; heap = <span class="keyword">new</span> <span class="title class_">PriorityQueue</span>&lt;&gt;();</span><br><span class="line">    <span class="type">int</span> <span class="variable">index</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">    <span class="comment">//                  防止k捣乱</span></span><br><span class="line">    <span class="keyword">for</span> (; index &lt; Math.min(arr.length , k); index++)&#123;</span><br><span class="line">        heap.add(arr[index]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (;index &lt; arr.length; i++ , index++)&#123;</span><br><span class="line">        heap.add(arr[index]);</span><br><span class="line">        arr[i] = heap.poll();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span> (!heap.isEmpty())&#123;</span><br><span class="line">        arr[i++] = heap.poll();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
 
@@ -391,25 +391,25 @@
     <div class="license-meta">
       
         <div class="license-meta-item">
-          <div>Author</div>
+          <div>作者</div>
           <div>Mr.Wang</div>
         </div>
       
       
         <div class="license-meta-item license-meta-date">
-          <div>Posted on</div>
-          <div>May 2, 2022</div>
+          <div>发布于</div>
+          <div>2022年5月2日</div>
         </div>
       
       
       <div class="license-meta-item">
-        <div>Licensed under</div>
+        <div>许可协议</div>
         <div>
           
             
             
               <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
-              <span class="hint--top hint--rounded" aria-label="BY - Attribution">
+              <span class="hint--top hint--rounded" aria-label="BY - 署名">
                 <i class="iconfont icon-by"></i>
               </span>
               </a>
@@ -431,7 +431,7 @@
                       <a href="/2022/05/02/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/" title="快速排序">
                         <i class="iconfont icon-arrowleft"></i>
                         <span class="hidden-mobile">快速排序</span>
-                        <span class="visible-mobile">Previous</span>
+                        <span class="visible-mobile">上一篇</span>
                       </a>
                     
                   </article>
@@ -440,7 +440,7 @@
                     
                       <a href="/2022/04/29/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%B7%B1%E5%BA%A6/" title="二叉树的深度">
                         <span class="hidden-mobile">二叉树的深度</span>
-                        <span class="visible-mobile">Next</span>
+                        <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
                     
@@ -487,7 +487,7 @@
       
   <aside class="sidebar" style="margin-left: -1rem">
     <div id="toc">
-  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;Table of Contents</p>
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
   <div class="toc-body" id="toc-body"></div>
 </div>
 
@@ -541,7 +541,7 @@
   <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header text-center">
-        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
         <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -549,7 +549,7 @@
       <div class="modal-body mx-3">
         <div class="md-form mb-5">
           <input type="text" id="local-search-input" class="form-control validate">
-          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
         </div>
         <div class="list-group" id="local-search-result"></div>
       </div>
@@ -577,16 +577,16 @@
   
     
       <span id="busuanzi_container_site_pv" style="display: none">
-        Views: 
+        总访问量 
         <span id="busuanzi_value_site_pv"></span>
-        
+         次
       </span>
     
     
       <span id="busuanzi_container_site_uv" style="display: none">
-        Visitors: 
+        总访客数 
         <span id="busuanzi_value_site_uv"></span>
-        
+         人
       </span>
     
     
@@ -805,7 +805,7 @@
   
 
   <noscript>
-    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
   </noscript>
 </body>
 </html>

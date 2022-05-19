@@ -1,7 +1,7 @@
 
 
 <!DOCTYPE html>
-<html lang="en" data-default-color-scheme=auto>
+<html lang="zh-CN" data-default-color-scheme=auto>
 
 
 
@@ -22,7 +22,7 @@
 <meta property="og:url" content="https://eliseo.top/2022/05/02/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/index.html">
 <meta property="og:site_name" content="Eliseo的小屋">
 <meta property="og:description" content="归并排序1、整体就是一个简单递归，左边排好序、右边排好序、让其整体有序 2、让其整体有序的过程里用了排外序方法 3、利用master公式来求解时间复杂度 4、归并排序的实质 时间复杂度O(N*logN)，额外空间复杂度O(N) 算法历程 这是一个无序数列：4、5、8、1、7、2、6、3，我们要将它按从小到大排序。按照归并排序的思想，我们要把序列逐层进行拆分">
-<meta property="og:locale" content="en_US">
+<meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20200619151838325.png">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20200619151903848.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzM1MzQ0MTk4,size_16,color_FFFFFF,t_70">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20200619151928587.png">
@@ -86,7 +86,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"eliseo.top","root":"/","version":"1.9.0","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"letf","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"eliseo.top","root":"/","version":"1.9.0","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":"left","element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -97,7 +97,7 @@
   <script  src="/js/color-schema.js" ></script>
 
   
-<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Eliseo的小屋" type="application/atom+xml">
+<meta name="generator" content="Hexo 6.2.0"><link rel="alternate" href="/atom.xml" title="Eliseo的小屋" type="application/atom+xml">
 </head>
 
 
@@ -241,7 +241,7 @@
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
         <time datetime="2022-05-02 21:26" pubdate>
-          May 2, 2022 pm
+          2022年5月2日 晚上
         </time>
       </span>
     
@@ -253,7 +253,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          2.3k 字
+          undefined 字
         
       </span>
     
@@ -265,7 +265,7 @@
         
         
           <!-- compatible with older versions-->
-          20 分钟
+          NaN 分钟
         
       </span>
     
@@ -275,7 +275,7 @@
       
         <span id="busuanzi_container_page_pv" style="display: none">
           <i class="iconfont icon-eye" aria-hidden="true"></i>
-          <span id="busuanzi_value_page_pv"></span> views
+          <span id="busuanzi_value_page_pv"></span> 次
         </span>
         
       
@@ -317,7 +317,7 @@
                 
                   
                     <!-- compatible with older versions-->
-                    本文最后更新于：17 days ago
+                    本文最后更新于：17 天前
                   
                 
               </p>
@@ -343,13 +343,13 @@
 <p>5和8比较，5小于8，5填入p指向的元素，p、p1往右移一位<br><img src="https://img-blog.csdnimg.cn/202006191521593.png" srcset="/img/loading.gif" lazyload alt="[(./归并9.png)]"><br>自此，序列1已经没有元素，将序列2的元素依次填入大序列中<br><img src="https://img-blog.csdnimg.cn/20200619152220636.png" srcset="/img/loading.gif" lazyload alt="[(./归并10.png)]"></p>
 <p>序列2、7和序列3、6以同样的方式合并成新的序列<br><img src="https://img-blog.csdnimg.cn/20200619152242410.png" srcset="/img/loading.gif" lazyload alt="[(./归并11.png)]"><br>最后，将序列1、4、5、8和序列2、3、6、7以同样的方式继续合并成新的序列<br><img src="https://img-blog.csdnimg.cn/20200619152303145.png" srcset="/img/loading.gif" lazyload alt="[(./归并12.png)]"></p>
 <p>至此所有的元素都是有序的</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">mergeSort</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] arr)</span></span>&#123;<br>    <span class="hljs-keyword">if</span>(arr == <span class="hljs-keyword">null</span> || arr.length &lt; <span class="hljs-number">2</span>) &#123;<br>        <span class="hljs-keyword">return</span>;<br>    &#125;<br>    process(arr, <span class="hljs-number">0</span>, arr.length - <span class="hljs-number">1</span>);<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">process</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] arr, <span class="hljs-keyword">int</span> L,<span class="hljs-keyword">int</span> R)</span></span>&#123;<br>    <span class="hljs-keyword">if</span>(L == R)&#123;<br>        <span class="hljs-keyword">return</span>;<br>    &#125;<br>    <span class="hljs-keyword">int</span> mid = L +((R - L) &gt;&gt; <span class="hljs-number">1</span>);<span class="hljs-comment">// 求中点</span><br>    process(arr, L, mid);<br>    process(arr, mid+<span class="hljs-number">1</span>, R);<br>    merge(arr, L, mid, R);<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">merge</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] arr, <span class="hljs-keyword">int</span> L, <span class="hljs-keyword">int</span> M, <span class="hljs-keyword">int</span> R)</span></span>&#123;<br>    <span class="hljs-keyword">int</span>[] help = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[R- L + <span class="hljs-number">1</span>]; <span class="hljs-comment">//辅助数组</span><br>    <span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">int</span> p1 = L;<br>    <span class="hljs-keyword">int</span> p2 = M + <span class="hljs-number">1</span>;<br>    <span class="hljs-keyword">while</span>(p1 &lt;= M &amp;&amp; p2 &lt;= R)&#123;<br>        help[i++] =arr[p1] &lt;= arr[p2] ? arr[p1++] ; arr[p2++];<br>       <br>    &#125;<br>    <span class="hljs-keyword">while</span>(p1 &lt;= M)&#123;             <span class="hljs-comment">// 以下两个while只会执行一个 也就是p1 p2 必然会有一个越界</span><br>        help[i++] = arr[p1++];<br>    &#125;<br>    <span class="hljs-keyword">while</span>(p2 &lt;= R)&#123;<br>        help[i++] = arr[p2++];<br>    &#125;<br>    <span class="hljs-keyword">for</span>(i = <span class="hljs-number">0</span>; i &lt; help.length; i++)&#123;<br>        arr[L + i] =help[i];<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">mergeSort</span><span class="params">(<span class="type">int</span>[] arr)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(arr == <span class="literal">null</span> || arr.length &lt; <span class="number">2</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    process(arr, <span class="number">0</span>, arr.length - <span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">process</span><span class="params">(<span class="type">int</span>[] arr, <span class="type">int</span> L,<span class="type">int</span> R)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(L == R)&#123;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">int</span> <span class="variable">mid</span> <span class="operator">=</span> L +((R - L) &gt;&gt; <span class="number">1</span>);<span class="comment">// 求中点</span></span><br><span class="line">    process(arr, L, mid);</span><br><span class="line">    process(arr, mid+<span class="number">1</span>, R);</span><br><span class="line">    merge(arr, L, mid, R);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">merge</span><span class="params">(<span class="type">int</span>[] arr, <span class="type">int</span> L, <span class="type">int</span> M, <span class="type">int</span> R)</span>&#123;</span><br><span class="line">    <span class="type">int</span>[] help = <span class="keyword">new</span> <span class="title class_">int</span>[R- L + <span class="number">1</span>]; <span class="comment">//辅助数组</span></span><br><span class="line">    <span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> <span class="variable">p1</span> <span class="operator">=</span> L;</span><br><span class="line">    <span class="type">int</span> <span class="variable">p2</span> <span class="operator">=</span> M + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(p1 &lt;= M &amp;&amp; p2 &lt;= R)&#123;</span><br><span class="line">        help[i++] =arr[p1] &lt;= arr[p2] ? arr[p1++] ; arr[p2++];</span><br><span class="line">       </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span>(p1 &lt;= M)&#123;             <span class="comment">// 以下两个while只会执行一个 也就是p1 p2 必然会有一个越界</span></span><br><span class="line">        help[i++] = arr[p1++];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span>(p2 &lt;= R)&#123;</span><br><span class="line">        help[i++] = arr[p2++];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(i = <span class="number">0</span>; i &lt; help.length; i++)&#123;</span><br><span class="line">        arr[L + i] =help[i];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
 
 <p><img src="/2022/05/02/%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F/image-20211019163323771.png" srcset="/img/loading.gif" lazyload alt="image-20211019163323771"></p>
 <p><strong>小和问题</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> <span class="hljs-title">smallSun</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] arr)</span></span>&#123;<br>    <span class="hljs-keyword">if</span>(arr==<span class="hljs-keyword">null</span> || arr.length &lt;<span class="hljs-number">2</span>)&#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>    &#125;<br>    <span class="hljs-keyword">return</span> process(arr,<span class="hljs-number">0</span>,arr.length-<span class="hljs-number">1</span>);<br>&#125;<br><br><span class="hljs-comment">//arr[L..R] 既要排好序，也要求小和</span><br><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> <span class="hljs-title">process</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] arr, <span class="hljs-keyword">int</span> i, <span class="hljs-keyword">int</span> r)</span></span>&#123;<br>    <span class="hljs-keyword">if</span>(i==r)&#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>    &#125;<br>    <span class="hljs-keyword">int</span> mid = l + ((r-<span class="hljs-number">1</span>) &gt;&gt; <span class="hljs-number">1</span>);<br>    <span class="hljs-keyword">return</span> process(arr, l, mid)<span class="hljs-comment">/*左侧排序求小和的数量*/</span> <br>           + process(arr, mid + <span class="hljs-number">1</span>, r)<span class="hljs-comment">/*右侧排序求小和的数量*/</span><br>           +merge(arr, l, mid, r)<span class="hljs-comment">/*左侧和右侧merge后小和的数量*/</span>;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> <span class="hljs-title">merge</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] arr,<span class="hljs-keyword">int</span> L,<span class="hljs-keyword">int</span> m,<span class="hljs-keyword">int</span> r)</span></span>&#123;<br>    <span class="hljs-keyword">int</span>[] help = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[r-L+<span class="hljs-number">1</span>];<br>    <span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">int</span> p1 = L;<br>    <span class="hljs-keyword">int</span> p2 = m+<span class="hljs-number">1</span>;<br>    <span class="hljs-keyword">int</span> res = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">while</span>(p1 &lt;= m &amp;&amp; p2 &lt;= r)&#123;<br>        res += arr[p1] &lt; arr[p2] ? (r-p2+<span class="hljs-number">1</span>)<span class="hljs-comment">/*比当前的p1大的数的个数*/</span> * arr[p1] : <span class="hljs-number">0</span>;<br>        help[i++] = arr[p1] &lt; arr[p2] ? arr[p1++] : arr[p2++];<br>    &#125;<br>    <span class="hljs-keyword">while</span>(p1 &lt;= m)&#123;             <span class="hljs-comment">// 以下两个while只会执行一个 也就是p1 p2 必然会有一个越界</span><br>        help[i++] = arr[p1++];<br>    &#125;<br>    <span class="hljs-keyword">while</span>(p2 &lt;= R)&#123;<br>        help[i++] = arr[p2++];<br>    &#125;<br>    <span class="hljs-keyword">for</span>(i = <span class="hljs-number">0</span>; i &lt; help.length; i++)&#123;<br>        arr[L + i] =help[i];<br>    &#125;<br>    <span class="hljs-keyword">return</span> res;<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span> <span class="title function_">smallSun</span><span class="params">(<span class="type">int</span>[] arr)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(arr==<span class="literal">null</span> || arr.length &lt;<span class="number">2</span>)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> process(arr,<span class="number">0</span>,arr.length-<span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//arr[L..R] 既要排好序，也要求小和</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span> <span class="title function_">process</span><span class="params">(<span class="type">int</span>[] arr, <span class="type">int</span> i, <span class="type">int</span> r)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(i==r)&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">int</span> <span class="variable">mid</span> <span class="operator">=</span> l + ((r-<span class="number">1</span>) &gt;&gt; <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">return</span> process(arr, l, mid)<span class="comment">/*左侧排序求小和的数量*/</span> </span><br><span class="line">           + process(arr, mid + <span class="number">1</span>, r)<span class="comment">/*右侧排序求小和的数量*/</span></span><br><span class="line">           +merge(arr, l, mid, r)<span class="comment">/*左侧和右侧merge后小和的数量*/</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span> <span class="title function_">merge</span><span class="params">(<span class="type">int</span>[] arr,<span class="type">int</span> L,<span class="type">int</span> m,<span class="type">int</span> r)</span>&#123;</span><br><span class="line">    <span class="type">int</span>[] help = <span class="keyword">new</span> <span class="title class_">int</span>[r-L+<span class="number">1</span>];</span><br><span class="line">    <span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> <span class="variable">p1</span> <span class="operator">=</span> L;</span><br><span class="line">    <span class="type">int</span> <span class="variable">p2</span> <span class="operator">=</span> m+<span class="number">1</span>;</span><br><span class="line">    <span class="type">int</span> <span class="variable">res</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(p1 &lt;= m &amp;&amp; p2 &lt;= r)&#123;</span><br><span class="line">        res += arr[p1] &lt; arr[p2] ? (r-p2+<span class="number">1</span>)<span class="comment">/*比当前的p1大的数的个数*/</span> * arr[p1] : <span class="number">0</span>;</span><br><span class="line">        help[i++] = arr[p1] &lt; arr[p2] ? arr[p1++] : arr[p2++];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span>(p1 &lt;= m)&#123;             <span class="comment">// 以下两个while只会执行一个 也就是p1 p2 必然会有一个越界</span></span><br><span class="line">        help[i++] = arr[p1++];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span>(p2 &lt;= R)&#123;</span><br><span class="line">        help[i++] = arr[p2++];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(i = <span class="number">0</span>; i &lt; help.length; i++)&#123;</span><br><span class="line">        arr[L + i] =help[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
               
@@ -401,25 +401,25 @@
     <div class="license-meta">
       
         <div class="license-meta-item">
-          <div>Author</div>
+          <div>作者</div>
           <div>Mr.Wang</div>
         </div>
       
       
         <div class="license-meta-item license-meta-date">
-          <div>Posted on</div>
-          <div>May 2, 2022</div>
+          <div>发布于</div>
+          <div>2022年5月2日</div>
         </div>
       
       
       <div class="license-meta-item">
-        <div>Licensed under</div>
+        <div>许可协议</div>
         <div>
           
             
             
               <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
-              <span class="hint--top hint--rounded" aria-label="BY - Attribution">
+              <span class="hint--top hint--rounded" aria-label="BY - 署名">
                 <i class="iconfont icon-by"></i>
               </span>
               </a>
@@ -441,7 +441,7 @@
                       <a href="/2022/05/02/%E9%93%BE%E8%A1%A8/" title="链表">
                         <i class="iconfont icon-arrowleft"></i>
                         <span class="hidden-mobile">链表</span>
-                        <span class="visible-mobile">Previous</span>
+                        <span class="visible-mobile">上一篇</span>
                       </a>
                     
                   </article>
@@ -450,7 +450,7 @@
                     
                       <a href="/2022/05/02/%E5%BC%82%E6%88%96/" title="异或">
                         <span class="hidden-mobile">异或</span>
-                        <span class="visible-mobile">Next</span>
+                        <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
                     
@@ -497,7 +497,7 @@
       
   <aside class="sidebar" style="margin-left: -1rem">
     <div id="toc">
-  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;Table of Contents</p>
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
   <div class="toc-body" id="toc-body"></div>
 </div>
 
@@ -551,7 +551,7 @@
   <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header text-center">
-        <h4 class="modal-title w-100 font-weight-bold">Search</h4>
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
         <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -559,7 +559,7 @@
       <div class="modal-body mx-3">
         <div class="md-form mb-5">
           <input type="text" id="local-search-input" class="form-control validate">
-          <label data-error="x" data-success="v" for="local-search-input">Keyword</label>
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
         </div>
         <div class="list-group" id="local-search-result"></div>
       </div>
@@ -587,16 +587,16 @@
   
     
       <span id="busuanzi_container_site_pv" style="display: none">
-        Views: 
+        总访问量 
         <span id="busuanzi_value_site_pv"></span>
-        
+         次
       </span>
     
     
       <span id="busuanzi_container_site_uv" style="display: none">
-        Visitors: 
+        总访客数 
         <span id="busuanzi_value_site_uv"></span>
-        
+         人
       </span>
     
     
@@ -815,7 +815,7 @@
   
 
   <noscript>
-    <div class="noscript-warning">Blog works best with JavaScript enabled</div>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
   </noscript>
 </body>
 </html>
