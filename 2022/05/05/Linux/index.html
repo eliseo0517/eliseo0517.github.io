@@ -42,8 +42,9 @@
 <meta property="og:image" content="https://eliseo.top/2022/05/05/Linux/image-20220520162633780.png">
 <meta property="og:image" content="https://eliseo.top/2022/05/05/Linux/image-20220520162025078.png">
 <meta property="og:image" content="https://eliseo.top/2022/05/05/Linux/image-20220521100851299.png">
+<meta property="og:image" content="https://eliseo.top/2022/05/05/Linux/image-20220521112337811.png">
 <meta property="article:published_time" content="2022-05-05T09:21:34.000Z">
-<meta property="article:modified_time" content="2022-05-21T02:32:26.673Z">
+<meta property="article:modified_time" content="2022-05-21T09:21:22.598Z">
 <meta property="article:author" content="Mr.Wang">
 <meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary_large_image">
@@ -85,11 +86,6 @@
     <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
   
 
-
-
-  
-<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/bynotes/texiao/source/css/gundongtiao.css">
-<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/bynotes/texiao/source/css/toubudaziji.css">
 
 
 
@@ -263,7 +259,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          9.1k 字
+          9.6k 字
         
       </span>
     
@@ -275,7 +271,7 @@
         
         
           <!-- compatible with older versions-->
-          76 分钟
+          80 分钟
         
       </span>
     
@@ -327,7 +323,7 @@
                 
                   
                     <!-- compatible with older versions-->
-                    本文最后更新于：26 分钟前
+                    本文最后更新于：3 小时前
                   
                 
               </p>
@@ -951,15 +947,62 @@
 <p>1、在linux中，每个<strong>执行的程序</strong>都被称为一个进程，每一个进程都分配一个ID号(pid，进程号)。</p>
 <p>2、每个进程都可以以 <strong>前台和后台</strong> 两种方式存在，前台在屏幕上可以看见，后台在屏幕上看不见。</p>
 <p>3、一般系统的服务都是以后台进程的方式存在，而且会常驻在系统中，直到关机才结束。</p>
+<p><strong>查看进程</strong></p>
 <ul>
 <li><strong>ps [选项]</strong> 查看当前系统中，有哪些正在执行，以及他们的执行情况。 <strong>可以不加参数</strong><ul>
 <li>ps -a 显示当前终端中所有的进程信息 </li>
 <li>ps -u 以用户的格式显示进程信息</li>
 <li>ps -x 显示后台进程运行的参数</li>
+<li>ps -e 显示所有进程</li>
+<li>ps -f 全格式</li>
 </ul>
 </li>
 </ul>
 <p><img src="/2022/05/05/Linux/image-20220521100851299.png" srcset="/img/loading.gif" lazyload alt="ps显示的信息选项"></p>
+<p><img src="/2022/05/05/Linux/image-20220521112337811.png" srcset="/img/loading.gif" lazyload></p>
+<p>ps详解：</p>
+<ul>
+<li>USER： 用户信息</li>
+<li>PID：进程号</li>
+<li>%CPU：进程占用CPU的百分比</li>
+<li>%MEM：进程占用物理内存的百分比</li>
+<li>VSZ：进程占用的虚拟内存大小(单位：KB)</li>
+<li>RSS：进程占用的物理内存大小(单位：KB)</li>
+<li>TT：终端名称，缩写</li>
+<li>STAT：进程状态，S-睡眠 s-表示该进程是会话的先导进程，N-表示进程拥有比普通优先级更低的优先级，R-正在运行，D-短期等待，Z-僵死进程，T-被跟踪或者被停止</li>
+<li>STARTED：进程的启动时间</li>
+<li>TIME：CPU时间，即进程使用CPU的总时间</li>
+<li>COMMAND：启动进程所用的命令和参数。</li>
+</ul>
+<p>ps -ef | grep sshd</p>
+<ul>
+<li><p>是BSD风格</p>
+</li>
+<li><p>UID:用户ID</p>
+</li>
+<li><p>PID:进程ID</p>
+</li>
+<li><p>PPID:父进程ID</p>
+</li>
+<li><p>C:CPU用于计算执行优先级的因子。数值越大，表明进程是CPU密集型运算，执行优先级会降低;数值越小，表明进程是I/O密集型运算，执行优先级会提高</p>
+</li>
+<li><p>STIME:进程启动的时间</p>
+</li>
+<li><p>TTY:完整的终端名称</p>
+</li>
+<li><p>TIME:CPU 时间</p>
+</li>
+<li><p>CMD:启动进程所用的命令和参数</p>
+</li>
+</ul>
+<p><strong>终止进程</strong></p>
+<ul>
+<li><strong>kill [选项] 进程号</strong> 通过进程号杀死进程</li>
+<li><strong>killall 进程名称</strong> 通过进程名称杀死进程，也支持通配符<ul>
+<li>-9 表示强迫进程立即停</li>
+</ul>
+</li>
+</ul>
 
               
             </div>
@@ -1413,12 +1456,6 @@
   <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
 
 
-
-
-  
-<script src="//cdn.jsdelivr.net/gh/bynotes/texiao/source/js/caidai.js"></script>
-<script src="//cdn.jsdelivr.net/gh/bynotes/texiao/source/js/yinghua.js"></script>
-<script src="//cdn.jsdelivr.net/gh/bynotes/texiao/source/js/dianjichuzi.js"></script>
 
 
 
