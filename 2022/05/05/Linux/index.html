@@ -41,8 +41,9 @@
 <meta property="og:image" content="https://eliseo.top/2022/05/05/Linux/image-20220518154349391.png">
 <meta property="og:image" content="https://eliseo.top/2022/05/05/Linux/image-20220520162633780.png">
 <meta property="og:image" content="https://eliseo.top/2022/05/05/Linux/image-20220520162025078.png">
+<meta property="og:image" content="https://eliseo.top/2022/05/05/Linux/image-20220521100851299.png">
 <meta property="article:published_time" content="2022-05-05T09:21:34.000Z">
-<meta property="article:modified_time" content="2022-05-20T08:26:47.881Z">
+<meta property="article:modified_time" content="2022-05-21T02:32:26.673Z">
 <meta property="article:author" content="Mr.Wang">
 <meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary_large_image">
@@ -262,7 +263,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          8.9k 字
+          9.1k 字
         
       </span>
     
@@ -274,7 +275,7 @@
         
         
           <!-- compatible with older versions-->
-          74 分钟
+          76 分钟
         
       </span>
     
@@ -326,7 +327,7 @@
                 
                   
                     <!-- compatible with older versions-->
-                    本文最后更新于：9 分钟前
+                    本文最后更新于：26 分钟前
                   
                 
               </p>
@@ -946,6 +947,19 @@
 <p>linux中 在 <strong>/etc/hosts</strong> 文件中指定</p>
 <p><img src="/2022/05/05/Linux/image-20220520162633780.png" srcset="/img/loading.gif" lazyload alt="应用实例"></p>
 <p><img src="/2022/05/05/Linux/image-20220520162025078.png" srcset="/img/loading.gif" lazyload alt="示意图"></p>
+<h1 id="十一、进程管理"><a href="#十一、进程管理" class="headerlink" title="十一、进程管理"></a>十一、进程管理</h1><p><strong>基本介绍：</strong></p>
+<p>1、在linux中，每个<strong>执行的程序</strong>都被称为一个进程，每一个进程都分配一个ID号(pid，进程号)。</p>
+<p>2、每个进程都可以以 <strong>前台和后台</strong> 两种方式存在，前台在屏幕上可以看见，后台在屏幕上看不见。</p>
+<p>3、一般系统的服务都是以后台进程的方式存在，而且会常驻在系统中，直到关机才结束。</p>
+<ul>
+<li><strong>ps [选项]</strong> 查看当前系统中，有哪些正在执行，以及他们的执行情况。 <strong>可以不加参数</strong><ul>
+<li>ps -a 显示当前终端中所有的进程信息 </li>
+<li>ps -u 以用户的格式显示进程信息</li>
+<li>ps -x 显示后台进程运行的参数</li>
+</ul>
+</li>
+</ul>
+<p><img src="/2022/05/05/Linux/image-20220521100851299.png" srcset="/img/loading.gif" lazyload alt="ps显示的信息选项"></p>
 
               
             </div>
