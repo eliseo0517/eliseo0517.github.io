@@ -240,7 +240,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          undefined 字
+          479 字
         
       </span>
     
@@ -252,7 +252,7 @@
         
         
           <!-- compatible with older versions-->
-          NaN 分钟
+          4 分钟
         
       </span>
     
@@ -304,7 +304,7 @@
                 
                   
                     <!-- compatible with older versions-->
-                    本文最后更新于：3 天前
+                    本文最后更新于：6 天前
                   
                 
               </p>
@@ -314,7 +314,7 @@
               <p><img src="/2022/04/14/%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%8F%AA%E5%87%BA%E7%8E%B0%E4%B8%80%E6%AC%A1%E7%9A%84%E5%AD%97%E7%AC%A6/image-20220414152856199.png" srcset="/img/loading.gif" lazyload alt="第一个只出现一次的字符"></p>
 <p><strong>解题思路：</strong></p>
 <p>遍历字符串，将其放入哈希表，key为这个字母，value为是否重复，如果有重复的进来，就将value置为false，然后遍历一遍字符串(不可以遍历哈希表，因为哈希表是无序的)，找到第一个等于true的即可</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">char</span> <span class="title function_">firstUniqChar</span><span class="params">(String s)</span> &#123;</span><br><span class="line">        HashMap&lt;Character, Boolean&gt; dic = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line">        <span class="type">char</span>[] sc = s.toCharArray();</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">char</span> c : sc) &#123;</span><br><span class="line">            <span class="comment">//如果遇到重复，就会将重复值的value变为false</span></span><br><span class="line">            dic.put(c, !dic.containsKey(c));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//在字典中查找第一个等于true的</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">char</span> c : sc) &#123;</span><br><span class="line">            <span class="keyword">if</span> (dic.get(c)) &#123;</span><br><span class="line">                <span class="keyword">return</span> c;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">//否则就是没有不重复的数字</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&#x27; &#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">char</span> <span class="hljs-title function_">firstUniqChar</span><span class="hljs-params">(String s)</span> &#123;<br>        HashMap&lt;Character, Boolean&gt; dic = <span class="hljs-keyword">new</span> <span class="hljs-title class_">HashMap</span>&lt;&gt;();<br>        <span class="hljs-type">char</span>[] sc = s.toCharArray();<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">char</span> c : sc) &#123;<br>            <span class="hljs-comment">//如果遇到重复，就会将重复值的value变为false</span><br>            dic.put(c, !dic.containsKey(c));<br>        &#125;<br>        <span class="hljs-comment">//在字典中查找第一个等于true的</span><br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">char</span> c : sc) &#123;<br>            <span class="hljs-keyword">if</span> (dic.get(c)) &#123;<br>                <span class="hljs-keyword">return</span> c;<br>            &#125;<br>            <span class="hljs-comment">//否则就是没有不重复的数字</span><br>        &#125;<br>        <span class="hljs-keyword">return</span> <span class="hljs-string">&#x27; &#x27;</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
 
               

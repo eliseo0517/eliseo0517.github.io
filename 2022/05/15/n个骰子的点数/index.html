@@ -240,7 +240,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          undefined 字
+          457 字
         
       </span>
     
@@ -252,7 +252,7 @@
         
         
           <!-- compatible with older versions-->
-          NaN 分钟
+          4 分钟
         
       </span>
     
@@ -304,7 +304,7 @@
                 
                   
                     <!-- compatible with older versions-->
-                    本文最后更新于：3 天前
+                    本文最后更新于：6 天前
                   
                 
               </p>
@@ -315,7 +315,7 @@
 <p><strong>解法一：（暴力递归）</strong></p>
 <p>时间复杂度为O(6^n) <strong>超时</strong></p>
 <p><strong>解法二：（动态规划）</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span> <span class="type">double</span>[] dicesProbability(<span class="type">int</span> n) &#123;</span><br><span class="line">        <span class="type">double</span>[] dp = <span class="keyword">new</span> <span class="title class_">double</span>[<span class="number">6</span>];</span><br><span class="line">    	<span class="comment">// Arrays.fill() 将指定的值分配给指定数组的每个元素。</span></span><br><span class="line">        Arrays.fill(dp, <span class="number">1.0</span> / <span class="number">6.0</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">2</span>; i &lt;= n; i++) &#123;</span><br><span class="line">            <span class="type">double</span>[] tmp = <span class="keyword">new</span> <span class="title class_">double</span>[<span class="number">5</span> * i + <span class="number">1</span>];</span><br><span class="line">            <span class="comment">// n-1个骰子的每一项都会对有n个骰子的点数和产生影响</span></span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">0</span>; j &lt; dp.length; j++) &#123;</span><br><span class="line">                <span class="comment">// 第n个骰子的1~6</span></span><br><span class="line">                <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">k</span> <span class="operator">=</span> <span class="number">0</span>; k &lt; <span class="number">6</span>; k++) &#123;</span><br><span class="line">                    <span class="comment">// 加上前do数组j值对应概率/6</span></span><br><span class="line">                    tmp[j + k] += dp[j] * (<span class="number">1.0</span> / <span class="number">6.0</span>);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            dp = tmp;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> dp;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span> <span class="hljs-type">double</span>[] dicesProbability(<span class="hljs-type">int</span> n) &#123;<br>        <span class="hljs-type">double</span>[] dp = <span class="hljs-keyword">new</span> <span class="hljs-title class_">double</span>[<span class="hljs-number">6</span>];<br>    	<span class="hljs-comment">// Arrays.fill() 将指定的值分配给指定数组的每个元素。</span><br>        Arrays.fill(dp, <span class="hljs-number">1.0</span> / <span class="hljs-number">6.0</span>);<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">2</span>; i &lt;= n; i++) &#123;<br>            <span class="hljs-type">double</span>[] tmp = <span class="hljs-keyword">new</span> <span class="hljs-title class_">double</span>[<span class="hljs-number">5</span> * i + <span class="hljs-number">1</span>];<br>            <span class="hljs-comment">// n-1个骰子的每一项都会对有n个骰子的点数和产生影响</span><br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; j &lt; dp.length; j++) &#123;<br>                <span class="hljs-comment">// 第n个骰子的1~6</span><br>                <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">k</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; k &lt; <span class="hljs-number">6</span>; k++) &#123;<br>                    <span class="hljs-comment">// 加上前do数组j值对应概率/6</span><br>                    tmp[j + k] += dp[j] * (<span class="hljs-number">1.0</span> / <span class="hljs-number">6.0</span>);<br>                &#125;<br>            &#125;<br>            dp = tmp;<br>        &#125;<br>        <span class="hljs-keyword">return</span> dp;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
 
               

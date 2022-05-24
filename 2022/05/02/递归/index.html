@@ -240,7 +240,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          undefined 字
+          641 字
         
       </span>
     
@@ -252,7 +252,7 @@
         
         
           <!-- compatible with older versions-->
-          NaN 分钟
+          6 分钟
         
       </span>
     
@@ -304,7 +304,7 @@
                 
                   
                     <!-- compatible with older versions-->
-                    本文最后更新于：19 天前
+                    本文最后更新于：22 天前
                   
                 
               </p>
@@ -312,13 +312,13 @@
             <div class="markdown-body">
               
               <h1 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h1><p>自己调自己</p>
-<h2 id="题外：求两数的中点"><a href="#题外：求两数的中点" class="headerlink" title="题外：求两数的中点"></a>题外：求两数的中点</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//       int mid = (L+R)/2;这种情况用于数组有小概率会溢出</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//       int mid = L+(R-L)/2;这种不会溢出</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//       int mid = L+((R-L)&gt;&gt;1);  第二种方式的另一种写法</span></span><br></pre></td></tr></table></figure>
+<h2 id="题外：求两数的中点"><a href="#题外：求两数的中点" class="headerlink" title="题外：求两数的中点"></a>题外：求两数的中点</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//       int mid = (L+R)/2;这种情况用于数组有小概率会溢出</span><br><br><span class="hljs-comment">//       int mid = L+(R-L)/2;这种不会溢出</span><br><br><span class="hljs-comment">//       int mid = L+((R-L)&gt;&gt;1);  第二种方式的另一种写法</span><br></code></pre></td></tr></table></figure>
 
 
 
 
 
-<h2 id="题目-求一个数组中一个范围内的最大值"><a href="#题目-求一个数组中一个范围内的最大值" class="headerlink" title="题目:求一个数组中一个范围内的最大值"></a>题目:求一个数组中一个范围内的最大值</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span>  <span class="title function_">a</span><span class="params">(<span class="type">int</span>[] arr,<span class="type">int</span> L, <span class="type">int</span> R)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (L==R)&#123;</span><br><span class="line">        <span class="keyword">return</span> arr[L];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">int</span> <span class="variable">mid</span> <span class="operator">=</span> L + ((R-L)&gt;&gt;<span class="number">1</span>);<span class="comment">//中点</span></span><br><span class="line">    <span class="type">int</span> <span class="variable">leftMax</span> <span class="operator">=</span> a(arr,L,mid);</span><br><span class="line">    <span class="type">int</span> <span class="variable">rightMax</span> <span class="operator">=</span> a(arr,mid+<span class="number">1</span>,R);</span><br><span class="line">    <span class="keyword">return</span> Math.max(leftMax,rightMax);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="type">int</span> <span class="title function_">GetMax</span><span class="params">(<span class="type">int</span>[] arr)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a(arr,<span class="number">0</span>,arr.length-<span class="number">1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="题目-求一个数组中一个范围内的最大值"><a href="#题目-求一个数组中一个范围内的最大值" class="headerlink" title="题目:求一个数组中一个范围内的最大值"></a>题目:求一个数组中一个范围内的最大值</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-type">int</span>  <span class="hljs-title function_">a</span><span class="hljs-params">(<span class="hljs-type">int</span>[] arr,<span class="hljs-type">int</span> L, <span class="hljs-type">int</span> R)</span>&#123;<br>    <span class="hljs-keyword">if</span> (L==R)&#123;<br>        <span class="hljs-keyword">return</span> arr[L];<br>    &#125;<br>    <span class="hljs-type">int</span> <span class="hljs-variable">mid</span> <span class="hljs-operator">=</span> L + ((R-L)&gt;&gt;<span class="hljs-number">1</span>);<span class="hljs-comment">//中点</span><br>    <span class="hljs-type">int</span> <span class="hljs-variable">leftMax</span> <span class="hljs-operator">=</span> a(arr,L,mid);<br>    <span class="hljs-type">int</span> <span class="hljs-variable">rightMax</span> <span class="hljs-operator">=</span> a(arr,mid+<span class="hljs-number">1</span>,R);<br>    <span class="hljs-keyword">return</span> Math.max(leftMax,rightMax);<br>&#125;<br><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-type">int</span> <span class="hljs-title function_">GetMax</span><span class="hljs-params">(<span class="hljs-type">int</span>[] arr)</span>&#123;<br>    <span class="hljs-keyword">return</span> a(arr,<span class="hljs-number">0</span>,arr.length-<span class="hljs-number">1</span>);<br>&#125;<br></code></pre></td></tr></table></figure>
 
 
 

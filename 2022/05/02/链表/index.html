@@ -246,7 +246,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          undefined 字
+          1.1k 字
         
       </span>
     
@@ -258,7 +258,7 @@
         
         
           <!-- compatible with older versions-->
-          NaN 分钟
+          10 分钟
         
       </span>
     
@@ -310,7 +310,7 @@
                 
                   
                     <!-- compatible with older versions-->
-                    本文最后更新于：19 天前
+                    本文最后更新于：22 天前
                   
                 
               </p>
@@ -325,7 +325,7 @@
 <p>​        1 -&gt;2 -&gt;1, 返回true  ；1-&gt;2-&gt;2-&gt;1,返回true;15-&gt;6-&gt;15,返回true，1-&gt;2-&gt;3，返回false</p>
 <p><strong>思路</strong></p>
 <p>笔试(不太考虑空间复杂度）：可以将链表上的数依次放入栈里去，然后出栈，弹出一个，比对一个，如果每一步都一样，就代表回文</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="type">boolean</span> <span class="title function_">isPailndrome</span><span class="params">(Node head)</span>&#123;</span><br><span class="line">    Stack&lt;Node&gt; stack = <span class="keyword">new</span> <span class="title class_">Stack</span>&lt;Node&gt;();</span><br><span class="line">    <span class="type">Node</span> <span class="variable">cur</span> <span class="operator">=</span> head;</span><br><span class="line">    <span class="keyword">while</span> (cur != <span class="literal">null</span>)&#123;</span><br><span class="line">        stack.push(cur);</span><br><span class="line">        cur = cur.next;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span> (head != <span class="literal">null</span>)&#123;</span><br><span class="line">        <span class="keyword">if</span> (head.value != stack.pop().value)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        head = head.next;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-type">boolean</span> <span class="hljs-title function_">isPailndrome</span><span class="hljs-params">(Node head)</span>&#123;<br>    Stack&lt;Node&gt; stack = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Stack</span>&lt;Node&gt;();<br>    <span class="hljs-type">Node</span> <span class="hljs-variable">cur</span> <span class="hljs-operator">=</span> head;<br>    <span class="hljs-keyword">while</span> (cur != <span class="hljs-literal">null</span>)&#123;<br>        stack.push(cur);<br>        cur = cur.next;<br>    &#125;<br>    <span class="hljs-keyword">while</span> (head != <span class="hljs-literal">null</span>)&#123;<br>        <span class="hljs-keyword">if</span> (head.value != stack.pop().value)&#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>        &#125;<br>        head = head.next;<br>    &#125;<br>    <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
 
 <p>相对上一种省一点空间：可以将链表的右半部分放入栈，然后依次比对，直到栈空，如果都一样，代表回文那么，如何知道到了右半部分呢，用一个指针肯定不行，所以就引出了快慢指针，快指针一次走两步，慢指针一次走一步，快指针走完的时候，慢指针正好走到中点的位置。所以就将慢指针后边的东西放到栈里去</p>
 <p>如果链表长度为N，时间复杂度达到O(N),额外空间复杂度达到O(1)。</p>

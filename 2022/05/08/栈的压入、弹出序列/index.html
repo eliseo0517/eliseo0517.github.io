@@ -240,7 +240,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          undefined 字
+          394 字
         
       </span>
     
@@ -252,7 +252,7 @@
         
         
           <!-- compatible with older versions-->
-          NaN 分钟
+          4 分钟
         
       </span>
     
@@ -304,7 +304,7 @@
                 
                   
                     <!-- compatible with older versions-->
-                    本文最后更新于：3 天前
+                    本文最后更新于：6 天前
                   
                 
               </p>
@@ -313,7 +313,7 @@
               
               <p><img src="/2022/05/08/%E6%A0%88%E7%9A%84%E5%8E%8B%E5%85%A5%E3%80%81%E5%BC%B9%E5%87%BA%E5%BA%8F%E5%88%97/image-20220508111814728.png" srcset="/img/loading.gif" lazyload alt="栈的压入、弹出序列"></p>
 <p><strong>解法：（栈）</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">validateStackSequences</span><span class="params">(<span class="type">int</span>[] pushed, <span class="type">int</span>[] popped)</span> &#123;</span><br><span class="line">        Stack&lt;Integer&gt; stack = <span class="keyword">new</span> <span class="title class_">Stack</span>&lt;&gt;();</span><br><span class="line">        <span class="comment">// 定义弹出序列的下标</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> num : pushed) &#123; </span><br><span class="line">            stack.push(num); <span class="comment">// 将压栈序列遍历到栈内</span></span><br><span class="line">            <span class="keyword">while</span> (!stack.isEmpty() &amp;&amp; stack.peek() == popped[i]) &#123; <span class="comment">// 如果我的弹出序列要弹出的数等于栈顶元素</span></span><br><span class="line">                stack.pop(); <span class="comment">// 将栈顶元素弹出</span></span><br><span class="line">                i++; <span class="comment">// 查看压栈序列的下一个数</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> stack.isEmpty();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">boolean</span> <span class="hljs-title function_">validateStackSequences</span><span class="hljs-params">(<span class="hljs-type">int</span>[] pushed, <span class="hljs-type">int</span>[] popped)</span> &#123;<br>        Stack&lt;Integer&gt; stack = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Stack</span>&lt;&gt;();<br>        <span class="hljs-comment">// 定义弹出序列的下标</span><br>        <span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> num : pushed) &#123; <br>            stack.push(num); <span class="hljs-comment">// 将压栈序列遍历到栈内</span><br>            <span class="hljs-keyword">while</span> (!stack.isEmpty() &amp;&amp; stack.peek() == popped[i]) &#123; <span class="hljs-comment">// 如果我的弹出序列要弹出的数等于栈顶元素</span><br>                stack.pop(); <span class="hljs-comment">// 将栈顶元素弹出</span><br>                i++; <span class="hljs-comment">// 查看压栈序列的下一个数</span><br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> stack.isEmpty();<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
 
               

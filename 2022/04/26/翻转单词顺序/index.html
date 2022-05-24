@@ -240,7 +240,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          undefined 字
+          447 字
         
       </span>
     
@@ -252,7 +252,7 @@
         
         
           <!-- compatible with older versions-->
-          NaN 分钟
+          4 分钟
         
       </span>
     
@@ -304,7 +304,7 @@
                 
                   
                     <!-- compatible with older versions-->
-                    本文最后更新于：3 天前
+                    本文最后更新于：6 天前
                   
                 
               </p>
@@ -313,7 +313,7 @@
               
               <p><img src="/2022/04/26/%E7%BF%BB%E8%BD%AC%E5%8D%95%E8%AF%8D%E9%A1%BA%E5%BA%8F/image-20220426214848087.png" srcset="/img/loading.gif" lazyload alt="翻转单词顺序"></p>
 <p><strong>解法：（快慢指针）</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">reverseWords</span><span class="params">(String s)</span> &#123;</span><br><span class="line">        <span class="comment">// 去掉首位的空格</span></span><br><span class="line">        s = s.trim();</span><br><span class="line">        <span class="comment">// 加入两个快慢指针</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> s.length() - <span class="number">1</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> s.length() - <span class="number">1</span>;</span><br><span class="line">        <span class="type">StringBuilder</span> <span class="variable">res</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StringBuilder</span>();</span><br><span class="line">        <span class="keyword">while</span> (i &gt;= <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="comment">// 当i不是空格的时候 往左遍历</span></span><br><span class="line">            <span class="keyword">while</span> (i &gt;= <span class="number">0</span> &amp;&amp; s.charAt(i) != <span class="string">&#x27; &#x27;</span>) i--;</span><br><span class="line">            res.append(s.substring(i + <span class="number">1</span>, j + <span class="number">1</span>) + <span class="string">&quot; &quot;</span>);</span><br><span class="line"></span><br><span class="line">            <span class="keyword">while</span> (i &gt;= <span class="number">0</span> &amp;&amp; s.charAt(i) == <span class="string">&#x27; &#x27;</span>) i--;</span><br><span class="line">            <span class="comment">// j指向下一个单词</span></span><br><span class="line">            j = i;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res.toString().trim();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">reverseWords</span><span class="hljs-params">(String s)</span> &#123;<br>        <span class="hljs-comment">// 去掉首位的空格</span><br>        s = s.trim();<br>        <span class="hljs-comment">// 加入两个快慢指针</span><br>        <span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> s.length() - <span class="hljs-number">1</span>;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">j</span> <span class="hljs-operator">=</span> s.length() - <span class="hljs-number">1</span>;<br>        <span class="hljs-type">StringBuilder</span> <span class="hljs-variable">res</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">StringBuilder</span>();<br>        <span class="hljs-keyword">while</span> (i &gt;= <span class="hljs-number">0</span>) &#123;<br>            <span class="hljs-comment">// 当i不是空格的时候 往左遍历</span><br>            <span class="hljs-keyword">while</span> (i &gt;= <span class="hljs-number">0</span> &amp;&amp; s.charAt(i) != <span class="hljs-string">&#x27; &#x27;</span>) i--;<br>            res.append(s.substring(i + <span class="hljs-number">1</span>, j + <span class="hljs-number">1</span>) + <span class="hljs-string">&quot; &quot;</span>);<br><br>            <span class="hljs-keyword">while</span> (i &gt;= <span class="hljs-number">0</span> &amp;&amp; s.charAt(i) == <span class="hljs-string">&#x27; &#x27;</span>) i--;<br>            <span class="hljs-comment">// j指向下一个单词</span><br>            j = i;<br>        &#125;<br>        <span class="hljs-keyword">return</span> res.toString().trim();<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
 
               

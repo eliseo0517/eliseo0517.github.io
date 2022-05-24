@@ -241,7 +241,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          undefined 字
+          171 字
         
       </span>
     
@@ -253,7 +253,7 @@
         
         
           <!-- compatible with older versions-->
-          NaN 分钟
+          2 分钟
         
       </span>
     
@@ -305,7 +305,7 @@
                 
                   
                     <!-- compatible with older versions-->
-                    本文最后更新于：3 天前
+                    本文最后更新于：6 天前
                   
                 
               </p>
@@ -316,7 +316,7 @@
 <p><strong>题解：</strong></p>
 <p><img src="/2022/05/05/%E4%B8%8D%E7%94%A8%E5%8A%A0%E5%87%8F%E4%B9%98%E9%99%A4%E5%81%9A%E5%8A%A0%E6%B3%95/image-20220505154830988.png" srcset="/img/loading.gif" lazyload alt="题解1"></p>
 <p><strong>解法：</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">add</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span> &#123;</span><br><span class="line">        <span class="keyword">while</span>(b != <span class="number">0</span>) &#123; <span class="comment">// 当进位为 0 时跳出</span></span><br><span class="line">            <span class="type">int</span> <span class="variable">c</span> <span class="operator">=</span> (a &amp; b) &lt;&lt; <span class="number">1</span>;  <span class="comment">// c = 进位</span></span><br><span class="line">            a ^= b; <span class="comment">// a = 非进位和</span></span><br><span class="line">            b = c; <span class="comment">// b = 进位</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> a;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">add</span><span class="hljs-params">(<span class="hljs-type">int</span> a, <span class="hljs-type">int</span> b)</span> &#123;<br>        <span class="hljs-keyword">while</span>(b != <span class="hljs-number">0</span>) &#123; <span class="hljs-comment">// 当进位为 0 时跳出</span><br>            <span class="hljs-type">int</span> <span class="hljs-variable">c</span> <span class="hljs-operator">=</span> (a &amp; b) &lt;&lt; <span class="hljs-number">1</span>;  <span class="hljs-comment">// c = 进位</span><br>            a ^= b; <span class="hljs-comment">// a = 非进位和</span><br>            b = c; <span class="hljs-comment">// b = 进位</span><br>        &#125;<br>        <span class="hljs-keyword">return</span> a;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
 
               
