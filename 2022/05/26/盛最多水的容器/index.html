@@ -16,27 +16,26 @@
   <meta name="author" content="Mr.Wang">
   <meta name="keywords" content="">
   
-    <meta name="description" content="堆堆是一种比较特殊的完全二叉树，分为大根堆，小根堆 1、堆结构就是用数组实现完全的二叉树结构 2、完全二叉树中如果每棵子树的最大值都在顶部就是大根堆 3、完全二叉树中如果每棵子树的最小值都在顶部就是小根堆 4、对结构的heapInsert与heapify操作 5、堆结构的增大和减少 6、优先级队列结构，就是堆结构 大根堆即指在逻辑上的二叉树结构中，根结点&gt;子结点，总是最大的，并且在堆的每一个">
+    <meta name="description" content="解法：（双指针） 123456789101112131415161718192021class Solution &amp;#123;    public int maxArea(int[] height) &amp;#123;        int len &#x3D; height.length;        int left &#x3D; 0;        int right &#x3D; len - 1;        if (">
 <meta property="og:type" content="article">
-<meta property="og:title" content="堆">
-<meta property="og:url" content="https://eliseo.top/2022/05/02/%E5%A0%86/index.html">
+<meta property="og:title" content="盛最多水的容器">
+<meta property="og:url" content="https://eliseo.top/2022/05/26/%E7%9B%9B%E6%9C%80%E5%A4%9A%E6%B0%B4%E7%9A%84%E5%AE%B9%E5%99%A8/index.html">
 <meta property="og:site_name" content="Eliseo的小屋">
-<meta property="og:description" content="堆堆是一种比较特殊的完全二叉树，分为大根堆，小根堆 1、堆结构就是用数组实现完全的二叉树结构 2、完全二叉树中如果每棵子树的最大值都在顶部就是大根堆 3、完全二叉树中如果每棵子树的最小值都在顶部就是小根堆 4、对结构的heapInsert与heapify操作 5、堆结构的增大和减少 6、优先级队列结构，就是堆结构 大根堆即指在逻辑上的二叉树结构中，根结点&gt;子结点，总是最大的，并且在堆的每一个">
+<meta property="og:description" content="解法：（双指针） 123456789101112131415161718192021class Solution &amp;#123;    public int maxArea(int[] height) &amp;#123;        int len &#x3D; height.length;        int left &#x3D; 0;        int right &#x3D; len - 1;        if (">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://eliseo.top/2022/05/02/%E5%A0%86/1634370387111.png">
-<meta property="og:image" content="https://eliseo.top/2022/05/02/%E5%A0%86/1634610114793.png">
-<meta property="article:published_time" content="2022-05-02T13:13:06.000Z">
-<meta property="article:modified_time" content="2022-05-02T13:15:48.927Z">
+<meta property="og:image" content="https://eliseo.top/2022/05/26/%E7%9B%9B%E6%9C%80%E5%A4%9A%E6%B0%B4%E7%9A%84%E5%AE%B9%E5%99%A8/image-20220526092922227.png">
+<meta property="article:published_time" content="2022-05-26T01:28:43.000Z">
+<meta property="article:modified_time" content="2022-05-26T01:29:54.877Z">
 <meta property="article:author" content="Mr.Wang">
-<meta property="article:tag" content="算法">
+<meta property="article:tag" content="力扣">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://eliseo.top/2022/05/02/%E5%A0%86/1634370387111.png">
+<meta name="twitter:image" content="https://eliseo.top/2022/05/26/%E7%9B%9B%E6%9C%80%E5%A4%9A%E6%B0%B4%E7%9A%84%E5%AE%B9%E5%99%A8/image-20220526092922227.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>堆 - Eliseo的小屋</title>
+  <title>盛最多水的容器 - Eliseo的小屋</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -212,7 +211,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="堆"></span>
+            <span id="subtitle" data-typed-text="盛最多水的容器"></span>
           
         </div>
 
@@ -228,8 +227,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-05-02 21:13" pubdate>
-          2022年5月2日 晚上
+        <time datetime="2022-05-26 09:28" pubdate>
+          2022年5月26日 上午
         </time>
       </span>
     
@@ -241,7 +240,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          1.7k 字
+          409 字
         
       </span>
     
@@ -253,7 +252,7 @@
         
         
           <!-- compatible with older versions-->
-          15 分钟
+          4 分钟
         
       </span>
     
@@ -299,48 +298,23 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">堆</h1>
+            <h1 style="display: none">盛最多水的容器</h1>
             
               <p class="note note-info">
                 
                   
                     <!-- compatible with older versions-->
-                    本文最后更新于：24 天前
+                    本文最后更新于：几秒前
                   
                 
               </p>
             
             <div class="markdown-body">
               
-              <h1 id="堆"><a href="#堆" class="headerlink" title="堆"></a>堆</h1><p>堆是一种比较特殊的完全二叉树，分为大根堆，小根堆</p>
-<p>1、堆结构就是用数组实现完全的二叉树结构</p>
-<p>2、完全二叉树中如果每棵子树的最大值都在顶部就是大根堆</p>
-<p>3、完全二叉树中如果每棵子树的最小值都在顶部就是小根堆</p>
-<p>4、对结构的heapInsert与heapify操作</p>
-<p>5、堆结构的增大和减少</p>
-<p>6、优先级队列结构，就是堆结构</p>
-<p><strong>大根堆</strong>即指在逻辑上的二叉树结构中，根结点&gt;子结点，总是最大的，<strong>并且在堆的每一个局部都是如此</strong></p>
-<p><strong>小根堆</strong>的性质与大根堆类似，只不过在二叉树的结构中，根结点&lt;子结点</p>
-<h2 id="大根堆"><a href="#大根堆" class="headerlink" title="大根堆"></a>大根堆</h2><p><img src="/2022/05/02/%E5%A0%86/1634370387111.png" srcset="/img/loading.gif" lazyload alt="1634370387111"></p>
-<p>以n为首的整棵树最大值为n</p>
-<h2 id="小根堆相反"><a href="#小根堆相反" class="headerlink" title="小根堆相反"></a>小根堆相反</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br><br><br>        <span class="hljs-comment">//堆结构，如果不给构造方法传参的话，默认小根堆(如果想让他是一个大根堆的话，就传一个比较器)</span><br>        PriorityQueue&lt;Integer&gt; heap = <span class="hljs-keyword">new</span> <span class="hljs-title class_">PriorityQueue</span>&lt;&gt;();<br>        heap.add(<span class="hljs-number">8</span>);<br>        heap.add(<span class="hljs-number">4</span>);<br>        heap.add(<span class="hljs-number">4</span>);<br>        heap.add(<span class="hljs-number">9</span>);<br>        heap.add(<span class="hljs-number">10</span>);<br>        heap.add(<span class="hljs-number">3</span>);<br><br>        <span class="hljs-keyword">while</span> (!heap.isEmpty())&#123;<br>            System.out.println(heap.poll());<br>        &#125;<br>    &#125;<br><br>输出结果：<span class="hljs-number">3</span>，<span class="hljs-number">4</span>，<span class="hljs-number">4</span>，<span class="hljs-number">8</span>，<span class="hljs-number">9</span>，<span class="hljs-number">10</span><br></code></pre></td></tr></table></figure>
+              <p><img src="/2022/05/26/%E7%9B%9B%E6%9C%80%E5%A4%9A%E6%B0%B4%E7%9A%84%E5%AE%B9%E5%99%A8/image-20220526092922227.png" srcset="/img/loading.gif" lazyload alt="盛最多水的容器"></p>
+<p><strong>解法：（双指针）</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">maxArea</span><span class="hljs-params">(<span class="hljs-type">int</span>[] height)</span> &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">len</span> <span class="hljs-operator">=</span> height.length;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">left</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">right</span> <span class="hljs-operator">=</span> len - <span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">if</span> (len == <span class="hljs-number">0</span> || height == <span class="hljs-literal">null</span>) &#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>        &#125;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">res</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">while</span> (left &lt; right) &#123;<br>            <span class="hljs-type">int</span> <span class="hljs-variable">nowRes</span> <span class="hljs-operator">=</span> (right - left) * Math.min(height[left], height[right]);<br>            res = Math.max(res, nowRes);<br>            <span class="hljs-keyword">if</span> (height[left] &gt; height[right]) &#123;<br>                right--;<br>            &#125; <span class="hljs-keyword">else</span> &#123;<br>                left++;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> res;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
-
-
-
-
-
-
-<p>题目：用户往数组中输入了几个数字，现在用户需要找到最大值，然后去掉，让剩下的数再组成一个大根堆</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">//某个数在index位置，能否往下移动</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">quickSort</span><span class="hljs-params">(<span class="hljs-type">int</span>[] arr,<span class="hljs-type">int</span> index,<span class="hljs-type">int</span> heapSize)</span>&#123;<br>    <span class="hljs-type">int</span> <span class="hljs-variable">left</span> <span class="hljs-operator">=</span> index * <span class="hljs-number">2</span> + <span class="hljs-number">1</span>;<span class="hljs-comment">//左孩子的下标</span><br><br>    <span class="hljs-keyword">while</span> (left &lt; heapSize)&#123;   <span class="hljs-comment">//下方还有孩子的时候(左孩子比右孩子小，当没有左孩子的时候，就没有右孩子)</span><br><br>        <span class="hljs-comment">//两个孩子，谁的值大，把下标给largest</span><br>        <span class="hljs-type">int</span> <span class="hljs-variable">largest</span> <span class="hljs-operator">=</span> left + <span class="hljs-number">1</span> &lt; heapSize &amp;&amp; arr[left + <span class="hljs-number">1</span>] &gt; arr[left] ? left+<span class="hljs-number">1</span> : left;<br><br>        <span class="hljs-comment">//父和孩子，谁的值大，把下标给largest</span><br>        largest = arr[largest] &gt; arr[index] ? largest : index;<br><br>        <span class="hljs-keyword">if</span> (largest == index)&#123;<br>            <span class="hljs-keyword">break</span>;<br>        &#125;<br>        swap(arr,largest,index);<br><br>        index = largest;<br>        left = index * <span class="hljs-number">2</span> + <span class="hljs-number">1</span>;<br>    &#125;<br><br>&#125;<br><br><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">swap</span><span class="hljs-params">(<span class="hljs-type">int</span>[] arr, <span class="hljs-type">int</span> i, <span class="hljs-type">int</span> j)</span> &#123;<br>    <span class="hljs-type">int</span> <span class="hljs-variable">tmp</span> <span class="hljs-operator">=</span> arr[i];<br>    arr[i] = arr[j];<br>    arr[j] = tmp;<br>&#125;<br></code></pre></td></tr></table></figure>
-
-<p>O(n)*logN </p>
-<p>题：已知一个几乎有序的数组，几乎有序的意思是，如果把数组排好顺序的话，每个元素移动的距离可以不超过k，并且k相对于数组来说比较小，请选择一个合适的排序算法针对这个数据进行排序</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">sortedArrDistanceLessK</span><span class="hljs-params">(<span class="hljs-type">int</span>[] arr,<span class="hljs-type">int</span> k)</span>&#123;<br><br>    <span class="hljs-comment">//默认小根堆</span><br>    PriorityQueue&lt;Integer&gt; heap = <span class="hljs-keyword">new</span> <span class="hljs-title class_">PriorityQueue</span>&lt;&gt;();<br>    <span class="hljs-type">int</span> <span class="hljs-variable">index</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>    <span class="hljs-comment">//                  防止k捣乱</span><br>    <span class="hljs-keyword">for</span> (; index &lt; Math.min(arr.length , k); index++)&#123;<br>        heap.add(arr[index]);<br>    &#125;<br>    <span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span> (;index &lt; arr.length; i++ , index++)&#123;<br>        heap.add(arr[index]);<br>        arr[i] = heap.poll();<br>    &#125;<br>    <span class="hljs-keyword">while</span> (!heap.isEmpty())&#123;<br>        arr[i++] = heap.poll();<br>    &#125;<br><br>&#125;<br></code></pre></td></tr></table></figure>
-
-
-
-<p><img src="/2022/05/02/%E5%A0%86/1634610114793.png" srcset="/img/loading.gif" lazyload alt="1634610114793"></p>
 
               
             </div>
@@ -358,7 +332,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/%E7%AE%97%E6%B3%95/" class="category-chain-item">算法</a>
+  <a href="/categories/%E5%8A%9B%E6%89%A3/" class="category-chain-item">力扣</a>
   
   
 
@@ -373,7 +347,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E7%AE%97%E6%B3%95/">#算法</a>
+        <a href="/tags/%E5%8A%9B%E6%89%A3/">#力扣</a>
       
     </div>
   
@@ -385,8 +359,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>堆</div>
-      <div>https://eliseo.top/2022/05/02/堆/</div>
+      <div>盛最多水的容器</div>
+      <div>https://eliseo.top/2022/05/26/盛最多水的容器/</div>
     </div>
     <div class="license-meta">
       
@@ -398,7 +372,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2022年5月2日</div>
+          <div>2022年5月26日</div>
         </div>
       
       
@@ -428,18 +402,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/05/02/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/" title="快速排序">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">快速排序</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/04/29/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%B7%B1%E5%BA%A6/" title="二叉树的深度">
-                        <span class="hidden-mobile">二叉树的深度</span>
+                      <a href="/2022/05/25/%E6%9C%80%E9%95%BF%E5%9B%9E%E6%96%87%E5%AD%90%E4%B8%B2/" title="最长回文子串">
+                        <span class="hidden-mobile">最长回文子串</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

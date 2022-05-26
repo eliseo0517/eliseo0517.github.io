@@ -6,7 +6,7 @@
   <link href="https://eliseo.top/atom.xml" rel="self"/>
   
   <link href="https://eliseo.top/"/>
-  <updated>2022-05-25T02:39:44.941Z</updated>
+  <updated>2022-05-26T01:29:54.877Z</updated>
   <id>https://eliseo.top/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>盛最多水的容器</title>
+    <link href="https://eliseo.top/2022/05/26/%E7%9B%9B%E6%9C%80%E5%A4%9A%E6%B0%B4%E7%9A%84%E5%AE%B9%E5%99%A8/"/>
+    <id>https://eliseo.top/2022/05/26/%E7%9B%9B%E6%9C%80%E5%A4%9A%E6%B0%B4%E7%9A%84%E5%AE%B9%E5%99%A8/</id>
+    <published>2022-05-26T01:28:43.000Z</published>
+    <updated>2022-05-26T01:29:54.877Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="/2022/05/26/%E7%9B%9B%E6%9C%80%E5%A4%9A%E6%B0%B4%E7%9A%84%E5%AE%B9%E5%99%A8/image-20220526092922227.png" alt="盛最多水的容器"></p><p><strong>解法：（双指针）</strong></p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">maxArea</span><span class="hljs-params">(<span class="hljs-type">int</span>[] height)</span> &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">len</span> <span class="hljs-operator">=</span> height.length;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">left</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">right</span> <span class="hljs-operator">=</span> len - <span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">if</span> (len == <span class="hljs-number">0</span> || height == <span class="hljs-literal">null</span>) &#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>        &#125;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">res</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">while</span> (left &lt; right) &#123;<br>            <span class="hljs-type">int</span> <span class="hljs-variable">nowRes</span> <span class="hljs-operator">=</span> (right - left) * Math.min(height[left], height[right]);<br>            res = Math.max(res, nowRes);<br>            <span class="hljs-keyword">if</span> (height[left] &gt; height[right]) &#123;<br>                right--;<br>            &#125; <span class="hljs-keyword">else</span> &#123;<br>                left++;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> res;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;/2022/05/26/%E7%9B%9B%E6%9C%80%E5%A4%9A%E6%B0%B4%E7%9A%84%E5%AE%B9%E5%99%A8/image-20220526092922227.png&quot; alt=&quot;盛最多水的容器&quot;&gt;&lt;/p&gt;
+&lt;p&gt;</summary>
+      
+    
+    
+    
+    <category term="力扣" scheme="https://eliseo.top/categories/%E5%8A%9B%E6%89%A3/"/>
+    
+    
+    <category term="力扣" scheme="https://eliseo.top/tags/%E5%8A%9B%E6%89%A3/"/>
+    
+  </entry>
   
   <entry>
     <title>最长回文子串</title>
@@ -484,30 +509,6 @@
     
     
     <category term="JVM" scheme="https://eliseo.top/tags/JVM/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>圆圈中最后剩下的数字</title>
-    <link href="https://eliseo.top/2022/05/07/%E5%9C%86%E5%9C%88%E4%B8%AD%E6%9C%80%E5%90%8E%E5%89%A9%E4%B8%8B%E7%9A%84%E6%95%B0%E5%AD%97/"/>
-    <id>https://eliseo.top/2022/05/07/%E5%9C%86%E5%9C%88%E4%B8%AD%E6%9C%80%E5%90%8E%E5%89%A9%E4%B8%8B%E7%9A%84%E6%95%B0%E5%AD%97/</id>
-    <published>2022-05-07T03:00:39.000Z</published>
-    <updated>2022-05-25T02:42:48.026Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="/2022/05/07/%E5%9C%86%E5%9C%88%E4%B8%AD%E6%9C%80%E5%90%8E%E5%89%A9%E4%B8%8B%E7%9A%84%E6%95%B0%E5%AD%97/image-20220507154914849.png" alt="圆圈中最后剩下的数字"></p><p><strong>解题思路：</strong></p><p>实际上是<strong>约瑟夫环</strong><a href="https://blog.csdn.net/u011500062/article/details/72855826"> 约瑟夫环——公式法（递推公式）</a></p><p><strong>解法：</strong></p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">lastRemaining</span><span class="hljs-params">(<span class="hljs-type">int</span> n, <span class="hljs-type">int</span> m)</span> &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">ans</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-comment">// 最后一轮剩下2个人，所以从2开始反推</span><br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">2</span>; i &lt;= n; i++) &#123;<br>            ans = (ans + m) % i;<br>        &#125;<br>        <span class="hljs-keyword">return</span> ans;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;&lt;img src=&quot;/2022/05/07/%E5%9C%86%E5%9C%88%E4%B8%AD%E6%9C%80%E5%90%8E%E5%89%A9%E4%B8%8B%E7%9A%84%E6%95%B0%E5%AD%97/image-20220507154914849.</summary>
-      
-    
-    
-    
-    <category term="力扣" scheme="https://eliseo.top/categories/%E5%8A%9B%E6%89%A3/"/>
-    
-    
-    <category term="力扣" scheme="https://eliseo.top/tags/%E5%8A%9B%E6%89%A3/"/>
     
   </entry>
   
