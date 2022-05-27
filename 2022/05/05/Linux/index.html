@@ -48,8 +48,14 @@
 <meta property="og:image" content="https://eliseo.top/2022/05/05/Linux/image-20220522170720300.png">
 <meta property="og:image" content="https://eliseo.top/2022/05/05/Linux/image-20220522171720834.png">
 <meta property="og:image" content="https://eliseo.top/2022/05/05/Linux/image-20220526111715774.png">
+<meta property="og:image" content="https://eliseo.top/2022/05/05/Linux/image-20220527170320229.png">
+<meta property="og:image" content="https://eliseo.top/2022/05/05/Linux/image-20220527180809385.png">
+<meta property="og:image" content="https://eliseo.top/2022/05/05/Linux/image-20220527185615325.png">
+<meta property="og:image" content="https://eliseo.top/2022/05/05/Linux/wps1.jpg">
+<meta property="og:image" content="https://eliseo.top/2022/05/05/Linux/wps2.jpg">
+<meta property="og:image" content="https://eliseo.top/2022/05/05/Linux/wps3.jpg">
 <meta property="article:published_time" content="2022-05-05T09:21:34.000Z">
-<meta property="article:modified_time" content="2022-05-26T03:26:05.058Z">
+<meta property="article:modified_time" content="2022-05-27T10:59:55.140Z">
 <meta property="article:author" content="Mr.Wang">
 <meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary_large_image">
@@ -264,7 +270,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          11k 字
+          12k 字
         
       </span>
     
@@ -276,7 +282,7 @@
         
         
           <!-- compatible with older versions-->
-          93 分钟
+          103 分钟
         
       </span>
     
@@ -328,7 +334,7 @@
                 
                   
                     <!-- compatible with older versions-->
-                    本文最后更新于：1 天前
+                    本文最后更新于：2 分钟前
                   
                 
               </p>
@@ -937,7 +943,7 @@
 <p><img src="/2022/05/05/Linux/image-20220518154349391.png" srcset="/img/loading.gif" lazyload alt="ifcfg-ens33 文件说明"></p>
 <p>重启网络服务或者重启系统生效</p>
 <p><strong>service newwork restart 或者 reboot</strong></p>
-<h3 id="10-2、设置主机名和hosts映射"><a href="#10-2、设置主机名和hosts映射" class="headerlink" title="10.2、设置主机名和hosts映射"></a>10.2、设置主机名和hosts映射</h3><p><strong>设置主机名</strong></p>
+<h2 id="10-2、设置主机名和hosts映射"><a href="#10-2、设置主机名和hosts映射" class="headerlink" title="10.2、设置主机名和hosts映射"></a>10.2、设置主机名和hosts映射</h2><p><strong>设置主机名</strong></p>
 <ol>
 <li><strong>hostname</strong> 查看主机名</li>
 <li>修改文件在 /etc/hostname 指定</li>
@@ -948,12 +954,11 @@
 <p>linux中 在 <strong>/etc/hosts</strong> 文件中指定</p>
 <p><img src="/2022/05/05/Linux/image-20220520162633780.png" srcset="/img/loading.gif" lazyload alt="应用实例"></p>
 <p><img src="/2022/05/05/Linux/image-20220520162025078.png" srcset="/img/loading.gif" lazyload alt="示意图"></p>
-<h1 id="十一、进程管理"><a href="#十一、进程管理" class="headerlink" title="十一、进程管理"></a>十一、进程管理</h1><p><strong>基本介绍：</strong></p>
+<h1 id="十一、进程管理"><a href="#十一、进程管理" class="headerlink" title="十一、进程管理"></a>十一、进程管理</h1><h2 id="11-1、进程管理"><a href="#11-1、进程管理" class="headerlink" title="11.1、进程管理"></a>11.1、进程管理</h2><p><strong>基本介绍：</strong></p>
 <p>1、在linux中，每个<strong>执行的程序</strong>都被称为一个进程，每一个进程都分配一个ID号(pid，进程号)。</p>
 <p>2、每个进程都可以以 <strong>前台和后台</strong> 两种方式存在，前台在屏幕上可以看见，后台在屏幕上看不见。</p>
 <p>3、一般系统的服务都是以后台进程的方式存在，而且会常驻在系统中，直到关机才结束。</p>
-<p><strong>查看进程</strong></p>
-<ul>
+<h3 id="11-1-1、查看进程"><a href="#11-1-1、查看进程" class="headerlink" title="11.1.1、查看进程"></a>11.1.1、查看进程</h3><ul>
 <li><strong>ps [选项]</strong> 查看当前系统中，有哪些正在执行，以及他们的执行情况。 <strong>可以不加参数</strong><ul>
 <li>ps -a 显示当前终端中所有的进程信息 </li>
 <li>ps -u 以用户的格式显示进程信息</li>
@@ -965,7 +970,7 @@
 </ul>
 <p><img src="/2022/05/05/Linux/image-20220521100851299.png" srcset="/img/loading.gif" lazyload alt="ps显示的信息选项"></p>
 <p><img src="/2022/05/05/Linux/image-20220521112337811.png" srcset="/img/loading.gif" lazyload></p>
-<p>ps详解：</p>
+<p><strong>ps详解：</strong></p>
 <ul>
 <li>USER： 用户信息</li>
 <li>PID：进程号</li>
@@ -1000,8 +1005,7 @@
 <li><p>CMD:启动进程所用的命令和参数</p>
 </li>
 </ul>
-<p><strong>终止进程</strong></p>
-<ul>
+<h3 id="11-1-2、终止进程"><a href="#11-1-2、终止进程" class="headerlink" title="11.1.2、终止进程"></a>11.1.2、终止进程</h3><ul>
 <li><strong>kill [选项] 进程号</strong> 通过进程号杀死进程</li>
 <li><strong>killall 进程名称</strong> 通过进程名称杀死进程，也支持通配符<ul>
 <li>-9 表示强迫进程立即停</li>
@@ -1009,8 +1013,7 @@
 </li>
 </ul>
 <p><img src="/2022/05/05/Linux/image-20220522162804784.png" srcset="/img/loading.gif" lazyload alt="应用实例"></p>
-<p><strong>查看进程树</strong></p>
-<ul>
+<h3 id="11-1-3、查看进程树"><a href="#11-1-3、查看进程树" class="headerlink" title="11.1.3、查看进程树"></a>11.1.3、查看进程树</h3><ul>
 <li><strong>pstree [选项]</strong> 可以更加直观的来看进程信息<ul>
 <li>-p：显示进程的PID</li>
 <li>-u：显示进程的所属用户</li>
@@ -1018,21 +1021,18 @@
 </li>
 </ul>
 <p><img src="/2022/05/05/Linux/image-20220522163701710.png" srcset="/img/loading.gif" lazyload alt="应用实例"></p>
-<p><strong>服务(service)管理</strong></p>
-<p>本质就是进程，但是是运行在后台的，同城会监听某个端口，等待其他程序的请求，所以又称为守护进程</p>
+<h2 id="11-2、服务-service-管理"><a href="#11-2、服务-service-管理" class="headerlink" title="11.2、服务(service)管理"></a>11.2、服务(service)管理</h2><p>本质就是进程，但是是运行在后台的，同城会监听某个端口，等待其他程序的请求，所以又称为守护进程</p>
 <ul>
 <li><strong>service 服务名 [start| stop | restart | reload | status]</strong> </li>
 <li>但是 在CentOS7.0之后，很多服务不再使用<strong>service</strong>，而是<strong>systemctl</strong></li>
 <li>被service指令管理的服务在 /etc/init.d查看</li>
 </ul>
 <p><img src="/2022/05/05/Linux/image-20220522170720300.png" srcset="/img/loading.gif" lazyload></p>
-<p><strong>查看服务名</strong></p>
-<ul>
+<h3 id="11-2-1、查看服务名"><a href="#11-2-1、查看服务名" class="headerlink" title="11.2.1、查看服务名"></a>11.2.1、查看服务名</h3><ul>
 <li><strong>setup 选择 系统服务</strong>查看全部服务</li>
 <li><strong>ls -l /etc/init.d/</strong> 看到service指令管理的服务</li>
 </ul>
-<p><strong>查看运行级别</strong></p>
-<p><img src="/2022/05/05/Linux/image-20220522171720834.png" srcset="/img/loading.gif" lazyload alt="运行级别"></p>
+<h3 id="11-2-2、查看运行级别"><a href="#11-2-2、查看运行级别" class="headerlink" title="11.2.2、查看运行级别"></a>11.2.2、查看运行级别</h3><p><img src="/2022/05/05/Linux/image-20220522171720834.png" srcset="/img/loading.gif" lazyload alt="运行级别"></p>
 <table>
 <thead>
 <tr>
@@ -1049,8 +1049,7 @@
 <td>设置运行级别，前者相当于3，后者相当于5</td>
 </tr>
 </tbody></table>
-<p><strong>chkconfig指令</strong></p>
-<ul>
+<h3 id="11-2-3、chkconfig指令"><a href="#11-2-3、chkconfig指令" class="headerlink" title="11.2.3、chkconfig指令"></a>11.2.3、chkconfig指令</h3><ul>
 <li>可以给服务的各个运行级别设置自 启动/关闭</li>
 <li>chkconfig 指令管理的服务在 /etc/init.d 查看</li>
 <li><strong>chkconfig –list [| grep XXX]</strong> 查看服务</li>
@@ -1058,8 +1057,7 @@
 <li>**chkconfig –level 5 服务名 on/off ** 将某一个服务在某一个指定的运行级别下是自启动还是关闭自启动</li>
 <li>chkconfig 重新设置服务后自启动或关闭 需要<strong>reboot</strong>生效</li>
 </ul>
-<p><strong>systemctl 管理指令</strong></p>
-<ul>
+<h3 id="11-2-4、systemctl-管理指令"><a href="#11-2-4、systemctl-管理指令" class="headerlink" title="11.2.4、systemctl 管理指令"></a>11.2.4、systemctl 管理指令</h3><ul>
 <li><strong>systemctl [start| stop | restart | status] 服务名</strong> </li>
 <li>systemctl指令管理的服务在 /usr/lib/systemd/system查看</li>
 <li><strong>systemctl list-unit-files | grep 服务名</strong>查看服务开机启动状态 grep可以进行过滤</li>
@@ -1068,17 +1066,14 @@
 <li><strong>systemctl is-enable 服务名</strong> 查询某个服务是否是自启动 </li>
 <li>以上的方式只是临时生效，如果要永久生效那么使用 <strong>ststemctl [enable|disable] 服务名</strong></li>
 </ul>
-<p> <strong>打开与关闭指定端口</strong></p>
-<ul>
+<h3 id="11-2-5、打开与关闭指定端口"><a href="#11-2-5、打开与关闭指定端口" class="headerlink" title="11.2.5、打开与关闭指定端口"></a>11.2.5、打开与关闭指定端口</h3><ul>
 <li><strong>firewall-cmd –permanent -add-port=端口号/协议</strong> 打开端口</li>
-<li></li>
 <li><strong>firewall-cmd –permanent -remove-port=端口号/协议</strong> 关闭端口</li>
 <li> <strong>firewall-cmd –reload</strong>重新载入才能生效</li>
 <li><strong>firewall-cmd –query-port=端口号/协议</strong> 查询端口是否开放</li>
 <li><strong>netstat -anp | more</strong> 可以查询出来端口号对应的协议</li>
 </ul>
-<p><strong>动态监控进程</strong></p>
-<ul>
+<h3 id="11-2-6、动态监控进程"><a href="#11-2-6、动态监控进程" class="headerlink" title="11.2.6、动态监控进程"></a>11.2.6、动态监控进程</h3><ul>
 <li><p><strong>top [选项]</strong></p>
 <ul>
 <li><strong>-d 秒数</strong> 指定top命令几秒更新 默认是3s</li>
@@ -1115,17 +1110,15 @@
 </tbody></table>
 </li>
 </ul>
-<p><strong>监控网络状态</strong></p>
-<ul>
+<h3 id="11-2-7、监控网络状态"><a href="#11-2-7、监控网络状态" class="headerlink" title="11.2.7、监控网络状态"></a>11.2.7、监控网络状态</h3><ul>
 <li><strong>netstat [选项]</strong><ul>
 <li><strong>-an</strong> 按一定顺序排列输出</li>
 <li><strong>-p</strong> 显示那个进程在调用</li>
 </ul>
 </li>
 </ul>
-<h1 id="十二、RPM与YUM"><a href="#十二、RPM与YUM" class="headerlink" title="十二、RPM与YUM"></a>十二、RPM与YUM</h1><p><strong>rpm包的管理</strong></p>
-<p><strong>介绍：</strong>npm用于互联网下载包的打包及安装工具，RPM是RedHat Package Manager(RedHat软件包管理工具）的缩写</p>
-<ul>
+<h1 id="十二、RPM与YUM"><a href="#十二、RPM与YUM" class="headerlink" title="十二、RPM与YUM"></a>十二、RPM与YUM</h1><h2 id="12-1、rpm包的管理"><a href="#12-1、rpm包的管理" class="headerlink" title="12.1、rpm包的管理"></a>12.1、rpm包的管理</h2><p><strong>介绍：</strong>npm用于互联网下载包的打包及安装工具，RPM是RedHat Package Manager(RedHat软件包管理工具）的缩写</p>
+<h3 id="12-1-1、安装rpm包"><a href="#12-1-1、安装rpm包" class="headerlink" title="12.1.1、安装rpm包"></a>12.1.1、安装rpm包</h3><ul>
 <li><strong>rpm -qa|grep xx</strong> 查询已安装的rpm列表</li>
 <li><strong>rpm -qa</strong> 查询安装的所有rpm软件包</li>
 <li><strong>rpm -q 软件包名</strong> 查询软件包是否安装</li>
@@ -1134,13 +1127,66 @@
 <li><strong>rpm -qf 文件全路径名</strong> 查询文件所属的软件包</li>
 </ul>
 <p><img src="/2022/05/05/Linux/image-20220526111715774.png" srcset="/img/loading.gif" lazyload alt="rpm包名基本格式"></p>
-<p><strong>卸载rpm包</strong></p>
-<ul>
+<h3 id="12-1-2、卸载rpm包"><a href="#12-1-2、卸载rpm包" class="headerlink" title="12.1.2、卸载rpm包"></a>12.1.2、卸载rpm包</h3><ul>
 <li><strong>rpm -e RPM包的名称</strong> 卸载rpm包<ul>
 <li><strong>rpm -e –nodeps RPM包的名称</strong> 强行卸载</li>
 </ul>
 </li>
+<li><strong>rpm -ivh RPM包全路径名称</strong> 安装rpm包<ul>
+<li><strong>i=install</strong> 安装</li>
+<li><strong>v=verbose</strong>提示</li>
+<li><strong>h=hash</strong>进度条</li>
 </ul>
+</li>
+</ul>
+<h2 id="12-2、yum"><a href="#12-2、yum" class="headerlink" title="12.2、yum"></a>12.2、yum</h2><ul>
+<li><strong>yum list | grep xx软件列表</strong> 查询yum服务器是由有需要安装的软件</li>
+<li><strong>yum install xxx</strong> 下载安装指定的yum包</li>
+</ul>
+<h1 id="十三、搭建JavaEE环境"><a href="#十三、搭建JavaEE环境" class="headerlink" title="十三、搭建JavaEE环境"></a>十三、搭建JavaEE环境</h1><p>我们需要 <strong>idea tomcat mysql jdk</strong> 四个软件</p>
+<h2 id="13-1、安装JDK"><a href="#13-1、安装JDK" class="headerlink" title="13.1、安装JDK"></a>13.1、安装JDK</h2><p><img src="/2022/05/05/Linux/image-20220527170320229.png" srcset="/img/loading.gif" lazyload alt="JDK的安装步骤"></p>
+<h2 id="13-2、安装tomcat"><a href="#13-2、安装tomcat" class="headerlink" title="13.2、安装tomcat"></a>13.2、安装tomcat</h2><p><img src="/2022/05/05/Linux/image-20220527180809385.png" srcset="/img/loading.gif" lazyload alt="tomcat的安装步骤"></p>
+<h2 id="13-3、安装idae"><a href="#13-3、安装idae" class="headerlink" title="13.3、安装idae"></a>13.3、安装idae</h2><p><img src="/2022/05/05/Linux/image-20220527185615325.png" srcset="/img/loading.gif" lazyload alt="idea的安装步骤"></p>
+<h2 id="13-4、安装mysql"><a href="#13-4、安装mysql" class="headerlink" title="13.4、安装mysql"></a>13.4、安装mysql</h2><ol>
+<li><p>新建文件夹/opt/mysql，并cd进去</p>
+</li>
+<li><p>运行wget <a target="_blank" rel="noopener" href="http://dev.mysql.com/get/mysql-5.7.26-1.el7.x86_64.rpm-bundle.tar%EF%BC%8C%E4%B8%8B%E8%BD%BDmysql%E5%AE%89%E8%A3%85%E5%8C%85">http://dev.mysql.com/get/mysql-5.7.26-1.el7.x86_64.rpm-bundle.tar，下载mysql安装包</a></p>
+<p>PS：centos7.6自带的类mysql数据库是mariadb，会跟mysql冲突，要先删除。</p>
+</li>
+<li><p>运行tar -xvf mysql-5.7.26-1.el7.x86_64.rpm-bundle.tar </p>
+</li>
+<li><p>运行rpm -qa|grep mari，查询mariadb相关安装包</p>
+</li>
+</ol>
+<p><img src="/2022/05/05/Linux/wps1.jpg" srcset="/img/loading.gif" lazyload alt="img"> </p>
+<ol start="5">
+<li><p>运行rpm -e –nodeps mariadb-libs，卸载</p>
+</li>
+<li><p>然后开始真正安装mysql，依次运行以下几条</p>
+</li>
+</ol>
+ <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs she">rpm -ivh mysql-community-common-5.7.26-1.el7.x86_64.rpm<br>rpm -ivh mysql-community-libs-5.7.26-1.el7.x86_64.rpm<br>rpm -ivh mysql-community-client-5.7.26-1.el7.x86_64.rpm<br>rpm -ivh mysql-community-server-5.7.26-1.el7.x86_64.rpm<br></code></pre></td></tr></table></figure>
+
+<ol start="7">
+<li><p>运行systemctl start mysqld.service，启动mysql</p>
+</li>
+<li><p>然后开始设置root用户密码</p>
+</li>
+</ol>
+<p>Mysql自动给root用户设置随机密码，运行grep “password” /var/log/mysqld.log可看到当前密码</p>
+<p><img src="/2022/05/05/Linux/wps2.jpg" srcset="/img/loading.gif" lazyload alt="img"> </p>
+<ol start="9">
+<li><p>运行mysql -u root  -p，用root用户登录，提示输入密码可用上述的，可以成功登陆进入mysql命令行</p>
+</li>
+<li><p>设置root密码，对于个人开发环境，如果要设比较简单的密码（****生产环境服务器要设复杂密码****），可以运行set global validate_password_policy=0;  提示密码设置策略</p>
+</li>
+</ol>
+<p>（validate_password_policy默认值1，）</p>
+<p><img src="/2022/05/05/Linux/wps3.jpg" srcset="/img/loading.gif" lazyload alt="img"> </p>
+<ol start="11">
+<li>set password for ‘root‘@’localhost’ =password(‘hspedu100’);</li>
+<li>运行flush privileges;使密码设置生效</li>
+</ol>
 
               
             </div>
