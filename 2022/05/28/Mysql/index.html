@@ -16,17 +16,24 @@
   <meta name="author" content="Mr.Wang">
   <meta name="keywords" content="">
   
-    <meta name="description" content="一、mysql基础篇一些不怎么用过的mysql语句： rank() over：排名相同的两名是并列，但是占两个名次，1 1 3 4 4 6这种 dense_rank() over：排名相同的两名是并列，共占一个名词，1 1 2 3 3 4这种 row_number() over：这个函数不需要考虑是否并列，哪怕根据条件查询出来的数值相同也会进行连续排名 1 2 3 4 5 distance 去重">
+    <meta name="description" content="一些不怎么用过的mysql语句： rank() over：排名相同的两名是并列，但是占两个名次，1 1 3 4 4 6这种 dense_rank() over：排名相同的两名是并列，共占一个名词，1 1 2 3 3 4这种 row_number() over：这个函数不需要考虑是否并列，哪怕根据条件查询出来的数值相同也会进行连续排名 1 2 3 4 5 distance 去重 ifnull 判断是">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Mysql">
 <meta property="og:url" content="https://eliseo.top/2022/05/28/Mysql/index.html">
 <meta property="og:site_name" content="Eliseo的小屋">
-<meta property="og:description" content="一、mysql基础篇一些不怎么用过的mysql语句： rank() over：排名相同的两名是并列，但是占两个名次，1 1 3 4 4 6这种 dense_rank() over：排名相同的两名是并列，共占一个名词，1 1 2 3 3 4这种 row_number() over：这个函数不需要考虑是否并列，哪怕根据条件查询出来的数值相同也会进行连续排名 1 2 3 4 5 distance 去重">
+<meta property="og:description" content="一些不怎么用过的mysql语句： rank() over：排名相同的两名是并列，但是占两个名次，1 1 3 4 4 6这种 dense_rank() over：排名相同的两名是并列，共占一个名词，1 1 2 3 3 4这种 row_number() over：这个函数不需要考虑是否并列，哪怕根据条件查询出来的数值相同也会进行连续排名 1 2 3 4 5 distance 去重 ifnull 判断是">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://eliseo.top/2022/05/28/Mysql/image-20220530211722852.png">
+<meta property="og:image" content="https://eliseo.top/2022/05/28/Mysql/image-20220530221410526.png">
+<meta property="og:image" content="https://eliseo.top/2022/05/28/Mysql/image-20220530230605123.png">
+<meta property="og:image" content="https://eliseo.top/2022/05/28/Mysql/image-20220531002203728.png">
+<meta property="og:image" content="https://eliseo.top/2022/05/28/Mysql/image-20220531002543626.png">
+<meta property="og:image" content="https://eliseo.top/2022/05/28/Mysql/image-20220531002348351.png">
 <meta property="article:published_time" content="2022-05-28T01:35:45.000Z">
-<meta property="article:modified_time" content="2022-05-30T12:48:24.341Z">
+<meta property="article:modified_time" content="2022-05-30T16:26:28.734Z">
 <meta property="article:author" content="Mr.Wang">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://eliseo.top/2022/05/28/Mysql/image-20220530211722852.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
@@ -237,7 +244,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          238 字
+          3k 字
         
       </span>
     
@@ -249,7 +256,7 @@
         
         
           <!-- compatible with older versions-->
-          2 分钟
+          26 分钟
         
       </span>
     
@@ -301,20 +308,94 @@
                 
                   
                     <!-- compatible with older versions-->
-                    本文最后更新于：2 分钟前
+                    本文最后更新于：3 分钟前
                   
                 
               </p>
             
             <div class="markdown-body">
               
-              <h1 id="一、mysql基础篇"><a href="#一、mysql基础篇" class="headerlink" title="一、mysql基础篇"></a>一、mysql基础篇</h1><p><strong>一些不怎么用过的mysql语句：</strong></p>
+              <p><strong>一些不怎么用过的mysql语句：</strong></p>
 <p><strong>rank() over：</strong>排名相同的两名是并列，但是占两个名次，1 1 3 4 4 6这种</p>
 <p><strong>dense_rank() over：</strong>排名相同的两名是并列，共占一个名词，1 1 2 3 3 4这种</p>
 <p><strong>row_number() over：</strong>这个函数不需要考虑是否并列，哪怕根据条件查询出来的数值相同也会进行连续排名 1 2 3 4 5</p>
 <p><strong>distance</strong> 去重</p>
 <p><strong>ifnull</strong> 判断是否为空 自动去除空的数据 ifnull(( ***),null) 将表中的空数据输出为null</p>
-<h1 id="二、mysql高级篇"><a href="#二、mysql高级篇" class="headerlink" title="二、mysql高级篇"></a>二、mysql高级篇</h1>
+<h1 id="一、逻辑架构"><a href="#一、逻辑架构" class="headerlink" title="一、逻辑架构"></a>一、逻辑架构</h1><h2 id="1、逻辑架构剖析"><a href="#1、逻辑架构剖析" class="headerlink" title="1、逻辑架构剖析"></a>1、逻辑架构剖析</h2><h3 id="1-1服务器处理客户端请求"><a href="#1-1服务器处理客户端请求" class="headerlink" title="1.1服务器处理客户端请求"></a>1.1服务器处理客户端请求</h3><p>mysql是c/s架构，即 <strong>Client/Server 架构</strong>，服务器端程序使用的 <strong>mysqld</strong></p>
+<p>不论客户端进程和服务器进程是采用哪种方式进行通信，最后实现的效果都是： <strong>客户端进程向服务器进程发送一段文本(SQL语句)，服务器进程处理后再向客户端进程发送一段文本(处理结果)。</strong></p>
+<p><img src="/2022/05/28/Mysql/image-20220530211722852.png" srcset="/img/loading.gif" lazyload alt="查询请求"></p>
+<p><img src="/2022/05/28/Mysql/image-20220530221410526.png" srcset="/img/loading.gif" lazyload alt="mysql服务器的逻辑架构说明"></p>
+<h3 id="1-2、Connectors"><a href="#1-2、Connectors" class="headerlink" title="1.2、Connectors"></a>1.2、Connectors</h3><p>Connectors，指的是不同语言中与SQL的交互。MySQL首先是一个网络程序，在TCP之上定义了自己的应用层协议。所以要使用MySQL，我们可以编写代码，跟MySQL Server<strong>建立TCP连接</strong>,之后按照其定义好的协议进行交互。或者比较方便的办法是调用SDK，比如Native c API、JDBC、PHP等各种语言MySQL Connector，或者通过ODBC。但<strong>通过SDK来访问MySQL，本质上还是在TCP连接上通过MySQL协议跟MySQL进行交互。</strong></p>
+<h3 id="1-3、第1层：连接层"><a href="#1-3、第1层：连接层" class="headerlink" title="1.3、第1层：连接层"></a>1.3、第1层：连接层</h3><p>系统(客户端)访问<code>MySQL</code>服务器前，做的第一件事就是建立<code>TCP</code>连接。</p>
+<p>经过三次握手建立连接成功后，<code>MySQL</code>服务器对<code>TCP</code>传输过来的账号密码做身份认证、权限获取。</p>
+<ul>
+<li><strong>用户名或密码不对，会收到一个Access denied for user错误，客户端程序结束执行</strong></li>
+<li><strong>用户名认证通过，会从权限表查出账号拥有的权限与连接关联，之后的权限判断逻辑，都将依赖于此时读到的权限</strong></li>
+</ul>
+<p><strong>TCP</strong> 连接收到请求后，必须要分配给一个线程专门与这个客户端的交互。所以还会有个线程池，去走后面的流程。每一个连接从线程池中获取线程，省去了创建和销毁线程的开销。</p>
+<p>多个系统都可以和MySQL服务器建立连接，每个系统建立的连接肯定不止一个。所以，为了解决TCP无限创建与TCP频繁创建销毁带来的资源耗尽、性能下降问题。MySQL服务器里有专门的<code>TCP连接池</code>限制连接数，采用<code>长连接模式</code>复用TCP连接。</p>
+<p><img src="/2022/05/28/Mysql/image-20220530230605123.png" srcset="/img/loading.gif" lazyload alt="image-20220530230605123"></p>
+<p><code>TCP</code>连接收到请求后，必须要分配给一个线程专门与这个客户端的交互。所以还会有个线程池，去走后面的流程。每个连接从线程池中获取线程，省去了创建和销毁线程的开销。</p>
+<p>这些内容都归纳到<code>MySQL</code>的<strong>连接管理</strong>组件中。</p>
+<p>所以<strong>连接管理</strong>的职责是负责认证、管理连接、获取权限信息。</p>
+<h3 id="1-4、第2层：服务层"><a href="#1-4、第2层：服务层" class="headerlink" title="1.4、第2层：服务层"></a>1.4、第2层：服务层</h3><p>第二层架构主要完成大多数的核心服务功能，如SQL接口，并完成 <code>缓存的查询</code>，SQL的分析和优化及部分内置函数的执行。所有跨存储引擎的功能也在这一层实现。</p>
+<p>在该层，服务器会 <code>解析查询</code>并创建相应的内部 <code>解析树</code>，并对其完成相应的 <code>优化</code>：如确定查询表的顺序，是由利用索引等，最后生成相应的执行操作。</p>
+<p>如果是SELECT语句，服务器还会 <code>查询内部的缓存</code>。如果缓存空间足够大，这样在解决大量读操作的环境中能后很好的提升系统的性能。</p>
+<ul>
+<li><p><strong>SQL Interface：SQL接口</strong></p>
+<ul>
+<li>接受用户的SQL命令，并且返回用户需要查询的结果。比如SELECT…FROM就是调用SQL Interface</li>
+<li>MySQL支持DML（数据操作语言）、DDL（数据定义语言）、存储过程、视图、触发器、自定义函数等多种SQL语言接口。</li>
+</ul>
+</li>
+<li><p><strong>Parser：解析器</strong></p>
+<ul>
+<li>在解析器中对SQL语句进行语法分析、语义分析。将SQL语句分解成数据结构，并将这个结构传递到后续步骤，以后SQL语句的传递和处理就是基于这个结构的。如果在分解构成中遇到错误，那么就说明这个SQL语句是不合理的。</li>
+<li>在SQL命令传递到解析器的时候会被解析器验证和解析，并为其创建<code>语法树</code>，并根据数据字典丰富查询语法树，会<code>验证该客户端是够具有执行该查询的权限</code>。创建好语法树后，MySQL还会对SQL查询进行语法上的优化，进行查询重写。</li>
+</ul>
+</li>
+<li><p><strong>OpTimizer：查询优化器</strong></p>
+<ul>
+<li><p>SQL语句在语法解析之后，查询之前会使用查询优化器确定SQL语句的执行路径，生成一个<code>执行计划</code>。</p>
+</li>
+<li><p>这个执行计划表明应该 <code>使用哪些索引</code>进行查询(全表检索还是使用索引检索)，表之间的连接顺序如何，最后会按照执行计划中的步骤调用存储引擎提供的方法来真正的执行查询，并将查询结果返回给用户。</p>
+</li>
+<li><p>它使用<code>选取-投影-连接</code>策略进行查询。例如：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">SELECT</span> id,name <span class="hljs-keyword">FROM</span> student <span class="hljs-keyword">WHERE</span> gender <span class="hljs-operator">=</span> <span class="hljs-string">&#x27;女&#x27;</span>;<br></code></pre></td></tr></table></figure>
+
+<p>这个SELECT查询先根据WHERE语句进行<code>选取</code>，而不是讲标全部查询出来以后再进行gender过滤。</p>
+<p>这个SELECT查询现根据id和name进行属性<code>投影</code>，而不是将属性全部取出以后在进行过滤，将这两个查询条件<code>连接</code>起来生成最终查询结果。</p>
+</li>
+</ul>
+</li>
+<li><p><strong>Caches &amp; Buffers：查询缓存组件</strong></p>
+<ul>
+<li>MySQL内部维持着一些Cache和Buffer，比如Query Cache用来缓存一条SELECT语句的执行结果，如果能后在其中找到对应的查询结果，那么就不再进行查询解析、优化和执行的整个过程了，直接将结果反馈给客户端。</li>
+<li>这个缓存机制是由一系列小缓存组成的。比如表缓存，记录缓存，权限缓存等。</li>
+<li>这个查询缓存可以在<code>不同客户端之间共享</code>。</li>
+<li>从MySQL 5.7.20开始，不推荐使用查询缓存，并在<code>MySQL 8.0中删除</code>。</li>
+</ul>
+</li>
+</ul>
+<h3 id="1-5、第3层：引擎层"><a href="#1-5、第3层：引擎层" class="headerlink" title="1.5、第3层：引擎层"></a>1.5、第3层：引擎层</h3><p>存储引擎层，存储引擎真正的负责了MySQL中数据的存储和提取，服务器通过API与存储引擎进行通信。</p>
+<hr>
+<p>和其它数据库相比，MysQL有点与众不同，它的架构可以在多种不同场景中应用并发挥良好作用，主要体现在存储引擎的架构上，<code>插件式的存储引擎</code>架构将查询处理和其它的系统任务以及数据的存储提取相分离。这种架构可以根据业务的需求和实际需要选择合适的存储引擎。同时开源的MySQL还允许<code>开发人员设置自己的存储引擎</code>。</p>
+<p>这种高效的模块化架构为那些希望专门针对特定应用程序需求（例如数据仓库、事务处理或高可用性情况)的人提供了巨大的好处，同时享受使用一组独立于任何接口和服务的优势存储引擎。</p>
+<p>插件式存储引擎层（Storage Engines），<strong>真正的负责了MySQL中数据的存储和提取，对物理服务器级别维护的底层数据执行操作</strong>，服务器通过API与存储引擎进行通信。不同的存储引擎具有的功能不同，这样我们可以根据自己的实际需要进行选取。</p>
+<p>MySQL8.0.25默认支持的存储引擎如下：</p>
+<p><img src="/2022/05/28/Mysql/image-20220531002203728.png" srcset="/img/loading.gif" lazyload alt="存储引擎"></p>
+<h3 id="1-6、存储层"><a href="#1-6、存储层" class="headerlink" title="1.6、存储层"></a>1.6、存储层</h3><p>所有的数据，数据库、表的定义，表的每一行的内容，索引，都是存在<strong>文件系统</strong>上，以<strong>文件</strong>的方式存在的，并完成与存储引擎的交互。当然有些存储引擎比如InnoDB，也支持不使用文件系统直接管理裸设备，但现代文件系统的实现使得这样做没有必要了。在文件系统之下，可以使用本地磁盘，可以使用DAS、NAS、SAN等各种存储系统</p>
+<p>使用 <strong>show variables like “%datadir%”</strong>可以查看存储文件所在的地方</p>
+<p><img src="/2022/05/28/Mysql/image-20220531002543626.png" srcset="/img/loading.gif" lazyload></p>
+<h3 id="1-7、小结"><a href="#1-7、小结" class="headerlink" title="1.7、小结"></a>1.7、小结</h3><p>MySQL架构图简化如下：</p>
+<p><img src="/2022/05/28/Mysql/image-20220531002348351.png" srcset="/img/loading.gif" lazyload></p>
+<p>简化为三层结构：</p>
+<ol>
+<li>连接层：客户端和服务器端建立连接，客户端发送 SQL 至服务器端；</li>
+<li>SQL 层（服务层）：对 SQL 语句进行查询处理；与数据库文件的存储方式无关；</li>
+<li>存储引擎层：与数据库文件打交道，负责数据的存储和读取。</li>
+</ol>
+<h2 id="2、SQL执行流程"><a href="#2、SQL执行流程" class="headerlink" title="2、SQL执行流程"></a>2、SQL执行流程</h2>
               
             </div>
             <hr/>
