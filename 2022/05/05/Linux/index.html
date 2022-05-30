@@ -39,14 +39,12 @@
 <meta property="og:image" content="https://eliseo.top/2022/05/05/Linux/image-20220517163733675.png">
 <meta property="og:image" content="https://eliseo.top/2022/05/05/Linux/image-20220517170824281.png">
 <meta property="og:image" content="https://eliseo.top/2022/05/05/Linux/image-20220518154349391.png">
-<meta property="og:image" content="https://eliseo.top/2022/05/05/Linux/image-20220520162633780.png">
 <meta property="og:image" content="https://eliseo.top/2022/05/05/Linux/image-20220520162025078.png">
 <meta property="og:image" content="https://eliseo.top/2022/05/05/Linux/image-20220521100851299.png">
 <meta property="og:image" content="https://eliseo.top/2022/05/05/Linux/image-20220521112337811.png">
 <meta property="og:image" content="https://eliseo.top/2022/05/05/Linux/image-20220522162804784.png">
 <meta property="og:image" content="https://eliseo.top/2022/05/05/Linux/image-20220522163701710.png">
 <meta property="og:image" content="https://eliseo.top/2022/05/05/Linux/image-20220522170720300.png">
-<meta property="og:image" content="https://eliseo.top/2022/05/05/Linux/image-20220522171720834.png">
 <meta property="og:image" content="https://eliseo.top/2022/05/05/Linux/image-20220526111715774.png">
 <meta property="og:image" content="https://eliseo.top/2022/05/05/Linux/image-20220527170320229.png">
 <meta property="og:image" content="https://eliseo.top/2022/05/05/Linux/image-20220527180809385.png">
@@ -54,8 +52,20 @@
 <meta property="og:image" content="https://eliseo.top/2022/05/05/Linux/wps1.jpg">
 <meta property="og:image" content="https://eliseo.top/2022/05/05/Linux/wps2.jpg">
 <meta property="og:image" content="https://eliseo.top/2022/05/05/Linux/wps3.jpg">
+<meta property="og:image" content="https://eliseo.top/2022/05/05/Linux/image-20220529154008532.png">
+<meta property="og:image" content="https://eliseo.top/2022/05/05/Linux/image-20220530094005686.png">
+<meta property="og:image" content="https://eliseo.top/2022/05/05/Linux/image-20220529155432292.png">
+<meta property="og:image" content="https://eliseo.top/2022/05/05/Linux/image-20220530094254764.png">
+<meta property="og:image" content="https://eliseo.top/2022/05/05/Linux/image-20220530095627463.png">
+<meta property="og:image" content="https://eliseo.top/2022/05/05/Linux/image-20220530095927797.png">
+<meta property="og:image" content="https://eliseo.top/2022/05/05/Linux/image-20220530100016234.png">
+<meta property="og:image" content="https://eliseo.top/2022/05/05/Linux/image-20220530100226443.png">
+<meta property="og:image" content="https://eliseo.top/2022/05/05/Linux/image-20220530103720000.png">
+<meta property="og:image" content="https://eliseo.top/2022/05/05/Linux/image-20220530122433278.png">
+<meta property="og:image" content="https://eliseo.top/2022/05/05/Linux/image-20220530110237896.png">
+<meta property="og:image" content="https://eliseo.top/2022/05/05/Linux/image-20220530094005686.png">
 <meta property="article:published_time" content="2022-05-05T09:21:34.000Z">
-<meta property="article:modified_time" content="2022-05-27T14:32:47.048Z">
+<meta property="article:modified_time" content="2022-05-30T07:43:31.868Z">
 <meta property="article:author" content="Mr.Wang">
 <meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary_large_image">
@@ -270,7 +280,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          12k 字
+          15k 字
         
       </span>
     
@@ -282,7 +292,7 @@
         
         
           <!-- compatible with older versions-->
-          103 分钟
+          129 分钟
         
       </span>
     
@@ -334,7 +344,7 @@
                 
                   
                     <!-- compatible with older versions-->
-                    本文最后更新于：1 小时前
+                    本文最后更新于：5 小时前
                   
                 
               </p>
@@ -952,7 +962,11 @@
 <p><strong>设置hosts映射</strong></p>
 <p>windows中 在<strong>C:\Windows\System32\drivers\etc\hosts</strong>中指定</p>
 <p>linux中 在 <strong>/etc/hosts</strong> 文件中指定</p>
-<p><img src="/2022/05/05/Linux/image-20220520162633780.png" srcset="/img/loading.gif" lazyload alt="应用实例"></p>
+<p><strong>应用实例：用户在浏览器中输入了<a target="_blank" rel="noopener" href="http://www.baidu.com/">www.baidu.com</a></strong></p>
+<p>1、浏览器先检查浏览器缓存中有没有该域名解析ip地址，有就调用这个IP完成解析，如果没有就检查DNS解析器缓存，如果有则直接返回IP完成解析。这两个缓存可以理解为本地解析器缓存</p>
+<p>2、一般来说当电脑第一次成功访问某网站，在一定时间内，浏览器或操作系统会缓存它的ip地址(DNS解析记录)如在cmd窗口中输入 ipconfig/displaydns 表示DNX域名解析缓存，ipconfig/flushdns表示手动清理DNS缓存</p>
+<p>3、如果本地解析器没有找到对应映射，检查系统中hosts文件中有没有配置对应的ip映射，如果有，则完成解析并缓存</p>
+<p>4、如果均没有，则到域名服务DNS进行解析域</p>
 <p><img src="/2022/05/05/Linux/image-20220520162025078.png" srcset="/img/loading.gif" lazyload alt="示意图"></p>
 <h1 id="十一、进程管理"><a href="#十一、进程管理" class="headerlink" title="十一、进程管理"></a>十一、进程管理</h1><h2 id="11-1、进程管理"><a href="#11-1、进程管理" class="headerlink" title="11.1、进程管理"></a>11.1、进程管理</h2><p><strong>基本介绍：</strong></p>
 <p>1、在linux中，每个<strong>执行的程序</strong>都被称为一个进程，每一个进程都分配一个ID号(pid，进程号)。</p>
@@ -971,40 +985,70 @@
 <p><img src="/2022/05/05/Linux/image-20220521100851299.png" srcset="/img/loading.gif" lazyload alt="ps显示的信息选项"></p>
 <p><img src="/2022/05/05/Linux/image-20220521112337811.png" srcset="/img/loading.gif" lazyload></p>
 <p><strong>ps详解：</strong></p>
-<ul>
-<li>USER： 用户信息</li>
-<li>PID：进程号</li>
-<li>%CPU：进程占用CPU的百分比</li>
-<li>%MEM：进程占用物理内存的百分比</li>
-<li>VSZ：进程占用的虚拟内存大小(单位：KB)</li>
-<li>RSS：进程占用的物理内存大小(单位：KB)</li>
-<li>TT：终端名称，缩写</li>
-<li>STAT：进程状态，S-睡眠 s-表示该进程是会话的先导进程，N-表示进程拥有比普通优先级更低的优先级，R-正在运行，D-短期等待，Z-僵死进程，T-被跟踪或者被停止</li>
-<li>STARTED：进程的启动时间</li>
-<li>TIME：CPU时间，即进程使用CPU的总时间</li>
-<li>COMMAND：启动进程所用的命令和参数。</li>
-</ul>
-<p>ps -ef | grep sshd</p>
-<ul>
-<li><p>是BSD风格</p>
-</li>
-<li><p>UID:用户ID</p>
-</li>
-<li><p>PID:进程ID</p>
-</li>
-<li><p>PPID:父进程ID</p>
-</li>
-<li><p>C:CPU用于计算执行优先级的因子。数值越大，表明进程是CPU密集型运算，执行优先级会降低;数值越小，表明进程是I/O密集型运算，执行优先级会提高</p>
-</li>
-<li><p>STIME:进程启动的时间</p>
-</li>
-<li><p>TTY:完整的终端名称</p>
-</li>
-<li><p>TIME:CPU 时间</p>
-</li>
-<li><p>CMD:启动进程所用的命令和参数</p>
-</li>
-</ul>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>USER</td>
+<td>用户信息</td>
+</tr>
+<tr>
+<td>PID</td>
+<td>进程号</td>
+</tr>
+<tr>
+<td>TTY</td>
+<td>完整的终端名称</td>
+</tr>
+<tr>
+<td>TIME</td>
+<td>CPU时间，即进程使用CPU的总时间</td>
+</tr>
+<tr>
+<td>CMD</td>
+<td>启动进程所用的命令和参数</td>
+</tr>
+<tr>
+<td>%CPU</td>
+<td>进程占用CPU的百分比</td>
+</tr>
+<tr>
+<td>%MEM</td>
+<td>进程占用物理内存的百分比</td>
+</tr>
+<tr>
+<td>VSZ</td>
+<td>进程占用的虚拟内存大小(单位：KB)</td>
+</tr>
+<tr>
+<td>RSS</td>
+<td>进程占用的物理内存大小(单位：KB)</td>
+</tr>
+<tr>
+<td>TT</td>
+<td>终端名称，缩写</td>
+</tr>
+<tr>
+<td>STAT</td>
+<td>进程状态，S-睡眠 s-表示该进程是会话的先导进程，N-表示进程拥有比普通优先级更低的优先级，R-正在运行，D-短期等待，Z-僵死进程，T-被跟踪或者被停止</td>
+</tr>
+<tr>
+<td>STARTED</td>
+<td>进程的启动时间</td>
+</tr>
+<tr>
+<td>C</td>
+<td>CPU用于计算执行优先级的因子。数值越大，表明进程是CPU密集型运算，执行优先级会降低;数值越小，表明进程是I/O密集型运算，执行优先级会提高</td>
+</tr>
+<tr>
+<td>COMMAND</td>
+<td>启动进程所用的命令和参数。过长会被截断</td>
+</tr>
+</tbody></table>
 <h3 id="11-1-2、终止进程"><a href="#11-1-2、终止进程" class="headerlink" title="11.1.2、终止进程"></a>11.1.2、终止进程</h3><ul>
 <li><strong>kill [选项] 进程号</strong> 通过进程号杀死进程</li>
 <li><strong>killall 进程名称</strong> 通过进程名称杀死进程，也支持通配符<ul>
@@ -1032,7 +1076,43 @@
 <li><strong>setup 选择 系统服务</strong>查看全部服务</li>
 <li><strong>ls -l /etc/init.d/</strong> 看到service指令管理的服务</li>
 </ul>
-<h3 id="11-2-2、查看运行级别"><a href="#11-2-2、查看运行级别" class="headerlink" title="11.2.2、查看运行级别"></a>11.2.2、查看运行级别</h3><p><img src="/2022/05/05/Linux/image-20220522171720834.png" srcset="/img/loading.gif" lazyload alt="运行级别"></p>
+<h3 id="11-2-2、查看运行级别"><a href="#11-2-2、查看运行级别" class="headerlink" title="11.2.2、查看运行级别"></a>11.2.2、查看运行级别</h3><table>
+<thead>
+<tr>
+<th align="left">运行级别</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">0级</td>
+<td align="left">系统停机状态，系统默认的运行级别不能设为0，否则不能正常启动</td>
+</tr>
+<tr>
+<td align="left">1级</td>
+<td align="left">单用户工作状态，root权限，用于系统维护，禁止远程登录</td>
+</tr>
+<tr>
+<td align="left">2级</td>
+<td align="left">多用户状态(没有NFS),不支持网络</td>
+</tr>
+<tr>
+<td align="left">3级</td>
+<td align="left">完全的多用户状态(有NFS)，登陆后进入控制台命令行模式**(常用)**</td>
+</tr>
+<tr>
+<td align="left">4级</td>
+<td align="left">系统未使用，保留</td>
+</tr>
+<tr>
+<td align="left">5级</td>
+<td align="left">x11控制台，登陆后进入图像GUI模式**(常用)**</td>
+</tr>
+<tr>
+<td align="left">6级</td>
+<td align="left">系统正常关闭并重启，默认运行级别不能设为6，否则不能正常启动</td>
+</tr>
+</tbody></table>
+<h5 id="linux开机流程"><a href="#linux开机流程" class="headerlink" title="linux开机流程"></a>linux开机流程</h5><p>开机 =&gt; BIOS =&gt; /boot =&gt; system进程1 =&gt; 运行级别 =&gt; 运行级对应的服务</p>
 <table>
 <thead>
 <tr>
@@ -1078,7 +1158,7 @@
 <ul>
 <li><strong>-d 秒数</strong> 指定top命令几秒更新 默认是3s</li>
 <li><strong>-i</strong> 使top不显示任何闲置或者僵死进程<ul>
-<li><strong>-p</strong> 通过指定监控进程id来仅仅监控某个进程的状态 w’w’w’w </li>
+<li><strong>-p</strong> 通过指定监控进程id来仅仅监控某个进程的状态</li>
 </ul>
 </li>
 </ul>
@@ -1147,20 +1227,20 @@
 <h2 id="13-1、安装JDK"><a href="#13-1、安装JDK" class="headerlink" title="13.1、安装JDK"></a>13.1、安装JDK</h2><p><img src="/2022/05/05/Linux/image-20220527170320229.png" srcset="/img/loading.gif" lazyload alt="JDK的安装步骤"></p>
 <h2 id="13-2、安装tomcat"><a href="#13-2、安装tomcat" class="headerlink" title="13.2、安装tomcat"></a>13.2、安装tomcat</h2><p><img src="/2022/05/05/Linux/image-20220527180809385.png" srcset="/img/loading.gif" lazyload alt="tomcat的安装步骤"></p>
 <h2 id="13-3、安装idae"><a href="#13-3、安装idae" class="headerlink" title="13.3、安装idae"></a>13.3、安装idae</h2><p><img src="/2022/05/05/Linux/image-20220527185615325.png" srcset="/img/loading.gif" lazyload alt="idea的安装步骤"></p>
-<h2 id="13-4、安装mysql"><a href="#13-4、安装mysql" class="headerlink" title="13.4、安装mysql"></a>13.4、安装mysql</h2><ol>
+<h2 id="13-4、安装mysql5-7"><a href="#13-4、安装mysql5-7" class="headerlink" title="13.4、安装mysql5.7"></a>13.4、安装mysql5.7</h2><ol>
 <li><p>新建文件夹/opt/mysql，并cd进去</p>
 </li>
-<li><p>运行wget <a target="_blank" rel="noopener" href="http://dev.mysql.com/get/mysql-5.7.26-1.el7.x86_64.rpm-bundle.tar%EF%BC%8C%E4%B8%8B%E8%BD%BDmysql%E5%AE%89%E8%A3%85%E5%8C%85">http://dev.mysql.com/get/mysql-5.7.26-1.el7.x86_64.rpm-bundle.tar，下载mysql安装包</a></p>
+<li><p>运行wget <a target="_blank" rel="noopener" href="http://dev.mysql.com/get/mysql-5.7.26-1.el7.x86_64.rpm-bundle.tar%EF%BC%8C%E4%B8%8B%E8%BD%BDmysql%E5%AE%89%E8%A3%85%E5%8C%85">http://dev.mysql.com/get/mysql-5.7.26-1.el7.x86_64.rpm-bundle.tar，下载mysql安装包</a> <strong>ps：wget命令是 linux下可以通过网络直接获取一个文件或者软件的命令</strong></p>
 <p>PS：centos7.6自带的类mysql数据库是mariadb，会跟mysql冲突，要先删除。</p>
 </li>
-<li><p>运行tar -xvf mysql-5.7.26-1.el7.x86_64.rpm-bundle.tar </p>
+<li><p>运行<strong>tar -xvf mysql-5.7.26-1.el7.x86_64.rpm-bundle.tar</strong> </p>
 </li>
-<li><p>运行rpm -qa|grep mari，查询mariadb相关安装包</p>
+<li><p>运行<strong>rpm -qa|grep mari</strong>，查询mariadb相关安装包</p>
 </li>
 </ol>
 <p><img src="/2022/05/05/Linux/wps1.jpg" srcset="/img/loading.gif" lazyload alt="img"> </p>
 <ol start="5">
-<li><p>运行rpm -e –nodeps mariadb-libs，卸载</p>
+<li><p>运行<strong>rpm -e –nodeps mariadb-libs</strong>，卸载</p>
 </li>
 <li><p>然后开始真正安装mysql，依次运行以下几条</p>
 </li>
@@ -1168,25 +1248,255 @@
  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs she">rpm -ivh mysql-community-common-5.7.26-1.el7.x86_64.rpm<br>rpm -ivh mysql-community-libs-5.7.26-1.el7.x86_64.rpm<br>rpm -ivh mysql-community-client-5.7.26-1.el7.x86_64.rpm<br>rpm -ivh mysql-community-server-5.7.26-1.el7.x86_64.rpm<br></code></pre></td></tr></table></figure>
 
 <ol start="7">
-<li><p>运行systemctl start mysqld.service，启动mysql</p>
+<li><p>运行<strong>systemctl start mysqld.service</strong>，启动mysql</p>
 </li>
 <li><p>然后开始设置root用户密码</p>
 </li>
 </ol>
-<p>Mysql自动给root用户设置随机密码，运行grep “password” /var/log/mysqld.log可看到当前密码</p>
+<p>Mysql自动给root用户设置随机密码，运行<strong>grep “password” /var/log/mysqld.log</strong>可看到当前密码</p>
 <p><img src="/2022/05/05/Linux/wps2.jpg" srcset="/img/loading.gif" lazyload alt="img"> </p>
 <ol start="9">
-<li><p>运行mysql -u root  -p，用root用户登录，提示输入密码可用上述的，可以成功登陆进入mysql命令行</p>
+<li><p>运行<strong>mysql -u root  -p</strong>，用root用户登录，提示输入密码可用上述的，可以成功登陆进入mysql命令行</p>
 </li>
-<li><p>设置root密码，对于个人开发环境，如果要设比较简单的密码（****生产环境服务器要设复杂密码****），可以运行set global validate_password_policy=0;  提示密码设置策略</p>
+<li><p>设置root密码，对于个人开发环境，如果要设比较简单的密码（<strong>生产环境服务器要设复杂密码</strong>），可以运行<strong>set global validate_password_policy=0</strong>;  提示密码设置策略</p>
 </li>
 </ol>
 <p>（validate_password_policy默认值1，）</p>
 <p><img src="/2022/05/05/Linux/wps3.jpg" srcset="/img/loading.gif" lazyload alt="img"> </p>
 <ol start="11">
-<li>set password for ‘root‘@’localhost’ =password(‘hspedu100’);</li>
-<li>运行flush privileges;使密码设置生效</li>
+<li><strong>set password for ‘root‘@’localhost’ =password(‘hspedu100’)</strong>;</li>
+<li>运行<strong>flush privileges</strong>;使密码设置生效</li>
 </ol>
+<h1 id="十四、日志管理"><a href="#十四、日志管理" class="headerlink" title="十四、日志管理"></a>十四、日志管理</h1><h2 id="14-1、基本介绍"><a href="#14-1、基本介绍" class="headerlink" title="14.1、基本介绍"></a>14.1、基本介绍</h2><p>1、日志文件是重要的系统信息文件，记录了许多 <strong>重要的系统事件</strong></p>
+<p>2、日志对于 <strong>安全来说也很重要</strong>，可以通过日志来检查错误发生的原因</p>
+<p>3、<strong>日志是用来记录重大事件的工具</strong></p>
+<h2 id="14-2、系统常用的日志"><a href="#14-2、系统常用的日志" class="headerlink" title="14.2、系统常用的日志"></a>14.2、系统常用的日志</h2><p>/var/log/ 目录就是系统日志文件的保存位置。</p>
+<p><img src="/2022/05/05/Linux/image-20220529154008532.png" srcset="/img/loading.gif" lazyload alt="系统常用的日志"></p>
+<h2 id="14-3、日志管理服务rsyslogd"><a href="#14-3、日志管理服务rsyslogd" class="headerlink" title="14.3、日志管理服务rsyslogd"></a>14.3、日志管理服务rsyslogd</h2><p>Centos7.6日志服务是rsyslogd，Centos6.x日志服务是syslogd，rsyslogd更强大。</p>
+<p><img src="/2022/05/05/Linux/image-20220530094005686.png" srcset="/img/loading.gif" lazyload alt="原理示意图"></p>
+<p><strong>应用实例</strong></p>
+<p><strong>ps aux | grep “rsyslogd” | grep -v “gerp”</strong> 查询linux中的rsyslogd服务是否启动</p>
+<p><strong>systemctl list-unit-files | grep rsyslog</strong> 查询rsyslogd服务的自启动状态</p>
+<p><img src="/2022/05/05/Linux/image-20220529155432292.png" srcset="/img/loading.gif" lazyload alt="应用实例"></p>
+<p><strong>grep -v “关键字”</strong> 代表挑选出不包含关键字的</p>
+<p><img src="/2022/05/05/Linux/image-20220530094254764.png" srcset="/img/loading.gif" lazyload></p>
+<p><strong>配置文件相关的信息说明</strong></p>
+<p>编辑文件时的格式为: * . *             存放日志文件<br>其中第一个 * 代表日志类型，第二个 * 代表日志级别</p>
+<p>1.日志类型分为:</p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>auth</td>
+<td>##pam产生的日志</td>
+</tr>
+<tr>
+<td>authpriv</td>
+<td>##ssh、ftp等登录信息的验证信息</td>
+</tr>
+<tr>
+<td>corn</td>
+<td>##时间任务相关</td>
+</tr>
+<tr>
+<td>kern</td>
+<td>##内核</td>
+</tr>
+<tr>
+<td>lpr</td>
+<td>##打印</td>
+</tr>
+<tr>
+<td>mail</td>
+<td>##邮件</td>
+</tr>
+<tr>
+<td>mark(syslog)-rsyslog</td>
+<td>##服务内部的信息，时间标识</td>
+</tr>
+<tr>
+<td>news</td>
+<td>##新闻组</td>
+</tr>
+<tr>
+<td>user</td>
+<td>##用户程序产生的相关信息</td>
+</tr>
+<tr>
+<td>uucp</td>
+<td>##unix to nuix copy主机之间相关的通信</td>
+</tr>
+<tr>
+<td>local 1-7</td>
+<td>##自定义的日志设备</td>
+</tr>
+</tbody></table>
+<p>2.日志级别分为：</p>
+<table>
+<thead>
+<tr>
+<th>级别</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>debug</td>
+<td>##有调试信息的，日志通信最多</td>
+</tr>
+<tr>
+<td>info</td>
+<td>##—般信息日志，最常用</td>
+</tr>
+<tr>
+<td>notice</td>
+<td>##最具有重要性的普通条件的信息</td>
+</tr>
+<tr>
+<td>warning</td>
+<td>##警告级别</td>
+</tr>
+<tr>
+<td>err</td>
+<td>##错误级别，阻止某个功能或者模块不能正常工作的信息</td>
+</tr>
+<tr>
+<td>crit</td>
+<td>##严重级别，阻止整个系统或者整个软件不能正常工作的信息</td>
+</tr>
+<tr>
+<td>alert</td>
+<td>##需要立刻修改的信息</td>
+</tr>
+<tr>
+<td>emerg</td>
+<td>##内核崩溃等重要信息</td>
+</tr>
+<tr>
+<td>none</td>
+<td>##什么都不记录</td>
+</tr>
+</tbody></table>
+<p><strong>注意:从上到下，级别从低到高，记录信息越来越少</strong></p>
+<p>由日志服务rsyslogd记录的日志文件，日志文件的格式包含以下4列:</p>
+<p>事件产生的时间</p>
+<p>产生事件的服务器的主机名</p>
+<p>产生事件的服务名或程序名</p>
+<p>事件的具体信息</p>
+<p><strong>日志如何查看实例</strong></p>
+<p>查看/var/log/secure日志，这个日志中记录的是用户验证和授权方面的信息</p>
+<p><img src="/2022/05/05/Linux/image-20220530095627463.png" srcset="/img/loading.gif" lazyload></p>
+<p><strong>增加自定义的日志步骤</strong></p>
+<p>1、vim /etc/rsyslog.conf</p>
+<p><img src="/2022/05/05/Linux/image-20220530095927797.png" srcset="/img/loading.gif" lazyload></p>
+<p>2、创建自定义的日志文件</p>
+<p><img src="/2022/05/05/Linux/image-20220530100016234.png" srcset="/img/loading.gif" lazyload></p>
+<p>3、重启(reboot) linux 查看/var/log/hsp.log文件</p>
+<p><img src="/2022/05/05/Linux/image-20220530100226443.png" srcset="/img/loading.gif" lazyload></p>
+<h2 id="14-4、日志轮替"><a href="#14-4、日志轮替" class="headerlink" title="14.4、日志轮替"></a>14.4、日志轮替</h2><p>日志轮替就是把旧的日志文件移动并改名，同时建立新的空日志文件，当旧的日志文件超出保存的范围之后，就会进行删除</p>
+<p><strong>日志轮替文件命名</strong></p>
+<ol>
+<li>centos7使用logrotate进行日志轮替管理，要想改变日志轮替文件名字，通过/etc/logrotate.conf配置文件中“dateext”参数:</li>
+<li>如果配置文件中有“dateext”参数，那么日志会用<strong>日期</strong>来作为日志文件的后级，例如“secure-20201010”。这样日志文件名不会重叠，也就不需要日志文件的改名，只需要指定保存日志个数，删除多余的日志文件即可。</li>
+<li>如果配置文件中没有“dateext”参数，日志文件就需要进行改名了。当第一次进行日志轮替时，当前的<strong>“secure”日志会自动改名为”secure.1”，然后新建”secure”日志，用来保存新的日志。</strong>当第二次进行日志轮替时，“secure.1”会自动改名为“secure.2”，当前的“secure”日志会自动改名为”secure.1”，然后也会新建“secure”日志，用来保存新的日志，以此类推。</li>
+</ol>
+<p><strong>logrotate配置文件</strong></p>
+<p><img src="/2022/05/05/Linux/image-20220530103720000.png" srcset="/img/loading.gif" lazyload alt="配置文件"></p>
+<p><strong>参数说明：</strong></p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>参数说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>daily</td>
+<td>日志的轮替周期是每天</td>
+</tr>
+<tr>
+<td>weekly</td>
+<td>日志的轮替周期是每周</td>
+</tr>
+<tr>
+<td>monthly</td>
+<td>日志的轮替周期是每月</td>
+</tr>
+<tr>
+<td>rotate数字</td>
+<td>保留的白志文件的个数。0指没有备份</td>
+</tr>
+<tr>
+<td>compress</td>
+<td>日志轮替时，旧的日志进行压缩</td>
+</tr>
+<tr>
+<td>create mode owner group</td>
+<td>建立新日志，同时指定新日志的权限与所有者和所属组</td>
+</tr>
+<tr>
+<td>mail address</td>
+<td>当日志轮替时，输出内容通过邮件发送到指定的邮件地址。</td>
+</tr>
+<tr>
+<td>missingok</td>
+<td>如果日志不存在，则忽略该日志的警告信息</td>
+</tr>
+<tr>
+<td>notifempty</td>
+<td>如果日志为空文件，则不进行日志轮替</td>
+</tr>
+<tr>
+<td>minsize大小</td>
+<td>日志轮替的最小值。也就是日志一定要达到这个最小值才会轮替，否则就算时间达到也不轮替</td>
+</tr>
+<tr>
+<td>size大小</td>
+<td>日志只有大于指定大小才进行日志轮替，而不是按照时间轮替。</td>
+</tr>
+<tr>
+<td>dateext</td>
+<td>使用日期作为日志轮替文件的后缀。</td>
+</tr>
+<tr>
+<td>sharedscripts</td>
+<td>在此关键字之后的脚本只执行一次。</td>
+</tr>
+<tr>
+<td>prerotate/endscript</td>
+<td>在日志轮替之前执行脚本命令。</td>
+</tr>
+<tr>
+<td>postrotate/endscript</td>
+<td>在日志轮替之后执行脚本命令。</td>
+</tr>
+</tbody></table>
+<p><strong>将自己的日志加入日志轮替的方法：</strong></p>
+<p>第一种方法是直接在 /etc/logrotate.conf 配置文件中写入该日志的轮替策略<br>第二种方法是在 /etc/logrotate.d/ 目录中新建立该日志的轮替文件，在该轮替文件中写入正确的轮替策略，因为该目录中的文件都会被 “include” 到主配置文件中，所以也可以把日志加入轮替。<br><strong>推荐使用第二种方法</strong>，因为系统中需要轮替的日志非常多，如果全都直接写入/etc/logrotate.conf配置文件，那么这个文件的可管理性就会非常差，不利于此文件的维护。</p>
+<p><img src="/2022/05/05/Linux/image-20220530122433278.png" srcset="/img/loading.gif" lazyload></p>
+<p><strong>日志轮替机制原理</strong></p>
+<p>日志轮替之所以可以在指定的时间备份日志，是依赖系统定时任务。在/etc/cron.daily/目录，就会发现这个目录中是有logrotate文件(可执行)，logrotate通过这个文件依赖定时任务执行的。</p>
+<p><img src="/2022/05/05/Linux/image-20220530110237896.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="/2022/05/05/Linux/image-20220530094005686.png" srcset="/img/loading.gif" lazyload alt="原理示意图"></p>
+<h2 id="14-5、查看内存日志"><a href="#14-5、查看内存日志" class="headerlink" title="14.5、查看内存日志"></a>14.5、查看内存日志</h2><ul>
+<li><p><strong>journalctl</strong> ##查看全部</p>
+</li>
+<li><p><strong>journalctl -n 3</strong> ##查看最新3条</p>
+</li>
+<li><p><strong>journalctl –since 19:00 –until 19:10:10</strong> #查看起始时间到结束时间的日志可加日期</p>
+</li>
+<li><p><strong>journalctl -p err</strong> ##报错日志</p>
+</li>
+<li><p><strong>journalctl -o verbose</strong> ## 日志详细内容</p>
+</li>
+<li><p><strong>journalctl _PID=1245 _COMM=sshd或者journalctl | gerp ssh</strong> ##查看包含这些参数的日志</p>
+</li>
+<li><p><strong>journalctl</strong> 查看的是<strong>内存日志</strong>，重启清空</p>
+</li>
+</ul>
 
               
             </div>

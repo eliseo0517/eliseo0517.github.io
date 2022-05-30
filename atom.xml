@@ -6,7 +6,7 @@
   <link href="https://eliseo.top/atom.xml" rel="self"/>
   
   <link href="https://eliseo.top/"/>
-  <updated>2022-05-27T07:04:06.941Z</updated>
+  <updated>2022-05-29T03:07:55.374Z</updated>
   <id>https://eliseo.top/</id>
   
   <author>
@@ -15,6 +15,51 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>电话号码的字母组合</title>
+    <link href="https://eliseo.top/2022/05/29/%E7%94%B5%E8%AF%9D%E5%8F%B7%E7%A0%81%E7%9A%84%E5%AD%97%E6%AF%8D%E7%BB%84%E5%90%88/"/>
+    <id>https://eliseo.top/2022/05/29/%E7%94%B5%E8%AF%9D%E5%8F%B7%E7%A0%81%E7%9A%84%E5%AD%97%E6%AF%8D%E7%BB%84%E5%90%88/</id>
+    <published>2022-05-29T03:02:07.000Z</published>
+    <updated>2022-05-29T03:07:55.374Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="/2022/05/29/%E7%94%B5%E8%AF%9D%E5%8F%B7%E7%A0%81%E7%9A%84%E5%AD%97%E6%AF%8D%E7%BB%84%E5%90%88/image-20220529110449581.png" alt="电话号码的字母组合"></p><p><strong>解法：(回溯)</strong></p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><br>    <span class="hljs-comment">//设置全局列表存储最后的结果</span><br>    List&lt;String&gt; list = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrayList</span>&lt;&gt;();<br><br>    <span class="hljs-keyword">public</span> List&lt;String&gt; <span class="hljs-title function_">letterCombinations</span><span class="hljs-params">(String digits)</span> &#123;<br>        <span class="hljs-keyword">if</span> (digits == <span class="hljs-literal">null</span> || digits.length() == <span class="hljs-number">0</span>) &#123;<br>            <span class="hljs-keyword">return</span> list;<br>        &#125;<br>        <span class="hljs-comment">//初始对应所有的数字，为了直接对应2-9，新增了两个无效的字符串&quot;&quot;</span><br>        String[] numString = &#123;<span class="hljs-string">&quot;&quot;</span>, <span class="hljs-string">&quot;&quot;</span>, <span class="hljs-string">&quot;abc&quot;</span>, <span class="hljs-string">&quot;def&quot;</span>, <span class="hljs-string">&quot;ghi&quot;</span>, <span class="hljs-string">&quot;jkl&quot;</span>, <span class="hljs-string">&quot;mno&quot;</span>, <span class="hljs-string">&quot;pqrs&quot;</span>, <span class="hljs-string">&quot;tuv&quot;</span>, <span class="hljs-string">&quot;wxyz&quot;</span>&#125;;<br>        <span class="hljs-comment">//迭代处理</span><br>        backTracking(digits, numString, <span class="hljs-number">0</span>);<br>        <span class="hljs-keyword">return</span> list;<br><br>    &#125;<br><br>    <span class="hljs-comment">//每次迭代获取一个字符串，所以会设计大量的字符串拼接，所以这里选择更为高效的 StringBuild</span><br>    <span class="hljs-type">StringBuilder</span> <span class="hljs-variable">temp</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">StringBuilder</span>();<br><br>    <span class="hljs-comment">//比如digits如果为&quot;23&quot;,num 为0，则str表示2对应的 abc</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">backTracking</span><span class="hljs-params">(String digits, String[] numString, <span class="hljs-type">int</span> num)</span> &#123;<br>        <span class="hljs-comment">//遍历全部一次记录一次得到的字符串</span><br>        <span class="hljs-comment">//用num记录每次遍历到字符串的位置，这样性能更好</span><br>        <span class="hljs-keyword">if</span> (num == digits.length()) &#123;<br>            list.add(temp.toString());<br>            <span class="hljs-keyword">return</span>;<br>        &#125;<br>        <span class="hljs-comment">//str 表示当前num对应的字符串 </span><br>        <span class="hljs-comment">//digits.charAt(num) 获取当前num位置的字符</span><br>        <span class="hljs-comment">//由于numString表是从0下标开始一直到9 所以 -&#x27;0&#x27;之后就可以得到对应的数组的下标位置</span><br>        <span class="hljs-type">String</span> <span class="hljs-variable">str</span> <span class="hljs-operator">=</span> numString[digits.charAt(num) - <span class="hljs-string">&#x27;0&#x27;</span>];<br>        <span class="hljs-comment">//遍历字符串</span><br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; str.length(); i++) &#123;<br>            temp.append(str.charAt(i));<br>            <span class="hljs-comment">//回溯</span><br>            backTracking(digits, numString, num + <span class="hljs-number">1</span>);<br>            <span class="hljs-comment">//剔除末尾的继续尝试</span><br>            temp.deleteCharAt(temp.length() - <span class="hljs-number">1</span>);<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;/2022/05/29/%E7%94%B5%E8%AF%9D%E5%8F%B7%E7%A0%81%E7%9A%84%E5%AD%97%E6%AF%8D%E7%BB%84%E5%90%88/image-20220529110449581.png&quot; alt=</summary>
+      
+    
+    
+    
+    <category term="力扣" scheme="https://eliseo.top/categories/%E5%8A%9B%E6%89%A3/"/>
+    
+    
+    <category term="力扣" scheme="https://eliseo.top/tags/%E5%8A%9B%E6%89%A3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Mysql</title>
+    <link href="https://eliseo.top/2022/05/28/Mysql/"/>
+    <id>https://eliseo.top/2022/05/28/Mysql/</id>
+    <published>2022-05-28T01:35:45.000Z</published>
+    <updated>2022-05-30T12:48:24.341Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="一、mysql基础篇"><a href="#一、mysql基础篇" class="headerlink" title="一、mysql基础篇"></a>一、mysql基础篇</h1><p><strong>一些不怎么用过的mysql语句：</strong></p><p><strong>rank() over：</strong>排名相同的两名是并列，但是占两个名次，1 1 3 4 4 6这种</p><p><strong>dense_rank() over：</strong>排名相同的两名是并列，共占一个名词，1 1 2 3 3 4这种</p><p><strong>row_number() over：</strong>这个函数不需要考虑是否并列，哪怕根据条件查询出来的数值相同也会进行连续排名 1 2 3 4 5</p><p><strong>distance</strong> 去重</p><p><strong>ifnull</strong> 判断是否为空 自动去除空的数据 ifnull(( ***),null) 将表中的空数据输出为null</p><h1 id="二、mysql高级篇"><a href="#二、mysql高级篇" class="headerlink" title="二、mysql高级篇"></a>二、mysql高级篇</h1>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;一、mysql基础篇&quot;&gt;&lt;a href=&quot;#一、mysql基础篇&quot; class=&quot;headerlink&quot; title=&quot;一、mysql基础篇&quot;&gt;&lt;/a&gt;一、mysql基础篇&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;一些不怎么用过的mysql语句：&lt;/strong&gt;&lt;/p&gt;
+</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>三数之和</title>
@@ -453,55 +498,6 @@
       
       
     <summary type="html">&lt;p&gt;&lt;img src=&quot;/2022/05/09/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3%E7%9A%84%E6%9C%80%E5%A4%A7%E5%80%BC/image-20220509104013577.png&quot; alt=&quot;滑动窗口的最大值</summary>
-      
-    
-    
-    
-    <category term="力扣" scheme="https://eliseo.top/categories/%E5%8A%9B%E6%89%A3/"/>
-    
-    
-    <category term="力扣" scheme="https://eliseo.top/tags/%E5%8A%9B%E6%89%A3/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>栈的压入、弹出序列</title>
-    <link href="https://eliseo.top/2022/05/08/%E6%A0%88%E7%9A%84%E5%8E%8B%E5%85%A5%E3%80%81%E5%BC%B9%E5%87%BA%E5%BA%8F%E5%88%97/"/>
-    <id>https://eliseo.top/2022/05/08/%E6%A0%88%E7%9A%84%E5%8E%8B%E5%85%A5%E3%80%81%E5%BC%B9%E5%87%BA%E5%BA%8F%E5%88%97/</id>
-    <published>2022-05-08T03:17:27.000Z</published>
-    <updated>2022-05-25T02:45:13.849Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="/2022/05/08/%E6%A0%88%E7%9A%84%E5%8E%8B%E5%85%A5%E3%80%81%E5%BC%B9%E5%87%BA%E5%BA%8F%E5%88%97/image-20220508111814728.png" alt="栈的压入、弹出序列"></p><p><strong>解法：（栈）</strong></p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">boolean</span> <span class="hljs-title function_">validateStackSequences</span><span class="hljs-params">(<span class="hljs-type">int</span>[] pushed, <span class="hljs-type">int</span>[] popped)</span> &#123;<br>        Stack&lt;Integer&gt; stack = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Stack</span>&lt;&gt;();<br>        <span class="hljs-comment">// 定义弹出序列的下标</span><br>        <span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> num : pushed) &#123; <br>            stack.push(num); <span class="hljs-comment">// 将压栈序列遍历到栈内</span><br>            <span class="hljs-keyword">while</span> (!stack.isEmpty() &amp;&amp; stack.peek() == popped[i]) &#123; <span class="hljs-comment">// 如果我的弹出序列要弹出的数等于栈顶元素</span><br>                stack.pop(); <span class="hljs-comment">// 将栈顶元素弹出</span><br>                i++; <span class="hljs-comment">// 查看压栈序列的下一个数</span><br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> stack.isEmpty();<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;&lt;img src=&quot;/2022/05/08/%E6%A0%88%E7%9A%84%E5%8E%8B%E5%85%A5%E3%80%81%E5%BC%B9%E5%87%BA%E5%BA%8F%E5%88%97/image-20220508111814728.png&quot; alt=</summary>
-      
-    
-    
-    
-    <category term="力扣" scheme="https://eliseo.top/categories/%E5%8A%9B%E6%89%A3/"/>
-    
-    
-    <category term="力扣" scheme="https://eliseo.top/tags/%E5%8A%9B%E6%89%A3/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>顺时针打印矩阵</title>
-    <link href="https://eliseo.top/2022/05/08/%E9%A1%BA%E6%97%B6%E9%92%88%E6%89%93%E5%8D%B0%E7%9F%A9%E9%98%B5/"/>
-    <id>https://eliseo.top/2022/05/08/%E9%A1%BA%E6%97%B6%E9%92%88%E6%89%93%E5%8D%B0%E7%9F%A9%E9%98%B5/</id>
-    <published>2022-05-08T02:42:12.000Z</published>
-    <updated>2022-05-25T02:45:53.753Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="/2022/05/08/%E9%A1%BA%E6%97%B6%E9%92%88%E6%89%93%E5%8D%B0%E7%9F%A9%E9%98%B5/image-20220508104326728.png" alt="顺时针打印矩阵"></p><p><strong>解法：</strong></p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span>[] spiralOrder(<span class="hljs-type">int</span>[][] matrix) &#123;<br>        <span class="hljs-keyword">if</span> (matrix.length == <span class="hljs-number">0</span>) &#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[<span class="hljs-number">0</span>];<br>        &#125;<br>        <span class="hljs-comment">// 行数</span><br>        <span class="hljs-type">int</span> <span class="hljs-variable">x</span> <span class="hljs-operator">=</span> matrix.length;<br>        <span class="hljs-comment">// 列数</span><br>        <span class="hljs-type">int</span> <span class="hljs-variable">y</span> <span class="hljs-operator">=</span> matrix[<span class="hljs-number">0</span>].length;<br>        <span class="hljs-comment">// 结果集</span><br>        <span class="hljs-type">int</span>[] res = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[x * y];<br>        <span class="hljs-comment">// 结果集的下标</span><br>        <span class="hljs-type">int</span> <span class="hljs-variable">sub</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-comment">// 上下左右边界 当遍历大于边界的时候跳出</span><br>        <span class="hljs-type">int</span> <span class="hljs-variable">top</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">bottom</span> <span class="hljs-operator">=</span> x - <span class="hljs-number">1</span>;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">left</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">right</span> <span class="hljs-operator">=</span> y - <span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">while</span> (sub &lt;= res.length) &#123;<br>            <span class="hljs-comment">// 模拟从左往右</span><br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> left; i &lt;= right; i++) &#123;<br>                res[sub] = matrix[top][i];<br>                sub++;<br>            &#125;<br>            top++;<span class="hljs-comment">// 本行走完</span><br>            <span class="hljs-keyword">if</span> (top &gt; bottom) &#123;<br>                <span class="hljs-keyword">break</span>;<br>            &#125;<br>            <span class="hljs-comment">// 模拟从上到下</span><br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> top; i &lt;= bottom; i++) &#123;<br>                res[sub] = matrix[i][right];<br>                sub++;<br>            &#125;<br>            right--;<span class="hljs-comment">// 本列走完</span><br>            <span class="hljs-keyword">if</span> (left &gt; right) &#123;<br>                <span class="hljs-keyword">break</span>;<br>            &#125;<br>            <span class="hljs-comment">// 模拟从右到左</span><br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> right; i &gt;= left; i--) &#123;<br>                res[sub] = matrix[bottom][i];<br>                sub++;<br>            &#125;<br>            bottom--;<span class="hljs-comment">// 本行走完</span><br>            <span class="hljs-keyword">if</span> (top &gt; bottom) &#123;<br>                <span class="hljs-keyword">break</span>;<br>            &#125;<br>            <span class="hljs-comment">// 模拟从下到上</span><br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> bottom; i &gt;= top; i--) &#123;<br>                res[sub] = matrix[i][left];<br>                sub++;<br>            &#125;<br>            left++;<span class="hljs-comment">// 本列走完</span><br>            <span class="hljs-keyword">if</span> (left &gt; right) &#123;<br>                <span class="hljs-keyword">break</span>;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> res;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;&lt;img src=&quot;/2022/05/08/%E9%A1%BA%E6%97%B6%E9%92%88%E6%89%93%E5%8D%B0%E7%9F%A9%E9%98%B5/image-20220508104326728.png&quot; alt=&quot;顺时针打印矩阵&quot;&gt;&lt;/p&gt;
-&lt;p&gt;</summary>
       
     
     
