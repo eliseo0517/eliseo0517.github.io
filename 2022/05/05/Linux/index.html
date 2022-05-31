@@ -52,6 +52,9 @@
 <meta property="og:image" content="https://eliseo.top/2022/05/05/Linux/wps1.jpg">
 <meta property="og:image" content="https://eliseo.top/2022/05/05/Linux/wps2.jpg">
 <meta property="og:image" content="https://eliseo.top/2022/05/05/Linux/wps3.jpg">
+<meta property="og:image" content="https://eliseo.top/2022/05/05/Linux/image-20220531091236826.png">
+<meta property="og:image" content="https://eliseo.top/2022/05/05/Linux/image-20220531092746464.png">
+<meta property="og:image" content="https://eliseo.top/2022/05/05/Linux/image-20220531100854207.png">
 <meta property="og:image" content="https://eliseo.top/2022/05/05/Linux/image-20220529154008532.png">
 <meta property="og:image" content="https://eliseo.top/2022/05/05/Linux/image-20220530094005686.png">
 <meta property="og:image" content="https://eliseo.top/2022/05/05/Linux/image-20220529155432292.png">
@@ -65,7 +68,7 @@
 <meta property="og:image" content="https://eliseo.top/2022/05/05/Linux/image-20220530110237896.png">
 <meta property="og:image" content="https://eliseo.top/2022/05/05/Linux/image-20220530094005686.png">
 <meta property="article:published_time" content="2022-05-05T09:21:34.000Z">
-<meta property="article:modified_time" content="2022-05-30T07:43:31.868Z">
+<meta property="article:modified_time" content="2022-05-31T02:45:23.815Z">
 <meta property="article:author" content="Mr.Wang">
 <meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary_large_image">
@@ -280,7 +283,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          15k 字
+          16k 字
         
       </span>
     
@@ -292,7 +295,7 @@
         
         
           <!-- compatible with older versions-->
-          129 分钟
+          136 分钟
         
       </span>
     
@@ -344,7 +347,7 @@
                 
                   
                     <!-- compatible with older versions-->
-                    本文最后更新于：9 小时前
+                    本文最后更新于：13 分钟前
                   
                 
               </p>
@@ -1267,12 +1270,69 @@
 <li><strong>set password for ‘root‘@’localhost’ =password(‘hspedu100’)</strong>;</li>
 <li>运行<strong>flush privileges</strong>;使密码设置生效</li>
 </ol>
-<h1 id="十四、日志管理"><a href="#十四、日志管理" class="headerlink" title="十四、日志管理"></a>十四、日志管理</h1><h2 id="14-1、基本介绍"><a href="#14-1、基本介绍" class="headerlink" title="14.1、基本介绍"></a>14.1、基本介绍</h2><p>1、日志文件是重要的系统信息文件，记录了许多 <strong>重要的系统事件</strong></p>
+<h1 id="十四、Shell编程"><a href="#十四、Shell编程" class="headerlink" title="十四、Shell编程"></a>十四、Shell编程</h1><h2 id="14-1、Shell是什么"><a href="#14-1、Shell是什么" class="headerlink" title="14.1、Shell是什么"></a>14.1、Shell是什么</h2><p>Shell是一个命令行解释器，它为用户提供了一个向Linux内核发生请求以便运行程序的界面系统级程序，用户可以用Shell来启动、挂起、停止甚至是编写一些程序。</p>
+<p><img src="/2022/05/05/Linux/image-20220531091236826.png" srcset="/img/loading.gif" lazyload alt="示意图"></p>
+<h2 id="14-2、Shell脚本的执行方式"><a href="#14-2、Shell脚本的执行方式" class="headerlink" title="14.2、Shell脚本的执行方式"></a>14.2、Shell脚本的执行方式</h2><p><strong>脚本格式要求：</strong></p>
+<p>1、脚本以 <strong>#!/bin/bash</strong> 开头</p>
+<p>2、脚本需要有可执行权限</p>
+<p><strong>脚本的常用执行方式</strong></p>
+<p>方式1：(输入脚本的绝对路径或相对路径)</p>
+<p><strong>说明：</strong>首先要赋予hellowordl.sh脚本的+x权限，在执行脚本</p>
+<p>方式2：(sh+脚本)</p>
+<p><strong>说明：</strong>不用赋予脚本+x权限，直接执行即可。</p>
+<p><img src="/2022/05/05/Linux/image-20220531092746464.png" srcset="/img/loading.gif" lazyload></p>
+<h2 id="14-3、Shell的变量"><a href="#14-3、Shell的变量" class="headerlink" title="14.3、Shell的变量"></a>14.3、Shell的变量</h2><h3 id="14-3-1、Shell变量介绍"><a href="#14-3-1、Shell变量介绍" class="headerlink" title="14.3.1、Shell变量介绍"></a>14.3.1、Shell变量介绍</h3><p>1、分为系统变量和用户自定义变量</p>
+<p>2、系统变量：$HOME、$PWD、$SHELL、$USER等</p>
+<p>3、显示当前shell中所有变量：set</p>
+<h3 id="14-3-2、shell变量的定义"><a href="#14-3-2、shell变量的定义" class="headerlink" title="14.3.2、shell变量的定义"></a>14.3.2、shell变量的定义</h3><p><strong>基本语法：</strong><br>1、定义变量：变量名=值(不能打空格)</p>
+<p>2、撤销变量：unset 变量</p>
+<p>3、声明静态变量：readonly变量，<strong>注意：不能unset</strong></p>
+<p>4、输出变量：echo $变量名 或者echo 变量名=$变量名 或者echo “变量名=$变量名”；第一个输出结果为 变量名的值，后两个输出结果一样 都是 变量名=值</p>
+<p><strong>定义变量的规则：</strong></p>
+<p>1、变量名称可以有字母、数字、下划线组成，但是不能以数字开头</p>
+<p>2、等号两侧不能有空格</p>
+<p>3、变量名称一般习惯为大写，这是一个规范，也就是说哪怕定义的是小写也不会报错，但是 <code>不好</code></p>
+<p><strong>将命令的返回值赋给变量</strong></p>
+<p>1、A=`date`反引号，运行里面的命令，并且把结果返回给变量A，如果不加反引号，那么就是将date单词赋给A。</p>
+<p>2、A=$(date) 等价于反引号</p>
+<h2 id="14-4、设置环境变量"><a href="#14-4、设置环境变量" class="headerlink" title="14.4、设置环境变量"></a>14.4、设置环境变量</h2><p><strong>基本语法：</strong></p>
+<table>
+<thead>
+<tr>
+<th>语法</th>
+<th>功能描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>export 变量名=变量值</td>
+<td>将shell变量输出为环境变量</td>
+</tr>
+<tr>
+<td>source 配置文件</td>
+<td>让修改后的配置信息立即生效</td>
+</tr>
+<tr>
+<td>echo $变量名</td>
+<td>查询环境变量的值</td>
+</tr>
+</tbody></table>
+<p><img src="/2022/05/05/Linux/image-20220531100854207.png" srcset="/img/loading.gif" lazyload></p>
+<p><strong>快速入门：</strong></p>
+<p>1、在/etc/profile文件中定义TOMCAT_HOME环境变量</p>
+<p>2、查看环境变量TMOCAT_HOME的值</p>
+<p>3、在另外一个shell程序中使用TOMCAT_HOME</p>
+<p><code>注意：</code>在输出TOMCA_HOME环境变量前，需要让其生效 <strong>source /etc/profile</strong></p>
+<p> 4、shell脚本的多行注释：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">:&lt;&lt;! <br>内容<br>!<br></code></pre></td></tr></table></figure>
+
+
+
+<h1 id="十五、日志管理"><a href="#十五、日志管理" class="headerlink" title="十五、日志管理"></a>十五、日志管理</h1><h2 id="15-1、基本介绍"><a href="#15-1、基本介绍" class="headerlink" title="15.1、基本介绍"></a>15.1、基本介绍</h2><p>1、日志文件是重要的系统信息文件，记录了许多 <strong>重要的系统事件</strong></p>
 <p>2、日志对于 <strong>安全来说也很重要</strong>，可以通过日志来检查错误发生的原因</p>
 <p>3、<strong>日志是用来记录重大事件的工具</strong></p>
-<h2 id="14-2、系统常用的日志"><a href="#14-2、系统常用的日志" class="headerlink" title="14.2、系统常用的日志"></a>14.2、系统常用的日志</h2><p>/var/log/ 目录就是系统日志文件的保存位置。</p>
+<h2 id="15-2、系统常用的日志"><a href="#15-2、系统常用的日志" class="headerlink" title="15.2、系统常用的日志"></a>15.2、系统常用的日志</h2><p>/var/log/ 目录就是系统日志文件的保存位置。</p>
 <p><img src="/2022/05/05/Linux/image-20220529154008532.png" srcset="/img/loading.gif" lazyload alt="系统常用的日志"></p>
-<h2 id="14-3、日志管理服务rsyslogd"><a href="#14-3、日志管理服务rsyslogd" class="headerlink" title="14.3、日志管理服务rsyslogd"></a>14.3、日志管理服务rsyslogd</h2><p>Centos7.6日志服务是rsyslogd，Centos6.x日志服务是syslogd，rsyslogd更强大。</p>
+<h2 id="15-3、日志管理服务rsyslogd"><a href="#15-3、日志管理服务rsyslogd" class="headerlink" title="15.3、日志管理服务rsyslogd"></a>15.3、日志管理服务rsyslogd</h2><p>Centos7.6日志服务是rsyslogd，Centos6.x日志服务是syslogd，rsyslogd更强大。</p>
 <p><img src="/2022/05/05/Linux/image-20220530094005686.png" srcset="/img/loading.gif" lazyload alt="原理示意图"></p>
 <p><strong>应用实例</strong></p>
 <p><strong>ps aux | grep “rsyslogd” | grep -v “gerp”</strong> 查询linux中的rsyslogd服务是否启动</p>
@@ -1396,7 +1456,7 @@
 <p><img src="/2022/05/05/Linux/image-20220530100016234.png" srcset="/img/loading.gif" lazyload></p>
 <p>3、重启(reboot) linux 查看/var/log/hsp.log文件</p>
 <p><img src="/2022/05/05/Linux/image-20220530100226443.png" srcset="/img/loading.gif" lazyload></p>
-<h2 id="14-4、日志轮替"><a href="#14-4、日志轮替" class="headerlink" title="14.4、日志轮替"></a>14.4、日志轮替</h2><p>日志轮替就是把旧的日志文件移动并改名，同时建立新的空日志文件，当旧的日志文件超出保存的范围之后，就会进行删除</p>
+<h2 id="15-4、日志轮替"><a href="#15-4、日志轮替" class="headerlink" title="15.4、日志轮替"></a>15.4、日志轮替</h2><p>日志轮替就是把旧的日志文件移动并改名，同时建立新的空日志文件，当旧的日志文件超出保存的范围之后，就会进行删除</p>
 <p><strong>日志轮替文件命名</strong></p>
 <ol>
 <li>centos7使用logrotate进行日志轮替管理，要想改变日志轮替文件名字，通过/etc/logrotate.conf配置文件中“dateext”参数:</li>
@@ -1481,7 +1541,7 @@
 <p>日志轮替之所以可以在指定的时间备份日志，是依赖系统定时任务。在/etc/cron.daily/目录，就会发现这个目录中是有logrotate文件(可执行)，logrotate通过这个文件依赖定时任务执行的。</p>
 <p><img src="/2022/05/05/Linux/image-20220530110237896.png" srcset="/img/loading.gif" lazyload></p>
 <p><img src="/2022/05/05/Linux/image-20220530094005686.png" srcset="/img/loading.gif" lazyload alt="原理示意图"></p>
-<h2 id="14-5、查看内存日志"><a href="#14-5、查看内存日志" class="headerlink" title="14.5、查看内存日志"></a>14.5、查看内存日志</h2><ul>
+<h2 id="15-5、查看内存日志"><a href="#15-5、查看内存日志" class="headerlink" title="15.5、查看内存日志"></a>15.5、查看内存日志</h2><ul>
 <li><p><strong>journalctl</strong> ##查看全部</p>
 </li>
 <li><p><strong>journalctl -n 3</strong> ##查看最新3条</p>
@@ -1922,6 +1982,10 @@
   <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
 
 
+
+
+  
+<script src="/js/diy/yinghua.js"></script>
 
 
 
