@@ -16,12 +16,12 @@
   <meta name="author" content="Mr.Wang">
   <meta name="keywords" content="">
   
-    <meta name="description" content="一、网络连接的三种方式1.1、桥接模式虚拟系统可以和外部系统相互通讯，但是容易造成ip冲突(超过255个机器) 1.2、NAT模式（网络地址转换模式）NAT模式，网络地址转换模式，虚拟系统可以和外部系统单方面通讯(外部不可以直接访问内部)，不造成IP冲突，相当于给你虚拟机虚拟一个ip，然后在需要访问外部的时候，自动转换成你母机ip去访问外部 1.3、主机模式可以看作一个独立的系统，不与外界进行联系">
+    <meta name="description" content="一、网络连接的三种方式 1.1、桥接模式虚拟系统可以和外部系统相互通讯，但是容易造成ip冲突(超过255个机器) 1.2、NAT模式（网络地址转换模式）NAT模式，网络地址转换模式，虚拟系统可以和外部系统单方面通讯(外部不可以直接访问内部)，不造成IP冲突，相当于给你虚拟机虚拟一个ip，然后在需要访问外部的时候，自动转换成你母机ip去访问外部 1.3、主机模式可以看作一个独立的系统，不与外界进行联">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Linux">
+<meta property="og:title" content="Eliseo的小屋">
 <meta property="og:url" content="https://eliseo.top/2022/05/05/Linux/index.html">
 <meta property="og:site_name" content="Eliseo的小屋">
-<meta property="og:description" content="一、网络连接的三种方式1.1、桥接模式虚拟系统可以和外部系统相互通讯，但是容易造成ip冲突(超过255个机器) 1.2、NAT模式（网络地址转换模式）NAT模式，网络地址转换模式，虚拟系统可以和外部系统单方面通讯(外部不可以直接访问内部)，不造成IP冲突，相当于给你虚拟机虚拟一个ip，然后在需要访问外部的时候，自动转换成你母机ip去访问外部 1.3、主机模式可以看作一个独立的系统，不与外界进行联系">
+<meta property="og:description" content="一、网络连接的三种方式 1.1、桥接模式虚拟系统可以和外部系统相互通讯，但是容易造成ip冲突(超过255个机器) 1.2、NAT模式（网络地址转换模式）NAT模式，网络地址转换模式，虚拟系统可以和外部系统单方面通讯(外部不可以直接访问内部)，不造成IP冲突，相当于给你虚拟机虚拟一个ip，然后在需要访问外部的时候，自动转换成你母机ip去访问外部 1.3、主机模式可以看作一个独立的系统，不与外界进行联">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://eliseo.top/2022/05/05/Linux/image-20220505162247042.png">
 <meta property="og:image" content="https://eliseo.top/2022/05/05/Linux/image-20220505201406877.png">
@@ -100,10 +100,31 @@
 <meta property="og:image" content="https://eliseo.top/2022/05/05/Linux/image-20220530122433278.png">
 <meta property="og:image" content="https://eliseo.top/2022/05/05/Linux/image-20220530110237896.png">
 <meta property="og:image" content="https://eliseo.top/2022/05/05/Linux/image-20220530094005686.png">
-<meta property="article:published_time" content="2022-05-05T09:21:34.000Z">
-<meta property="article:modified_time" content="2022-05-31T16:40:43.621Z">
+<meta property="og:image" content="https://eliseo.top/2022/05/05/Linux/image-20220601095455981.png">
+<meta property="og:image" content="https://eliseo.top/2022/05/05/Linux/image-20220601101803357.png">
+<meta property="og:image" content="https://eliseo.top/2022/05/05/Linux/image-20220601102012216.png">
+<meta property="og:image" content="https://eliseo.top/2022/05/05/Linux/image-20220601101843964.png">
+<meta property="og:image" content="https://eliseo.top/2022/05/05/Linux/image-20220601102050562.png">
+<meta property="og:image" content="https://eliseo.top/2022/05/05/Linux/image-20220601101855046.png">
+<meta property="og:image" content="https://eliseo.top/2022/05/05/Linux/image-20220601102114474.png">
+<meta property="og:image" content="https://eliseo.top/2022/05/05/Linux/image-20220601102128198.png">
+<meta property="og:image" content="https://eliseo.top/2022/05/05/Linux/image-20220601101147406.png">
+<meta property="og:image" content="https://eliseo.top/2022/05/05/Linux/image-20220601101324787.png">
+<meta property="og:image" content="https://eliseo.top/2022/05/05/Linux/image-20220601101507157.png">
+<meta property="og:image" content="https://eliseo.top/2022/05/05/Linux/image-20220601102329488.png">
+<meta property="og:image" content="https://eliseo.top/2022/05/05/Linux/image-20220601102347134.png">
+<meta property="og:image" content="https://eliseo.top/2022/05/05/Linux/image-20220601102727983.png">
+<meta property="og:image" content="https://eliseo.top/2022/05/05/Linux/image-20220601103030337.png">
+<meta property="og:image" content="https://eliseo.top/2022/05/05/Linux/image-20220601103114381.png">
+<meta property="og:image" content="https://eliseo.top/2022/05/05/Linux/image-20220601103302174.png">
+<meta property="og:image" content="https://eliseo.top/2022/05/05/Linux/image-20220601105233770.png">
+<meta property="og:image" content="https://eliseo.top/2022/05/05/Linux/image-20220601104953610.png">
+<meta property="og:image" content="https://eliseo.top/2022/05/05/Linux/image-20220601105450347.png">
+<meta property="og:image" content="https://eliseo.top/2022/05/05/Linux/image-20220601105825142.png">
+<meta property="og:image" content="https://eliseo.top/2022/05/05/Linux/image-20220601125843691.png">
+<meta property="article:published_time" content="2022-05-05T09:21:34.036Z">
+<meta property="article:modified_time" content="2022-06-01T05:01:38.590Z">
 <meta property="article:author" content="Mr.Wang">
-<meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://eliseo.top/2022/05/05/Linux/image-20220505162247042.png">
   
@@ -111,7 +132,7 @@
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>Linux - Eliseo的小屋</title>
+  <title>Eliseo的小屋</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -287,7 +308,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Linux"></span>
+            <span id="subtitle" data-typed-text=""></span>
           
         </div>
 
@@ -316,7 +337,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          20k 字
+          21k 字
         
       </span>
     
@@ -328,7 +349,7 @@
         
         
           <!-- compatible with older versions-->
-          167 分钟
+          178 分钟
         
       </span>
     
@@ -374,20 +395,21 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Linux</h1>
+            <h1 style="display: none"></h1>
             
               <p class="note note-info">
                 
                   
                     <!-- compatible with older versions-->
-                    本文最后更新于：1 分钟前
+                    本文最后更新于：12 分钟前
                   
                 
               </p>
             
             <div class="markdown-body">
               
-              <h1 id="一、网络连接的三种方式"><a href="#一、网络连接的三种方式" class="headerlink" title="一、网络连接的三种方式"></a>一、网络连接的三种方式</h1><h2 id="1-1、桥接模式"><a href="#1-1、桥接模式" class="headerlink" title="1.1、桥接模式"></a>1.1、桥接模式</h2><p>虚拟系统可以和外部系统<strong>相互</strong>通讯，但是容易造成ip冲突(超过255个机器)</p>
+              <p>一、网络连接的三种方式</p>
+<h2 id="1-1、桥接模式"><a href="#1-1、桥接模式" class="headerlink" title="1.1、桥接模式"></a>1.1、桥接模式</h2><p>虚拟系统可以和外部系统<strong>相互</strong>通讯，但是容易造成ip冲突(超过255个机器)</p>
 <h2 id="1-2、NAT模式（网络地址转换模式）"><a href="#1-2、NAT模式（网络地址转换模式）" class="headerlink" title="1.2、NAT模式（网络地址转换模式）"></a>1.2、NAT模式（网络地址转换模式）</h2><p>NAT模式，网络地址转换模式，虚拟系统可以和外部系统<strong>单方面通讯(外部不可以直接访问内部)，</strong>不造成IP冲突，相当于给你虚拟机虚拟一个ip，然后在需要访问外部的时候，自动转换成你母机ip去访问外部</p>
 <h2 id="1-3、主机模式"><a href="#1-3、主机模式" class="headerlink" title="1.3、主机模式"></a>1.3、主机模式</h2><p>可以看作一个独立的系统，不与外界进行联系</p>
 <p><img src="/2022/05/05/Linux/image-20220505162247042.png" srcset="/img/loading.gif" lazyload alt="网络连接的三种方式"></p>
@@ -946,6 +968,9 @@
 <li><strong>mkfs [选项] [-t 分区格式(ext4)] 分区路径</strong> 格式化分区</li>
 <li><strong>mount 设备名称 挂载目录</strong> 挂载分区</li>
 <li><strong>umount 设备名称 或者 挂载目录</strong> 卸载分区</li>
+</ul>
+<p>使用命令行挂载之后，重启之后会失效</p>
+<ul>
 <li><strong>永久挂载：</strong>修改/etc/fstab实现挂载，添加完成之后，执行mount -a 即刻生效</li>
 </ul>
 <div class="note note-success">
@@ -1885,21 +1910,84 @@
 <p><img src="/2022/05/05/Linux/image-20220530110237896.png" srcset="/img/loading.gif" lazyload></p>
 <p><img src="/2022/05/05/Linux/image-20220530094005686.png" srcset="/img/loading.gif" lazyload alt="原理示意图"></p>
 <h2 id="15-5、查看内存日志"><a href="#15-5、查看内存日志" class="headerlink" title="15.5、查看内存日志"></a>15.5、查看内存日志</h2><ul>
-<li><p><strong>journalctl</strong> ##查看全部</p>
-</li>
-<li><p><strong>journalctl -n 3</strong> ##查看最新3条</p>
-</li>
-<li><p><strong>journalctl –since 19:00 –until 19:10:10</strong> #查看起始时间到结束时间的日志可加日期</p>
-</li>
-<li><p><strong>journalctl -p err</strong> ##报错日志</p>
-</li>
-<li><p><strong>journalctl -o verbose</strong> ## 日志详细内容</p>
-</li>
-<li><p><strong>journalctl _PID=1245 _COMM=sshd或者journalctl | gerp ssh</strong> ##查看包含这些参数的日志</p>
-</li>
-<li><p><strong>journalctl</strong> 查看的是<strong>内存日志</strong>，重启清空</p>
-</li>
+<li><strong>journalctl</strong> ##查看全部</li>
+<li><strong>journalctl -n 3</strong> ##查看最新3条</li>
+<li><strong>journalctl –since 19:00 –until 19:10:10</strong> #查看起始时间到结束时间的日志可加日期</li>
+<li><strong>journalctl -p err</strong> ##报错日志</li>
+<li><strong>journalctl -o verbose</strong> ## 日志详细内容</li>
+<li><strong>journalctl _PID=1245 _COMM=sshd或者journalctl | gerp ssh</strong> ##查看包含这些参数的日志</li>
+<li><strong>journalctl</strong> 查看的是<strong>内存日志</strong>，重启清空</li>
 </ul>
+<h1 id="16、定制自己的Linux系统"><a href="#16、定制自己的Linux系统" class="headerlink" title="16、定制自己的Linux系统"></a>16、定制自己的Linux系统</h1><hr>
+<p><strong>基本原理</strong></p>
+<p><strong>启动流程介绍：</strong></p>
+<p>1、首先Linux要通过自检，检查硬件设备有没有故障</p>
+<p>2、如果有多快启动盘的话，需要在BIOS中选择启动磁盘</p>
+<p>3、启动MBR中的bootloader引导程序</p>
+<p>4、加载所有内核</p>
+<p>5、执行所有进程的父进程、老祖宗system</p>
+<p>6、欢迎界面</p>
+<p>在Linux的启动流程中，加载内核文件时关键文件：</p>
+<p>1）kernel文件：vmlinuz-3.10.0-957.el7.x86_64</p>
+<p>2）initrd文件：inittamfs-3.10.0-957.e;7.x86_64.img</p>
+<hr>
+<p><strong>思路分析</strong></p>
+<p>1、在现有的Linux系统(centos7.6)上加一块硬盘/dev/sdb，在硬盘上分两个分区，一个是/boot，一个是/，并将其格式化。需要明确的是，现在加的这个硬盘在现有的Linux系统中是/dev/sdb，但是，当我们把东西全部设置好时，要把这个硬盘拔除，放在新系统上，此时，就是/dev/sda</p>
+<p>2、在/dev/sdb硬盘上，将其打造成独立的Linux系统，里面的所有文件是需要拷贝进去的。</p>
+<p>3、作为能独立运行的Linux系统，内核是一定不能少，要把内核文件和initramfs文件也一起拷到/dev/sdb上</p>
+<p>4、自制Linux就完成，创建一个新的linux虚拟机，将其硬盘指向我们创建的硬盘，启动即可。</p>
+<p><strong>示意图：</strong></p>
+<p><img src="/2022/05/05/Linux/image-20220601095455981.png" srcset="/img/loading.gif" lazyload alt="示意图"></p>
+<hr>
+<p><strong>制作流程：</strong></p>
+<p><strong>1、分出硬盘：</strong></p>
+<p>1）首先，我们在现有的linux添加一块大小为20G的硬盘</p>
+<p><img src="/2022/05/05/Linux/image-20220601101803357.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="/2022/05/05/Linux/image-20220601102012216.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="/2022/05/05/Linux/image-20220601101843964.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="/2022/05/05/Linux/image-20220601102050562.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="/2022/05/05/Linux/image-20220601101855046.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="/2022/05/05/Linux/image-20220601102114474.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="/2022/05/05/Linux/image-20220601102128198.png" srcset="/img/loading.gif" lazyload></p>
+<p><strong>2、分区：</strong></p>
+<p>1）执行 <code>fdisk /dev/sdb</code></p>
+<p><img src="/2022/05/05/Linux/image-20220601101147406.png" srcset="/img/loading.gif" lazyload alt="boot分区"></p>
+<p>输入 <code>n</code> 添加新的分区，输入 <code>p</code>将分区分为 primary</p>
+<p>分区号直接回车 默认为第一块</p>
+<p>起始扇区直接回车 使用默认值</p>
+<p>第一块分区给予 +500M 也就是将来对应的boot分区</p>
+<p><img src="/2022/05/05/Linux/image-20220601101324787.png" srcset="/img/loading.gif" lazyload alt="根分区"></p>
+<p>输入 <code>n</code> 添加新的分区，输入 <code>p</code>将分区分为 primary</p>
+<p>分区号直接回车 默认为第二块</p>
+<p>起始扇区直接回车 使用默认值</p>
+<p>将剩下的所有内存给予第二块分区</p>
+<p><img src="/2022/05/05/Linux/image-20220601101507157.png" srcset="/img/loading.gif" lazyload></p>
+<p>最后输入 <code>w</code>写入分区</p>
+<p><strong>3、对/dev/sdb 的分区进行格式化</strong></p>
+<p><img src="/2022/05/05/Linux/image-20220601102329488.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="/2022/05/05/Linux/image-20220601102347134.png" srcset="/img/loading.gif" lazyload></p>
+<p><strong>4、挂载</strong></p>
+<p><img src="/2022/05/05/Linux/image-20220601102727983.png" srcset="/img/loading.gif" lazyload></p>
+<p><strong>5、安装 grub，内核文件拷贝纸目标磁盘</strong></p>
+<p>安装grub</p>
+<p><img src="/2022/05/05/Linux/image-20220601103030337.png" srcset="/img/loading.gif" lazyload alt="安装grub"></p>
+<p>查看是否安装成功二进制</p>
+<p><img src="/2022/05/05/Linux/image-20220601103114381.png" srcset="/img/loading.gif" lazyload></p>
+<p>将 sda中的boot下的所有文件拷贝到 sdb中的boot下</p>
+<p><img src="/2022/05/05/Linux/image-20220601103302174.png" srcset="/img/loading.gif" lazyload></p>
+<p><strong>6、修改 grub2/grub.cfg 文件</strong></p>
+<p><img src="/2022/05/05/Linux/image-20220601105233770.png" srcset="/img/loading.gif" lazyload></p>
+<p> 在grub.cfg文件中 , 红色部分用 上面 sdb1 的 UUID替换，蓝色部分用 sdb2的UUID来替换, 紫色部分是添加的，表示</p>
+<p>selinux给关掉，同时设定一下init，告诉内核不要再去找这个程序了，不然开机的时候会出现错误的<img src="/2022/05/05/Linux/image-20220601104953610.png" srcset="/img/loading.gif" lazyload></p>
+<p><strong>7、创建目标主机根文件系统</strong></p>
+<p><img src="/2022/05/05/Linux/image-20220601105450347.png" srcset="/img/loading.gif" lazyload></p>
+<p><strong>8、拷贝需要的bash(也可以拷贝你需要的指令)和库文件给新的系统使用</strong></p>
+<p><img src="/2022/05/05/Linux/image-20220601105825142.png" srcset="/img/loading.gif" lazyload></p>
+<p><strong>9、 现在我们就可以创建一个新的虚拟机，然后将默认分配的硬盘移除掉，指向我们刚刚创建的磁盘即可</strong></p>
+<p><strong>10、 很多指令都不能使用，比如 ls , reboot 等，可以将需要的指令拷贝到对应的目录即可</strong></p>
+<p><strong>11、如果要拷贝指令，重新进入到原来的 linux系统拷贝相应的指令即可，比如将 /bin/ls 拷贝到 /mnt/sysroot/bin  将/sbin/reboot 拷贝到 /mnt/sysroot/sbin</strong> </p>
+<p><img src="/2022/05/05/Linux/image-20220601125843691.png" srcset="/img/loading.gif" lazyload></p>
+<p><strong>12、再重新启动新的min linux系统，就可以使用 ls , reboot 指令了</strong></p>
 
               
             </div>
@@ -1907,34 +1995,6 @@
             <div>
               <div class="post-metas my-3">
   
-    <div class="post-meta mr-3 d-flex align-items-center">
-      <i class="iconfont icon-category"></i>
-      
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/Linux/" class="category-chain-item">Linux</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-    </div>
-  
-  
-    <div class="post-meta">
-      <i class="iconfont icon-tags"></i>
-      
-        <a href="/tags/Linux/">#Linux</a>
-      
-    </div>
   
 </div>
 
@@ -1944,7 +2004,7 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Linux</div>
+      <div></div>
       <div>https://eliseo.top/2022/05/05/Linux/</div>
     </div>
     <div class="license-meta">
