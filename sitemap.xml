@@ -977,6 +977,13 @@
     <priority>0.2</priority>
   </url>
   
+  <url>
+    <loc>https://eliseo.top/tags/linux/</loc>
+    <lastmod>2022-06-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
 
   
   <url>
@@ -1023,6 +1030,13 @@
   
   <url>
     <loc>https://eliseo.top/categories/study/</loc>
+    <lastmod>2022-06-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://eliseo.top/categories/linux/</loc>
     <lastmod>2022-06-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
