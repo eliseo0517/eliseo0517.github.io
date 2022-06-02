@@ -124,8 +124,10 @@
 <meta property="og:image" content="https://eliseo.top/2022/05/05/Linux/image-20220601125843691.png">
 <meta property="og:image" content="https://eliseo.top/2022/05/05/Linux/image-20220601153201415.png">
 <meta property="og:image" content="https://eliseo.top/2022/05/05/Linux/image-20220601154040070.png">
+<meta property="og:image" content="https://eliseo.top/2022/05/05/Linux/image-20220602003649984.png">
+<meta property="og:image" content="https://eliseo.top/2022/05/05/Linux/image-20220602003607110.png">
 <meta property="article:published_time" content="2022-05-05T01:35:45.000Z">
-<meta property="article:modified_time" content="2022-06-01T07:47:59.024Z">
+<meta property="article:modified_time" content="2022-06-02T07:45:11.033Z">
 <meta property="article:author" content="Mr.Wang">
 <meta property="article:tag" content="linux">
 <meta name="twitter:card" content="summary_large_image">
@@ -340,7 +342,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          21k 字
+          23k 字
         
       </span>
     
@@ -352,7 +354,7 @@
         
         
           <!-- compatible with older versions-->
-          178 分钟
+          192 分钟
         
       </span>
     
@@ -404,7 +406,7 @@
                 
                   
                     <!-- compatible with older versions-->
-                    本文最后更新于：2 分钟前
+                    本文最后更新于：1 分钟前
                   
                 
               </p>
@@ -415,7 +417,7 @@
 <h2 id="1-2、NAT模式（网络地址转换模式）"><a href="#1-2、NAT模式（网络地址转换模式）" class="headerlink" title="1.2、NAT模式（网络地址转换模式）"></a>1.2、NAT模式（网络地址转换模式）</h2><p>NAT模式，网络地址转换模式，虚拟系统可以和外部系统<strong>单方面通讯(外部不可以直接访问内部)，</strong>不造成IP冲突，相当于给你虚拟机虚拟一个ip，然后在需要访问外部的时候，自动转换成你母机ip去访问外部</p>
 <h2 id="1-3、主机模式"><a href="#1-3、主机模式" class="headerlink" title="1.3、主机模式"></a>1.3、主机模式</h2><p>可以看作一个独立的系统，不与外界进行联系</p>
 <p><img src="/2022/05/05/Linux/image-20220505162247042.png" srcset="/img/loading.gif" lazyload alt="网络连接的三种方式"></p>
-<h1 id="二、Linux目录结构"><a href="#二、Linux目录结构" class="headerlink" title="二、Linux目录结构"></a>二、Linux目录结构</h1><p>1、linux的文件系统是采用级层式的树状目录结构，最上层是根目录”/“，然后在此目录下创建其他的目录。</p>
+<h1 id="二、Linux目录结构"><a href="#二、Linux目录结构" class="headerlink" title="二、Linux目录结构"></a>二、Linux目录结构</h1><p>1、linux的文件系统是采用层级式的树状目录结构，最上层是根目录”/“，然后在此目录下创建其他的目录。</p>
 <p>2、<strong>在Linux的世界里，一切皆文件</strong></p>
 <ul>
 <li><p>/bin (/usr/bin、/usr/local/bin),是Binary的缩写，存放着最常使用的命令<strong>【常用】</strong></p>
@@ -1920,7 +1922,7 @@
 <li><strong>journalctl _PID=1245 _COMM=sshd或者journalctl | gerp ssh</strong> ##查看包含这些参数的日志</li>
 <li><strong>journalctl</strong> 查看的是<strong>内存日志</strong>，重启清空</li>
 </ul>
-<h1 id="16、定制自己的Linux系统"><a href="#16、定制自己的Linux系统" class="headerlink" title="16、定制自己的Linux系统"></a>16、定制自己的Linux系统</h1><hr>
+<h1 id="十六、定制自己的Linux系统"><a href="#十六、定制自己的Linux系统" class="headerlink" title="十六、定制自己的Linux系统"></a>十六、定制自己的Linux系统</h1><hr>
 <p><strong>基本原理</strong></p>
 <p><strong>启动流程介绍：</strong></p>
 <p>1、首先Linux要通过自检，检查硬件设备有没有故障</p>
@@ -1990,11 +1992,97 @@
 <p><strong>11、如果要拷贝指令，重新进入到原来的 linux系统拷贝相应的指令即可，比如将 /bin/ls 拷贝到 /mnt/sysroot/bin  将/sbin/reboot 拷贝到 /mnt/sysroot/sbin</strong> </p>
 <p><img src="/2022/05/05/Linux/image-20220601125843691.png" srcset="/img/loading.gif" lazyload></p>
 <p><strong>12、再重新启动新的min linux系统，就可以使用 ls , reboot 指令了</strong></p>
-<h1 id="17、linux内核源码目录"><a href="#17、linux内核源码目录" class="headerlink" title="17、linux内核源码目录"></a>17、linux内核源码目录</h1><p><strong>linux内核源码的目录介绍：</strong></p>
+<h1 id="十七、linux内核源码目录"><a href="#十七、linux内核源码目录" class="headerlink" title="十七、linux内核源码目录"></a>十七、linux内核源码目录</h1><p><strong>linux内核源码的目录介绍：</strong></p>
 <p><img src="/2022/05/05/Linux/image-20220601153201415.png" srcset="/img/loading.gif" lazyload></p>
 <p><strong>main.c说明：(在init中只有一个main.c文件)</strong></p>
 <p><img src="/2022/05/05/Linux/image-20220601154040070.png" srcset="/img/loading.gif" lazyload></p>
-<h1 id="18、备份与恢复"><a href="#18、备份与恢复" class="headerlink" title="18、备份与恢复"></a>18、备份与恢复</h1>
+<h1 id="十八、备份与恢复"><a href="#十八、备份与恢复" class="headerlink" title="十八、备份与恢复"></a>十八、备份与恢复</h1><h2 id="18-1、基本介绍"><a href="#18-1、基本介绍" class="headerlink" title="18.1、基本介绍"></a>18.1、基本介绍</h2><p>linux的备份和恢复很简单，有两种方式：</p>
+<p>1、把需要的文件(或者分区)用TAR打包就行，下次需要恢复的时候，再解压开覆盖即可</p>
+<p>2、使用dump和restore命令</p>
+<hr>
+<p><strong>安装dump和restore</strong></p>
+<ul>
+<li>yum -y install dump</li>
+<li>yum -y install restore</li>
+</ul>
+<h2 id="18-2、使用dump完成备份"><a href="#18-2、使用dump完成备份" class="headerlink" title="18.2、使用dump完成备份"></a>18.2、使用dump完成备份</h2><hr>
+<p><strong>基本介绍：</strong></p>
+<p>dump支持分卷和增量备份(所谓增量备份是指备份上次备份后 修改/增加过的文件，也称差异备份)。</p>
+<hr>
+<p><strong>dump语法说明</strong></p>
+<ul>
+<li><strong>dump [ -cu ] [-123456789] [ -f &lt;备份后文件名&gt;] [-T &lt;日期&gt;] [ 目录或文件系统]</strong></li>
+<li><strong>dump []-wW</strong><ul>
+<li><strong>-c（具体就是0~9的数字）：</strong>创建新的归档文件，并将由一个或多个文件参数所指定的内容写入归档文件的开头</li>
+<li><strong>-0123456789：</strong>备份的层级。0为最完整备份，会备份所有文件。若指定0以上的层级，则备份至上一次备份以来修改或新增的文件，到9后，可以再次轮替</li>
+<li><strong>-f &lt;备份后文件名&gt;：</strong>指定备份后文件名</li>
+<li><strong>-j：</strong><code>调用 bzlib 库压缩备份文件</code>，也就是将备份后的文件压缩成 bz2 格式，让文件更小</li>
+<li><strong>-T &lt;日期&gt;：</strong>指定开始备份的时间与日期</li>
+<li><strong>-u：</strong>备份完毕后，在 /etc/dumpdares中记录备份的文件系统，层次，日期与时间等。</li>
+<li><strong>-t：</strong>指定文件名，若该文件已存在备份文件中，则列出名称</li>
+<li><strong>-W：</strong>显示需要备份的文件及其最后一次备份的层级，时间，日期</li>
+<li><strong>-w：</strong>与-W类似，但仅显示需要备份的文件。</li>
+</ul>
+</li>
+<li><strong>cat /ect/dumpdates</strong>查看备份时间文件</li>
+</ul>
+<hr>
+<p><strong>应用案例：</strong></p>
+<p><code>案例1：</code> 将/boot 分区的所有内容被分到 /opt/book.bak0.bz2 文件中，备份层级为“0”</p>
+<p>dump -0uj -f /opt/boot.bak0.bz2 /boot</p>
+<p><code>案例2：</code>在/boot 分区下增加一个新文件，备份层级为“1”（只备份上次使用层次“0”备份后发生改变的数据）</p>
+<p>dump -1uj -f /opt/boot.bak1.bz2 /boot</p>
+<p><strong>提示：</strong>通过dump命令再配合crontab 可以实现无人值守备份</p>
+<hr>
+<p><strong>dump 备份文件或者目录</strong></p>
+<p>我们在备份分区时，是可以支持增量备份，如果备份 <strong>文件或者目录，不再支持增量备份</strong>，只能使用0级别备份</p>
+<p>如果是比较重要的备份文件，建议将文件上传到其他服务器保存，<strong>不要将鸡蛋放在同一个篮子</strong></p>
+<h2 id="18-3、使用-restore-完成恢复"><a href="#18-3、使用-restore-完成恢复" class="headerlink" title="18.3、使用 restore 完成恢复"></a>18.3、使用 restore 完成恢复</h2><hr>
+<p><strong>基本介绍：</strong></p>
+<p>restore 命令用来恢复已备份的文件，可以从dump 生成的备份文件中恢复原文件</p>
+<hr>
+<p><strong>基本语法：</strong></p>
+<ul>
+<li><strong>restore [模式选项] [选项]</strong> <ul>
+<li>以下四个模式不能混用，在一次命令中只能指定一种<ul>
+<li><strong>-C：</strong>使用对比模式，将备份的文件与已存在的文件相互对比</li>
+<li><strong>-i：</strong>使用交互模式，在进行还原操作时，restors指令依序询问用户</li>
+<li><strong>-r：</strong>进行还原模式</li>
+<li><strong>-t：</strong>查看模式，看备份文件中有哪些选项</li>
+</ul>
+</li>
+<li>选项：<ul>
+<li><strong>-f &lt;备份设备&gt; ：</strong>从指定的文件中读取备份数据，进行还原操作</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p><strong>应用案例：</strong></p>
+<p><code>案例1：</code>restore 命令比较模式，比较备份文件和原文件的区别</p>
+<p>测试：</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs awk">mv <span class="hljs-regexp">/boot/</span>hello.java <span class="hljs-regexp">/boot/</span>hello100.java<br><br>restore -C -f boot.bak1.bz2 <span class="hljs-regexp">//</span>注意和最新的文件比较<br></code></pre></td></tr></table></figure>
+
+<p> <img src="/2022/05/05/Linux/image-20220602003649984.png" srcset="/img/loading.gif" lazyload></p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs awk">mv <span class="hljs-regexp">/boot/</span>hello100.java <span class="hljs-regexp">/boot/</span>hello.java<br><br>restore -C -f boot.bak1.bz2 <span class="hljs-regexp">//</span>注意和最新的文件比较<br></code></pre></td></tr></table></figure>
+
+<p><img src="/2022/05/05/Linux/image-20220602003607110.png" srcset="/img/loading.gif" lazyload></p>
+<p><code>案例2：</code>restore 命令查看模式，看备份文件有哪些数据/文件</p>
+<p>测试：</p>
+<figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs excel">restroe -<span class="hljs-built_in">t</span> -f boot.bak0.<span class="hljs-symbol">bz2</span><br></code></pre></td></tr></table></figure>
+
+
+
+<p><code>案例3：</code>restore命令还原模式。<strong>注意细节：</strong>如果你有增量备份，需要把增量文件也进行恢复，有几个增量备份文件，就要回复几个，按顺序来恢复即可</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs awk">mkdir <span class="hljs-regexp">/opt/</span>boottmp<br>cd <span class="hljs-regexp">/opt/</span>boottmp<br>restore -r -f <span class="hljs-regexp">/opt/</span>boot.bak0.bz2 <span class="hljs-regexp">//</span>恢复到第<span class="hljs-number">1</span>次完全备份状态<br>restore -r -f <span class="hljs-regexp">/opt/</span>boot.bak1.bz2 <span class="hljs-regexp">//</span>恢复到第<span class="hljs-number">2</span>次增量备份状态<br></code></pre></td></tr></table></figure>
+
+
+
+<p><code>案例4：</code>restore命令恢复备份的文件，或者整个目录的文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">mkdir</span> etctmp<br><span class="hljs-built_in">cd</span> etctmp/<br>restore -r -f /opt/etc.bak0.bz2<br></code></pre></td></tr></table></figure>
+
+
               
             </div>
             <hr/>
