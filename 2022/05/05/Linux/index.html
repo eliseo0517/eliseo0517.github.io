@@ -126,8 +126,10 @@
 <meta property="og:image" content="https://eliseo.top/2022/05/05/Linux/image-20220601154040070.png">
 <meta property="og:image" content="https://eliseo.top/2022/05/05/Linux/image-20220602003649984.png">
 <meta property="og:image" content="https://eliseo.top/2022/05/05/Linux/image-20220602003607110.png">
+<meta property="og:image" content="https://eliseo.top/2022/05/05/Linux/image-20220602155020464.png">
+<meta property="og:image" content="https://eliseo.top/2022/05/05/Linux/image-20220602160950892.png">
 <meta property="article:published_time" content="2022-05-05T01:35:45.000Z">
-<meta property="article:modified_time" content="2022-06-02T07:45:11.033Z">
+<meta property="article:modified_time" content="2022-06-02T08:21:04.172Z">
 <meta property="article:author" content="Mr.Wang">
 <meta property="article:tag" content="linux">
 <meta name="twitter:card" content="summary_large_image">
@@ -342,7 +344,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          23k 字
+          24k 字
         
       </span>
     
@@ -354,7 +356,7 @@
         
         
           <!-- compatible with older versions-->
-          192 分钟
+          199 分钟
         
       </span>
     
@@ -406,7 +408,7 @@
                 
                   
                     <!-- compatible with older versions-->
-                    本文最后更新于：1 分钟前
+                    本文最后更新于：2 分钟前
                   
                 
               </p>
@@ -2082,6 +2084,48 @@
 <p><code>案例4：</code>restore命令恢复备份的文件，或者整个目录的文件</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">mkdir</span> etctmp<br><span class="hljs-built_in">cd</span> etctmp/<br>restore -r -f /opt/etc.bak0.bz2<br></code></pre></td></tr></table></figure>
 
+<h1 id="十九、linux面试题"><a href="#十九、linux面试题" class="headerlink" title="十九、linux面试题"></a>十九、linux面试题</h1><hr>
+<p><code>题一：</code> 分析日志t.log（访问量），将各个ip地址截取，并统计出现次数，并按照从大到小排序(腾讯)</p>
+<ul>
+<li>cut 文件内容查看 显示行中指定部分的内容<ul>
+<li><strong>cut [选项参数]  filename</strong>（不能按照空格分隔）<ul>
+<li><strong>-b：</strong>以字节为单位进行分割</li>
+<li><strong>-c：</strong>以字符 (characters) 的单位取出固定字符区间</li>
+<li><strong>-d：</strong>分隔符，按照指定分隔符分割列。与 -f 一起使用</li>
+<li><strong>-f：</strong>依据 -d 的分隔字符将一段信息分割成为数段，用 -f 取出第几段的意思（列号，提取第几列）</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>sort 选项 文件</strong> 将文件的每一行作为一个单位，相互比较，默认从小到大排序）<ul>
+<li><strong>-u：</strong>去重</li>
+<li><strong>-r：</strong> 从大到小排序</li>
+<li><strong>-n：</strong>以数值来排序</li>
+</ul>
+</li>
+<li><strong>uniq -c</strong> 在每一列的旁边统计重复行出现的次数</li>
+</ul>
+<p><img src="/2022/05/05/Linux/image-20220602155020464.png" srcset="/img/loading.gif" lazyload></p>
+<hr>
+<p><code>题二：</code>统计连接到服务器的各个ip情况，并按连接数从大到小排序（腾讯）</p>
+<p><img src="/2022/05/05/Linux/image-20220602160950892.png" srcset="/img/loading.gif" lazyload></p>
+<ul>
+<li><p>grep ESTABLISHED：选取出连接状态的ip </p>
+</li>
+<li><p><strong>awk -F “ “ ‘{print $5}’：</strong>由于cut命令不能分割空格 所以使用awk</p>
+<ul>
+<li><strong>-F “xx”：</strong> 按照xx进行分割</li>
+</ul>
+</li>
+</ul>
+<p><code>题三：</code>如何找回mysql的ROOT用户的密码？（滴滴）</p>
+<p>1、进入  <code>vim /etc/my.cnf</code>  在最后插入 <code>skip-grant-tables</code>（跳过输入密码的步骤）</p>
+<p>2、重启mysql <code>service mysqld restart</code></p>
+<p>3、修改密码 密码在<strong>mysql表</strong>中的 <strong>user表</strong>中的authentication_string</p>
+<p><code>update user set authentication_string=password(&quot;xxxx&quot;) where user=&#39;root&#39;;</code></p>
+<p><code>flush pricileges;</code></p>
+<p>4、进入  <code>vim /etc/my.cnf</code>  在注释插入的 <code>skip-grant-tables</code></p>
+<p>5、重启mysql<code>service mysqld restart</code></p>
 
               
             </div>
