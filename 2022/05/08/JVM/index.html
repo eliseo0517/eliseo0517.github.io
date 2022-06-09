@@ -52,8 +52,9 @@
 <meta property="og:image" content="https://eliseo.top/2022/05/08/JVM/image-20220606153242959.png">
 <meta property="og:image" content="https://eliseo.top/2022/05/08/JVM/image-20220606164211547.png">
 <meta property="og:image" content="https://eliseo.top/2022/05/08/JVM/image-20220609091203788.png">
+<meta property="og:image" content="https://eliseo.top/2022/05/08/JVM/image-20220609163921066.png">
 <meta property="article:published_time" content="2022-05-07T16:37:53.000Z">
-<meta property="article:modified_time" content="2022-06-09T08:12:48.848Z">
+<meta property="article:modified_time" content="2022-06-09T09:44:44.121Z">
 <meta property="article:author" content="Mr.Wang">
 <meta property="article:tag" content="JVM">
 <meta name="twitter:card" content="summary_large_image">
@@ -280,7 +281,7 @@
         
         
           <!-- compatible with older versions-->
-          114 分钟
+          117 分钟
         
       </span>
     
@@ -332,7 +333,7 @@
                 
                   
                     <!-- compatible with older versions-->
-                    本文最后更新于：1 分钟前
+                    本文最后更新于：5 分钟前
                   
                 
               </p>
@@ -877,9 +878,25 @@
 <p>一个方法开始执行后，只有两种方式可以退出这个方法：</p>
 <ul>
 <li><p>正常完成出口</p>
-<p>返回指令包括ireturn(boolean，byte，char，short，int)，lreturn，freturn，dreturn，areturn(引用数据类型)，return(声明为void)</p>
+<p>返回指令包括ireturn（boolean，byte，char，short，int），lreturn，freturn，dreturn，areturn(引用数据类型)，return(声明为void)</p>
 </li>
-<li></li>
+<li><p>异常完成出口</p>
+<p>将一场处理存储在一个异常处理表，方便在发生异常的时候找到处理异常的代码</p>
+</li>
+</ul>
+<p><img src="/2022/05/08/JVM/image-20220609163921066.png" srcset="/img/loading.gif" lazyload alt="异常处理表"></p>
+<h2 id="5-10、一些附加信息"><a href="#5-10、一些附加信息" class="headerlink" title="5.10、一些附加信息"></a>5.10、一些附加信息</h2><p>栈帧中还允许携带与java虚拟机实现相关的一些附加信息，例如对程序调试提供支持的信息</p>
+<h2 id="5-11、相关面试题"><a href="#5-11、相关面试题" class="headerlink" title="5.11、相关面试题"></a>5.11、相关面试题</h2><p>分配的栈内存越大越好么？</p>
+<ul>
+<li>不是，过大的栈内存会影响到其余区域的大小</li>
+</ul>
+<p>垃圾回收是否会涉及到虚拟机栈？</p>
+<ul>
+<li>不会，栈只有进栈，出栈 </li>
+</ul>
+<p>方法中定义的局部变量是否线程安全？</p>
+<ul>
+<li>具体问题具体分析 如果方法内部局部变量没有逃离方法的作用范围它就是安全的，是线程私有的 ，不会产生在多个线程下产生线程干扰。<br>如果局部变量引用了对象，并逃离方法的作用范围，它就不是线程安全的。<br>（例如：参数变量不是线程安全，会被返回得局部变量不是线程安全的，他们都逃离了方法的作用范围）</li>
 </ul>
 
               
