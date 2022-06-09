@@ -51,8 +51,9 @@
 <meta property="og:image" content="https://eliseo.top/2022/05/08/JVM/image-20220606093338725.png">
 <meta property="og:image" content="https://eliseo.top/2022/05/08/JVM/image-20220606153242959.png">
 <meta property="og:image" content="https://eliseo.top/2022/05/08/JVM/image-20220606164211547.png">
+<meta property="og:image" content="https://eliseo.top/2022/05/08/JVM/image-20220609091203788.png">
 <meta property="article:published_time" content="2022-05-07T16:37:53.000Z">
-<meta property="article:modified_time" content="2022-06-06T09:58:27.988Z">
+<meta property="article:modified_time" content="2022-06-09T07:39:08.513Z">
 <meta property="article:author" content="Mr.Wang">
 <meta property="article:tag" content="JVM">
 <meta name="twitter:card" content="summary_large_image">
@@ -267,7 +268,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          12k 字
+          14k 字
         
       </span>
     
@@ -279,7 +280,7 @@
         
         
           <!-- compatible with older versions-->
-          99 分钟
+          114 分钟
         
       </span>
     
@@ -331,7 +332,7 @@
                 
                   
                     <!-- compatible with older versions-->
-                    本文最后更新于：18 小时前
+                    本文最后更新于：5 分钟前
                   
                 
               </p>
@@ -681,7 +682,7 @@
 <li>它是唯一一个不会出现OutOfMemoryError的区域</li>
 </ul>
 <p><img src="/2022/05/08/JVM/image-20220604143627082.png" srcset="/img/loading.gif" lazyload alt="pc寄存器的使用场景"></p>
-<p> <strong>使用PC寄存器存储字节码指令地址有什么用呢？为什么使用PC寄存器记录当前线程的执行地址呢？</strong></p>
+<p><strong>使用PC寄存器存储字节码指令地址有什么用呢？为什么使用PC寄存器记录当前线程的执行地址呢？</strong></p>
 <p>因为CPU需要不停的切换各个线程，这时候切换回来以后，就得知道接着从哪开始继续执行。</p>
 <p>JVM的字节码解释器就需要通过改变PC寄存器的值来明确下一条应该执行什么样的字节码指令。</p>
 <p><img src="/2022/05/08/JVM/image-20220604144116135.png" srcset="/img/loading.gif" lazyload></p>
@@ -810,10 +811,70 @@
 <h2 id="5-4、操作数栈"><a href="#5-4、操作数栈" class="headerlink" title="5.4、操作数栈"></a>5.4、操作数栈</h2><p>也称为表达式栈，<strong>特点是后进先出，</strong>在方法执行过程中，根据字节码指令，往栈中写入数据或提取数据，<strong>即入栈(push)/出栈(pop)。</strong></p>
 <ul>
 <li>操作数栈<strong>主要用于保存计算过程的中间结果，同时作为计算过程中变量临时的存储空间</strong></li>
-<li>操作数栈是JVM执行引擎的一个工作区，随着方法的执行而创建，并且这个方法的操作数栈是空的，它的长度保存在方法的Code属性中，为max_stack值</li>
+<li>操作数栈是JVM执行引擎的一个工作区，随着方法的执行而创建，<strong>sss</strong>它的长度保存在方法的Code属性中，为max_stack值</li>
 <li>操作数栈并非采用访问索引的方式来进行数据访问，而是通过入栈出栈操作来完成数据访问。</li>
-<li>如果被调用的方法带有返回值，其返回值将会被压入当前栈帧的操作数栈中</li>
+<li><strong>如果被调用的方法带有返回值，其返回值将会被压入当前栈帧的操作数栈中</strong></li>
 </ul>
+<h2 id="5-5、栈顶缓存技术"><a href="#5-5、栈顶缓存技术" class="headerlink" title="5.5、栈顶缓存技术"></a>5.5、栈顶缓存技术</h2><p>因为基于栈架构的虚拟机所使用的零地址更加紧凑，但完成一项指令需要更多的出栈入栈指令，意味着需要更多的指令分派次数和内存读写次数，也就是会影响执行速度，因此，Hotspot JVM设计者们提出了栈顶缓存技术，<strong>将栈顶元素全部缓存在物理cpu寄存器中，以次降低对内存的读写次数，提升效率</strong></p>
+<h2 id="5-6、动态链接-指向运行时常量池的方法引用"><a href="#5-6、动态链接-指向运行时常量池的方法引用" class="headerlink" title="5.6、动态链接(指向运行时常量池的方法引用)"></a>5.6、动态链接(指向运行时常量池的方法引用)</h2><ul>
+<li>每个栈帧内部都包含一个指向<strong>运行时常量池中该栈帧所属方法的引用</strong>，目的是为了支持当前方法的代码能实现<strong>动态链接</strong></li>
+<li>在Java源文件被编译到字节码文件中时，所有的变量和方法引用都作为符号引用，保存在class文件的常量池里，比如，描述一个方法调用了另外的其他方法时，就是通过常量池中指向方法的符号来表示的，那么<strong>动态链接的作用就是为了将这些符号引用转换为调用方法的直接引用</strong></li>
+</ul>
+<p><strong>常量池的作用：</strong>提供一些符号和常量，便于指令的识别，需要这些常量的时候直接指针指向即可。</p>
+<h2 id="5-7、方法的调用"><a href="#5-7、方法的调用" class="headerlink" title="5.7、方法的调用"></a>5.7、方法的调用</h2><p>JVM中将符号引用转换为调用方法的直接引用与方法的绑定机制有关</p>
+<ul>
+<li><strong>静态链接：</strong>当字节码文件被装载进JVM内部时，<strong>如果被调用的方法在编译器可知，</strong>且运行期 保持不变时，这种情况下的调用称为静态链接</li>
+<li><strong>动态链接：如果被调用的方法在编译期无法被确定下来，</strong>也就是说，只有在程序运行期将调用方法的符号引用转换为直接引用，由于这种引用转换过程具备动态性，所以叫做动态链接 </li>
+</ul>
+<p><strong>对应的方法绑定机制为</strong>：早期绑定(目标方法在编译期可知，且运行期保持不变)和晚期绑定(编译期无法被确定下来，只能在程序运行期间确定)，<strong>绑定只发生一次</strong></p>
+<p><strong>对应的方法为</strong>：虚方法和非虚方法</p>
+<ul>
+<li><p>静态方法，私有方法，final方法，实例构造器，父类方法都是<strong>非虚方法</strong></p>
+</li>
+<li><p>其余方法为<strong>虚方法</strong></p>
+</li>
+</ul>
+<p>子类对象的多态性的使用前提：① 类的继承关系 ② 方法的重写</p>
+<p>多态性与非虚方法是对立的。</p>
+<p><strong>虚拟机中提供了几条方法调用指令:</strong></p>
+<ul>
+<li><p>普通调用指令</p>
+<ol>
+<li>invokestatic： 调用静态方法，解析阶段确定唯一方法版本</li>
+<li>invokespecial： 调用init方法，私有及父类方法，解析阶段确定唯一方法版本</li>
+<li>invokevirtual： 调用所有虚方法</li>
+<li>invokeinterface： 调用接口方法</li>
+</ol>
+</li>
+<li><p>动态调用指令</p>
+<p>​    5.invokedynamic： 动态解析出需要调用的方法，然后执行</p>
+</li>
+</ul>
+<p>前四条指令固化在虚拟机内部，方法的调用执行不可人为干预，而invokedynamic指令则支持由用户确定方法版本，其中<strong>invokestatic和invokespecial指令调用的方法称为非虚方法，其余(final修饰的除外)称为虚方法</strong></p>
+<p><strong>动态语言和静态语言：</strong></p>
+<p>后者是判断遍历自身的类型信息，前者是判断变量值的类型信息，遍历没有类型信息，变量值才有类型信息。</p>
+<hr>
+<p><strong>java语言中方法重写的本质</strong></p>
+<ol>
+<li>找到操作数栈顶的第一个元素所执行的对象的实际类型，记作c</li>
+<li>如果不通过类型c中找到与常量中的描述符合简单名称都相符的方法，则进行访问权限校验，如果通过则返回这个方法的直接引用，查找过程结束，如果不通过，则返回java.lang.ⅠllegalAccessError异常(非法访问异常(无权访问))</li>
+<li>否则，按照继承关系从下往上依次对c的各个父类进行第二步的搜索和验证过程</li>
+<li>如果始终没有找到，则抛出java.lang.AbstractMethodError异常</li>
+</ol>
+<hr>
+<p><strong>虚方法表</strong></p>
+<p>如果在每次动态分派的过程中都要重新在类的方法元数据中搜索合适的目标的话会影响效率，所以JVM提供了<strong>虚方法表</strong>。</p>
+<p>每个类都有一个自己的虚方法表。 （没重写就去父类中寻找方法）</p>
+<p><img src="/2022/05/08/JVM/image-20220609091203788.png" srcset="/img/loading.gif" lazyload></p>
+<p>如果Son继承Father，Father继承Object，Father重写hardChoice方法，Son重写了父类Father的hardChoise方法，没有重写的方法都指向Object，因为Father与Son都没有重写过这些方法，所以在虚方法表中直接将未重写的方法直接指向父类的父类。</p>
+<h2 id="5-9、方法返回地址"><a href="#5-9、方法返回地址" class="headerlink" title="5.9、方法返回地址"></a>5.9、方法返回地址</h2><p><strong>方法返回地址中存放着该方法的pc寄存器的值</strong></p>
+<p>方法的借宿有两种方式：</p>
+<ul>
+<li>正常执行完成</li>
+<li>出现未处理的异常，非正常退出</li>
+</ul>
+<p>方法退出后都会返回到该方法被调用的位置，方法正常退出时，<strong>调用者的pc计数器的值作为返回地址。即调用该方法的指令的下一条指令的地址</strong>，而通过异常退出的，返回地址是要通过异常表来确定，栈帧中一般不会保存这部分信息</p>
+<p>返回指令包括ireturn(boolean，byte，char，short，int)，lreturn，freturn，dreturn，areturn(引用数据类型)，return(声明为void)</p>
 
               
             </div>
