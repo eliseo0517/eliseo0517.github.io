@@ -6,7 +6,7 @@
   <link href="https://eliseo.top/atom.xml" rel="self"/>
   
   <link href="https://eliseo.top/"/>
-  <updated>2022-06-07T03:39:17.697Z</updated>
+  <updated>2022-06-13T02:13:28.027Z</updated>
   <id>https://eliseo.top/</id>
   
   <author>
@@ -15,6 +15,55 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>搜索旋转排序数组</title>
+    <link href="https://eliseo.top/2022/06/13/%E6%90%9C%E7%B4%A2%E6%97%8B%E8%BD%AC%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84/"/>
+    <id>https://eliseo.top/2022/06/13/%E6%90%9C%E7%B4%A2%E6%97%8B%E8%BD%AC%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84/</id>
+    <published>2022-06-13T02:12:35.000Z</published>
+    <updated>2022-06-13T02:13:28.027Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="/2022/06/13/%E6%90%9C%E7%B4%A2%E6%97%8B%E8%BD%AC%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84/image-20220613101313587.png" alt="搜索旋转排序数组"></p><p><strong>解法：</strong></p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-comment">// 数组找东西 优先想到二分法，虽然数组不有序，但是局部有序 所以我们现在有序的地方寻找，然后再在无序的地方寻找</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-type">int</span> <span class="hljs-title function_">search</span><span class="hljs-params">(<span class="hljs-type">int</span>[] nums, <span class="hljs-type">int</span> target)</span> &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">n</span> <span class="hljs-operator">=</span> nums.length;<br>        <span class="hljs-keyword">if</span> (n == <span class="hljs-number">0</span>) &#123;<br>            <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>;<br>        &#125;<br>        <span class="hljs-keyword">if</span> (n == <span class="hljs-number">1</span>) &#123;<br>            <span class="hljs-keyword">return</span> nums[<span class="hljs-number">0</span>] == target ? <span class="hljs-number">0</span> : -<span class="hljs-number">1</span>;<br>        &#125;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">l</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>, r = n - <span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">while</span> (l &lt;= r) &#123;<br>            <span class="hljs-type">int</span> <span class="hljs-variable">mid</span> <span class="hljs-operator">=</span> l + (r - l) / <span class="hljs-number">2</span>;<br>            <span class="hljs-keyword">if</span> (nums[mid] == target) &#123;<br>                <span class="hljs-keyword">return</span> mid;<br>            &#125;<br>            <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (nums[mid] &lt; nums[r]) &#123; <span class="hljs-comment">// 有序</span><br>                <span class="hljs-keyword">if</span> (nums[mid] &lt; target &amp;&amp; target &lt;= nums[r]) &#123;<br>                    l = mid + <span class="hljs-number">1</span>;<br>                &#125; <span class="hljs-keyword">else</span> &#123;<br>                    r = mid - <span class="hljs-number">1</span>;<br>                &#125;<br>            &#125;<br>            <span class="hljs-keyword">else</span> &#123;<br>                <span class="hljs-keyword">if</span> (nums[l] &lt;= target &amp;&amp; target &lt; nums[mid]) &#123;<br>                    r = mid - <span class="hljs-number">1</span>;<br>                &#125; <span class="hljs-keyword">else</span> &#123;<br>                    l = mid + <span class="hljs-number">1</span>;<br>                &#125;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;/2022/06/13/%E6%90%9C%E7%B4%A2%E6%97%8B%E8%BD%AC%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84/image-20220613101313587.png&quot; alt=&quot;搜索旋转排序数组</summary>
+      
+    
+    
+    
+    <category term="力扣" scheme="https://eliseo.top/categories/%E5%8A%9B%E6%89%A3/"/>
+    
+    
+    <category term="力扣" scheme="https://eliseo.top/tags/%E5%8A%9B%E6%89%A3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>最长有效括号</title>
+    <link href="https://eliseo.top/2022/06/13/%E6%9C%80%E9%95%BF%E6%9C%89%E6%95%88%E6%8B%AC%E5%8F%B7/"/>
+    <id>https://eliseo.top/2022/06/13/%E6%9C%80%E9%95%BF%E6%9C%89%E6%95%88%E6%8B%AC%E5%8F%B7/</id>
+    <published>2022-06-13T01:10:53.000Z</published>
+    <updated>2022-06-13T01:13:37.859Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="/2022/06/13/%E6%9C%80%E9%95%BF%E6%9C%89%E6%95%88%E6%8B%AC%E5%8F%B7/image-20220613091241176.png" alt="最长有效括号"></p><p><strong>解法：栈</strong></p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">longestValidParentheses</span><span class="hljs-params">(String s)</span> &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">max</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>        LinkedList&lt;Integer&gt; stack = <span class="hljs-keyword">new</span> <span class="hljs-title class_">LinkedList</span>&lt;&gt;();<br>        stack.push(-<span class="hljs-number">1</span>);<br><br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; s.length(); i++) &#123;<br>            <span class="hljs-comment">// 如果加入的元素是(</span><br>            <span class="hljs-keyword">if</span> (s.charAt(i) == <span class="hljs-string">&#x27;(&#x27;</span>) &#123;<br>                <span class="hljs-comment">// 将(的下标放入栈内</span><br>                stack.push(i);<br>            &#125;<br>            <span class="hljs-comment">// 如果加入的元素是 (，那么存在</span><br>            <span class="hljs-comment">// 1、)前面有(</span><br>            <span class="hljs-comment">// 2、前面没有左括号和它进行匹配，那么这个右括号就形成了新的边界。新的子串匹配时，起点必须在该边界右边</span><br>            <span class="hljs-keyword">if</span> (s.charAt(i) == <span class="hljs-string">&#x27;)&#x27;</span>)&#123; <span class="hljs-comment">// 加入的元素不是(,是)</span><br>                stack.pop();<br>                <span class="hljs-comment">// 如果栈是空的</span><br>                <span class="hljs-keyword">if</span> (stack.isEmpty()) &#123;<br>                    <span class="hljs-comment">// 将这个右括号的下标作为最后一个没有被匹配的右括号</span><br>                    stack.push(i);<br>                &#125;<br>                <span class="hljs-comment">// 匹配到了。那么这个有括号的下标减去栈顶元素(也就是最后一个没有被匹配的括号)就是当前长度</span><br>                max =  Math.max(max, i - stack.peek());<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> max;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;/2022/06/13/%E6%9C%80%E9%95%BF%E6%9C%89%E6%95%88%E6%8B%AC%E5%8F%B7/image-20220613091241176.png&quot; alt=&quot;最长有效括号&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;解法</summary>
+      
+    
+    
+    
+    <category term="力扣" scheme="https://eliseo.top/categories/%E5%8A%9B%E6%89%A3/"/>
+    
+    
+    <category term="力扣" scheme="https://eliseo.top/tags/%E5%8A%9B%E6%89%A3/"/>
+    
+  </entry>
   
   <entry>
     <title>下一个排列</title>
@@ -452,55 +501,6 @@
     <summary type="html">&lt;p&gt;&lt;img src=&quot;/2022/05/18/%E5%89%AA%E7%BB%B3%E5%AD%90%E2%85%A1/image-20220518092413253.png&quot; alt=&quot;剪绳子Ⅱ&quot;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;解法：&lt;/strong&gt;&lt;/p&gt;
 &lt;figu</summary>
-      
-    
-    
-    
-    <category term="力扣" scheme="https://eliseo.top/categories/%E5%8A%9B%E6%89%A3/"/>
-    
-    
-    <category term="力扣" scheme="https://eliseo.top/tags/%E5%8A%9B%E6%89%A3/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>数组中的逆序对</title>
-    <link href="https://eliseo.top/2022/05/17/%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E9%80%86%E5%BA%8F%E5%AF%B9/"/>
-    <id>https://eliseo.top/2022/05/17/%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E9%80%86%E5%BA%8F%E5%AF%B9/</id>
-    <published>2022-05-17T07:49:53.000Z</published>
-    <updated>2022-05-25T02:44:52.709Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="/2022/05/17/%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E9%80%86%E5%BA%8F%E5%AF%B9/image-20220517155231958.png" alt="数组中的逆序对"></p><p><strong>解法一：</strong></p><p>暴力递归（双指针一个一个进行比较，发现符合的情况则res++），题目所给的数组长度在0~500之间，暴力递归会出现超时</p><p><strong>解法二：归并排序的时候进行对逆序对的统计</strong></p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-type">int</span>[] nums, tmp;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">reversePairs</span><span class="hljs-params">(<span class="hljs-type">int</span>[] nums)</span> &#123;<br>        <span class="hljs-built_in">this</span>.nums = nums;<br>        tmp = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[nums.length];<br>        <span class="hljs-keyword">return</span> mergeSort(<span class="hljs-number">0</span>, nums.length - <span class="hljs-number">1</span>);<br>    &#125;<br><br>    <span class="hljs-keyword">private</span> <span class="hljs-type">int</span> <span class="hljs-title function_">mergeSort</span><span class="hljs-params">(<span class="hljs-type">int</span> l, <span class="hljs-type">int</span> r)</span> &#123;<br>        <span class="hljs-comment">// 终止条件</span><br>        <span class="hljs-keyword">if</span> (l &gt;= r) <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-comment">// 递归划分</span><br>        <span class="hljs-type">int</span> <span class="hljs-variable">m</span> <span class="hljs-operator">=</span> (l + r) / <span class="hljs-number">2</span>;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">res</span> <span class="hljs-operator">=</span> mergeSort(l, m) + mergeSort(m + <span class="hljs-number">1</span>, r);<br>        <span class="hljs-comment">// 合并阶段</span><br>        <span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> l, j = m + <span class="hljs-number">1</span>;<br>        <span class="hljs-comment">// 在每次比较大小的时候顺便进行对逆序对的统计</span><br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">k</span> <span class="hljs-operator">=</span> l; k &lt;= r; k++)<br>            tmp[k] = nums[k];<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">k</span> <span class="hljs-operator">=</span> l; k &lt;= r; k++) &#123;<br>            <span class="hljs-keyword">if</span> (i == m + <span class="hljs-number">1</span>)<br>                nums[k] = tmp[j++];<br>            <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (j == r + <span class="hljs-number">1</span> || tmp[i] &lt;= tmp[j])<br>                nums[k] = tmp[i++];<br>            <span class="hljs-keyword">else</span> &#123;<br>                nums[k] = tmp[j++];<br>                res += m - i + <span class="hljs-number">1</span>; <span class="hljs-comment">// 统计逆序对</span><br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> res;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;&lt;img src=&quot;/2022/05/17/%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84%E9%80%86%E5%BA%8F%E5%AF%B9/image-20220517155231958.png&quot; alt=&quot;数组中的逆序对&quot;&gt;&lt;/p&gt;
-&lt;p&gt;</summary>
-      
-    
-    
-    
-    <category term="力扣" scheme="https://eliseo.top/categories/%E5%8A%9B%E6%89%A3/"/>
-    
-    
-    <category term="力扣" scheme="https://eliseo.top/tags/%E5%8A%9B%E6%89%A3/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>打印从1到最大的n位数</title>
-    <link href="https://eliseo.top/2022/05/16/%E6%89%93%E5%8D%B0%E4%BB%8E1%E5%88%B0%E6%9C%80%E5%A4%A7%E7%9A%84n%E4%BD%8D%E6%95%B0/"/>
-    <id>https://eliseo.top/2022/05/16/%E6%89%93%E5%8D%B0%E4%BB%8E1%E5%88%B0%E6%9C%80%E5%A4%A7%E7%9A%84n%E4%BD%8D%E6%95%B0/</id>
-    <published>2022-05-16T03:32:52.000Z</published>
-    <updated>2022-05-25T02:43:19.961Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="/2022/05/16/%E6%89%93%E5%8D%B0%E4%BB%8E1%E5%88%B0%E6%9C%80%E5%A4%A7%E7%9A%84n%E4%BD%8D%E6%95%B0/image-20220516113408866.png" alt="打印从1到最大的n位数"></p><p><strong>解法一：（不考虑大数）</strong></p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span>[] printNumbers(<span class="hljs-type">int</span> n) &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">max</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; n; i++) &#123;<br>            max *= <span class="hljs-number">10</span>;<br>        &#125;<br>        <span class="hljs-type">int</span>[] res = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[max - <span class="hljs-number">1</span>];<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>; i &lt; max; i++) &#123;<br>            res[i - <span class="hljs-number">1</span>] = i;<br>        &#125;<br>        <span class="hljs-keyword">return</span> res;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure><p><strong>解法二：（考虑大数）</strong></p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>        <span class="hljs-type">int</span>[] res;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">count</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>,nine = <span class="hljs-number">0</span>,start,n;<br>        <span class="hljs-type">char</span>[] a;<br>        <span class="hljs-type">char</span>[] b = <span class="hljs-keyword">new</span> <span class="hljs-title class_">char</span>[]&#123;<span class="hljs-string">&#x27;0&#x27;</span>,<span class="hljs-string">&#x27;1&#x27;</span>,<span class="hljs-string">&#x27;2&#x27;</span>,<span class="hljs-string">&#x27;3&#x27;</span>,<span class="hljs-string">&#x27;4&#x27;</span>,<span class="hljs-string">&#x27;5&#x27;</span>,<span class="hljs-string">&#x27;6&#x27;</span>,<span class="hljs-string">&#x27;7&#x27;</span>,<span class="hljs-string">&#x27;8&#x27;</span>,<span class="hljs-string">&#x27;9&#x27;</span>&#125;;<br>        <span class="hljs-keyword">public</span> <span class="hljs-type">int</span>[] printNumbers(<span class="hljs-type">int</span> n) &#123;<br>            <span class="hljs-built_in">this</span>.n = n;<br>            res = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[(<span class="hljs-type">int</span>)Math.pow(<span class="hljs-number">10</span>,n) - <span class="hljs-number">1</span>]; <span class="hljs-comment">// 数字字符串集</span><br>            a = <span class="hljs-keyword">new</span> <span class="hljs-title class_">char</span>[n]; <span class="hljs-comment">// 定义长度为n的字符列表</span><br>            <span class="hljs-comment">//初始化start例如最大99，那么前十个的个位就不需要</span><br>            start = n - <span class="hljs-number">1</span>;<br>            <span class="hljs-comment">// 全排列</span><br>            dfs(<span class="hljs-number">0</span>);<br>            <span class="hljs-keyword">return</span> res;<br>        &#125;<br><br><br>        <span class="hljs-keyword">void</span> <span class="hljs-title function_">dfs</span><span class="hljs-params">(<span class="hljs-type">int</span> x)</span> &#123;<br>            <span class="hljs-comment">// 终止条件：固定完所有的位</span><br>            <span class="hljs-keyword">if</span> (x == n) &#123;<br>                <span class="hljs-comment">// 截取</span><br>                <span class="hljs-type">String</span> <span class="hljs-variable">s</span> <span class="hljs-operator">=</span> String.valueOf(a).substring(start);<br>                <span class="hljs-keyword">if</span> (!s.equals(<span class="hljs-string">&quot;0&quot;</span>)) &#123;<br>                    <span class="hljs-comment">// num添加到res尾部用逗号隔开</span><br>                    <span class="hljs-comment">// res.append(s + &quot;,&quot;);</span><br>                    res[count++] = Integer.parseInt(s);<br>                &#125;<br>                <span class="hljs-comment">// 所有位都是9即要进位了 nine是9的数量</span><br>                <span class="hljs-keyword">if</span> (n - start == nine) &#123;<br>                    start--;<br>                &#125;<br>                <span class="hljs-keyword">return</span>;<br>            &#125;<br>            <span class="hljs-comment">// 每一位</span><br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">char</span> i : b) &#123;<br>                <span class="hljs-comment">// a[0]=0</span><br>                <span class="hljs-comment">// a[1]=0</span><br>                <span class="hljs-comment">// 固定的x位是i</span><br>                <span class="hljs-keyword">if</span> (i == <span class="hljs-string">&#x27;9&#x27;</span>) &#123;<br>                    nine++;<br>                &#125;<br>                a[x] = i;<br>                <span class="hljs-comment">// 下一位固定</span><br>                dfs(x + <span class="hljs-number">1</span>);<br>            &#125;<br>            <span class="hljs-comment">// nine恢复</span><br>            nine--;<br>        &#125;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;&lt;img src=&quot;/2022/05/16/%E6%89%93%E5%8D%B0%E4%BB%8E1%E5%88%B0%E6%9C%80%E5%A4%A7%E7%9A%84n%E4%BD%8D%E6%95%B0/image-20220516113408866.png&quot; al</summary>
       
     
     
