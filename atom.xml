@@ -6,7 +6,7 @@
   <link href="https://eliseo.top/atom.xml" rel="self"/>
   
   <link href="https://eliseo.top/"/>
-  <updated>2022-06-13T02:13:28.027Z</updated>
+  <updated>2022-07-04T08:33:49.851Z</updated>
   <id>https://eliseo.top/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>接雨水</title>
+    <link href="https://eliseo.top/2022/07/04/%E6%8E%A5%E9%9B%A8%E6%B0%B4/"/>
+    <id>https://eliseo.top/2022/07/04/%E6%8E%A5%E9%9B%A8%E6%B0%B4/</id>
+    <published>2022-07-04T08:31:07.000Z</published>
+    <updated>2022-07-04T08:33:49.851Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="/2022/07/04/%E6%8E%A5%E9%9B%A8%E6%B0%B4/image-20220704163322027.png" alt="接雨水"></p><p>双指针</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-comment">// 双指针</span><br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">trap</span><span class="hljs-params">(<span class="hljs-type">int</span>[] height)</span> &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">ans</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">left</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">right</span> <span class="hljs-operator">=</span> height.length - <span class="hljs-number">1</span>;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">leftMax</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">rightMax</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br><br>        <span class="hljs-comment">// 那边小那边就往里走</span><br>        <span class="hljs-keyword">while</span> (left &lt; right) &#123;<br>            leftMax = Math.max(height[left], leftMax);<br>            rightMax = Math.max(height[right], rightMax);<br>            <span class="hljs-keyword">if</span> (height[left] &lt; height[right]) &#123;<br>                <span class="hljs-comment">// 计算最高值和当前值之间的储水量</span><br>                ans += leftMax - height[left];<br>                ++left;<br>            &#125; <span class="hljs-keyword">else</span> &#123;<br>                ans += rightMax - height[right];<br>                --right;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> ans;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;/2022/07/04/%E6%8E%A5%E9%9B%A8%E6%B0%B4/image-20220704163322027.png&quot; alt=&quot;接雨水&quot;&gt;&lt;/p&gt;
+&lt;p&gt;双指针&lt;/p&gt;
+&lt;figure class=&quot;highlight java&quot;&gt;&lt;</summary>
+      
+    
+    
+    
+    <category term="力扣" scheme="https://eliseo.top/categories/%E5%8A%9B%E6%89%A3/"/>
+    
+    
+    <category term="力扣" scheme="https://eliseo.top/tags/%E5%8A%9B%E6%89%A3/"/>
+    
+  </entry>
   
   <entry>
     <title>搜索旋转排序数组</title>
@@ -475,32 +501,6 @@
       
       
     <summary type="html">&lt;p&gt;&lt;img src=&quot;/2022/05/18/1-n%E6%95%B4%E6%95%B0%E4%B8%AD1%E5%87%BA%E7%8E%B0%E7%9A%84%E6%AC%A1%E6%95%B0/image-20220518102620979.png&quot; alt=&quot;1~n整</summary>
-      
-    
-    
-    
-    <category term="力扣" scheme="https://eliseo.top/categories/%E5%8A%9B%E6%89%A3/"/>
-    
-    
-    <category term="力扣" scheme="https://eliseo.top/tags/%E5%8A%9B%E6%89%A3/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>剪绳子Ⅱ</title>
-    <link href="https://eliseo.top/2022/05/18/%E5%89%AA%E7%BB%B3%E5%AD%90%E2%85%A1/"/>
-    <id>https://eliseo.top/2022/05/18/%E5%89%AA%E7%BB%B3%E5%AD%90%E2%85%A1/</id>
-    <published>2022-05-18T01:23:08.000Z</published>
-    <updated>2022-05-25T02:42:22.213Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="/2022/05/18/%E5%89%AA%E7%BB%B3%E5%AD%90%E2%85%A1/image-20220518092413253.png" alt="剪绳子Ⅱ"></p><p><strong>解法：</strong></p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">cuttingRope</span><span class="hljs-params">(<span class="hljs-type">int</span> n)</span> &#123;<br>        <span class="hljs-comment">// 由剪绳子Ⅰ可以得出 剪绳子剪成3的倍数 为最理想状态</span><br>        <span class="hljs-keyword">if</span> (n &lt;= <span class="hljs-number">3</span>) &#123;<br>            <span class="hljs-keyword">return</span> n - <span class="hljs-number">1</span>;<br>        &#125;<br>        <span class="hljs-type">long</span> <span class="hljs-variable">res</span> <span class="hljs-operator">=</span> <span class="hljs-number">1L</span>;<br>        <span class="hljs-type">long</span> <span class="hljs-variable">p</span> <span class="hljs-operator">=</span> (<span class="hljs-type">int</span>) <span class="hljs-number">1e9</span> + <span class="hljs-number">7</span>;<br><br>        <span class="hljs-keyword">while</span> (n &gt; <span class="hljs-number">4</span>) &#123;<br>            res = res * <span class="hljs-number">3</span> % p;<br>            n -= <span class="hljs-number">3</span>;<br>        &#125;<br>        <span class="hljs-comment">// 乘3以后 将剩下的数字也乘进去</span><br>        <span class="hljs-keyword">return</span> (<span class="hljs-type">int</span>) (res * n % p);<br><br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;&lt;img src=&quot;/2022/05/18/%E5%89%AA%E7%BB%B3%E5%AD%90%E2%85%A1/image-20220518092413253.png&quot; alt=&quot;剪绳子Ⅱ&quot;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;解法：&lt;/strong&gt;&lt;/p&gt;
-&lt;figu</summary>
       
     
     
