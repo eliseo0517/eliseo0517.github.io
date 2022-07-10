@@ -16,26 +16,22 @@
   <meta name="author" content="Mr.Wang">
   <meta name="keywords" content="">
   
-    <meta name="description" content="解法： 123456789101112131415161718192021class Solution &amp;#123;    public int movingCount(int m, int n, int k) &amp;#123;        &#x2F;&#x2F; 用来判断格子是否已经被走过        boolean[][] istrue &#x3D; new boolean[m][n];        return d">
-<meta property="og:type" content="article">
-<meta property="og:title" content="机器人的运动范围">
-<meta property="og:url" content="https://eliseo.top/2022/04/28/%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%9A%84%E8%BF%90%E5%8A%A8%E8%8C%83%E5%9B%B4/index.html">
+    <meta property="og:type" content="article">
+<meta property="og:title" content="Java8新特性">
+<meta property="og:url" content="https://eliseo.top/2022/07/10/Java8%E6%96%B0%E7%89%B9%E6%80%A7/index.html">
 <meta property="og:site_name" content="Eliseo的小屋">
-<meta property="og:description" content="解法： 123456789101112131415161718192021class Solution &amp;#123;    public int movingCount(int m, int n, int k) &amp;#123;        &#x2F;&#x2F; 用来判断格子是否已经被走过        boolean[][] istrue &#x3D; new boolean[m][n];        return d">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://eliseo.top/2022/04/28/%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%9A%84%E8%BF%90%E5%8A%A8%E8%8C%83%E5%9B%B4/image-20220428104546299.png">
-<meta property="article:published_time" content="2022-04-28T02:45:14.000Z">
-<meta property="article:modified_time" content="2022-05-25T02:45:08.814Z">
+<meta property="article:published_time" content="2022-07-10T13:54:52.000Z">
+<meta property="article:modified_time" content="2022-07-10T13:55:32.445Z">
 <meta property="article:author" content="Mr.Wang">
-<meta property="article:tag" content="力扣">
+<meta property="article:tag" content="面试">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://eliseo.top/2022/04/28/%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%9A%84%E8%BF%90%E5%8A%A8%E8%8C%83%E5%9B%B4/image-20220428104546299.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>机器人的运动范围 - Eliseo的小屋</title>
+  <title>Java8新特性 - Eliseo的小屋</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -211,7 +207,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="机器人的运动范围"></span>
+            <span id="subtitle" data-typed-text="Java8新特性"></span>
           
         </div>
 
@@ -227,8 +223,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-04-28 10:45" pubdate>
-          2022年4月28日 上午
+        <time datetime="2022-07-10 21:54" pubdate>
+          2022年7月10日 晚上
         </time>
       </span>
     
@@ -240,7 +236,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          567 字
+          0 字
         
       </span>
     
@@ -252,7 +248,7 @@
         
         
           <!-- compatible with older versions-->
-          5 分钟
+          1 分钟
         
       </span>
     
@@ -298,24 +294,20 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">机器人的运动范围</h1>
+            <h1 style="display: none">Java8新特性</h1>
             
               <p class="note note-info">
                 
                   
                     <!-- compatible with older versions-->
-                    本文最后更新于：2 个月前
+                    本文最后更新于：2 分钟前
                   
                 
               </p>
             
             <div class="markdown-body">
               
-              <p><img src="/2022/04/28/%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%9A%84%E8%BF%90%E5%8A%A8%E8%8C%83%E5%9B%B4/image-20220428104546299.png" srcset="/img/loading.gif" lazyload alt="机器人的运动范围"></p>
-<p><strong>解法：</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">movingCount</span><span class="hljs-params">(<span class="hljs-type">int</span> m, <span class="hljs-type">int</span> n, <span class="hljs-type">int</span> k)</span> &#123;<br>        <span class="hljs-comment">// 用来判断格子是否已经被走过</span><br>        <span class="hljs-type">boolean</span>[][] istrue = <span class="hljs-keyword">new</span> <span class="hljs-title class_">boolean</span>[m][n];<br>        <span class="hljs-keyword">return</span> dfs(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, m, n, k, istrue);<br>    &#125;<br><br>    <span class="hljs-comment">// a,b当前位置；</span><br>    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-type">int</span> <span class="hljs-title function_">dfs</span><span class="hljs-params">(<span class="hljs-type">int</span> a, <span class="hljs-type">int</span> b, <span class="hljs-type">int</span> m, <span class="hljs-type">int</span> n, <span class="hljs-type">int</span> k, <span class="hljs-type">boolean</span>[][] istrue)</span> &#123;<br>        <span class="hljs-keyword">if</span> (a &gt;= <span class="hljs-number">0</span> &amp;&amp; a &lt; m &amp;&amp; b &gt;= <span class="hljs-number">0</span> &amp;&amp; b &lt; n<br>                &amp;&amp; (a % <span class="hljs-number">10</span> + a / <span class="hljs-number">10</span> + a / <span class="hljs-number">100</span> + b % <span class="hljs-number">10</span> + b / <span class="hljs-number">10</span> + b / <span class="hljs-number">100</span>) &lt;= k<br>                &amp;&amp; istrue[a][b] == <span class="hljs-literal">false</span>) &#123;<br>            istrue[a][b] = <span class="hljs-literal">true</span>;<br>            <span class="hljs-comment">// 1是(0,0)位置</span><br>            <span class="hljs-keyword">return</span> <span class="hljs-number">1</span> + dfs(a + <span class="hljs-number">1</span>, b, m, n, k, istrue)<br>                    + dfs(a - <span class="hljs-number">1</span>, b, m, n, k, istrue)<br>                    + dfs(a, b + <span class="hljs-number">1</span>, m, n, k, istrue)<br>                    + dfs(a, b - <span class="hljs-number">1</span>, m, n, k, istrue);<br>        &#125;<span class="hljs-keyword">else</span> <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
-
-
+              
               
             </div>
             <hr/>
@@ -332,7 +324,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/%E5%8A%9B%E6%89%A3/" class="category-chain-item">力扣</a>
+  <a href="/categories/%E9%9D%A2%E8%AF%95/" class="category-chain-item">面试</a>
   
   
 
@@ -347,7 +339,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E5%8A%9B%E6%89%A3/">#力扣</a>
+        <a href="/tags/%E9%9D%A2%E8%AF%95/">#面试</a>
       
     </div>
   
@@ -359,8 +351,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>机器人的运动范围</div>
-      <div>https://eliseo.top/2022/04/28/机器人的运动范围/</div>
+      <div>Java8新特性</div>
+      <div>https://eliseo.top/2022/07/10/Java8新特性/</div>
     </div>
     <div class="license-meta">
       
@@ -372,7 +364,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2022年4月28日</div>
+          <div>2022年7月10日</div>
         </div>
       
       
@@ -402,18 +394,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/04/28/%E4%BA%8C%E5%8F%89%E6%A0%91%E4%B8%AD%E4%BD%95%E4%B8%BA%E6%9F%90%E4%B8%80%E5%80%BC%E7%9A%84%E8%B7%AF%E5%BE%84/" title="二叉树中何为某一值的路径">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">二叉树中何为某一值的路径</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/04/28/%E7%9F%A9%E9%98%B5%E4%B8%AD%E7%9A%84%E8%B7%AF%E5%BE%84/" title="矩阵中的路径">
-                        <span class="hidden-mobile">矩阵中的路径</span>
+                      <a href="/2022/07/08/JVM-1/" title="JVM">
+                        <span class="hidden-mobile">JVM</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

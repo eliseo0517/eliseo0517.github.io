@@ -16,13 +16,14 @@
   <meta name="author" content="Mr.Wang">
   <meta name="keywords" content="">
   
-    <meta name="description" content="一、Java内存区域1.1、运行时数据区Java 虚拟机规范对于运行时数据区域的规定是相当宽松的。以堆为例：堆可以是连续空间，也可以不连续。堆的大小可以固定，也可以在运行时按需扩展 。虚拟机实现者可以使用任何垃圾回收算法管理堆，甚至完全不进行垃圾收集也是可以的。 1.1.1、程序计数器程序计数器是一块较小的内存空间，可以看作是当前线程所执行的字节码的行号指示器。字节码解释器工作时通过改变这个计数器">
+    <meta name="description" content="一、Java内存区域1.1、运行时数据区Java 虚拟机规范对于运行时数据区域的规定是相当宽松的。以堆为例：堆可以是连续空间，也可以不连续。堆的大小可以固定，也可以在运行时按需扩展 。虚拟机实现者可以使用任何垃圾回收算法管理堆，甚至完全不进行垃圾收集也是可以的。 1.1.1、程序计数器程序计数器是一块较小的内存空间，可以看作是当前线程所执行的字节码的行号指示器。字节码解释器工作时通过改变这个计数">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JVM">
 <meta property="og:url" content="https://eliseo.top/2022/07/08/JVM-1/index.html">
 <meta property="og:site_name" content="Eliseo的小屋">
-<meta property="og:description" content="一、Java内存区域1.1、运行时数据区Java 虚拟机规范对于运行时数据区域的规定是相当宽松的。以堆为例：堆可以是连续空间，也可以不连续。堆的大小可以固定，也可以在运行时按需扩展 。虚拟机实现者可以使用任何垃圾回收算法管理堆，甚至完全不进行垃圾收集也是可以的。 1.1.1、程序计数器程序计数器是一块较小的内存空间，可以看作是当前线程所执行的字节码的行号指示器。字节码解释器工作时通过改变这个计数器">
+<meta property="og:description" content="一、Java内存区域1.1、运行时数据区Java 虚拟机规范对于运行时数据区域的规定是相当宽松的。以堆为例：堆可以是连续空间，也可以不连续。堆的大小可以固定，也可以在运行时按需扩展 。虚拟机实现者可以使用任何垃圾回收算法管理堆，甚至完全不进行垃圾收集也是可以的。 1.1.1、程序计数器程序计数器是一块较小的内存空间，可以看作是当前线程所执行的字节码的行号指示器。字节码解释器工作时通过改变这个计数">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://my-blog-to-use.oss-cn-beijing.aliyuncs.com/2019-11/1c1d85b5fb8b47239af2a5c0436eb2d7-new-image0cd10827-2f96-433c-9b16-93d4fe491d88.png">
 <meta property="og:image" content="https://eliseo.top/2022/07/08/JVM-1/image-20220604110733931.png">
 <meta property="og:image" content="https://eliseo.top/2022/07/08/JVM-1/image-20220604143627082.png">
 <meta property="og:image" content="https://javaguide.cn/assets/stack.357796df.png">
@@ -44,6 +45,7 @@
 <meta property="og:image" content="https://javaguide.cn/assets/%E6%A0%87%E8%AE%B0-%E6%B8%85%E9%99%A4%E7%AE%97%E6%B3%95.c1fbd0fe.jpeg">
 <meta property="og:image" content="https://javaguide.cn/assets/90984624.e8c186ae.png">
 <meta property="og:image" content="https://javaguide.cn/assets/94057049.22c58294.png">
+<meta property="og:image" content="https://my-blog-to-use.oss-cn-beijing.aliyuncs.com/2019-11/11e9dcd0f1ee4f25836e6f1c47104c51-new-image69e1c56a-1d40-493a-9901-6efc647a01f3.png">
 <meta property="og:image" content="https://javaguide.cn/assets/46873026.3a9311ec.png">
 <meta property="og:image" content="https://javaguide.cn/assets/22018368.df835851.png">
 <meta property="og:image" content="https://javaguide.cn/assets/22018368.df835851.png">
@@ -52,12 +54,15 @@
 <meta property="og:image" content="https://my-blog-to-use.oss-cn-beijing.aliyuncs.com/2019-11/%E7%B1%BB%E5%8A%A0%E8%BD%BD%E8%BF%87%E7%A8%8B-%E5%AE%8C%E5%96%84.png">
 <meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20220224/4107856_1645690785011/2F1143CD0902210BA8783DBC8CB76D0A">
 <meta property="og:image" content="https://my-blog-to-use.oss-cn-beijing.aliyuncs.com/2019-6/%E7%B1%BB%E5%8A%A0%E8%BD%BD%E8%BF%87%E7%A8%8B.png">
+<meta property="og:image" content="https://my-blog-to-use.oss-cn-beijing.aliyuncs.com/2019-6/%E9%AA%8C%E8%AF%81%E9%98%B6%E6%AE%B5.png">
+<meta property="og:image" content="http://www.eliseo.top/2022/05/08/JVM/image-20220511215809705.png">
+<meta property="og:image" content="https://my-blog-to-use.oss-cn-beijing.aliyuncs.com/2019-6/classloader_WPS%E5%9B%BE%E7%89%87.png">
 <meta property="article:published_time" content="2022-07-08T02:33:45.000Z">
-<meta property="article:modified_time" content="2022-07-10T01:34:33.236Z">
+<meta property="article:modified_time" content="2022-07-10T13:55:46.127Z">
 <meta property="article:author" content="Mr.Wang">
-<meta property="article:tag" content="java面试">
+<meta property="article:tag" content="面试">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://eliseo.top/2022/07/08/JVM-1/image-20220604110733931.png">
+<meta name="twitter:image" content="https://my-blog-to-use.oss-cn-beijing.aliyuncs.com/2019-11/1c1d85b5fb8b47239af2a5c0436eb2d7-new-image0cd10827-2f96-433c-9b16-93d4fe491d88.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
@@ -268,7 +273,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          12k 字
+          16k 字
         
       </span>
     
@@ -280,7 +285,7 @@
         
         
           <!-- compatible with older versions-->
-          99 分钟
+          133 分钟
         
       </span>
     
@@ -332,14 +337,15 @@
                 
                   
                     <!-- compatible with older versions-->
-                    本文最后更新于：10 分钟前
+                    本文最后更新于：1 分钟前
                   
                 
               </p>
             
             <div class="markdown-body">
               
-              <h1 id="一、Java内存区域"><a href="#一、Java内存区域" class="headerlink" title="一、Java内存区域"></a>一、Java内存区域</h1><h2 id="1-1、运行时数据区"><a href="#1-1、运行时数据区" class="headerlink" title="1.1、运行时数据区"></a>1.1、运行时数据区</h2><p>Java 虚拟机规范对于运行时数据区域的规定是相当宽松的。以堆为例：堆可以是连续空间，也可以不连续。堆的大小可以固定，也可以在运行时按需扩展 。虚拟机实现者可以使用任何垃圾回收算法管理堆，甚至完全不进行垃圾收集也是可以的。</p>
+              <p><img src="https://my-blog-to-use.oss-cn-beijing.aliyuncs.com/2019-11/1c1d85b5fb8b47239af2a5c0436eb2d7-new-image0cd10827-2f96-433c-9b16-93d4fe491d88.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<h1 id="一、Java内存区域"><a href="#一、Java内存区域" class="headerlink" title="一、Java内存区域"></a>一、Java内存区域</h1><h2 id="1-1、运行时数据区"><a href="#1-1、运行时数据区" class="headerlink" title="1.1、运行时数据区"></a>1.1、运行时数据区</h2><p>Java 虚拟机规范对于运行时数据区域的规定是相当宽松的。以堆为例：堆可以是连续空间，也可以不连续。堆的大小可以固定，也可以在运行时按需扩展 。虚拟机实现者可以使用任何垃圾回收算法管理堆，甚至完全不进行垃圾收集也是可以的。</p>
 <h3 id="1-1-1、程序计数器"><a href="#1-1-1、程序计数器" class="headerlink" title="1.1.1、程序计数器"></a>1.1.1、程序计数器</h3><p>程序计数器是一块较小的内存空间，可以看作是当前线程所执行的字节码的行号指示器。<strong>字节码解释器工作时通过改变这个计数器的值来选取下一条需要执行的字节码指令，分支、循环、跳转、异常处理、线程恢复等功能都需要依赖这个计数器来完成。</strong></p>
 <p>另外，为了线程切换后能恢复到正确的执行位置，<strong>每条线程都需要有一个独立的程序计数器</strong>，各线程之间计数器互不影响，独立存储，我们称这类内存区域为“线程私有”的内存。</p>
 <p><img src="/2022/07/08/JVM-1/image-20220604110733931.png" srcset="/img/loading.gif" lazyload></p>
@@ -380,6 +386,7 @@
 <hr>
 <p><strong>为什么要建立两个Survivor区？</strong><br>建立两个Survivor区，分别是S0和S1（From和To），MinorGC流程如下：</p>
 <p>把new的对象放在Eden区中，一旦Eden满了，触发一次Minor GC，Eden区中存活的对象会送到S0中，Eden被清空；再次new对象放入Eden区中，Eden又满了，触发Minor GC，Eden和S0中存活的对象放入到S1中，然后S0和Eden清空，然后S0和S1交换角色，S1变成了S0，作为下一次GC的主要目标，S0变成了S1，存放下一次GC存活的对象。<br>如此循环往复，对象头的分代年龄达到16次，则会被送到老年代中。</p>
+<p>官方推荐新生代占java堆的3/8，幸存代(S区)占新生代的1/10</p>
 <h3 id="1-1-5、方法区"><a href="#1-1-5、方法区" class="headerlink" title="1.1.5、方法区"></a>1.1.5、方法区</h3><p>方法区属于是 JVM 运行时数据区域的一块逻辑区域，<u>是各个线程共享的内存区域。</u>他的实际的物理内存空间可以是<u>不连续的</u>。关闭JVM就会释放这个区域的内存</p>
 <p>当虚拟机要使用一个类时，它需要读取并解析 Class 文件获取相关信息，再将信息存入到方法区。方法区会存储已被虚拟机加载的 <strong>类信息、字段信息、方法信息、常量、静态变量、即时编译器编译后的代码缓存等数据</strong>。</p>
 <p><strong>方法区和永久代以及元空间是什么关系呢？</strong> 方法区和永久代以及元空间的关系很像 Java 中接口和类的关系，类实现了接口，这里的类就可以看作是永久代和元空间，接口可以看作是方法区，也就是说永久代以及元空间是 HotSpot 虚拟机对虚拟机规范中方法区的两种实现方式。并且，永久代是 JDK 1.8 之前的方法区实现，JDK 1.8 及以后方法区的实现变成了元空间。</p>
@@ -461,7 +468,12 @@
 <li>混合收集（Mixed GC）：对整个新生代和部分老年代进行垃圾收集。</li>
 </ul>
 <p>整堆收集 (Full GC)：收集整个 Java 堆和方法区</p>
-<h2 id="2-2、判断对象是否已经死亡"><a href="#2-2、判断对象是否已经死亡" class="headerlink" title="2.2、判断对象是否已经死亡"></a>2.2、判断对象是否已经死亡</h2><h3 id="2-2-1、引用计数法"><a href="#2-2-1、引用计数法" class="headerlink" title="2.2.1、引用计数法"></a>2.2.1、引用计数法</h3><p>给对象中添加一个引用计数器，每当有一个地方引用它，计数器就加 1；当引用失效，计数器就减 1；任何时候计数器为 0 的对象就是不可能再被使用的。</p>
+<h2 id="2-2、判断对象是否已经死亡"><a href="#2-2、判断对象是否已经死亡" class="headerlink" title="2.2、判断对象是否已经死亡"></a>2.2、判断对象是否已经死亡</h2><p>判断一个对象的死亡至少需要两次标记</p>
+<ol>
+<li>如果对象进行可达性分析之后没发现与GC Roots相连的引用链，那它将会第一次标记并且进行一次筛选。判断的条件是决定这个对象是否有必要执行finalize()方法。如果对象有必要执行finalize()方法，则被放入F-Queue队列中。</li>
+<li>GC对F-Queue队列中的对象进行二次标记。如果对象在finalize()方法中重新与引用链上的任何一个对象建立了关联，那么二次标记时则会将它移出“即将回收”集合。如果此时对象还没成功逃脱，那么只能被回收了。</li>
+</ol>
+<h3 id="2-2-1、引用计数法"><a href="#2-2-1、引用计数法" class="headerlink" title="2.2.1、引用计数法"></a>2.2.1、引用计数法</h3><p>给对象中添加一个引用计数器，每当有一个地方引用它，计数器就加 1；当引用失效，计数器就减 1；任何时候计数器为 0 的对象就是不可能再被使用的。</p>
 <p><strong>这个方法实现简单，效率高，但是目前主流的虚拟机中并没有选择这个算法来管理内存，其最主要的原因是它很难解决对象之间相互循环引用的问题。</strong></p>
 <hr>
 <p><strong>循环引用：</strong></p>
@@ -514,6 +526,7 @@
 <h3 id="2-3-4、分代收集算法"><a href="#2-3-4、分代收集算法" class="headerlink" title="2.3.4、分代收集算法"></a>2.3.4、分代收集算法</h3><p>当前虚拟机的垃圾收集都采用分代收集算法，这种算法没有什么新的思想，只是根据对象存活周期的不同将内存分为几块。一般将 java 堆分为新生代和老年代，这样我们就可以根据各个年代的特点选择合适的垃圾收集算法。</p>
 <p><strong>比如在新生代中，每次收集都会有大量对象死去，所以可以选择”标记-复制“算法，只需要付出少量对象的复制成本就可以完成每次垃圾收集。而老年代的对象存活几率是比较高的，而且没有额外的空间对它进行分配担保，所以我们必须选择“标记-清除”或“标记-整理”算法进行垃圾收集。</strong></p>
 <h2 id="2-4、垃圾回收器"><a href="#2-4、垃圾回收器" class="headerlink" title="2.4、垃圾回收器"></a>2.4、垃圾回收器</h2><p><strong>如果说收集算法是内存回收的方法论，那么垃圾收集器就是内存回收的具体实现。</strong></p>
+<p><img src="https://my-blog-to-use.oss-cn-beijing.aliyuncs.com/2019-11/11e9dcd0f1ee4f25836e6f1c47104c51-new-image69e1c56a-1d40-493a-9901-6efc647a01f3.png" srcset="/img/loading.gif" lazyload alt="img"></p>
 <h3 id="2-4-1、Serial-收集器（串行回收）"><a href="#2-4-1、Serial-收集器（串行回收）" class="headerlink" title="2.4.1、Serial 收集器（串行回收）"></a>2.4.1、Serial 收集器（串行回收）</h3><p>串行收集器是一个<strong>单线程</strong>收集器，不仅仅意味着他只会使用一个垃圾收集线程去完成垃圾收集工作，更重要的是它在进行垃圾收集工作的时候必须暂停其他所有的工作线程（ <strong>“Stop The World”</strong> ），直到它收集结束。</p>
 <p><strong>新生代采用标记-复制算法，老年代采用标记-整理算法。</strong></p>
 <p><img src="https://javaguide.cn/assets/46873026.3a9311ec.png" srcset="/img/loading.gif" lazyload alt=" Serial 收集器 "></p>
@@ -577,6 +590,168 @@
 <p><img src="https://uploadfiles.nowcoder.com/images/20220224/4107856_1645690785011/2F1143CD0902210BA8783DBC8CB76D0A" srcset="/img/loading.gif" lazyload alt="类加载过程"></p>
 <h2 id="3-2、类加载过程"><a href="#3-2、类加载过程" class="headerlink" title="3.2、类加载过程"></a>3.2、类加载过程</h2><p>加载 Class 类型的文件主要三步：<strong>加载-&gt;连接-&gt;初始化</strong>。连接过程又可分为三步：<strong>验证-&gt;准备-&gt;解析</strong>。</p>
 <p><img src="https://my-blog-to-use.oss-cn-beijing.aliyuncs.com/2019-6/%E7%B1%BB%E5%8A%A0%E8%BD%BD%E8%BF%87%E7%A8%8B.png" srcset="/img/loading.gif" lazyload alt="加载Class文件的过程"></p>
+<h3 id="3-2-1、加载"><a href="#3-2-1、加载" class="headerlink" title="3.2.1、加载"></a>3.2.1、加载</h3><p>类加载过程的第一步，主要完成下面 3 件事情：</p>
+<ol>
+<li>通过全类名获取定义此类的二进制字节流</li>
+<li>将字节流所代表的静态存储结构转换为方法区的运行时数据结构</li>
+<li>在内存中生成一个代表该类的 <code>java.lang.Class</code> 对象，作为方法区这些数据的访问入口</li>
+</ol>
+<p>虚拟机规范上面这 3 点并不具体，因此是非常灵活的。比如：第一点比较常见的就是从 <code>ZIP</code> 包中读取（日后出现的 <code>JAR</code>、<code>EAR</code>、<code>WAR</code> 格式的基础）、其他文件生成（典型应用就是 <code>JSP</code>）等等。</p>
+<p><strong>一个非数组类的加载阶段（加载阶段获取类的二进制字节流的动作）是可控性最强的阶段，这一步我们可以去完成还可以自定义类加载器去控制字节流的获取方式（重写一个类加载器的 <code>loadClass()</code> 方法）。数组类型不通过类加载器创建，它由 Java 虚拟机直接创建。</strong></p>
+<p>类加载器、双亲委派模型也是非常重要的知识点，这部分内容会在后面的文章中单独介绍到。</p>
+<p>加载阶段和连接阶段的部分内容是交叉进行的，加载阶段尚未结束，连接阶段可能就已经开始了</p>
+<h3 id="3-2-2、验证"><a href="#3-2-2、验证" class="headerlink" title="3.2.2、验证"></a>3.2.2、验证</h3><p>验证（Verify）：</p>
+<ul>
+<li>目的在子确保Class文件的字节流文件包含信息符合当前虚拟机的要求，保证被加载类的正确性，不会危害到虚拟机自身安全。</li>
+<li>主要包括四种验证：文件格式验证，元数据验证，字节码验证，符号引用验证。</li>
+</ul>
+<p><img src="https://my-blog-to-use.oss-cn-beijing.aliyuncs.com/2019-6/%E9%AA%8C%E8%AF%81%E9%98%B6%E6%AE%B5.png" srcset="/img/loading.gif" lazyload alt="验证阶段示意图"></p>
+<h3 id="3-2-3、准备"><a href="#3-2-3、准备" class="headerlink" title="3.2.3、准备"></a>3.2.3、准备</h3><ul>
+<li>准备（Prepare）：<ul>
+<li>为类变量分配内存并设置该变量的默认初始值，即零值。例如：int类型为0。</li>
+<li>这里不包含用final修饰的static，因为final在编译的时候就会分配了，准备阶段会显式初始化</li>
+<li>这里不会为实例变量分配初始化，类变量会分配在方法区中，而实例变量是会随着对象一起分配到java堆中</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-2-4、解析"><a href="#3-2-4、解析" class="headerlink" title="3.2.4、解析"></a>3.2.4、解析</h3><ul>
+<li>解析（Resolve）：<ul>
+<li>将常量池内的符号引用转换为直接引用的过程，一般在初始化之后再执行</li>
+<li>符号引用就是一组符号来描述所引用的目标。符号引用的字面量形式明确定义在《java虚拟机规范》的Class文件格式中。直接引用就是直接指向目标的指针、相对偏移量或一个间接定位到目标的句柄。</li>
+<li>解析动作主要针对类或接口、字段、类方法、接口方法、方法类型等。对应常量池中的CONSTANT_Class_info，CONSTANT_Fieldref_info、CONSTANT_Methodref_info等。</li>
+</ul>
+</li>
+</ul>
+<p>解析阶段是虚拟机将常量池内的符号引用替换为直接引用的过程，也就是得到类或者字段、方法在内存中的指针或者偏移量。</p>
+<h3 id="3-2-5、初始化"><a href="#3-2-5、初始化" class="headerlink" title="3.2.5、初始化"></a>3.2.5、初始化</h3><ul>
+<li><strong>初始化阶段就是执行类构造方法<code>&lt;client&gt;()</code>的过程</strong></li>
+<li>此方法不需要定义，是javac编译器自动收集类中的所有类变量(静态变量)的赋值动作和静态代码块中的语句合并而来的。（如果没有静态变量赋值动作或静态代码就没有<code>&lt;client&gt;()</code>方法） <strong>必须要有静态变量赋值动作或者静态代码块</strong></li>
+<li>构造器方法中指令按照语句<strong>在源文件中出现的顺序</strong>执行。</li>
+<li><strong><code>&lt;client&gt;()</code>不同于类的构造器。</strong>（关联：构造器是虚拟机视角下的<code>&lt;client&gt;()</code>）</li>
+<li>若该类有父类，JVM会保证子类的<code>&lt;client&gt;()</code>执行前，父类的<code>&lt;client&gt;()</code>已经执行完毕</li>
+<li>虚拟机必须保证一个类的<code>&lt;client&gt;()</code>方法在多线程下被同步加锁。一个类只会被加载一次</li>
+</ul>
+<p><img src="http://www.eliseo.top/2022/05/08/JVM/image-20220511215809705.png" srcset="/img/loading.gif" lazyload></p>
+<h2 id="3-3、卸载"><a href="#3-3、卸载" class="headerlink" title="3.3、卸载"></a>3.3、卸载</h2><p>卸载类需要满足 3 个要求:</p>
+<ol>
+<li>该类的所有的实例对象都已被 GC，也就是说堆不存在该类的实例对象。</li>
+<li>该类没有在其他任何地方被引用</li>
+<li>该类的类加载器的实例已被 GC</li>
+</ol>
+<p>所以，在 JVM 生命周期内，由 <strong>jvm 自带的类加载器加载的类是不会被卸载的。但是由我们自定义的类加载器加载的类是可能被卸载的。</strong></p>
+<h1 id="四、类加载器详解"><a href="#四、类加载器详解" class="headerlink" title="四、类加载器详解"></a>四、类加载器详解</h1><p>JVM 中内置了三个重要的 ClassLoader，除了 BootstrapClassLoader 其他类加载器均由 Java 实现且全部继承自<code>java.lang.ClassLoader</code>：</p>
+<ol>
+<li><strong>BootstrapClassLoader(启动类加载器)</strong> ：最顶层的加载类，由 C++实现，负责加载 <code>%JAVA_HOME%/lib</code>目录下的 jar 包和类或者被 <code>-Xbootclasspath</code>参数指定的路径中的所有类。</li>
+<li><strong>ExtensionClassLoader(扩展类加载器)</strong> ：主要负责加载 <code>%JRE_HOME%/lib/ext</code> 目录下的 jar 包和类，或被 <code>java.ext.dirs</code> 系统变量所指定的路径下的 jar 包。</li>
+<li><strong>AppClassLoader(应用程序类加载器)</strong> ：面向我们用户的加载器，负责加载当前应用 classpath 下的所有 jar 包和类。</li>
+</ol>
+<h2 id="4-1、双亲委派机制"><a href="#4-1、双亲委派机制" class="headerlink" title="4.1、双亲委派机制"></a>4.1、双亲委派机制</h2><p>即在类加载的时候，系统会首先判断当前类是否被加载过。已经被加载的类会直接返回，否则才会尝试加载。加载的时候，首先会把该请求委派给父类加载器的 <code>loadClass()</code> 处理，因此所有的请求最终都应该传送到顶层的启动类加载器 <code>BootstrapClassLoader</code> 中。当父类加载器无法处理时，才由自己来处理。当父类加载器为 null 时，会使用启动类加载器 <code>BootstrapClassLoader</code> 作为父类加载器。<strong>通俗点说：就是先查看类是否已经被加载过，如果被加载过那么久直接返回，否则九一直询问父类是否加载，如果所有父类都没有加载过，那么就自己加载。</strong></p>
+<p><img src="https://my-blog-to-use.oss-cn-beijing.aliyuncs.com/2019-6/classloader_WPS%E5%9B%BE%E7%89%87.png" srcset="/img/loading.gif" lazyload alt="ClassLoader"></p>
+<p><strong>双亲委派模型的好处</strong></p>
+<p>双亲委派模型保证了 Java 程序的稳定运行，<strong>可以避免类的重复加载</strong>（JVM 区分不同类的方式不仅仅根据类名，相同的类文件被不同的类加载器加载产生的是两个不同的类），<strong>也保证了 Java 的核心 API 不被篡改</strong>。</p>
+<hr>
+<p>Java文件的运行过程</p>
+<ol>
+<li>Java文件经过编译后变成 .class 字节码文件</li>
+<li>字节码文件通过类加载器被搬运到 JVM 虚拟机中</li>
+<li>虚拟机主要的5大块：方法区，堆都为线程共享区域，有线程安全问题，栈和本地方法栈和计数器都是独享区域，不存在线程安全问题，而 JVM 的调优主要就是围绕堆，栈两大块进行</li>
+</ol>
+<p>只需要知道对象实例初始化时会去方法区中找类信息，完成后再到栈那里去运行方法。找方法就在方法表中找</p>
+<h1 id="JVM的常用参数"><a href="#JVM的常用参数" class="headerlink" title="JVM的常用参数"></a>JVM的常用参数</h1><p>JVM的参数非常之多，这里只列举比较重要的几个，通过各种各样的搜索引擎也可以得知这些信息。</p>
+<table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>含义</th>
+<th>默认值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-Xms</td>
+<td>初始堆大小</td>
+<td>物理内存的1/64(&lt;1GB)</td>
+<td>默认(MinHeapFreeRatio参数可以调整)空余堆内存小于40%时，JVM就会增大堆直到-Xmx的最大限制.</td>
+</tr>
+<tr>
+<td>-Xmx</td>
+<td>最大堆大小</td>
+<td>物理内存的1/4(&lt;1GB)</td>
+<td>默认(MaxHeapFreeRatio参数可以调整)空余堆内存大于70%时，JVM会减少堆直到 -Xms的最小限制</td>
+</tr>
+<tr>
+<td>-Xmn</td>
+<td>年轻代大小(1.4or later)</td>
+<td></td>
+<td>注意：此处的大小是（eden+ 2 survivor space).与jmap -heap中显示的New gen是不同的。整个堆大小=年轻代大小 + 老年代大小 + 持久代（永久代）大小.增大年轻代后,将会减小年老代大小.此值对系统性能影响较大,Sun官方推荐配置为整个堆的3/8</td>
+</tr>
+<tr>
+<td>-XX:NewSize</td>
+<td>设置年轻代大小(for 1.3/1.4)</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>-XX:MaxNewSize</td>
+<td>年轻代最大值(for 1.3/1.4)</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>-XX:PermSize</td>
+<td>设置持久代(perm gen)初始值</td>
+<td>物理内存的1/64</td>
+<td></td>
+</tr>
+<tr>
+<td>-XX:MaxPermSize</td>
+<td>设置持久代最大值</td>
+<td>物理内存的1/4</td>
+<td></td>
+</tr>
+<tr>
+<td>-Xss</td>
+<td>每个线程的堆栈大小</td>
+<td></td>
+<td>JDK5.0以后每个线程堆栈大小为1M,以前每个线程堆栈大小为256K.根据应用的线程所需内存大小进行 调整.在相同物理内存下,减小这个值能生成更多的线程.但是操作系统对一个进程内的线程数还是有限制的,不能无限生成,经验值在3000~5000左右一般小的应用， 如果栈不是很深， 应该是128k够用的 大的应用建议使用256k。这个选项对性能影响比较大，需要严格的测试。（校长）和threadstacksize选项解释很类似,官方文档似乎没有解释,在论坛中有这样一句话:-Xss is translated in a VM flag named ThreadStackSize”一般设置这个值就可以了</td>
+</tr>
+<tr>
+<td>-XX:NewRatio</td>
+<td>年轻代(包括Eden和两个Survivor区)与年老代的比值(除去持久代)</td>
+<td></td>
+<td>-XX:NewRatio=4表示年轻代与年老代所占比值为1:4,年轻代占整个堆栈的1/5Xms=Xmx并且设置了Xmn的情况下，该参数不需要进行设置。</td>
+</tr>
+<tr>
+<td>-XX:SurvivorRatio</td>
+<td>Eden区与Survivor区的大小比值</td>
+<td></td>
+<td>设置为8,则两个Survivor区与一个Eden区的比值为2:8,一个Survivor区占整个年轻代的1/10</td>
+</tr>
+<tr>
+<td>-XX:+DisableExplicitGC</td>
+<td>关闭System.gc()</td>
+<td></td>
+<td>这个参数需要严格的测试</td>
+</tr>
+<tr>
+<td>-XX:PretenureSizeThreshold</td>
+<td>对象超过多大是直接在旧生代分配</td>
+<td>0</td>
+<td>单位字节 新生代采用Parallel ScavengeGC时无效另一种直接在旧生代分配的情况是大的数组对象,且数组中无外部引用对象.</td>
+</tr>
+<tr>
+<td>-XX:ParallelGCThreads</td>
+<td>并行收集器的线程数</td>
+<td></td>
+<td>此值最好配置与处理器数目相等 同样适用于CMS</td>
+</tr>
+<tr>
+<td>-XX:MaxGCPauseMillis</td>
+<td>每次年轻代垃圾回收的最长时间(最大暂停时间)</td>
+<td></td>
+<td>如果无法满足此时间,JVM会自动调整年轻代大小,以满足此值.</td>
+</tr>
+</tbody></table>
 
               
             </div>
@@ -594,7 +769,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/java%E9%9D%A2%E8%AF%95/" class="category-chain-item">java面试</a>
+  <a href="/categories/%E9%9D%A2%E8%AF%95/" class="category-chain-item">面试</a>
   
   
 
@@ -609,7 +784,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/java%E9%9D%A2%E8%AF%95/">#java面试</a>
+        <a href="/tags/%E9%9D%A2%E8%AF%95/">#面试</a>
       
     </div>
   
@@ -663,6 +838,12 @@
                 <div class="post-prevnext my-3">
                   <article class="post-prev col-6">
                     
+                    
+                      <a href="/2022/07/10/Java8%E6%96%B0%E7%89%B9%E6%80%A7/" title="Java8新特性">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Java8新特性</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
                     
                   </article>
                   <article class="post-next col-6">
