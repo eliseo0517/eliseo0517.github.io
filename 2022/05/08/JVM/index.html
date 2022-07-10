@@ -55,7 +55,7 @@
 <meta property="og:image" content="https://eliseo.top/2022/05/08/JVM/image-20220609163921066.png">
 <meta property="og:image" content="https://eliseo.top/2022/05/08/JVM/image-20220610111042807.png">
 <meta property="article:published_time" content="2022-05-07T16:37:53.000Z">
-<meta property="article:modified_time" content="2022-06-14T10:06:06.029Z">
+<meta property="article:modified_time" content="2022-07-08T08:36:43.194Z">
 <meta property="article:author" content="Mr.Wang">
 <meta property="article:tag" content="JVM">
 <meta name="twitter:card" content="summary_large_image">
@@ -334,7 +334,7 @@
                 
                   
                     <!-- compatible with older versions-->
-                    本文最后更新于：22 天前
+                    本文最后更新于：2 天前
                   
                 
               </p>
@@ -813,7 +813,7 @@
 <h2 id="5-4、操作数栈"><a href="#5-4、操作数栈" class="headerlink" title="5.4、操作数栈"></a>5.4、操作数栈</h2><p>也称为表达式栈，<strong>特点是后进先出，</strong>在方法执行过程中，根据字节码指令，往栈中写入数据或提取数据，<strong>即入栈(push)/出栈(pop)。</strong></p>
 <ul>
 <li>操作数栈<strong>主要用于保存计算过程的中间结果，同时作为计算过程中变量临时的存储空间</strong></li>
-<li>操作数栈是JVM执行引擎的一个工作区，随着方法的执行而创建，<strong>sss</strong>它的长度保存在方法的Code属性中，为max_stack值</li>
+<li>操作数栈是JVM执行引擎的一个工作区，随着方法的执行而创建，它的长度保存在方法的Code属性中，为max_stack值</li>
 <li>操作数栈并非采用访问索引的方式来进行数据访问，而是通过入栈出栈操作来完成数据访问。</li>
 <li><strong>如果被调用的方法带有返回值，其返回值将会被压入当前栈帧的操作数栈中</strong></li>
 </ul>
@@ -869,7 +869,7 @@
 <p>每个类都有一个自己的虚方法表。 （没重写就去父类中寻找方法）</p>
 <p><img src="/2022/05/08/JVM/image-20220609091203788.png" srcset="/img/loading.gif" lazyload></p>
 <p>如果Son继承Father，Father继承Object，Father重写hardChoice方法，Son重写了父类Father的hardChoise方法，没有重写的方法都指向Object，因为Father与Son都没有重写过这些方法，所以在虚方法表中直接将未重写的方法直接指向父类的父类。</p>
-<h2 id="5-9、方法返回地址"><a href="#5-9、方法返回地址" class="headerlink" title="5.9、方法返回地址"></a>5.9、方法返回地址</h2><p><strong>方法返回地址中存放着该方法的pc寄存器的值</strong></p>
+<h2 id="5-8、方法返回地址"><a href="#5-8、方法返回地址" class="headerlink" title="5.8、方法返回地址"></a>5.8、方法返回地址</h2><p><strong>方法返回地址中存放着该方法的pc寄存器的值</strong></p>
 <p>方法的借宿有两种方式：</p>
 <ul>
 <li>正常执行完成</li>
@@ -886,8 +886,8 @@
 </li>
 </ul>
 <p><img src="/2022/05/08/JVM/image-20220609163921066.png" srcset="/img/loading.gif" lazyload alt="异常处理表"></p>
-<h2 id="5-10、一些附加信息"><a href="#5-10、一些附加信息" class="headerlink" title="5.10、一些附加信息"></a>5.10、一些附加信息</h2><p>栈帧中还允许携带与java虚拟机实现相关的一些附加信息，例如对程序调试提供支持的信息</p>
-<h2 id="5-11、相关面试题"><a href="#5-11、相关面试题" class="headerlink" title="5.11、相关面试题"></a>5.11、相关面试题</h2><p><strong>分配的栈内存越大越好么？</strong></p>
+<h2 id="5-9、一些附加信息"><a href="#5-9、一些附加信息" class="headerlink" title="5.9、一些附加信息"></a>5.9、一些附加信息</h2><p>栈帧中还允许携带与java虚拟机实现相关的一些附加信息，例如对程序调试提供支持的信息</p>
+<h2 id="5-10、相关面试题"><a href="#5-10、相关面试题" class="headerlink" title="5.10、相关面试题"></a>5.10、相关面试题</h2><p><strong>分配的栈内存越大越好么？</strong></p>
 <ul>
 <li>不是，过大的栈内存会影响到其余区域的大小，一个栈的空间大了，内存空间的大小是有限的，一个栈大了，就可能导致线程数变小了。</li>
 </ul>
