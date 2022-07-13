@@ -16,16 +16,21 @@
   <meta name="author" content="Mr.Wang">
   <meta name="keywords" content="">
   
-    <meta property="og:type" content="article">
+    <meta name="description" content="一、Interfaceinterface 的设计初衷是面向抽象，提高扩展性。这也留有一点遗憾，Interface 修改的时候，实现它的类也必须跟着改。 interface 的方法可以用default 或 static修饰，这样就可以有方法体，实现类也不必重写此方法。  default修饰的方法，是普通实例方法，可以用this调用，可以被子类继承、重写。 static修饰的方法，使用上和一般类静态方">
+<meta property="og:type" content="article">
 <meta property="og:title" content="Java8新特性">
 <meta property="og:url" content="https://eliseo.top/2022/07/10/Java8%E6%96%B0%E7%89%B9%E6%80%A7/index.html">
 <meta property="og:site_name" content="Eliseo的小屋">
+<meta property="og:description" content="一、Interfaceinterface 的设计初衷是面向抽象，提高扩展性。这也留有一点遗憾，Interface 修改的时候，实现它的类也必须跟着改。 interface 的方法可以用default 或 static修饰，这样就可以有方法体，实现类也不必重写此方法。  default修饰的方法，是普通实例方法，可以用this调用，可以被子类继承、重写。 static修饰的方法，使用上和一般类静态方">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20201218181011714.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l5MzM5NDUyNjg5,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20211011115043745.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5pil5rC054WO6Iy2,size_20,color_FFFFFF,t_70,g_se,x_16">
 <meta property="article:published_time" content="2022-07-10T13:54:52.000Z">
-<meta property="article:modified_time" content="2022-07-10T13:55:32.445Z">
+<meta property="article:modified_time" content="2022-07-11T10:29:00.441Z">
 <meta property="article:author" content="Mr.Wang">
 <meta property="article:tag" content="面试">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20201218181011714.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l5MzM5NDUyNjg5,size_16,color_FFFFFF,t_70">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
@@ -236,7 +241,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          0 字
+          4.4k 字
         
       </span>
     
@@ -248,7 +253,7 @@
         
         
           <!-- compatible with older versions-->
-          1 分钟
+          37 分钟
         
       </span>
     
@@ -300,14 +305,67 @@
                 
                   
                     <!-- compatible with older versions-->
-                    本文最后更新于：2 分钟前
+                    本文最后更新于：2 天前
                   
                 
               </p>
             
             <div class="markdown-body">
               
-              
+              <h1 id="一、Interface"><a href="#一、Interface" class="headerlink" title="一、Interface"></a>一、Interface</h1><p>interface 的设计初衷是面向抽象，提高扩展性。这也留有一点遗憾，Interface 修改的时候，实现它的类也必须跟着改。</p>
+<p>interface 的方法可以用<code>default</code> 或 <code>static</code>修饰，这样就可以有方法体，实现类也不必重写此方法。</p>
+<ol>
+<li><code>default</code>修饰的方法，是普通实例方法，可以用<code>this</code>调用，可以被子类继承、重写。</li>
+<li><code>static</code>修饰的方法，使用上和一般类静态方法一样。但它不能被子类继承，只能用<code>Interface</code>调用。</li>
+</ol>
+<hr>
+<p><strong>接口与类的区别</strong></p>
+<ol>
+<li>interface 和 class 的区别，好像是废话，主要有：<ul>
+<li>接口多实现，类单继承</li>
+<li>接口的方法是 public abstract 修饰，变量是 public static final 修饰。 abstract class 可以用其他修饰符</li>
+</ul>
+</li>
+<li>interface 的方法是更像是一个扩展插件。而 abstract class 的方法是要继承的。</li>
+</ol>
+<p>开始我们也提到，interface 新增<code>default</code>和<code>static</code>修饰的方法，为了解决接口的修改与现有的实现不兼容的问题，并不是为了要替代<code>abstract class</code>。在使用上，该用 abstract class 的地方还是要用 abstract class，不要因为 interface 的新特性而将之替换。</p>
+<h1 id="二、Lambda-表达式"><a href="#二、Lambda-表达式" class="headerlink" title="二、Lambda 表达式"></a>二、Lambda 表达式</h1><h2 id="2-1、语法格式："><a href="#2-1、语法格式：" class="headerlink" title="2.1、语法格式："></a>2.1、语法格式：</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs java">(parameters) -&gt; expression 或<br>(parameters) -&gt;&#123; statements; &#125;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>左侧：指定了Lambda表达式需要的所有参数</li>
+<li>右侧：制定了Lambda体，即Lambda表达式要执行的功能。</li>
+</ul>
+<h2 id="2-2、代替匿名内部类："><a href="#2-2、代替匿名内部类：" class="headerlink" title="2.2、代替匿名内部类："></a>2.2、代替匿名内部类：</h2><p><strong>1.<code>Runnable</code> 接口</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">new</span> <span class="hljs-title class_">Thread</span>(<span class="hljs-keyword">new</span> <span class="hljs-title class_">Runnable</span>() &#123;<br>            <span class="hljs-meta">@Override</span><br>            <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">run</span><span class="hljs-params">()</span> &#123;<br>                System.out.println(<span class="hljs-string">&quot;The runable now is using!&quot;</span>);<br>            &#125;<br>&#125;).start();<br><span class="hljs-comment">//用lambda</span><br><span class="hljs-keyword">new</span> <span class="hljs-title class_">Thread</span>(() -&gt; System.out.println(<span class="hljs-string">&quot;It&#x27;s a lambda function!&quot;</span>)).start();<br></code></pre></td></tr></table></figure>
+
+<p><strong>2.<code>Comparator</code> 接口</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs java">List&lt;Integer&gt; strings = Arrays.asList(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>);<br><br>Collections.sort(strings, <span class="hljs-keyword">new</span> <span class="hljs-title class_">Comparator</span>&lt;Integer&gt;() &#123;<br><span class="hljs-meta">@Override</span><br><span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">compare</span><span class="hljs-params">(Integer o1, Integer o2)</span> &#123;<br>    <span class="hljs-keyword">return</span> o1 - o2;&#125;<br>&#125;);<br><br><span class="hljs-comment">//Lambda</span><br>Collections.sort(strings, (Integer o1, Integer o2) -&gt; o1 - o2);<br><span class="hljs-comment">//分解开</span><br>Comparator&lt;Integer&gt; comperator = (Integer o1, Integer o2) -&gt; o1 - o2;<br>Collections.sort(strings, comperator);<br></code></pre></td></tr></table></figure>
+
+<p><strong>3.<code>Listener</code> 接口</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-type">JButton</span> <span class="hljs-variable">button</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">JButton</span>();<br>button.addItemListener(<span class="hljs-keyword">new</span> <span class="hljs-title class_">ItemListener</span>() &#123;<br><span class="hljs-meta">@Override</span><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">itemStateChanged</span><span class="hljs-params">(ItemEvent e)</span> &#123;<br>   e.getItem();<br>&#125;<br>&#125;);<br><span class="hljs-comment">//lambda</span><br>button.addItemListener(e -&gt; e.getItem());<br></code></pre></td></tr></table></figure>
+
+<h2 id="2-3、方法的引用"><a href="#2-3、方法的引用" class="headerlink" title="2.3、方法的引用"></a>2.3、方法的引用</h2><p>Java 8 允许使用 <code>::</code> 关键字来传递方法或者构造函数引用，无论如何，表达式返回的类型必须是 functional-interface。</p>
+<p>目标引用放在 <code>::</code> 之前，目标引用提供的方法名称放在 <code>::</code> 之后，即 <code>目标引用::方法</code>。</p>
+<h1 id="三、Stream"><a href="#三、Stream" class="headerlink" title="三、Stream"></a>三、Stream</h1><h2 id="3-1、Stream操作分类"><a href="#3-1、Stream操作分类" class="headerlink" title="3.1、Stream操作分类"></a>3.1、Stream操作分类</h2><p>**<code>主要是对集合的操作，</code>**它提供串行和并行两种模式进行汇聚操作，并发模式能够充分利用多核处理器的优势，使用 fork/join 并行方式来拆分任务和加速处理过程。</p>
+<p>Stream的操作可以分为两大类：中间操作、终结操作</p>
+<p>中间操作可分为：</p>
+<p>无状态（Stateless）操作：指元素的处理不受之前元素的影响<br>有状态（Stateful）操作：指该操作只有拿到所有元素之后才能继续下去<br>终结操作可分为：</p>
+<p>短路（Short-circuiting）操作：指遇到某些符合条件的元素就可以得到最终结果<br>非短路（Unshort-circuiting）操作：指必须处理完所有元素才能得到最终结果</p>
+<p><img src="https://img-blog.csdnimg.cn/20201218181011714.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3l5MzM5NDUyNjg5,size_16,color_FFFFFF,t_70" srcset="/img/loading.gif" lazyload alt="Stream操作分类"></p>
+<p><strong><code>Stream操作的三个步骤：</code></strong></p>
+<p>1）创建Stream：一个数据源（如：集合数组），获取一个流，Stream的实例化</p>
+<p>2）中间操作：一个中间操作链，对数据源的数据进行处理（如：过滤、映射等）</p>
+<p>3）终止操作（终端操作）：一旦执行终止操作，就执行中间操作链，并产生结果。之后，就不会再被使用。<br><img src="https://img-blog.csdnimg.cn/20211011115043745.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5pil5rC054WO6Iy2,size_20,color_FFFFFF,t_70,g_se,x_16" srcset="/img/loading.gif" lazyload alt="img"></p>
+<h2 id="3-2、Stream常用方法的实战"><a href="#3-2、Stream常用方法的实战" class="headerlink" title="3.2、Stream常用方法的实战"></a>3.2、Stream常用方法的实战</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Stream8</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        List&lt;String&gt; strings = Arrays.asList(<span class="hljs-string">&quot;abc&quot;</span>, <span class="hljs-string">&quot;def&quot;</span>, <span class="hljs-string">&quot;gkh&quot;</span>, <span class="hljs-string">&quot;abc&quot;</span>);<br>        <span class="hljs-comment">// 返回abc</span><br>        Stream&lt;String&gt; stringStream = strings.stream().filter(s -&gt; <span class="hljs-string">&quot;abc&quot;</span>.equals(s));<br>        <span class="hljs-comment">// 计算符合条件的流的数量</span><br>        <span class="hljs-type">long</span> <span class="hljs-variable">count</span> <span class="hljs-operator">=</span> stringStream.count();<br>        System.out.println(count); <span class="hljs-comment">// 2</span><br><br>        <span class="hljs-comment">// 遍历strings</span><br>        strings.stream().forEach(System.out::println);<br><br>        <span class="hljs-comment">// limit 获取第一个元素的stream</span><br>        Stream&lt;String&gt; limit = strings.stream().limit(<span class="hljs-number">1</span>);<br><br>        <span class="hljs-comment">// toArray 想看流里面有什么的时候就可以转换成String[]</span><br>        String[] array = limit.toArray(String[]::<span class="hljs-keyword">new</span>);<br><br>        <span class="hljs-comment">// map 对每一个元素进行操作返回新流</span><br>        Stream&lt;String&gt; map = strings.stream().map(s -&gt; s + <span class="hljs-string">&quot;22&quot;</span>);<br>        map.forEach(System.out::println);<br><br>        <span class="hljs-comment">// sorted 排序并打印</span><br>        strings.stream().sorted().forEach(System.out::println);<br><br>        <span class="hljs-comment">// Collectors collect 把abc放入到容器中</span><br>        List&lt;String&gt; collect = strings.stream().filter(string -&gt; <span class="hljs-string">&quot;abc&quot;</span>.equals(string)).collect(Collectors.toList());<br>        <span class="hljs-comment">// 把list转换为String，之间用，隔开</span><br>        <span class="hljs-type">String</span> <span class="hljs-variable">mergedString</span> <span class="hljs-operator">=</span> strings.stream().filter(string -&gt; !string.isEmpty()).collect(Collectors.joining(<span class="hljs-string">&quot;,&quot;</span>));<br>        System.out.println(mergedString); <span class="hljs-comment">// abc,def,gkh,abc</span><br><br>        <span class="hljs-comment">// 对数组进行统计</span><br>        List&lt;Integer&gt; number = Arrays.asList(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">5</span>, <span class="hljs-number">4</span>);<br>        number.forEach(System.out::println);<br><br>        <span class="hljs-type">IntSummaryStatistics</span> <span class="hljs-variable">statistics</span> <span class="hljs-operator">=</span> number.stream().mapToInt((x) -&gt; x).summaryStatistics();<br>        System.out.println(<span class="hljs-string">&quot;列表中的最大值：&quot;</span> + statistics.getMax());<br>        System.out.println(<span class="hljs-string">&quot;列表中的最小值：&quot;</span> + statistics.getMin());<br>        System.out.println(<span class="hljs-string">&quot;列表的平均数：&quot;</span> + statistics.getAverage());<br>        System.out.println(<span class="hljs-string">&quot;列表中的所有数之和：&quot;</span> + statistics.getSum());<br><br>        <span class="hljs-comment">// concat合并</span><br>        <span class="hljs-comment">// Arrays.asList(&quot;xyz&quot;, &quot;jqx&quot;) 是一个不可变的 不能使用add等一系列对list的增删改查</span><br>        List&lt;String&gt; strings2 = Arrays.asList(<span class="hljs-string">&quot;xyz&quot;</span>, <span class="hljs-string">&quot;jqx&quot;</span>);<br>        Stream.concat(strings2.stream(),strings.stream()).count();<br><br>        <span class="hljs-comment">// 注意 一个stream是能操作一次，不能断开</span><br>        <span class="hljs-type">Stream</span> <span class="hljs-variable">stream</span> <span class="hljs-operator">=</span> strings.stream();<br>        <span class="hljs-comment">// 第一次使用</span><br>        stream.limit(<span class="hljs-number">2</span>);<br>        <span class="hljs-comment">// 第二次使用</span><br>        stream.forEach(System.out::println);<br>        <span class="hljs-comment">// 报错：java.lang.IllegalStateException: stream has already been operated upon or closed</span><br>        <br>        <span class="hljs-comment">// 如果要一个stream完成两个操作的话 可以使用.拼接起来</span><br>        stream.limit(<span class="hljs-number">2</span>).forEach(System.out::println);<br><br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h2 id="3-3、小结"><a href="#3-3、小结" class="headerlink" title="3.3、小结"></a>3.3、小结</h2><p>从源码和实例中我们可以总结出一些 stream 的特点</p>
+<ol>
+<li>通过简单的链式编程，使得它可以方便地对遍历处理后的数据进行再处理。</li>
+<li>方法参数都是函数式接口类型</li>
+<li>一个 Stream 只能操作一次，操作完就关闭了，继续使用这个 stream 会报错。</li>
+<li>Stream 不保存数据，不改变数据源</li>
+</ol>
+
               
             </div>
             <hr/>
@@ -393,6 +451,12 @@
                 <div class="post-prevnext my-3">
                   <article class="post-prev col-6">
                     
+                    
+                      <a href="/2022/07/12/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" title="计算机网络">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">计算机网络</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
                     
                   </article>
                   <article class="post-next col-6">
