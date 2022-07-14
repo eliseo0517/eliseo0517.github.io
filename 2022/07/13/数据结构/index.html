@@ -1,0 +1,950 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Mr.Wang">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="一、图图就是由顶点的有穷非空集合和顶点之间的边组成的集合。通常表示为：**G(V,E)**，其中，G表示一个图，V表示顶点的集合，E表示边的集合。 1.1、图的基本元素1.1.1、顶点图中的数据元素，我们称之为顶点，图至少有一个顶点（非空有穷集合） 对应到好友关系图，每一个用户就代表一个顶点。  1.1.2、边顶点之间的关系用边表示。 对应到好友关系图，两个用户是好友的话，那两者之间就存在一条边。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据结构">
+<meta property="og:url" content="https://eliseo.top/2022/07/13/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/index.html">
+<meta property="og:site_name" content="Eliseo的小屋">
+<meta property="og:description" content="一、图图就是由顶点的有穷非空集合和顶点之间的边组成的集合。通常表示为：**G(V,E)**，其中，G表示一个图，V表示顶点的集合，E表示边的集合。 1.1、图的基本元素1.1.1、顶点图中的数据元素，我们称之为顶点，图至少有一个顶点（非空有穷集合） 对应到好友关系图，每一个用户就代表一个顶点。  1.1.2、边顶点之间的关系用边表示。 对应到好友关系图，两个用户是好友的话，那两者之间就存在一条边。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://javaguide.cn/assets/%E6%97%A0%E5%90%91%E5%9B%BE%E7%9A%84%E9%82%BB%E6%8E%A5%E7%9F%A9%E9%98%B5%E5%AD%98%E5%82%A8.3ba1bccc.png">
+<meta property="og:image" content="https://javaguide.cn/assets/%E6%9C%89%E5%90%91%E5%9B%BE%E7%9A%84%E9%82%BB%E6%8E%A5%E7%9F%A9%E9%98%B5%E5%AD%98%E5%82%A8.46663a1b.png">
+<meta property="og:image" content="https://javaguide.cn/assets/%E6%97%A0%E5%90%91%E5%9B%BE%E7%9A%84%E9%82%BB%E6%8E%A5%E8%A1%A8%E5%AD%98%E5%82%A8.2869ec57.png">
+<meta property="og:image" content="https://javaguide.cn/assets/%E6%9C%89%E5%90%91%E5%9B%BE%E7%9A%84%E9%82%BB%E6%8E%A5%E8%A1%A8%E5%AD%98%E5%82%A8.362b00d5.png">
+<meta property="og:image" content="https://javaguide.cn/assets/%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2%E5%9B%BE%E7%A4%BA.4f9122d2.png">
+<meta property="og:image" content="https://javaguide.cn/assets/%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A21.c43db853.png">
+<meta property="og:image" content="https://javaguide.cn/assets/%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A22.d42ff990.png">
+<meta property="og:image" content="https://javaguide.cn/assets/%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A23.e46fdfec.png">
+<meta property="og:image" content="https://javaguide.cn/assets/%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A24.d7bbf332.png">
+<meta property="og:image" content="https://javaguide.cn/assets/%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A25.2f52a074.png">
+<meta property="og:image" content="https://javaguide.cn/assets/%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A26.98a33175.png">
+<meta property="og:image" content="https://javaguide.cn/assets/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2%E5%9B%BE%E7%A4%BA.a5e0d06f.png">
+<meta property="og:image" content="https://javaguide.cn/assets/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A21.3c4595de.png">
+<meta property="og:image" content="https://javaguide.cn/assets/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A22.c79a5d25.png">
+<meta property="og:image" content="https://javaguide.cn/assets/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A23.6d7c7ecb.png">
+<meta property="og:image" content="https://javaguide.cn/assets/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A24.89719079.png">
+<meta property="og:image" content="https://javaguide.cn/assets/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A25.d36925bc.png">
+<meta property="og:image" content="https://javaguide.cn/assets/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A26.ef5280c9.png">
+<meta property="og:image" content="https://javaguide.cn/assets/%E5%A0%86%E7%9A%84%E5%AD%98%E5%82%A8.03237dbe.png">
+<meta property="og:image" content="https://javaguide.cn/assets/%E5%88%A0%E9%99%A4%E5%A0%86%E9%A1%B6%E5%85%83%E7%B4%A01.cd68b7ff.png">
+<meta property="og:image" content="https://javaguide.cn/assets/%E5%88%A0%E9%99%A4%E5%A0%86%E9%A1%B6%E5%85%83%E7%B4%A02.59fc6629.png">
+<meta property="og:image" content="https://javaguide.cn/assets/%E5%88%A0%E9%99%A4%E5%A0%86%E9%A1%B6%E5%85%83%E7%B4%A03.b5c78c7d.png">
+<meta property="og:image" content="https://javaguide.cn/assets/%E5%88%A0%E9%99%A4%E5%A0%86%E9%A1%B6%E5%85%83%E7%B4%A04.90633757.png">
+<meta property="og:image" content="https://javaguide.cn/assets/%E5%88%A0%E9%99%A4%E5%A0%86%E9%A1%B6%E5%85%83%E7%B4%A05.ca1fc0c4.png">
+<meta property="og:image" content="https://javaguide.cn/assets/%E5%88%A0%E9%99%A4%E5%A0%86%E9%A1%B6%E5%85%83%E7%B4%A06.9549fe90.png">
+<meta property="og:image" content="https://javaguide.cn/assets/%E5%A0%86%E6%8E%92%E5%BA%8F1.4a22573f.png">
+<meta property="og:image" content="https://javaguide.cn/assets/%E5%A0%86%E6%8E%92%E5%BA%8F2.26994f33.png">
+<meta property="og:image" content="https://javaguide.cn/assets/%E5%A0%86%E6%8E%92%E5%BA%8F3.e411601b.png">
+<meta property="og:image" content="https://javaguide.cn/assets/%E5%A0%86%E6%8E%92%E5%BA%8F4.2b2472be.png">
+<meta property="og:image" content="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAeEAAAEjCAMAAAAytEmDAAABMlBMVEX////a6Pz/5sxsjr8AAAD/MzMTFBbfqyfY5fkLDAy2wtPZnQPgy9zoqLS0v9DjuUwgIyajrr5/iJM0ODzovVlESU8dHyHM2eyvuspxeILzcXjE0eOptMT94sJ5gYz47M6Zo7L316GLlKHisz+gqrn8Q0TY5vrix9iPmKbe2OqDi5ctMDTc4PO7x9niwdHluMZVWmLI1ee/y93qnalmbHb1ZmxtYlfR3/KTnKpsc31ZX2f7S00YGRz63bXv2Jvtjpjzz47vzYTrzX7vyHrpyHJhaHHtxW9LT1bmuE89QUfgrzMkJyrcpx3aoA7P3O/3Wl/f0OLvhY/9PD3jvMzmsL7Hs59cYmtQVVzwfofydn758Nr36sr+5cn047fz4rTslJ/ltkg7NS+xn46fj3/dx7FaUUh/PS8lAAALSElEQVR42uzdTYrcMBCGYVE0EUELbUR2wgjfITsb/2GMsZfZTPcMM/m5/xWS9cBMq7u9kJT3ucKHLUsuVan/xbmd7Lrtxph9W+3UnhXKUfW10cvchcZf5OKb0M2LNnVfKRTgadCb67y85zu36eFJIW/PdndBPhLcbp8V8vVS61E+N+r6RSFPldW9XNdry4KcpcHMEmc2g0JuqvW1kVjN68pjnJnWjHKL0bQKGZl0kNsEPSlkw9VebuVrp5AJu8g9FquQBevkPo6Is+AWudfCizoDUy33q/ncSl6rvdzPazZNiatMkEcEw9FH2tZRHjOuCgkbXuVRr5xRJ6wyjTyq4T2dMDvL42Z2xcl60XIETUlAqupejtDXCkl61nIMTe1WmuwoxxhZiZP0tMtRdopsUzQ4OYpjT5wiHeQoQSskp9rkOBunHunpnRzH9QqpqTs5TseWOD3GS4Q/p9N3uc4bhcSctUT4fYpLWDT3i1PTLnKV//UlNuGFWo/UTLNc8fPr6Z/IhGcKtlJjO7ni1+mGhDsOLlOzhqvP8Nvb27fYhAPFPKnZGonwIzbhZlNIy+4PTdjvCmkxl0MTvrAhTo2RQxMWEk4Nz3DpWIdLx7d06dYQlTD74WzZLiphzrSyNc1RCXMuna12iUqYf0vZOuuohPk/nC/jJRI1HnmiTqt01FqWjnrp4nHnoXTcWyoddw+Lx/3h0tEDoHj08SgdvXiKRz+t0tETr3j0tSwevWlLR3/p4tEjvnjMeSges1qKx7yl4jEzrXjMPSwes0uLx/zh4jFDvHyDmSXObDiLzlJldS/X9dryAOfqpdajfG7UNT/8c/ZsdxfkI8Htlpqs3D0NenOdl/d85zY9UDZbhKqvjV7mLjT+IhffhG5etKl7lt+SnNvJrttujNm31U4t94MBAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAH/ZgwMBAAAAACD/10ZQVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVhj46JAACBAIbBvX/PeGCjJHunAgAAAAAAAAAA/GNoW7PvaR9oHa63Dtdbh+utw/XW4XrrcL11uN46XG8drrcO19vDzrm0KA5EYZSCQ0hcSB7kRUITgjTBIGhoiJFsRURwaf//fzJacR4Mg3bdhTNk8i16VcdbqUOVdTtND4a7MJypPyS7XFJZZXtelnNbOutVWZ5l7PusrBJh3dZbVvm7eKUXi0UjYZv5kFhUNyvftvFzwwF46g+Zgyt64uwEcMqEq7WGmahu0+u6uYT1LIB6JpxzBbxJ2CNDKgFrHwCc7csN2y46ri1ZrU2H0PCmR8fJzNnMQSc6iwyfLanhCLnhNUNmzwyfN5vvLuIfUtr2p+E2M6rsgZUkFizMZ50AUsMVuF4VwcWc7SBMtkAhMrxHaNiGsLylMWcbcLx5AN0zw59RlKvcddNlDUGiF+sEQTEYrlywDlfJvuu6K3WuryMfVt6Bfx0N69ca3ms/JdTmbAiJUgfwJYbncJQZzqCU3rR8PdumLL0vndIL+HnG+ehowx/o9Fe3PYSqAyt+WDmAXKlctNJtkiSO0PCurht9gkTmbF4UtnoPYG7O3rjDm8xwDlWZbjdKwAYwy0tPy/ii4ajbAaWKgWjda8NzIOy0Wz1mCRSPK0ewUmoFvezWYgkNDzlAKGJX6RFqSd0SGqHhCh2nErA91AY3rQXQ6NOqU77epnYArrrAWusi0+cv8Pmk8jA2A15v2N4DCxG7BZCsdOyQKqHhlHsSc9b5jX1u+DTcOD7UfrCov4ePEOx2u2HnxhZa/pPKf89wFgCpjPV6AM+cvdC3UsOd5ezboodPcxao8+IE4RcN64HpzXAI/vduKYJf7vNvQPqssvv9lI5ebTixgKX4hD8f4WjMxnD0/RBC3xbV1ct6Mp+zpXdvBZax4U/Y37sPVcPe11nd97CTPak89NceBC827AF9rgSs/fHRDaeWZcxu+JHYvFuy7evPhaSuqqHRPRPvpoZTOA0NtavWw34utttY3dQD4fOuJdWfdHmt4Y0FYSzrPCLY6DnXxmzs3ALgnE1ZG33edZKzQ130ebXVsgwNJ8C66ABXVcAyv4DVqgJYAtXTDoDt1oH8tYZ9IDxcsxN0WnD0lhbsZXOWfg8HcFykDixFnZblVxF8GBtW61/64ZAhS71HLuoTnOzxEwfoBO+vNXzgHke0WgMav9ZwzpCTLf+tpbP5quHD3fC953AKvf/bjnvTtdYflgGHx5XbEOB4Ft54eqFhC7lhlfcAQaPkhn0JW0QAh1jC2juA00r0fjjOf779OyfFyjZ74tjz4n/yfemjTmvhZX+hrj0v8o20bpsXzfQXAP81OxkeOzsZHjs7GR47OxkeOzsZHjs7GR47OxkeOzsZHjs7GR47OxkeOzsZHjs7/T+tsWfaw2NnJ8NjZ7+1c0Y7jQJRGM4kZwxuoNldI7XVNMZYWVoEW2xaWxOujGlMhBai7VXf/y32MENLTJQwXAg7O/8Fc4z5MrbfMCDVowzLzirDsrPKsOysMiw7qwzLzirDsrPKsOysMiw7qwzLzhYans/n9fzU1ftpObFhuJXmtQ7RRNnIMJy8EmMTI+aFbviu0LyO53s2L21Wihu+AYBaDFfvp+X1KSbUxVmHHhKJsltK9bwSYiNKuwSjrShmbZRnA5pmpWHps9L/dwxX76dlr7mjhSPM2pUN2wEyel6JsPEiM7yiPFZZdpcBK0KMrDTKG25PCwy32yKGv7HbEl/XEzfBF5sIs07AMmHLQ4C1KIueV+XZLgNSwxGOvrXBycuyuDQCFwFqkxA9R7hEwq8Nn5mmeY7jiWlektH7EcDwqbU3fG+a6X8LL03zlhDtAb9pPmkNNYx+LPbG+cIsj92n60iIdQ9eXWHDk4PhBJcmDn3Ey7E2Lgbu2Ytwd8cSt6/oS8PaMcAf3m6nPT0CluNxZvgOYMBbc7SINgSW5auA4W/spxUnSea5omFEDbF5Hdd11ygmr8qzkesG3LBP6YZfxo1yrBWGAQ4hAh5fHROU/aXhrPXOAOCZNbLo9I5Q6yeGfwPA/O0YoCdg+Ht78UQ7fKlhxXkNhgqy/NTLKyHWQMN8WHBhfnmWXxgsZLcFq4MbPgM41sgpwCXpDYfXJC3vPzGMhyvWHuylsYYTijGqsHzTs2owzFWtvBUeA4F5LZwu3J//G1wdBXdaJsDZlGkmNxed9xf41LAGAO/z+TsOo6Ya9hYUE1ddHVtSi2HSpVl2QixdRCUNdwA616x1zusQMJ8bHsMh46YaJsTBbXpSiQ1xadRk2NlQzFpkl06J0D6sy27RLs1usk6eAC5Ys5PHzq/OB8O/eZu71hSw5nltomFttQpw8CjtV5k3ZjeltRjG2J6rsbulkuxk/7wj5jcPYdGdFmYIGJObRM9vueEn1n/oB6Bh8pgeyOtsdtnM6zDu0DZ7GBBWmTfA7a4mw/Zu5xPi4DnsCDzxSPa/OCHl4NEuMjwAzANhVmftK8gN9/A4GJjM8Bzg5+xyCXDaTMMb3J9jv4+LW5zl+1w9hpmfndvFL8qyuBj63TReejZv4y27NBUYHgHmFoslZLnLDN/CPi3SPtqXzTQcU561I8zyHcCtx3D+1FIvyep0H594WeUVGianWbu/8QsAnMzwcM4Nk+tUa2/J3vTxM2BeWkTA8Df20yIuu5OeRFXY/T4nzi4OZhZVDXPFi7gki1xumCRrHNdJ2U8etLNfI/Ix5z+mh3p0cX1e+2ee5OvYXmw38nNadiz8wQ238rx6oqu/APhfWWVYdlYZlp1VhmVnlWHZWWVYdlYZlp1VhmVnlWHZWWVYdlYZlp1VhmVnVT8t2fMXdEkHpCpN8mQAAAAASUVORK5CYII=">
+<meta property="og:image" content="data:image/png;base64,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">
+<meta property="og:image" content="https://my-blog-to-use.oss-cn-beijing.aliyuncs.com/2019-6/%E4%BA%8C%E5%8F%89%E6%A0%91-2.png">
+<meta property="og:image" content="https://javaguide.cn/assets/%E6%BB%A1%E4%BA%8C%E5%8F%89%E6%A0%91.9025b079.png">
+<meta property="og:image" content="https://javaguide.cn/assets/%E5%AE%8C%E5%85%A8%E4%BA%8C%E5%8F%89%E6%A0%91.c4f02f51.png">
+<meta property="og:image" content="https://javaguide.cn/assets/%E9%93%BE%E5%BC%8F%E5%AD%98%E5%82%A8%E4%BA%8C%E5%8F%89%E6%A0%91.8dfe7691.png">
+<meta property="og:image" content="https://javaguide.cn/assets/%E9%A1%BA%E5%BA%8F%E5%AD%98%E5%82%A8.ec1113ca.png">
+<meta property="article:published_time" content="2022-07-13T14:00:15.000Z">
+<meta property="article:modified_time" content="2022-07-14T08:50:26.169Z">
+<meta property="article:author" content="Mr.Wang">
+<meta property="article:tag" content="面试">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://javaguide.cn/assets/%E6%97%A0%E5%90%91%E5%9B%BE%E7%9A%84%E9%82%BB%E6%8E%A5%E7%9F%A9%E9%98%B5%E5%AD%98%E5%82%A8.3ba1bccc.png">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>数据结构 - Eliseo的小屋</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"eliseo.top","root":"/","version":"1.9.0","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":"left","element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+
+  
+<meta name="generator" content="Hexo 6.2.0"><link rel="alternate" href="/atom.xml" title="Eliseo的小屋" type="application/atom+xml">
+</head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Eliseo</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                主页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友情链接
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="数据结构"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-author" aria-hidden="true"></i>
+        Mr.Wang
+      </span>
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2022-07-13 22:00" pubdate>
+          2022年7月13日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          <!-- compatible with older versions-->
+          3.4k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          <!-- compatible with older versions-->
+          29 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="busuanzi_container_page_pv" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="busuanzi_value_page_pv"></span> 次
+        </span>
+        
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">数据结构</h1>
+            
+              <p class="note note-info">
+                
+                  
+                    <!-- compatible with older versions-->
+                    本文最后更新于：1 小时前
+                  
+                
+              </p>
+            
+            <div class="markdown-body">
+              
+              <h1 id="一、图"><a href="#一、图" class="headerlink" title="一、图"></a>一、图</h1><p>图就是由顶点的有穷非空集合和顶点之间的边组成的集合。通常表示为：**G(V,E)**，其中，G表示一个图，V表示顶点的集合，E表示边的集合。</p>
+<h2 id="1-1、图的基本元素"><a href="#1-1、图的基本元素" class="headerlink" title="1.1、图的基本元素"></a>1.1、图的基本元素</h2><h3 id="1-1-1、顶点"><a href="#1-1-1、顶点" class="headerlink" title="1.1.1、顶点"></a><strong>1.1.1、顶点</strong></h3><p>图中的数据元素，我们称之为顶点，图至少有一个顶点（非空有穷集合）</p>
+<p>对应到好友关系图，每一个用户就代表一个顶点。</p>
+<hr>
+<h3 id="1-1-2、边"><a href="#1-1-2、边" class="headerlink" title="1.1.2、边"></a><strong>1.1.2、边</strong></h3><p>顶点之间的关系用边表示。</p>
+<p>对应到好友关系图，两个用户是好友的话，那两者之间就存在一条边。</p>
+<hr>
+<h3 id="1-1-3、度"><a href="#1-1-3、度" class="headerlink" title="1.1.3、度"></a><strong>1.1.3、度</strong></h3><p>度表示一个顶点包含多少条边，在有向图中，还分为出度和入度，出度表示从该顶点出去的边的条数，入度表示进入该顶点的边的条数。</p>
+<p>对应到好友关系图，度就代表了某个人的好友数量。</p>
+<hr>
+<h3 id="1-1-4、无向图和有向图"><a href="#1-1-4、无向图和有向图" class="headerlink" title="1.1.4、无向图和有向图"></a><strong>1.1.4、无向图和有向图</strong></h3><p>边表示的是顶点之间的关系，有的关系是双向的，比如同学关系，A是B的同学，那么B也肯定是A的同学，那么在表示A和B的关系时，就不用关注方向，用不带箭头的边表示，这样的图就是无向图。</p>
+<p>有的关系是有方向的，比如父子关系，师生关系，微博的关注关系，A是B的爸爸，但B肯定不是A的爸爸，A关注B，B不一定关注A。在这种情况下，我们就用带箭头的边表示二者的关系，这样的图就是有向图</p>
+<hr>
+<h3 id="1-1-5、无权图和带权图"><a href="#1-1-5、无权图和带权图" class="headerlink" title="1.1.5、无权图和带权图"></a><strong>1.1.5、无权图和带权图</strong></h3><p>对于一个关系，如果我们只关心关系的有无，而不关心关系有多强，那么就可以用无权图表示二者的关系。</p>
+<p>对于一个关系，如果我们既关心关系的有无，也关心关系的强度，比如描述地图上两个城市的关系，需要用到距离，那么就用带权图来表示，带权图中的每一条边一个数值表示权值，代表关系的强度。</p>
+<h2 id="1-2、图的存储"><a href="#1-2、图的存储" class="headerlink" title="1.2、图的存储"></a>1.2、图的存储</h2><hr>
+<h3 id="1-2-1、邻接矩阵存储"><a href="#1-2-1、邻接矩阵存储" class="headerlink" title="1.2.1、邻接矩阵存储"></a><strong>1.2.1、邻接矩阵存储</strong></h3><p>邻接矩阵将图用二维矩阵存储，是一种较为直观的表示方式。</p>
+<p>如果第i个顶点和第j个顶点之间有关系，且关系权值为n，则 <code>A[i][j]=n</code> 。</p>
+<p>在无向图中，我们只关心关系的有无，所以当顶点i和顶点j有关系时，<code>A[i][j]</code>=1，当顶点i和顶点j没有关系时，<code>A[i][j]</code>=0。如下图所示：</p>
+<p><img src="https://javaguide.cn/assets/%E6%97%A0%E5%90%91%E5%9B%BE%E7%9A%84%E9%82%BB%E6%8E%A5%E7%9F%A9%E9%98%B5%E5%AD%98%E5%82%A8.3ba1bccc.png" srcset="/img/loading.gif" lazyload alt="无向图的邻接矩阵存储"></p>
+<p>值得注意的是：<strong>无向图的邻接矩阵是一个对称矩阵，因为在无向图中，顶点i和顶点j有关系，则顶点j和顶点i必有关系。</strong></p>
+<p><img src="https://javaguide.cn/assets/%E6%9C%89%E5%90%91%E5%9B%BE%E7%9A%84%E9%82%BB%E6%8E%A5%E7%9F%A9%E9%98%B5%E5%AD%98%E5%82%A8.46663a1b.png" srcset="/img/loading.gif" lazyload alt="有向图的邻接矩阵存储"></p>
+<p><strong><code>邻接矩阵存储的方式虽然比较直接简单，但是比较浪费空间。</code></strong></p>
+<hr>
+<h3 id="1-2-2、邻接表存储"><a href="#1-2-2、邻接表存储" class="headerlink" title="1.2.2、邻接表存储"></a><strong>1.2.2、邻接表存储</strong></h3><p>邻接链表使用一个链表来存储某个顶点的所有后继相邻顶点。对于图中每个顶点Vi，把所有邻接于Vi的顶点Vj链成一个单链表，这个单链表称为顶点Vi的 <strong>邻接表</strong>。如下图所示：</p>
+<p><img src="https://javaguide.cn/assets/%E6%97%A0%E5%90%91%E5%9B%BE%E7%9A%84%E9%82%BB%E6%8E%A5%E8%A1%A8%E5%AD%98%E5%82%A8.2869ec57.png" srcset="/img/loading.gif" lazyload alt="无向图的邻接表存储"></p>
+<p><img src="https://javaguide.cn/assets/%E6%9C%89%E5%90%91%E5%9B%BE%E7%9A%84%E9%82%BB%E6%8E%A5%E8%A1%A8%E5%AD%98%E5%82%A8.362b00d5.png" srcset="/img/loading.gif" lazyload alt="有向图的邻接表存储"></p>
+<ul>
+<li>在无向图中，邻接表元素个数等于边的条数的两倍。</li>
+<li>在有向图中，邻接表元素个数等于边的条数。</li>
+</ul>
+<h2 id="1-3、图的搜索"><a href="#1-3、图的搜索" class="headerlink" title="1.3、图的搜索"></a>1.3、图的搜索</h2><h3 id="1-3-1、广度优先搜索"><a href="#1-3-1、广度优先搜索" class="headerlink" title="1.3.1、广度优先搜索"></a>1.3.1、广度优先搜索</h3><p>广度优先搜索就像水面上的波纹一样一层一层向外扩展，如下图所示：</p>
+<p><img src="https://javaguide.cn/assets/%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2%E5%9B%BE%E7%A4%BA.4f9122d2.png" srcset="/img/loading.gif" lazyload alt="广度优先搜索图示"></p>
+<p><strong>广度优先搜索的具体实现方式用到了之前所学过的线性数据结构——队列</strong> 。具体过程如下图所示：</p>
+<p><strong>第1步：</strong></p>
+<p><img src="https://javaguide.cn/assets/%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A21.c43db853.png" srcset="/img/loading.gif" lazyload alt="广度优先搜索1"></p>
+<p><strong>第2步：</strong></p>
+<p><img src="https://javaguide.cn/assets/%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A22.d42ff990.png" srcset="/img/loading.gif" lazyload alt="广度优先搜索2"></p>
+<p><strong>第3步：</strong></p>
+<p><img src="https://javaguide.cn/assets/%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A23.e46fdfec.png" srcset="/img/loading.gif" lazyload alt="广度优先搜索3"></p>
+<p><strong>第4步：</strong></p>
+<p><img src="https://javaguide.cn/assets/%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A24.d7bbf332.png" srcset="/img/loading.gif" lazyload alt="广度优先搜索4"></p>
+<p><strong>第5步：</strong></p>
+<p><img src="https://javaguide.cn/assets/%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A25.2f52a074.png" srcset="/img/loading.gif" lazyload alt="广度优先搜索5"></p>
+<p><strong>第6步：</strong></p>
+<p><img src="https://javaguide.cn/assets/%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A26.98a33175.png" srcset="/img/loading.gif" lazyload alt="广度优先搜索6"></p>
+<h3 id="1-3-2、深度优先搜索"><a href="#1-3-2、深度优先搜索" class="headerlink" title="1.3.2、深度优先搜索"></a>1.3.2、深度优先搜索</h3><p>深度优先搜索就是“一条路走到黑”，从源顶点开始，一直走到没有后继节点，才回溯到上一顶点，然后继续“一条路走到黑”，如下图所示：</p>
+<p><img src="https://javaguide.cn/assets/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2%E5%9B%BE%E7%A4%BA.a5e0d06f.png" srcset="/img/loading.gif" lazyload alt="深度优先搜索图示"></p>
+<p><strong>和广度优先搜索类似，深度优先搜索的具体实现用到了另一种线性数据结构——栈</strong> 。具体过程如下图所示：</p>
+<p><strong>第1步：</strong></p>
+<p><img src="https://javaguide.cn/assets/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A21.3c4595de.png" srcset="/img/loading.gif" lazyload alt="深度优先搜索1"></p>
+<p><strong>第2步：</strong></p>
+<p><img src="https://javaguide.cn/assets/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A22.c79a5d25.png" srcset="/img/loading.gif" lazyload alt="深度优先搜索1"></p>
+<p><strong>第3步：</strong></p>
+<p><img src="https://javaguide.cn/assets/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A23.6d7c7ecb.png" srcset="/img/loading.gif" lazyload alt="深度优先搜索1"></p>
+<p><strong>第4步：</strong></p>
+<p><img src="https://javaguide.cn/assets/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A24.89719079.png" srcset="/img/loading.gif" lazyload alt="深度优先搜索1"></p>
+<p><strong>第5步：</strong></p>
+<p><img src="https://javaguide.cn/assets/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A25.d36925bc.png" srcset="/img/loading.gif" lazyload alt="深度优先搜索1"></p>
+<p><strong>第6步：</strong></p>
+<p><img src="https://javaguide.cn/assets/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A26.ef5280c9.png" srcset="/img/loading.gif" lazyload alt="深度优先搜索1"></p>
+<h1 id="二、堆"><a href="#二、堆" class="headerlink" title="二、堆"></a>二、堆</h1><h2 id="2-1、什么是堆？"><a href="#2-1、什么是堆？" class="headerlink" title="2.1、什么是堆？"></a>2.1、什么是堆？</h2><p>任意一个节点的值都大于等于（或小于等于）所有子节点的值</p>
+<h2 id="2-2、堆的用途"><a href="#2-2、堆的用途" class="headerlink" title="2.2、堆的用途"></a>2.2、堆的用途</h2><p><strong>相对于有序数组而言，堆的主要优势在于更新数据效率较高。</strong></p>
+<h2 id="2-3、堆的分类"><a href="#2-3、堆的分类" class="headerlink" title="2.3、堆的分类"></a>2.3、堆的分类</h2><p>分为最大堆和最小堆</p>
+<ul>
+<li><strong>最大堆</strong> ：堆中的每一个节点的值都大于等于子树中所有节点的值</li>
+<li><strong>最小堆</strong> ：堆中的每一个节点的值都小于等于子树中所有节点的值</li>
+</ul>
+<h2 id="2-4、堆的存储"><a href="#2-4、堆的存储" class="headerlink" title="2.4、堆的存储"></a>2.4、堆的存储</h2><p>若根结点的序号为1，对于树中任意节点i，其左子节点序号为 <code>2*i</code>，右子节点序号为 <code>2*i+1</code>）</p>
+<p>堆可以用完全二叉树的形式进行存储。存储的方式如下图所示：</p>
+<p><img src="https://javaguide.cn/assets/%E5%A0%86%E7%9A%84%E5%AD%98%E5%82%A8.03237dbe.png" srcset="/img/loading.gif" lazyload alt="堆的存储"></p>
+<h2 id="2-5、堆的操作"><a href="#2-5、堆的操作" class="headerlink" title="2.5、堆的操作"></a>2.5、堆的操作</h2><h3 id="2-5-1、插入元素"><a href="#2-5-1、插入元素" class="headerlink" title="2.5.1、插入元素"></a>2.5.1、插入元素</h3><blockquote>
+<p>插入元素，作为一个新入职的员工，初来乍到，这个员工需要从基层做起</p>
+</blockquote>
+<p><strong>1.将要插入的元素放到最后</strong></p>
+<p><strong>2.从底向上，如果父结点比该元素大，则该节点和父结点交换，直到无法交换</strong></p>
+<h3 id="2-5-2、删除堆顶元素"><a href="#2-5-2、删除堆顶元素" class="headerlink" title="2.5.2、删除堆顶元素"></a>2.5.2、删除堆顶元素</h3><p>根据堆的性质可知，最大堆的堆顶元素为所有元素中最大的，最小堆的堆顶元素是所有元素中最小的。当我们需要多次查找最大元素或者最小元素的时候，可以利用堆来实现。</p>
+<p>删除堆顶元素后，为了保持堆的性质，需要对堆的结构进行调整，我们将这个过程称之为”<strong>堆化</strong>“，堆化的方法分为两种：</p>
+<ul>
+<li>一种是自底向上的堆化，上述的插入元素所使用的就是自底向上的堆化，元素从最底部向上移动。</li>
+<li>另一种是自顶向下堆化，元素由最顶部向下移动。</li>
+</ul>
+<hr>
+<p><strong>自底向上的堆化</strong></p>
+<p>1、将堆顶的元素也就是下标为1的元素删除</p>
+<p><img src="https://javaguide.cn/assets/%E5%88%A0%E9%99%A4%E5%A0%86%E9%A1%B6%E5%85%83%E7%B4%A01.cd68b7ff.png" srcset="/img/loading.gif" lazyload alt="删除堆顶元素1"></p>
+<p>2、对比下标为2，3的元素，哪一个比较大就将他的下标变成1</p>
+<p><img src="https://javaguide.cn/assets/%E5%88%A0%E9%99%A4%E5%A0%86%E9%A1%B6%E5%85%83%E7%B4%A02.59fc6629.png" srcset="/img/loading.gif" lazyload alt="删除堆顶元素2"></p>
+<p>3、一直循环比较空出位置的左右子节点，并将较大者移至空位，直到堆的最底部</p>
+<p><img src="https://javaguide.cn/assets/%E5%88%A0%E9%99%A4%E5%A0%86%E9%A1%B6%E5%85%83%E7%B4%A03.b5c78c7d.png" srcset="/img/loading.gif" lazyload alt="删除堆顶元素3"></p>
+<hr>
+<p><strong>自顶向下(推荐使用)</strong></p>
+<p>1、我们将最后一个元素移动到堆顶。</p>
+<p><img src="https://javaguide.cn/assets/%E5%88%A0%E9%99%A4%E5%A0%86%E9%A1%B6%E5%85%83%E7%B4%A04.90633757.png" srcset="/img/loading.gif" lazyload alt="删除堆顶元素4"></p>
+<p>2、然后开始将这个石头沉入海底，不停与左右子节点的值进行比较，和较大的子节点交换位置，直到无法交换位置。</p>
+<p><img src="https://javaguide.cn/assets/%E5%88%A0%E9%99%A4%E5%A0%86%E9%A1%B6%E5%85%83%E7%B4%A05.ca1fc0c4.png" srcset="/img/loading.gif" lazyload alt="删除堆顶元素5"></p>
+<p><img src="https://javaguide.cn/assets/%E5%88%A0%E9%99%A4%E5%A0%86%E9%A1%B6%E5%85%83%E7%B4%A06.9549fe90.png" srcset="/img/loading.gif" lazyload alt="删除堆顶元素6"></p>
+<h3 id="2-5-3、堆的操作总结"><a href="#2-5-3、堆的操作总结" class="headerlink" title="2.5.3、堆的操作总结"></a>2.5.3、堆的操作总结</h3><ul>
+<li><strong>插入元素</strong> ：先将元素放至数组末尾，再自底向上堆化，将末尾元素上浮</li>
+<li><strong>删除堆顶元素</strong> ：删除堆顶元素，将末尾元素放至堆顶，再自顶向下堆化，将堆顶元素下沉。也可以自底向上堆化，只是会产生“气泡”，浪费存储空间。<strong>最好采用自顶向下堆化的方式。</strong></li>
+</ul>
+<h2 id="2-6、堆排序"><a href="#2-6、堆排序" class="headerlink" title="2.6、堆排序"></a>2.6、堆排序</h2><p>重复取出堆顶元素，将这个最大的堆顶元素放至数组末尾，并对剩下的元素进行堆化即可。</p>
+<p>详细过程如下图所示：</p>
+<p>取出第一个元素并堆化：</p>
+<p><img src="https://javaguide.cn/assets/%E5%A0%86%E6%8E%92%E5%BA%8F1.4a22573f.png" srcset="/img/loading.gif" lazyload alt="堆排序1"></p>
+<p>取出第二个元素并堆化：</p>
+<p><img src="https://javaguide.cn/assets/%E5%A0%86%E6%8E%92%E5%BA%8F2.26994f33.png" srcset="/img/loading.gif" lazyload alt="堆排序2"></p>
+<p>取出第三个元素并堆化：</p>
+<p><img src="https://javaguide.cn/assets/%E5%A0%86%E6%8E%92%E5%BA%8F3.e411601b.png" srcset="/img/loading.gif" lazyload alt="堆排序3"></p>
+<p>取出第四个元素并堆化：</p>
+<p><img src="https://javaguide.cn/assets/%E5%A0%86%E6%8E%92%E5%BA%8F4.2b2472be.png" srcset="/img/loading.gif" lazyload alt="堆排序4"></p>
+<p>取出第五个元素并堆化：</p>
+<p><img src="data:image/png;base64,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" srcset="/img/loading.gif" lazyload alt="堆排序5"></p>
+<p>取出第六个元素并堆化：</p>
+<p><img src="data:image/png;base64,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" srcset="/img/loading.gif" lazyload alt="堆排序6"></p>
+<h1 id="三、树"><a href="#三、树" class="headerlink" title="三、树"></a>三、树</h1><p>树的特点：</p>
+<ol>
+<li>一棵树中的任意两个结点有且仅有唯一的一条路径连通。</li>
+<li>一棵树如果有 n 个结点，那么它一定恰好有 n-1 条边。</li>
+<li>一棵树不包含回路。</li>
+</ol>
+<p><img src="https://my-blog-to-use.oss-cn-beijing.aliyuncs.com/2019-6/%E4%BA%8C%E5%8F%89%E6%A0%91-2.png" srcset="/img/loading.gif" lazyload alt="二叉树"></p>
+<ul>
+<li><strong>节点</strong> ：树中的每个元素都可以统称为节点。</li>
+<li><strong>根节点</strong> ：顶层节点或者说没有父节点的节点。上图中 A 节点就是根节点。</li>
+<li><strong>父节点</strong> ：若一个节点含有子节点，则这个节点称为其子节点的父节点。上图中的 B 节点是 D 节点、E 节点的父节点。</li>
+<li><strong>子节点</strong> ：一个节点含有的子树的根节点称为该节点的子节点。上图中 D 节点、E 节点是 B 节点的子节点。</li>
+<li><strong>兄弟节点</strong> ：具有相同父节点的节点互称为兄弟节点。上图中 D 节点、E 节点的共同父节点是 B 节点，故 D 和 E 为兄弟节点。</li>
+<li><strong>叶子节点</strong> ：没有子节点的节点。上图中的 D、F、H、I 都是叶子节点。</li>
+<li><strong>节点的高度</strong> ：该节点到叶子节点的最长路径所包含的边数。</li>
+<li><strong>节点的深度</strong> ：根节点到该节点的路径所包含的边数</li>
+<li><strong>节点的层数</strong> ：节点的深度+1。</li>
+<li><strong>树的高度</strong> ：根节点的高度。</li>
+</ul>
+<h2 id="3-1、二叉树的分类"><a href="#3-1、二叉树的分类" class="headerlink" title="3.1、二叉树的分类"></a>3.1、二叉树的分类</h2><p><strong>二叉树</strong> 的第 i 层至多拥有 <code>2^(i-1)</code> 个节点，深度为 k 的二叉树至多总共有 <code>2^(k+1)-1</code> 个节点（满二叉树的情况），至少有 2^(k) 个节点</p>
+<h3 id="3-1-1、满二叉树"><a href="#3-1-1、满二叉树" class="headerlink" title="3.1.1、满二叉树"></a>3.1.1、满二叉树</h3><p>一个二叉树，如果每一个层的结点数都达到最大值，则这个二叉树就是 <strong>满二叉树</strong>。也就是说，如果一个二叉树的层数为 K，且结点总数是(2^k) -1 ，则它就是 <strong>满二叉树</strong>。如下图所示：</p>
+<p><img src="https://javaguide.cn/assets/%E6%BB%A1%E4%BA%8C%E5%8F%89%E6%A0%91.9025b079.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<h3 id="3-1-2、完全二叉树"><a href="#3-1-2、完全二叉树" class="headerlink" title="3.1.2、完全二叉树"></a>3.1.2、完全二叉树</h3><p>除了最后一层以外，每一层都是慢的，并且最后一层或者是满的，或者是在右边缺少连续若干节点。</p>
+<p>大家可以想象为一棵树从根结点开始扩展，扩展完左子节点才能开始扩展右子节点，每扩展完一层，才能继续扩展下一层。</p>
+<p><img src="https://javaguide.cn/assets/%E5%AE%8C%E5%85%A8%E4%BA%8C%E5%8F%89%E6%A0%91.c4f02f51.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p>当根节点的值为 1 的情况下，若父结点的序号是 i，那么左子节点的序号就是 2i，右子节点的序号是 2i+1。</p>
+<h3 id="3-1-3、平衡二叉树"><a href="#3-1-3、平衡二叉树" class="headerlink" title="3.1.3、平衡二叉树"></a>3.1.3、平衡二叉树</h3><p><strong>平衡二叉树</strong> 是一棵二叉排序树，且具有以下性质：</p>
+<ol>
+<li>可以是一棵空树</li>
+<li>如果不是空树，它的左右两个子树的高度差的绝对值不超过 1，并且左右两个子树都是一棵平衡二叉树。</li>
+</ol>
+<p>平衡二叉树的常用实现方法有 <strong>红黑树</strong>、<strong>AVL 树</strong>、<strong>替罪羊树</strong>、<strong>加权平衡树</strong>、<strong>伸展树</strong> 等。</p>
+<h2 id="3-2、二叉树的存储"><a href="#3-2、二叉树的存储" class="headerlink" title="3.2、二叉树的存储"></a>3.2、二叉树的存储</h2><h3 id="3-2-1、链式存储"><a href="#3-2-1、链式存储" class="headerlink" title="3.2.1、链式存储"></a>3.2.1、链式存储</h3><ul>
+<li>数据 data。data 不一定是单一的数据，根据不同情况，可以是多个具有不同类型的数据。</li>
+<li>左节点指针 left</li>
+<li>右节点指针 right。</li>
+</ul>
+<p><img src="https://javaguide.cn/assets/%E9%93%BE%E5%BC%8F%E5%AD%98%E5%82%A8%E4%BA%8C%E5%8F%89%E6%A0%91.8dfe7691.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<h3 id="3-2-2、顺序存储"><a href="#3-2-2、顺序存储" class="headerlink" title="3.2.2、顺序存储"></a>3.2.2、顺序存储</h3><p>顺序存储就是利用数组进行存储，数组中的每一个位置仅存储节点的 data，不存储左右子节点的指针，子节点的索引通过数组下标完成。根结点的序号为 1，对于每个节点 Node，假设它存储在数组中下标为 i 的位置，那么它的左子节点就存储在 <code>2i</code> 的位置，它的右子节点存储在下标为 <code>2i+1</code> 的位置。</p>
+<p>一棵完全二叉树的数组顺序存储如下图所示：</p>
+<p><img src="https://javaguide.cn/assets/%E9%A1%BA%E5%BA%8F%E5%AD%98%E5%82%A8.ec1113ca.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<h1 id="四、红黑树"><a href="#四、红黑树" class="headerlink" title="四、红黑树"></a>四、红黑树</h1><ol>
+<li>每个节点非红即黑；</li>
+<li>根节点总是黑色的；</li>
+<li>每个叶子节点都是黑色的空节点（NIL节点）；</li>
+<li>如果节点是红色的，则它的子节点必须是黑色的（反之不一定）；</li>
+<li>从根节点到叶节点或空子节点的每条路径，必须包含相同数目的黑色节点（即相同的黑色高度）。</li>
+</ol>
+<p><a target="_blank" rel="noopener" href="https://juejin.im/post/5a27c6946fb9a04509096248#comment">漫画：什么是红黑树？</a></p>
+
+              
+            </div>
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E9%9D%A2%E8%AF%95/" class="category-chain-item">面试</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E9%9D%A2%E8%AF%95/">#面试</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>数据结构</div>
+      <div>https://eliseo.top/2022/07/13/数据结构/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Mr.Wang</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2022年7月13日</div>
+        </div>
+      
+      
+      <div class="license-meta-item">
+        <div>许可协议</div>
+        <div>
+          
+            
+            
+              <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+              <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                <i class="iconfont icon-by"></i>
+              </span>
+              </a>
+            
+          
+        </div>
+      </div>
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/07/12/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" title="操作系统">
+                        <span class="hidden-mobile">操作系统</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <span>王嘉玮</span> <i class="iconfont icon-love"></i> <span>赵梦</span> <div style="font-size: 0.85rem"> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script src="/js/duration.js"></script> </div> 
+    </div>
+  
+  
+    <div class="statistics">
+  
+  
+
+  
+    
+      <span id="busuanzi_container_site_pv" style="display: none">
+        总访问量 
+        <span id="busuanzi_value_site_pv"></span>
+         次
+      </span>
+    
+    
+      <span id="busuanzi_container_site_uv" style="display: none">
+        总访客数 
+        <span id="busuanzi_value_site_uv"></span>
+         人
+      </span>
+    
+    
+  
+</div>
+
+  
+  
+    <!-- 备案信息 ICP for China -->
+    <div class="beian">
+  <span>
+    <a href="http://beian.miit.gov.cn/" target="_blank" rel="nofollow noopener">
+      晋ICP备2021019596号
+    </a>
+  </span>
+  
+</div>
+
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.0/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      headingSelector : CONFIG.toc.headingSelector || 'h1,h2,h3,h4,h5,h6',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      collapseDepth   : CONFIG.toc.collapseDepth || 0,
+      scrollSmooth    : true,
+      headingsOffset  : -boardTop
+    });
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+  });
+</script>
+
+
+  <script>
+  (function() {
+    var enableLang = CONFIG.code_language.enable && CONFIG.code_language.default;
+    var enableCopy = CONFIG.copy_btn;
+    if (!enableLang && !enableCopy) {
+      return;
+    }
+
+    function getBgClass(ele) {
+      return Fluid.utils.getBackgroundLightness(ele) >= 0 ? 'code-widget-light' : 'code-widget-dark';
+    }
+
+    var copyTmpl = '';
+    copyTmpl += '<div class="code-widget">';
+    copyTmpl += 'LANG';
+    copyTmpl += '</div>';
+    jQuery('.markdown-body pre').each(function() {
+      var $pre = jQuery(this);
+      if ($pre.find('code.mermaid').length > 0) {
+        return;
+      }
+      if ($pre.find('span.line').length > 0) {
+        return;
+      }
+
+      var lang = '';
+
+      if (enableLang) {
+        lang = CONFIG.code_language.default;
+        if ($pre[0].children.length > 0 && $pre[0].children[0].classList.length >= 2 && $pre.children().hasClass('hljs')) {
+          lang = $pre[0].children[0].classList[1];
+        } else if ($pre[0].getAttribute('data-language')) {
+          lang = $pre[0].getAttribute('data-language');
+        } else if ($pre.parent().hasClass('sourceCode') && $pre[0].children.length > 0 && $pre[0].children[0].classList.length >= 2) {
+          lang = $pre[0].children[0].classList[1];
+          $pre.parent().addClass('code-wrapper');
+        } else if ($pre.parent().hasClass('markdown-body') && $pre[0].classList.length === 0) {
+          $pre.wrap('<div class="code-wrapper"></div>');
+        }
+        lang = lang.toUpperCase().replace('NONE', CONFIG.code_language.default);
+      }
+      $pre.append(copyTmpl.replace('LANG', lang).replace('code-widget">',
+        getBgClass($pre[0]) + (enableCopy ? ' code-widget copy-btn" data-clipboard-snippet><i class="iconfont icon-copy"></i>' : ' code-widget">')));
+
+      if (enableCopy) {
+        Fluid.utils.createScript('https://lib.baomitu.com/clipboard.js/2.0.10/clipboard.min.js', function() {
+          var clipboard = new window.ClipboardJS('.copy-btn', {
+            target: function(trigger) {
+              var nodes = trigger.parentNode.childNodes;
+              for (var i = 0; i < nodes.length; i++) {
+                if (nodes[i].tagName === 'CODE') {
+                  return nodes[i];
+                }
+              }
+            }
+          });
+          clipboard.on('success', function(e) {
+            e.clearSelection();
+            e.trigger.innerHTML = e.trigger.innerHTML.replace('icon-copy', 'icon-success');
+            setTimeout(function() {
+              e.trigger.innerHTML = e.trigger.innerHTML.replace('icon-success', 'icon-copy');
+            }, 2000);
+          });
+        });
+      }
+    });
+  })();
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  
+<script src="/js/diy/yinghua.js"></script>
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
