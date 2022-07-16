@@ -23,7 +23,7 @@
 <meta property="og:site_name" content="Eliseo的小屋">
 <meta property="og:description" content="一、Java内存区域1.1、运行时数据区Java 虚拟机规范对于运行时数据区域的规定是相当宽松的。以堆为例：堆可以是连续空间，也可以不连续。堆的大小可以固定，也可以在运行时按需扩展 。虚拟机实现者可以使用任何垃圾回收算法管理堆，甚至完全不进行垃圾收集也是可以的。 1.1.1、程序计数器程序计数器是一块较小的内存空间，可以看作是当前线程所执行的字节码的行号指示器。字节码解释器工作时通过改变这个计数">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://my-blog-to-use.oss-cn-beijing.aliyuncs.com/2019-11/1c1d85b5fb8b47239af2a5c0436eb2d7-new-image0cd10827-2f96-433c-9b16-93d4fe491d88.png">
+<meta property="og:image" content="https://eliseo.top/2022/07/08/JVM-1/image-20220716215746191.png">
 <meta property="og:image" content="https://eliseo.top/2022/07/08/JVM-1/image-20220604110733931.png">
 <meta property="og:image" content="https://eliseo.top/2022/07/08/JVM-1/image-20220604143627082.png">
 <meta property="og:image" content="https://javaguide.cn/assets/stack.357796df.png">
@@ -58,11 +58,11 @@
 <meta property="og:image" content="http://www.eliseo.top/2022/05/08/JVM/image-20220511215809705.png">
 <meta property="og:image" content="https://my-blog-to-use.oss-cn-beijing.aliyuncs.com/2019-6/classloader_WPS%E5%9B%BE%E7%89%87.png">
 <meta property="article:published_time" content="2022-07-08T02:33:45.000Z">
-<meta property="article:modified_time" content="2022-07-10T13:55:46.127Z">
+<meta property="article:modified_time" content="2022-07-16T13:57:49.997Z">
 <meta property="article:author" content="Mr.Wang">
 <meta property="article:tag" content="面试">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://my-blog-to-use.oss-cn-beijing.aliyuncs.com/2019-11/1c1d85b5fb8b47239af2a5c0436eb2d7-new-image0cd10827-2f96-433c-9b16-93d4fe491d88.png">
+<meta name="twitter:image" content="https://eliseo.top/2022/07/08/JVM-1/image-20220716215746191.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
@@ -337,14 +337,14 @@
                 
                   
                     <!-- compatible with older versions-->
-                    本文最后更新于：5 天前
+                    本文最后更新于：1 分钟前
                   
                 
               </p>
             
             <div class="markdown-body">
               
-              <p><img src="https://my-blog-to-use.oss-cn-beijing.aliyuncs.com/2019-11/1c1d85b5fb8b47239af2a5c0436eb2d7-new-image0cd10827-2f96-433c-9b16-93d4fe491d88.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+              <p><img src="/2022/07/08/JVM-1/image-20220716215746191.png" srcset="/img/loading.gif" lazyload></p>
 <h1 id="一、Java内存区域"><a href="#一、Java内存区域" class="headerlink" title="一、Java内存区域"></a>一、Java内存区域</h1><h2 id="1-1、运行时数据区"><a href="#1-1、运行时数据区" class="headerlink" title="1.1、运行时数据区"></a>1.1、运行时数据区</h2><p>Java 虚拟机规范对于运行时数据区域的规定是相当宽松的。以堆为例：堆可以是连续空间，也可以不连续。堆的大小可以固定，也可以在运行时按需扩展 。虚拟机实现者可以使用任何垃圾回收算法管理堆，甚至完全不进行垃圾收集也是可以的。</p>
 <h3 id="1-1-1、程序计数器"><a href="#1-1-1、程序计数器" class="headerlink" title="1.1.1、程序计数器"></a>1.1.1、程序计数器</h3><p>程序计数器是一块较小的内存空间，可以看作是当前线程所执行的字节码的行号指示器。<strong>字节码解释器工作时通过改变这个计数器的值来选取下一条需要执行的字节码指令，分支、循环、跳转、异常处理、线程恢复等功能都需要依赖这个计数器来完成。</strong></p>
 <p>另外，为了线程切换后能恢复到正确的执行位置，<strong>每条线程都需要有一个独立的程序计数器</strong>，各线程之间计数器互不影响，独立存储，我们称这类内存区域为“线程私有”的内存。</p>
