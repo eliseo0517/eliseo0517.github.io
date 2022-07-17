@@ -18,7 +18,7 @@
   
     <meta name="description" content="一、基础1.1、数据库范式1NF(第一范式)每一列的属性都不可再分，保证每一列的原子性 **2NF(第二范式)2NF 在 1NF 的基础之上，还要满足数据表里的每一条数据记录都是可唯一标识的，并且所有的非主键字段都要完全依赖于主键。(对于一个数据，如果主键是联合主键，那么就要满足如果要确定非主键字段那么就要同时知道所有主键的信息)**。不完全依赖就将这一部分分离出来形成一个新实体。  1NF是告诉">
 <meta property="og:type" content="article">
-<meta property="og:title" content="数据库">
+<meta property="og:title" content="Eliseo的小屋">
 <meta property="og:url" content="https://eliseo.top/2022/07/16/%E6%95%B0%E6%8D%AE%E5%BA%93/index.html">
 <meta property="og:site_name" content="Eliseo的小屋">
 <meta property="og:description" content="一、基础1.1、数据库范式1NF(第一范式)每一列的属性都不可再分，保证每一列的原子性 **2NF(第二范式)2NF 在 1NF 的基础之上，还要满足数据表里的每一条数据记录都是可唯一标识的，并且所有的非主键字段都要完全依赖于主键。(对于一个数据，如果主键是联合主键，那么就要满足如果要确定非主键字段那么就要同时知道所有主键的信息)**。不完全依赖就将这一部分分离出来形成一个新实体。  1NF是告诉">
@@ -27,8 +27,13 @@
 <meta property="og:image" content="https://guide-blog-images.oss-cn-shenzhen.aliyuncs.com/github/javaguide/mysql/ACID.png">
 <meta property="og:image" content="https://guide-blog-images.oss-cn-shenzhen.aliyuncs.com/github/javaguide/mysql/AID-%3EC.png">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20201216230427546.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDM5ODY4Nw==,size_16,color_FFFFFF,t_70#pic_center">
+<meta property="og:image" content="https://guide-blog-images.oss-cn-shenzhen.aliyuncs.com/github/javaguide/open-source-project/no-cluster-index.png">
+<meta property="og:image" content="https://guide-blog-images.oss-cn-shenzhen.aliyuncs.com/github/javaguide/02.png">
+<meta property="og:image" content="https://javaguide.cn/assets/trans_visible.048192c5.png">
+<meta property="og:image" content="https://eliseo.top/2022/07/16/%E6%95%B0%E6%8D%AE%E5%BA%93/E%60%60M%7B%5BHMESZ2J5R79K2V_7N.png">
+<meta property="og:image" content="https://guide-blog-images.oss-cn-shenzhen.aliyuncs.com/javaguide/13526879-3037b144ed09eb88.png">
 <meta property="article:published_time" content="2022-07-16T01:54:51.000Z">
-<meta property="article:modified_time" content="2022-07-16T13:54:48.458Z">
+<meta property="article:modified_time" content="2022-07-17T03:49:03.279Z">
 <meta property="article:author" content="Mr.Wang">
 <meta property="article:tag" content="面试">
 <meta name="twitter:card" content="summary_large_image">
@@ -38,7 +43,7 @@
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>数据库 - Eliseo的小屋</title>
+  <title>Eliseo的小屋</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -214,7 +219,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="数据库"></span>
+            <span id="subtitle" data-typed-text=""></span>
           
         </div>
 
@@ -243,7 +248,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          5.4k 字
+          9.9k 字
         
       </span>
     
@@ -255,7 +260,7 @@
         
         
           <!-- compatible with older versions-->
-          45 分钟
+          83 分钟
         
       </span>
     
@@ -301,13 +306,13 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">数据库</h1>
+            <h1 style="display: none"></h1>
             
               <p class="note note-info">
                 
                   
                     <!-- compatible with older versions-->
-                    本文最后更新于：4 分钟前
+                    本文最后更新于：16 分钟前
                   
                 
               </p>
@@ -428,6 +433,17 @@
 </tbody></table>
 <p><strong>其中，可串行化是基于锁来实现的，剩下的三个隔离级别都是基于MVCC实现</strong></p>
 <p>MySQL InnoDB 存储引擎的默认支持的隔离级别是 <strong>REPEATABLE-READ（可重读）</strong></p>
+<p>InnoDB 的默认隔离级别 RR（可重读）是可以解决幻读问题发生的，主要有下面两种情况：</p>
+<ul>
+<li><strong>快照读</strong>（一致性非锁定读） ：由 MVCC 机制来保证不出现幻读，就是一个不加锁的select</li>
+<li><strong>当前读</strong> （一致性锁定读）： 使用 Next-Key Lock(临键锁) 进行加锁来保证不出现幻读，读取的是记录的最新版本，读取时还要保证其他并发事务不能修改当前记录，会对读取的记录进行加锁</li>
+</ul>
+<p>简单理解需要加锁的是当前读，快照读不需要加锁。</p>
+<p><strong>事务是如何实现mvcc的？</strong> </p>
+<p>1、每个事务都有⼀个事务ID,叫做transaction id(严格递增) </p>
+<p>2、事务在启动时,找到已提交的最⼤事务ID记为up_limit_id。 </p>
+<p>3、事务在更新⼀条语句时 ⽐如 id=1 改为了 id=2.会把 id=1 和该⾏之前的 row trx_id 写到 undo log ⾥, 并且在数据⻚上 把 id 的值改为 2,并且把修改这条语句的transaction id 记在该⾏⾏头 </p>
+<p>4、再定⼀个规矩 ⼀个事务要查看⼀条数据时,必须先⽤该事务的 up_limit_id 与该⾏的transaction id 做⽐对 如果 up_limit_id &gt;= transaction id,那么可以看 如果 up_limit_id &lt; transaction id,则只能去 undo log ⾥去取。 去 undo log 查找数据的时候,也需要做⽐对,必须 up_limit_id &gt; transaction id，才返回数据</p>
 <h2 id="2-4、MySQL锁"><a href="#2-4、MySQL锁" class="headerlink" title="2.4、MySQL锁"></a>2.4、MySQL锁</h2><h3 id="2-4-1、锁的分类"><a href="#2-4-1、锁的分类" class="headerlink" title="2.4.1、锁的分类"></a>2.4.1、锁的分类</h3><p>表级锁与行级锁：表级锁是将整个表锁住，在并发的情况下，性能十分差。</p>
 <p>行级锁是对一行或者多行记录进行加锁。</p>
 <blockquote>
@@ -530,12 +546,6 @@
 <li><strong>临键锁（Next-key Lock）</strong> ：Record Lock+Gap Lock，锁定一个范围，包含记录本身。记录锁只能锁住已经存在的记录，为了避免插入新记录，需要依赖间隙锁。</li>
 </ul>
 <p>间隙锁与临键锁可以防止幻读</p>
-<p>InnoDB 的默认隔离级别 RR（可重读）是可以解决幻读问题发生的，主要有下面两种情况：</p>
-<ul>
-<li><strong>快照读</strong>（一致性非锁定读） ：由 MVCC 机制来保证不出现幻读。</li>
-<li><strong>当前读</strong> （一致性锁定读）： 使用 Next-Key Lock 进行加锁来保证不出现幻读</li>
-</ul>
-<p>简单理解需要加锁的是当前读，快照读不需要加锁。</p>
 <h2 id="2-5、MySQL高性能优化"><a href="#2-5、MySQL高性能优化" class="headerlink" title="2.5、MySQL高性能优化"></a>2.5、MySQL高性能优化</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/shassd/article/details/109708433?ops_request_misc=%7B%22request_id%22:%22165796295816782391893729%22,%22scm%22:%2220140713.130102334..%22%7D&request_id=165796295816782391893729&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_click~default-1-109708433-null-null.142%5Ev32%5Epc_rank_34,185%5Ev2%5Econtrol&utm_term=%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1%E8%A7%84%E8%8C%83&spm=1018.2226.3001.4187">常用数据库设计规范总结</a></p>
 <h2 id="2-6、索引"><a href="#2-6、索引" class="headerlink" title="2.6、索引"></a>2.6、索引</h2><p><strong>索引是一种用于快速查询和检索数据的数据结构。常见的索引结构有: B 树， B+树和 Hash。</strong></p>
 <p>索引的作用就相当于书的目录。</p>
@@ -565,11 +575,148 @@
 </ul>
 <h3 id="2-6-3、索引类型"><a href="#2-6-3、索引类型" class="headerlink" title="2.6.3、索引类型"></a>2.6.3、索引类型</h3><hr>
 <p><strong><code>主键索引</code></strong></p>
-<p>数据表的主键列使用的就是主键索引。</p>
+<p>数据表的主键列使用的就是主键索引。是一种特殊的唯一索引。</p>
 <p>一张数据表有只能有一个主键，并且主键不能为 null，不能重复。</p>
 <hr>
 <p><strong><code>二级索引</code></strong></p>
 <p><strong>二级索引又称为辅助索引，是因为二级索引的叶子节点存储的数据是主键。也就是说，通过二级索引，可以定位主键的位置。</strong></p>
+<ol>
+<li><strong>唯一索引(Unique Key)</strong> ：<strong>唯一索引的属性列不能出现重复的数据，但是允许数据为 NULL，一张表允许创建多个唯一索引。</strong> </li>
+<li><strong>普通索引(Index)</strong> ：<strong>普通索引的唯一作用就是为了快速查询数据，一张表允许创建多个普通索引，并允许数据重复和 NULL。</strong></li>
+<li><strong>前缀索引(Prefix)</strong> ：前缀索引只适用于<strong>字符串类型的数据</strong>。前缀索引是对文本的前几个字符创建索引，相比普通索引建立的数据更小， 因为只取前几个字符。</li>
+<li><strong>全文索引(Full Text)</strong> ：全文索引主要是为了检索大文本数据中的关键字的信息，是目前搜索引擎数据库使用的一种技术。Mysql5.6 之前只有 MYISAM 引擎支持全文索引，5.6 之后 InnoDB 也支持了全文索引。</li>
+</ol>
+<p>二级索引:</p>
+<p><img src="https://guide-blog-images.oss-cn-shenzhen.aliyuncs.com/github/javaguide/open-source-project/no-cluster-index.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<hr>
+<h3 id="2-6-4、聚集索引与非聚集索引"><a href="#2-6-4、聚集索引与非聚集索引" class="headerlink" title="2.6.4、聚集索引与非聚集索引"></a>2.6.4、聚集索引与非聚集索引</h3><p><strong><code>聚集索引</code><strong>：</strong>聚集索引即索引结构和数据一起存放的索引，找到索引也就找到了数据。主键索引属于聚集索引。</strong></p>
+<p>聚集索引查询速度非常快，定位到了索引的位置也就直接定位到了数据的值。</p>
+<p><strong>聚集索引的缺点</strong></p>
+<ol>
+<li><strong>依赖于有序的数据</strong> ：因为 B+树是多路平衡树，如果索引的数据不是有序的，那么就需要在插入时排序，如果数据是整型还好，否则类似于字符串或 UUID 这种又长又难比较的数据，插入或查找的速度肯定比较慢。</li>
+<li><strong>更新代价大</strong> ： 如果对索引列的数据被修改时，那么对应的索引也将会被修改，而且聚集索引的叶子节点还存放着数据，修改代价肯定是较大的，所以对于主键索引来说，主键一般都是不可被修改的。</li>
+</ol>
+<hr>
+<p>**<code>非聚集索引*</code>*：**非聚集索引即索引结构和数据分开存放的索引。当你要找一个数据的时候，先在内存中搜索索引，然后通过索引找到磁盘对应的数据。 **类似于根据偏旁部首找字，首先找到该字所在的地址，再根据地址找到这个字的信息。</p>
+<p>更新代价比聚集索引要小 。</p>
+<p><strong>非聚集索引的缺点</strong></p>
+<ol>
+<li>跟聚集索引一样，非聚集索引也依赖于有序的数据</li>
+<li><strong>可能会二次查询(回表)</strong> :这应该是非聚集索引最大的缺点了。 当查到索引对应的指针或主键后，可能还需要根据指针或主键再到数据文件或表中查询。</li>
+</ol>
+<h3 id="2-6-5、覆盖索引"><a href="#2-6-5、覆盖索引" class="headerlink" title="2.6.5、覆盖索引"></a>2.6.5、覆盖索引</h3><p><strong>覆盖索引即需要查询的字段正好是索引的字段，那么直接根据该索引，就可以查到数据了，而无需回表查询。</strong></p>
+<blockquote>
+<p>如主键索引，如果一条 SQL 需要查询主键，那么正好根据主键索引就可以查到主键。</p>
+<p>再如普通索引，如果一条 SQL 需要查询 name，name 字段正好有索引， 那么直接根据这个索引就可以查到数据，也无需回表。</p>
+</blockquote>
+<h3 id="2-6-6、联合索引"><a href="#2-6-6、联合索引" class="headerlink" title="2.6.6、联合索引"></a>2.6.6、联合索引</h3><p>使用表中的多个字段创建索引，就是 <strong>联合索引</strong>，也叫 <strong>组合索引</strong> 或 <strong>复合索引</strong>。</p>
+<p>使用联合索引时，可以将区分度高的字段放在最左边，这也可以过滤更多数据。(最左前缀匹配原则)</p>
+<h3 id="2-6-7、创建索引的注意事项"><a href="#2-6-7、创建索引的注意事项" class="headerlink" title="2.6.7、创建索引的注意事项"></a>2.6.7、创建索引的注意事项</h3><p><strong>1、选择合适的字段创建索引</strong></p>
+<ul>
+<li>不为 NULL 的字段</li>
+<li>被频繁查询的字段 </li>
+<li>被作为条件查询的字段 </li>
+<li>频繁需要排序的字段 </li>
+<li>被经常频繁用于连接的字段</li>
+</ul>
+<p><strong>2、被频繁更新的字段应该慎重建立索引。</strong></p>
+<p><strong>3、尽可能的考虑建立联合索引而不是单列索引。</strong></p>
+<p><strong>4、注意避免冗余索引</strong> 。</p>
+<p><strong>5、考虑在字符串类型的字段上使用前缀索引代替普通索引。</strong></p>
+<h3 id="2-6-8、-MySQL-如何为表字段添加索引？"><a href="#2-6-8、-MySQL-如何为表字段添加索引？" class="headerlink" title="2.6.8、 MySQL 如何为表字段添加索引？"></a>2.6.8、 MySQL 如何为表字段添加索引？</h3><p>1.添加 PRIMARY KEY（主键索引）</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> `table_name` <span class="hljs-keyword">ADD</span> <span class="hljs-keyword">PRIMARY</span> KEY ( `<span class="hljs-keyword">column</span>` )<br></code></pre></td></tr></table></figure>
+
+<p>2.添加 UNIQUE(唯一索引)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sqlite">ALTER TABLE `table_name` ADD UNIQUE ( `column` )<br></code></pre></td></tr></table></figure>
+
+<p>3.添加 INDEX(普通索引)</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> `table_name` <span class="hljs-keyword">ADD</span> INDEX index_name ( `<span class="hljs-keyword">column</span>` )<br></code></pre></td></tr></table></figure>
+
+<p>4.添加 FULLTEXT(全文索引)</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> `table_name` <span class="hljs-keyword">ADD</span> FULLTEXT ( `<span class="hljs-keyword">column</span>`)<br></code></pre></td></tr></table></figure>
+
+<p>5.添加多列索引</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> `table_name` <span class="hljs-keyword">ADD</span> INDEX index_name ( `column1`, `column2`, `column3` )<br></code></pre></td></tr></table></figure>
+
+<h2 id="2-7、MySQL三大日志-binlog、redo-log和undo-log"><a href="#2-7、MySQL三大日志-binlog、redo-log和undo-log" class="headerlink" title="2.7、MySQL三大日志(binlog、redo log和undo log)"></a>2.7、MySQL三大日志(binlog、redo log和undo log)</h2><h3 id="2-7-1、redo-log-重做日志"><a href="#2-7-1、redo-log-重做日志" class="headerlink" title="2.7.1、redo log(重做日志)"></a>2.7.1、redo log(重做日志)</h3><p>是<code>InnoDB</code>存储引擎独有的，它让<code>MySQL</code>拥有了崩溃恢复能力。</p>
+<p><img src="https://guide-blog-images.oss-cn-shenzhen.aliyuncs.com/github/javaguide/02.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<h3 id="2-7-2、bin-log"><a href="#2-7-2、bin-log" class="headerlink" title="2.7.2、bin log"></a>2.7.2、bin log</h3><p>负责记录数据库的操作，只要表数据发生更新，那么就会产生日志。</p>
+<p>主要用来 集群化管理，主要用来 <strong>主从复制</strong> 和 <strong>数据恢复</strong> </p>
+<p><code>binlog</code> 日志有三种格式，可以通过<code>binlog_format</code>参数指定。</p>
+<ul>
+<li><strong>statement</strong>：只有sql语句</li>
+<li><strong>row</strong> ：记录sql语句的时候会包含具体的数据，比较占空间</li>
+<li><strong>mixed</strong>：前两者的结合，判断sql会引起数据不一致就调用row，不会就使用statement</li>
+</ul>
+<h3 id="2-7-3、undo-log"><a href="#2-7-3、undo-log" class="headerlink" title="2.7.3、undo log"></a>2.7.3、undo log</h3><p>如果执行过程中遇到异常的话，我们直接利用 <strong>回滚日志</strong> 中的信息将数据回滚到修改之前的样子即可！并且，回滚日志会先于数据持久化到磁盘上。</p>
+<p><strong><code>总结：</code></strong></p>
+<p>MySQL InnoDB 引擎使用 <strong>redo log(重做日志)</strong> 保证事务的<strong>持久性</strong>，使用 <strong>undo log(回滚日志)</strong> 来保证事务的<strong>原子性</strong>。</p>
+<p><code>MySQL</code>数据库的<strong>数据备份、主备、主主、主从</strong>都离不开<code>binlog</code>，需要依靠<code>binlog</code>来同步数据，保证数据一致性</p>
+<h2 id="2-8、MVCC"><a href="#2-8、MVCC" class="headerlink" title="2.8、MVCC"></a>2.8、MVCC</h2><p><code>MVCC</code> 的实现依赖于：<strong>隐藏字段、Read View、undo log</strong>。</p>
+<hr>
+<p><strong><code>隐藏字段</code></strong></p>
+<ul>
+<li><code>DB_TRX_ID（6字节）</code>：表示最后一次插入或更新该行的事务 id。</li>
+</ul>
+<hr>
+<p><strong><code>ReadView</code></strong></p>
+<ul>
+<li><code>m_low_limit_id</code>：目前出现过的最大的事务 ID+1，即下一个将被分配的事务 ID。大于等于这个 ID 的数据版本均不可见</li>
+<li><code>m_up_limit_id</code>：活跃事务列表 <code>m_ids</code> 中最小的事务 ID，如果 <code>m_ids</code> 为空，则 <code>m_up_limit_id</code> 为 <code>m_low_limit_id</code>。小于这个 ID 的数据版本均可见</li>
+<li><code>m_ids</code>：<code>Read View</code> 创建时其他未提交的活跃事务 ID 列表。创建 <code>Read View</code>时，将当前未提交事务 ID 记录下来，后续即使它们修改了记录行的值，对于当前事务也是不可见的。<code>m_ids</code> 不包括当前事务自己和已提交的事务（正在内存中）</li>
+<li><code>m_creator_trx_id</code>：创建该 <code>Read View</code> 的事务 ID</li>
+</ul>
+<p><strong>事务可见性示意图</strong>：</p>
+<p><img src="https://javaguide.cn/assets/trans_visible.048192c5.png" srcset="/img/loading.gif" lazyload alt="trans_visible"></p>
+<hr>
+<p><strong><code>undo-log</code></strong></p>
+<p><code>undo log</code> 主要有两个作用：</p>
+<ul>
+<li>当事务回滚时用于将数据恢复到修改前的样子</li>
+<li>另一个作用是 <code>MVCC</code> ，当读取记录时，若该记录被其他事务占用或当前版本对该事务不可见，则可以通过 <code>undo log</code> 读取之前的版本数据，以此实现非锁定读</li>
+</ul>
+<hr>
+<p><strong><code>RC 和 RR 隔离级别下 MVCC 的差异</code></strong></p>
+<ul>
+<li>在 RC 隔离级别下的 <strong><code>每次select</code></strong> 查询前都生成一个<code>Read View</code> (m_ids 列表)</li>
+<li>在 RR 隔离级别下只在事务开始后 <strong><code>第一次select</code></strong> 数据前生成一个<code>Read View</code>（m_ids 列表</li>
+</ul>
+<p><strong>总结：</strong> <strong>在 RC 隔离级别下，事务在每次查询开始时都会生成并设置新的 Read View，所以导致不可重复读</strong></p>
+<p><img src="/2022/07/16/%E6%95%B0%E6%8D%AE%E5%BA%93/E%60%60M%7B%5BHMESZ2J5R79K2V_7N.png" srcset="/img/loading.gif" lazyload alt="数据可见性算法"></p>
+<p><strong><code>MVCC➕Next-key-Lock 防止幻读</code></strong></p>
+<p><code>InnoDB</code>存储引擎在 RR 级别下通过 <code>MVCC</code>和 <code>Next-key Lock</code> 来解决幻读问题：</p>
+<p><strong>1、执行普通 <code>select</code>，此时会以 <code>MVCC</code> 快照读的方式读取数据</strong></p>
+<p>在快照读的情况下，RR 隔离级别只会在事务开启后的第一次查询生成 <code>Read View</code> ，并使用至事务提交。所以在生成 <code>Read View</code> 之后其它事务所做的更新、插入记录版本对当前事务并不可见，实现了可重复读和防止快照读下的 “幻读”</p>
+<p><strong>2、执行 select…for update/lock in share mode、insert、update、delete 等当前读</strong></p>
+<p>在当前读下，读取的都是最新的数据，如果其它事务有插入新的记录，并且刚好在当前事务查询范围内，就会产生幻读！<code>InnoDB</code> 使用 [Next-key Lockopen in new window]来防止这种情况。当执行当前读时，会锁定读取到的记录的同时，锁定它们的间隙，防止其它事务在查询范围内插入数据。只要我不让你插入，就不会发生幻读</p>
+<h2 id="2-9、Mysql架构"><a href="#2-9、Mysql架构" class="headerlink" title="2.9、Mysql架构"></a>2.9、Mysql架构</h2><p><img src="https://guide-blog-images.oss-cn-shenzhen.aliyuncs.com/javaguide/13526879-3037b144ed09eb88.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<ul>
+<li><strong>连接器：</strong> 身份认证和权限相关(登录 MySQL 的时候)。</li>
+<li><strong>查询缓存：</strong> 执行查询语句的时候，会先查询缓存（MySQL 8.0 版本后移除，因为这个功能不太实用）。</li>
+<li><strong>分析器：</strong> 没有命中缓存的话，SQL 语句就会经过分析器，分析器说白了就是要先看你的 SQL 语句要干嘛，再检查你的 SQL 语句语法是否正确。</li>
+<li><strong>优化器：</strong> 按照 MySQL 认为最优的方案去执行。</li>
+<li><strong>执行器：</strong> 执行语句，然后从存储引擎返回数据。</li>
+</ul>
+<p><strong><code>总结</code></strong></p>
+<ul>
+<li>MySQL 主要分为 Server 层和引擎层，Server 层主要包括连接器、查询缓存、分析器、优化器、执行器，同时还有一个日志模块（binlog），这个日志模块所有执行引擎都可以共用，redolog 只有 InnoDB 有。</li>
+<li>引擎层是插件式的，目前主要包括，MyISAM,InnoDB,Memory 等。</li>
+<li>查询语句的执行流程如下：权限校验（如果命中缓存）—&gt;查询缓存—&gt;分析器—&gt;优化器—&gt;权限校验—&gt;执行器—&gt;引擎</li>
+<li>更新语句执行流程如下：分析器—-&gt;权限校验—-&gt;执行器—&gt;引擎—redo log(prepare 状态)—&gt;binlog—&gt;redo log(commit状态)</li>
+</ul>
+<hr>
+<h2 id="2-10、隐式转换"><a href="#2-10、隐式转换" class="headerlink" title="2.10、隐式转换"></a>2.10、隐式转换</h2><p>规则：</p>
+<ol>
+<li><strong>不以数字开头</strong>的字符串都将转换为<code>0</code>。如<code>&#39;abc&#39;</code>、<code>&#39;a123bc&#39;</code>、<code>&#39;abc123&#39;</code>都会转化为<code>0</code>；</li>
+<li><strong>以数字开头的</strong>字符串转换时会进行截取，从第一个字符截取到第一个非数字内容为止。比如<code>&#39;123abc&#39;</code>会转换为<code>123</code>，<code>&#39;012abc&#39;</code>会转换为<code>012</code>也就是<code>12</code>，<code>&#39;5.3a66b78c&#39;</code>会转换为<code>5.3</code>，其他同理。</li>
+</ol>
+<p><strong>总结：</strong></p>
+<ol>
+<li>当操作符<strong>左右两边的数据类型不一致</strong>时，会发生<strong>隐式转换</strong>。</li>
+<li>当 where 查询操作符<strong>左边为数值类型</strong>时发生了隐式转换，那么对效率影响不大，但还是不推荐这么做。</li>
+<li>当 where 查询操作符<strong>左边为字符类型</strong>时发生了隐式转换，那么会导致索引失效，造成全表扫描效率极低。</li>
+<li>字符串转换为数值类型时，非数字开头的字符串会转化为<code>0</code>，以数字开头的字符串会截取从第一个字符到第一个非数字内容为止的值为转化结果。</li>
+</ol>
 
               
             </div>
@@ -614,7 +761,7 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>数据库</div>
+      <div></div>
       <div>https://eliseo.top/2022/07/16/数据库/</div>
     </div>
     <div class="license-meta">
@@ -656,6 +803,12 @@
                 <div class="post-prevnext my-3">
                   <article class="post-prev col-6">
                     
+                    
+                      <a href="/2022/07/17/Redis/" title="Redis">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Redis</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
                     
                   </article>
                   <article class="post-next col-6">
