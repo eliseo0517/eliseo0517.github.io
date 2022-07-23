@@ -16,15 +16,23 @@
   <meta name="author" content="Mr.Wang">
   <meta name="keywords" content="">
   
-    <meta property="og:type" content="article">
+    <meta name="description" content="一、缓存数据的处理流程是怎样的？ 简单来说就是:  如果用户请求的数据在缓存中就直接返回。 缓存中不存在的话就看数据库中是否存在。 数据库中存在的话就更新缓存中的数据。 数据库中不存在的话就返回空数据。  二、为什么要用 Redis&#x2F;为什么要用缓存？简单，来说使用缓存主要是为了提升用户体验以及应对更多的用户。 高性能 ：当用户第一次访问数据的时候会从磁盘中读取，会很慢，如果说，用户访问的数据属于高">
+<meta property="og:type" content="article">
 <meta property="og:title" content="Redis">
 <meta property="og:url" content="https://eliseo.top/2022/07/17/Redis/index.html">
 <meta property="og:site_name" content="Eliseo的小屋">
+<meta property="og:description" content="一、缓存数据的处理流程是怎样的？ 简单来说就是:  如果用户请求的数据在缓存中就直接返回。 缓存中不存在的话就看数据库中是否存在。 数据库中存在的话就更新缓存中的数据。 数据库中不存在的话就返回空数据。  二、为什么要用 Redis&#x2F;为什么要用缓存？简单，来说使用缓存主要是为了提升用户体验以及应对更多的用户。 高性能 ：当用户第一次访问数据的时候会从磁盘中读取，会很慢，如果说，用户访问的数据属于高">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://javaguide.cn/assets/cache-process.c27b9c06.png">
+<meta property="og:image" content="https://javaguide.cn/assets/redis-list.e79ad4dd.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/6358650a9bf742838441d636430c90b9.png">
+<meta property="og:image" content="https://javaguide.cn/assets/%E5%8A%A0%E5%85%A5%E5%B8%83%E9%9A%86%E8%BF%87%E6%BB%A4%E5%99%A8%E5%90%8E%E7%9A%84%E7%BC%93%E5%AD%98%E5%A4%84%E7%90%86%E6%B5%81%E7%A8%8B.79596186.png">
 <meta property="article:published_time" content="2022-07-17T04:01:39.000Z">
-<meta property="article:modified_time" content="2022-07-17T04:01:39.899Z">
+<meta property="article:modified_time" content="2022-07-18T14:35:27.819Z">
 <meta property="article:author" content="Mr.Wang">
+<meta property="article:tag" content="面试">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://javaguide.cn/assets/cache-process.c27b9c06.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
@@ -235,7 +243,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          0 字
+          4.2k 字
         
       </span>
     
@@ -247,7 +255,7 @@
         
         
           <!-- compatible with older versions-->
-          1 分钟
+          36 分钟
         
       </span>
     
@@ -299,20 +307,195 @@
                 
                   
                     <!-- compatible with older versions-->
-                    本文最后更新于：6 小时前
+                    本文最后更新于：5 天前
                   
                 
               </p>
             
             <div class="markdown-body">
               
-              
+              <h1 id="一、缓存数据的处理流程是怎样的？"><a href="#一、缓存数据的处理流程是怎样的？" class="headerlink" title="一、缓存数据的处理流程是怎样的？"></a>一、缓存数据的处理流程是怎样的？</h1><p><img src="https://javaguide.cn/assets/cache-process.c27b9c06.png" srcset="/img/loading.gif" lazyload alt="正常缓存处理流程"></p>
+<p>简单来说就是:</p>
+<ol>
+<li>如果用户请求的数据在缓存中就直接返回。</li>
+<li>缓存中不存在的话就看数据库中是否存在。</li>
+<li>数据库中存在的话就更新缓存中的数据。</li>
+<li>数据库中不存在的话就返回空数据。</li>
+</ol>
+<h1 id="二、为什么要用-Redis-为什么要用缓存？"><a href="#二、为什么要用-Redis-为什么要用缓存？" class="headerlink" title="二、为什么要用 Redis/为什么要用缓存？"></a>二、为什么要用 Redis/为什么要用缓存？</h1><p>简单，来说使用缓存主要是为了提升用户体验以及应对更多的用户。</p>
+<p><strong>高性能</strong> ：当用户第一次访问数据的时候会从磁盘中读取，会很慢，如果说，用户访问的数据属于高频数据并且不会经常改变的话，那么我们就可以很放心地将该用户访问的数据存在缓存中，那么用户下一次再访问这些数据的时候就可以直接从缓存中获取了</p>
+<p><strong>高并发：</strong>放到缓存中的话，用户的一部分请求就会进入缓存而不是数据库。</p>
+<h1 id="三、Redis常见数据结构"><a href="#三、Redis常见数据结构" class="headerlink" title="三、Redis常见数据结构"></a>三、Redis常见数据结构</h1><hr>
+<p><strong><code>String</code></strong></p>
+<ol>
+<li><strong>常用命令：</strong> <code>set(设置k-v类型的值),get(通过k获得对应的v),strlen(获得key存储的字符串长度),exists(判断key是否存在),decr(设置k的v自减),incr(设置k的v自增),setex(设置过期时间)</code> 等等。</li>
+<li><strong>应用场景：</strong> 一般常用在需要计数的场景，比如用户的访问次数、热点文章的点赞转发数量等等。</li>
+</ol>
+<hr>
+<p>**<code>list</code>**：双向链表</p>
+<ol>
+<li><strong>常用命令:</strong> <code>rpush(向list右边添加元素),lpop(移除list中的左边元素),lpush,rpop,lrange(查看对应下标的list列表 0 -1表示查看所有),llen(查看链表长度)</code> 等。</li>
+<li><strong>应用场景:</strong> 发布与订阅或者说消息队列、慢查询。</li>
+</ol>
+<p><img src="https://javaguide.cn/assets/redis-list.e79ad4dd.png" srcset="/img/loading.gif" lazyload alt="redis list"></p>
+<hr>
+<p><strong><code>hash</code></strong></p>
+<ol>
+<li><strong>常用命令：</strong> <code>hset(设置一个具体的k-v),hmset(设置多个k-v),hexists(查看是否存在k),hget(得到k对应的v),hgetall(得到所有哈希表名的k-v),hkeys(获取所有的k),hvals(获取所有的v)</code> 等。</li>
+<li><strong>应用场景:</strong> 系统中对象数据的存储。</li>
+</ol>
+<p>格式：hset 哈希表名 哈希表key 哈希表value</p>
+<hr>
+<p><strong><code>set</code></strong></p>
+<ol>
+<li><strong>常用命令：</strong> <code>sadd(添加元素),spop(随机删除),smembers(查看所集合中的所有元素),sismember(查询元素是否是集合中的成员),scard(获取成员数量),sinterstore(获取集合1与集合2的交集并放在集合3中),sunion(获取并集)</code> 等。</li>
+<li><strong>应用场景:</strong> <strong>需要存放的数据不能重复</strong>以及需要获取多个数据源交集和并集等场景</li>
+</ol>
+<hr>
+<p><strong><code>zset</code></strong></p>
+<ol>
+<li><strong>常用命令：</strong> <code>zadd(),zcard(),zscore(),zrange(),zrevrange(),zrem()</code> 等。</li>
+<li><strong>应用场景：</strong> 需要对数据根据某个权重进行排序的场景。比如在直播系统中，实时排行信息包含直播间在线用户列表，各种礼物排行榜，弹幕消息（可以理解为按消息维度的消息排行榜）等信息。</li>
+</ol>
+<h1 id="四、Redis-线程模型"><a href="#四、Redis-线程模型" class="headerlink" title="四、Redis 线程模型"></a>四、Redis 线程模型</h1><p>Redis是单线程的，Redis 通过<strong>IO 多路复用程序</strong> 来监听来自客户端的大量连接</p>
+<p>文件事件处理器（file event handler）主要是包含 4 个部分：</p>
+<ul>
+<li>多个 socket（客户端连接）</li>
+<li>IO 多路复用程序（支持多个客户端连接的关键）</li>
+<li>文件事件分派器（将 socket 关联到相应的事件处理器）</li>
+<li>事件处理器（连接应答处理器、命令请求处理器、命令回复处理器）</li>
+</ul>
+<h1 id="五、Redis内存管理"><a href="#五、Redis内存管理" class="headerlink" title="五、Redis内存管理"></a>五、Redis内存管理</h1><hr>
+<p><strong><code>为什么要设置过期时间？</code></strong></p>
+<p>因为内存是有限的，不设置过期时间就会产生oom。</p>
+<p><strong>Redis 中除了字符串类型有自己独有设置过期时间的命令 <code>setex</code> 外，其他方法都需要依靠 <code>expire</code> 命令来设置过期时间 。另外， <code>persist</code> 命令可以移除一个键的过期时间。</strong></p>
+<hr>
+<p><strong><code>过期的数据的删除策略了解么？</code></strong></p>
+<p>常用的过期数据的删除策略就两个：</p>
+<ol>
+<li><strong>惰性删除</strong> ：只会在取出 key 的时候才对数据进行过期检查。这样对 CPU 最友好，但是可能会造成太多过期 key 没有被删除。</li>
+<li><strong>定期删除</strong> ： 每隔一段时间抽取一批 key 执行删除过期 key 操作。并且，Redis 底层会通过限制删除操作执行的时长和频率来减少删除操作对 CPU 时间的影响。</li>
+</ol>
+<p>Redis 采用的是 <strong>定期删除+惰性/懒汉式删除</strong> 。</p>
+<p>但是，仅仅通过给 key 设置过期时间还是有问题的。因为还是可能存在定期删除和惰性删除漏掉了很多过期 key 的情况。这样就导致大量过期 key 堆积在内存里，然后就 Out of memory 了。</p>
+<p>怎么解决这个问题呢？答案就是：<strong>Redis 内存淘汰机制。</strong></p>
+<hr>
+<h1 id="六、Redis持久化机制"><a href="#六、Redis持久化机制" class="headerlink" title="六、Redis持久化机制"></a>六、Redis持久化机制</h1><p><strong>一种持久化方式叫快照（snapshotting，RDB），另一种方式是只追加文件（append-only file, AOF）</strong></p>
+<hr>
+<p><strong><code>RDB</code></strong></p>
+<p>Redis 可以通过创建快照来获得存储在内存里面的数据在某个时间点上的副本。Redis 创建快照之后，可以对快照进行备份，可以将快照复制到其他服务器从而创建具有相同数据的服务器副本（Redis 主从结构，主要用来提高 Redis 性能），还可以将快照留在原地以便重启服务器的时候使用。</p>
+<hr>
+<p><strong><code>AOF</code></strong></p>
+<p>开启 AOF 持久化后每执行一条会更改 Redis 中的数据的命令，Redis 就会将该命令写入到内存缓存 <code>server.aof_buf</code> 中，然后再根据 <code>appendfsync</code> 配置来决定何时将其同步到硬盘中的 AOF 文件。</p>
+<p>三种AOF方式</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs conf">appendfsync always    #每次有数据修改发生时都会写入AOF文件,这样会严重降低Redis的速度<br>appendfsync everysec  #每秒钟同步一次，显式地将多个写命令同步到硬盘<br>appendfsync no        #让操作系统决定何时进行同步<br></code></pre></td></tr></table></figure>
+
+<p>Redis 4.0 开始支持 RDB 和 AOF 的混合持久化</p>
+<h1 id="七、Redis事务"><a href="#七、Redis事务" class="headerlink" title="七、Redis事务"></a>七、Redis事务</h1><ol>
+<li>开始事务（<code>MULTI</code>）。</li>
+<li>命令入队(批量操作 Redis 的命令，先进先出（FIFO）的顺序执行)。</li>
+<li>执行事务(<code>EXEC</code>)。</li>
+</ol>
+<p><code>DISCARD</code>取消事务，</p>
+<p><code>WATCH</code>监听事务。当调用 <code>EXEC</code> 命令执行事务时，如果一个被 <code>WATCH</code> 命令监视的键被修改的话，整个事务都不会执行，直接返回失败。</p>
+<p>Redis 事务在运行错误的情况下，除了执行过程中出现错误的命令外，其他命令都能正常执行。并且，Redis 是不支持回滚（roll back）操作的。因此，<strong>Redis 事务其实是不满足原子性的（而且不满足持久性）。</strong></p>
+<p><strong>Redis 事务提供了一种将多个命令请求打包的功能。然后，再按顺序执行打包的所有命令，并且不会被中途打断。</strong></p>
+<h1 id="八、Redis生产问题"><a href="#八、Redis生产问题" class="headerlink" title="八、Redis生产问题"></a>八、Redis生产问题</h1><h2 id="8-1、缓存穿透"><a href="#8-1、缓存穿透" class="headerlink" title="8.1、缓存穿透"></a>8.1、缓存穿透</h2><p>缓存穿透说简单点就是大量请求的 key 根本不存在于缓存中，导致请求直接到了数据库上，根本没有经过缓存这一层。</p>
+<p><img src="https://img-blog.csdnimg.cn/6358650a9bf742838441d636430c90b9.png" srcset="/img/loading.gif" lazyload alt="缓存穿透情况"></p>
+<p><strong>如何解决？</strong>布隆过滤器</p>
+<p>把所有可能存在的请求的值都存放在布隆过滤器中，当用户请求过来，先判断用户发来的请求的值是否存在于布隆过滤器中。不存在的话，直接返回请求参数错误信息给客户端</p>
+<p><img src="https://javaguide.cn/assets/%E5%8A%A0%E5%85%A5%E5%B8%83%E9%9A%86%E8%BF%87%E6%BB%A4%E5%99%A8%E5%90%8E%E7%9A%84%E7%BC%93%E5%AD%98%E5%A4%84%E7%90%86%E6%B5%81%E7%A8%8B.79596186.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<h2 id="8-2、缓存雪崩"><a href="#8-2、缓存雪崩" class="headerlink" title="8.2、缓存雪崩"></a>8.2、缓存雪崩</h2><p><strong>缓存在同一时间大面积的失效，后面的请求都直接落到了数据库上，造成数据库短时间内承受大量请求。</strong></p>
+<p><strong><code>如何解决？</code></strong></p>
+<p><strong>针对 Redis 服务不可用的情况：</strong></p>
+<ol>
+<li>采用 Redis 集群，避免单机出现问题整个缓存服务都没办法使用。</li>
+<li>限流，避免同时处理大量的请求。</li>
+</ol>
+<p><strong>针对热点缓存失效的情况：</strong></p>
+<ol>
+<li>设置不同的失效时间比如随机设置缓存的失效时间。</li>
+<li>缓存永不失效</li>
+</ol>
+<h1 id="九、3种常用的缓存读写策略"><a href="#九、3种常用的缓存读写策略" class="headerlink" title="九、3种常用的缓存读写策略"></a>九、3种常用的缓存读写策略</h1><h2 id="Cache-Asbde-Pattern（旁路缓存模式）"><a href="#Cache-Asbde-Pattern（旁路缓存模式）" class="headerlink" title="Cache Asbde Pattern（旁路缓存模式）"></a>Cache Asbde Pattern（旁路缓存模式）</h2><p>比较适合读请求比较多的时候。</p>
+<p><strong>写</strong> ：</p>
+<ul>
+<li>先更新 DB。</li>
+<li>然后直接删除 cache 。</li>
+</ul>
+<p><strong>读</strong> :</p>
+<ul>
+<li>从 cache 中读取数据，读取到就直接返回</li>
+<li>cache中读取不到的话，就从 DB 中读取数据返回</li>
+<li>再把数据放到 cache 中。</li>
+</ul>
+<p><strong>缺陷1：首次请求数据一定不在 cache 的问题</strong></p>
+<p>解决办法：可以将热点数据可以提前放入cache 中。</p>
+<p><strong>缺陷2：写操作比较频繁的话导致cache中的数据会被频繁被删除，这样会影响缓存命中率 。</strong></p>
+<p>解决办法：</p>
+<ul>
+<li>数据库和缓存数据强一致场景 ：更新DB的时候同样更新cache，不过我们需要加一个锁/分布式锁来保证更新cache的时候不存在线程安全问题。</li>
+<li>可以短暂地允许数据库和缓存数据不一致的场景 ：更新DB的时候同样更新cache，但是给缓存加一个比较短的过期时间，这样的话就可以保证即使数据不一致的话影响也比较小。</li>
+</ul>
+<h2 id="Read-Write-Through-Pattern（读写穿透）"><a href="#Read-Write-Through-Pattern（读写穿透）" class="headerlink" title="Read/Write Through Pattern（读写穿透）"></a>Read/Write Through Pattern（读写穿透）</h2><p><strong>写（Write Through）：</strong></p>
+<ul>
+<li>先查 cache，cache 中不存在，直接更新 DB。</li>
+<li>cache 中存在，则先更新 cache，然后 cache 服务自己更新 DB（<strong>同步更新 cache 和 DB</strong>）。</li>
+</ul>
+<p><strong>读(Read Through)：</strong></p>
+<ul>
+<li>从 cache 中读取数据，读取到就直接返回 。</li>
+<li>读取不到的话，先从 DB 加载，写入到 cache 后返回响应。</li>
+</ul>
+<h2 id="Write-Behind-Pattern（异步缓存写入）"><a href="#Write-Behind-Pattern（异步缓存写入）" class="headerlink" title="Write Behind Pattern（异步缓存写入）"></a>Write Behind Pattern（异步缓存写入）</h2><p>读写穿透的异步模式</p>
+<h1 id="十、Redis分布式锁"><a href="#十、Redis分布式锁" class="headerlink" title="十、Redis分布式锁"></a>十、Redis分布式锁</h1><p>方案一：SETNX 设置锁  <strong>会造成死锁</strong></p>
+<p>方案二：设置锁之后设置锁的过期时间 <strong>但是在设置锁之后 设置过期时间之间如果报错过期时间就会设置不成功</strong></p>
+<p>方案三：设置锁与设置过期时间一起设置 保证原子性 <strong>但是A在过期时间之后没完成任务然后B进入的时候 在B执行期间 A完成任务就会将锁释放</strong></p>
+<p>方案四：设置锁与过期时间以及锁的编号一起设置 当删除锁的时候查询编号 如果一致，则认为是自己设置的锁，可以进行主动删除。  <strong>但是获取锁以及删除锁不是原子性的。</strong></p>
+<p>方案五：将查询锁和删除锁这两步作为原子指令 也就是使用脚本锁删。</p>
+<p>方案六：看门狗机制。我们不知道锁什么时候过期，所以利用看门狗机制，没过10s看门狗就延长30s的过期时间，当服务器G了以后，10s以后看门狗不延长30s，那么锁就会自动删除。</p>
+<h1 id="十一、缓存和数据库一致问题"><a href="#十一、缓存和数据库一致问题" class="headerlink" title="十一、缓存和数据库一致问题"></a>十一、缓存和数据库一致问题</h1><p><strong>采用延迟双删来解决问题</strong>：先进行缓存清除，再执行update，最后（延迟N秒）再执行缓存清除。</p>
+<p>1、想要提高应用的性能，可以引入「缓存」来解决</p>
+<p>2、引入缓存后，需要考虑缓存和数据库一致性问题，可选的方案有：「更新数据库 + 更新缓存」、「更新数据库 + 删除缓存」</p>
+<p>3、更新数据库 + 更新缓存方案，在「并发」场景下无法保证缓存和数据一致性，且存在「缓存资源浪费」和「机器性能浪费」的情况发生</p>
+<p>4、在更新数据库 + 删除缓存的方案中，「先删除缓存，再更新数据库」在「并发」场景下依旧有数据不一致问题，解决方案是「延迟双删」，但这个延迟时间很难评估，所以推荐用「先更新数据库，再删除缓存」的方案</p>
+<p>5、在「先更新数据库，再删除缓存」方案下，为了保证两步都成功执行，需配合「消息队列」或「订阅变更日志」的方案来做，本质是通过「重试」的方式保证数据一致性</p>
+<p>6、在「先更新数据库，再删除缓存」方案下，「读写分离 + 主从库延迟」也会导致缓存和数据库不一致，缓解此问题的方案是「延迟双删」，凭借经验发送「延迟消息」到队列中，延迟删除缓存，同时也要控制主从库延迟，尽可能降低不一致发生的概率</p>
+
               
             </div>
             <hr/>
             <div>
               <div class="post-metas my-3">
   
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E9%9D%A2%E8%AF%95/" class="category-chain-item">面试</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E9%9D%A2%E8%AF%95/">#面试</a>
+      
+    </div>
   
 </div>
 
@@ -364,6 +547,12 @@
                 <div class="post-prevnext my-3">
                   <article class="post-prev col-6">
                     
+                    
+                      <a href="/2022/07/19/Git/" title="Git">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Git</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
                     
                   </article>
                   <article class="post-next col-6">
