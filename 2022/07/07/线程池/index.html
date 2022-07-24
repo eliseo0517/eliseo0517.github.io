@@ -27,7 +27,7 @@
 <meta property="og:image" content="https://eliseo.top/2022/07/07/%E7%BA%BF%E7%A8%8B%E6%B1%A0/image-20220707162623783.png">
 <meta property="og:image" content="https://javaguide.cn/assets/threadpoolexecutor%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0.d54a5992.png">
 <meta property="og:image" content="https://javaguide.cn/assets/Executors%E5%B7%A5%E5%85%B7%E7%B1%BB.4b0cbd16.png">
-<meta property="og:image" content="https://guide-blog-images.oss-cn-shenzhen.aliyuncs.com/javaguide/%E5%9B%BE%E8%A7%A3%E7%BA%BF%E7%A8%8B%E6%B1%A0%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86.png">
+<meta property="og:image" content="https://eliseo.top/2022/07/07/%E7%BA%BF%E7%A8%8B%E6%B1%A0/image-20220724215903960.png">
 <meta property="og:image" content="https://eliseo.top/2022/07/07/%E7%BA%BF%E7%A8%8B%E6%B1%A0/image-20220708084630822.png">
 <meta property="og:image" content="https://eliseo.top/2022/07/07/%E7%BA%BF%E7%A8%8B%E6%B1%A0/image-20220708090951289.png">
 <meta property="og:image" content="https://eliseo.top/2022/07/07/%E7%BA%BF%E7%A8%8B%E6%B1%A0/image-20220708091916023.png">
@@ -35,7 +35,7 @@
 <meta property="og:image" content="https://javaguide.cn/assets/ScheduledThreadPoolExecutor%E6%89%A7%E8%A1%8C%E5%91%A8%E6%9C%9F%E4%BB%BB%E5%8A%A1%E6%AD%A5%E9%AA%A4.5bd57dd0.png">
 <meta property="og:image" content="https://javaguide.cn/assets/%E7%BA%BF%E7%A8%8B%E6%B1%A0%E4%BD%BF%E7%94%A8%E4%B8%8D%E5%BD%93%E5%AF%BC%E8%87%B4%E6%AD%BB%E9%94%81.8ea83cdb.png">
 <meta property="article:published_time" content="2022-07-07T08:12:23.000Z">
-<meta property="article:modified_time" content="2022-07-10T13:56:31.959Z">
+<meta property="article:modified_time" content="2022-07-24T13:59:59.765Z">
 <meta property="article:author" content="Mr.Wang">
 <meta property="article:tag" content="面试">
 <meta name="twitter:card" content="summary_large_image">
@@ -314,7 +314,7 @@
                 
                   
                     <!-- compatible with older versions-->
-                    本文最后更新于：14 天前
+                    本文最后更新于：3 分钟前
                   
                 
               </p>
@@ -382,7 +382,7 @@
 <p>对应 Executors 工具类中的方法如图所示：</p>
 <p><img src="https://javaguide.cn/assets/Executors%E5%B7%A5%E5%85%B7%E7%B1%BB.4b0cbd16.png" srcset="/img/loading.gif" lazyload alt="通过Executor 框架的工具类Executors来实现"></p>
 <h1 id="四、ThreadPoolExecutor-使用-分析"><a href="#四、ThreadPoolExecutor-使用-分析" class="headerlink" title="四、ThreadPoolExecutor 使用+分析"></a>四、ThreadPoolExecutor 使用+分析</h1><h2 id="4-1、线程池原理分析"><a href="#4-1、线程池原理分析" class="headerlink" title="4.1、线程池原理分析"></a>4.1、线程池原理分析</h2><p><strong><code>excute</code>方法(提交一个任务到线程池中去)详解：</strong></p>
-<p><img src="https://guide-blog-images.oss-cn-shenzhen.aliyuncs.com/javaguide/%E5%9B%BE%E8%A7%A3%E7%BA%BF%E7%A8%8B%E6%B1%A0%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86.png" srcset="/img/loading.gif" lazyload alt="图解线程池实现原理"></p>
+<p><img src="/2022/07/07/%E7%BA%BF%E7%A8%8B%E6%B1%A0/image-20220724215903960.png" srcset="/img/loading.gif" lazyload alt="图解线程池实现原理"></p>
 <p><strong><code>addWorker</code> 这个方法主要用来创建新的工作线程，如果返回 true 说明创建和启动工作线程成功，否则的话返回的就是 false。</strong></p>
 <h2 id="4-2、常见对比"><a href="#4-2、常见对比" class="headerlink" title="4.2、常见对比"></a>4.2、常见对比</h2><h3 id="Runnable-vs-Callable"><a href="#Runnable-vs-Callable" class="headerlink" title="Runnable vs Callable"></a><code>Runnable</code> vs <code>Callable</code></h3><p><strong><code>Runnable</code>接口</strong>不会返回结果或抛出异常，但是 <strong><code>Callable</code>接口</strong>可以。</p>
 <h3 id="execute-vs-submit"><a href="#execute-vs-submit" class="headerlink" title="execute() vs submit()"></a><code>execute()</code> vs <code>submit()</code></h3><p><code>execute()</code>用于不会提交返回值的任务</p>
