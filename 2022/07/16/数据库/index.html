@@ -18,32 +18,32 @@
   
     <meta name="description" content="一、基础1.1、数据库范式1NF(第一范式)每一列的属性都不可再分，保证每一列的原子性 **2NF(第二范式)2NF 在 1NF 的基础之上，还要满足数据表里的每一条数据记录都是可唯一标识的，并且所有的非主键字段都要完全依赖于主键。(对于一个数据，如果主键是联合主键，那么就要满足如果要确定非主键字段那么就要同时知道所有主键的信息)**。不完全依赖就将这一部分分离出来形成一个新实体。  1NF是告诉">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Eliseo的小屋">
+<meta property="og:title" content="数据库">
 <meta property="og:url" content="https://eliseo.top/2022/07/16/%E6%95%B0%E6%8D%AE%E5%BA%93/index.html">
 <meta property="og:site_name" content="Eliseo的小屋">
 <meta property="og:description" content="一、基础1.1、数据库范式1NF(第一范式)每一列的属性都不可再分，保证每一列的原子性 **2NF(第二范式)2NF 在 1NF 的基础之上，还要满足数据表里的每一条数据记录都是可唯一标识的，并且所有的非主键字段都要完全依赖于主键。(对于一个数据，如果主键是联合主键，那么就要满足如果要确定非主键字段那么就要同时知道所有主键的信息)**。不完全依赖就将这一部分分离出来形成一个新实体。  1NF是告诉">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://guide-blog-images.oss-cn-shenzhen.aliyuncs.com/github/javaguide/mysql/%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BA%8B%E5%8A%A1%E7%A4%BA%E6%84%8F%E5%9B%BE.png">
-<meta property="og:image" content="https://guide-blog-images.oss-cn-shenzhen.aliyuncs.com/github/javaguide/mysql/ACID.png">
-<meta property="og:image" content="https://guide-blog-images.oss-cn-shenzhen.aliyuncs.com/github/javaguide/mysql/AID-%3EC.png">
+<meta property="og:image" content="https://eliseo.top/2022/07/16/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20220724215205475.png">
+<meta property="og:image" content="https://eliseo.top/2022/07/16/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20220724215217274.png">
+<meta property="og:image" content="https://eliseo.top/2022/07/16/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20220724215227923.png">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20201216230427546.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDM5ODY4Nw==,size_16,color_FFFFFF,t_70#pic_center">
-<meta property="og:image" content="https://guide-blog-images.oss-cn-shenzhen.aliyuncs.com/github/javaguide/open-source-project/no-cluster-index.png">
-<meta property="og:image" content="https://guide-blog-images.oss-cn-shenzhen.aliyuncs.com/github/javaguide/02.png">
+<meta property="og:image" content="https://eliseo.top/2022/07/16/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20220724215309355.png">
+<meta property="og:image" content="https://eliseo.top/2022/07/16/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20220724215323923.png">
 <meta property="og:image" content="https://javaguide.cn/assets/trans_visible.048192c5.png">
 <meta property="og:image" content="https://eliseo.top/2022/07/16/%E6%95%B0%E6%8D%AE%E5%BA%93/E%60%60M%7B%5BHMESZ2J5R79K2V_7N.png">
-<meta property="og:image" content="https://guide-blog-images.oss-cn-shenzhen.aliyuncs.com/javaguide/13526879-3037b144ed09eb88.png">
+<meta property="og:image" content="https://eliseo.top/2022/07/16/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20220724215337684.png">
 <meta property="article:published_time" content="2022-07-16T01:54:51.000Z">
-<meta property="article:modified_time" content="2022-07-18T13:59:34.640Z">
+<meta property="article:modified_time" content="2022-07-24T13:53:38.323Z">
 <meta property="article:author" content="Mr.Wang">
 <meta property="article:tag" content="面试">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://guide-blog-images.oss-cn-shenzhen.aliyuncs.com/github/javaguide/mysql/%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BA%8B%E5%8A%A1%E7%A4%BA%E6%84%8F%E5%9B%BE.png">
+<meta name="twitter:image" content="https://eliseo.top/2022/07/16/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20220724215205475.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>Eliseo的小屋</title>
+  <title>数据库 - Eliseo的小屋</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -219,7 +219,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text=""></span>
+            <span id="subtitle" data-typed-text="数据库"></span>
           
         </div>
 
@@ -306,13 +306,13 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none"></h1>
+            <h1 style="display: none">数据库</h1>
             
               <p class="note note-info">
                 
                   
                     <!-- compatible with older versions-->
-                    本文最后更新于：5 天前
+                    本文最后更新于：1 分钟前
                   
                 
               </p>
@@ -369,9 +369,9 @@
 <p>数据库事务</p>
 </blockquote>
 <p><strong>要么全部执行成功,要么全部不执行</strong> </p>
-<p><img src="https://guide-blog-images.oss-cn-shenzhen.aliyuncs.com/github/javaguide/mysql/%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BA%8B%E5%8A%A1%E7%A4%BA%E6%84%8F%E5%9B%BE.png" srcset="/img/loading.gif" lazyload alt="数据库事务示意图"></p>
+<p><img src="/2022/07/16/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20220724215205475.png" srcset="/img/loading.gif" lazyload alt="数据库事务示意图"></p>
 <p>另外，关系型数据库（例如：<code>MySQL</code>、<code>SQL Server</code>、<code>Oracle</code> 等）事务都有 <strong>ACID</strong> 特性：</p>
-<p><img src="https://guide-blog-images.oss-cn-shenzhen.aliyuncs.com/github/javaguide/mysql/ACID.png" srcset="/img/loading.gif" lazyload alt="ACID"></p>
+<p><img src="/2022/07/16/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20220724215217274.png" srcset="/img/loading.gif" lazyload alt="ACID"></p>
 <ol>
 <li><strong>原子性</strong>（<code>Atomicity</code>） ： 事务是最小的执行单位，不允许分割。事务的原子性确保动作要么全部完成，要么完全不起作用；</li>
 <li><strong>一致性</strong>（<code>Consistency</code>）： 执行事务前后，数据保持一致，例如转账业务中，无论事务是否成功，转账者和收款人的总额应该是不变的；</li>
@@ -379,7 +379,7 @@
 <li><strong>持久性</strong>（<code>Durabilily</code>）： 一个事务被提交之后。它对数据库中数据的改变是持久的，即使数据库发生故障也不应该对其有任何影响。</li>
 </ol>
 <p><strong>只有保证了事务的持久性、原子性、隔离性之后，一致性才能得到保障。也就是说 A、I、D 是手段，C 是目的！</strong></p>
-<p><img src="https://guide-blog-images.oss-cn-shenzhen.aliyuncs.com/github/javaguide/mysql/AID-%3EC.png" srcset="/img/loading.gif" lazyload alt="AID-&gt;C"></p>
+<p><img src="/2022/07/16/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20220724215227923.png" srcset="/img/loading.gif" lazyload alt="AID -&gt; C"></p>
 <h3 id="2-3-1、并发事务带来的问题"><a href="#2-3-1、并发事务带来的问题" class="headerlink" title="2.3.1、并发事务带来的问题"></a>2.3.1、并发事务带来的问题</h3><ul>
 <li><strong>脏读（Dirty read）:</strong> 当一个事务正在访问数据并且对数据进行了修改，而这种修改还没有提交到数据库中，这时另外一个事务也访问了这个数据，然后使用了这个数据。因为这个数据是还没有提交的数据，那么另外一个事务读到的这个数据是“脏数据”，依据“脏数据”所做的操作可能是不正确的。</li>
 <li><strong>丢失修改（Lost to modify）:</strong> 指在一个事务读取一个数据时，另外一个事务也访问了该数据，那么在第一个事务中修改了这个数据后，第二个事务也修改了这个数据。这样第一个事务内的修改结果就被丢失，因此称为丢失修改。 例如：事务 1 读取某表中的数据 A=20，事务 2 也读取 A=20，事务 1 修改 A=A-1，事务 2 也修改 A=A-1，最终结果 A=19，事务 1 的修改被丢失。</li>
@@ -587,7 +587,7 @@
 <li><strong>全文索引(Full Text)</strong> ：全文索引主要是为了检索大文本数据中的关键字的信息，是目前搜索引擎数据库使用的一种技术。Mysql5.6 之前只有 MYISAM 引擎支持全文索引，5.6 之后 InnoDB 也支持了全文索引。</li>
 </ol>
 <p>二级索引:</p>
-<p><img src="https://guide-blog-images.oss-cn-shenzhen.aliyuncs.com/github/javaguide/open-source-project/no-cluster-index.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p><img src="/2022/07/16/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20220724215309355.png" srcset="/img/loading.gif" lazyload></p>
 <hr>
 <h3 id="2-6-4、聚集索引与非聚集索引"><a href="#2-6-4、聚集索引与非聚集索引" class="headerlink" title="2.6.4、聚集索引与非聚集索引"></a>2.6.4、聚集索引与非聚集索引</h3><p><strong><code>聚集索引</code><strong>：</strong>聚集索引即索引结构和数据一起存放的索引，找到索引也就找到了数据。主键索引属于聚集索引。</strong></p>
 <p>聚集索引查询速度非常快，定位到了索引的位置也就直接定位到了数据的值。</p>
@@ -640,7 +640,7 @@
 
 <h3 id="2-6-9、什么情况下不会用到索引"><a href="#2-6-9、什么情况下不会用到索引" class="headerlink" title="2.6.9、什么情况下不会用到索引"></a>2.6.9、什么情况下不会用到索引</h3><p>如果条件中有or，即使其中有部分条件带索引也不会使用(这也是为什么尽量少用or的原因)<br>对于多列索引，不是使用的第一部分，则不会使用索引<br>like查询是以%开头<br>存在索引列的数据类型隐形转换，则用不上索引，比如列类型是字符串，那一定要在条件中将数据使用引号引用起来，否则不使用索引<br>where 子句里对索引列上有数学运算，用不上索引<br>where 子句里对有索引列使用函数，用不上索引<br>如果MySQL估计使用全表扫描要比使用索引快,则不使用索引</p>
 <h2 id="2-7、MySQL三大日志-binlog、redo-log和undo-log"><a href="#2-7、MySQL三大日志-binlog、redo-log和undo-log" class="headerlink" title="2.7、MySQL三大日志(binlog、redo log和undo log)"></a>2.7、MySQL三大日志(binlog、redo log和undo log)</h2><h3 id="2-7-1、redo-log-重做日志"><a href="#2-7-1、redo-log-重做日志" class="headerlink" title="2.7.1、redo log(重做日志)"></a>2.7.1、redo log(重做日志)</h3><p>是<code>InnoDB</code>存储引擎独有的，它让<code>MySQL</code>拥有了崩溃恢复能力。</p>
-<p><img src="https://guide-blog-images.oss-cn-shenzhen.aliyuncs.com/github/javaguide/02.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p><img src="/2022/07/16/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20220724215323923.png" srcset="/img/loading.gif" lazyload></p>
 <h3 id="2-7-2、bin-log"><a href="#2-7-2、bin-log" class="headerlink" title="2.7.2、bin log"></a>2.7.2、bin log</h3><p>负责记录数据库的操作，只要表数据发生更新，那么就会产生日志。</p>
 <p>主要用来 集群化管理，主要用来 <strong>主从复制</strong> 和 <strong>数据恢复</strong> </p>
 <p><code>binlog</code> 日志有三种格式，可以通过<code>binlog_format</code>参数指定。</p>
@@ -690,7 +690,7 @@
 <p>在快照读的情况下，RR 隔离级别只会在事务开启后的第一次查询生成 <code>Read View</code> ，并使用至事务提交。所以在生成 <code>Read View</code> 之后其它事务所做的更新、插入记录版本对当前事务并不可见，实现了可重复读和防止快照读下的 “幻读”</p>
 <p><strong>2、执行 select…for update/lock in share mode、insert、update、delete 等当前读</strong></p>
 <p>在当前读下，读取的都是最新的数据，如果其它事务有插入新的记录，并且刚好在当前事务查询范围内，就会产生幻读！<code>InnoDB</code> 使用 [Next-key Lockopen in new window]来防止这种情况。当执行当前读时，会锁定读取到的记录的同时，锁定它们的间隙，防止其它事务在查询范围内插入数据。只要我不让你插入，就不会发生幻读</p>
-<h2 id="2-9、Mysql架构"><a href="#2-9、Mysql架构" class="headerlink" title="2.9、Mysql架构"></a>2.9、Mysql架构</h2><p><img src="https://guide-blog-images.oss-cn-shenzhen.aliyuncs.com/javaguide/13526879-3037b144ed09eb88.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<h2 id="2-9、Mysql架构"><a href="#2-9、Mysql架构" class="headerlink" title="2.9、Mysql架构"></a>2.9、Mysql架构</h2><p><img src="/2022/07/16/%E6%95%B0%E6%8D%AE%E5%BA%93/image-20220724215337684.png" srcset="/img/loading.gif" lazyload alt="image-20220724215337684"></p>
 <ul>
 <li><strong>连接器：</strong> 身份认证和权限相关(登录 MySQL 的时候)。</li>
 <li><strong>查询缓存：</strong> 执行查询语句的时候，会先查询缓存（MySQL 8.0 版本后移除，因为这个功能不太实用）。</li>
@@ -762,7 +762,7 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div></div>
+      <div>数据库</div>
       <div>https://eliseo.top/2022/07/16/数据库/</div>
     </div>
     <div class="license-meta">
