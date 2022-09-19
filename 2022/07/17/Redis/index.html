@@ -23,16 +23,16 @@
 <meta property="og:site_name" content="Eliseo的小屋">
 <meta property="og:description" content="一、缓存数据的处理流程是怎样的？ 简单来说就是:  如果用户请求的数据在缓存中就直接返回。 缓存中不存在的话就看数据库中是否存在。 数据库中存在的话就更新缓存中的数据。 数据库中不存在的话就返回空数据。  二、为什么要用 Redis&#x2F;为什么要用缓存？简单，来说使用缓存主要是为了提升用户体验以及应对更多的用户。 高性能 ：当用户第一次访问数据的时候会从磁盘中读取，会很慢，如果说，用户访问的数据属于高">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://javaguide.cn/assets/cache-process.c27b9c06.png">
-<meta property="og:image" content="https://javaguide.cn/assets/redis-list.e79ad4dd.png">
+<meta property="og:image" content="https://eliseo.top/2022/07/17/Redis/image-20220919100350056.png">
+<meta property="og:image" content="https://eliseo.top/2022/07/17/Redis/image-20220919100546069.png">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/6358650a9bf742838441d636430c90b9.png">
-<meta property="og:image" content="https://javaguide.cn/assets/%E5%8A%A0%E5%85%A5%E5%B8%83%E9%9A%86%E8%BF%87%E6%BB%A4%E5%99%A8%E5%90%8E%E7%9A%84%E7%BC%93%E5%AD%98%E5%A4%84%E7%90%86%E6%B5%81%E7%A8%8B.79596186.png">
+<meta property="og:image" content="https://eliseo.top/2022/07/17/Redis/image-20220919100639615.png">
 <meta property="article:published_time" content="2022-07-17T04:01:39.000Z">
-<meta property="article:modified_time" content="2022-07-18T14:35:27.819Z">
+<meta property="article:modified_time" content="2022-09-19T02:06:50.087Z">
 <meta property="article:author" content="Mr.Wang">
 <meta property="article:tag" content="面试">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://javaguide.cn/assets/cache-process.c27b9c06.png">
+<meta name="twitter:image" content="https://eliseo.top/2022/07/17/Redis/image-20220919100350056.png">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
@@ -307,14 +307,14 @@
                 
                   
                     <!-- compatible with older versions-->
-                    本文最后更新于：2 个月前
+                    本文最后更新于：13 小时前
                   
                 
               </p>
             
             <div class="markdown-body">
               
-              <h1 id="一、缓存数据的处理流程是怎样的？"><a href="#一、缓存数据的处理流程是怎样的？" class="headerlink" title="一、缓存数据的处理流程是怎样的？"></a>一、缓存数据的处理流程是怎样的？</h1><p><img src="https://javaguide.cn/assets/cache-process.c27b9c06.png" srcset="/img/loading.gif" lazyload alt="正常缓存处理流程"></p>
+              <h1 id="一、缓存数据的处理流程是怎样的？"><a href="#一、缓存数据的处理流程是怎样的？" class="headerlink" title="一、缓存数据的处理流程是怎样的？"></a>一、缓存数据的处理流程是怎样的？</h1><p><img src="/2022/07/17/Redis/image-20220919100350056.png" srcset="/img/loading.gif" lazyload alt="处理流程"></p>
 <p>简单来说就是:</p>
 <ol>
 <li>如果用户请求的数据在缓存中就直接返回。</li>
@@ -337,7 +337,7 @@
 <li><strong>常用命令:</strong> <code>rpush(向list右边添加元素),lpop(移除list中的左边元素),lpush,rpop,lrange(查看对应下标的list列表 0 -1表示查看所有),llen(查看链表长度)</code> 等。</li>
 <li><strong>应用场景:</strong> 发布与订阅或者说消息队列、慢查询。</li>
 </ol>
-<p><img src="https://javaguide.cn/assets/redis-list.e79ad4dd.png" srcset="/img/loading.gif" lazyload alt="redis list"></p>
+<p><img src="/2022/07/17/Redis/image-20220919100546069.png" srcset="/img/loading.gif" lazyload alt="redis-list"></p>
 <hr>
 <p><strong><code>hash</code></strong></p>
 <ol>
@@ -404,7 +404,7 @@
 <p><img src="https://img-blog.csdnimg.cn/6358650a9bf742838441d636430c90b9.png" srcset="/img/loading.gif" lazyload alt="缓存穿透情况"></p>
 <p><strong>如何解决？</strong>布隆过滤器</p>
 <p>把所有可能存在的请求的值都存放在布隆过滤器中，当用户请求过来，先判断用户发来的请求的值是否存在于布隆过滤器中。不存在的话，直接返回请求参数错误信息给客户端</p>
-<p><img src="https://javaguide.cn/assets/%E5%8A%A0%E5%85%A5%E5%B8%83%E9%9A%86%E8%BF%87%E6%BB%A4%E5%99%A8%E5%90%8E%E7%9A%84%E7%BC%93%E5%AD%98%E5%A4%84%E7%90%86%E6%B5%81%E7%A8%8B.79596186.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p><img src="/2022/07/17/Redis/image-20220919100639615.png" srcset="/img/loading.gif" lazyload alt="布隆过滤器"></p>
 <h2 id="8-2、缓存雪崩"><a href="#8-2、缓存雪崩" class="headerlink" title="8.2、缓存雪崩"></a>8.2、缓存雪崩</h2><p><strong>缓存在同一时间大面积的失效，后面的请求都直接落到了数据库上，造成数据库短时间内承受大量请求。</strong></p>
 <p><strong><code>如何解决？</code></strong></p>
 <p><strong>针对 Redis 服务不可用的情况：</strong></p>

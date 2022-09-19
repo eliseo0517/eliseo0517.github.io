@@ -24,8 +24,9 @@
 <meta property="og:description" content="一、OSI和TCP&#x2F;IP网络分层1.1、OSI七层协议 有些功能在多个层中重复出现。 1.2、TCP&#x2F;IP 四层模型 应用层 传输层 网络层 网络接口层    应用层 位于传输层之上，主要提供两个终端设备上的应用程序之间信息交换的服务，它定义了信息交换的格式，消息会交给下一层传输层来传输。  传输层 传输层的主要任务就是负责向两台终端设备进程之间的通信提供通用的数据传输服务。      运输层主要">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://eliseo.top/2022/07/12/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20220724215655470.png">
-<meta property="og:image" content="https://javaguide.cn/assets/TCP-IP-4-model.a534f46f.png">
+<meta property="og:image" content="https://eliseo.top/2022/07/12/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20220919100919057.png">
 <meta property="og:image" content="https://javaguide.cn/assets/transport-layer.583ce71a.png">
+<meta property="og:image" content="https://eliseo.top/2022/07/12/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20220919100933620.png">
 <meta property="og:image" content="https://eliseo.top/2022/07/12/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20220724215733002.png">
 <meta property="og:image" content="https://javaguide.cn/assets/symmetric-encryption.20454cea.png">
 <meta property="og:image" content="https://javaguide.cn/assets/public-key-transmission.a8809fd8.png">
@@ -37,7 +38,7 @@
 <meta property="og:image" content="https://eliseo.top/2022/07/12/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20220724215756378.png">
 <meta property="og:image" content="https://eliseo.top/2022/07/12/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20220724215807607.png">
 <meta property="article:published_time" content="2022-07-12T01:33:38.000Z">
-<meta property="article:modified_time" content="2022-07-24T13:58:12.032Z">
+<meta property="article:modified_time" content="2022-09-19T02:10:41.816Z">
 <meta property="article:author" content="Mr.Wang">
 <meta property="article:tag" content="面试">
 <meta name="twitter:card" content="summary_large_image">
@@ -316,7 +317,7 @@
                 
                   
                     <!-- compatible with older versions-->
-                    本文最后更新于：2 个月前
+                    本文最后更新于：13 小时前
                   
                 
               </p>
@@ -331,7 +332,7 @@
 <li>网络层</li>
 <li>网络接口层</li>
 </ol>
-<p><img src="https://javaguide.cn/assets/TCP-IP-4-model.a534f46f.png" srcset="/img/loading.gif" lazyload alt="TCP-IP-4-model"></p>
+<p><img src="/2022/07/12/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20220919100919057.png" srcset="/img/loading.gif" lazyload alt="TCP/IP 四层模型"></p>
 <hr>
 <p><strong><code>应用层</code></strong></p>
 <p><strong>位于传输层之上，主要提供两个终端设备上的应用程序之间信息交换的服务，它定义了信息交换的格式，消息会交给下一层传输层来传输。</strong></p>
@@ -343,7 +344,8 @@
 <li><strong>传输控制协议 TCP</strong>（Transmisson Control Protocol）–提供<strong>面向连接</strong>的，<strong>可靠的</strong>数据传输服务。</li>
 <li><strong>用户数据协议 UDP</strong>（User Datagram Protocol）–提供<strong>无连接</strong>的，尽最大努力的数据传输服务（<strong>不保证数据传输的可靠性</strong>）。</li>
 </ol>
-<p><img src="https://javaguide.cn/assets/transport-layer.583ce71a.png" srcset="/img/loading.gif" lazyload alt="transport-layer"></p>
+<p><img src="https://javaguide.cn/assets/transport-layer.583ce71a.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="/2022/07/12/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/image-20220919100933620.png" srcset="/img/loading.gif" lazyload alt="transport-layer"></p>
 <hr>
 <p><strong><code>网络层（网际层/IP层）</code></strong></p>
 <p><strong>网络层负责为分组交换网上的不同主机提供通信服务，网络层的还有一个任务就是选择合适的路由，使源主机运输层所传下来的分组，能通过网络层中的路由器找到目的主机。</strong></p>
@@ -421,7 +423,7 @@
 <p>有必要说明的是，HTTP/1.0仍提供了长连接选项，即在请求头中加入<code>Connection: Keep-alive</code>。同样的，在HTTP/1.1中，如果不希望使用长连接选项，也可以在请求头中加入<code>Connection: close</code>，这样会通知服务器端：“我不需要长连接，连接成功后即可关闭”。</p>
 <p><strong>HTTP 协议的长连接和短连接，实质上是 TCP 协议的长连接和短连接。</strong></p>
 <p><strong>实现长连接需要客户端和服务端都支持长连接。</strong></p>
-<h2 id="3-3、Host头处理"><a href="#3-3、Host头处理" class="headerlink" title="3.3、Host头处理"></a>3.3、Host头处理</h2><p>域名系统（DNS）允许多个主机名绑定到同一个IP地址上，但是HTTP/1.0并没有考虑这个问题，假设我们有一个资源URL是<a target="_blank" rel="noopener" href="http://example1.org/home.html%EF%BC%8CHTTP/1.0%E7%9A%84%E8%AF%B7%E6%B1%82%E6%8A%A5%E6%96%87%E4%B8%AD%EF%BC%8C%E5%B0%86%E4%BC%9A%E8%AF%B7%E6%B1%82%E7%9A%84%E6%98%AF%60GET">http://example1.org/home.html，HTTP/1.0的请求报文中，将会请求的是`GET</a> /home.html HTTP/1.0`.也就是不会加入主机名。这样的报文送到服务器端，服务器是理解不了客户端想请求的真正网址。</p>
+<h2 id="3-3、Host头处理"><a href="#3-3、Host头处理" class="headerlink" title="3.3、Host头处理"></a>3.3、Host头处理</h2><p>域名系统（DNS）允许多个主机名绑定到同一个IP地址上，但是HTTP/1.0并没有考虑这个问题，假设我们有一个资源URL是   <a target="_blank" rel="noopener" href="http://example1.org/home.html%EF%BC%8C">http://example1.org/home.html，</a>  HTTP/1.0的请求报文中，将会请求的是 <code>GET /home.html HTTP/1.0</code>.也就是不会加入主机名。这样的报文送到服务器端，服务器是理解不了客户端想请求的真正网址。</p>
 <p>因此，HTTP/1.1在请求头中加入了<code>Host</code>字段。加入<code>Host</code>字段的报文头部将会是:</p>
 <figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs text">GET /home.html HTTP/1.1<br>Host: example1.org<br></code></pre></td></tr></table></figure>
 
