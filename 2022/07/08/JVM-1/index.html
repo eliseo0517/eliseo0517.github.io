@@ -56,7 +56,7 @@
 <meta property="og:image" content="http://www.eliseo.top/2022/05/08/JVM/image-20220511215809705.png">
 <meta property="og:image" content="https://eliseo.top/2022/07/08/JVM-1/image-20220724220251452.png">
 <meta property="article:published_time" content="2022-07-08T02:33:45.000Z">
-<meta property="article:modified_time" content="2022-09-19T14:56:27.640Z">
+<meta property="article:modified_time" content="2022-09-27T01:09:09.408Z">
 <meta property="article:author" content="Mr.Wang">
 <meta property="article:tag" content="面试">
 <meta name="twitter:card" content="summary_large_image">
@@ -335,7 +335,7 @@
                 
                   
                     <!-- compatible with older versions-->
-                    本文最后更新于：4 天前
+                    本文最后更新于：14 天前
                   
                 
               </p>
@@ -374,7 +374,7 @@
 <li>新生区又被分为eden(伊甸)区和Survivor(幸存者)区 幸存者区又分为幸存者1区(from区)和幸存者2区(to区)</li>
 </ul>
 </li>
-<li>Java8及之后堆内存<strong>逻辑上</strong>分为三部分:新生区+养老区+<strong>元空间</strong></li>
+<li>Java8及之后堆内存<strong>逻辑上</strong>分为三部分:新生区+养老区+<strong>元空间</strong>(存储类和类加载器的元数据)</li>
 <li>新生区&lt;=&gt;新生代&lt;=&gt;年轻代 养老区&lt;=&gt;老年区&lt;=&gt;老年代 永久区&lt;=&gt;永久代</li>
 <li>堆大小=新生区+养老区，元空间或者永久区有他自己的大小</li>
 <li><strong>在JDK1.8版本废弃了永久代，替代的是元空间（MetaSpace），元空间与永久代上类似，都是方法区的实现，他们最大区别是：元空间并不在JVM中，而是使用本地内存。</strong></li>
