@@ -38,7 +38,7 @@
 <meta property="og:image" content="https://eliseo.top/2022/09/07/%E9%9D%A2%E8%AF%95%E8%A1%A5%E5%85%85/image-20221013221726735.png">
 <meta property="og:image" content="https://eliseo.top/2022/09/07/%E9%9D%A2%E8%AF%95%E8%A1%A5%E5%85%85/image-20221023225904885.png">
 <meta property="article:published_time" content="2022-09-07T02:33:00.000Z">
-<meta property="article:modified_time" content="2022-10-23T14:59:10.094Z">
+<meta property="article:modified_time" content="2022-10-24T14:11:02.044Z">
 <meta property="article:author" content="Mr.Wang">
 <meta property="article:tag" content="面试">
 <meta name="twitter:card" content="summary_large_image">
@@ -253,7 +253,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          6.2k 字
+          7.2k 字
         
       </span>
     
@@ -265,7 +265,7 @@
         
         
           <!-- compatible with older versions-->
-          53 分钟
+          61 分钟
         
       </span>
     
@@ -317,7 +317,7 @@
                 
                   
                     <!-- compatible with older versions-->
-                    本文最后更新于：1 分钟前
+                    本文最后更新于：1 小时前
                   
                 
               </p>
@@ -473,6 +473,8 @@
 <p>头部是一个描述JWT元数据的JSON对象；负载是一个JSON对象，里面包含着需要传递的数据；签名哈希时通过指定的算法生成hash，保证数据的保密性</p>
 <h1 id="vector和arraylist的区别"><a href="#vector和arraylist的区别" class="headerlink" title="vector和arraylist的区别"></a>vector和arraylist的区别</h1><p>vector是安全的，而arraylist是不安全的，vector扩容是扩大为之前的两倍，而arraylist是扩容到之前的1.5倍</p>
 <h1 id="HashMap和HashTable的区别"><a href="#HashMap和HashTable的区别" class="headerlink" title="HashMap和HashTable的区别"></a>HashMap和HashTable的区别</h1><p><img src="/2022/09/07/%E9%9D%A2%E8%AF%95%E8%A1%A5%E5%85%85/image-20221023225904885.png" srcset="/img/loading.gif" lazyload alt="区别"></p>
+<h1 id="ioc的refresh-方法"><a href="#ioc的refresh-方法" class="headerlink" title="ioc的refresh()方法"></a>ioc的refresh()方法</h1><p>ioc 主要是refresh()</p>
+<p>获得beanfactory也就是一个获得一个DefaultListAbleBeanFactory 会有一系列的loadBeanDefinitions方法的过程，将不同的注释或者xml注入的信息转换成一个相同的beandefinition，然后利用beandefinitionreader对象来进行读取，通过for循环将各种配置文件分开，然后根据不同的注入信息生成对应的xml或者注释的信息；然后是一个doloadbeandefinitions将这些文件生成一个个对应的dom对象，使用documentreader读取配置文件，然后通过registerBeanDefinitions将这些文件生成一颗dom树，就可以从dom树中获取文件，然后通过doRegisterBeanDefinitions方法先查询bean中是否有嵌套一个bean，如果有就回到这个doRegisterBeanDefinitions方法，主要是用来注册beandefinitions，其中有一个主要的方法是parseBeanDefinitions，主要用来解析一些标签，将之前的dom树的root节点进行for循环遍历，如果是默认的命名空间就会解析四个标签 import 、alias、bean和 beans，beans就是一个递归的过程，就相当于又回到了这个doregisterbeandefinitions方法中；解析bean文件的时候，将bean节点中的信息提取出来然后封装到BeanDefinitionHolder中，如果没有使用别名就生成了一个BeanDefinition对象；但是如果发现bean使用了别名，那么就将这个别名放到一个别名的map集合中，这个集合的key是别名，value是实际上的name。将这些信息注册到BeanDefinition中，最后返回，这个时候就得到一个完成的BeanDefinition；然后通过一个beanfactorypostprocesser增强这些beanfactory，以及通过beanpostprocesser增强bean，然后就是广播 异常回调 国际化的操作，然后会有一个实例化bean的过程来给一些非懒加载的单例bean的属性赋初值 然后进行一些依赖注入最后通过反射进行实例化</p>
 
               
             </div>
