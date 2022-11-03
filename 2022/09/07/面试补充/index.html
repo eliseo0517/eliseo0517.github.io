@@ -38,7 +38,7 @@
 <meta property="og:image" content="https://eliseo.top/2022/09/07/%E9%9D%A2%E8%AF%95%E8%A1%A5%E5%85%85/image-20221013221726735.png">
 <meta property="og:image" content="https://eliseo.top/2022/09/07/%E9%9D%A2%E8%AF%95%E8%A1%A5%E5%85%85/image-20221023225904885.png">
 <meta property="article:published_time" content="2022-09-07T02:33:00.000Z">
-<meta property="article:modified_time" content="2022-10-24T14:11:02.044Z">
+<meta property="article:modified_time" content="2022-11-03T12:32:51.931Z">
 <meta property="article:author" content="Mr.Wang">
 <meta property="article:tag" content="面试">
 <meta name="twitter:card" content="summary_large_image">
@@ -253,7 +253,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          7.2k 字
+          9.1k 字
         
       </span>
     
@@ -265,7 +265,7 @@
         
         
           <!-- compatible with older versions-->
-          61 分钟
+          77 分钟
         
       </span>
     
@@ -317,7 +317,7 @@
                 
                   
                     <!-- compatible with older versions-->
-                    本文最后更新于：1 小时前
+                    本文最后更新于：1 分钟前
                   
                 
               </p>
@@ -429,7 +429,7 @@
 <p>因此，我们在扩充HashMap的时候，不需要重新计算hash，只需要看看原来的hash值新增的那个bit是1还是0就好了，是0的话索引没变，是1的话索引变成“原索引+oldCap”。可以看看下图为16扩充为32的resize示意图：</p>
 <p><img src="https://uploadfiles.nowcoder.com/images/20220224/4107856_1645688973970/C2928A93915A4AEF2709862EBAC8515C" srcset="/img/loading.gif" lazyload></p>
 <p>这个设计确实非常的巧妙，既省去了重新计算hash值的时间，而且同时，由于新增的1bit是0还是1可以认为是随机的，因此resize的过程，均匀的把之前的冲突的节点分散到新的bucket了。</p>
-<h1 id="索引如何失效"><a href="#索引如何失效" class="headerlink" title="索引如何失效"></a>索引如何失效</h1><h1 id="gateway网关的组成以及断言的作用"><a href="#gateway网关的组成以及断言的作用" class="headerlink" title="gateway网关的组成以及断言的作用"></a>gateway网关的组成以及断言的作用</h1><p><strong>组成：</strong>路由、断言以及过滤器</p>
+<h1 id="gateway网关的组成以及断言的作用"><a href="#gateway网关的组成以及断言的作用" class="headerlink" title="gateway网关的组成以及断言的作用"></a>gateway网关的组成以及断言的作用</h1><p><strong>组成：</strong>路由、断言以及过滤器</p>
 <p>（1）路由。路由是网关最基础的部分，路由信息有一个ID、一个目的URL、一组断言和一组Filter组成。如果断言路由为真，则说明请求的URL和配置匹配</p>
 <p>（2）断言。Java8中的断言函数。Spring Cloud Gateway中的断言函数输入类型是Spring5.0框架中的ServerWebExchange。Spring Cloud Gateway中的断言函数允许开发者去定义匹配来自于http request中的任何信息，比如请求头和参数等。</p>
 <p>（3）过滤器。一个标准的Spring webFilter。Spring cloud gateway中的filter分为两种类型的Filter，分别是Gateway Filter和Global Filter。过滤器Filter将会对请求和响应进行修改处理</p>
@@ -475,6 +475,73 @@
 <h1 id="HashMap和HashTable的区别"><a href="#HashMap和HashTable的区别" class="headerlink" title="HashMap和HashTable的区别"></a>HashMap和HashTable的区别</h1><p><img src="/2022/09/07/%E9%9D%A2%E8%AF%95%E8%A1%A5%E5%85%85/image-20221023225904885.png" srcset="/img/loading.gif" lazyload alt="区别"></p>
 <h1 id="ioc的refresh-方法"><a href="#ioc的refresh-方法" class="headerlink" title="ioc的refresh()方法"></a>ioc的refresh()方法</h1><p>ioc 主要是refresh()</p>
 <p>获得beanfactory也就是一个获得一个DefaultListAbleBeanFactory 会有一系列的loadBeanDefinitions方法的过程，将不同的注释或者xml注入的信息转换成一个相同的beandefinition，然后利用beandefinitionreader对象来进行读取，通过for循环将各种配置文件分开，然后根据不同的注入信息生成对应的xml或者注释的信息；然后是一个doloadbeandefinitions将这些文件生成一个个对应的dom对象，使用documentreader读取配置文件，然后通过registerBeanDefinitions将这些文件生成一颗dom树，就可以从dom树中获取文件，然后通过doRegisterBeanDefinitions方法先查询bean中是否有嵌套一个bean，如果有就回到这个doRegisterBeanDefinitions方法，主要是用来注册beandefinitions，其中有一个主要的方法是parseBeanDefinitions，主要用来解析一些标签，将之前的dom树的root节点进行for循环遍历，如果是默认的命名空间就会解析四个标签 import 、alias、bean和 beans，beans就是一个递归的过程，就相当于又回到了这个doregisterbeandefinitions方法中；解析bean文件的时候，将bean节点中的信息提取出来然后封装到BeanDefinitionHolder中，如果没有使用别名就生成了一个BeanDefinition对象；但是如果发现bean使用了别名，那么就将这个别名放到一个别名的map集合中，这个集合的key是别名，value是实际上的name。将这些信息注册到BeanDefinition中，最后返回，这个时候就得到一个完成的BeanDefinition；然后通过一个beanfactorypostprocesser增强这些beanfactory，以及通过beanpostprocesser增强bean，然后就是广播 异常回调 国际化的操作，然后会有一个实例化bean的过程来给一些非懒加载的单例bean的属性赋初值 然后进行一些依赖注入最后通过反射进行实例化</p>
+<h1 id="当redis内存使用完全之后，继续写入数据会怎样？"><a href="#当redis内存使用完全之后，继续写入数据会怎样？" class="headerlink" title="当redis内存使用完全之后，继续写入数据会怎样？"></a>当redis内存使用完全之后，继续写入数据会怎样？</h1><p>会自动调用内存淘汰策略：一共有六种内存淘汰策略，针对设置过期时间和没有设置过期时间有不同的办法</p>
+<blockquote>
+<p>不进行淘汰</p>
+</blockquote>
+<p>noeviction</p>
+<blockquote>
+<p>设置过期时间之后的淘汰策略</p>
+</blockquote>
+<p>volatile-random：从已经设置过期时间的时间集中随机进行淘汰</p>
+<p>volatile-ttl：从已经设置过期时间的时间集中根据过期时间的先后来进行淘汰</p>
+<p>volatile-lru：从已经设置过期时间的时间集中寻找最近最少使用的数据进行淘汰</p>
+<p>volatile-lfu：从已经设置过期时间的时间集中寻找最不经常使用的数据进行淘汰</p>
+<blockquote>
+<p>全局淘汰的策略</p>
+</blockquote>
+<p>allkeys-lru：当内存不足以容纳新写入数据时，在键空间中，移除最近最少使用的 key</p>
+<p>allkeys-random：从数据集中随机进行淘汰</p>
+<p>allkeys-lfu：当内存不足以容纳新写入数据时，在键空间中，移除最不经常使用的 key</p>
+<h1 id="微服务中nacos如果突然挂了，那么用户已经调用的nacos服务会发生什么？"><a href="#微服务中nacos如果突然挂了，那么用户已经调用的nacos服务会发生什么？" class="headerlink" title="微服务中nacos如果突然挂了，那么用户已经调用的nacos服务会发生什么？"></a>微服务中nacos如果突然挂了，那么用户已经调用的nacos服务会发生什么？</h1><p>用户调用的服务会在完成当前的事情之后进行关闭</p>
+<h1 id="秒杀系统"><a href="#秒杀系统" class="headerlink" title="秒杀系统"></a>秒杀系统</h1><p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/cad0ecd7562b">秒杀遇到的问题及解决方案</a></p>
+<p>秒杀场景就是一件商品的购买人数远远大于这件商品的库存，而且这件商品在很短的时间内就会被抢购一空。比如说双十一促销，618促销。</p>
+<p>会遇见的问题：</p>
+<hr>
+<p>1、高并发下产生的压力问题</p>
+<p><strong>解决方案：1.采用限流</strong></p>
+<p>使用nginx做负载均衡，</p>
+<p><strong>解决方案：2.</strong></p>
+<hr>
+<p>2、超卖 </p>
+<p><strong>解决方案：</strong></p>
+<p>在数据库减库存时加上<strong>库存数量判断</strong>，防止数据变为负数</p>
+<p><strong>使用悲观锁、乐观锁(判断库存数量以及添加一个版本号)、redis(redis是单线程串行化执行，当被购买之后数量-1直到0的时候结束)</strong></p>
+<hr>
+<p>3、数据库宕机 </p>
+<p><strong>使用消息队列来进行削峰</strong> 如果数据库只能1s5000个数据，然后使用消息队列每秒释放4000个</p>
+<p><strong>引入redis缓存</strong> 活动开始前将可能会被访问到的所有数据都加载到redis中还有一些缓存击穿缓存穿透</p>
+<p><strong>数据库读写分离</strong></p>
+<hr>
+<p>4、由于高访问量带来的带宽问题</p>
+<p><strong>解决方案：采用商品页面静态化</strong></p>
+<p>将页面内容全部写入静态页面中，这样就能不访问数据库也不需要进行业务逻辑处理</p>
+<hr>
+<p>5、恶意请求</p>
+<p>一个人使用脚本有多个账号进行购买<strong>在付款的时候回答一些问题或者点击图片中的文字</strong></p>
+<p>防止一个人购买多次使用 <strong>用户id和商品id联合主键利用主键的唯一性</strong></p>
+<h1 id="b-树的增删改查操作流程"><a href="#b-树的增删改查操作流程" class="headerlink" title="b+树的增删改查操作流程"></a>b+树的增删改查操作流程</h1><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/149287061">B+树的增删改查操作</a></p>
+<p>一颗m阶的B树定义如下：</p>
+<p>1）每个结点最多有m-1个关键字。</p>
+<p>2）根结点最少可以只有1个关键字。</p>
+<p>3）非根结点至少有Math.ceil(m/2)-1个关键字。</p>
+<p>4）每个结点中的关键字都按照从小到大的顺序排列，每个关键字的左子树中的所有关键字都小于它，而右子树中的所有关键字都大于它。</p>
+<p>5）所有叶子结点都位于同一层，或者说根结点到每个叶子结点的长度都相同。</p>
+<h1 id="如何判断一个线程执行完成？"><a href="#如何判断一个线程执行完成？" class="headerlink" title="如何判断一个线程执行完成？"></a>如何判断一个线程执行完成？</h1><p>1、Thread.isAlive()方法，如果线程没有执行完毕，就返回true；</p>
+<p>2、通过Thread.activeCount()方法来判断当前运行的线程的数量；</p>
+<h1 id="如何让线程按顺序执行？"><a href="#如何让线程按顺序执行？" class="headerlink" title="如何让线程按顺序执行？"></a>如何让线程按顺序执行？</h1><p><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1522404">java | 如何让线程按顺序执行？</a></p>
+<p>1、join() 谁执行这个方法就先执行线程</p>
+<p>2、使用线程的CountDownLatch(倒计时)</p>
+<p>​        搭配着<code>x.countDown()</code> <em>该方法是将倒计时中的数字 - 1</em>以及<code>x.await()</code>方法 该方法是直到x的计数器为0才开    始执行接下来的语句</p>
+<p>3、使用线程的Semaphore(信号量)方法</p>
+<p>​        搭配着**acquire():**当前线程尝试去阻塞的获取1个许可证,此过程是阻塞的,当前线程获取了1个可用的许可证，    则会停止等待，继续执行。</p>
+<p>​        **release():**当前线程释放1个可用的许可证。</p>
+<h1 id="HTTP的长连接和短连接"><a href="#HTTP的长连接和短连接" class="headerlink" title="HTTP的长连接和短连接"></a>HTTP的长连接和短连接</h1><p>在HTTP/1.0中默认使用短连接。也就是说，客户端和服务器每进行一次HTTP操作，就建立一次连接，任务结束就中断连接。当客户端浏览器访问的某个HTML或其他类型的Web页中包含有其他的Web资源（如JavaScript文件、图像文件、CSS文件等），每遇到这样一个Web资源，浏览器就会重新建立一个HTTP会话。</p>
+<p>而从HTTP/1.1起，默认使用长连接，用以保持连接特性。使用长连接的HTTP协议，会在响应头加入这行代码：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs html">Connection:keep-alive<br></code></pre></td></tr></table></figure>
+
+<p>在使用长连接的情况下，当一个网页打开完成后，客户端和服务器之间用于传输HTTP数据的TCP连接不会关闭，客户端再次访问这个服务器时，会继续使用这一条已经建立的连接。Keep-Alive不会永久保持连接，它有一个保持时间，可以在不同的服务器软件（如Apache）中设定这个时间。实现长连接需要客户端和服务端都支持长连接。</p>
+<p>HTTP协议的长连接和短连接，实质上是TCP协议的长连接和短连接。</p>
 
               
             </div>
@@ -557,23 +624,6 @@
 
 
 
-              
-                <div class="post-prevnext my-3">
-                  <article class="post-prev col-6">
-                    
-                    
-                  </article>
-                  <article class="post-next col-6">
-                    
-                    
-                      <a href="/2022/08/19/%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/" title="代理模式">
-                        <span class="hidden-mobile">代理模式</span>
-                        <span class="visible-mobile">下一篇</span>
-                        <i class="iconfont icon-arrowright"></i>
-                      </a>
-                    
-                  </article>
-                </div>
               
             </div>
 
