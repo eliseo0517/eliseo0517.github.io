@@ -38,7 +38,7 @@
 <meta property="og:image" content="https://eliseo.top/2022/09/07/%E9%9D%A2%E8%AF%95%E8%A1%A5%E5%85%85/image-20221013221726735.png">
 <meta property="og:image" content="https://eliseo.top/2022/09/07/%E9%9D%A2%E8%AF%95%E8%A1%A5%E5%85%85/image-20221023225904885.png">
 <meta property="article:published_time" content="2022-09-07T02:33:00.000Z">
-<meta property="article:modified_time" content="2022-11-03T12:32:51.931Z">
+<meta property="article:modified_time" content="2022-11-11T05:04:53.145Z">
 <meta property="article:author" content="Mr.Wang">
 <meta property="article:tag" content="面试">
 <meta name="twitter:card" content="summary_large_image">
@@ -253,7 +253,7 @@
         <i class="iconfont icon-chart"></i>
         
           <!-- compatible with older versions-->
-          9.1k 字
+          10k 字
         
       </span>
     
@@ -265,7 +265,7 @@
         
         
           <!-- compatible with older versions-->
-          77 分钟
+          85 分钟
         
       </span>
     
@@ -354,7 +354,7 @@
 <p>Spring通过三级缓存解决了循环依赖，其中一级缓存为单例池（<code>singletonObjects</code>）,二级缓存为早期曝光对象<code>earlySingletonObjects</code>，三级缓存为早期曝光对象工厂（<code>singletonFactories</code>）。当A、B两个类发生循环引用时，在A完成实例化后，就使用实例化后的对象去创建一个对象工厂，并添加到三级缓存中，如果A被AOP代理，那么通过这个工厂获取到的就是A代理后的对象，如果A没有被AOP代理，那么这个工厂获取到的就是A实例化的对象。当A进行属性注入时，会去创建B，同时B又依赖了A，所以创建B的同时又会去调用getBean(a)来获取需要的依赖，此时的getBean(a)会从缓存中获取，第一步，先获取到三级缓存中的工厂；第二步，调用对象工工厂的getObject方法来获取到对应的对象，得到这个对象后将其注入到B中。紧接着B会走完它的生命周期流程，包括初始化、后置处理器等。当B创建完后，会将B再注入到A中，此时A再完成它的整个生命周期。至此，循环依赖结束！</p>
 <p>A首先完成了初始化的第一步，并且将自己提前曝光到singletonFactories中，此时进行初始化的第二步，发现自己依赖对象B，此时就尝试去get(B)，发现B还没有被create，所以走create流程，B在初始化第一步的时候发现自己依赖了对象A，于是尝试get(A)，尝试一级缓存singletonObjects(肯定没有，因为A还没初始化完全)，尝试二级缓存earlySingletonObjects（也没有），尝试三级缓存singletonFactories，由于A通过ObjectFactory将自己提前曝光了，所以B能够通过ObjectFactory.getObject拿到A对象(虽然A还没有初始化完全，但是总比没有好呀)，B拿到A对象后顺利完成了初始化阶段1、2、3，完全初始化之后将自己放入到一级缓存singletonObjects中。此时返回A中，A此时能拿到B的对象顺利完成自己的初始化阶段2、3，最终A也完成了初始化，进去了一级缓存singletonObjects中，而且更加幸运的是，由于B拿到了A的对象引用，所以B现在hold住的A对象完成了初始化。（简单来说,就是spring创造了一个 循环依赖的结束点标识）</p>
 <p><img src="/2022/09/07/%E9%9D%A2%E8%AF%95%E8%A1%A5%E5%85%85/%E5%BE%AA%E7%8E%AF%E4%BE%9D%E8%B5%96.png" srcset="/img/loading.gif" lazyload alt="循环依赖"></p>
-<h1 id="为什么要使用三级缓存呢？二级缓存能解决循环依赖吗？"><a href="#为什么要使用三级缓存呢？二级缓存能解决循环依赖吗？" class="headerlink" title="为什么要使用三级缓存呢？二级缓存能解决循环依赖吗？"></a>为什么要使用三级缓存呢？二级缓存能解决循环依赖吗？</h1><p>如果要使用二级缓存解决循环依赖，意味着所有Bean在实例化后就要完成AOP代理，这样违背了Spring设计的原则，Spring在设计之初就是通过<code>AnnotationAwareAspectJAutoProxyCreator</code>这个后置处理器来在Bean生命周期的最后一步来完成AOP代理，而不是在实例化后就立马进行AOP代理。</p>
+<h1 id="为什么要使用三级缓存呢？二级缓存能解决循环依赖吗？"><a href="#为什么要使用三级缓存呢？二级缓存能解决循环依赖吗？" class="headerlink" title="为什么要使用三级缓存呢？二级缓存能解决循环依赖吗？"></a>为什么要使用三级缓存呢？二级缓存能解决循环依赖吗？</h1><p>如果要使用二级缓存解决循环依赖，意味着所有Bean在实例化后就要完成AOP代理，这样违背了Spring设计的原则，Spring在设计之初就是通过<code>AnnotationAwareAspectJAutoProxyCreator</code>这个后置处理器来在Bean生命周期的最后一步来完成AOP代理，而不是在实例化后就立马进行AOP代理。……</p>
 <h1 id="Minor-GC触发条件"><a href="#Minor-GC触发条件" class="headerlink" title="Minor GC触发条件"></a>Minor GC触发条件</h1><p>当Eden区满时，触发Minor GC。</p>
 <h1 id="Full-GC的触发条件"><a href="#Full-GC的触发条件" class="headerlink" title="Full GC的触发条件"></a>Full GC的触发条件</h1><p>（1）System.gc()方法的调用</p>
 <blockquote>
@@ -429,13 +429,14 @@
 <p>因此，我们在扩充HashMap的时候，不需要重新计算hash，只需要看看原来的hash值新增的那个bit是1还是0就好了，是0的话索引没变，是1的话索引变成“原索引+oldCap”。可以看看下图为16扩充为32的resize示意图：</p>
 <p><img src="https://uploadfiles.nowcoder.com/images/20220224/4107856_1645688973970/C2928A93915A4AEF2709862EBAC8515C" srcset="/img/loading.gif" lazyload></p>
 <p>这个设计确实非常的巧妙，既省去了重新计算hash值的时间，而且同时，由于新增的1bit是0还是1可以认为是随机的，因此resize的过程，均匀的把之前的冲突的节点分散到新的bucket了。</p>
-<h1 id="gateway网关的组成以及断言的作用"><a href="#gateway网关的组成以及断言的作用" class="headerlink" title="gateway网关的组成以及断言的作用"></a>gateway网关的组成以及断言的作用</h1><p><strong>组成：</strong>路由、断言以及过滤器</p>
+<h1 id="gateway网关的组成以及断言的作用"><a href="#gateway网关的组成以及断言的作用" class="headerlink" title="gateway网关的组成以及断言的作用"></a>gateway网关的组成以及断言的作用</h1><p>不仅可以完成一些路由的转发，也可以提供一些安全审核，流量控制、过滤器的功能</p>
+<p><strong>组成：</strong>路由、断言以及过滤器</p>
 <p>（1）路由。路由是网关最基础的部分，路由信息有一个ID、一个目的URL、一组断言和一组Filter组成。如果断言路由为真，则说明请求的URL和配置匹配</p>
 <p>（2）断言。Java8中的断言函数。Spring Cloud Gateway中的断言函数输入类型是Spring5.0框架中的ServerWebExchange。Spring Cloud Gateway中的断言函数允许开发者去定义匹配来自于http request中的任何信息，比如请求头和参数等。</p>
 <p>（3）过滤器。一个标准的Spring webFilter。Spring cloud gateway中的filter分为两种类型的Filter，分别是Gateway Filter和Global Filter。过滤器Filter将会对请求和响应进行修改处理</p>
 <h1 id="什么是单点登录以及单点登录的实现方式"><a href="#什么是单点登录以及单点登录的实现方式" class="headerlink" title="什么是单点登录以及单点登录的实现方式"></a>什么是单点登录以及单点登录的实现方式</h1><p>单点登录(SingleSignOn，SSO)，就是通过单点登录(SingleSignOn，SSO)，就是通过用户的一次性鉴别登录。<strong>在多个应用系统中，只需要登录一次，就可以访问其他相互信任的应用系统。</strong></p>
 <p><img src="/2022/09/07/%E9%9D%A2%E8%AF%95%E8%A1%A5%E5%85%85/image-20221005092455114.png" srcset="/img/loading.gif" lazyload alt="单点登录的三种实现方式"></p>
-<h1 id="mysql的数据类型"><a href="#mysql的数据类型" class="headerlink" title="mysql的数据类型"></a>mysql的数据类型</h1><h1 id="为什么使用B-树作为索引？"><a href="#为什么使用B-树作为索引？" class="headerlink" title="为什么使用B+树作为索引？"></a>为什么使用B+树作为索引？</h1><ol>
+<h1 id="为什么使用B-树作为索引？"><a href="#为什么使用B-树作为索引？" class="headerlink" title="为什么使用B+树作为索引？"></a>为什么使用B+树作为索引？</h1><ol>
 <li>B+树能显著减少IO次数，提高效率</li>
 <li>B+树的查询效率更加稳定，因为数据放在叶子节点</li>
 <li>B+树能提高范围查询的效率，因为叶子节点指向下一个叶子节点</li>
@@ -469,8 +470,6 @@
 <p>2、从SessionFactory得到SqlSession；</p>
 <p>3、通过SqlSession进行CRUD和事务的操作；</p>
 <p>4、执行完相关操作之后关闭Session。</p>
-<h1 id="什么是JWT"><a href="#什么是JWT" class="headerlink" title="什么是JWT"></a>什么是JWT</h1><p>JWT包括 头部，负载，签名</p>
-<p>头部是一个描述JWT元数据的JSON对象；负载是一个JSON对象，里面包含着需要传递的数据；签名哈希时通过指定的算法生成hash，保证数据的保密性</p>
 <h1 id="vector和arraylist的区别"><a href="#vector和arraylist的区别" class="headerlink" title="vector和arraylist的区别"></a>vector和arraylist的区别</h1><p>vector是安全的，而arraylist是不安全的，vector扩容是扩大为之前的两倍，而arraylist是扩容到之前的1.5倍</p>
 <h1 id="HashMap和HashTable的区别"><a href="#HashMap和HashTable的区别" class="headerlink" title="HashMap和HashTable的区别"></a>HashMap和HashTable的区别</h1><p><img src="/2022/09/07/%E9%9D%A2%E8%AF%95%E8%A1%A5%E5%85%85/image-20221023225904885.png" srcset="/img/loading.gif" lazyload alt="区别"></p>
 <h1 id="ioc的refresh-方法"><a href="#ioc的refresh-方法" class="headerlink" title="ioc的refresh()方法"></a>ioc的refresh()方法</h1><p>ioc 主要是refresh()</p>
@@ -522,7 +521,7 @@
 <p>防止一个人购买多次使用 <strong>用户id和商品id联合主键利用主键的唯一性</strong></p>
 <h1 id="b-树的增删改查操作流程"><a href="#b-树的增删改查操作流程" class="headerlink" title="b+树的增删改查操作流程"></a>b+树的增删改查操作流程</h1><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/149287061">B+树的增删改查操作</a></p>
 <p>一颗m阶的B树定义如下：</p>
-<p>1）每个结点最多有m-1个关键字。</p>
+<p>1）每个结点最多有m-1个关键字(数据)。</p>
 <p>2）根结点最少可以只有1个关键字。</p>
 <p>3）非根结点至少有Math.ceil(m/2)-1个关键字。</p>
 <p>4）每个结点中的关键字都按照从小到大的顺序排列，每个关键字的左子树中的所有关键字都小于它，而右子树中的所有关键字都大于它。</p>
@@ -542,7 +541,29 @@
 
 <p>在使用长连接的情况下，当一个网页打开完成后，客户端和服务器之间用于传输HTTP数据的TCP连接不会关闭，客户端再次访问这个服务器时，会继续使用这一条已经建立的连接。Keep-Alive不会永久保持连接，它有一个保持时间，可以在不同的服务器软件（如Apache）中设定这个时间。实现长连接需要客户端和服务端都支持长连接。</p>
 <p>HTTP协议的长连接和短连接，实质上是TCP协议的长连接和短连接。</p>
-
+<h1 id="oAuth-2-0"><a href="#oAuth-2-0" class="headerlink" title="oAuth 2.0"></a>oAuth 2.0</h1><p><strong>OAuth 就是一种授权机制。数据的所有者告诉系统，同意授权第三方应用进入系统，获取这些数据。系统从而产生一个短期的进入令牌（token），用来代替密码，供第三方应用使用，一般用于第三方(QQ，微信)登录</strong></p>
+<p>其中有四种授权类型</p>
+<p>1、授权码 code：前后端交互**(最常用)**</p>
+<p>2、隐式token:只有前端的项目或者移动端的项目</p>
+<p>3、资源所有者密码凭证 password：资源所有者和客户端之间具有高度信任时</p>
+<p>4、客户端证书</p>
+<p><strong>重定向一定要用302</strong></p>
+<p><a target="_blank" rel="noopener" href="http://www.ruanyifeng.com/blog/2019/04/oauth-grant-types.html">OAuth 2.0 的四种方式 </a></p>
+<h1 id="什么是JWT"><a href="#什么是JWT" class="headerlink" title="什么是JWT"></a>什么是JWT</h1><p>JWT本质上就是一组字串，通过(.)将JWT分为三部分，包括 头部，负载，签名</p>
+<p>头部是一个描述JWT元数据的JSON对象(里面存放着签名算法以及令牌类型)；负载是一个JSON对象，里面包含着需要传递的数据，因为负载在部分默认不加密，所以不要将一些隐私信息存放在负载中；签名哈希时通过头部指定的算法生成hash，保证数据的保密性</p>
+<hr>
+<p><strong>jwt的好处</strong></p>
+<p>存储在本地存储中，不在cookie中，所以大大减轻了服务端的压力；而且因为存储在本地存储中，不用cookie，所以可以防止CSRF(跨域请求伪造)攻击</p>
+<h1 id="HTTP-与-HTTPS-区别"><a href="#HTTP-与-HTTPS-区别" class="headerlink" title="HTTP 与 HTTPS 区别"></a>HTTP 与 HTTPS 区别</h1><p>HTTP 明文传输，数据都是未加密的，安全性较差，HTTPS（SSL+HTTP） 数据传输过程是加密的，安全性较好。</p>
+<p>使用 HTTPS 协议需要到 CA（Certificate Authority，数字证书认证机构） 申请证书，一般免费证书较少，因而需要一定费用。证书颁发机构如：Symantec、Comodo、GoDaddy 和 GlobalSign 等。</p>
+<p>HTTP 页面响应速度比 HTTPS 快，主要是因为 HTTP 使用 TCP 三次握手建立连接，客户端和服务器需要交换 3 个包，而 HTTPS除了 TCP 的三个包，还要加上 ssl 握手需要的 9 个包，所以一共是 12 个包。</p>
+<p>http 和 https 使用的是完全不同的连接方式，用的端口也不一样，前者是 80，后者是 443。</p>
+<p>HTTPS 其实就是建构在 SSL/TLS 之上的 HTTP 协议，所以，要比较 HTTPS 比 HTTP 要更耗费服务器资源。</p>
+<h1 id="myisam与innodb的区别"><a href="#myisam与innodb的区别" class="headerlink" title="myisam与innodb的区别"></a>myisam与innodb的区别</h1><p>1、myisam不支持事务，而innodb支持事务</p>
+<p>2、myisam只有表级锁，而innodb有表级锁和行级锁</p>
+<p>3、myisam不支持外键，而innodb支持外键</p>
+<p>4、innodb支持redolog在崩溃之后可以安全恢复</p>
+<h1 id="mybatis中dao层的接口可以重载吗？为什么？"><a href="#mybatis中dao层的接口可以重载吗？为什么？" class="headerlink" title="mybatis中dao层的接口可以重载吗？为什么？"></a>mybatis中dao层的接口可以重载吗？为什么？</h1>
               
             </div>
             <hr/>
@@ -624,6 +645,23 @@
 
 
 
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/08/19/%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/" title="代理模式">
+                        <span class="hidden-mobile">代理模式</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
               
             </div>
 
